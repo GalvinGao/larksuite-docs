@@ -1,0 +1,218 @@
+---
+document_id: '6965400907875254278'
+directory_id: '6907567266541404162'
+title: 批量获取用户信息
+full_path: /ukTMukTMukTM/uIzNz4iM3MjLyczM
+breadcrumb:
+- Server API
+- Deprecated Version (Not Recommended)
+- Contact
+- User
+- Batch Obtain User Information
+document_type: GuideDocumentType
+updated_at: 2022-03-11T11:44:11Z
+source_url: https://open.larksuite.com/document/ukTMukTMukTM/uIzNz4iM3MjLyczM
+---
+
+# 批量获取用户信息
+:::html
+<md-alert type="error">
+为了更好地提升该接口的安全性，我们对其进行了升级，请尽快迁移至[新版本>>](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/get)
+</md-alert>
+:::
+
+该接口用于批量获取用户详细信息。
+
+
+
+## 请求
+:::html
+<md-table>
+  <md-thead>
+  <tr>
+      <md-th>基本</md-th>
+      <md-th></md-th>
+  </tr>
+  </md-thead>
+  <md-tbody>
+    <md-tr>
+      <md-th>HTTP URL</md-th>
+      <md-td>https://open.larksuite.com/open-apis/contact/v1/user/batch_get?open_ids=ou_f1d0df4b5654c935f5c8b3d1ed315c02&open_ids=ou_4a2eb24a52b27c0b7fc6fd04162c0246 <br><br>
+https://open.larksuite.com/open-apis/contact/v1/user/batch_get?employee_ids=2fab1234&employee_ids=2f1234cd <br></md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>HTTP Method</md-th>
+      <md-td>GET</md-td>
+    </md-tr>
+    
+    
+    <md-tr>
+      <md-th>
+ 权限要求
+ <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
+</md-th>
+      <md-td>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> 以应用身份访问通讯录（历史版本）</md-perm>
+      </md-td>
+    </md-tr>
+    <md-tr>
+      <md-th>
+            字段权限要求
+            <md-tooltip type="info">接口返回的部分字段受权限控制，开启字段权限才可获取对应字段数据；如无需获取这些字段，则无需开启。</md-tooltip>
+            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">根据要获取的字段开启相应权限</div>
+      </md-th>
+      <md-td>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户 user ID</md-perm></md-perm>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户基本信息</md-perm></md-perm>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">以应用身份访问通讯录（历史版本）</md-perm></md-perm>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户邮箱信息</md-perm></md-perm>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户手机号</md-perm></md-perm>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户性别</md-perm></md-perm>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户雇佣信息</md-perm></md-perm>
+        <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN"> <md-perm href="/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN">获取用户组织架构信息</md-perm></md-perm>
+      </md-td>
+    </md-tr>
+  </md-tbody>
+</md-table>
+:::
+### 请求头
+:::html
+<md-table> 
+  <md-thead> 
+    <md-tr> 
+      <md-th style="width: 18%;">名称</md-th>  
+      <md-th style="width: 15%;">类型</md-th>  
+       <md-th style="width: 15%;">必填</md-th>  
+      <md-th>描述</md-th> 
+    </md-tr> 
+  </md-thead>  
+  <md-tbody> 
+    <md-tr> 
+      <md-td>Authorization</md-td>  
+      <md-td>string</md-td>  
+      <md-td> 是 </md-td> 
+      	<md-td>
+<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
+ 
+**值格式**："Bearer `access_token`"
+
+**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
+          
+ [了解更多：获取与使用access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)
+	</md-td>
+</md-tr>
+     <md-tr> 
+      <md-td>Content-Type</md-td>  
+      <md-td>string</md-td>  
+      <md-td> 是 </md-td> 
+     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
+</md-tr>
+   
+  </md-tbody> 
+</md-table>
+:::
+## 查询参数
+|参数|类型|必须|说明|
+|-|-|-|-|-|
+|employee_ids、open_ids|string|是|支持通过 open_id 或者 employee_id 查询用户信息，不支持混合两种 ID 进行查询，单次请求支持的最大用户数量为100|
+
+## 响应
+### 响应体
+
+|参数|类型|说明|
+|-|-|-|
+|code|int|返回码，非 0 表示失败|
+|msg|string|返回码的描述|
+|data|-|返回业务数据|
+|&emsp;∟user_infos|list|用户信息|
+|&emsp;&emsp;∟name|string|用户名|
+|&emsp;&emsp;∟name_py|string|用户名拼音|
+|&emsp;&emsp;∟en_name|string|英文名|
+|&emsp;&emsp;∟employee_id|string|用户的 employee_id，申请了"获取用户 user_id"权限的应用返回该字段|
+|&emsp;&emsp;∟employee_no|string|工号|
+|&emsp;&emsp;∟open_id|string|用户的 open_id|
+|&emsp;&emsp;∟union_id|string|用户的 union_id|
+|&emsp;&emsp;∟status|int|用户状态，bit0(最低位): 1冻结，0未冻结；bit1:1离职，0在职；bit2:1未激活，0已激活|
+|&emsp;&emsp;∟employee_type|int|员工类型。1:正式员工；2:实习生；3:外包；4:劳务；5:顾问|
+|&emsp;&emsp;∟avatar_72|string|用户头像，72*72px|
+|&emsp;&emsp;∟avatar_240|string|用户头像，240*240px|
+|&emsp;&emsp;∟avatar_640|string|用户头像，640*640px|
+|&emsp;&emsp;∟avatar_url|string|用户头像，原始大小|
+|&emsp;&emsp;∟gender|int|性别，未设置不返回该字段。1:男；2:女|
+|&emsp;&emsp;∟email|string|用户邮箱地址，已申请"获取用户邮箱"权限返回该字段|
+|&emsp;&emsp;∟mobile|string|用户手机号，已申请"获取用户手机号"权限的企业自建应用返回该字段|
+|&emsp;&emsp;∟description|string|用户个人签名|
+|&emsp;&emsp;∟country|string|用户所在国家|
+|&emsp;&emsp;∟city|string|用户所在城市|
+|&emsp;&emsp;∟work_station|string|工位|
+|&emsp;&emsp;∟is_tenant_manager|bool|是否是企业超级管理员|
+|&emsp;&emsp;∟join_time|int|入职时间，未设置不返回该字段|
+|&emsp;&emsp;∟update_time|int|更新时间|
+|&emsp;&emsp;∟leader_employee_id|string|用户直接领导的 employee_id，企业自建应用返回，应用商店应用申请了 employee_id 权限时才返回|
+|&emsp;&emsp;∟leader_open_id|string|用户直接领导的 open_id|
+|&emsp;&emsp;∟leader_union_id|string|用户直接领导的 union_id|
+|&emsp;&emsp;∟departments|list|用户所在部门自定义 ID列表，用户可能同时存在于多个部门|
+|&emsp;&emsp;∟open_departments|list|用户所在部门 openID 列表，用户可能同时存在于多个部门|
+|&emsp;&emsp;∟custom_attrs|map|用户的自定义属性信息。<br>该字段返回的每一个属性包括自定义属性 ID 和自定义属性值。 <br>企业开放了自定义用户属性且为该用户设置了自定义属性的值，才会返回该字段|
+### 响应体示例
+```json
+{
+    "code": 0,
+    "msg": "success",
+    "data": {
+        "user_infos":[
+            {
+                "name":"zhang san",
+                "name_py":"zhang san",
+                "en_name":"John",
+                "employee_id":"a0615a67",
+                "employee_no":"235634",
+                "open_id":"ou_e03053f0541cecc3269d7a9dc34a0b21",
+                "union_id":"on_7dba11ff38a2119f89349876b12af65c",
+                "status":2,
+                "employee_type": 1,
+                "avatar_72": "https://sf3-ttcdn-tos.pstatp.com/img/avatar/62db96e8-c5b6-4077-bb9d-2697d65a29eb~72x72.png",
+                "avatar_240": "https://sf3-ttcdn-tos.pstatp.com/img/avatar/62db96e8-c5b6-4077-bb9d-2697d65a29eb~240x240.png",
+                "avatar_640": "https://sf3-ttcdn-tos.pstatp.com/img/avatar/62db96e8-c5b6-4077-bb9d-2697d65a29eb~640x640.png",
+                "avatar_url":"https://sf3-ttcdn-tos.pstatp.com/img/avatar/62db96e8-c5b6-4077-bb9d-2697d65a29eb~noop.png",
+                "gender":1,
+                "email":"zhangsan@gmail.com",
+                "mobile":"+8615343335730",
+                "description": "",
+                "country": "CN",
+                "city":"Beijing",
+                "work_station":"Poly, F6-123",  
+                "is_tenant_manager":false,
+                "join_time":1562342314,
+                "update_time":1569140032,
+                "leader_employee_id":"a0615a67",
+                "leader_open_id":"ou_e03053f0541cecc3269d7a9dc34a0b21",
+                "leader_union_id":"on_c132837f686587dd494aa54f5f65b552",
+                "departments":[
+                    "TT-0001"
+                ],
+                "open_departments": [
+                    "od-8c6c97ab9a34c1a649001d7ad36b97a7"
+                ],
+                "custom_attrs": {
+                    "C-6702376000044400907": {
+                        "value": "value1"
+                    },
+                    "C-6702376000048595214": {
+                        "value": "value2"
+                    }
+                }     
+            }
+        ]
+    }
+}
+```
+### 错误码
+
+具体可参考：[服务端错误码说明](/document/ukTMukTMukTM/ugjM14COyUjL4ITN)
+
+
+
+
+
+

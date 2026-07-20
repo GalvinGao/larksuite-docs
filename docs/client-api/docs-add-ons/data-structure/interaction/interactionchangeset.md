@@ -1,0 +1,41 @@
+---
+document_id: '7270779605450047494'
+directory_id: '7270719284443168773'
+title: InteractionChangeset
+full_path: /uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/InteractionChangeset
+breadcrumb:
+- Client API
+- Docs Add-ons
+- Data Structure
+- Interaction
+- InteractionChangeset
+document_type: GuideDocumentType
+updated_at: 2023-08-24T06:58:20Z
+source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/InteractionChangeset
+---
+
+# InteractionChangeset
+Interaction 变更数据，是下面三种类型之一：
+- remove 类型，表示将某个路径下的数据删除
+
+| **名称** | **数据类型**              | **是否必填** | **描述**               |
+| ------ | --------------------- | -------- | -------------------- |
+| type   | 'remove'              | 是        | remove 类型的 changeset |
+| data   | object                | 是        | changeset 数据         |
+| ∟path  | (string \| number)[] | 是        | remove 的路径           |
+- replace 类型，表示将某个路径下的数据替换成新数据
+
+| **名称** | **数据类型**              | **是否必填** | **描述**                |
+| ------ | --------------------- | -------- | --------------------- |
+| type   | 'replace'             | 是        | replace 类型的 changeset |
+| data   | object                | 是        | changeset 数据          |
+| ∟path  | (string \| number)[] | 是        | replace 的路径           |
+| ∟value | any                   | 是        | replace 的数据           |
+- move 类型，表示将数组路径下的数据移动到另一个位置
+
+| **名称**       | **数据类型**              | **是否必填** | **描述**             |
+| ------------ | --------------------- | -------- | ------------------ |
+| type         | 'move'                | 是        | move 类型的 changeset |
+| data         | object                | 是        | changeset 数据       |
+| ∟path        | (string \| number)[] | 是        | move 的路径           |
+| ∟targetIndex | number                | 是        | move 的目标位置

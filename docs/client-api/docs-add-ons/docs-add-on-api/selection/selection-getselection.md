@@ -1,0 +1,122 @@
+---
+document_id: '7270779605451407366'
+directory_id: '7270719284443365381'
+title: Selection.getSelection
+full_path: /uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/Selection.getSelection
+breadcrumb:
+- Client API
+- Docs Add-ons
+- Docs Add-on API
+- Selection
+- Selection.getSelection
+document_type: GuideDocumentType
+updated_at: 2023-08-24T06:58:15Z
+source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/Selection.getSelection
+---
+
+# Selection.getSelection
+获取指定文档的选区信息，该方法为异步调用。
+  
+## 可用性说明
+:::html
+<md-table>
+<md-thead>
+<md-tr>
+<md-th>权限要求</md-th>
+<md-th>视图可用说明</md-th>
+<md-th>平台可用</md-th>
+<md-th>场景</md-th></md-tr>
+</md-thead>
+<md-tbody>
+<md-tr>
+<md-td>可读</md-td>
+<md-td>所有视图</md-td>
+<md-td>- PC
+- 移动端</md-td>
+<md-td>演示模式</md-td>
+</md-tr></md-tbody>
+</md-table>
+:::
+
+
+## 输入
+
+指定文档的引用
+| **名称** | **数据类型**                                                                                                                                       | **是否必填** | **描述**  |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| docRef | [DocumentRef](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/DocumentRef) | 是        | 指定文档的引用 |
+  
+
+## 输出
+
+异步返回指定文档的选区信息，它是一个[ExtendedSelectionItem](/document/uAjLw4CM/uYjL24iN/docs-add-on/06-data-structure/extendedselectionitem)的数组
+  
+
+## 示例代码
+
+### 调用示例
+
+```js
+const DocMiniApp = new BlockitClient().initAPI();
+const docRef = await DocMiniApp.getActiveDocumentRef();
+const selection = await DocMiniApp.Selection.getSelection(docRef);
+console.log('debug', selection);
+```
+
+### 返回示例
+
+```json
+[
+  {
+    "type": "text",
+    "ref":
+    {
+      "docRef":
+      {
+        "docToken": "B9tudJfP4or1OCxEC3UcSNdjndc"
+      },
+      "blockId": 6,
+      "range": [0, 7]
+    },
+    "blockId": 6,
+    "blockSnapshot":
+    {
+      "id": 6,
+      "type": "text",
+      "children": [],
+      "childSnapshots": [],
+      "parent": 1,
+      "childIndex": 1,
+      "data":
+      {
+        "plain_text": "asdasda",
+        "text":
+        {
+          "elements":
+            [
+              {
+                "text_run":
+                {
+                  "content": "asdasda",
+                  "style":
+                  {
+                    "inline_code": false, "bold": false, "italic": false, "underline": false, "strikethrough": false
+                  }
+                }
+              }
+            ]
+        }
+      },
+      "recordId": "E6mgdWM2EoU0W0xcpJWc1Ftrngg",
+      "ref":
+      {
+        "docRef":
+        {
+          "docToken": "B9tudJfP4or1OCxEC3UcSNdjndc"
+        },
+        "blockId": 6
+      }
+    }
+  }
+]
+```

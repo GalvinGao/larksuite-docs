@@ -1,0 +1,54 @@
+---
+document_id: '7180270043522220038'
+directory_id: '7179507279661776902'
+title: background-clip
+full_path: /uAjLw4CM/uYjL24iN/block/block-frame/view-layer/ttss/attributes/background/background-clip
+breadcrumb:
+- Developer Guides
+- Develop Workplace Blocks
+- Block Framework
+- Code components and structure
+- View Layer
+- TTSS
+- Attributes
+- background
+- background-clip
+document_type: GuideDocumentType
+updated_at: 2022-12-27T10:18:42Z
+source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/block/block-frame/view-layer/ttss/attributes/background/background-clip
+---
+
+# background-clip
+
+## 介绍
+
+`background-clip`属性指定背景图像在元素上的渲染范围，默认情况下会绘制包含边框在内的整个元素。
+
+## 语法
+
+```css
+background-clip: content-box;
+background-clip: padding-box;
+background-clip: border-box;
+background-clip: content-box, padding-box;
+```
+
+### 取值
+
+-   `padding-box`
+
+**默认值。** 背景图片设置为不重复的情况下其绘制范围是包含`padding`在内的矩形，背景图像从填充边缘的左上角开始。
+
+-   `border-box`
+
+背景图片设置为不重复的情况下其绘制范围是包含边框在内的整个元素，背景图像从边框的左上角开始。
+
+-   `content-box`
+
+背景图片设置为不重复的情况下其绘制范围是除边框和填充外的矩形，背景图像从内容边缘的左上角开始。
+
+### 标准化语法
+
+```css
+background-clip: border-box | padding-box | content-box
+```

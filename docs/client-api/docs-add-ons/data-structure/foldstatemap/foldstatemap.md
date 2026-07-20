@@ -1,0 +1,21 @@
+---
+document_id: '7270779605451128838'
+directory_id: '7270719284443447301'
+title: FoldStateMap
+full_path: /uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/FoldStateMap/foldstatemap
+breadcrumb:
+- Client API
+- Docs Add-ons
+- Data Structure
+- FoldStateMap
+- FoldStateMap
+document_type: GuideDocumentType
+updated_at: 2023-08-24T06:58:20Z
+source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/FoldStateMap/foldstatemap
+---
+
+# FoldStateMap
+所有 Block 的折叠信息
+| **名称**          | **数据类型**                                                                                                   | **是否必填** | **描述**      |
+| --------------- | ---------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| [key: BlockId] | [FoldState](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/FoldState) | 是        | Block 的折叠信息

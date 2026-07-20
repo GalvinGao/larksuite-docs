@@ -1,0 +1,24 @@
+[package]
+name = "open-larksuite-docs"
+version = "0.1.0"
+edition = "2024"
+description = "Fetch the public Lark developer documentation as Markdown"
+license = "MIT"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "deny"
+pedantic = "deny"
+
+[dependencies]
+anyhow = "1.0.104"
+chrono = { version = "0.4.45", features = ["serde"] }
+clap = { version = "4.6.2", features = ["derive"] }
+futures = "0.3.33"
+reqwest = { version = "0.13.4", default-features = false, features = ["json", "query", "rustls", "gzip"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+serde_yaml_ng = "0.10.0"
+tokio = { version = "1.53.0", features = ["macros", "rt-multi-thread", "fs", "time"] }

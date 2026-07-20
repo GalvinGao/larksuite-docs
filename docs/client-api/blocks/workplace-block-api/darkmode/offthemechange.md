@@ -1,0 +1,72 @@
+---
+document_id: '7180270043522105350'
+directory_id: '7180165099248205829'
+title: offThemeChange
+full_path: /uAjLw4CM/uYjL24iN/block/api/darkmode/offthemechange
+breadcrumb:
+- Client API
+- Blocks
+- Workplace Block API
+- DarkMode
+- offThemeChange
+document_type: GuideDocumentType
+updated_at: 2022-12-27T10:19:28Z
+source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/block/api/darkmode/offthemechange
+---
+
+# offThemeChange
+
+取消监听系统主题变化。
+:::html
+<md-alert type="tip">
+为防止多次注册事件监听导致一次事件多次回调，建议每次调用 on 方法监听事件之前，先调用 off 方法，关闭之前的事件监听。
+</md-alert>
+:::
+
+## 输入
+:::html
+<md-table>
+    <md-thead>
+        <md-tr>
+            <md-th style="width: 30%;">
+                名称
+            </md-th>
+            <md-th style="width: 18%;">
+                数据类型
+            </md-th>
+          <md-th style="width: 18%;">
+                是否必填
+            </md-th>
+            <md-th>
+                描述
+            </md-th>
+        </md-tr>
+    </md-thead>
+    <md-tbody>
+        <md-tr>
+            <md-td>
+                callback
+            </md-td>
+            <md-td>
+                function
+            </md-td>
+          <md-td>
+                是
+            </md-td>
+            <md-td>
+                主题变化取消监听时的回调函数
+            </md-td>
+        </md-tr>
+    </md-tbody>
+</md-table>
+:::
+
+
+## 示例代码
+```js
+const fn = (res) => {
+  console.log('取消监听');
+};
+
+tt.offThemeChange(fn);
+```

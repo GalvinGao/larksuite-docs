@@ -1,0 +1,36 @@
+---
+document_id: '7026663896463409157'
+directory_id: '7002892512470810630'
+title: 概览
+full_path: /home/integrating-web-apps-in-5-minutes/create-app-and-configuration
+breadcrumb:
+- Home
+- Quickly Develop H5 (Python)
+- Introduction
+document_type: GuideDocumentType
+updated_at: 2023-09-01T06:36:29Z
+source_url: https://open.larksuite.com/document/home/integrating-web-apps-in-5-minutes/create-app-and-configuration
+---
+
+# 概览
+  
+本文介绍如何快速开发一个Lark客户端内的企业自建网页应用，本示例使用Lark客户端 JSSDK，在鉴权完成后，调用了 [获取已登录用户的基本信息](/document/uYjL24iN/ucjMx4yNyEjL3ITM)、[弹出消息提示框](/document/uYjL24iN/ugzMy4COzIjL4MjM) JSAPI。通过该教程，您可以了解开发及上线网页应用的完整流程，并理解鉴权的基本原理。
+
+## 什么是网页应用？
+  
+网页（Web）应用指的是用 H5 方式开发，可以运行在Lark客户端内的应用。网页应用可以调用丰富的Lark客户端开放接口（客户端 API，也称为 JSAPI），这些接口包含手机系统功能以及通讯录、云文档等Lark客户端功能。同时，网页应用也可以享受到客户端侧的性能优化，使你的网页应用能够接近原生体验。
+JSAPI 调用依赖官方提供的工具包 JSSDK，使用时需在调用 JSAPI 的页面引入。
+更多介绍信息，参考[网页应用简介](/document/uYjL24iN/uMTMuMTMuMTM/introduction)。
+
+## 操作流程
+
+本文涉及的操作流程如下图：
+
+![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/1d1dd7102ec4fd7dd259a2872f824255_I212j0oZGb.png?height=208&lazyload=true&width=652)
+
+
+## 实现效果
+
+按照本教程操作最终可以实现如下图的示意效果。
+
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/575e1c93a4d19592fa6fdd4fca17b526_wAkAmcdAIC.png?height=1532&lazyload=true&maxWidth=750&width=2352)

@@ -1,0 +1,190 @@
+---
+document_id: '7472308035399811084'
+directory_id: '7073460768595378181'
+title: 打开飞书审批
+full_path: /uAjLw4CM/uYjL24iN/applink-protocol/supported-protocol/open-an-approval-page
+breadcrumb:
+- Developer Guides
+- AppLink Protocol
+- Supported protocol
+- Open an Approval page
+document_type: GuideDocumentType
+updated_at: 2025-02-18T03:02:04Z
+source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/applink-protocol/supported-protocol/open-an-approval-page
+---
+
+# 打开Lark审批
+::: note 
+从Lark 7.3.0 版本开始支持。
+:::
+## 使用场景
+
+在某些场景下，需要从企业内部系统或者别的小程序，跳转到Lark审批的指定页面，这时候需要使用 applink 拼接一个页面，并在合理的场景下调用。
+
+## 协议
+
+Lark审批固定使用 Applink 打开小程序协议，有关 AppLink 的详细内容可参考文档[AppLink的结构](/document/uYjL24iN/ucjN1UjL3YTN14yN2UTN)。
+
+`https://applink.larksuite.com/client/mini_program/open`
+
+
+## 参数
+
+**字段** | **必填** | **说明**                                      |
+| ------ | ------ | ------------------------------------------- |
+| appId  | 是      | 审批的应用 ID。其中Lark 品牌下审批的应用 ID 为`cli_9c7cc8a9a9edd105`。 |
+| path   | 是      | 跳转的审批页面路径及相关参数。详情参考下文。                      |
+| mode   | 否      | 只有在侧边栏模式下需要，侧边栏模式为 `mode=sidebar-semi`。
+
+
+
+### path  参数说明
+:::html
+<md-table>
+  <md-thead>
+    <md-tr>
+      <md-th style="width: 10%;">审批页面</md-th>
+      <md-th style="width: 30%;">移动端页面路径</md-th>
+      <md-th style="width: 30%;">PC 端页面路径</md-th>
+      <md-th style="width: 10%;">是否支持 PC 侧边栏</md-th>
+    </md-tr>
+  </md-thead>
+  <md-tbody>
+    <md-tr>
+      <md-td>发起申请页</md-td>
+      <md-td>`pages/approval-form/index?id=${审批定义id}`</md-td>
+      <md-td>`pc/pages/create-form/index?id=${审批定义id}`</md-td>
+      <md-td>不支持</md-td>
+    </md-tr>
+    <md-tr>
+      <md-td>单据详情页</md-td>
+      <md-td>`pages/detail/index?instanceId=${审批实例id或实例code}`</md-td>
+      <md-td>`pc/pages/in-process/index?instanceId=${审批实例id或实例code}`</md-td>
+      <md-td>支持，同移动端</md-td>
+    </md-tr>
+    <md-tr>
+      <md-td>审批中心页</md-td>
+      <md-td>`pages/approval-list/index?selectIndex=${对应列表下标}`
+
+列表下标枚举值：
+- 待审批`0`
+- 已审批`1`
+- 抄送我 `2`
+- 已发起 `3`</md-td>
+      <md-td>`pc/pages/${列表路径}/index`
+        
+列表路径枚举值：
+- 待审批 `in-process`
+- 已审批 `approved` 
+- 抄送我 `cc-2-me` 
+- 已发起 `requested`</md-td>
+      <md-td>不支持</md-td>
+    </md-tr>
+  </md-tbody>
+</md-table>
+:::
+
+
+- 审批实例 code 获取方式：调用[批量获取审批实例 ID](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)接口获取
+  
+- 审批定义 id 获取方式：通过审批管理后台打开某个审批的编辑页，从 url 链接中获取：
+
+	![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/316d9eafd9938dddb16ed45843456ae9_iYGMnirckp.png?height=875&lazyload=true&maxWidth=640&width=1913)
+  
+
+## 打开方式
+
+### 浏览器打开
+
+从浏览器跳转到Lark审批应用，可以直接在浏览器进行路由跳转，跳转到拼接好的 applink 地址。
+```js
+const schema = 'https://applink.larksuite.com/client/mini_program/open?mode=appCenter&appId=cli_9cb844403dbb9108&width=1136&height=750&path=pc%2Fpages%2Fin-process%2Findex'
+<a href={schema} />
+window.location.href = schema
+window.open(schema)
+```
+
+### 小程序跳转
+
+从某个Lark小程序，跳转到Lark审批应用，需要使用客户端 API [openSchema](/document/uYjL24iN/ukzN4IjL5cDOy4SO3gjM)。
+举例说明，其他小程序跳转到Lark审批，打开审批首页：
+```js
+tt.openSchema({
+    schema: "https://applink.larksuite.com/client/mini_program/open?mode=appCenter&appId=cli_9cb844403dbb9108&width=1136&height=750&path=pc%2Fpages%2Fin-process%2Findex",
+    external: true,
+    success(res) {
+      console.log(JSON.stringify(res));
+    },
+    fail(res) {
+      console.log(`openSchema fail: ${JSON.stringify(res)}`);
+    }
+});
+```
+  
+
+## 使用示例
+
+:::warning
+- 实际场景中，请替换对应的 path、 instanceId等参数为实际值。
+- 对于具体页面的路径，必须 URL 编码，如：`pages/detail/index?instanceId=123`→`pages%2Fdetail%2Findex%3FinstanceId%3D123`。
+
+:::
+
+
+
+### 移动端示例
+
+#### **打开审批单详情页**
+```
+https://applink.larksuite.com/client/mini_program/open?appId=cli_9cb844403dbb9108&path=pages%2Fdetail%2Findex%3FinstanceId%3D7418929504369377284
+```
+  
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/a9557c6854bfd4cdd4ffafa0f71356ad_PPlbC3eSbY.jpeg?height=2341&lazyload=true&maxWidth=450&width=1080)
+
+#### **打开审批表单页（发起页）**
+```
+https://applink.larksuite.com/client/mini_program/open?appId=cli_9cb844403dbb9108&path=pages%2Fapproval-form%2Findex%3Fid%3D7418928911667068932
+```
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/461d92df78e047efaed53e2857a29635_J3CwNOYYKa.jpeg?height=2341&lazyload=true&maxWidth=450&width=1080)
+
+#### **打开审批列表**
+```
+https://applink.larksuite.com/client/mini_program/open?appId=cli_9cb844403dbb9108&path=pages%2Fapproval-list%2Findex%3FselectIndex%3D0
+```
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ab8f61ccef04a49f60c0f6c9617f84d8_4xqADQAtFp.jpeg?height=2341&lazyload=true&maxWidth=450&width=1080)
+
+### PC 端示例
+
+#### **打开审批中心详情页**
+```
+https://applink.larksuite.com/client/mini_program/open?mode=appCenter&appId=cli_9cb844403dbb9108&path=pc%2Fpages%2Fin-process%2Findex%3FinstanceId%3D7418929504369377284
+```
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/baeb8d6acdb9744ab6fa74445db1497d_f59SXyNbYb.png?height=1798&lazyload=true&maxWidth=700&width=3080)
+  
+#### **打开审批列表**
+```
+https://applink.larksuite.com/client/mini_program/open?mode=appCenter&appId=cli_9cb844403dbb9108&path=pc%2Fpages%2Fin-progress%2Findex
+```
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/94e760e9e4fdea6900dcbc582650e13a_ZkzO9zUn8n.png?height=1802&lazyload=true&maxWidth=700&width=3116)
+  
+若打开已办审批列表，需要同时加上 approved 页面路径和 reviewed 参数：
+```
+https://applink.larksuite.com/client/mini_program/open?mode=appCenter&appId=cli_9cb844403dbb9108&path=pc%2Fpages%2Fapproved%2Findex%3Ftab_name%3Dreviewed
+```
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f5e996c37adfb6be108bb470d8e08f14_NDKqIhjhNH.png?height=1802&lazyload=true&maxWidth=700&width=3120)
+  
+#### **打开审批表单页（发起页）**
+```
+https://applink.larksuite.com/client/mini_program/open?mode=appCenter&appId=cli_9cb844403dbb9108&path=pc%2Fpages%2Fcreate-form%2Findex%3Fid%3D7418928911667068932
+```
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/158026ffb7e043ccd42c80cc594f7838_oQZTVOGjH7.png?height=1682&lazyload=true&maxWidth=700&width=3078)
+
+### PC 侧边栏/分页器示例
+
+#### **打开审批单详情页**
+
+**⚠️侧边栏需要增加mode=sidebar-semi参数，其他与移动端一致**：
+```
+https://applink.larksuite.com/client/mini_program/open?appId=cli_9cb844403dbb9108&mode=sidebar-semi&path=pages%2Fdetail%2Findex%3FinstanceId%3D7418929504369377284
+```
+![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/b42edb609a42c0a10f0d7992a17660f7_LuBqxzxPXL.png?height=1680&lazyload=true&maxWidth=700&width=3076)
