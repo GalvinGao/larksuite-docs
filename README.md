@@ -39,6 +39,8 @@ and empty template fields—are intentionally omitted.
 Legacy internal link destinations such as `/ssl:ttdoc/home/intro` are rewritten to
 `/document/home/intro`. Markdown remains Markdown, inline and fenced code examples remain
 unchanged, and Lark HTML-component `href` attributes receive the same path normalization.
+Lark `<md-table>` components are converted to native Markdown tables; multiline cell content is
+kept on explicit line breaks, and fenced examples inside cells remain formatted as code.
 
 ## Quality checks
 
@@ -50,11 +52,17 @@ cargo test --all-features
 
 ## Automated updates
 
-The `Update documentation mirror` GitHub Actions workflow refreshes `docs/` every day at
-03:23 UTC and can also be started manually from the Actions tab. It tests the fetcher, rebuilds the
-complete documentation tree, and stages only `docs/`. When the generated tree is unchanged, the
-workflow exits without creating a commit. Otherwise, it commits as `github-actions[bot]` and pushes
-directly to the repository's default branch.
+The `Publish fetcher release` GitHub Actions workflow tests and compiles the project whenever `main`
+changes. Each successful build publishes the Linux x86_64 binary and its SHA-256 checksum in a
+commit-specific GitHub Release and marks that release as latest.
 
-The workflow uses the repository `GITHUB_TOKEN` with only `contents: write` permission. Repository
-settings and default-branch rules must allow GitHub Actions to write to the branch.
+The `Update documentation mirror` workflow refreshes `docs/` every day at 03:23 UTC and can also be
+started manually from the Actions tab. It downloads and verifies the binary from the latest release,
+rebuilds the complete documentation tree without compiling Rust, and stages only `docs/`. When the
+generated tree is unchanged, the workflow exits without creating a commit. Otherwise, it commits as
+`github-actions[bot]` and pushes directly to the repository's default branch. The resulting
+`GITHUB_TOKEN` push does not recursively start the release workflow.
+
+Both workflows use the repository `GITHUB_TOKEN` with only `contents: write` permission. Repository
+settings and default-branch rules must allow GitHub Actions to create releases and write to the
+branch.

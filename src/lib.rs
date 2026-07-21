@@ -23,6 +23,11 @@ struct Fence {
     length: usize,
 }
 
+struct TableRow {
+    cells: Vec<String>,
+    is_header: bool,
+}
+
 #[derive(Debug)]
 pub struct FetchOptions {
     pub output: PathBuf,
@@ -451,6 +456,7 @@ fn render_markdown(detail: &DocumentDetail, breadcrumb: &[String]) -> Result<Str
     let yaml = serde_yaml_ng::to_string(&frontmatter).context("failed to serialize frontmatter")?;
 
     let content = normalize_internal_links(&detail.content);
+    let content = normalize_special_tables(&content);
     let mut markdown = format!("---\n{yaml}---\n\n{content}");
     if !markdown.ends_with('\n') {
         markdown.push('\n');
@@ -482,6 +488,330 @@ fn normalize_internal_links(markdown: &str) -> String {
     }
 
     normalized
+}
+
+fn normalize_special_tables(markdown: &str) -> String {
+    let mut normalized = String::with_capacity(markdown.len());
+    let mut cursor = 0;
+    let mut fence = None;
+
+    while cursor < markdown.len() {
+        let line_end = markdown[cursor..]
+            .find('\n')
+            .map_or(markdown.len(), |offset| cursor + offset + 1);
+        let line = &markdown[cursor..line_end];
+
+        if let Some(active_fence) = fence {
+            normalized.push_str(line);
+            if is_closing_fence(line, active_fence) {
+                fence = None;
+            }
+            cursor = line_end;
+            continue;
+        }
+
+        if let Some(opening_fence) = opening_fence(line) {
+            normalized.push_str(line);
+            fence = Some(opening_fence);
+            cursor = line_end;
+            continue;
+        }
+
+        let Some(table_offset) = line.find("<md-table") else {
+            normalized.push_str(line);
+            cursor = line_end;
+            continue;
+        };
+        let table_start = cursor + table_offset;
+        let Some((consumed, table)) = parse_special_table(&markdown[table_start..]) else {
+            normalized.push_str(line);
+            cursor = line_end;
+            continue;
+        };
+
+        normalized.push_str(&markdown[cursor..table_start]);
+        let table_end = table_start + consumed;
+        let wrapper_start = html_wrapper_start(&normalized);
+        let wrapper_end = html_wrapper_end(markdown, table_end);
+        if let (Some(wrapper_start), Some(wrapper_end)) = (wrapper_start, wrapper_end) {
+            normalized.truncate(wrapper_start);
+            cursor = wrapper_end;
+        } else {
+            cursor = table_end;
+        }
+
+        if !normalized.is_empty() && !normalized.ends_with("\n\n") {
+            if !normalized.ends_with('\n') {
+                normalized.push('\n');
+            }
+            normalized.push('\n');
+        }
+        normalized.push_str(&table);
+    }
+
+    normalized
+}
+
+fn parse_special_table(source: &str) -> Option<(usize, String)> {
+    let opening_end = source.find('>')? + 1;
+    let (closing, name) = parse_tag(&source[..opening_end])?;
+    if closing || name != "md-table" {
+        return None;
+    }
+
+    let mut rows = Vec::new();
+    let mut table_depth = 1_usize;
+    let mut in_header = false;
+    let mut row_started = false;
+    let mut row_is_header = false;
+    let mut cells = Vec::new();
+    let mut cell_start = None;
+    let mut cursor = opening_end;
+
+    while cursor < source.len() {
+        let tag_start = source[cursor..].find('<').map(|offset| cursor + offset);
+        let wrapper_end = find_html_wrapper_marker(source, cursor);
+        if let Some(wrapper_end) = wrapper_end.filter(|wrapper_end| {
+            table_depth == 1 && tag_start.is_none_or(|tag| *wrapper_end < tag)
+        }) {
+            finish_table_cell(source, wrapper_end, &mut cell_start, &mut cells);
+            finish_table_row(&mut rows, &mut row_started, row_is_header, &mut cells);
+            return render_markdown_table(rows).map(|table| (wrapper_end, table));
+        }
+
+        let Some(tag_start) = tag_start else {
+            if table_depth == 1 && source[cursor..].trim().is_empty() {
+                finish_table_cell(source, source.len(), &mut cell_start, &mut cells);
+                finish_table_row(&mut rows, &mut row_started, row_is_header, &mut cells);
+                return render_markdown_table(rows).map(|table| (source.len(), table));
+            }
+            return None;
+        };
+        let tag_end = tag_start + source[tag_start..].find('>')? + 1;
+        let Some((closing, name)) = parse_tag(&source[tag_start..tag_end]) else {
+            cursor = tag_end;
+            continue;
+        };
+
+        if is_table_tag(name) {
+            if closing {
+                if table_depth > 1 {
+                    table_depth -= 1;
+                    cursor = tag_end;
+                    continue;
+                }
+
+                finish_table_cell(source, tag_start, &mut cell_start, &mut cells);
+                finish_table_row(&mut rows, &mut row_started, row_is_header, &mut cells);
+                return render_markdown_table(rows).map(|table| (tag_end, table));
+            }
+
+            table_depth += 1;
+            cursor = tag_end;
+            continue;
+        }
+
+        if table_depth > 1 {
+            cursor = tag_end;
+            continue;
+        }
+
+        match (closing, name) {
+            (false, "md-thead" | "thead") => in_header = true,
+            (true, "md-thead" | "thead") => in_header = false,
+            (false, "md-tr" | "tr") => {
+                finish_table_cell(source, tag_start, &mut cell_start, &mut cells);
+                finish_table_row(&mut rows, &mut row_started, row_is_header, &mut cells);
+                row_started = true;
+                row_is_header = in_header;
+            }
+            (true, "md-tr" | "tr") => {
+                finish_table_cell(source, tag_start, &mut cell_start, &mut cells);
+                finish_table_row(&mut rows, &mut row_started, row_is_header, &mut cells);
+            }
+            (false, "md-th" | "th" | "md-td" | "td") => {
+                if !row_started {
+                    row_started = true;
+                    row_is_header = in_header;
+                }
+                if cell_start.is_some_and(|start| !source[start..tag_start].trim().is_empty()) {
+                    finish_table_cell(source, tag_start, &mut cell_start, &mut cells);
+                }
+                cell_start = Some(tag_end);
+            }
+            (true, "md-th" | "th" | "md-td" | "td") => {
+                finish_table_cell(source, tag_start, &mut cell_start, &mut cells);
+            }
+            _ => {}
+        }
+
+        cursor = tag_end;
+    }
+
+    None
+}
+
+fn parse_tag(tag: &str) -> Option<(bool, &str)> {
+    let inside = tag.strip_prefix('<')?.strip_suffix('>')?.trim();
+    let (closing, inside) = inside
+        .strip_prefix('/')
+        .map_or((false, inside), |rest| (true, rest.trim_start()));
+    let name_end = inside
+        .find(|character: char| !(character.is_ascii_alphanumeric() || character == '-'))
+        .unwrap_or(inside.len());
+    (name_end > 0).then_some((closing, &inside[..name_end]))
+}
+
+fn is_table_tag(name: &str) -> bool {
+    matches!(name, "md-table" | "table")
+}
+
+fn finish_table_cell(
+    source: &str,
+    end: usize,
+    cell_start: &mut Option<usize>,
+    cells: &mut Vec<String>,
+) {
+    if let Some(start) = cell_start.take() {
+        cells.push(normalize_table_cell(&source[start..end]));
+    }
+}
+
+fn finish_table_row(
+    rows: &mut Vec<TableRow>,
+    row_started: &mut bool,
+    is_header: bool,
+    cells: &mut Vec<String>,
+) {
+    if *row_started && !cells.is_empty() {
+        rows.push(TableRow {
+            cells: std::mem::take(cells),
+            is_header,
+        });
+    }
+    *row_started = false;
+}
+
+fn normalize_table_cell(cell: &str) -> String {
+    let mut normalized = String::new();
+    let mut fence = None;
+    let mut code = Vec::new();
+
+    for line in cell.trim().lines() {
+        if let Some(active_fence) = fence {
+            if is_closing_fence(line, active_fence) {
+                push_table_cell_part(&mut normalized, &format_code_cell(&code));
+                code.clear();
+                fence = None;
+            } else {
+                code.push(line.trim_end());
+            }
+            continue;
+        }
+
+        if let Some(opening_fence) = opening_fence(line) {
+            fence = Some(opening_fence);
+            continue;
+        }
+
+        let line = line.trim();
+        if !line.is_empty() {
+            push_table_cell_part(&mut normalized, line);
+        }
+    }
+
+    if fence.is_some() {
+        push_table_cell_part(&mut normalized, &format_code_cell(&code));
+    }
+
+    normalized.replace('|', "&#124;")
+}
+
+fn push_table_cell_part(cell: &mut String, part: &str) {
+    if !cell.is_empty()
+        && !cell.ends_with("<br>")
+        && !cell.ends_with("<br/>")
+        && !cell.ends_with("<br />")
+    {
+        cell.push_str("<br>");
+    }
+    cell.push_str(part);
+}
+
+fn format_code_cell(lines: &[&str]) -> String {
+    let code = lines.join("\n");
+    let code = code
+        .replace('&', "&amp;")
+        .replace('<', "&lt;")
+        .replace('>', "&gt;")
+        .replace('\n', "<br>");
+    format!("<code>{code}</code>")
+}
+
+fn render_markdown_table(mut rows: Vec<TableRow>) -> Option<String> {
+    let column_count = rows.iter().map(|row| row.cells.len()).max()?;
+    if column_count == 0 {
+        return None;
+    }
+
+    let header_index = rows.iter().position(|row| row.is_header);
+    let header = header_index.map_or_else(
+        || vec![String::new(); column_count],
+        |index| rows.remove(index).cells,
+    );
+    let mut table = String::new();
+    push_markdown_table_row(&mut table, &header, column_count);
+    table.push('|');
+    for _ in 0..column_count {
+        table.push_str(" --- |");
+    }
+    table.push('\n');
+    for row in rows {
+        push_markdown_table_row(&mut table, &row.cells, column_count);
+    }
+    table.push('\n');
+    Some(table)
+}
+
+fn push_markdown_table_row(table: &mut String, cells: &[String], column_count: usize) {
+    table.push('|');
+    for index in 0..column_count {
+        table.push(' ');
+        table.push_str(cells.get(index).map_or("", String::as_str));
+        table.push_str(" |");
+    }
+    table.push('\n');
+}
+
+fn html_wrapper_start(markdown: &str) -> Option<usize> {
+    let content_end = markdown.trim_end_matches(char::is_whitespace).len();
+    let line_start = markdown[..content_end]
+        .rfind('\n')
+        .map_or(0, |index| index + 1);
+    (markdown[line_start..content_end].trim() == ":::html").then_some(line_start)
+}
+
+fn html_wrapper_end(markdown: &str, table_end: usize) -> Option<usize> {
+    let marker_start =
+        table_end + markdown[table_end..].find(|character: char| !character.is_whitespace())?;
+    let line_end = markdown[marker_start..]
+        .find('\n')
+        .map_or(markdown.len(), |offset| marker_start + offset + 1);
+    (markdown[marker_start..line_end].trim() == ":::").then_some(line_end)
+}
+
+fn find_html_wrapper_marker(markdown: &str, start: usize) -> Option<usize> {
+    let mut line_start = start;
+    while line_start < markdown.len() {
+        let line_end = markdown[line_start..]
+            .find('\n')
+            .map_or(markdown.len(), |offset| line_start + offset + 1);
+        if markdown[line_start..line_end].trim() == ":::" {
+            return Some(line_start);
+        }
+        line_start = line_end;
+    }
+    None
 }
 
 fn opening_fence(line: &str) -> Option<Fence> {
@@ -762,5 +1092,121 @@ mod tests {
         assert!(normalized.contains("'/ssl:ttdoc/home/code'"));
         assert!(normalized.contains("[guide](/document/home/guide)"));
         assert_eq!(normalized.matches("/ssl:ttdoc/").count(), 1);
+    }
+
+    #[test]
+    fn converts_lark_tables_to_native_markdown() {
+        let markdown = concat!(
+            "Before\n\n",
+            ":::html\n",
+            "<md-table>\n",
+            "<md-thead><md-tr>",
+            "<md-th style=\"width: 20%;\">Name</md-th>",
+            "<md-th>Details</md-th>",
+            "</md-tr></md-thead>\n",
+            "<md-tbody><md-tr>",
+            "<md-td>alpha</md-td>",
+            "<md-td>first line\n- second | value</md-td>",
+            "</md-tr></md-tbody>\n",
+            "</md-table>\n",
+            ":::\n\n",
+            "After\n",
+        );
+
+        let normalized = normalize_special_tables(markdown);
+
+        assert!(normalized.contains("| Name | Details |\n| --- | --- |"));
+        assert!(normalized.contains("| alpha | first line<br>- second &#124; value |"));
+        assert!(!normalized.contains("<md-table>"));
+        assert!(!normalized.contains(":::html"));
+        assert!(normalized.ends_with("After\n"));
+    }
+
+    #[test]
+    fn converts_headerless_and_mixed_tag_tables_without_dropping_rows() {
+        let markdown = concat!(
+            "<md-table><md-tbody>",
+            "<md-tr><md-th>HTTP URL</md-th><md-td>/open-apis/example</md-td></md-tr>",
+            "<md-tr><md-th>HTTP Method</md-th><md-td>GET</md-td></md-tr>",
+            "</tbody></table>",
+        );
+
+        let normalized = normalize_special_tables(markdown);
+
+        assert!(normalized.starts_with("|  |  |\n| --- | --- |\n"));
+        assert!(normalized.contains("| HTTP URL | /open-apis/example |"));
+        assert!(normalized.contains("| HTTP Method | GET |"));
+    }
+
+    #[test]
+    fn converts_tables_terminated_only_by_the_html_directive() {
+        let markdown = concat!(
+            ":::html\n",
+            "<md-table><md-thead><md-tr><md-th>Status</md-th></md-tr></md-thead>\n",
+            "<md-tbody><md-tr><md-td>400</md-td></md-tr>\n",
+            ":::\n",
+            "After\n",
+        );
+
+        let normalized = normalize_special_tables(markdown);
+
+        assert!(normalized.starts_with("| Status |\n| --- |\n| 400 |\n"));
+        assert!(normalized.ends_with("After\n"));
+        assert!(!normalized.contains("<md-table>"));
+        assert!(!normalized.contains(":::html"));
+    }
+
+    #[test]
+    fn converts_unclosed_tables_at_end_of_document() {
+        let markdown = concat!(
+            "<md-table><md-thead><md-tr>",
+            "<md-th><md-td>Name</md-td></md-th>",
+            "<md-th>Type</md-th>",
+            "</md-tr></md-thead>",
+            "<md-tbody><md-tr><md-td>alpha</md-td><md-td>string</md-td></md-tr>\n",
+        );
+
+        let normalized = normalize_special_tables(markdown);
+
+        assert_eq!(
+            normalized,
+            "| Name | Type |\n| --- | --- |\n| alpha | string |\n\n"
+        );
+    }
+
+    #[test]
+    fn keeps_fenced_examples_inside_markdown_table_cells() {
+        let markdown = concat!(
+            "<md-table><md-thead><md-tr><md-th>Example</md-th></md-tr></md-thead>",
+            "<md-tbody><md-tr><md-td>\n",
+            "```json\n",
+            "{\"pipe\":\"a|b\",\"tag\":\"<x>&\"}\n",
+            "```\n",
+            "</md-td></md-tr></md-tbody></md-table>",
+        );
+
+        let normalized = normalize_special_tables(markdown);
+
+        assert!(
+            normalized.contains("<code>{\"pipe\":\"a&#124;b\",\"tag\":\"&lt;x&gt;&amp;\"}</code>")
+        );
+        assert_eq!(
+            normalized
+                .lines()
+                .filter(|line| line.starts_with('|'))
+                .count(),
+            3
+        );
+    }
+
+    #[test]
+    fn leaves_special_table_examples_in_fenced_code_unchanged() {
+        let markdown = concat!(
+            "```html\n",
+            "<md-table><md-tr><md-td>example</md-td></md-tr></md-table>\n",
+            "```\n",
+        );
+
+        assert_eq!(normalize_special_tables(markdown), markdown);
     }
 }
