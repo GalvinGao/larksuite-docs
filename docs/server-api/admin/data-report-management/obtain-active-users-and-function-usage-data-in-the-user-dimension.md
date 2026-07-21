@@ -9,7 +9,7 @@ breadcrumb:
 - Data report management
 - Obtain active users and function usage data in the user dimension
 document_type: ReferenceDocumentType
-updated_at: 2024-06-17T02:34:25Z
+updated_at: 2026-07-21T10:57:20Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/admin-v1/admin_user_stat/list
 ---
 
@@ -27,7 +27,9 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 <md-alert type="warn">
 - 只有企业自建应用才有权限调用此接口
 
-- 当天的数据会在第二天的早上九点半产出（UTC+8）
+- 当天的数据会在第二天的早上九点半产出（CN时区: UTC+8，非CN时区: UTC+0）
+
+- 数据权限范围配置：目前只支持给每个应用配置部门级别数据权限范围，默认包含子部门
 </md-alert>
 :::
 
@@ -59,7 +61,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
     </md-tr>
     <md-tr>
       <md-th>接口频率限制</md-th>
-      <md-td>[特殊频控](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
+      <md-td>[20 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
     </md-tr>
     <md-tr>
       <md-th>支持的应用类型</md-th>
@@ -85,7 +87,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
         <md-alert type="tip" icon="none">
         该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
         </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
+        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm>
       </md-td>
     </md-tr>
   </md-tbody>
@@ -315,7 +317,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 	否
 	</md-dt-td>
 	<md-dt-td>
-	需跨域访问的Geo数据，每个Geo仅包含本Geo数据，不传默认查本地数据，调用前需要先开通FG（cn、us、sg、jp），每次只能查一个Geo数据
+	需跨域访问的Geo数据，每个Geo仅包含本Geo数据，不传默认查本地数据，调用前需要先开通MG（cn、us、sg、jp），每次只能查一个Geo数据
 
 **示例值**：cn
 	</md-dt-td>
@@ -931,7 +933,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
                 "active_os": "'ios 14.2,-','ios 14.2,lark 3.40.0-alpha'",
                 "create_task_num": 0,
                 "vc_num": 0,
-                "app_package_type": "Lark，Lark",
+                "app_package_type": "Lark",
                 "os_name": "iOS,Andorid,Windows",
                 "email_send_count": "2",
                 "email_receive_count": "3",
@@ -978,6 +980,14 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
   <md-td>1051002</md-td>
   <md-td>request to exceed authority</md-td>
   <md-td>请求发生越权</md-td>
+</md-tr>
+
+
+<md-tr>
+  <md-td>400</md-td>
+  <md-td>1051003</md-td>
+  <md-td>There is no query permission for this department's data, please apply for permission for the application first</md-td>
+  <md-td>应用数据权限范围不包含当前数据，需要在开放平台应用后台的「权限管理」->「开通权限」模块申请所需数据权限</md-td>
 </md-tr>
 
 

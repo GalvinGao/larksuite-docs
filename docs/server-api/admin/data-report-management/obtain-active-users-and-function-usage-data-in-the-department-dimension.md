@@ -9,7 +9,7 @@ breadcrumb:
 - Data report management
 - Obtain active users and function usage data in the department dimension
 document_type: ReferenceDocumentType
-updated_at: 2024-06-17T02:34:24Z
+updated_at: 2026-07-21T10:57:19Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/admin-v1/admin_dept_stat/list
 ---
 
@@ -27,7 +27,9 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 <md-alert type="warn">
 - 只有企业自建应用才有权限调用此接口
 
-- 当天的数据会在第二天的早上九点半产出（UTC+8）
+- 当天的数据会在第二天的早上九点半产出（CN时区: UTC+8，非CN时区: UTC+0）
+
+- 数据权限范围配置：目前只支持给每个应用配置部门级别数据权限范围，默认包含子部门（应用数据权限在开放平台配置）
 </md-alert>
 :::
 
@@ -59,7 +61,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
     </md-tr>
     <md-tr>
       <md-th>接口频率限制</md-th>
-      <md-td>[特殊频控](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
+      <md-td>[20 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
     </md-tr>
     <md-tr>
       <md-th>支持的应用类型</md-th>
@@ -162,7 +164,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 	是
 	</md-dt-td>
 	<md-dt-td>
-	起始日期（包含），格式是YYYY-mm-dd
+	起始日期（包含），格式是YYYY-mm-dd（CN UTC+8，非CN UTC+0）
 
 **示例值**：2020-02-15
 	</md-dt-td>
@@ -180,7 +182,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 	是
 	</md-dt-td>
 	<md-dt-td>
-	终止日期（包含），格式是YYYY-mm-dd，起止日期之间相差不能超过91天（包含91天）
+	终止日期（包含），格式是YYYY-mm-dd，与起止日期start_date之间相差不能超过91天（包含91天）（CN UTC+8，非CN UTC+0）
 
 **示例值**：2020-02-15
 	</md-dt-td>
@@ -198,7 +200,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 	是
 	</md-dt-td>
 	<md-dt-td>
-	部门的 ID，取决于department_id_type，仅支持根部门及其下前4级子部门
+	部门的 ID，取决于department_id_type，仅支持根部门及其下前4级子部门（通过管理后台部门详情获取）
 
 **示例值**：od-382e2793cfc9471f892e8a672987654c
 	</md-dt-td>
@@ -234,7 +236,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 	否
 	</md-dt-td>
 	<md-dt-td>
-	分页大小
+	默认值是10，表示每页返回10条数据
 
 **示例值**：10
 
@@ -274,9 +276,27 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 	否
 	</md-dt-td>
 	<md-dt-td>
-	需跨域访问的Geo数据，每个Geo仅包含本Geo数据，不传默认查本地数据，调用前需要先开通FG(cn、sg、jp、us)
+	需跨域访问的Geo数据，每个Geo仅包含本Geo数据，不传默认查本地数据，调用前需要先开通MG(cn、sg、jp、us)
 
 **示例值**：cn
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >with_product_version</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >boolean</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	否
+	</md-dt-td>
+	<md-dt-td>
+	是否返回分产品版本数据，默认false，不返回
+
+**示例值**：true(默认是false)
 	</md-dt-td>
 </md-dt-tr>
 
@@ -930,6 +950,19 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 </md-dt-tr>
 
 
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >product_version</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	产品版本名称
+	</md-dt-td>
+</md-dt-tr>
+
+
   </md-dt-tbody>
 </md-dt-table>
 :::
@@ -988,7 +1021,8 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
                 "search_active_dau": "7",
                 "total_search_count": "7",
                 "quick_search_count": "7",
-                "tab_search_count": "7"
+                "tab_search_count": "7",
+                "product_version": "全部产品版本"
             }
         ]
     }
@@ -1015,15 +1049,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
   <md-td>500</md-td>
   <md-td>1051001</md-td>
   <md-td>request contain invalid param</md-td>
-  <md-td>请求中包含非法参数</md-td>
+  <md-td>请检查请求参数是否符合接口要求</md-td>
 </md-tr>
 
 
 <md-tr>
   <md-td>400</md-td>
   <md-td>1051002</md-td>
-  <md-td>request to exceed authority</md-td>
-  <md-td>请求发生越权</md-td>
+  <md-td>application has no access to the resource</md-td>
+  <md-td>请检查应用是否具备访问该资源的权限</md-td>
+</md-tr>
+
+
+<md-tr>
+  <md-td>400</md-td>
+  <md-td>1051003</md-td>
+  <md-td>There is no query permission for this department's data, please apply for permission for the application first</md-td>
+  <md-td>应用数据权限范围不包含当前数据，需要在开放平台应用后台的「权限管理」->「开通权限」模块申请所需数据权限</md-td>
 </md-tr>
 
 
