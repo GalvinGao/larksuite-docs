@@ -47,3 +47,14 @@ cargo fmt --all --check
 cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-features
 ```
+
+## Automated updates
+
+The `Update documentation mirror` GitHub Actions workflow refreshes `docs/` every day at
+03:23 UTC and can also be started manually from the Actions tab. It tests the fetcher, rebuilds the
+complete documentation tree, and stages only `docs/`. When the generated tree is unchanged, the
+workflow exits without creating a commit. Otherwise, it commits as `github-actions[bot]` and pushes
+directly to the repository's default branch.
+
+The workflow uses the repository `GITHUB_TOKEN` with only `contents: write` permission. Repository
+settings and default-branch rules must allow GitHub Actions to write to the branch.
