@@ -20,89 +20,22 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uETOuETOuETO/file_syste
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-<md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V4.11.0+</md-version></md-td>
-      <md-td><md-version>V4.11.0+</md-version></md-td>
-      <md-td><md-version>V5.23.0+</md-version></md-td>
-      <md-td><md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" 
-path="page/API/pages/file/file" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V4.11.0+</md-version></md-td>
-      <md-td><md-version>V4.11.0+</md-version></md-td>
-      <md-td><md-version>V5.23.0+</md-version></md-td>
-<md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"
-fontSize="14">预览</md-preview-app> </md-td>
-    </md-tr>
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V4.11.0+</md-version> | <md-version>V4.11.0+</md-version> | <md-version>V5.23.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104"<br>path="page/API/pages/file/file" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V4.11.0+</md-version> | <md-version>V4.11.0+</md-version> | <md-version>V5.23.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"<br>fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                path
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                本地文件路径
 
-**示例值**：ttfile://temp
-              
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| path | string | 是 |  | 本地文件路径<br>**示例值**：ttfile://temp |
 
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 
@@ -112,145 +45,17 @@ fontSize="14">预览</md-preview-app> </md-td>
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
 
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                stat
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                Stats 对象
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    mode
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                文件的类型和存取的权限，对应 POSIX stat.st_mode
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    size
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                文件大小，单位：B，对应 POSIX stat.st_size
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    lastAccessedTime
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                文件最近一次被存取或被执行的时间，UNIX 时间戳，对应 POSIX stat.st_atime
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    lastModifiedTime
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                文件最后一次被修改的时间，UNIX 时间戳，对应 POSIX stat.st_mtime
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [isDirectory()](/document/uYjL24iN/uETOuETOuETO/stat/stats_is_directory)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                判断当前文件是否一个目录
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [isFile()](/document/uYjL24iN/uETOuETOuETO/stat/stats_is_file)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                判断当前文件是否一个普通文件
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| stat | object | Stats 对象 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>mode<br></md-text> | number | 文件的类型和存取的权限，对应 POSIX stat.st_mode |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>size<br></md-text> | number | 文件大小，单位：B，对应 POSIX stat.st_size |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>lastAccessedTime<br></md-text> | number | 文件最近一次被存取或被执行的时间，UNIX 时间戳，对应 POSIX stat.st_atime |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>lastModifiedTime<br></md-text> | number | 文件最后一次被修改的时间，UNIX 时间戳，对应 POSIX stat.st_mtime |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[isDirectory()](/document/uYjL24iN/uETOuETOuETO/stat/stats_is_directory)<br></md-text> | function | 判断当前文件是否一个目录 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[isFile()](/document/uYjL24iN/uETOuETOuETO/stat/stats_is_file)<br></md-text> | function | 判断当前文件是否一个普通文件 |
+
 
 
 ## 示例代码

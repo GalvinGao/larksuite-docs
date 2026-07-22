@@ -27,138 +27,24 @@ writeBLECharacteristicValue(Object object) 用于写入蓝牙数据。
 
 该接口仅支持小程序调用，对应的客户端版本支持情况如下所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/bluetooth/bluetooth" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.25+</md-version> | <md-version>V3.25+</md-version> | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/bluetooth/bluetooth" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V7.3+</md-version> | <md-version>V7.3+</md-version> | **X** | / |
 
-
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V7.3+</md-version></md-td>
-      <md-td><md-version>V7.3+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
 
 
 ## 输入
 
 该接口继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性如下所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                是否必填
-            </md-th>
-            <md-th style="width: 15%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                deviceId
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>\-</md-td>
-            <md-td>
-               蓝牙设备 ID。获取方式可参见 [getBluetoothDevices](/document/uYjL24iN/uQDOxYjL0gTM24CN4EjN) 的输出 `devices` 对象。
-              
-**示例值**：'FF:24:79:5D:6D:0C'
+| 名称 | 数据类型 | 是否必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| deviceId | string | 是 | \- | 蓝牙设备 ID。获取方式可参见 [getBluetoothDevices](/document/uYjL24iN/uQDOxYjL0gTM24CN4EjN) 的输出 `devices` 对象。<br>**示例值**：'FF:24:79:5D:6D:0C' |
+| serviceId | string | 是 | \- | 蓝牙特征值对应 service 的 uuid。 |
+| characteristicId | string | 是 | \- | 蓝牙特征值的 uuid。 |
+| value | hex string | 是 | \- | 蓝牙设备特征值对应的值，16 进制字符串，限制在 20 字节内。 |
 
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                serviceId
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>\-</md-td>
-            <md-td>
-               蓝牙特征值对应 service 的 uuid。
-
-            </md-td>
-        </md-tr>
-            <md-tr>
-            <md-td>
-                characteristicId
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>\-</md-td>
-            <md-td>
-               蓝牙特征值的 uuid。
-
-            </md-td>
-        </md-tr>
-                  <md-tr>
-            <md-td>
-                value
-            </md-td>
-            <md-td>
-                hex string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>\-</md-td>
-            <md-td>
-               蓝牙设备特征值对应的值，16 进制字符串，限制在 20 字节内。
-
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 

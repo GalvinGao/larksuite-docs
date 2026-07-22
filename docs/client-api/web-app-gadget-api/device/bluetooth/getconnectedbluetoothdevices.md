@@ -21,158 +21,34 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMDOxYjLzgTM24yM4EjN
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/bluetooth/bluetooth" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V7.3+</md-version></md-td>
-      <md-td><md-version>V7.3+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.25+</md-version> | <md-version>V3.25+</md-version> | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/bluetooth/bluetooth" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V7.3+</md-version> | <md-version>V7.3+</md-version> | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                services
-            </md-td>
-            <md-td>
-                string[]
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                蓝牙设备主 service 的 uuid 列表
 
-**示例值**：['0000181a-0000-1000-8000-00805f9b34fb']
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| services | string[] | 否 |  | 蓝牙设备主 service 的 uuid 列表<br>**示例值**：['0000181a-0000-1000-8000-00805f9b34fb'] |
+
 
 
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                devices
-            </md-td>
-            <md-td>
-                object[]
-            </md-td>
-            <md-td>
-                搜索到的设备列表
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    name
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                蓝牙设备名称，某些设备可能没有
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    deviceId
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用于区分设备的 id
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| devices | object[] | 搜索到的设备列表 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>name<br></md-text> | string | 蓝牙设备名称，某些设备可能没有 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>deviceId<br></md-text> | string | 用于区分设备的 id |
+
 
 
 ## 示例代码

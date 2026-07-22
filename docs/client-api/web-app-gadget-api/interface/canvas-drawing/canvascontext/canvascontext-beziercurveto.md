@@ -20,181 +20,25 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukjMy4SOyIjL5IjM/canvas
 添加三次贝塞尔曲线到路径中
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-          <md-td>cp1x</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            控制点1 x 坐标
-            
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| cp1x | number | 是 |  | 控制点1 x 坐标 |
+| cp1y | number | 是 |  | 控制点1 y 坐标 |
+| cp2x | number | 是 |  | 控制点2 x 坐标 |
+| cp2y | number | 是 |  | 控制点2 y 坐标 |
+| x | number | 是 |  | x 坐标 |
+| y | number | 是 |  | y 坐标 |
 
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>cp1y</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            控制点1 y 坐标
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>cp2x</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            控制点2 x 坐标
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>cp2y</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            控制点2 y 坐标
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>x</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            x 坐标
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>y</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            y 坐标
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 

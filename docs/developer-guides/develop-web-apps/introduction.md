@@ -36,63 +36,16 @@ Lark客户端网页（Web）应用指的是用 H5 方式开发，可以运行在
 
 网页应用提供了以下容器开放能力。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">开放能力</md-th>
-<md-th style="width:70%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 开放能力 | 说明 |
+| --- | --- |
+| [web-meta](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/web-meta) | web-meta 是网页的元数据，用于定义网页特性。在Lark中运行的网页支持通过 web-meta 定制网页容器的表现，即使该网页不是一个网页应用。 |
+| [设置屏幕方向](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/orientation) | 该能力用于设定网页在屏幕展示的方式，支持强制横屏、强制竖屏、跟随系统设置。 |
+| [配置更多菜单的功能](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/hidemoremenuitems) | 在网页更多菜单面板中，支持配置部分功能入口的启停状态，即是否置灰功能按钮。例如，屏蔽更多菜单转发及复制链接功能。 |
+| [侧滑关闭应用](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/slide-to-close-apps) | 开启该功能后，使用屏幕边缘右滑的交互手势或点击左侧导航返回按钮时，直接关闭网页应用，而不是在会话历史记录中返回上一页。 |
+| [隐藏导航栏](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/hide-the-navigation-bar) | 该能力用于控制是否在页面顶部隐藏导航栏。 |
+| [设置导航栏颜色](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/set-navigation-bar-color) | 该能力通过以下参数设置导航栏的颜色。<br>- 通过 navFgColor 参数设置导航栏前景颜色。<br>- 通过 navBgColor 参数设置导航栏背景颜色。 |
+| [隐藏导航栏按钮](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/hide-the-navigation-bar-button) | 该能力支持隐藏页面顶部左右两侧的导航栏按钮。<br>- showNavLBarBtn 参数用于隐藏左侧导航按钮。<br>- showNavRBarBtn 参数用于隐藏右侧导航按钮。 |
 
-<md-tr>
-<md-td>[web-meta](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/web-meta)</md-td>
-<md-td>web-meta 是网页的元数据，用于定义网页特性。在Lark中运行的网页支持通过 web-meta 定制网页容器的表现，即使该网页不是一个网页应用。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>[设置屏幕方向](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/orientation)</md-td>
-<md-td>该能力用于设定网页在屏幕展示的方式，支持强制横屏、强制竖屏、跟随系统设置。</md-td>
-</md-tr>
-  
-
-<md-tr>
-<md-td>[配置更多菜单的功能](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/hidemoremenuitems)</md-td>
-<md-td>在网页更多菜单面板中，支持配置部分功能入口的启停状态，即是否置灰功能按钮。例如，屏蔽更多菜单转发及复制链接功能。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>[侧滑关闭应用](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/slide-to-close-apps)</md-td>
-<md-td>开启该功能后，使用屏幕边缘右滑的交互手势或点击左侧导航返回按钮时，直接关闭网页应用，而不是在会话历史记录中返回上一页。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>[隐藏导航栏](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/hide-the-navigation-bar)</md-td>
-<md-td>该能力用于控制是否在页面顶部隐藏导航栏。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>[设置导航栏颜色](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/set-navigation-bar-color)</md-td>
-<md-td>该能力通过以下参数设置导航栏的颜色。
-
-- 通过 navFgColor 参数设置导航栏前景颜色。
-
-- 通过 navBgColor 参数设置导航栏背景颜色。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>[隐藏导航栏按钮](/document/uYjL24iN/uMTMuMTMuMTM/web-app-open-ability/hide-the-navigation-bar-button)</md-td>
-<md-td>该能力支持隐藏页面顶部左右两侧的导航栏按钮。
-
-- showNavLBarBtn 参数用于隐藏左侧导航按钮。
-
-- showNavRBarBtn 参数用于隐藏右侧导航按钮。</md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
-:::
 
 ## 开放接口（H5 JSAPI）
 

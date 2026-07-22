@@ -21,64 +21,16 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uITO4IjLykDOy4iM5gjM
 
 在开发网页应用时，可能涉及到的基本概念如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">属性</md-th>
-<md-th style="width:75%">类型</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 属性 | 类型 |
+| --- | --- |
+| 鉴权 | 当你调用[开放平台客户端 API（JSAPI）](/document/uYjL24iN/uMTMuMTMuMTM/)时，Lark为了数据安全，需要先验证网页应用有权限访问的 JSAPI 范围，该过程称为鉴权。 |
+| 免登 | 免登是指Lark用户在客户端内进入网页应用后，无需输入Lark用户名和密码，网页应用便可自动获取当前用户身份，进而登录系统的流程。 |
+| JSSDK | Lark客户端 JSSDK 是Lark面向客户端网页开发者（接入方）提供的网页开发工具包，仅可用在Lark客户端内。 |
+| access_token | access_token 是带有授权的Lark开放平台访问凭证，该访问凭证代表应用从平台、租户（指公司或者团队）、用户手中获得的授权。如需调用Lark服务端 API，则网页应用需要从Lark开放平台获取相应的访问凭证（access token）。开放平台提供了 3 种不同类型的访问凭证，分别为应用授权凭证 app_access_token、租户授权凭证 tenant_access_token、用户授权凭证 user_access_token，用于验证调用方身份、确保调用方具有执行操作所需要的权限。关于凭证的更多说明，可参见[获取访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。 |
+| jsapi_ticket | `jsapi_ticket`代表网页应用调用Lark JSAPI 的临时凭证，是实现鉴权校验的重要数据。<br>鉴权方式：对比接入方服务端依据`jsapi_ticket`等数据生成的签名，与认证中心依据`jsapi_ticket`等数据生成的签名，若两个签名相等即为鉴权成功。 |
+| 签名 | 签名是用于 JSSDK 权限验证的一段密文。为了防止数据泄露，会对`jsapi_ticket`、网页 URL 等参数拼接成字符串`verifyStr`，并用 sha1 数据加密算法对`verifyStr`进行加密，得到的密文就是签名`signature`。 |
+| URL | URL 的标准格式：`[传送协议 Schema]://[域名 Domain]:[端口号 Port]/[路径 Path][文件名]?[查询 query]#[片段 ID]`，其中`端口号`、`[查询]`、`[片段 ID]`都属于选填项。如下图所示：<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/35c7184c84281502cc08795beb7c8328_EF7slaaFfx.png?height=174&lazyload=true&width=1714)<br>- `https` 是 HTTPS 安全传输协议。<br>- `www.example.com` 是域名，表明正在请求哪个 Web 服务器，也可以直接使用 IP 地址。<br>- `:443` 是端口，如果 Web 服务器使用 HTTP 协议的标准端口（HTTP 为 80，HTTPS 为 443）来授予其资源的访问权限，则通常会被忽略，否则是强制性的。<br>- `/path/to/myfile.html` 是网络服务器上资源的路径。<br>- `?key1=value1&key2=value2` 是提供给网络服务器的额外参数。<br>- `#SomewhereInTheDocument` 打开页面时滚动到该锚点位置。 |
 
-<md-tr>
-<md-td>鉴权</md-td>
-<md-td>当你调用[开放平台客户端 API（JSAPI）](/document/uYjL24iN/uMTMuMTMuMTM/)时，Lark为了数据安全，需要先验证网页应用有权限访问的 JSAPI 范围，该过程称为鉴权。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>免登</md-td>
-<md-td>免登是指Lark用户在客户端内进入网页应用后，无需输入Lark用户名和密码，网页应用便可自动获取当前用户身份，进而登录系统的流程。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>JSSDK</md-td>
-<md-td>Lark客户端 JSSDK 是Lark面向客户端网页开发者（接入方）提供的网页开发工具包，仅可用在Lark客户端内。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>access_token</md-td>
-<md-td>access_token 是带有授权的Lark开放平台访问凭证，该访问凭证代表应用从平台、租户（指公司或者团队）、用户手中获得的授权。如需调用Lark服务端 API，则网页应用需要从Lark开放平台获取相应的访问凭证（access token）。开放平台提供了 3 种不同类型的访问凭证，分别为应用授权凭证 app_access_token、租户授权凭证 tenant_access_token、用户授权凭证 user_access_token，用于验证调用方身份、确保调用方具有执行操作所需要的权限。关于凭证的更多说明，可参见[获取访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>jsapi_ticket</md-td>
-<md-td>`jsapi_ticket`代表网页应用调用Lark JSAPI 的临时凭证，是实现鉴权校验的重要数据。
-鉴权方式：对比接入方服务端依据`jsapi_ticket`等数据生成的签名，与认证中心依据`jsapi_ticket`等数据生成的签名，若两个签名相等即为鉴权成功。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>签名</md-td>
-<md-td>签名是用于 JSSDK 权限验证的一段密文。为了防止数据泄露，会对`jsapi_ticket`、网页 URL 等参数拼接成字符串`verifyStr`，并用 sha1 数据加密算法对`verifyStr`进行加密，得到的密文就是签名`signature`。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>URL</md-td>
-<md-td>URL 的标准格式：`[传送协议 Schema]://[域名 Domain]:[端口号 Port]/[路径 Path][文件名]?[查询 query]#[片段 ID]`，其中`端口号`、`[查询]`、`[片段 ID]`都属于选填项。如下图所示：
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/35c7184c84281502cc08795beb7c8328_EF7slaaFfx.png?height=174&lazyload=true&width=1714)
-
-- `https` 是 HTTPS 安全传输协议。
-- `www.example.com` 是域名，表明正在请求哪个 Web 服务器，也可以直接使用 IP 地址。
-- `:443` 是端口，如果 Web 服务器使用 HTTP 协议的标准端口（HTTP 为 80，HTTPS 为 443）来授予其资源的访问权限，则通常会被忽略，否则是强制性的。
-- `/path/to/myfile.html` 是网络服务器上资源的路径。
-- `?key1=value1&key2=value2` 是提供给网络服务器的额外参数。
-- `#SomewhereInTheDocument` 打开页面时滚动到该锚点位置。 </md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 角色说明
 

@@ -29,121 +29,22 @@ enterProfile(Object object) 用于进入个人信息主页。
 
 该接口支持小程序和网页应用调用，对应的客户端版本支持情况如下所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-     <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>4.0.0</md-version> | <md-version>4.0.0</md-version> | <md-version>4.0.0</md-version> | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>4.0.0</md-version></md-td>
-      <md-td><md-version>4.0.0</md-version></md-td>
-      <md-td><md-version>4.0.0</md-version></md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性说明如下。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                是否必填
-            </md-th>
-            <md-th style="width: 15%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                openid
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>\-</md-td>
-            <md-td>
-                用户的 open_id。关于获取用户 ID 的操作说明，可参见 [如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                left
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                0
-            </md-td>
-            <md-td>
-                用户卡片原点（左上角）横坐标。单位：px
-<md-alert type="tip" icon="none">
-**注意**：Android、iOS 端暂不支持该字段。
-</md-alert>  
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                top
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                0
-            </md-td>
-            <md-td>
-                用户卡片原点（左上角）纵坐标。单位：px
-<md-alert type="tip" icon="none">
-**注意**：Android、iOS 端暂不支持该字段。
-</md-alert>  
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| openid | string | 是 | \- | 用户的 open_id。关于获取用户 ID 的操作说明，可参见 [如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。 |
+| left | number | 否 | 0 | 用户卡片原点（左上角）横坐标。单位：px<br><md-alert type="tip" icon="none"><br>**注意**：Android、iOS 端暂不支持该字段。<br></md-alert> |
+| top | number | 否 | 0 | 用户卡片原点（左上角）纵坐标。单位：px<br><md-alert type="tip" icon="none"><br>**注意**：Android、iOS 端暂不支持该字段。<br></md-alert> |
+
 
 ## 输出
 

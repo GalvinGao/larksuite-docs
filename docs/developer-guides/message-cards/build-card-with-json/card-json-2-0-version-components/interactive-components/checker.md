@@ -119,368 +119,44 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 勾选器各字段说明如下表所示。
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">字段</md-th>
-<md-th style="width: 10%;">必填</md-th>
-<md-th style="width: 10%;">类型</md-th>
-<md-th style="width: 15%;">默认值</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>
-组件的标签。勾选器组件的固定值为 `checker`。
-</md-td>
-</md-tr>
-  
-  
-  
-  
-  <md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-      
-      
-  <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-  
-<md-tr>
-<md-td>name</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-勾选器组件的唯一标识。用于识别用户提交的数据属于哪个组件。
-  
-**注意**：当勾选器组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>checked</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-勾选器的初始勾选状态。可选值：
-- true：已勾选状态
-- false：未勾选状态
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-text
-</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>
-勾选器组件内的普通文本信息。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ tag
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-文本类型的标签。可取值：
-- `plain_text`：普通文本内容
-- `lark_md`：支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)
-  
-**注意**：Lark卡片搭建工具中仅支持使用 `plain_text` 类型的普通文本组件。你可使用富文本组件添加 Markdown 格式的文本。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ content
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>
-文本内容。当 `tag` 为 `lark_md` 时，支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ text_size
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>normal</md-td>
-<md-td>
-文本大小。可取值：
-- `normal`：正文（14px）
-- `heading`：标题（16px）
-- `notation`：辅助信息（12px）
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ text_color
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>
-文本的颜色。仅在 `tag` 为 `plain_text` 时生效。可取值：
-- `default`：客户端浅色主题模式下为黑色；客户端深色主题模式下为白色
-- 颜色的枚举值。详情参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ text_align
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>left</md-td>
-<md-td>
-文本对齐方式。可取值：
-- `left`：左对齐
-- `center`：居中对齐
-- `right`：右对齐
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>overall_checkable</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>true</md-td>
-<md-td>
-当光标悬浮在勾选器上时，勾选器整体是否有阴影效果。
 
-**注意**：要取消阴影效果，你需确保 `overall_checkable` 为 `false` 且 `pc_display_rule` 不为 `on_hover`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>button_area</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>
-按钮区配置。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ pc_display_rule</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>always</md-td>
-<md-td>
-PC 端勾选器内按钮的展示规则。移动端始终显示按钮。可取值：
-- `always`：按钮始终显示。
-- `on_hover`：当光标悬浮在勾选器上时，按钮显示且勾选器整体有阴影效果。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ buttons</md-td>
-<md-td>否</md-td>
-<md-td>Array&lt;Object&gt;</md-td>
-<md-td>[]</md-td>
-<md-td>
-在勾选器中添加并配置按钮。最多可配置三个按钮。详情参考[按钮](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-components/interactive-components/button)。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>checked_style</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>
-勾选状态样式。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ show_strikethrough</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否展示内容区的贯穿式删除线。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ opacity</md-td>
-<md-td>否</md-td>
-<md-td>Number</md-td>
-<md-td>1</md-td>
-<md-td>
-内容区的不透明度。取值范围为 [0,1] 之间的数字，不限小数位数。
-</md-td>
-</md-tr>
+| 字段 | 必填 | 类型 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 组件的标签。勾选器组件的固定值为 `checker`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| margin | 否 | String | 0 | 组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| name | 否 | String | 空 | 勾选器组件的唯一标识。用于识别用户提交的数据属于哪个组件。<br>**注意**：当勾选器组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。 |
+| checked | 否 | Boolean | false | 勾选器的初始勾选状态。可选值：<br>- true：已勾选状态<br>- false：未勾选状态 |
+| text | 否 | Object | / | 勾选器组件内的普通文本信息。 |
+| └ tag | 是 | String | plain_text | 文本类型的标签。可取值：<br>- `plain_text`：普通文本内容<br>- `lark_md`：支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)<br>**注意**：Lark卡片搭建工具中仅支持使用 `plain_text` 类型的普通文本组件。你可使用富文本组件添加 Markdown 格式的文本。 |
+| └ content | 是 | String | / | 文本内容。当 `tag` 为 `lark_md` 时，支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text) |
+| └ text_size | 否 | String | normal | 文本大小。可取值：<br>- `normal`：正文（14px）<br>- `heading`：标题（16px）<br>- `notation`：辅助信息（12px） |
+| └ text_color | 否 | String | default | 文本的颜色。仅在 `tag` 为 `plain_text` 时生效。可取值：<br>- `default`：客户端浅色主题模式下为黑色；客户端深色主题模式下为白色<br>- 颜色的枚举值。详情参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color) |
+| └ text_align | 否 | String | left | 文本对齐方式。可取值：<br>- `left`：左对齐<br>- `center`：居中对齐<br>- `right`：右对齐 |
+| overall_checkable | 否 | Boolean | true | 当光标悬浮在勾选器上时，勾选器整体是否有阴影效果。<br>**注意**：要取消阴影效果，你需确保 `overall_checkable` 为 `false` 且 `pc_display_rule` 不为 `on_hover`。 |
+| button_area | 否 | Object | / | 按钮区配置。 |
+| └ pc_display_rule | 否 | String | always | PC 端勾选器内按钮的展示规则。移动端始终显示按钮。可取值：<br>- `always`：按钮始终显示。<br>- `on_hover`：当光标悬浮在勾选器上时，按钮显示且勾选器整体有阴影效果。 |
+| └ buttons | 否 | Array&lt;Object&gt; | [] | 在勾选器中添加并配置按钮。最多可配置三个按钮。详情参考[按钮](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-components/interactive-components/button)。 |
+| checked_style | 否 | Object | / | 勾选状态样式。 |
+| └ show_strikethrough | 否 | Boolean | false | 是否展示内容区的贯穿式删除线。 |
+| └ opacity | 否 | Number | 1 | 内容区的不透明度。取值范围为 [0,1] 之间的数字，不限小数位数。 |
+| padding | 否 | String | 0 | 组件的内边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br><strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| └ title | 是 | Struct | / | 二次确认弹窗标题。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| └ text | 是 | Struct | / | 二次确认弹窗的文本内容。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
+| behaviors | 是 | Struct | / | 配置交互类型和具体交互行为。未配置 `behaviors` 时，终端用户可勾选，但仅本地有效。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。 |
+| hover_tips | 否 | Object | 空 | 用户在 PC 端将光标悬浮在勾选器上方时的文案提醒。<br>**注意**：当同时配置 `hover_tips` 和 `disabled_tips` 时，`disabled_tips` 将生效。 |
+| └ tag | 否 | String | plain_text | 文案提醒的标签。固定值为 `plain_text`。 |
+| └ content | 否 | String | 空 | 文案提醒的内容。 |
+| disabled | 否 | Boolean | false | 是否禁用该勾选器。可选值：<br>- true：禁用<br>- false：勾选器组件保持可用状态<br></ul> |
+| disabled_tips | 否 | Object | 空 | 禁用勾选器后，用户在 PC 端将光标悬浮在勾选器上方时的文案提醒。 |
+| └ tag | 是 | String | plain_text | 禁用文案的标签。固定取值为 `plain_text`。 |
+| └ content | 是 | String | 空 | 禁用文案的内容。 |
 
-
-  <md-tr>
-      <md-td>padding</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的内边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。
-
-</md-td>
-    </md-tr>
-  
-   <md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>
-二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
-  
-<strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。
-</md-td>
-</md-tr>
-  
-  
-  
-  
-  
-  <md-tr>
-      <md-td>└ title</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题的内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ text</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗的文本内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗文本的具体内容。</md-td>
-    </md-tr>
-<md-tr>
-<md-td>behaviors</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>配置交互类型和具体交互行为。未配置 `behaviors` 时，终端用户可勾选，但仅本地有效。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>hover_tips</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>空</md-td>
-<md-td>
-用户在 PC 端将光标悬浮在勾选器上方时的文案提醒。
-
-**注意**：当同时配置 `hover_tips` 和 `disabled_tips` 时，`disabled_tips` 将生效。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-文案提醒的标签。固定值为 `plain_text`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ content</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-文案提醒的内容。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>disabled</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否禁用该勾选器。可选值：
-- true：禁用
-- false：勾选器组件保持可用状态
-</ul>
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>disabled_tips</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>空</md-td>
-<md-td>
-禁用勾选器后，用户在 PC 端将光标悬浮在勾选器上方时的文案提醒。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-禁用文案的标签。固定取值为 `plain_text`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-禁用文案的内容。
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 ## 回调示例

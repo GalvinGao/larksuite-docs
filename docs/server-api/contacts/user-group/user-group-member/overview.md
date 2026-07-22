@@ -21,59 +21,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 ## 用户组成员字段说明
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >member_type</md-text> | <md-text type="field-type" >string</md-text> | 用户组成员类型<br>**member_type支持的类型**：<br>- user：用户<br>- department：部门，即将开放支持<br>**示例值**："user" |
+| <md-text type="field-name" >member_id</md-text> | <md-text type="field-type" >string</md-text> | 成员的 ID<br>**member_id描述**：<br>- member_type=user 时，支持用户 ID，用户 ID 类型可选为：open_id、union_id、user_id（[查看ID类型描述](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview)）<br>**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62" |
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >member_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户组成员类型
-      
-**member_type支持的类型**：
-
-- user：用户
-
-- department：部门，即将开放支持
-      
-**示例值**："user"
-	</md-td>
-</md-tr>
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >member_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	成员的 ID
-      
-**member_id描述**：
-- member_type=user 时，支持用户 ID，用户 ID 类型可选为：open_id、union_id、user_id（[查看ID类型描述](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/field-overview)）
-      
-**示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62"  
-
-	</md-td>
-</md-tr>
-    
-  </md-tbody>
-  
-</md-table>
-:::
 
 ## 数据示例
 

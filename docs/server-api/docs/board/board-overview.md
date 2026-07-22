@@ -43,63 +43,9 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bo
 :::html
 :::
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th>方法（API）</md-th>  
-      <md-th>权限要求</md-th>  
-      <md-th>访问凭证</md-th> 
-      <md-th>商店</md-th> 
-      <md-th>自建</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-   <md-tr> 
-      <md-td>
-<code>GET</code>**获取所有节点**<br>[/open-apis/board/v1/whiteboards/:whiteboard_id/nodes](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard-node/list)
-      
-      </md-td>  
-      <md-td>:::html
-  <md-perm name="board:whiteboard:node:read" desc="画板节点读权限" support_app_types="custom,isv" tags="">画板节点读权限</md-perm>
-:::</md-td>  
-                  <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-    </md-tr> 
-    <md-tr> 
-      <md-td>
-<code>POST</code>**创建节点**<br>[/open-apis/board/v1/whiteboards/:whiteboard_id/nodes](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard-node/create)
-      
-      </md-td>  
-      <md-td>:::html
-  <md-perm name="board:whiteboard:node:create" desc="画板节点写权限" support_app_types="custom,isv" tags="">画板节点读权限</md-perm>
-:::</md-td>  
-                  <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-    </md-tr>
-    <md-tr> 
-      <md-td>
-<code>GET</code>**获取画板主题**<br>[open-apis/board/v1/whiteboards/:whiteboard_id/theme](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard/theme)
-      
-      </md-td>  
-      <md-td>:::html
-  <md-perm name="board:whiteboard:node:read" desc="画板节点读权限" support_app_types="custom,isv" tags="">画板节点读权限</md-perm>
-:::</md-td>  
-                  <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-    </md-tr> 
-  </md-tbody> 
-</md-table>
-:::
+| 方法（API） | 权限要求 | 访问凭证 | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <code>GET</code>**获取所有节点**<br>[/open-apis/board/v1/whiteboards/:whiteboard_id/nodes](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard-node/list) | :::html<br><md-perm name="board:whiteboard:node:read" desc="画板节点读权限" support_app_types="custom,isv" tags="">画板节点读权限</md-perm><br>::: | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <code>POST</code>**创建节点**<br>[/open-apis/board/v1/whiteboards/:whiteboard_id/nodes](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard-node/create) | :::html<br><md-perm name="board:whiteboard:node:create" desc="画板节点写权限" support_app_types="custom,isv" tags="">画板节点读权限</md-perm><br>::: | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <code>GET</code>**获取画板主题**<br>[open-apis/board/v1/whiteboards/:whiteboard_id/theme](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1/whiteboard/theme) | :::html<br><md-perm name="board:whiteboard:node:read" desc="画板节点读权限" support_app_types="custom,isv" tags="">画板节点读权限</md-perm><br>::: | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+

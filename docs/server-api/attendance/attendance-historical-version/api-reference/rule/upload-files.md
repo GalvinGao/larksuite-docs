@@ -24,140 +24,40 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/Attendance
 上传文件并获取文件 ID，可用于“修改用户设置”接口的 face_key 参数。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/attendance/v1/files/upload</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
- 权限要求
- <md-tooltip type="info">调用该 API 所需的权限，开启其中任意一项权限即可调用</md-tooltip>
-</md-th>
-      <md-td>
-            <md-perm>写入打卡管理规则</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/attendance/v1/files/upload |
+| HTTP Method | POST |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限，开启其中任意一项权限即可调用</md-tooltip> | <md-perm>写入打卡管理规则</md-perm> |
+
 
 
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：获取与使用 access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) |
+| Content-Type | string | 是 | **示例值**："multipart/form-data" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：获取与使用 access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)
-</md-td>
-</md-tr>
-     <md-tr>
-      <md-td>Content-Type</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      <md-td>**示例值**："multipart/form-data"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
 ### 查询参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 15%;">必填</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >file_name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-	<md-td>
-	文件名
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| <md-text type="field-name" >file_name</md-text> | <md-text type="field-type" >string</md-text> | 是 | 文件名 |
 
-  </md-tbody>
-</md-table>
-:::
 
 
 
 ### 请求体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: $$$attendance.v1.file.method.upload.request.body.table.param-column.width$$$;">名称</md-th>
-      <md-th style="width: $$$attendance.v1.file.method.upload.request.body.table.type-column.width$$$;">类型</md-th>
-      <md-th style="width: $$$attendance.v1.file.method.upload.request.body.table.required-column.width$$$;">必填</md-th>
-      <md-th style="width: $$$attendance.v1.file.method.upload.request.body.table.desc-column.width$$$;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >file</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >file</md-text>
-	</md-td>
-	<md-td>
-	否
-	</md-td>
-	<md-td>
-文件
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| <md-text type="field-name" >file</md-text> | <md-text type="field-type" >file</md-text> | 否 | 文件 |
 
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -172,84 +72,15 @@ Content-Type: application/octet-stream
 ## 响应
 
 ### 响应体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: $$$attendance.v1.file.method.upload.response.body.table.param-column.width$$$;">名称</md-th>
-      <md-th style="width: $$$attendance.v1.file.method.upload.response.body.table.type-column.width$$$;">类型</md-th>
-      <md-th style="width: $$$attendance.v1.file.method.upload.response.body.table.desc-column.width$$$;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >code</md-text> | <md-text type="field-type" >int</md-text> | 错误码，非 0 表示失败 |
+| <md-text type="field-name" >msg</md-text> | <md-text type="field-type" >string</md-text> | 错误描述 |
+| <md-text type="field-name" >data</md-text> | <md-text type="field-type" >\-</md-text> | \- |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >file</md-text> | <md-text type="field-type" >file</md-text> | 文件 |
+| &emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >file_id</md-text> | <md-text type="field-type" >string</md-text> | 文件 ID |
 
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >data</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-td>
-	<md-td>
-	\-
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >file</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >file</md-text>
-	</md-td>
-	<md-td>
-	文件
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >file_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-文件 ID
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

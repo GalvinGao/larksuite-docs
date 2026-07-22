@@ -134,106 +134,16 @@ Lark工作人员会根据应用情况选择最佳的上架类型。
 以下各环节的申请材料请在「**Lark合作对接群**」沟通，按照群内指引提供审核材料，如有疑问请联系对接Lark商务人员。
 :::
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">环节</md-th>
-      <md-th style="width: 50%;">发起标准</md-th>
-      <md-th style="width: 15%;">审核维度</md-th>
-      <md-th style="width: 20%;">时长</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>资质审核</md-td>
-      <md-td>满足 [ISV 入驻标准](/document/uMzNwEjLzcDMx4yM3ATM/uUzNwEjL1cDMx4SN3ATM)并在开发者后台提交申请。</md-td>
-      <md-td>企业资质</md-td>
-      <md-td>3 个工作日内反馈结果</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>方案审核</md-td>
-      <md-td>具备 ISV 资质后，提供 [PRD 文档](https://bytedance.larkoffice.com/docs/doccnu7YKueLLpzvLO3Z8iAoeEg)给商务对接人。</md-td>
-      <md-td>方案合理性</md-td>
-      <md-td>排期制</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>开发阶段</md-td>
-      <md-td>通过 PRD 审核后，在开发者后台创建并配置应用，具体包括：
-- [创建商店应用](/document/uMzNwEjLzcDMx4yM3ATM/ucjN2YjL3YjN24yN2YjN/step1-create-a-store-application)
-- [填写应用基础信息、应用中心信息、联系方式与协议](/document/uMzNwEjLzcDMx4yM3ATM/ucjN3QjL3YzN04yN2cDN)
-- [设置付费方案](/document/uMzNwEjLzcDMx4yM3ATM/ucDN3QjL3QzN04yN0cDN)
-- [开发商店应用](/document/uMzNwEjLzcDMx4yM3ATM/uYzNwEjL2cDMx4iN3ATM)
-- [测试商店应用](/document/uMzNwEjLzcDMx4yM3ATM/uUjMyUjL1IjM14SNyITN)
-      </md-td>
-      <md-td>\-</md-td>
-      <md-td>\-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>资料预检</md-td>
-      <md-td>完成[应用自检](https://bytedance.larkoffice.com/docs/doccnsUUwNdPZmnuU4olpVKLJjf?sidebarOpen=1)和[物料准备](https://bytedance.larkoffice.com/docs/doccnBwAvNOSWqMYc3igPgCNENM)，全量发布应用。操作如下：
-1. 灰度发布应用。
-        
-	应用在全量发布前，必须完成至少一次灰度发布。具体操作参见上文 **灰度发布应用** 章节。
-     
-2. 在左侧导航栏点击 **版本管理与发布**，然后在页面右侧点击 **创建版本**。
+| 环节 | 发起标准 | 审核维度 | 时长 |
+| --- | --- | --- | --- |
+| 资质审核 | 满足 [ISV 入驻标准](/document/uMzNwEjLzcDMx4yM3ATM/uUzNwEjL1cDMx4SN3ATM)并在开发者后台提交申请。 | 企业资质 | 3 个工作日内反馈结果 |
+| 方案审核 | 具备 ISV 资质后，提供 [PRD 文档](https://bytedance.larkoffice.com/docs/doccnu7YKueLLpzvLO3Z8iAoeEg)给商务对接人。 | 方案合理性 | 排期制 |
+| 开发阶段 | 通过 PRD 审核后，在开发者后台创建并配置应用，具体包括：<br>- [创建商店应用](/document/uMzNwEjLzcDMx4yM3ATM/ucjN2YjL3YjN24yN2YjN/step1-create-a-store-application)<br>- [填写应用基础信息、应用中心信息、联系方式与协议](/document/uMzNwEjLzcDMx4yM3ATM/ucjN3QjL3YzN04yN2cDN)<br>- [设置付费方案](/document/uMzNwEjLzcDMx4yM3ATM/ucDN3QjL3QzN04yN0cDN)<br>- [开发商店应用](/document/uMzNwEjLzcDMx4yM3ATM/uYzNwEjL2cDMx4iN3ATM)<br>- [测试商店应用](/document/uMzNwEjLzcDMx4yM3ATM/uUjMyUjL1IjM14SNyITN) | \- | \- |
+| 资料预检 | 完成[应用自检](https://bytedance.larkoffice.com/docs/doccnsUUwNdPZmnuU4olpVKLJjf?sidebarOpen=1)和[物料准备](https://bytedance.larkoffice.com/docs/doccnBwAvNOSWqMYc3igPgCNENM)，全量发布应用。操作如下：<br>1. 灰度发布应用。<br>应用在全量发布前，必须完成至少一次灰度发布。具体操作参见上文 **灰度发布应用** 章节。<br>2. 在左侧导航栏点击 **版本管理与发布**，然后在页面右侧点击 **创建版本**。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/870926f98921e5eb78a1418ea0131062_ZFXFcT9C5q.png?height=294&lazyload=true&width=1133)<br>3. 在 **版本详情** 页面，编辑应用的版本号、更新说明、申请理由后，点击页面底部的 **保存**。<br>4. 在 **版本详情** 页面右上角，点击 **申请发布**。<br>5. 在弹窗内选择 **全量发布**，并点击 **确认**。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/1ef7cf5c1c9a3ddd3314c953e2938875_ZQlcAhPSrq.png?height=420&lazyload=true&width=1139) | 清单审核<br>人工审核 | 排期制 |
+| 产品验收 | 通过资料预检后，平台将自动推进至产品验收。 | 功能审核 <br> 视觉审核 <br> 物料审核 | 排期制，验收后3个工作日内返回结果。 |
+| 安全验收 | 通过产品验收后，平台将自动推进至安全验收。 | 安全审核 | 排期制 |
+| 合规验收 | 通过安全验收后，平台将自动推进至合规验收。 | 合规审核 | 排期制 |
+| 缴纳保证金 | 公开上架的付费应用，缴纳保证金2万元/应用。 | 财务审核 | 排期制 |
+| 应用发布 | 完成以上验收并提供[销售素材](https://bytedance.larkoffice.com/docs/doccnkDrUQy1BnrSfhpLH8IhUDS)后，才可以发布应用。 | \- | ISV 与平台约定发布时间 |
+| 后期维护 | 全量发布应用之后，如果在[开发者后台](https://open.larksuite.com/app)更新了应用配置，可根据实际需要，在应用的 **版本管理与发布** 功能页创建版本，并选择 **灰度发布** 或者 **全量发布** 应用。<br>- 发布应用时，可根据页面提示判断本次发布是否需要人工审核，若需要人工审核，则预计需等待 1-5 个工作日。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/1829d6f7b60eac8cad9318bf8e5f7680_gQnRPWym3g.png?height=348&lazyload=true&width=972)<br>- 如需把存量灰度版本转为全量发布，则可以在应用的 **版本管理与发布** 功能页进入指定的灰度版本，并点击 **申请全量发布**。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/03c964d48c3ae0dd64588fefe43bd25e_wfc5PkLYoV.png?height=754&lazyload=true&width=2882) | 人工审核 | 排期制 |
 
-     ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/870926f98921e5eb78a1418ea0131062_ZFXFcT9C5q.png?height=294&lazyload=true&width=1133)
-        
-3. 在 **版本详情** 页面，编辑应用的版本号、更新说明、申请理由后，点击页面底部的 **保存**。
-4. 在 **版本详情** 页面右上角，点击 **申请发布**。
-5. 在弹窗内选择 **全量发布**，并点击 **确认**。
-
-     ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/1ef7cf5c1c9a3ddd3314c953e2938875_ZQlcAhPSrq.png?height=420&lazyload=true&width=1139)
-      </md-td>
-      <md-td>清单审核
-      
-人工审核</md-td>
-      <md-td>排期制</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>产品验收</md-td>
-      <md-td>通过资料预检后，平台将自动推进至产品验收。</md-td>
-      <md-td>功能审核 <br> 视觉审核 <br> 物料审核</md-td>
-      <md-td>排期制，验收后3个工作日内返回结果。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>安全验收</md-td>
-      <md-td>通过产品验收后，平台将自动推进至安全验收。</md-td>
-      <md-td>安全审核</md-td>
-      <md-td>排期制</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>合规验收</md-td>
-      <md-td>通过安全验收后，平台将自动推进至合规验收。</md-td>
-      <md-td>合规审核</md-td>
-      <md-td>排期制</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>缴纳保证金</md-td>
-      <md-td>公开上架的付费应用，缴纳保证金2万元/应用。</md-td>
-      <md-td>财务审核</md-td>
-      <md-td>排期制</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>应用发布</md-td>
-      <md-td>完成以上验收并提供[销售素材](https://bytedance.larkoffice.com/docs/doccnkDrUQy1BnrSfhpLH8IhUDS)后，才可以发布应用。</md-td>
-      <md-td>\-</md-td>
-      <md-td>ISV 与平台约定发布时间</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>后期维护</md-td>
-      <md-td>全量发布应用之后，如果在[开发者后台](https://open.larksuite.com/app)更新了应用配置，可根据实际需要，在应用的 **版本管理与发布** 功能页创建版本，并选择 **灰度发布** 或者 **全量发布** 应用。
-        
-- 发布应用时，可根据页面提示判断本次发布是否需要人工审核，若需要人工审核，则预计需等待 1-5 个工作日。
-
-    ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/1829d6f7b60eac8cad9318bf8e5f7680_gQnRPWym3g.png?height=348&lazyload=true&width=972)
-- 如需把存量灰度版本转为全量发布，则可以在应用的 **版本管理与发布** 功能页进入指定的灰度版本，并点击 **申请全量发布**。
-    
-    ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/03c964d48c3ae0dd64588fefe43bd25e_wfc5PkLYoV.png?height=754&lazyload=true&width=2882)</md-td>
-      <md-td>人工审核</md-td>
-      <md-td>排期制</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::

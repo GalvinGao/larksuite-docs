@@ -38,95 +38,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/vc/v1/reserve_configs/:reserve_config_id/form</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>PATCH</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="vc:room" desc="更新视频会议室信息" support_app_types="custom,isv" tags="">更新视频会议室信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/vc/v1/reserve_configs/:reserve_config_id/form |
+| HTTP Method | PATCH |
+| 接口频率限制 | [100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="vc:room" desc="更新视频会议室信息" support_app_types="custom,isv" tags="">更新视频会议室信息</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -462,101 +390,20 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>121001</md-td>
-  <md-td>internal error</md-td>
-  <md-td>服务器内部错误，如果重试无效可联系管理员</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 500 | 121001 | internal error | 服务器内部错误，如果重试无效可联系管理员 |
+| 400 | 121002 | not support | 暂不支持该功能 |
+| 400 | 121003 | param error | 参数错误，检查参数的取值范围（请按照上面字段说明自查） |
+| 400 | 126001 | invalid room or level id, check itself or whether the scope type corresponds to it | 不存在该会议室或层级ID，或者检查scope_type是否对应 |
+| 400 | 126002 | reserve form is not configured | 会议室预定表单未在后台设置 |
+| 400 | 126011 | notify time exceeds the scope to which the time unit appoints | 通知时间超过了时间单位的允许范围 |
+| 400 | 126012 | updated sum of userIDs and deptIDs exceed 500 | 用户ID数目超过了500 |
+| 400 | 126013 | some userIDs you put is invalid | 存在无效的用户ID |
+| 404 | 121004 | data not exist | 请求的数据不存在 |
+| 403 | 121005 | no permission | 无权限进行该操作，建议检查token类型、操作者身份以及资源的归属 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>121002</md-td>
-  <md-td>not support</md-td>
-  <md-td>暂不支持该功能</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>121003</md-td>
-  <md-td>param error</md-td>
-  <md-td>参数错误，检查参数的取值范围（请按照上面字段说明自查）</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>126001</md-td>
-  <md-td>invalid room or level id, check itself or whether the scope type corresponds to it</md-td>
-  <md-td>不存在该会议室或层级ID，或者检查scope_type是否对应</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>126002</md-td>
-  <md-td>reserve form is not configured</md-td>
-  <md-td>会议室预定表单未在后台设置</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>126011</md-td>
-  <md-td>notify time exceeds the scope to which the time unit appoints</md-td>
-  <md-td>通知时间超过了时间单位的允许范围</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>126012</md-td>
-  <md-td>updated sum of userIDs and deptIDs exceed 500</md-td>
-  <md-td>用户ID数目超过了500</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>126013</md-td>
-  <md-td>some userIDs you put is invalid</md-td>
-  <md-td>存在无效的用户ID</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>121004</md-td>
-  <md-td>data not exist</md-td>
-  <md-td>请求的数据不存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>121005</md-td>
-  <md-td>no permission</md-td>
-  <md-td>无权限进行该操作，建议检查token类型、操作者身份以及资源的归属</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

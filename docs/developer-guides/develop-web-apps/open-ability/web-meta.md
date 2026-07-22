@@ -21,69 +21,22 @@ web-meta 是网页的元数据，用于定义网页特性。在Lark中运行的�
 
 web-meta 的 page-meta 和 view-meta 能力，在不同端的支持情况如下表所示。 
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 25%;">支持能力</md-th>
-      <md-th style="width: 25%;">Android</md-th>
-      <md-th style="width: 25%;">iOS</md-th>
-      <md-th style="width: 25%;">PC</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>page-meta</md-td>
-      <md-td><md-version>V5.15</md-version></md-td>
-      <md-td><md-version>V5.15</md-version></md-td>
-      <md-td>**X**</md-td>
-  	</md-tr>
-    <md-tr>
-      <md-td>view-meta</md-td>
-      <md-td><md-version>V5.16</md-version></md-td>
-      <md-td><md-version>V5.16</md-version></md-td>
-      <md-td>**X**</md-td>
-  	</md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 支持能力 | Android | iOS | PC |
+| --- | --- | --- | --- |
+| page-meta | <md-version>V5.15</md-version> | <md-version>V5.15</md-version> | **X** |
+| view-meta | <md-version>V5.16</md-version> | <md-version>V5.16</md-version> | **X** |
+
 
 ## 使用方式
 
 web-meta 配置所包含的属性如下表所示。web-meta 的 page-meta 和 view-meta 能力均通过这些属性进行定义。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">属性名称</md-th>
-<md-th style="width:20%">数据类型</md-th>
-<md-th style="width:60%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>name</md-td>
-<md-td>String</md-td>
-<md-td>web-meta 的数据名，用于标识 web-meta 类型。</md-td>
-</md-tr>
+| 属性名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| name | String | web-meta 的数据名，用于标识 web-meta 类型。 |
+| content | String | web-meta 数据值，用于指定 web-meta 数据。 |
+| lk-config | String | web-meta 的数据配置，用于指定 web-meta 的配置信息。 |
 
-<md-tr>
-<md-td>content</md-td>
-<md-td>String</md-td>
-<md-td>web-meta 数据值，用于指定 web-meta 数据。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>lk-config</md-td>
-<md-td>String</md-td>
-<md-td>web-meta 的数据配置，用于指定 web-meta 的配置信息。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 
 ### page-meta

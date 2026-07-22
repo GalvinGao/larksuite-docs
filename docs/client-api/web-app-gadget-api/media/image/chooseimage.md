@@ -23,288 +23,39 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMx4yMxEjLzETM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/image/image" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.47.0+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/image/image" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.47.0+</md-version> | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                sourceType
-            </md-td>
-            <md-td>
-                string[]
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                ["album", "camera"]
-            </md-td>
-            <md-td>
-                指定图片来源为相册或/和相机
 
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| sourceType | string[] | 否 | ["album", "camera"] | 指定图片来源为相册或/和相机<br>**可选值**：<br>- `["album"]`：相册<br>- `["camera"]`：相机<br>- `["album", "camera"]`: 相册或相机，<br><md-alert type="tip" icon="none"><br>- PC 端：暂不支持，默认为本地文件系统<br>- iOS 端：不支持同时从 album 和 camera 中选择，只能二者选其一<br></md-alert> |
+| count | number | 否 | 9 | 最多可以选择的文件数量，可支持选择多个图片。**使用相机拍照时该字段失效**<br>**最小值**：`1`<br>**最大值**：`20` |
+| sizeType | string[] | 否 | ["original","compressed"] | 表示是选择原图还是对图片质量进行压缩。<br>**可选值**：<br>- `["original"]`：选择原图<br>- `["compressed"]`：强制对图片质量进行压缩<br>- `["original","compressed"]`: 默认开启压缩，但可手动选择原图<br><md-alert type="tip" icon="none"><br>- Android/iOS/PC 端：Lark[V3.38.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br>- PC 端：不支持`["original","compressed"]`，默认为`["original"]`<br></md-alert> |
+| cameraDevice | string | 否 | back | 使用相机拍摄的默认摄像头，仅iOS支持且在sourceType为camera时生效<br>**可选值**：<br>- `front`：前置摄像头<br>- `back`：后置摄像头<br><md-alert type="tip" icon="none"><br>- iOS 端：Lark[V3.8.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br>- PC/Android 端：暂不支持<br></md-alert> |
+| isSaveToAlbum | string | 否 | 0 | 使用相机拍摄后图片是否保存到相册，仅iOS和Android支持且在sourceType为camera时生效<br>**可选值**：<br>- `"0"`：不保存<br>- `"1"`：保存<br><md-alert type="tip" icon="none"><br>- iOS 端：Lark[V5.13.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br>-  Android 端 Lark[V5.13.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br>- PC 端：暂不支持<br></md-alert> |
 
-
-**可选值**：
-- `["album"]`：相册
-- `["camera"]`：相机
-- `["album", "camera"]`: 相册或相机，
-<md-alert type="tip" icon="none">
-- PC 端：暂不支持，默认为本地文件系统
-- iOS 端：不支持同时从 album 和 camera 中选择，只能二者选其一
-</md-alert>  
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                count
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                9
-            </md-td>
-            <md-td>
-                最多可以选择的文件数量，可支持选择多个图片。**使用相机拍照时该字段失效**
-
-**最小值**：`1`
-              
-**最大值**：`20`
- 
-
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                sizeType
-            </md-td>
-            <md-td>
-                string[]
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-              ["original","compressed"]
-            </md-td>
-            <md-td>
-                表示是选择原图还是对图片质量进行压缩。
-
-
-
-**可选值**：
-- `["original"]`：选择原图
-- `["compressed"]`：强制对图片质量进行压缩
-- `["original","compressed"]`: 默认开启压缩，但可手动选择原图
-<md-alert type="tip" icon="none">
-- Android/iOS/PC 端：Lark[V3.38.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-- PC 端：不支持`["original","compressed"]`，默认为`["original"]`
-</md-alert>  
-            </md-td>
-          
-        </md-tr>
-        <md-tr>
-            <md-td>
-                cameraDevice
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                back
-            </md-td>
-            <md-td>
-                使用相机拍摄的默认摄像头，仅iOS支持且在sourceType为camera时生效
-
-
-
-**可选值**：
-- `front`：前置摄像头
-- `back`：后置摄像头
-<md-alert type="tip" icon="none">
-- iOS 端：Lark[V3.8.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-- PC/Android 端：暂不支持
-</md-alert> 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                isSaveToAlbum
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                0
-            </md-td>
-            <md-td>
-                使用相机拍摄后图片是否保存到相册，仅iOS和Android支持且在sourceType为camera时生效
-
-
-
-**可选值**：
-- `"0"`：不保存
-- `"1"`：保存
-<md-alert type="tip" icon="none">
-- iOS 端：Lark[V5.13.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
--  Android 端 Lark[V5.13.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-- PC 端：暂不支持
-
-</md-alert> 
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                tempFiles
-            </md-td>
-            <md-td>
-                object[]
-            </md-td>
-            <md-td>
-                图片对象数组
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    path
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                图片路径
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    size
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                图片大小，单位byte
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                tempFilePaths
-            </md-td>
-            <md-td>
-                string[]
-            </md-td>
-            <md-td>
-                图片路径数组
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| tempFiles | object[] | 图片对象数组 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>path<br></md-text> | string | 图片路径 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>size<br></md-text> | number | 图片大小，单位byte |
+| tempFilePaths | string[] | 图片路径数组 |
+
 
 ## 示例代码
 :::html

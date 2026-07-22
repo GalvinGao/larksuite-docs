@@ -19,122 +19,29 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uATOx4CM5EjLwkTM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td><md-preview-app type="vh" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**x**</md-td>
-      <md-td>**x**</md-td>
-      <md-td>**x**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="vh" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **x** | **x** | **x** | / |
+
 
 
 ## 输入
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                key
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                键名
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| key | string | 是 |  | 键名<br>**示例值**：stateKey<br>**最小长度**：`1`  字符 |
 
-**示例值**：stateKey
-
-**最小长度**：`1`  字符
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 输出
 返回值：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                data
-            </md-td>
-            <md-td>
-                string|object|number|boolean|object[]|string[]|number[]|boolean[]|undefined|null
-            </md-td>
-            <md-td>
-                键名对应的数据
 
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| data | string&#124;object&#124;number&#124;boolean&#124;object[]&#124;string[]&#124;number[]&#124;boolean[]&#124;undefined&#124;null | 键名对应的数据 |
+
 
 ## 示例代码
 

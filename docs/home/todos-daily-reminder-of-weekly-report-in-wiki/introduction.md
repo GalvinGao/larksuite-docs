@@ -28,160 +28,25 @@ source_url: https://open.larksuite.com/document/home/todos-daily-reminder-of-wee
 ## 使用到的API列表
 ### 登录
 
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 25%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取 tenant_access_token](/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| <md-text type="field-name" >[获取 tenant_access_token](/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal)<br>`GET` /open-apis/auth/v3/tenant_access_token/internal<br>> 获得访问其他接口需要用到的访问凭证<br></md-text> |  |  |
 
-`GET` /open-apis/auth/v3/tenant_access_token/internal
-
-> 获得访问其他接口需要用到的访问凭证
-                </md-text>
-            </md-td>
-            <md-td>
-                    
-            </md-td>
-            <md-td>
-                
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ### 云文档
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 25%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取子节点列表](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-node/list)
 
-`GET` /open-apis/wiki/v2/spaces/:space_id/nodes
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| <md-text type="field-name" >[获取子节点列表](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-node/list)<br>`GET` /open-apis/wiki/v2/spaces/:space_id/nodes<br>> 获取Wiki节点的子节点列表<br></md-text> | <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm><br><md-perm name="wiki:wiki:readonly" desc="查看知识库" support_app_types="custom,isv" tags="">查看知识库</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[获取节点信息](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)<br>`POST` /open-apis/wiki/v2/spaces/get_node<br>> 获取Wiki节点的详细信息<br></md-text> | <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm><br><md-perm name="wiki:wiki:readonly" desc="查看知识库" support_app_types="custom,isv" tags="">查看知识库</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[获取文档富文本内容](/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)<br>`POST` /open-apis/doc/v2/:docToken/content<br>> 获取结构化的文档内容<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><br><md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" support_app_types="custom,isv" tags="">查看、评论和导出文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
 
-> 获取Wiki节点的子节点列表
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm>
-              		<md-perm name="wiki:wiki:readonly" desc="查看知识库" support_app_types="custom,isv" tags="">查看知识库</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取节点信息](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)
-
-`POST` /open-apis/wiki/v2/spaces/get_node
-
-> 获取Wiki节点的详细信息
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm>
-              		<md-perm name="wiki:wiki:readonly" desc="查看知识库" support_app_types="custom,isv" tags="">查看知识库</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取文档富文本内容](/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)
-
-`POST` /open-apis/doc/v2/:docToken/content
-
-> 获取结构化的文档内容
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-              		<md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-              		<md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm>
-              		<md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" support_app_types="custom,isv" tags="">查看、评论和导出文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ### 消息与群组
 
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 25%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取用户或机器人所在的群列表](/ssl:ttdocuAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/list)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| <md-text type="field-name" >[获取用户或机器人所在的群列表](/ssl:ttdocuAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/list)<br>`GET` /open-apis/im/v1/chats<br>> 获取用户或者机器人所在群列表<br></md-text> | <md-perm name="im:chat:read" desc="查看群信息" support_app_types="custom,isv" tags="">查看群信息</md-perm><br><md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm><br><md-perm name="im:chat.group_info:readonly" desc="读取群信息" support_app_types="custom,isv" tags="">读取群信息</md-perm><br><md-perm name="im:chat:readonly" desc="获取群组信息" support_app_types="custom,isv" tags="">获取群组信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[发送消息](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)<br>`POST` /open-apis/im/v1/messages<br>> 给指定用户或者会话发送消息，支持文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件、表情包<br></md-text> | <md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" tags="">以应用的身份发消息</md-perm><br><md-perm name="im:message" desc="获取与发送单聊、群组消息" tags="">获取与发送单聊、群组消息</md-perm><br><md-perm name="im:message:send" desc="发送消息V2" support_app_types="custom,isv" tags="history,offline">发送消息V2</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-`GET` /open-apis/im/v1/chats
-
-> 获取用户或者机器人所在群列表
-                </md-text>
-            </md-td>
-            <md-td>
-<md-perm name="im:chat:read" desc="查看群信息" support_app_types="custom,isv" tags="">查看群信息</md-perm>
-<md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm>
-<md-perm name="im:chat.group_info:readonly" desc="读取群信息" support_app_types="custom,isv" tags="">读取群信息</md-perm>
-<md-perm name="im:chat:readonly" desc="获取群组信息" support_app_types="custom,isv" tags="">获取群组信息</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[发送消息](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
-
-`POST` /open-apis/im/v1/messages
-
-> 给指定用户或者会话发送消息，支持文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件、表情包
-                </md-text>
-            </md-td>
-            <md-td>
-<md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" tags="">以应用的身份发消息</md-perm>
-<md-perm name="im:message" desc="获取与发送单聊、群组消息" tags="">获取与发送单聊、群组消息</md-perm>
-<md-perm name="im:message:send" desc="发送消息V2" support_app_types="custom,isv" tags="history,offline">发送消息V2</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 

@@ -46,98 +46,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/im/v1/chats/:chat_id/members</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm>
-            <md-perm name="im:chat.members:write_only" desc="添加、移除群成员" support_app_types="custom,isv" tags="">添加、移除群成员</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/im/v1/chats/:chat_id/members |
+| HTTP Method | POST |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm><br><md-perm name="im:chat.members:write_only" desc="添加、移除群成员" support_app_types="custom,isv" tags="">添加、移除群成员</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -440,189 +365,31 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232001</md-td>
-  <md-td>Your request contains an invalid request parameter.</md-td>
-  <md-td>参数错误，参考本文档检查输入参数。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 232001 | Your request contains an invalid request parameter. | 参数错误，参考本文档检查输入参数。 |
+| 400 | 232004 | Such an app does NOT exist. | 作为操作者的 app_id 不存在，请联系[技术支持](https://applink.larksuite.com/TLJsX982)。 |
+| 400 | 232006 | Your request specifies a chat_id which is invalid. | 无效的 chat_id，请检查chat_id是否正确。 |
+| 400 | 232009 | Your request specifies a chat which has already been dissolved. | 群组已被解散。 |
+| 400 | 232010 | Operator and chat can NOT be in different tenants. | 操作者和被操作的群组应该在同一租户下。 |
+| 400 | 232011 | Operator can NOT be out of the chat. | 操作者需要在群组中。 |
+| 400 | 232013 | You have reached the limit of maximum number of members a chat can have. | 加入群组时，群成员数量已达到上限。对于已认证企业的Lark的群人数默认上限：普通群5000人，会议群3000人，话题群5000人。 |
+| 400 | 232017 | No Permission: If the operator is NOT owner or creator with the scope, the operator can NOT complete the request. | 操作者在群中不具备群主、群创建者等身份，无法完成本操作。 |
+| 400 | 232019 | The request has been rate limited. | 触发群限流，请控制请求的速度，详情参见[频控策略](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。 |
+| 400 | 232024 | Users do not have the visibility of the app, or the operator does not have collaboration permissions with the target users. | 机器人对用户没有可见性，或操作者与用户间没有协作权限。前者可在[开发者后台](https://open.larksuite.com/app)-应用发布-版本管理与发布 编辑应用对用户的可见性并发布；后者请检查是否与目标用户有协作权限，如屏蔽、未添加未联系人等。 |
+| 400 | 232025 | Bot ability is not activated. | 应用需要开启[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232027 | There are no valid members in the ID list specified in your request. | 成员ID列表为空或不存在有效的成员。 |
+| 400 | 232028 | External members can Not be added to an internal group chat. | 外租户成员不能被加入内部群。 |
+| 400 | 232033 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 没有权限操作外部群，且暂不支持申请该权限。 |
+| 400 | 232034 | The app is unavailable or inactivated by the tenant. | 应用在本租户下未安装或未启用。 |
+| 400 | 232043 | Your request contains unavailable ids. | 请检查传入的 ID 列表。 |
+| 400 | 232044 | You have reached maximum number of chat members set by admin. | 群成员人数已达到租户管理员配置的上限，如需提高上限请向租户管理员申请。 |
+| 400 | 232090 | Unsupported chat type. | 不支持的群类型，无法完成本操作。 |
+| 400 | 99992351 | Your request contains not existed id. | 部分 open_id 不存在，请检查后重试。 |
+| 400 | 99992360 | Your request contains not existed id. | 部分 user_id 不存在，请检查后重试。 |
+| 400 | 99992364 | Your request contains not existed id. | 部分 union_id 不存在，请检查后重试。 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232004</md-td>
-  <md-td>Such an app does NOT exist.</md-td>
-  <md-td>作为操作者的 app_id 不存在，请联系[技术支持](https://applink.larksuite.com/TLJsX982)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232006</md-td>
-  <md-td>Your request specifies a chat_id which is invalid.</md-td>
-  <md-td>无效的 chat_id，请检查chat_id是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232009</md-td>
-  <md-td>Your request specifies a chat which has already been dissolved.</md-td>
-  <md-td>群组已被解散。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232010</md-td>
-  <md-td>Operator and chat can NOT be in different tenants.</md-td>
-  <md-td>操作者和被操作的群组应该在同一租户下。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232011</md-td>
-  <md-td>Operator can NOT be out of the chat.</md-td>
-  <md-td>操作者需要在群组中。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232013</md-td>
-  <md-td>You have reached the limit of maximum number of members a chat can have.</md-td>
-  <md-td>加入群组时，群成员数量已达到上限。对于已认证企业的Lark的群人数默认上限：普通群5000人，会议群3000人，话题群5000人。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232017</md-td>
-  <md-td>No Permission: If the operator is NOT owner or creator with the scope, the operator can NOT complete the request.</md-td>
-  <md-td>操作者在群中不具备群主、群创建者等身份，无法完成本操作。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232019</md-td>
-  <md-td>The request has been rate limited.</md-td>
-  <md-td>触发群限流，请控制请求的速度，详情参见[频控策略](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232024</md-td>
-  <md-td>Users do not have the visibility of the app, or the operator does not have collaboration permissions with the target users.</md-td>
-  <md-td>机器人对用户没有可见性，或操作者与用户间没有协作权限。前者可在[开发者后台](https://open.larksuite.com/app)-应用发布-版本管理与发布 编辑应用对用户的可见性并发布；后者请检查是否与目标用户有协作权限，如屏蔽、未添加未联系人等。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232025</md-td>
-  <md-td>Bot ability is not activated.</md-td>
-  <md-td>应用需要开启[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232027</md-td>
-  <md-td>There are no valid members in the ID list specified in your request.</md-td>
-  <md-td>成员ID列表为空或不存在有效的成员。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232028</md-td>
-  <md-td>External members can Not be added to an internal group chat.</md-td>
-  <md-td>外租户成员不能被加入内部群。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232033</md-td>
-  <md-td>The operator or invited bots does NOT have the authority to manage external chats without the scope.</md-td>
-  <md-td>没有权限操作外部群，且暂不支持申请该权限。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232034</md-td>
-  <md-td>The app is unavailable or inactivated by the tenant.</md-td>
-  <md-td>应用在本租户下未安装或未启用。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232043</md-td>
-  <md-td>Your request contains unavailable ids.</md-td>
-  <md-td>请检查传入的 ID 列表。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232044</md-td>
-  <md-td>You have reached maximum number of chat members set by admin.</md-td>
-  <md-td>群成员人数已达到租户管理员配置的上限，如需提高上限请向租户管理员申请。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232090</md-td>
-  <md-td>Unsupported chat type.</md-td>
-  <md-td>不支持的群类型，无法完成本操作。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>99992351</md-td>
-  <md-td>Your request contains not existed id.</md-td>
-  <md-td>部分 open_id 不存在，请检查后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>99992360</md-td>
-  <md-td>Your request contains not existed id.</md-td>
-  <md-td>部分 user_id 不存在，请检查后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>99992364</md-td>
-  <md-td>Your request contains not existed id.</md-td>
-  <md-td>部分 union_id 不存在，请检查后重试。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

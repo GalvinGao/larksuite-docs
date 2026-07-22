@@ -31,45 +31,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 getRecords(param)
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 150px;">
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>param.pageSize</md-td>
-        <md-td>number</md-td>
-        <md-td>是</md-td>
-        <md-td>最大获取数量5000</md-td>
-      </md-tr>
-      <md-tr>
-      	<md-td>param.pageToken</md-td>
-        <md-td>string</md-td>
-        <md-td>否</md-td>
-        <md-td>记录id,表示分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果</md-td>
-      </md-tr>
-      <md-tr>
-      	<md-td>param.viewId</md-td>
-        <md-td>string</md-td>
-        <md-td>否</md-td>
-        <md-td>获取指定视图的 record</md-td>
-      </md-tr>
-      
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| param.pageSize | number | 是 | 最大获取数量5000 |
+| param.pageToken | string | 否 | 记录id,表示分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果 |
+| param.viewId | string | 否 | 获取指定视图的 record |
+
 
 
 ## 输出

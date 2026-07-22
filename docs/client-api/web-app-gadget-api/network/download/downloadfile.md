@@ -29,245 +29,45 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ucDMx4yNwEjL3ATM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/download-file/download-file" fontSize="14">预览</md-preview-app></md-td>
-	</md-tr>
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-	</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/download-file/download-file" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                url
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                文件地址
 
-**示例值**：https://open.lark.com/a.txt
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                header
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                {}
-            </md-td>
-            <md-td>
-                请求 Header
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| url | string | 是 |  | 文件地址<br>**示例值**：https://open.lark.com/a.txt |
+| header | object | 是 | {} | 请求 Header<br>**示例值**：{\"Content-Type\": \"application/json\"} |
+| filePath | string | 否 |  | 指定文件下载后存储的路径 (本地路径)。格式为 ttfile://temp/lark.png 或 ttfile://user/lark.png，其中 ttfile://temp/ 和 ttfile://user/ 为下载目录，lark.png 为文件名。详情可参考[文件系统](/document/uYjL24iN/uETOuETOuETO/file-system)。<br>默认下载目录为 ttfile://temp/<br>**示例值**：ttfile://temp/lark.png<br><md-alert type="tip" icon="none"><br>Lark[V3.43.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
 
-**示例值**：{\"Content-Type\": \"application/json\"}
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                filePath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                指定文件下载后存储的路径 (本地路径)。格式为 ttfile://temp/lark.png 或 ttfile://user/lark.png，其中 ttfile://temp/ 和 ttfile://user/ 为下载目录，lark.png 为文件名。详情可参考[文件系统](/document/uYjL24iN/uETOuETOuETO/file-system)。
-              默认下载目录为 ttfile://temp/
-
-**示例值**：ttfile://temp/lark.png
-<md-alert type="tip" icon="none">
-Lark[V3.43.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                tempFilePath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                文件本地路径
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                statusCode
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                返回 HTTP 状态码
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                errMsg
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-				错误消息
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                trace
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                请求ID，用于请求问题的诊断和全链路追踪
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| tempFilePath | string | 文件本地路径 |
+| statusCode | number | 返回 HTTP 状态码 |
+| errMsg | string | 错误消息 |
+| trace | string | 请求ID，用于请求问题的诊断和全链路追踪 |
+
 
 `fail`返回对象的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-		<md-tr>
-            <md-td>
-                tempFilePath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                文件本地路径
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                statusCode
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                返回 HTTP 状态码
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                errMsg
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-				错误消息
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| tempFilePath | string | 文件本地路径 |
+| statusCode | number | 返回 HTTP 状态码 |
+| errMsg | string | 错误消息 |
+
 
 返回值：`downloadTask`，该对象的方法列表参见下表：
 :::html
@@ -275,28 +75,12 @@ Lark[V3.43.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>[onProgressUpdate](/document/uYjL24iN/ugDNugDNugDN/downloadfile/onprogressupdate)</md-td>
-      <md-td>监听下载进度</md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-td>[abort](/document/uYjL24iN/ugDNugDNugDN/downloadfile/abort)</md-td>
-      <md-td>中断请求任务</md-td>
-    </md-tr>
+| 方法 | 介绍 |
+| --- | --- |
+| [onProgressUpdate](/document/uYjL24iN/ugDNugDNugDN/downloadfile/onprogressupdate) | 监听下载进度 |
+| [abort](/document/uYjL24iN/ugDNugDNugDN/downloadfile/abort) | 中断请求任务 |
 
-</md-tbody>
-</md-table>
-:::
 
 ## 示例代码
 :::html

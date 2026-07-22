@@ -20,101 +20,21 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ucjMy4yNyIjL3IjM/animat
   
     
   ## 支持说明
-  :::html
-  <md-table>
-    <md-thead>
-      <md-tr>
-        <md-th style="width: 20%;">应用能力</md-th>
-        <md-th style="width: 20%;">Android</md-th>
-        <md-th style="width: 20%;">iOS</md-th>
-        <md-th style="width: 20%;">PC</md-th>
-        <md-th style="width: 20%;">预览效果</md-th>
-      </md-tr>
-    </md-thead>
-    <md-tbody>
-      <md-tr>
-        <md-td>小程序</md-td>
-        <md-td>**✓**</md-td>
-        <md-td>**✓**</md-td>
-        <md-td>**✓**</md-td>
-        <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/animation/animation" fontSize="14">预览</md-preview-app>
-  </md-td>
-  </md-tr>
 
-      <md-tr>
-        <md-td>网页应用</md-td>
-        <md-td>**X**</md-td>
-        <md-td>**X**</md-td>
-        <md-td>**X**</md-td>
-        <md-td>/</md-td>
-  </md-tr>
-      
-      
-      
-  </md-tbody>
-  </md-table>
-  :::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/animation/animation" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
   
     
   ## 输入
-  :::html
-  <md-table>
-      <md-thead>
-          <md-tr>
-              <md-th style="width: 20%;">
-                  名称
-              </md-th>
-              <md-th style="width: 18%;">
-                  数据类型
-              </md-th>
-              <md-th style="width: 10%;">
-                  必填
-              </md-th>
-              <md-th style="width: 10%;">
-                  默认值
-              </md-th>
-              <md-th>
-                  描述
-              </md-th>
-          </md-tr>
-      </md-thead>
-      <md-tbody>
-          
-    <md-tr>
-        <md-td>
-            tx
-        </md-td>
-        <md-td>
-            number
-        </md-td>
-        <md-td>
-            是
-        </md-td>
-        <md-td>/</md-td>
-        <md-td>
-            当仅有该参数时表示在 X 轴偏移 tx，单位 px
-        </md-td>
-    </md-tr>
-  
-    <md-tr>
-        <md-td>
-            ty
-        </md-td>
-        <md-td>
-            number
-        </md-td>
-        <md-td>
-            否
-        </md-td>
-        <md-td>/</md-td>
-        <md-td>
-            在 Y 轴平移的距离，单位为 px
-        </md-td>
-    </md-tr>
-  
-      </md-tbody>
-  </md-table>
-  :::
+
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| tx | number | 是 | / | 当仅有该参数时表示在 X 轴偏移 tx，单位 px |
+| ty | number | 否 | / | 在 Y 轴平移的距离，单位为 px |
+
   
     
 ## 输出

@@ -24,80 +24,22 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukjM04SOyQjL5IDN
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/mina/v2/tokenLoginValidate</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            无
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/mina/v2/tokenLoginValidate |
+| HTTP Method | POST |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | 无 |
+
 
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-app">app_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-app">app_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：获取与使用access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：获取与使用access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 ### 请求体
 参数 | 类型 | 必填 | 说明 
@@ -114,149 +56,19 @@ code | string | 是 | [登录](/document/uYjL24iN/uYzMuYzMuYzM)时获取的 code
 ## 响应
 ### 响应体
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 18%;">类型</md-th>
-      <md-th >描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >code</md-text> | <md-text type="field-type" >int</md-text> | 错误码，非 0 表示失败 |
+| <md-text type="field-name" >msg</md-text> | <md-text type="field-type" >string</md-text> | 错误描述 |
+| <md-text type="field-name" >data</md-text> | <md-text type="field-type" >\-</md-text> | \- |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >open_id</md-text> | <md-text type="field-type" >string</md-text> | 用户的[Open ID](/document/home/user-identity-introduction/open-id)，用于在同一个应用中对用户进行标识 |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >employee_id</md-text> | <md-text type="field-type" >string</md-text> | 用户的[User ID](/document/home/user-identity-introduction/user-id)，在职员工在企业内的唯一标识<br>**仅当开通以下权限后 返回该字段**：<br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm> |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >session_key</md-text> | <md-text type="field-type" >string</md-text> | 会话密钥 |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >tenant_key</md-text> | <md-text type="field-type" >string</md-text> | 用户所在企业唯一标识 |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >access_token</md-text> | <md-text type="field-type" >string</md-text> | [user_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)，用户身份访问凭证 |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >expires_in</md-text> | <md-text type="field-type" >int</md-text> | [user_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)过期时间戳 |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >refresh_token</md-text> | <md-text type="field-type" >string</md-text> | 刷新用户 access_token 时使用的 token，过期时间为30天 |
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >data</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-td>
-	<md-td>
-	\-
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >open_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户的[Open ID](/document/home/user-identity-introduction/open-id)，用于在同一个应用中对用户进行标识 
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >employee_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户的[User ID](/document/home/user-identity-introduction/user-id)，在职员工在企业内的唯一标识 
-
-**仅当开通以下权限后 返回该字段**：
-<md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-	</md-td>
-</md-tr>
-
-    <md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >session_key</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	会话密钥
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >tenant_key</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户所在企业唯一标识
-	</md-td>
-</md-tr>
-    
-    
-
-    
-    <md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >access_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	[user_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)，用户身份访问凭证
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >expires_in</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	[user_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)过期时间戳
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >refresh_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	刷新用户 access_token 时使用的 token，过期时间为30天
-	</md-td>
-</md-tr>
-
-    
-      </md-tbody>
-</md-table>
-:::
 
 ### 响应体示例
 ```json
@@ -277,42 +89,13 @@ code | string | 是 | [登录](/document/uYjL24iN/uYzMuYzMuYzM)时获取的 code
 ```
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
-    
-    <md-tr>
-      <md-td>200</md-td>
-      <md-td>10202</md-td>
-      <md-td>access token invalid</md-td>
-      <md-td>检查 access_token 是否过期</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>200</md-td>
-      <md-td>10213</md-td>
-      <md-td>code appid not match</md-td>
-<md-td>
-1. 获取code的应用与该接口的应用必须是同一个应用，请确认是否跨应用调用
-2. code 仅能使用一次，请确认是否重复使用或者过期</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>200</md-td>
-      <md-td>10228</md-td>
-      <md-td>user to app has no visibility</md-td>
-      <md-td>当前用户没有可见性</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
 
-:::
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 200 | 10202 | access token invalid | 检查 access_token 是否过期 |
+| 200 | 10213 | code appid not match | 1. 获取code的应用与该接口的应用必须是同一个应用，请确认是否跨应用调用<br>2. code 仅能使用一次，请确认是否重复使用或者过期 |
+| 200 | 10228 | user to app has no visibility | 当前用户没有可见性 |
+
 
 
 

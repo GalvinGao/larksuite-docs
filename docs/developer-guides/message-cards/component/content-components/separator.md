@@ -30,26 +30,10 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uQjNwUjL0YDM14CN2AT
 
 分割线组件的参数说明如下表所示。
 
-:::html
-<md-table>
-    <md-thead>
-    <md-tr>
-        <md-th style="width: 15%">参数</md-th>
-        <md-th style="width: 15%">是否必须</md-th>
-        <md-th style="width: 15%">类型</md-th>
-        <md-th style="width: 55%">描述</md-th>
-    </md-tr>
-    </md-thead>
-    <md-tbody>
-    <md-tr>
-        <md-td>tag</md-td>
-        <md-td>是</md-td>
-        <md-td>String</md-td>
-        <md-td>分割线模块标识，固定取值：hr。</md-td>
-    </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 参数 | 是否必须 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 分割线模块标识，固定取值：hr。 |
+
 
 JSON 示例配置：
 

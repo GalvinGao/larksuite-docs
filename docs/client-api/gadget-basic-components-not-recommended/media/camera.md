@@ -26,171 +26,27 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYTNuYTNuYTN/camera
 :::
 ## 支持说明
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-      <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V5.21.0+</md-version></md-td>
-      <md-td><md-version>V5.21.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/component/pages/camera/camera" fontSize="14">预览</md-preview-app></md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V5.21.0+</md-version> | <md-version>V5.21.0+</md-version> | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/component/pages/camera/camera" fontSize="14">预览</md-preview-app> |
+
 
 ## 属性说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">属性名</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 10%;">是否可动态修改</md-th>
-      <md-th>描述</md-th>
-      <md-th>最低版本</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>id</md-td>
-      <md-td>string</md-td>
-      <md-td></md-td>
-      <md-td>是</md-td>
-      <md-td>否</md-td>
-      <md-td>
-        组件标识符，当前页面内必须唯一
-      </md-td>
-      <md-td>5.21.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>resolution</md-td>
-      <md-td>Enum&lt;string&gt;</md-td>
-      <md-td>medium</md-td>
-      <md-td>否</md-td>
-      <md-td>否</md-td>
-      <md-td>
-        分辨率
-      </md-td>
-      <md-td>5.21.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>device-position</md-td>
-      <md-td>Enum&lt;string&gt;</md-td>
-      <md-td>back</md-td>
-      <md-td>否</md-td>
-      <md-td>是</md-td>
-      <md-td>
-        摄像头朝向
-      </md-td>
-      <md-td>5.21.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>flash</md-td>
-      <md-td>Enum&lt;string&gt;</md-td>
-      <md-td>auto</md-td>
-      <md-td>否</md-td>
-      <md-td>是</md-td>
-      <md-td>
-        闪光灯
-      </md-td>
-      <md-td>5.21.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>mode</md-td>
-      <md-td>Enum&lt;string&gt;</md-td>
-      <md-td>normal</md-td>
-      <md-td>否</md-td>
-      <md-td>否</md-td>
-      <md-td>
-        应用模式
-      </md-td>
-      <md-td>5.27.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>scan-code-type</md-td>
-      <md-td>Enum&lt;string&gt;</md-td>
-      <md-td>continuous</md-td>
-      <md-td>否</md-td>
-      <md-td>否</md-td>
-      <md-td>
-        扫码回调方式
-      </md-td>
-      <md-td>5.27.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>bindstop</md-td>
-      <md-td>EventHandler</md-td>
-      <md-td></md-td>
-      <md-td>否</md-td>
-      <md-td>是</md-td>
-      <md-td>
-        摄像头在非正常终止时触发，如退出后台等情况
-      </md-td>
-      <md-td>5.21.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>binderror</md-td>
-      <md-td>EventHandler</md-td>
-      <md-td></md-td>
-      <md-td>否</md-td>
-      <md-td>是</md-td>
-      <md-td>
-        用户不允许使用摄像头、相机创建失败等情况触发
-      </md-td>
-      <md-td>5.21.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>bindinitdone</md-td>
-      <md-td>EventHandler</md-td>
-      <md-td></md-td>
-      <md-td>否</md-td>
-      <md-td>是</md-td>
-      <md-td>
-- 相机初始化完成时触发，`e.detail = {maxZoom, devicePosition}`
-- 从stop状态回到可用状态时重新触发回调。
-- 切换摄像头时，关闭上一个摄像头并开启下一个摄像头。因此会先调用bindstop方法，再调用bindinitdone方法。
-      </md-td>
-      <md-td>5.21.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>bindscancode</md-td>
-      <md-td>EventHandler</md-td>
-      <md-td></md-td>
-      <md-td>否</md-td>
-      <md-td>是</md-td>
-      <md-td>
-        在扫码识别成功时触发，仅在`mode="scanCode"`时生效
-      </md-td>
-      <md-td>5.27.0</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>bindlumadetect</md-td>
-      <md-td>EventHandler</md-td>
-      <md-td></md-td>
-      <md-td>否</md-td>
-      <md-td>是</md-td>
-      <md-td>
-        暗光检测回调，仅在`mode="scanCode"`时生效
-      </md-td>
-      <md-td>5.27.0</md-td>
-    </md-tr>
 
-  </md-tbody>
-</md-table>
-:::
+| 属性名 | 类型 | 默认值 | 是否必填 | 是否可动态修改 | 描述 | 最低版本 |
+| --- | --- | --- | --- | --- | --- | --- |
+| id | string |  | 是 | 否 | 组件标识符，当前页面内必须唯一 | 5.21.0 |
+| resolution | Enum&lt;string&gt; | medium | 否 | 否 | 分辨率 | 5.21.0 |
+| device-position | Enum&lt;string&gt; | back | 否 | 是 | 摄像头朝向 | 5.21.0 |
+| flash | Enum&lt;string&gt; | auto | 否 | 是 | 闪光灯 | 5.21.0 |
+| mode | Enum&lt;string&gt; | normal | 否 | 否 | 应用模式 | 5.27.0 |
+| scan-code-type | Enum&lt;string&gt; | continuous | 否 | 否 | 扫码回调方式 | 5.27.0 |
+| bindstop | EventHandler |  | 否 | 是 | 摄像头在非正常终止时触发，如退出后台等情况 | 5.21.0 |
+| binderror | EventHandler |  | 否 | 是 | 用户不允许使用摄像头、相机创建失败等情况触发 | 5.21.0 |
+| bindinitdone | EventHandler |  | 否 | 是 | - 相机初始化完成时触发，`e.detail = {maxZoom, devicePosition}`<br>- 从stop状态回到可用状态时重新触发回调。<br>- 切换摄像头时，关闭上一个摄像头并开启下一个摄像头。因此会先调用bindstop方法，再调用bindinitdone方法。 | 5.21.0 |
+| bindscancode | EventHandler |  | 否 | 是 | 在扫码识别成功时触发，仅在`mode="scanCode"`时生效 | 5.27.0 |
+| bindlumadetect | EventHandler |  | 否 | 是 | 暗光检测回调，仅在`mode="scanCode"`时生效 | 5.27.0 |
+
 
 ## Bug & Tip
 1. `tip`: 同一页面只能插入一个`camera`组件

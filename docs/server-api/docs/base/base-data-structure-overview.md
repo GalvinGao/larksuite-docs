@@ -42,42 +42,11 @@ fields 字段为 map 型，由字段名称和其具体内容的键值对组成�
 }
 ```
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 10%;">参数</md-th>
-      <md-th style="width: 10%;">数据类型</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-      <md-th>示例值</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>key</md-td>
-      <md-td>string</md-td>
-      <md-td>多维表格数据表中的字段名称。</md-td>
-      <md-td>"任务情况总结"</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>value</md-td>
-      <md-td>union</md-td>
-      <md-td>某个字段的具体内容，其结构可以是数字、字符串、布尔型、字符串列表或对象列表。详情参考下文。</md-td>
-      <md-td>该示例值为对象列表，更多示例，参考[多维表格记录数据结构](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/bitable-record-data-structure-overview)。
-      
-```json
-[
-  {
-    "text": "网站更新任务正在进行中",
-    "type": "text"
-  }
-]
-```
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 参数 | 数据类型 | 描述 | 示例值 |
+| --- | --- | --- | --- |
+| key | string | 多维表格数据表中的字段名称。 | "任务情况总结" |
+| value | union | 某个字段的具体内容，其结构可以是数字、字符串、布尔型、字符串列表或对象列表。详情参考下文。 | 该示例值为对象列表，更多示例，参考[多维表格记录数据结构](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/bitable-record-data-structure-overview)。<br><code>[<br>  {<br>    "text": "网站更新任务正在进行中",<br>    "type": "text"<br>  }<br>]</code> |
+
 
 
 
@@ -98,167 +67,31 @@ fields 字段为 map 型，由字段名称和其具体内容的键值对组成�
 }
 ```
 参数描述如下所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>field_id</md-td>
-      <md-td>string</md-td>
-      <md-td>字段 ID</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>field_name</md-td>
-      <md-td>string</md-td>
-      <md-td>字段名称</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>type</md-td>
-      <md-td>int</md-td>
-      <md-td>字段类型：相同类型用ui_type区分：
-        
-- 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)
-- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)
-- 3：单选
-- 4：多选
-- 5：日期
-- 7：复选框
-- 11：人员
-- 13：电话号码
-- 15：超链接
-- 17：附件
-- 18：单向关联
-- 19：查找引用
-- 20：公式
-- 21：双向关联
-- 22：地理位置
-- 23：群组
-- 1001：创建时间
-- 1002：最后更新时间
-- 1003：创建人
-- 1004：修改人
-- 1005：自动编号
-        
-        </md-td>
-    </md-tr>
-    <md-tr>
-  <md-td>description</md-td>
-  <md-td>字段的描述</md-td>
-  <md-td>对字段的更多说明。</md-td>
-</md-tr>
-<md-tr>
-  <md-td>is_primary</md-td>
-  <md-td>true/false</md-td>
-  <md-td>该字段是否是初始的索引字段。</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>property</md-td>
-      <md-td>object</md-td>
-      <md-td>字段属性，因字段类型而异。详情参考[字段编辑指南](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/guide)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>ui_type</md-td>
-      <md-td>string</md-td>
-      <md-td>字段的 UI 类型：
-- "Text"：文本
-- "Email"：邮箱
-- "Barcode"：条码
-- "Number"：数字
-- "Progress"：进度
-- "Currency"：货币
-- "Rating"：评分
-- "SingleSelect"：单选
-- "MultiSelect"：多选
-- "DateTime"：日期
-- "Checkbox"：复选框
-- "User"：人员
-- "GroupChat"：群组
-- "Phone"：电话号码
-- "Url"：超链接
-- "Attachment"：附件
-- "SingleLink"：单向关联
-- "Formula"：公式
-- "Lookup": 查找引用
-- "DuplexLink"：双向关联
-- "Location"：地理位置
-- "CreatedTime"：创建时间
-- "ModifiedTime"：最后更新时间
-- "CreatedUser"：创建人
-- "ModifiedUser"：修改人
-- "AutoNumber"：自动编号
-      
-      </md-td>
-    </md-tr>
-    <md-tr>
-  <md-td>is_hidden</md-td>
-  <md-td>true/false</md-td>
-  <md-td>字段是否是隐藏字段。</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| field_id | string | 字段 ID |
+| field_name | string | 字段名称 |
+| type | int | 字段类型：相同类型用ui_type区分：<br>- 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)<br>- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)<br>- 3：单选<br>- 4：多选<br>- 5：日期<br>- 7：复选框<br>- 11：人员<br>- 13：电话号码<br>- 15：超链接<br>- 17：附件<br>- 18：单向关联<br>- 19：查找引用<br>- 20：公式<br>- 21：双向关联<br>- 22：地理位置<br>- 23：群组<br>- 1001：创建时间<br>- 1002：最后更新时间<br>- 1003：创建人<br>- 1004：修改人<br>- 1005：自动编号 |
+| description | 字段的描述 | 对字段的更多说明。 |
+| is_primary | true/false | 该字段是否是初始的索引字段。 |
+| property | object | 字段属性，因字段类型而异。详情参考[字段编辑指南](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/guide)。 |
+| ui_type | string | 字段的 UI 类型：<br>- "Text"：文本<br>- "Email"：邮箱<br>- "Barcode"：条码<br>- "Number"：数字<br>- "Progress"：进度<br>- "Currency"：货币<br>- "Rating"：评分<br>- "SingleSelect"：单选<br>- "MultiSelect"：多选<br>- "DateTime"：日期<br>- "Checkbox"：复选框<br>- "User"：人员<br>- "GroupChat"：群组<br>- "Phone"：电话号码<br>- "Url"：超链接<br>- "Attachment"：附件<br>- "SingleLink"：单向关联<br>- "Formula"：公式<br>- "Lookup": 查找引用<br>- "DuplexLink"：双向关联<br>- "Location"：地理位置<br>- "CreatedTime"：创建时间<br>- "ModifiedTime"：最后更新时间<br>- "CreatedUser"：创建人<br>- "ModifiedUser"：修改人<br>- "AutoNumber"：自动编号 |
+| is_hidden | true/false | 字段是否是隐藏字段。 |
 
-  </md-tbody>
-</md-table>
-:::
 
 
 
 ## 视图
 
 视图是一个 object 结构类型。
-:::html
 
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">参数</md-th>
-      <md-th style="width: 17%;">类型</md-th>
-      <md-th style="width: 53%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>
-        view_id
-      </md-td>
-      <md-td>string</md-td>
-      <md-td>视图 ID。`view_id` 在一个多维表格中唯一，在全局不一定唯一。获取方式：
-        
-- 你可通过多维表格 URL 获取 `view_id`，下图高亮部分即为当前视图的唯一标识。
-        
-  ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/140668632c97e0095832219001d17c54_c76RMwZAgW.png?height=748&lazyload=true&maxWidth=700&width=2998)
-        
-- 你也可通过[列出视图](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-view/list)接口获取 `view_id`。暂时无法获取到嵌入到文档中的多维表格的 `view_id`。
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| view_id | string | 视图 ID。`view_id` 在一个多维表格中唯一，在全局不一定唯一。获取方式：<br>- 你可通过多维表格 URL 获取 `view_id`，下图高亮部分即为当前视图的唯一标识。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/140668632c97e0095832219001d17c54_c76RMwZAgW.png?height=748&lazyload=true&maxWidth=700&width=2998)<br>- 你也可通过[列出视图](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-view/list)接口获取 `view_id`。暂时无法获取到嵌入到文档中的多维表格的 `view_id`。 |
+| view_name | string | 视图名称 |
+| view_type | string | 视图类型，支持以下类型，默认为 grid 类型。<br>- grid：表格视图<br>- kanban：看板视图<br>- gallery：画册视图<br>- gantt：甘特视图<br>- form：表单视图 |
 
-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>
-        view_name
-      </md-td>
-      <md-td>string</md-td>
-      <md-td>视图名称</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>
-        view_type
-      </md-td>
-      <md-td>string</md-td>
-      <md-td>视图类型，支持以下类型，默认为 grid 类型。
-- grid：表格视图
-- kanban：看板视图
-- gallery：画册视图
-- gantt：甘特视图
-- form：表单视图</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 
 ## 自定义数据结构

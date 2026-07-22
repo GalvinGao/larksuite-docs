@@ -39,188 +39,41 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/drive/v1/files/:file_token/subscriptions/:subscription_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>PATCH</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/drive/v1/files/:file_token/subscriptions/:subscription_id |
+| HTTP Method | PATCH |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：获取与使用access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：获取与使用access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
 ### 路径参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >file_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档token
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >file_token</md-text> | <md-text type="field-type" >string</md-text> | 文档token<br>**示例值**："doxcnxxxxxxxxxxxxxxxxxxxxxx" |
+| <md-text type="field-name" >subscription_id</md-text> | <md-text type="field-type" >string</md-text> | 订阅关系ID<br>**示例值**："1234567890987654321" |
 
-**示例值**："doxcnxxxxxxxxxxxxxxxxxxxxxx"
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >subscription_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	订阅关系ID
-
-**示例值**："1234567890987654321"
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
 ### 请求体
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| <md-text type="field-name" >is_subscribe</md-text> | <md-text type="field-type" >boolean</md-text> | 是 | 是否订阅<br>**示例值**：true |
+| <md-text type="field-name" >file_type</md-text> | <md-text type="field-type" >string</md-text> | 是 | 文档类型<br>**示例值**："doc"<br>**可选值有**：<br>- `doc`：文档1.0<br>- `docx`：文档2.0<br>- `wiki`：知识库wiki |
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >is_subscribe</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-	<md-td>
-	是否订阅
-
-**示例值**：true
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >file_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-	<md-td>
-	文档类型
-
-**示例值**："doc"
-
-**可选值有**：
-- `doc`：文档1.0
-- `docx`：文档2.0
-- `wiki`：知识库wiki
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -237,131 +90,18 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 响应体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >code</md-text> | <md-text type="field-type" >int</md-text> | 错误码，非 0 表示失败 |
+| <md-text type="field-name" >msg</md-text> | <md-text type="field-type" >string</md-text> | 错误描述 |
+| <md-text type="field-name" >data</md-text> | <md-text type="field-type" >\-</md-text> | \- |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >subscription</md-text> | <md-text type="field-type" >file.subscription</md-text> | 本次修改的文档订阅信息 |
+| &emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >subscription_id</md-text> | <md-text type="field-type" >string</md-text> | 订阅关系ID |
+| &emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >subscription_type</md-text> | <md-text type="field-type" >string</md-text> | 订阅类型<br>**可选值有**：<br>- `comment_update`：评论更新 |
+| &emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >is_subcribe</md-text> | <md-text type="field-type" >boolean</md-text> | 是否订阅 |
+| &emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >file_type</md-text> | <md-text type="field-type" >string</md-text> | 文档类型<br>**可选值有**：<br>- `doc`：文档<br>- `docx`：文档2.0<br>- `wiki`：知识库wiki |
 
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >data</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >\-</md-text>
-	</md-td>
-	<md-td>
-	\-
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >subscription</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >file.subscription</md-text>
-	</md-td>
-	<md-td>
-	本次修改的文档订阅信息
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >subscription_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	订阅关系ID
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >subscription_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	订阅类型
-
-**可选值有**：
-- `comment_update`：评论更新
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >is_subcribe</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >boolean</md-text>
-	</md-td>
-	<md-td>
-	是否订阅
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >file_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档类型
-
-**可选值有**：
-- `doc`：文档
-- `docx`：文档2.0
-- `wiki`：知识库wiki
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -383,52 +123,14 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1064000</md-td>
-  <md-td>Illegal parameter</md-td>
-  <md-td>检查参数有效性</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1064000 | Illegal parameter | 检查参数有效性 |
+| 403 | 1064030 | Permission denied | 检查文档权限，订阅评论至少需要阅读的权限 |
+| 404 | 1064040 | Token not exist | 检查文档是否能正常访问 |
+| 500 | 1065000 | Internal Server Error | 重试，若稳定失败请联系相关业务方oncall人员 |
 
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1064030</md-td>
-  <md-td>Permission denied</md-td>
-  <md-td>检查文档权限，订阅评论至少需要阅读的权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>1064040</md-td>
-  <md-td>Token not exist</md-td>
-  <md-td>检查文档是否能正常访问</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1065000</md-td>
-  <md-td>Internal Server Error</md-td>
-  <md-td>重试，若稳定失败请联系相关业务方oncall人员</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

@@ -73,32 +73,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 **接口分类说明**
 
 接口的频率限制大概的逻辑如下：
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">接口类型</md-th>
-<md-th style="width:30%">频率限制 </md-th>
-<md-th style="width:50%">典型接口示例 </md-th>
-</md-tr>
-</md-thead>
 
-<md-tbody>
-<md-tr>
-<md-td>数据写入</md-td>
-<md-td>单企业单应用 5 次/秒</md-td>
-<md-td>创建员工、创建部门 </md-td>
-</md-tr>
-<md-tr>
-<md-td>数据修改</md-td>
-<md-td>单企业单应用 10 次/秒</md-td>
-<md-td>更新员工、离职员工、恢复离职员工、更新部门、删除部门</md-td>
-</md-tr>
-<md-tr>
-<md-td>数据读取</md-td>
-<md-td>单企业单应用 1000 次/分钟、50 次/秒</md-td>
-<md-td>批量获取员工信息、批量获取员工列表、搜索员工、批量获取部门信息、批量获取部门列表、搜索部门</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 接口类型 | 频率限制 | 典型接口示例 |
+| --- | --- | --- |
+| 数据写入 | 单企业单应用 5 次/秒 | 创建员工、创建部门 |
+| 数据修改 | 单企业单应用 10 次/秒 | 更新员工、离职员工、恢复离职员工、更新部门、删除部门 |
+| 数据读取 | 单企业单应用 1000 次/分钟、50 次/秒 | 批量获取员工信息、批量获取员工列表、搜索员工、批量获取部门信息、批量获取部门列表、搜索部门 |
+

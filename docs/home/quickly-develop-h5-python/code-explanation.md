@@ -113,51 +113,14 @@ def get_ticket(self):
     
 **获取签名所需的参数说明**
     
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:15%">数据类型</md-th>
-<md-th style="width:25%">示例值</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>noncestr</md-td>
-<md-td>string</md-td>
-<md-td>Y7a8KkqX041bsSwT</md-td>
-<md-td>随机字符串。</md-td>
-</md-tr>
+| 参数 | 数据类型 | 示例值 | 描述 |
+| --- | --- | --- | --- |
+| noncestr | string | Y7a8KkqX041bsSwT | 随机字符串。 |
+| jsapi_ticket | string | 617bf955832a4d4d80d9d8d85917a427 | 上一步骤获得的 ticket。 |
+| timestamp | number | 1510045655000 | 当前时间戳，毫秒级。<br>数据类型不能使用 string 类型。 |
+| url | string | https://example.cn/test/1234/content.html | 当前网页的 URL（可以是本地局域网网址），不包含#及其后面部分。 |
 
-<md-tr>
-<md-td>jsapi_ticket</md-td>
-<md-td>string</md-td>
-<md-td>617bf955832a4d4d80d9d8d85917a427</md-td>
-<md-td>上一步骤获得的 ticket。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>timestamp</md-td>
-<md-td>number</md-td>
-<md-td>1510045655000</md-td>
-<md-td>当前时间戳，毫秒级。
-
-数据类型不能使用 string 类型。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>url</md-td>
-<md-td>string</md-td>
-<md-td>https://example.cn/test/1234/content.html</md-td>
-<md-td>当前网页的 URL（可以是本地局域网网址），不包含#及其后面部分。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 **签名生成规则**
         

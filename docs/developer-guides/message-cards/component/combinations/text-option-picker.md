@@ -105,47 +105,11 @@ JSON 示例配置如下：
 
 在选择器模式中可选 **自定义选项选择器** 或 **人员选择器** 模式。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%">选择器模式</md-th>
-<md-th style="width: 80%">配置项说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 选择器模式 | 配置项说明 |
+| --- | --- |
+| 自定义选项选择器 | - **默认提示文本**：默认展示在选择器输入框内的文本信息。<br>- **选项配置模式**：支持 **固定选项模式** 或 **绑定选项组变量**。<br>- **固定选项模式** 需要设置一个或多个选项的文本内容与回传参数值。后续当用户选中选项时，应用会向指定的消息卡片请求地址发送 HTTP POST 请求，请求中会包含选项的回传参数值。<br>- **绑定选项组变量** 需要绑定选项组变量。关于卡片变量的使用说明，参见[配置卡片变量](/document/ukTMukTMukTM/ucTNwUjL3UDM14yN1ATN/configure-card-variables)。<br>- **配置回传交互**：配置回传参数的名称与值，后续当用户操作选择器后，应用会向指定的消息卡片请求地址发送 HTTP POST 请求，请求中会包含已配置的回传参数数据。关于回传交互的详细配置说明，可参见[配置卡片交互](/document/ukTMukTMukTM/uYjNwUjL2YDM14iN2ATN)。<br>- **二次确认弹窗**：开启后需要配置弹窗的标题与提示信息，当用户选中选项后需要在弹窗内二次确认。 |
+| 人员选择器 | - **默认提示文本**：默认展示在选择器输入框内的文本信息。<br>- **选项配置模式**：支持 **配置固定人员列表**、**绑定人员选项组变量** 或 **所在会话人员列表**。<br>- **配置固定人员列表** 需要设置一个或多个人员选项，选项的 value 是人员的 [open_id](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)。<br>- **绑定人员选项组变量** 需要绑定一个人员选项组变量。关于卡片变量的使用说明，参见[配置卡片变量](/document/ukTMukTMukTM/ucTNwUjL3UDM14yN1ATN/configure-card-variables)。<br>- **所在会话人员列表**：根据发送消息卡片的目标会话，获取会话内的人员并生成列表。<br>- **配置回传交互**：配置回传参数的名称与值，后续当用户操作选择器后，应用会向指定的消息卡片请求地址发送 HTTP POST 请求，请求中会包含已配置的回传参数数据。关于回传交互的详细配置说明，可参见[配置卡片交互](/document/ukTMukTMukTM/uYjNwUjL2YDM14iN2ATN)。<br>- **二次确认弹窗**：开启后需要配置弹窗的标题与提示信息，当用户选中选项后需要在弹窗内二次确认。 |
 
-<md-tr>
-<md-td>自定义选项选择器</md-td>
-<md-td>
-- **默认提示文本**：默认展示在选择器输入框内的文本信息。
-- **选项配置模式**：支持 **固定选项模式** 或 **绑定选项组变量**。
-
-    - **固定选项模式** 需要设置一个或多个选项的文本内容与回传参数值。后续当用户选中选项时，应用会向指定的消息卡片请求地址发送 HTTP POST 请求，请求中会包含选项的回传参数值。
-    - **绑定选项组变量** 需要绑定选项组变量。关于卡片变量的使用说明，参见[配置卡片变量](/document/ukTMukTMukTM/ucTNwUjL3UDM14yN1ATN/configure-card-variables)。
-
-- **配置回传交互**：配置回传参数的名称与值，后续当用户操作选择器后，应用会向指定的消息卡片请求地址发送 HTTP POST 请求，请求中会包含已配置的回传参数数据。关于回传交互的详细配置说明，可参见[配置卡片交互](/document/ukTMukTMukTM/uYjNwUjL2YDM14iN2ATN)。
-- **二次确认弹窗**：开启后需要配置弹窗的标题与提示信息，当用户选中选项后需要在弹窗内二次确认。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>人员选择器</md-td>
-<md-td>
-- **默认提示文本**：默认展示在选择器输入框内的文本信息。
-- **选项配置模式**：支持 **配置固定人员列表**、**绑定人员选项组变量** 或 **所在会话人员列表**。
-    - **配置固定人员列表** 需要设置一个或多个人员选项，选项的 value 是人员的 [open_id](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)。
-    - **绑定人员选项组变量** 需要绑定一个人员选项组变量。关于卡片变量的使用说明，参见[配置卡片变量](/document/ukTMukTMukTM/ucTNwUjL3UDM14yN1ATN/configure-card-variables)。
-    - **所在会话人员列表**：根据发送消息卡片的目标会话，获取会话内的人员并生成列表。
-- **配置回传交互**：配置回传参数的名称与值，后续当用户操作选择器后，应用会向指定的消息卡片请求地址发送 HTTP POST 请求，请求中会包含已配置的回传参数数据。关于回传交互的详细配置说明，可参见[配置卡片交互](/document/ukTMukTMukTM/uYjNwUjL2YDM14iN2ATN)。
-- **二次确认弹窗**：开启后需要配置弹窗的标题与提示信息，当用户选中选项后需要在弹窗内二次确认。
-</md-td>
-</md-tr>
-
-
-</md-tbody>
-</md-table>
-:::
 
 ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/bf9752710fe7dfb71b9cd68d40aff1fb_WI3vPkq138.png?height=1306&lazyload=true&maxWidth=600&width=1642)
 

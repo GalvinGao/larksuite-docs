@@ -24,120 +24,14 @@ source_url: https://open.larksuite.com/document/home/sales-statistics-base-on-sp
   - [增加权限](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create)
 
 ## 云文档
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 25%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取空间根目录](/document/ukTMukTMukTM/ugTNzUjL4UzM14CO1MTN/get-root-folder-meta)
 
-`GET` /open-apis/drive/explorer/v2/root_folder/meta
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| <md-text type="field-name" >[获取空间根目录](/document/ukTMukTMukTM/ugTNzUjL4UzM14CO1MTN/get-root-folder-meta)<br>`GET` /open-apis/drive/explorer/v2/root_folder/meta<br>> 获取云空间的根目录<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[创建表格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet/create)<br>`POST` /open-apis/sheets/v3/spreadsheets<br>> 使用该接口可以在指定的目录下创建在线表格<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[获取表格元数据](/document/ukTMukTMukTM/uETMzUjLxEzM14SMxMTN)<br>`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/metainfo<br>> 该接口用于根据 spreadsheetToken 获取表格元数据<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[向多个范围写入数据](/document/ukTMukTMukTM/uEjMzUjLxIzM14SMyMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_batch_update<br>> 该接口用于根据 spreadsheetToken 和 range 向多个范围写入数据<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[批量设置单元格样式](/document/ukTMukTMukTM/uAzMzUjLwMzM14CMzMTN)<br>`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/styles_batch_update<br>> 该接口用于根据 spreadsheetToken、range 批量更新单元格样式<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[增加权限](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create)<br>`POST` /open-apis/drive/v1/permissions/:token/members<br>> 该接口用于根据 filetoken 给用户增加文档的权限<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
 
-> 获取云空间的根目录
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[创建表格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet/create)
-
-`POST` /open-apis/sheets/v3/spreadsheets
-
-> 使用该接口可以在指定的目录下创建在线表格
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取表格元数据](/document/ukTMukTMukTM/uETMzUjLxEzM14SMxMTN)
-
-`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/metainfo
-
-> 该接口用于根据 spreadsheetToken 获取表格元数据
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[向多个范围写入数据](/document/ukTMukTMukTM/uEjMzUjLxIzM14SMyMTN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_batch_update
-
-> 该接口用于根据 spreadsheetToken 和 range 向多个范围写入数据
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[批量设置单元格样式](/document/ukTMukTMukTM/uAzMzUjLwMzM14CMzMTN)
-
-`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/styles_batch_update
-
-> 该接口用于根据 spreadsheetToken、range 批量更新单元格样式
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[增加权限](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create)
-
-`POST` /open-apis/drive/v1/permissions/:token/members
-
-> 该接口用于根据 filetoken 给用户增加文档的权限
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 

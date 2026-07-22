@@ -47,90 +47,15 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ## 事件
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>事件类型</md-th>
-      <md-td>directory.employee.to_be_resigned_v1</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-    <md-th>
-            权限要求
-            <md-tooltip type="info">订阅该事件所需的权限，开启其中任意一项权限即可订阅</md-tooltip>
-            
-    </md-th>
-      <md-td>
-            <md-perm name="directory:employee:read" desc="调用 API 获取员工信息" support_app_types="custom,isv" tags="">调用 API 获取员工信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-          字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm>
-        <md-perm name="directory:department.external_id:read" desc="查看部门自定义 ID" support_app_types="custom,isv" tags="">查看部门自定义 ID</md-perm>
-        <md-perm name="directory:employee.base.active_status:read" desc="查看员工账号活跃状态" support_app_types="custom,isv" tags="">查看员工账号活跃状态</md-perm>
-        <md-perm name="directory:employee.base.avatar:read" desc="查看员工的头像" support_app_types="custom,isv" tags="">查看员工的头像</md-perm>
-        <md-perm name="directory:employee.base.background_image:read" desc="查看员工的名片页自定义背景图" support_app_types="custom,isv" tags="">查看员工的名片页自定义背景图</md-perm>
-        <md-perm name="directory:employee.base.base:read" desc="查看员工个人基本信息" support_app_types="custom,isv" tags="">查看员工个人基本信息</md-perm>
-        <md-perm name="directory:employee.base.custom_field:read" desc="查看员工自定义字段值" support_app_types="custom,isv" tags="">查看员工自定义字段值</md-perm>
-        <md-perm name="directory:employee.base.department:read" desc="查看员工所属部门信息" support_app_types="custom,isv" tags="">查看员工所属部门信息</md-perm>
-        <md-perm name="directory:employee.base.dept_order:read" desc="查看员工在部门内的排序" support_app_types="custom,isv" tags="">查看员工在部门内的排序</md-perm>
-        <md-perm name="directory:employee.base.description:read" desc="查看员工的个性签名" support_app_types="custom,isv" tags="">查看员工的个性签名</md-perm>
-        <md-perm name="directory:employee.base.dotted_line_leaders:read" desc="查看员工虚线上级 ID" support_app_types="custom,isv" tags="">查看员工虚线上级 ID</md-perm>
-        <md-perm name="directory:employee.base.email:read" desc="查看员工联系邮箱" support_app_types="custom,isv" tags="">查看员工联系邮箱</md-perm>
-        <md-perm name="directory:employee.base.gender:read" desc="查看员工性别" support_app_types="custom,isv" tags="">查看员工性别</md-perm>
-        <md-perm name="directory:employee.base.is_resigned:read" desc="查看员工离职状态" support_app_types="custom,isv" tags="">查看员工离职状态</md-perm>
-        <md-perm name="directory:employee.base.leader:read" desc="查看员工上级信息" support_app_types="custom,isv" tags="">查看员工上级信息</md-perm>
-        <md-perm name="directory:employee.base.leader_id:read" desc="查看员工直属上级 ID" support_app_types="custom,isv" tags="">查看员工直属上级 ID</md-perm>
-        <md-perm name="directory:employee.base.mobile:read" desc="查看员工手机号" support_app_types="custom,isv" tags="">查看员工手机号</md-perm>
-        <md-perm name="directory:employee.base.name.another_name:read" desc="查看员工的别名" support_app_types="custom,isv" tags="">查看员工的别名</md-perm>
-        <md-perm name="directory:employee.base.name.name:read" desc="查看员工的姓名" support_app_types="custom,isv" tags="">查看员工的姓名</md-perm>
-        <md-perm name="directory:employee.base.resign_time:read" desc="查看员工离职时间" support_app_types="custom,isv" tags="">查看员工离职时间</md-perm>
-        <md-perm name="directory:employee.base.status:read" desc="查看员工状态信息" support_app_types="custom,isv" tags="">查看员工状态信息</md-perm>
-        <md-perm name="directory:employee.work.base_work:read" desc="查看员工基础工作信息" support_app_types="custom,isv" tags="">查看员工基础工作信息</md-perm>
-        <md-perm name="directory:employee.work.work_station:read" desc="查看员工的工位" support_app_types="custom,isv" tags="">查看员工的工位</md-perm>
-        <md-perm name="directory:employee.work.employment_type:read" desc="查看员工的员工类型" support_app_types="custom,isv" tags="">查看员工的员工类型</md-perm>
-        <md-perm name="directory:employee.work.extension_number:read" desc="查看员工的分机号" support_app_types="custom,isv" tags="">查看员工的分机号</md-perm>
-        <md-perm name="directory:employee.work.job_number:read" desc="查看员工的工号" support_app_types="custom,isv" tags="">查看员工的工号</md-perm>
-        <md-perm name="directory:employee.work.job_title:read" desc="查看员工职务信息" support_app_types="custom,isv" tags="">查看员工职务信息</md-perm>
-        <md-perm name="directory:employee.work.join_date:read" desc="查看员工的入职日期" support_app_types="custom,isv" tags="">查看员工的入职日期</md-perm>
-        <md-perm name="directory:employee.work.resign_date:read" desc="查看员工离职日期" support_app_types="custom,isv" tags="">查看员工离职日期</md-perm>
-        <md-perm name="directory:employee.work.resign_reason:read" desc="查看员工离职原因" support_app_types="custom,isv" tags="">查看员工离职原因</md-perm>
-        <md-perm name="directory:employee.work.resign_remark:read" desc="查看员工离职备注" support_app_types="custom,isv" tags="">查看员工离职备注</md-perm>
-        <md-perm name="directory:employee.work.resign_type:read" desc="查看员工离职类型" support_app_types="custom,isv" tags="">查看员工离职类型</md-perm>
-        <md-perm name="directory:employee.work.staff_status:read" desc="查看员工的人事状态" support_app_types="custom,isv" tags="">查看员工的人事状态</md-perm>
-        <md-perm name="directory:employee.work.work_country_or_region:read" desc="查看员工的工作国家/地区" support_app_types="custom,isv" tags="">查看员工的工作国家/地区</md-perm>
-        <md-perm name="directory:employee.work.work_place:read" desc="查看员工的工作地点" support_app_types="custom,isv" tags="">查看员工的工作地点</md-perm>
-        <md-perm name="directory:employee.work.employment:read" desc="查看员工雇佣信息" support_app_types="custom" tags="history,offline">查看员工雇佣信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>推送方式</md-th>
-      <md-td>
-            <md-tag mode="inline" type="push-webhook" href="/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM" >Webhook</md-tag>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| 事件类型 | directory.employee.to_be_resigned_v1 |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">订阅该事件所需的权限，开启其中任意一项权限即可订阅</md-tooltip> | <md-perm name="directory:employee:read" desc="调用 API 获取员工信息" support_app_types="custom,isv" tags="">调用 API 获取员工信息</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm><br><md-perm name="directory:department.external_id:read" desc="查看部门自定义 ID" support_app_types="custom,isv" tags="">查看部门自定义 ID</md-perm><br><md-perm name="directory:employee.base.active_status:read" desc="查看员工账号活跃状态" support_app_types="custom,isv" tags="">查看员工账号活跃状态</md-perm><br><md-perm name="directory:employee.base.avatar:read" desc="查看员工的头像" support_app_types="custom,isv" tags="">查看员工的头像</md-perm><br><md-perm name="directory:employee.base.background_image:read" desc="查看员工的名片页自定义背景图" support_app_types="custom,isv" tags="">查看员工的名片页自定义背景图</md-perm><br><md-perm name="directory:employee.base.base:read" desc="查看员工个人基本信息" support_app_types="custom,isv" tags="">查看员工个人基本信息</md-perm><br><md-perm name="directory:employee.base.custom_field:read" desc="查看员工自定义字段值" support_app_types="custom,isv" tags="">查看员工自定义字段值</md-perm><br><md-perm name="directory:employee.base.department:read" desc="查看员工所属部门信息" support_app_types="custom,isv" tags="">查看员工所属部门信息</md-perm><br><md-perm name="directory:employee.base.dept_order:read" desc="查看员工在部门内的排序" support_app_types="custom,isv" tags="">查看员工在部门内的排序</md-perm><br><md-perm name="directory:employee.base.description:read" desc="查看员工的个性签名" support_app_types="custom,isv" tags="">查看员工的个性签名</md-perm><br><md-perm name="directory:employee.base.dotted_line_leaders:read" desc="查看员工虚线上级 ID" support_app_types="custom,isv" tags="">查看员工虚线上级 ID</md-perm><br><md-perm name="directory:employee.base.email:read" desc="查看员工联系邮箱" support_app_types="custom,isv" tags="">查看员工联系邮箱</md-perm><br><md-perm name="directory:employee.base.gender:read" desc="查看员工性别" support_app_types="custom,isv" tags="">查看员工性别</md-perm><br><md-perm name="directory:employee.base.is_resigned:read" desc="查看员工离职状态" support_app_types="custom,isv" tags="">查看员工离职状态</md-perm><br><md-perm name="directory:employee.base.leader:read" desc="查看员工上级信息" support_app_types="custom,isv" tags="">查看员工上级信息</md-perm><br><md-perm name="directory:employee.base.leader_id:read" desc="查看员工直属上级 ID" support_app_types="custom,isv" tags="">查看员工直属上级 ID</md-perm><br><md-perm name="directory:employee.base.mobile:read" desc="查看员工手机号" support_app_types="custom,isv" tags="">查看员工手机号</md-perm><br><md-perm name="directory:employee.base.name.another_name:read" desc="查看员工的别名" support_app_types="custom,isv" tags="">查看员工的别名</md-perm><br><md-perm name="directory:employee.base.name.name:read" desc="查看员工的姓名" support_app_types="custom,isv" tags="">查看员工的姓名</md-perm><br><md-perm name="directory:employee.base.resign_time:read" desc="查看员工离职时间" support_app_types="custom,isv" tags="">查看员工离职时间</md-perm><br><md-perm name="directory:employee.base.status:read" desc="查看员工状态信息" support_app_types="custom,isv" tags="">查看员工状态信息</md-perm><br><md-perm name="directory:employee.work.base_work:read" desc="查看员工基础工作信息" support_app_types="custom,isv" tags="">查看员工基础工作信息</md-perm><br><md-perm name="directory:employee.work.work_station:read" desc="查看员工的工位" support_app_types="custom,isv" tags="">查看员工的工位</md-perm><br><md-perm name="directory:employee.work.employment_type:read" desc="查看员工的员工类型" support_app_types="custom,isv" tags="">查看员工的员工类型</md-perm><br><md-perm name="directory:employee.work.extension_number:read" desc="查看员工的分机号" support_app_types="custom,isv" tags="">查看员工的分机号</md-perm><br><md-perm name="directory:employee.work.job_number:read" desc="查看员工的工号" support_app_types="custom,isv" tags="">查看员工的工号</md-perm><br><md-perm name="directory:employee.work.job_title:read" desc="查看员工职务信息" support_app_types="custom,isv" tags="">查看员工职务信息</md-perm><br><md-perm name="directory:employee.work.join_date:read" desc="查看员工的入职日期" support_app_types="custom,isv" tags="">查看员工的入职日期</md-perm><br><md-perm name="directory:employee.work.resign_date:read" desc="查看员工离职日期" support_app_types="custom,isv" tags="">查看员工离职日期</md-perm><br><md-perm name="directory:employee.work.resign_reason:read" desc="查看员工离职原因" support_app_types="custom,isv" tags="">查看员工离职原因</md-perm><br><md-perm name="directory:employee.work.resign_remark:read" desc="查看员工离职备注" support_app_types="custom,isv" tags="">查看员工离职备注</md-perm><br><md-perm name="directory:employee.work.resign_type:read" desc="查看员工离职类型" support_app_types="custom,isv" tags="">查看员工离职类型</md-perm><br><md-perm name="directory:employee.work.staff_status:read" desc="查看员工的人事状态" support_app_types="custom,isv" tags="">查看员工的人事状态</md-perm><br><md-perm name="directory:employee.work.work_country_or_region:read" desc="查看员工的工作国家/地区" support_app_types="custom,isv" tags="">查看员工的工作国家/地区</md-perm><br><md-perm name="directory:employee.work.work_place:read" desc="查看员工的工作地点" support_app_types="custom,isv" tags="">查看员工的工作地点</md-perm><br><md-perm name="directory:employee.work.employment:read" desc="查看员工雇佣信息" support_app_types="custom" tags="history,offline">查看员工雇佣信息</md-perm> |
+| 推送方式 | <md-tag mode="inline" type="push-webhook" href="/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM" >Webhook</md-tag> |
+
 
 
 

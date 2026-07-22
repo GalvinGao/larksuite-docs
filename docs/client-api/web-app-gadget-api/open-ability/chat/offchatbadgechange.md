@@ -27,103 +27,21 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDM04COwQjL4ADN/offcha
 :::
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.10.0+</md-version></md-td>
-      <md-td><md-version>V3.10.0+</md-version></md-td>
-      <md-td><md-version>V3.10.0+</md-version></md-td>
-      <md-td>
-        <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app>
-      </md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V7.10.0+</md-version></md-td>
-      <md-td><md-version>V7.10.0+</md-version></md-td>
-      <md-td><md-version>V7.10.0+</md-version></md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.10.0+</md-version> | <md-version>V3.10.0+</md-version> | <md-version>V3.10.0+</md-version> | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V7.10.0+</md-version> | <md-version>V7.10.0+</md-version> | <md-version>V7.10.0+</md-version> | / |
+
 
 
 ## 输入
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                [openChatId](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                获取会话信息的会话Id
 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                onChange
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                回调函数
-<md-alert type="tip" icon="none">
-如果不传 `onChange` 回调函数，则会取消[openChatId](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)对应的所有监听，传onChange则会取消指定监听
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| [openChatId](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description) | string | 是 |  | 获取会话信息的会话Id |
+| onChange | function | 否 |  | 回调函数<br><md-alert type="tip" icon="none"><br>如果不传 `onChange` 回调函数，则会取消[openChatId](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)对应的所有监听，传onChange则会取消指定监听<br></md-alert> |
+
 
 ## 输出
 无

@@ -27,60 +27,16 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 :::note
 若这些字段均不传，则卡片 JSON 为 "{}"。Lark开放平台支持发送卡片 JSON 为 "{}" 的空白卡片。
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段</md-th>
-      <md-th style="width: 25%;">是否支持在搭建工具中设置</md-th>
-      <md-th style="width: 15%;">是否必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>行为设置 `config`</md-td>
-      <md-td>否</md-td>
-      <md-td>否</md-td>
-      <md-td>`config` 用于配置卡片的全局行为，包括是否允许被转发、是否为共享卡片等。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>跳转链接 `card_link`</md-td>
-      <md-td>是</md-td>
-      <md-td>否</md-td>
-      <md-td>`card_link` 字段用于指定卡片整体的点击跳转链接。你可以配置一个默认链接，也可以分别为 PC 端、Android 端、iOS 端配置不同的跳转链接。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>多语言设置 `i18n_elements` 等</md-td>
-      <md-td>是</md-td>
-      <md-td>否</md-td>
-      <md-td>Lark卡片支持多语言设置。设置多语言后，卡片将根据用户的Lark客户端语言，自动展示对应语言的卡片内容，满足国际化业务需求。详情参考[配置卡片多语言](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configure-multi-language-content)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>标题组件 `header`</md-td>
-      <md-td>是</md-td>
-      <md-td>否</md-td>
-      <md-td>标题组件 JSON 代码。详细字段说明参考[标题组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/title)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>其它组件 `elements`</md-td>
-      <md-td>是</md-td>
-      <md-td>否</md-td>
-      <md-td>在 `elements` 字段中添加各个组件的 JSON 数据，组件将按数组顺序纵向流式排列。了解各个组件，参考[组件概述](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/component-overview)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>降级规则 `fallback`</md-td>
-      <md-td>否</md-td>
-      <md-td>否</md-td>
-      <md-td>`fallback` 用于为卡片添加全局降级规则。触发降级时，卡片将全局展示“请升级客户端至最新版本后查看”占位图。
 
-**注意**：
-该字段要求Lark客户端的版本为 V7.7 及以上。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
+| 字段 | 是否支持在搭建工具中设置 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| 行为设置 `config` | 否 | 否 | `config` 用于配置卡片的全局行为，包括是否允许被转发、是否为共享卡片等。 |
+| 跳转链接 `card_link` | 是 | 否 | `card_link` 字段用于指定卡片整体的点击跳转链接。你可以配置一个默认链接，也可以分别为 PC 端、Android 端、iOS 端配置不同的跳转链接。 |
+| 多语言设置 `i18n_elements` 等 | 是 | 否 | Lark卡片支持多语言设置。设置多语言后，卡片将根据用户的Lark客户端语言，自动展示对应语言的卡片内容，满足国际化业务需求。详情参考[配置卡片多语言](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configure-multi-language-content)。 |
+| 标题组件 `header` | 是 | 否 | 标题组件 JSON 代码。详细字段说明参考[标题组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/title)。 |
+| 其它组件 `elements` | 是 | 否 | 在 `elements` 字段中添加各个组件的 JSON 数据，组件将按数组顺序纵向流式排列。了解各个组件，参考[组件概述](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/component-overview)。 |
+| 降级规则 `fallback` | 否 | 否 | `fallback` 用于为卡片添加全局降级规则。触发降级时，卡片将全局展示“请升级客户端至最新版本后查看”占位图。<br>**注意**：<br>该字段要求Lark客户端的版本为 V7.7 及以上。 |
 
-:::
 
 ## JSON 结构
 
@@ -204,116 +160,19 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 }
 ```
 `config` 下的各字段说明如下表所示。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 24%;">字段名称</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th>说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>enable_forward</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>true</md-td>
-      <md-td>
-        是否允许转发卡片。取值：
- - true：允许
- - false：不允许
 
-**注意**：
-该字段要求Lark客户端的版本为 V3.31.0 及以上。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>update_multi</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>
-        false
-      </md-td>
-      <md-td>
-        是否为共享卡片。取值：
-- true：是共享卡片，更新卡片的内容对所有收到这张卡片的人员可见。
-- false：非共享卡片，仅操作用户可见卡片的更新内容。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>width_mode</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>default</md-td>
-      <md-td>
-        卡片宽度模式。取值：
-- default：默认宽度。PC 端宽版、iPad 端上的宽度上限为 600px。
-- compact：紧凑宽度模式。PC 端宽版、iPad 端上的宽度上限为 400px。
-- fill：撑满聊天窗口宽度。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>compact_width（已废弃）</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        是否为紧凑型卡片的宽度（400px）。该字段已废弃。
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| enable_forward | 否 | Boolean | true | 是否允许转发卡片。取值：<br>- true：允许<br>- false：不允许<br>**注意**：<br>该字段要求Lark客户端的版本为 V3.31.0 及以上。 |
+| update_multi | 否 | Boolean | false | 是否为共享卡片。取值：<br>- true：是共享卡片，更新卡片的内容对所有收到这张卡片的人员可见。<br>- false：非共享卡片，仅操作用户可见卡片的更新内容。 |
+| width_mode | 否 | String | default | 卡片宽度模式。取值：<br>- default：默认宽度。PC 端宽版、iPad 端上的宽度上限为 600px。<br>- compact：紧凑宽度模式。PC 端宽版、iPad 端上的宽度上限为 400px。<br>- fill：撑满聊天窗口宽度。 |
+| compact_width（已废弃） | 否 | Boolean | false | 是否为紧凑型卡片的宽度（400px）。该字段已废弃。<br>**注意**：`width_mode` 与 `compact_width` 属性同时设置时，`width_mode` 属性将生效。 |
+| use_custom_translation | 否 | Boolean | false | 是否使用自定义翻译数据。取值：<br>- true：在用户点击消息翻译后，使用 i18n 对应的目标语种作为翻译结果。若 i18n 取不到，则使用当前内容请求Lark的机器翻译。<br>- false：不使用自定义翻译数据，直接请求Lark的机器翻译。 |
+| enable_forward_interaction | 否 | Boolean | false | 转发的卡片是否仍然支持回传交互。 |
+| style | 否 | Object | 空 | 添加自定义字号和颜色。可应用于组件的 JSON 数据中，设置字号和颜色属性。 |
+| └ text_size | 否 | Object | 空 | 分别为移动端和桌面端添加自定义字号。用于在普通文本组件和富文本组件 JSON 中设置字号属性。支持添加多个自定义字号对象。详情参考[普通文本组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)和[富文本组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。 |
+| └ color | 否 | Object | 空 | 分别为Lark客户端浅色主题和深色主题添加 RGBA 语法。用于在组件 JSON 中设置颜色属性。支持添加多个自定义颜色对象。详情参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
 
-**注意**：`width_mode` 与 `compact_width` 属性同时设置时，`width_mode` 属性将生效。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>use_custom_translation</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        是否使用自定义翻译数据。取值：
-- true：在用户点击消息翻译后，使用 i18n 对应的目标语种作为翻译结果。若 i18n 取不到，则使用当前内容请求Lark的机器翻译。
-- false：不使用自定义翻译数据，直接请求Lark的机器翻译。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>enable_forward_interaction</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>转发的卡片是否仍然支持回传交互。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>style</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        添加自定义字号和颜色。可应用于组件的 JSON 数据中，设置字号和颜色属性。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td style="padding-left: 20px;">└ text_size</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        分别为移动端和桌面端添加自定义字号。用于在普通文本组件和富文本组件 JSON 中设置字号属性。支持添加多个自定义字号对象。详情参考[普通文本组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)和[富文本组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td style="padding-left: 20px;">└ color</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        分别为Lark客户端浅色主题和深色主题添加 RGBA 语法。用于在组件 JSON 中设置颜色属性。支持添加多个自定义颜色对象。详情参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 
 ### 卡片全局跳转链接 `card_link`
@@ -339,44 +198,13 @@ card_link 下的各字段说明如下表所示。
 </md-alert>
 :::
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">字段名称</md-th>
-      <md-th style="width: 15%;">是否必填</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 20%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>默认的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>pc_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>PC 端的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>ios_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>iOS 端的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>android_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>Android 端的链接地址。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 字段名称 | 是否必填 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| url | 否 | String | 默认的链接地址。 |
+| pc_url | 否 | String | PC 端的链接地址。 |
+| ios_url | 否 | String | iOS 端的链接地址。 |
+| android_url | 否 | String | Android 端的链接地址。 |
+
 
 ### 卡片标题 `header`
 
@@ -518,58 +346,10 @@ Lark卡片支持多语言设置。设置多语言后，卡片将根据用户的L
 ```
 `fallback` 下的各字段说明如下表所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段名称</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 20%;">示例值</md-th>
-      <md-th style="width: 30%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>trigger_conditions</md-td>
-      <md-td>否</md-td>
-      <md-td>Array</md-td>
-      <md-td>/</md-td>
-      <md-td>触发降级的条件数组。满足其中的任一条件就触发降级。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ type</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>"min_client_version"</md-td>
-      <md-td>
-        条件类型。可选值：
-- <code>min_client_version</code>：设置最低客户端版本，当用户的客户端版本低于该设置时，触发降级；
-- <code>element_tags</code>：指定组件。当用户的Lark客户端版本低于这些组件支持的最低客户端版本时，触发降级。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ value(当 type 为 "min_client_version"时)</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>"v7.4.1"</md-td>
-      <md-td>
-       最低Lark客户端版本的值，写法需符合以下格式之一：
-- 7.4、7.4.1、7.4.1-xxx
-- v7.4、v7.4.1、v7.4.1-xxx
-- v7.3.7（0.103）
-- v7.4.0-dev.d2666af5（0.14）
-        </ul>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ value(当 type 为 "element_tags"时)</md-td>
-      <md-td>否</md-td>
-      <md-td>Array</md-td>
-      <md-td>["table"]</md-td>
-      <md-td>指定组件。当用户的Lark客户端版本低于这些组件支持的最低客户端版本时，触发降级。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
+| 字段名称 | 是否必填 | 类型 | 示例值 | 说明 |
+| --- | --- | --- | --- | --- |
+| trigger_conditions | 否 | Array | / | 触发降级的条件数组。满足其中的任一条件就触发降级。 |
+| └ type | 否 | String | "min_client_version" | 条件类型。可选值：<br>- <code>min_client_version</code>：设置最低客户端版本，当用户的客户端版本低于该设置时，触发降级；<br>- <code>element_tags</code>：指定组件。当用户的Lark客户端版本低于这些组件支持的最低客户端版本时，触发降级。 |
+| └ value(当 type 为 "min_client_version"时) | 否 | String | "v7.4.1" | 最低Lark客户端版本的值，写法需符合以下格式之一：<br>- 7.4、7.4.1、7.4.1-xxx<br>- v7.4、v7.4.1、v7.4.1-xxx<br>- v7.3.7（0.103）<br>- v7.4.0-dev.d2666af5（0.14）<br></ul> |
+| └ value(当 type 为 "element_tags"时) | 否 | Array | ["table"] | 指定组件。当用户的Lark客户端版本低于这些组件支持的最低客户端版本时，触发降级。 |
 
-:::

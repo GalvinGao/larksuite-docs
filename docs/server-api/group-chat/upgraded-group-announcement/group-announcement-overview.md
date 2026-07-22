@@ -60,108 +60,19 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/group/upgr
 从功能角度，块可以分为以下几种类别。了解块的具体类型，参考 [BlockType 的枚举值](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#e8ce4e8e)。
 
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 10%;"><b>功能类别</b></md-th>  
-      <md-th style="width: 30%;"><b>典型块</md-th>  
-      <md-th style="width: 40%;"><b>示例</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        文本类
-      </md-td>  
-      <md-td style="width: 30%;">页面（Page）、文本（Text）、标题（Heading）、无序列表（Bullet）、有序列表（Ordered）、代码（Code）、待办事项（Todo）块等。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f6a33cebc5a4c521348ee3f58fee80c1_04nl3VcOKG.png?height=282&lazyload=true&width=1155" alt="示例图">
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td style="width: 30%;">
-        数据类
-      </md-td>  
-      <md-td style="width: 30%;">多维表格（Bitable）、电子表格（Sheet）、思维笔记（Mindnote）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ae1f17cb17db5981934bbc24164e2486_TvXBnK3iKJ.png?height=895&lazyload=true&width=1261" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        视觉类
-      </md-td>  
-      <md-td style="width: 30%;">分割线（Divider）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/5bab6560a4986d3952a42aaf10ebda4a_FbbaEpbuDW.png?height=235&lazyload=true&width=831" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        媒体类
-      </md-td>  
-      <md-td style="width: 30%;">图片（Image）、文件（File）、内嵌（Iframe）块等。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/989b8ffa18439845801a8971b67c7088_VVWeAhSMk4.png" alt="示例图">
-       
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        协作类
-      </md-td>  
-      <md-td style="width: 30%;">会话卡片（ChatCard）块。</md-td>  
-      <md-td style="width: 40%;">
-        
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        容器类
-      </md-td>  
-      <md-td style="width: 30%;">表格单元格（TableCell）、分栏列（GridColumn）、高亮（Callout）、视图（View）、引用容器（QuoteContainer）块等。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/0d57c3278c1f162bf1f08d6a95ea7add_IBAgBSnLeY.png?height=121&lazyload=true&width=940" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        垂直类
-      </md-td>  
-      <md-td style="width: 30%;">流程图 & UML 图（Diagram）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4612455f3a2ee8ec863a1fd5ec76a5e4_fX9UlpFdxI.png?height=487&lazyload=true&width=846" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        辅助类
-      </md-td>  
-      <md-td style="width: 30%;">表格（Table）、分栏（Grid）块等。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/e3fc3dc29a2da13707781ba1feba56d9_s3MsRLesgZ.png?lazyload=true&width=1486&height=443" alt="Auxiliary type Example">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        第三方块
-      </md-td>  
-      <md-td style="width: 30%;">开放平台小组件（ISV）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/eb5b07b98b5c0b352faaa42a2dcc776a_RxVQWekeUX.png?height=225&lazyload=true&width=786" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        未定义块
-      </md-td>  
-      <md-td style="width: 30%;">/</md-td>  
-      <md-td style="width: 40%;"></md-td> 
-    </md-tr> 
-  </md-tbody> 
-</md-table>
-:::
+| <b>功能类别</b> | <b>典型块 | <b>示例 |
+| --- | --- | --- |
+| 文本类 | 页面（Page）、文本（Text）、标题（Heading）、无序列表（Bullet）、有序列表（Ordered）、代码（Code）、待办事项（Todo）块等。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f6a33cebc5a4c521348ee3f58fee80c1_04nl3VcOKG.png?height=282&lazyload=true&width=1155" alt="示例图"> |
+| 数据类 | 多维表格（Bitable）、电子表格（Sheet）、思维笔记（Mindnote）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ae1f17cb17db5981934bbc24164e2486_TvXBnK3iKJ.png?height=895&lazyload=true&width=1261" alt="示例图"> |
+| 视觉类 | 分割线（Divider）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/5bab6560a4986d3952a42aaf10ebda4a_FbbaEpbuDW.png?height=235&lazyload=true&width=831" alt="示例图"> |
+| 媒体类 | 图片（Image）、文件（File）、内嵌（Iframe）块等。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/989b8ffa18439845801a8971b67c7088_VVWeAhSMk4.png" alt="示例图"> |
+| 协作类 | 会话卡片（ChatCard）块。 |  |
+| 容器类 | 表格单元格（TableCell）、分栏列（GridColumn）、高亮（Callout）、视图（View）、引用容器（QuoteContainer）块等。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/0d57c3278c1f162bf1f08d6a95ea7add_IBAgBSnLeY.png?height=121&lazyload=true&width=940" alt="示例图"> |
+| 垂直类 | 流程图 & UML 图（Diagram）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4612455f3a2ee8ec863a1fd5ec76a5e4_fX9UlpFdxI.png?height=487&lazyload=true&width=846" alt="示例图"> |
+| 辅助类 | 表格（Table）、分栏（Grid）块等。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/e3fc3dc29a2da13707781ba1feba56d9_s3MsRLesgZ.png?lazyload=true&width=1486&height=443" alt="Auxiliary type Example"> |
+| 第三方块 | 开放平台小组件（ISV）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/eb5b07b98b5c0b352faaa42a2dcc776a_RxVQWekeUX.png?height=225&lazyload=true&width=786" alt="示例图"> |
+| 未定义块 | / |  |
+
 
 
 **块的父子关系规则**
@@ -191,42 +102,13 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/group/upgr
 **父子关系限制**
 
 其它的父子关系限制如下表所示：
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 30%;"><b>块</md-th>  
-      <md-th style="width: 70%;"><b>限制</md-th>  
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>
-        单元格（Table Cell）
-      </md-td>  
-      <md-td>
-        不允许为单元格（TableCell）块添加如下块作为子块：<br>• 表格（Table）<br>• 电子表格（Sheet）<br>• 多维表格（Bitable）<br>• OKR
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>
-        分栏列（Grid Column）
-      </md-td>  
-      <md-td>
-        不允许为分栏列（GridColumn）添加如下块作为子块：<br>• 分栏（Grid）<br>• 多维表格（Bitable）<br>• OKR
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td>
-        高亮块（Callout）
-      </md-td>  
-      <md-td>
-        只允许为高亮块（Callout）添加如下块作为子块：<br>• 文本（Text）<br>• 标题（HeadingN）<br>• 有序列表（Ordered）<br>• 无序列表（Bullet）<br>• 任务（Task）<br>• 待办事项（Todo）<br>• 引用（Quote）<br>• 引用容器（QuoteContainer）
-      </md-td> 
-    </md-tr> 
-  </md-tbody> 
-</md-table>
-:::
+
+| <b>块 | <b>限制 |
+| --- | --- |
+| 单元格（Table Cell） | 不允许为单元格（TableCell）块添加如下块作为子块：<br>• 表格（Table）<br>• 电子表格（Sheet）<br>• 多维表格（Bitable）<br>• OKR |
+| 分栏列（Grid Column） | 不允许为分栏列（GridColumn）添加如下块作为子块：<br>• 分栏（Grid）<br>• 多维表格（Bitable）<br>• OKR |
+| 高亮块（Callout） | 只允许为高亮块（Callout）添加如下块作为子块：<br>• 文本（Text）<br>• 标题（HeadingN）<br>• 有序列表（Ordered）<br>• 无序列表（Bullet）<br>• 任务（Task）<br>• 待办事项（Todo）<br>• 引用（Quote）<br>• 引用容器（QuoteContainer） |
+
 ## 使用限制
 
 你可使用开放平台提供的一系列群公告开放接口对不同种类的块进行操作，包括创建、读取、以及编辑块的内容。针对不同块，群公告开放接口的支持情况不同，详情参考下表。
@@ -276,138 +158,20 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/group/upgr
 以下为群公告和块的 OpenAPI 列表。
 
 ### 群公告
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 35%;"><b>方法 (API)</md-th>
-            <md-th style="width: 25%;"><b>权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><b>访问凭证</md-th>
-            <md-th style="width: 10%;"><b>商店</md-th>
-            <md-th style="width: 10%;"><b>自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-            <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取群公告基本信息
-<br>[/open-apis/docx/v1/chats/:chat_id/announcement](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement/get)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-            <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取群公告所有块
-<br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks](/ssl:ttdocopen-apis/docx/v1/chats/:chat_id/announcement/blocks)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| <b>方法 (API) | <b>权限要求（满足任一） | <b>访问凭证 | <b>商店 | <b>自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >`GET` 获取群公告基本信息<br><br>[/open-apis/docx/v1/chats/:chat_id/announcement](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement/get)</md-text> | <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`GET` 获取群公告所有块<br><br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks](/ssl:ttdocopen-apis/docx/v1/chats/:chat_id/announcement/blocks)</md-text> | <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+
 
 ### 块
 
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 35%;"><b>方法 (API)</md-th>
-            <md-th style="width: 25%;"><b>权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><b>访问凭证</md-th>
-            <md-th style="width: 10%;"><b>商店</md-th>
-            <md-th style="width: 10%;"><b>自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-              <md-tr>
-            <md-td>
-                <md-text type="field-name" >`POST` 在群公告中创建块
-<br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" tags="">更新群公告内容</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-              <md-tr>
-            <md-td>
-                <md-text type="field-name" >`PATCH` 批量更新群公告块的内容
-<br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/batch_update](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" tags="">更新群公告内容</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取群公告块的内容<br>[open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/get)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取所有子块<br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/get)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm>
-            </md-td>
-            <md-td>
-            <md-tag type="token-tenant">tenant_access_token</md-tag>
-            <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>     
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`DELETE` 删除群公告中的块<br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children/batch_delete](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/batch_delete)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" tags="">更新群公告内容</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| <b>方法 (API) | <b>权限要求（满足任一） | <b>访问凭证 | <b>商店 | <b>自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >`POST` 在群公告中创建块<br><br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/create)</md-text> | <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" tags="">更新群公告内容</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`PATCH` 批量更新群公告块的内容<br><br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/batch_update](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/batch_update)</md-text> | <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" tags="">更新群公告内容</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`GET` 获取群公告块的内容<br>[open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block/get)</md-text> | <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`GET` 获取所有子块<br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/get)</md-text> | <md-perm name="im:chat.announcement:read" desc="查看群公告信息" tags="">查看群公告信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`DELETE` 删除群公告中的块<br>[/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children/batch_delete](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/chat-announcement-block-children/batch_delete)</md-text> | <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" tags="">更新群公告内容</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+

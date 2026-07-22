@@ -42,105 +42,16 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uQzNwUjL0cDM14CN3AT
 
 日期选择器作为交互组件，其 JSON 描述均定义在[交互模块](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements)（`"tag": "action"`）的 `actions` 参数中。日期选择器包含的参数说明如下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 日期选择器的标签。在三种模式下的固定取值：<br>- 日期选择器：date_picker<br>- 时间选择器：picker_time<br>- 日期时间选择器：picker_datetime |
+| initial_date | 否 | String | 设置日期模式的初始值。格式：`yyyy-MM-dd` |
+| initial_time | 否 | String | 设置时间模式的初始值。格式：`HH:mm` |
+| initial_datetime | 否 | String | 设置日期时间模式的初始值。格式：`yyyy-MM-dd HH:mm` |
+| placeholder | 否 | Struct | 选择器的提示文案，无初始值时必填。只能设置[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)中的 `"tag": "plain_text"` 模式以及 `content` 参数。<br>示例值:<br><code>"placeholder": {<br>	"tag": "plain_text",<br>	"content": "请选择日期"<br>},</code> |
+| value | 否 | JSON | 该字段用于交互组件的回传交互方式，当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。<br>该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值：<br><code>"value":{<br>    "key-1":Object-1,<br>    "key-2":Object-2,<br>    "key-3":Object-3,<br>    ······<br>}</code> |
+| confirm | 否 | Struct | 设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。 |
 
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-日期选择器的标签。在三种模式下的固定取值：
-- 日期选择器：date_picker
-- 时间选择器：picker_time
-- 日期时间选择器：picker_datetime
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>initial_date</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-设置日期模式的初始值。格式：`yyyy-MM-dd`
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>initial_time</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-设置时间模式的初始值。格式：`HH:mm`
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>initial_datetime</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-设置日期时间模式的初始值。格式：`yyyy-MM-dd HH:mm`
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>placeholder</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-选择器的提示文案，无初始值时必填。只能设置[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)中的 `"tag": "plain_text"` 模式以及 `content` 参数。
-
-示例值:
-```
-"placeholder": {
-	"tag": "plain_text",
-	"content": "请选择日期"
-},
-```
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>value</md-td>
-<md-td>否</md-td>
-<md-td>JSON</md-td>
-<md-td>
-该字段用于交互组件的回传交互方式，当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。
-
-该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值：
-```
-"value":{
-    "key-1":Object-1,
-    "key-2":Object-2,
-    "key-3":Object-3,
-    ······
-}
-```
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 
 ## 交互示例

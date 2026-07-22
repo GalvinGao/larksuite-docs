@@ -102,54 +102,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/developmen
 **注意**：配置 URL 规则时不能以 `https`、`http` 开头，但后续在Lark客户端内想要生效链接预览效果，对应的链接必须以 `https`、`http` 开头。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">URL 规则匹配方式</md-th>
-<md-th style="width:80%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| URL 规则匹配方式 | 说明 |
+| --- | --- |
+| 无通配符 | 你可以输入不包含通配符的 URL，该 URL 及其所有子路径均会匹配该应用的链接预览能力。<br>例如：应用 A 注册的 URL 规则为 `example.com`，安装该应用的租户下，用户发送、查看 `https://exmaple.com/path?query` 时，会匹配应用 A 的 URL 规则。 |
+| 有通配符 | 你可以输入包含通配符的 URL，此时系统会严格按照通配符生效链接预览。<br>- **使用 `*` 通配符定义 URL 规则**<br>- 域名内通过 `.` 分割为多个域名级别。在每级域名内，可使用 `*` 匹配剩下的所有内容。该通配符后边不能再有其他字符，即 `*` 无法跨域名级别匹配，且 `*` 必然是当前域名级别的结尾。<br>示例配置：`example.*.com`<br>- 路径内通过 `/` 分割为多层级路径。在每层路径内，可使用 `*` 匹配剩下的所有内容。该通配符后边不能再有其他字符，即 `*` 无法跨路径层级匹配，且 `*` 必然是当前路径层级的结尾。<br>示例配置：`example.com/*/task`<br>- **使用 `**` 通配符定义 URL 规则**<br>- 在域名内，通过 `**` 匹配整个域名左侧的内容，且该通配符的左侧不能再有其他字符。示例配置：<br>- 正确配置：`**.example.com`<br>- 错误配置：`a.**.example.com`<br>- 在路径内，通过 `**` 匹配整个路径右侧的内容，且该通配符的右侧不能再有其他字符。示例配置：<br>- 正确配置：`/a/b*/**`<br>- 错误配置：`/a/b*/**/c`<br>场景示例：<br>- 应用 A 注册的 URL 规则为 `**.example.com`，安装该应用的租户下，用户发送、查看 `https://business1.example.com`、`https://project1.business1.example.com` 时，均会匹配应用 A 的 URL 规则。<br>- 应用 B 注册的 URL 规则为 `example.com/**`，安装该应用的租户下，用户发送、查看 `https://example.com/path` 时，会匹配应用 B 的 URL 规则。 |
 
-<md-tr>
-<md-td>无通配符</md-td>
-<md-td>你可以输入不包含通配符的 URL，该 URL 及其所有子路径均会匹配该应用的链接预览能力。
-
-例如：应用 A 注册的 URL 规则为 `example.com`，安装该应用的租户下，用户发送、查看 `https://exmaple.com/path?query` 时，会匹配应用 A 的 URL 规则。  
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>有通配符</md-td>
-<md-td>
-你可以输入包含通配符的 URL，此时系统会严格按照通配符生效链接预览。
-  
-- **使用 `*` 通配符定义 URL 规则**
-    - 域名内通过 `.` 分割为多个域名级别。在每级域名内，可使用 `*` 匹配剩下的所有内容。该通配符后边不能再有其他字符，即 `*` 无法跨域名级别匹配，且 `*` 必然是当前域名级别的结尾。
-        
-  		示例配置：`example.*.com`
-    
-    - 路径内通过 `/` 分割为多层级路径。在每层路径内，可使用 `*` 匹配剩下的所有内容。该通配符后边不能再有其他字符，即 `*` 无法跨路径层级匹配，且 `*` 必然是当前路径层级的结尾。
-        
-  		示例配置：`example.com/*/task`
-
-- **使用 `**` 通配符定义 URL 规则**
-    - 在域名内，通过 `**` 匹配整个域名左侧的内容，且该通配符的左侧不能再有其他字符。示例配置：
-        - 正确配置：`**.example.com`
-        - 错误配置：`a.**.example.com`
-    - 在路径内，通过 `**` 匹配整个路径右侧的内容，且该通配符的右侧不能再有其他字符。示例配置：
-        - 正确配置：`/a/b*/**`
-        - 错误配置：`/a/b*/**/c`
-
-场景示例：
-- 应用 A 注册的 URL 规则为 `**.example.com`，安装该应用的租户下，用户发送、查看 `https://business1.example.com`、`https://project1.business1.example.com` 时，均会匹配应用 A 的 URL 规则。
-- 应用 B 注册的 URL 规则为 `example.com/**`，安装该应用的租户下，用户发送、查看 `https://example.com/path` 时，会匹配应用 B 的 URL 规则。  
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 #### URL 规则的排他性
 

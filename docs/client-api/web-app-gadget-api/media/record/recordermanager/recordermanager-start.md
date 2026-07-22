@@ -20,210 +20,25 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uATMx4CMxEjLwETM/record
 开始录音
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**X**</md-td>
-       <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/voice/voice" fontSize="14">预览</md-preview-app>
-         </md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**X**</md-td>
-        <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14" disable="true">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/voice/voice" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **✓** | **✓** | **X** | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14" disable="true">预览</md-preview-app> |
+
 
 
 ## 输入
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                options
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                录音参数
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    duration
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                60000
-            </md-td>
-            <md-td>
-                录音的时长，单位 ms，最大值 600000（10 分钟）
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    sampleRate
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                8000
-            </md-td>
-            <md-td>
-                采样率
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| options | object | 否 |  | 录音参数 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>duration<br></md-text> | number | 否 | 60000 | 录音的时长，单位 ms，最大值 600000（10 分钟） |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>sampleRate<br></md-text> | number | 否 | 8000 | 采样率<br>**可选值**：<br>- `8000`：8000 采样率<br>- `16000`：16000 采样率<br>- `44100`：44100 采样率 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>numberOfChannels<br></md-text> | number | 否 | 2 | 录音通道数<br>**可选值**：<br>- `1`：一个通道<br>- `2`：两个通道 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>encodeBitRate<br></md-text> | number | 否 | 48000 | 编码码率，有效值见下表格 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>frameSize<br></md-text> | number | 否 |  | 帧大小，单位 KB。如果设置了值，那么每当录音内容达到帧大小时会通过 onFrameRecorded 返回内容 |
 
-**可选值**：
-- `8000`：8000 采样率
-- `16000`：16000 采样率
-- `44100`：44100 采样率
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    numberOfChannels
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                2
-            </md-td>
-            <md-td>
-                录音通道数
-**可选值**：
-- `1`：一个通道
-- `2`：两个通道
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    encodeBitRate
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                48000
-            </md-td>
-            <md-td>
-                编码码率，有效值见下表格
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    frameSize
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                帧大小，单位 KB。如果设置了值，那么每当录音内容达到帧大小时会通过 onFrameRecorded 返回内容
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 `sampleRate`和`encodeBitRate`的对应关系如下：
 

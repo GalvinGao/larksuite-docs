@@ -33,32 +33,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 getCellString(recordId)
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 150px;">
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>recordId</md-td>
-        <md-td>string</md-td>
-        <md-td>是</md-td>
-        <md-td>记录id</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| recordId | string | 是 | 记录id |
+
 
 
 ## 输出

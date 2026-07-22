@@ -18,142 +18,18 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat
 群公告是群组中的公告文档。群公告采用Lark云文档承载，每个群组只有一个群公告。
 
 ## 字段说明
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >content</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	云文档序列化信息
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| &nbsp;<md-text type="field-name" >content</md-text> | <md-text type="field-type" >string</md-text> | 云文档序列化信息 |
+| &nbsp;<md-text type="field-name" >revision</md-text> | <md-text type="field-type" >string</md-text> | 文档当前版本号 纯数字 |
+| &nbsp;<md-text type="field-name" >create_time</md-text> | <md-text type="field-type" >string</md-text> | 文档生成的时间戳（秒） |
+| &nbsp;<md-text type="field-name" >update_time</md-text> | <md-text type="field-type" >string</md-text> | 文档更新的时间戳（秒） |
+| &nbsp;<md-text type="field-name" >owner_id_type</md-text> | <md-text type="field-type" >string</md-text> | 文档所有者的 ID 类型<br>- 如果所有者是用户，取值为`open_id` `user_id` `union_id` 其中之一，不同 ID 的说明参见 [用户相关的 ID 概念](/document/home/user-identity-introduction/introduction)<br>- 如果所有者是机器人，为机器人应用的 `app_id`，详情参见[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)<br>**可选值有：**<br>- `user_id`：以 user_id 来识别用户<br>- `union_id`：以 union_id 来识别用户<br>- `open_id`：以 open_id 来识别用户<br>- `app_id`：以 app_id 来识别机器人应用 |
+| &nbsp;<md-text type="field-name" >owner_id</md-text> | <md-text type="field-type" >string</md-text> | 文档所有者 ID，ID 值与owner_id_type 中的ID类型对应 |
+| &nbsp;<md-text type="field-name" >modifier_id_type</md-text> | <md-text type="field-type" >string</md-text> | 文档最新修改者 id 类型<br>- 如果修改者是用户，取值为`open_id` `user_id` `union_id` 其中之一，不同 ID 的说明参见 [用户相关的 ID 概念](/document/home/user-identity-introduction/introduction)<br>- 如果修改者是机器人，为机器人应用的 `app_id`，详情参见[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)<br>**可选值有：**<br>- `user_id`：以 user_id 来识别用户<br>- `union_id`：以 union_id 来识别用户<br>- `open_id`：以 open_id 来识别用户<br>- `app_id`：以 app_id 来识别应用 |
+| &nbsp;<md-text type="field-name" >modifier_id</md-text> | <md-text type="field-type" >string</md-text> | 文档最新修改者 ID，ID 值与 modifier_id_type 中的ID类型对应 |
 
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >revision</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档当前版本号 纯数字
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >create_time</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档生成的时间戳（秒）
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >update_time</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档更新的时间戳（秒）
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >owner_id_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档所有者的 ID 类型
-
-- 如果所有者是用户，取值为`open_id` `user_id` `union_id` 其中之一，不同 ID 的说明参见 [用户相关的 ID 概念](/document/home/user-identity-introduction/introduction)
-- 如果所有者是机器人，为机器人应用的 `app_id`，详情参见[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)
-
-
-**可选值有：**
-- `user_id`：以 user_id 来识别用户
-- `union_id`：以 union_id 来识别用户
-- `open_id`：以 open_id 来识别用户
-- `app_id`：以 app_id 来识别机器人应用
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >owner_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档所有者 ID，ID 值与owner_id_type 中的ID类型对应
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >modifier_id_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档最新修改者 id 类型
-
- - 如果修改者是用户，取值为`open_id` `user_id` `union_id` 其中之一，不同 ID 的说明参见 [用户相关的 ID 概念](/document/home/user-identity-introduction/introduction)
-- 如果修改者是机器人，为机器人应用的 `app_id`，详情参见[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)
-
-**可选值有：**
-- `user_id`：以 user_id 来识别用户
-- `union_id`：以 union_id 来识别用户
-- `open_id`：以 open_id 来识别用户
-- `app_id`：以 app_id 来识别应用
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >modifier_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档最新修改者 ID，ID 值与 modifier_id_type 中的ID类型对应
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 ### 数据示例
 ```json
 {

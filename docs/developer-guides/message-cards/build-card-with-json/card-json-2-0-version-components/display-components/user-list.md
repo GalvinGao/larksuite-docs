@@ -76,207 +76,29 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ## 字段说明
 
 人员组件的字段说明如下表。
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 16%;">参数</md-th>
-<md-th style="width: 12%;">必须</md-th>
-<md-th style="width: 12%;">类型</md-th>
-<md-th style="width: 15%;">默认值</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>person_list</md-td>
-<md-td>
-组件的标签，人员列表组件的取值为 `person_list`。
-</md-td>
-</md-tr>
-  
-  <md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-  
-  
-   <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr> 
-  
-<md-tr>
-<md-td>drop_invalid_user_id</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-当人员列表中有无效用户 ID 时，是否忽略无效 ID。默认为 false，表示若存在无效用户 ID，将报错并返回无效的用户 ID 列表。
-  </md-td>
-</md-tr>  
-  
-  
-  
-  
-  
-  
-  
-<md-tr>
-<md-td>lines</md-td>
-<md-td>否</md-td>
-<md-td>Int</md-td>
-<md-td>/</md-td>
-<md-td>
-最大显示行数，默认不限制最大显示行数。不可为 0。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>show_name</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>true</md-td>
-<md-td>
-是否展示人员的用户名。
 
-**提示**：  
-若不展示人员用户名，当 persons 字段中有多人 ID 时，人员列表样式将展示为“葫芦串”样式。
+| 参数 | 必须 | 类型 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | person_list | 组件的标签，人员列表组件的取值为 `person_list`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| margin | 否 | String | 0 | 组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| drop_invalid_user_id | 否 | Boolean | false | 当人员列表中有无效用户 ID 时，是否忽略无效 ID。默认为 false，表示若存在无效用户 ID，将报错并返回无效的用户 ID 列表。 |
+| lines | 否 | Int | / | 最大显示行数，默认不限制最大显示行数。不可为 0。 |
+| show_name | 否 | Boolean | true | 是否展示人员的用户名。<br>**提示**：<br>若不展示人员用户名，当 persons 字段中有多人 ID 时，人员列表样式将展示为“葫芦串”样式。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/c7212ce4016291a052083791eefca8a1_D4fuJKD6j0.png?height=107&lazyload=true&maxWidth=130&width=200) |
+| show_avatar | 否 | Boolean | false | 是否展示人员的头像。 |
+| size | 否 | String | medium | 人员的头像尺寸。可取值：<br>- extra_small：超小尺寸<br>- small：小尺寸<br>- medium：中尺寸<br>- large：大尺寸 |
+| persons | 是 | Array | / | 人员列表。 |
+| └ id | 是 | String | 空 | 人员的 ID。可选值有：<br>- 人员的 Open ID：标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。详情参考[如何获取 Open ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)<br>- 人员的 Union ID：标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。详情参考[如何获取 Union ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)<br>- 人员的 User ID ：标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。详情参考[如何获取User ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id) |
+| icon | 否 | Object | / | 添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。 |
+| └ tag | 否 | String | / | 图标类型的标签。可取值：<br>- `standard_icon`：使用图标库中的图标。<br>- `custom_icon`：使用用自定义图片作为图标。 |
+| └ token | 否 | String | / | 图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。 |
+| └ color | 否 | String | / | 图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| └ img_key | 否 | String | / | 自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。<br>图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。 |
+| ud_icon | 否 | Object | / | 添加图标库中已有的图标。<br>**注意**：一个人员组件仅可配置一个图标。如果同时配置 `icon` 和 `ud_icon`，仅生效 `icon`。 |
+| └ token | 否 | String | / | 图标库中图标的 token。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。 |
+| └ style | 否 | Object | / | 图标的样式。支持自定义图标颜色。 |
+| └└ color | 否 | String | / | 图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。<br>**注意**：搭建工具暂不支持自定义图标颜色。 |
 
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/c7212ce4016291a052083791eefca8a1_D4fuJKD6j0.png?height=107&lazyload=true&maxWidth=130&width=200)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>show_avatar</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否展示人员的头像。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>size</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>medium</md-td>
-<md-td>
-人员的头像尺寸。可取值：
-- extra_small：超小尺寸
-- small：小尺寸
-- medium：中尺寸
-- large：大尺寸
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>persons</md-td>
-<md-td>是</md-td>
-<md-td>Array</md-td>
-<md-td>/</md-td>
-<md-td>
-人员列表。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ id</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-人员的 ID。可选值有：
-- 人员的 Open ID：标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。详情参考[如何获取 Open ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)
-- 人员的 Union ID：标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。详情参考[如何获取 Union ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)
-- 人员的 User ID ：标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。详情参考[如何获取User ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>icon</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标类型的标签。可取值：
-- `standard_icon`：使用图标库中的图标。
-- `custom_icon`：使用用自定义图片作为图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ token</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ color</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ img_key</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。
-  
-图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。</md-td>
-</md-tr>
-  
-  <md-tr>
-      <md-td>ud_icon</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-    <md-td>/</md-td>
-      <md-td>添加图标库中已有的图标。
-
-**注意**：一个人员组件仅可配置一个图标。如果同时配置 `icon` 和 `ud_icon`，仅生效 `icon`。</md-td>
-    </md-tr>
-  
-  
- <md-tr>
-      <md-td>└ token</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-   <md-td>/</md-td>
-      <md-td>图标库中图标的 token。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ style</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td><md-td>/</md-td>
-      <md-td>图标的样式。支持自定义图标颜色。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td><md-td>/</md-td>
-      <md-td>图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-
-**注意**：搭建工具暂不支持自定义图标颜色。</md-td>
-    </md-tr>
-  
-</md-tbody>
-</md-table>
-  
-:::
 ## Demo 示例
 
 将以下 JSON 2.0 结构示例代码中的 user_id 替换为实际的用户 ID，即可实现如下图示例的卡片效果：

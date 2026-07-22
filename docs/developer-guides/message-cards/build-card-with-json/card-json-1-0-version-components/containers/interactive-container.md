@@ -81,242 +81,33 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
 交互容器各字段说明如下表所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段名称</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 15%;">默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>交互容器的标签。固定值为 <code>interactive_container</code>。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>width</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>fill</md-td>
-      <md-td>
-        交互容器的宽度。可取值：
-- <strong>fill</strong>：卡片最大支持宽度</li>
-          <li><strong>auto</strong>：自适应宽度</li>
-          <li><strong>[16,999]px</strong>：自定义宽度，如 "20px"。最小宽度为 16px</li>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>height</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>auto</md-td>
-      <md-td>
-        交互容器的高度。可取值：
-- <strong>auto</strong>：自适应高度</li>
-          <li><strong>[10,999]px</strong>：自定义高度，如 "20px"</li>
-        </ul>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>background_style</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>default</md-td>
-      <md-td>
-        交互容器的背景色样式。可取值：
-- <strong>default</strong>：默认的白底样式，客户端深色主题下为黑底</li>
-          <li><strong>laser</strong>：镭射渐变彩色样式</li>
-          <li>卡片支持的颜色枚举值和 RGBA 语法自定义颜色。参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)</li>
-        </ul>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>has_border</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>是否展示边框，粗细固定为 1px。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>border_color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>grey</md-td>
-      <md-td>
-        边框的颜色，仅 <code>has_border</code> 为 true 时，此字段生效。枚举值为卡片支持的颜色枚举值和 RGBA 语法自定义颜色，参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>corner_radius</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0px</md-td>
-      <md-td>
-  交互容器的圆角半径，单位是像素（px）或百分比（%）。取值遵循以下格式：
-- <strong>[0,∞]px</strong>，如 "10px"</li>
-          <li><strong>[0,100]%</strong>，如 "30%"</li>
-        </ul>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>padding</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>4px 12px 4px 12px</md-td>
-      <md-td>
-        交互容器的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：
-- 单值：如 "10px"，表示容器内四个内边距都为 10px</li>
-          <li>多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔</li>
-        </ul>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>behaviors</md-td>
-      <md-td>是</md-td>
-      <md-td>[]</md-td>
-      <md-td>/</md-td>
-      <md-td>设置点击交互容器时的交互配置。如果交互容器内有交互组件，则优先响应交互组件定义的交互。交互组件支持 callback 和 open_url 交互。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。
-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>hover_tips</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        用户在 PC 端将光标悬浮在交互容器上方时的文案提醒。默认为空。
-      </md-td>
-    </md-tr>
-  <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>
-文本的标签。固定取值为 <code>plain_text</code>。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        文本的内容。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>disabled</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        是否禁用交互容器。可选值：
-- <code>true</code>：禁用整个容器</li>
-          <li><code>false</code>：容器组件保持可用状态
-</li>
-        </ul>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>disabled_tips</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        禁用交互容器后，用户触发交互时的弹窗文案提醒。默认为空，即不弹窗。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>
-        弹窗标题文本的标签。固定取值为 <code>plain_text</code>。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        弹窗标题的内容。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm</md-td>
-      <md-td>否</md-td>
-      <md-td>Struct</md-td>
-      <md-td>默认不生效此属性。</md-td>
-      <md-td>
-        二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 交互容器的标签。固定值为 <code>interactive_container</code>。 |
+| width | 否 | String | fill | 交互容器的宽度。可取值：<br>- <strong>fill</strong>：卡片最大支持宽度</li><br><li><strong>auto</strong>：自适应宽度</li><br><li><strong>[16,999]px</strong>：自定义宽度，如 "20px"。最小宽度为 16px</li> |
+| height | 否 | String | auto | 交互容器的高度。可取值：<br>- <strong>auto</strong>：自适应高度</li><br><li><strong>[10,999]px</strong>：自定义高度，如 "20px"</li><br></ul> |
+| background_style | 否 | String | default | 交互容器的背景色样式。可取值：<br>- <strong>default</strong>：默认的白底样式，客户端深色主题下为黑底</li><br><li><strong>laser</strong>：镭射渐变彩色样式</li><br><li>卡片支持的颜色枚举值和 RGBA 语法自定义颜色。参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)</li><br></ul> |
+| has_border | 否 | Boolean | false | 是否展示边框，粗细固定为 1px。 |
+| border_color | 否 | String | grey | 边框的颜色，仅 <code>has_border</code> 为 true 时，此字段生效。枚举值为卡片支持的颜色枚举值和 RGBA 语法自定义颜色，参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| corner_radius | 否 | String | 0px | 交互容器的圆角半径，单位是像素（px）或百分比（%）。取值遵循以下格式：<br>- <strong>[0,∞]px</strong>，如 "10px"</li><br><li><strong>[0,100]%</strong>，如 "30%"</li><br></ul> |
+| padding | 否 | String | 4px 12px 4px 12px | 交互容器的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：<br>- 单值：如 "10px"，表示容器内四个内边距都为 10px</li><br><li>多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔</li><br></ul> |
+| behaviors | 是 | [] | / | 设置点击交互容器时的交互配置。如果交互容器内有交互组件，则优先响应交互组件定义的交互。交互组件支持 callback 和 open_url 交互。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。 |
+| hover_tips | 否 | Object | 空 | 用户在 PC 端将光标悬浮在交互容器上方时的文案提醒。默认为空。 |
+| └ tag | 是 | String | plain_text | 文本的标签。固定取值为 <code>plain_text</code>。 |
+| └ content | 是 | String | 空 | 文本的内容。 |
+| disabled | 否 | Boolean | false | 是否禁用交互容器。可选值：<br>- <code>true</code>：禁用整个容器</li><br><li><code>false</code>：容器组件保持可用状态<br></li><br></ul> |
+| disabled_tips | 否 | Object | 空 | 禁用交互容器后，用户触发交互时的弹窗文案提醒。默认为空，即不弹窗。 |
+| └ tag | 是 | String | plain_text | 弹窗标题文本的标签。固定取值为 <code>plain_text</code>。 |
+| └ content | 是 | String | 空 | 弹窗标题的内容。 |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br><strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| confirm.title | 是 | Struct | / | 二次确认弹窗标题。 |
+| confirm.title.tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| confirm.title.content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| confirm.text | 是 | Struct | / | 二次确认弹窗的文本内容。 |
+| confirm.text.tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| confirm.text.content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
+| elements | 是 | Array&lt;element&gt; | [] | 交互容器内嵌的组件。仅支持内嵌普通文本、富文本、图片、备注、分栏、勾选器、交互容器组件。 |
 
-<strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.title</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.title.tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.title.content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题的内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.text</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗的文本内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.text.tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.text.content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗文本的具体内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>elements</md-td>
-      <md-td>是</md-td>
-      <md-td>Array&lt;element&gt;</md-td>
-      <md-td>[]</md-td>
-      <md-td>
-        交互容器内嵌的组件。仅支持内嵌普通文本、富文本、图片、备注、分栏、勾选器、交互容器组件。
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 ## 回调结构
 

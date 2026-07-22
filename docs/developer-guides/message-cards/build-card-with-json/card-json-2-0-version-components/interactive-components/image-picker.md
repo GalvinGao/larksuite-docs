@@ -111,280 +111,34 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
 多图选择组件各属性说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%;">名称</md-th>
-<md-th style="width: 10%;">必填</md-th>
-<md-th style="width: 15%;">类型</md-th>
-<md-th style="width: 15%;">默认值</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>组件的标签。多图选择的固定取值为 `select_img`。</md-td>
-</md-tr>
+| 名称 | 必填 | 类型 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 组件的标签。多图选择的固定取值为 `select_img`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| margin | 否 | String | 0 | 组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| multi_select | 否 | Boolean | false | 图片是否多选。可选值：<br>- true：多选，仅支持异步提交。多图选择组件需内嵌在表单容器中，否则卡片 JSON 报错。<br>- false：单选。<br>- 组件在表单容器内时，图片选项展示为带单选按钮（radio button）的异步提交样式。<br>- 组件不在表单容器内时，图片选项展示为不带单选按钮（radio button）的同步提交样式。 |
+| layout | 否 | String | bisect | 图片选项的布局方式。可选值：<br>- stretch：每个选项的图片宽度撑满父容器宽度，高度按图片大小等比例缩放。<br>- bisect：二等分排布，每个选项图片宽度占父容器的 1/2，高度按图片大小等比例缩放。<br>- trisect：三等分排布，每个选项图片宽度占父容器的 1/3，高度按图片大小等比例缩放。 |
+| name | 否 | String | 空 | 自定义多图选择组件的名称作为唯一标识。用于识别用户提交的数据属于哪个组件。<br>**注意**：当多图选择组件嵌套在表单容器中时，该字段生效、必填，且需在卡片全局内唯一。 |
+| required | 否 | Boolean | false | 多图选择的选项是否必选。当组件内嵌在表单容器中时，该属性可用。其它情况将报错或不生效。可取值：<br>- true：选项必填。当用户点击表单容器的“提交”时，未选择选项，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- false：选项选填。当用户点击表单容器的“提交”时，未选择选项，仍提交表单容器中的数据。 |
+| can_preview | 否 | Boolean | true | 点击图片选项后是否弹窗放大图片。当多图选择组件嵌套在表单容器中时，该属性生效。<br>- true：点击图片后，弹出图片查看器放大查看当前点击的图片。<br>- false：点击图片后，响应卡片本身的交互事件，不弹出图片查看器。 |
+| aspect_ratio | 否 | String | 16:9 | 选项中图片的宽高比。图片按最短边撑满图片渲染容器，按照居中裁剪的方式自适应裁剪。可取值：<br>- 1:1<br>- 16:9<br>- 4:3 |
+| disabled | 否 | Boolean | false | 是否禁用整个选择组件。可选值：<br>- true：禁用整个选择组件<br>- false：选择组件保持可用状态<br></ul> |
+| disabled_tips | 否 | Object | 空 | 禁用整个组件后，用户将光标悬浮在整个组件上时展示的禁用提示文案。 |
+| └ tag | 否 | String | plain_text | 禁用提示文本的标签。固定值为 `plain_text`。 |
+| └ content | 否 | String | 空 | 禁用提示文本的内容。 |
+| value | 否 | String 或 Object | 空 | 你可在交互事件中自定义回传参数，支持回传字符串，或 `"key":"value"` 构成的对象结构体。 |
+| options | 是 | Option object | / | 选项数组，用于配置多图选择组件中每个图片选项的属性。 |
+| L img_key | 是 | String | / | 图片资源的 Key。你可以调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口或在搭建工具中上传图片，获取图片的 key。 |
+| L value | 否 | String | 空 | 自定义每个图片选项的回传参数。在回传交互中指定的回传参数将透传至开发者的服务端。 |
+| L disabled | 否 | Boolean | false | 是否禁用某个图片选项。可选值：<br>- true：禁用该选项<br>- false：选项保持可用状态 |
+| L disabled_tips | 否 | Object | 空 | 禁用某个图片选项后，用户将光标悬浮在选项上或点击选项时展示的禁用提示文案。 |
+| LL tag | 否 | String | plain_text | 禁用提示文本的标签。固定值为 `plain_text`。 |
+| LL  content | 否 | String | 空 | 禁用提示文本的内容。 |
+| L hover_tips | 否 | Object | 空 | 用户在 PC 端将光标悬浮在多图选择上方时的文案提醒。默认为空。 |
+| LL tag | 否 | String | plain_text | 悬浮提示文本的标签。固定值为 `plain_text`。 |
+| LL content | 否 | String | 空 | 悬浮提示文本的内容。 |
+| behaviors | 是 | Struct | / | 配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。 |
 
-  
-  <md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-      
-      
-  <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-  
-  
-  
-  
-  
-  
-  
-  
-<md-tr>
-<md-td>multi_select</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-图片是否多选。可选值：
-- true：多选，仅支持异步提交。多图选择组件需内嵌在表单容器中，否则卡片 JSON 报错。
-- false：单选。
-  - 组件在表单容器内时，图片选项展示为带单选按钮（radio button）的异步提交样式。
-  - 组件不在表单容器内时，图片选项展示为不带单选按钮（radio button）的同步提交样式。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>layout</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>bisect</md-td>
-<md-td>
-图片选项的布局方式。可选值：
-- stretch：每个选项的图片宽度撑满父容器宽度，高度按图片大小等比例缩放。
-- bisect：二等分排布，每个选项图片宽度占父容器的 1/2，高度按图片大小等比例缩放。
-- trisect：三等分排布，每个选项图片宽度占父容器的 1/3，高度按图片大小等比例缩放。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>name</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-自定义多图选择组件的名称作为唯一标识。用于识别用户提交的数据属于哪个组件。
-
-  **注意**：当多图选择组件嵌套在表单容器中时，该字段生效、必填，且需在卡片全局内唯一。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>required</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-多图选择的选项是否必选。当组件内嵌在表单容器中时，该属性可用。其它情况将报错或不生效。可取值：
-- true：选项必填。当用户点击表单容器的“提交”时，未选择选项，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
-- false：选项选填。当用户点击表单容器的“提交”时，未选择选项，仍提交表单容器中的数据。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>can_preview</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>true</md-td>
-<md-td>
-点击图片选项后是否弹窗放大图片。当多图选择组件嵌套在表单容器中时，该属性生效。
-- true：点击图片后，弹出图片查看器放大查看当前点击的图片。
-- false：点击图片后，响应卡片本身的交互事件，不弹出图片查看器。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>aspect_ratio</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>16:9</md-td>
-<md-td>
-选项中图片的宽高比。图片按最短边撑满图片渲染容器，按照居中裁剪的方式自适应裁剪。可取值：
-- 1:1
-- 16:9
-- 4:3
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>disabled</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否禁用整个选择组件。可选值：
-- true：禁用整个选择组件
-- false：选择组件保持可用状态
-</ul>
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>disabled_tips</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>空</md-td>
-<md-td>
-禁用整个组件后，用户将光标悬浮在整个组件上时展示的禁用提示文案。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-禁用提示文本的标签。固定值为 `plain_text`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ content</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-禁用提示文本的内容。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>value</md-td>
-<md-td>否</md-td>
-<md-td>String 或 Object</md-td>
-<md-td>空</md-td>
-<md-td>
-你可在交互事件中自定义回传参数，支持回传字符串，或 `"key":"value"` 构成的对象结构体。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>options</md-td>
-<md-td>是</md-td>
-<md-td>Option object</md-td>
-<md-td>/</md-td>
-<md-td>
-选项数组，用于配置多图选择组件中每个图片选项的属性。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>L img_key</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>
-图片资源的 Key。你可以调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口或在搭建工具中上传图片，获取图片的 key。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>L value</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-自定义每个图片选项的回传参数。在回传交互中指定的回传参数将透传至开发者的服务端。
-</md-td>
-</md-tr>
-  <md-tr>
-<md-td>L disabled</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否禁用某个图片选项。可选值：
-- true：禁用该选项
-- false：选项保持可用状态
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>L disabled_tips</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>空</md-td>
-<md-td>
-禁用某个图片选项后，用户将光标悬浮在选项上或点击选项时展示的禁用提示文案。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>LL tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-禁用提示文本的标签。固定值为 `plain_text`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>LL  content</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-禁用提示文本的内容。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>L hover_tips</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>空</md-td>
-<md-td>
-用户在 PC 端将光标悬浮在多图选择上方时的文案提醒。默认为空。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>LL tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-悬浮提示文本的标签。固定值为 `plain_text`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>LL content</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-悬浮提示文本的内容。
-</md-tr>
-  
-  
-  
-   <md-tr>
-      <md-td>behaviors</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。</md-td>
-    </md-tr>
-  
-  
-  
-  
-  
-</md-tbody>
-</md-table>
-:::
 ## 回调示例
 
 

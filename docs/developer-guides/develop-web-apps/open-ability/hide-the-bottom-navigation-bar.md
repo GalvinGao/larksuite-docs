@@ -22,30 +22,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 
 当前能力在不同Lark客户端的版本支持情况。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">是否需要鉴权</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
+| 是否需要鉴权 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 不需要 | <md-version>V7.7</md-version> | <md-version>V7.7</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-
-    <md-tr>
-      <md-td>不需要</md-td>
-      <md-td><md-version>V7.7</md-version></md-td>
-      <md-td><md-version>V7.7</md-version></md-td>
-      <md-td>**X**</md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 
 ## 使用方式
@@ -58,63 +38,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 - 如果不通过 web-meta 配置该功能，则默认显示底部导航栏。
 
 :::
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                必填
-            </md-th>
-            <md-th style="width: 45%;">
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                name
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                固定值：showBottomNavBar
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                期望设定的底部导航栏效果。
 
-**可选值**：
-- `true`: 显示底部导航栏。
-              
-- `false`: 隐藏底部导航栏。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| name | String | 是 | 固定值：showBottomNavBar |
+| content | String | 是 | 期望设定的底部导航栏效果。<br>**可选值**：<br>- `true`: 显示底部导航栏。<br>- `false`: 隐藏底部导航栏。 |
+
 
 
 ## 示例配置

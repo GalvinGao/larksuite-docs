@@ -32,55 +32,11 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYDNxYjL2QTM24iN0Ej
 
 当你本地服务器接收到开放平台推送的事件时（不包括请求网址校验），如果需要确保这个请求的来源是Lark开放平台而非伪造，有两种方式进行安全校验：签名校验和 Verification Token 校验。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">校验方式</md-th>
-<md-th style="width:75%">使用说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 校验方式 | 使用说明 |
+| --- | --- |
+| **签名校验** | 如果你在Lark应用内配置了 Encrypt Key 加密策略，需使用签名校验，这种校验方式相对复杂，但是安全性高，且无需解密和解析事件即可完成安全校验。校验方式如下：<br>1. 获取 `encrypt_key`。<br>在应用管理平台的 **事件与回调 > 加密策略** 页面，可以查看 `encrypt_key`。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/009dbb8736fc26f9be37f936c16e7573_YJdLnWWRVS.png?height=694&lazyload=true&maxWidth=400&width=2340)<br>2. 校验请求来源，示例代码可参考下文[签名校验示例代码](#签名校验示例代码)。<br>- 将请求头 `X-Lark-Request-Timestamp`、`X-Lark-Request-Nonce` 与 `encrypt_key` 拼接后，按照 `encode('utf-8')` 编码得到 `byte[] b1`，再拼接上请求的原始 body（指[事件结构](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#d040d74d)定义的原始 body，不同事件的原始 body 不同），得到一个 `byte[] b`。<br>- 将 `b` 用 sha256 算法得到字符串 `s`， 校验 `s` 是否和请求头 `X-Lark-Signature` 一致。<br><md-alert>该方式无需解密事件可完成安全校验，但获取事件内容仍需解密，事件解密操作参考下文[事件解密](#事件解密)。</md-alert> |
+| **Verification Token 校验** | Lark应用默认配置了 Verification Token，你可以在业务服务器内接收事件请求，并在请求体中获取 Verification Token 值，将该值与Lark应用内的 Verification Token 值进行比对，取值相同则说明该请求来自Lark开放平台的指定应用。<br>- 这种校验方式简单，但是安全性较低，在未配置 Encrypt Key 加密策略的前提下，会明文传输 Verification Token，存在数据泄露风险。<br>- Verification Token 可以在应用管理平台的 **事件与回调 > 加密策略** 页面获取，并与事件中解析出的 Verification Token 进行对比。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/a5ba9b2718467c5d0f6d90c42e2cfebe_FTTQM4jlZJ.png?height=710&lazyload=true&maxWidth=400&width=2382)<br><md-alert>如果应用已配置了 Encrypt Key 加密策略，则推荐使用签名校验方式，如果仍需获取 Verification Token，则必须先解密事件才能获取。事件解密操作参考下文[事件解密](#事件解密)。</md-alert> |
 
-<md-tr>
-<md-td>**签名校验**</md-td>
-<md-td>
-如果你在Lark应用内配置了 Encrypt Key 加密策略，需使用签名校验，这种校验方式相对复杂，但是安全性高，且无需解密和解析事件即可完成安全校验。校验方式如下：
-  
-1. 获取 `encrypt_key`。
-    
-   在应用管理平台的 **事件与回调 > 加密策略** 页面，可以查看 `encrypt_key`。
-    
-
-	![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/009dbb8736fc26f9be37f936c16e7573_YJdLnWWRVS.png?height=694&lazyload=true&maxWidth=400&width=2340)
-
-2. 校验请求来源，示例代码可参考下文[签名校验示例代码](#签名校验示例代码)。
-    
-   - 将请求头 `X-Lark-Request-Timestamp`、`X-Lark-Request-Nonce` 与 `encrypt_key` 拼接后，按照 `encode('utf-8')` 编码得到 `byte[] b1`，再拼接上请求的原始 body（指[事件结构](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM#d040d74d)定义的原始 body，不同事件的原始 body 不同），得到一个 `byte[] b`。
-    
-   - 将 `b` 用 sha256 算法得到字符串 `s`， 校验 `s` 是否和请求头 `X-Lark-Signature` 一致。  
-  
-<md-alert>该方式无需解密事件可完成安全校验，但获取事件内容仍需解密，事件解密操作参考下文[事件解密](#事件解密)。</md-alert>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>**Verification Token 校验**</md-td>
-<md-td>
-Lark应用默认配置了 Verification Token，你可以在业务服务器内接收事件请求，并在请求体中获取 Verification Token 值，将该值与Lark应用内的 Verification Token 值进行比对，取值相同则说明该请求来自Lark开放平台的指定应用。
-  
-- 这种校验方式简单，但是安全性较低，在未配置 Encrypt Key 加密策略的前提下，会明文传输 Verification Token，存在数据泄露风险。
-- Verification Token 可以在应用管理平台的 **事件与回调 > 加密策略** 页面获取，并与事件中解析出的 Verification Token 进行对比。
-    
-	![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/a5ba9b2718467c5d0f6d90c42e2cfebe_FTTQM4jlZJ.png?height=710&lazyload=true&maxWidth=400&width=2382)
-  
-<md-alert>如果应用已配置了 Encrypt Key 加密策略，则推荐使用签名校验方式，如果仍需获取 Verification Token，则必须先解密事件才能获取。事件解密操作参考下文[事件解密](#事件解密)。</md-alert>
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 #### 签名校验示例代码
 

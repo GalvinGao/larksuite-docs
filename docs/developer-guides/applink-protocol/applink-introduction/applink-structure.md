@@ -65,53 +65,11 @@ AppLink还支持以下参数，实现打开方式的配置：
 ###  2. 指定打开Lark客户端，而不打开品牌定制客户端、私有化客户端
 在Lark外部 通过 **Applink 网页** 打开Lark时，可设置 `lk_unique = true` 参数，则指定打开Lark客户端，而不打开品牌定制客户端与私有化客户端。
 #### 参数
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                lk_unique
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                false
-            </md-td>
-            <md-td>
-               **true**：指定打开Lark客户端，而不打开品牌定制客户端与私有化客户端。<br>**false**：可打开Lark / 品牌定制客户端 / 私有化客户端；如果用户安装了多个客户端，则随机打开其中一个。
 
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| lk_unique | boolean | 否 | false | **true**：指定打开Lark客户端，而不打开品牌定制客户端与私有化客户端。<br>**false**：可打开Lark / 品牌定制客户端 / 私有化客户端；如果用户安装了多个客户端，则随机打开其中一个。<br><md-alert type="tip" icon="none"><br>Lark V5.12.0 及以上版本支持。如果设为ture，低版本Lark客户端将无法唤起。<br></md-alert> |
 
-<md-alert type="tip" icon="none">
-Lark V5.12.0 及以上版本支持。如果设为ture，低版本Lark客户端将无法唤起。
-</md-alert>
-            </md-td>
-        </md-tr>
-      </md-tbody>
-</md-table>
-:::
 #### Applink示例
 [https://applink.larksuite.com/client/op/open?lk_unique=true](https://applink.larksuite.com/client/op/open?lk_unique=true)
 

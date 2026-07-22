@@ -19,182 +19,27 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukjMy4SOyIjL5IjM/canvas
 更新画布像素数据
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.45.0+</md-version></md-td>
-      <md-td><md-version>V3.45.0+</md-version></md-td>
-      <md-td><md-version>V3.45.0+</md-version></md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.45.0+</md-version> | <md-version>V3.45.0+</md-version> | <md-version>V3.45.0+</md-version> | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-          <md-td>canvasId</md-td>
-          <md-td>string</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            需要操纵的 Canvas 组件上的 canvas-id 的值
-            
 
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| canvasId | string | 是 |  | 需要操纵的 Canvas 组件上的 canvas-id 的值 |
+| data | Uint8ClampedArray | 是 |  | RGBA 像素数据 |
+| x | number | 是 |  | x 坐标 |
+| y | number | 是 |  | y 坐标 |
+| width | number | 是 |  | 区域宽度 |
+| height | number | 是 |  | 区域高度 |
 
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>data</md-td>
-          <md-td>Uint8ClampedArray</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            RGBA 像素数据
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>x</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            x 坐标
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>y</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            y 坐标
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>width</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            区域宽度
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-<md-tr>
-          <md-td>height</md-td>
-          <md-td>number</md-td>
-          
-          <md-td>是</md-td>
-          <md-td></md-td>
-          
-          <md-td>
-            区域高度
-            
-
-
-
-
-
-
-
-          </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 

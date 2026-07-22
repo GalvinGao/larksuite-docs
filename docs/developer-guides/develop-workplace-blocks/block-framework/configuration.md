@@ -50,64 +50,15 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/block/block-fr
 
 Block 配置位于每个 Block 文件夹下，与 `.ttml` `.ttss` 等文件同级。例如对于 BlockA，其配置路径为 `blockA/index.json`。配置中包含：
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 15%;">字段名</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-      <md-th>说明</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>blockTypeID</md-td>  
-      <md-td>string</md-td>  
-      <md-td>
-         blockTypeID，在Lark开放平台开启小组件能力后获取
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>creator</md-td>  
-      <md-td>string</md-td>  
-      <md-td>Creator 相对路径</md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td>useStartLoading</md-td>  
-      <md-td>boolean</md-td>  
-      <md-td>
-是否启动时使用 Block 框架提供的 Loading，默认值为 false。
+| 字段名 | 类型 | 说明 |
+| --- | --- | --- |
+| blockTypeID | string | blockTypeID，在Lark开放平台开启小组件能力后获取 |
+| creator | string | Creator 相对路径 |
+| useStartLoading | boolean | 是否启动时使用 Block 框架提供的 Loading，默认值为 false。<br>开启后将使用 Block 框架提供的 Loading 动画，直到调用 `tt.hideBlockLoading` 隐藏，提升用户体验。<br>**注意**：如果开启`useStartLoading` 但长时间未调用 `tt.hideBlockLoading`，会导致组件渲染超时。 |
+| darkmode | boolean | 是否开启 DarkMode，用于 Block 适配黑色主题 |
+| showFrame | boolean | 是否使用 Block 框架提供的边框，默认值 `true`。开启后将使用 Block 提供的边框，在云文档中为 1px 的灰色边框，工作台中为带阴影的卡片 |
+| schema | object | <md-alert type="tip">schema 配置项已经废弃，不再使用。</md-alert><br>用于定义 BlockEntity 中 SourceData 的数据结构，在 tt.setBlockInfo 中使用 BlockEntity 中的 SourceData 或数据协同能力时必填。设置或修改 schema 需要在开发者工具执行上传后生效。具体配置规则参见下文 |
 
-开启后将使用 Block 框架提供的 Loading 动画，直到调用 `tt.hideBlockLoading` 隐藏，提升用户体验。
-        
-**注意**：如果开启`useStartLoading` 但长时间未调用 `tt.hideBlockLoading`，会导致组件渲染超时。
-      </md-td> 
-    </md-tr> 
-        <md-tr> 
-      <md-td>darkmode</md-td>  
-      <md-td>boolean</md-td>  
-      <md-td>
-是否开启 DarkMode，用于 Block 适配黑色主题
-      </md-td> 
-    </md-tr> 
-        <md-tr> 
-      <md-td>showFrame</md-td>  
-      <md-td>boolean</md-td>  
-      <md-td>
-是否使用 Block 框架提供的边框，默认值 `true`。开启后将使用 Block 提供的边框，在云文档中为 1px 的灰色边框，工作台中为带阴影的卡片
-      </md-td> 
-    </md-tr> 
-        <md-tr> 
-      <md-td>schema</md-td>  
-      <md-td>object</md-td>  
-      <md-td>
-        <md-alert type="tip">schema 配置项已经废弃，不再使用。</md-alert>
-用于定义 BlockEntity 中 SourceData 的数据结构，在 tt.setBlockInfo 中使用 BlockEntity 中的 SourceData 或数据协同能力时必填。设置或修改 schema 需要在开发者工具执行上传后生效。具体配置规则参见下文
-      </md-td> 
-    </md-tr> 
-  </md-tbody> 
-</md-table>
-:::
 
 
 
@@ -140,29 +91,12 @@ Block 配置位于每个 Block 文件夹下，与 `.ttml` `.ttss` 等文件同�
 ## Creator 配置
 
 Creator 配置位于 Creator 的文件夹下，与 `ttml` `ttss` 等文件同级。例如对于 BlockA，其 Creator配置路径为 `blockA/creator/index.json`。配置中包含：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width:15%;">字段名</md-th>
-      <md-th style="width:15%;">类型</md-th>
-      <md-th>说明</md-th>
-      </md-tr>
-    </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>useStartLoading</md-td>
-      <md-td>boolean</md-td>
-      <md-td>是否启动时使用 Block 框架提供的 Loading，默认值 false</md-td>
-      </md-tr>
-    <md-tr>
-      <md-td>needInterface</md-td>
-      <md-td>boolean</md-td>
-      <md-td>Creator 是否需要界面，默认值 true。当 `needInterface` 为 `false` 时，`useStartLoading` 设置的值无效</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 字段名 | 类型 | 说明 |
+| --- | --- | --- |
+| useStartLoading | boolean | 是否启动时使用 Block 框架提供的 Loading，默认值 false |
+| needInterface | boolean | Creator 是否需要界面，默认值 true。当 `needInterface` 为 `false` 时，`useStartLoading` 设置的值无效 |
+
 
 
 

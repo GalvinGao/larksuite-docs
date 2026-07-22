@@ -34,53 +34,11 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/ucjNwUjL3YDM14yN2AT
 
 备注组件包含的参数说明如下表所示。
 
-:::html
-<md-table>
-    <md-thead>
-    <md-tr>
-        <md-th style="width: 15%">参数</md-th>
-        <md-th style="width: 15%">是否必填</md-th>
-        <md-th style="width: 15%">类型</md-th>
-        <md-th style="width: 55%">说明</md-th>
-    </md-tr>
-    </md-thead>
-    <md-tbody>
-    <md-tr>
-        <md-td>tag</md-td>
-        <md-td>是</md-td>
-        <md-td>String</md-td>
-        <md-td>备注组件的标识。固定取值：note</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>elements</md-td>
-        <md-td>是</md-td>
-        <md-td>Struct</md-td>
-        <md-td>
-备注信息。支持添加：
-- 文本组件的数据结构，构成备注信息的文本内容。数据结构参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-- image 元素的数据结构，构成备注信息的小尺寸图片。数据结构参见 [image](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#a974e363) 元素。
-          
-示例值：
-```json
-"elements": [{
-		"tag": "img",
-		"img_key": "img_v2_041b1234",
-		"alt": {
-			"tag": "plain_text",
-			"content": "image demo"
-		}
-	},
-	{
-		"tag": "plain_text",
-		"content": "Note module"
-	}
-]       
-```
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 参数 | 是否必填 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 备注组件的标识。固定取值：note |
+| elements | 是 | Struct | 备注信息。支持添加：<br>- 文本组件的数据结构，构成备注信息的文本内容。数据结构参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。<br>- image 元素的数据结构，构成备注信息的小尺寸图片。数据结构参见 [image](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#a974e363) 元素。<br>示例值：<br><code>"elements": [{<br>		"tag": "img",<br>		"img_key": "img_v2_041b1234",<br>		"alt": {<br>			"tag": "plain_text",<br>			"content": "image demo"<br>		}<br>	},<br>	{<br>		"tag": "plain_text",<br>		"content": "Note module"<br>	}<br>]</code> |
+
 
 JSON 示例配置：
 

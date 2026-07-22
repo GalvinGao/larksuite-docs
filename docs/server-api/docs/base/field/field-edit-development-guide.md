@@ -36,115 +36,18 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 }
 ```
 参数描述如下所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>field_id</md-td>
-      <md-td>string</md-td>
-      <md-td>字段 ID</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>field_name</md-td>
-      <md-td>string</md-td>
-      <md-td>字段名称</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>type</md-td>
-      <md-td>int</md-td>
-      <md-td>字段类型：相同类型用 ui_type 区分：
-        
-- 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)
-- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)
-- 3：单选
-- 4：多选
-- 5：日期
-- 7：复选框
-- 11：人员
-- 13：电话号码
-- 15：超链接
-- 17：附件
-- 18：单向关联
-- 19：查找引用
-- 20：公式
-- 21：双向关联
-- 22：地理位置
-- 23：群组
-- 24：流程
-- 1001：创建时间
-- 1002：最后更新时间
-- 1003：创建人
-- 1004：修改人
-- 1005：自动编号
-- 3001：按钮 
-        </md-td>
-    </md-tr>
-    <md-tr>
-  <md-td>description</md-td>
-  <md-td>string</md-td>
-  <md-td>对字段的更多说明。</md-td>
-</md-tr>
-<md-tr>
-  <md-td>is_primary</md-td>
-  <md-td>true/false</md-td>
-  <md-td>该字段是否是初始的索引字段。</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>property</md-td>
-      <md-td>object</md-td>
-      <md-td>字段属性，因字段类型而异。详情参考[字段编辑指南](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/guide)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>ui_type</md-td>
-      <md-td>string</md-td>
-      <md-td>字段的 UI 类型：
-- "Text"：文本
-- "Email"：邮箱
-- "Barcode"：条码
-- "Number"：数字
-- "Progress"：进度
-- "Currency"：货币
-- "Rating"：评分
-- "SingleSelect"：单选
-- "MultiSelect"：多选
-- "DateTime"：日期
-- "Checkbox"：复选框
-- "User"：人员
-- "GroupChat"：群组
-- "Stage"：流程
-- "Phone"：电话号码
-- "Url"：超链接
-- "Attachment"：附件
-- "SingleLink"：单向关联
-- "Formula"：公式
-- "Lookup": 查找引用
-- "DuplexLink"：双向关联
-- "Location"：地理位置
-- "CreatedTime"：创建时间
-- "ModifiedTime"：最后更新时间
-- "CreatedUser"：创建人
-- "ModifiedUser"：修改人
-- "AutoNumber"：自动编号
-- "Button"：按钮
-      </md-td>
-    </md-tr>
-    <md-tr>
-  <md-td>is_hidden</md-td>
-  <md-td>true/false</md-td>
-  <md-td>字段是否是隐藏字段。</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| field_id | string | 字段 ID |
+| field_name | string | 字段名称 |
+| type | int | 字段类型：相同类型用 ui_type 区分：<br>- 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)<br>- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)<br>- 3：单选<br>- 4：多选<br>- 5：日期<br>- 7：复选框<br>- 11：人员<br>- 13：电话号码<br>- 15：超链接<br>- 17：附件<br>- 18：单向关联<br>- 19：查找引用<br>- 20：公式<br>- 21：双向关联<br>- 22：地理位置<br>- 23：群组<br>- 24：流程<br>- 1001：创建时间<br>- 1002：最后更新时间<br>- 1003：创建人<br>- 1004：修改人<br>- 1005：自动编号<br>- 3001：按钮 |
+| description | string | 对字段的更多说明。 |
+| is_primary | true/false | 该字段是否是初始的索引字段。 |
+| property | object | 字段属性，因字段类型而异。详情参考[字段编辑指南](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-field/guide)。 |
+| ui_type | string | 字段的 UI 类型：<br>- "Text"：文本<br>- "Email"：邮箱<br>- "Barcode"：条码<br>- "Number"：数字<br>- "Progress"：进度<br>- "Currency"：货币<br>- "Rating"：评分<br>- "SingleSelect"：单选<br>- "MultiSelect"：多选<br>- "DateTime"：日期<br>- "Checkbox"：复选框<br>- "User"：人员<br>- "GroupChat"：群组<br>- "Stage"：流程<br>- "Phone"：电话号码<br>- "Url"：超链接<br>- "Attachment"：附件<br>- "SingleLink"：单向关联<br>- "Formula"：公式<br>- "Lookup": 查找引用<br>- "DuplexLink"：双向关联<br>- "Location"：地理位置<br>- "CreatedTime"：创建时间<br>- "ModifiedTime"：最后更新时间<br>- "CreatedUser"：创建人<br>- "ModifiedUser"：修改人<br>- "AutoNumber"：自动编号<br>- "Button"：按钮 |
+| is_hidden | true/false | 字段是否是隐藏字段。 |
 
-  </md-tbody>
-</md-table>
-:::
 ## 索引字段说明
 
 数据表中，第一列为索引列，即索引字段。`"is_primary": true` 表示该字段为索引字段。索引不能被删除、移动或隐藏，且仅支持以下字段类型（type）：
@@ -168,75 +71,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 不同接口支持的字段类型不同，具体请以对应接口文档的字段类型可选值为准。
 :::
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">字段类型 type 的枚举值</md-th>
-      <md-th style="width: 50%;">字段 UI 展示类型 <code>ui_type</code> 的枚举值</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>
-- 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)
-- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)
-- 3：单选
-- 4：多选
-- 5：日期
-- 7：复选框
-- 11：人员
-- 13：电话号码
-- 15：超链接
-- 17：附件
-- 18：单向关联
-- 19：查找引用
-- 20：公式
-- 21：双向关联
-- 22：地理位置
-- 23：群组
-- 24：流程（不支持通过写接口新增或编辑，仅支持读接口）
-- 1001：创建时间
-- 1002：最后更新时间
-- 1003：创建人
-- 1004：修改人
-- 1005：自动编号
-- 3001：按钮（不支持通过写接口新增或编辑，仅支持读接口）
-      </md-td>
-      <md-td>
-- "Text"：文本
-- "Email"：邮箱
-- "Barcode"：条码
-- "Number"：数字
-- "Progress"：进度
-- "Currency"：货币
-- "Rating"：评分
-- "SingleSelect"：单选
-- "MultiSelect"：多选
-- "DateTime"：日期
-- "Checkbox"：复选框
-- "User"：人员
-- "GroupChat"：群组
-- "Stage"：流程
-- "Phone"：电话号码
-- "Url"：超链接
-- "Attachment"：附件
-- "SingleLink"：单向关联
-- "Formula"：公式
-- "Lookup": 查找引用
-- "DuplexLink"：双向关联
-- "Location"：地理位置
-- "CreatedTime"：创建时间
-- "ModifiedTime"：最后更新时间
-- "CreatedUser"：创建人
-- "ModifiedUser"：修改人
-- "AutoNumber"：自动编号
-- "Button"：按钮
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 字段类型 type 的枚举值 | 字段 UI 展示类型 <code>ui_type</code> 的枚举值 |
+| --- | --- |
+| - 1：文本（默认值）、条码（需声明 <code>"ui_type": "Barcode"</code>）、邮箱（需声明<code>"ui_type": "Email"</code>)<br>- 2：数字（默认值）、进度（需声明 <code>"ui_type": "Progress"</code>）、货币（需声明 <code>"ui_type": "Currency"</code>）、评分（需声明 <code>"ui_type": "Rating"</code>)<br>- 3：单选<br>- 4：多选<br>- 5：日期<br>- 7：复选框<br>- 11：人员<br>- 13：电话号码<br>- 15：超链接<br>- 17：附件<br>- 18：单向关联<br>- 19：查找引用<br>- 20：公式<br>- 21：双向关联<br>- 22：地理位置<br>- 23：群组<br>- 24：流程（不支持通过写接口新增或编辑，仅支持读接口）<br>- 1001：创建时间<br>- 1002：最后更新时间<br>- 1003：创建人<br>- 1004：修改人<br>- 1005：自动编号<br>- 3001：按钮（不支持通过写接口新增或编辑，仅支持读接口） | - "Text"：文本<br>- "Email"：邮箱<br>- "Barcode"：条码<br>- "Number"：数字<br>- "Progress"：进度<br>- "Currency"：货币<br>- "Rating"：评分<br>- "SingleSelect"：单选<br>- "MultiSelect"：多选<br>- "DateTime"：日期<br>- "Checkbox"：复选框<br>- "User"：人员<br>- "GroupChat"：群组<br>- "Stage"：流程<br>- "Phone"：电话号码<br>- "Url"：超链接<br>- "Attachment"：附件<br>- "SingleLink"：单向关联<br>- "Formula"：公式<br>- "Lookup": 查找引用<br>- "DuplexLink"：双向关联<br>- "Location"：地理位置<br>- "CreatedTime"：创建时间<br>- "ModifiedTime"：最后更新时间<br>- "CreatedUser"：创建人<br>- "ModifiedUser"：修改人<br>- "AutoNumber"：自动编号<br>- "Button"：按钮 |
+
 ## 字段的属性 property
 
 字段的属性指指定字段类型的更多功能属性。例如，对于人员类型的字段，是否要开启允许添加多个成员的功能属性。不同类型的字段对应的 `property` 结构不同。以下类型字段没有其他功能属性，其 `property` 均为 `null`：
@@ -358,40 +196,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ### 数字字段
 
 数字字段的类型 `type` 为 `2`，无需声明 UI 展示类型 `ui_type` 。其功能属性如下所示：
-:::html
 
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>formatter</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>数字的格式，默认为 "0.0"，枚举值如下所示： 
-- "0"：整数 
-- "0.0"：保留 1 位小数 
--"0.00"：保留 2 位小数 
-- "0.000"：保留 3 位小数 
-- "0.0000"：保留 4 位小数 
-- "1,000"：千分位 
-- "1,000.00"：千分位（小数点） 
-- "%"：百分比 
-- "0.00%"：百分比（小数点） 
-- "¥"：人民币
-- "¥0.00"：人民币（小数点） 
-- "$"：美元 
-- "$0.00"：美元（小数点）</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| formatter | string | 否 | 数字的格式，默认为 "0.0"，枚举值如下所示：<br>- "0"：整数<br>- "0.0"：保留 1 位小数<br>-"0.00"：保留 2 位小数<br>- "0.000"：保留 3 位小数<br>- "0.0000"：保留 4 位小数<br>- "1,000"：千分位<br>- "1,000.00"：千分位（小数点）<br>- "%"：百分比<br>- "0.00%"：百分比（小数点）<br>- "¥"：人民币<br>- "¥0.00"：人民币（小数点）<br>- "$"：美元<br>- "$0.00"：美元（小数点） |
+
 
 #### 请求体示例
 
@@ -1143,37 +952,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ### 日期字段
 
 日期字段的类型 `type` 为 `5` 。其功能属性如下所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>date_formatter</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示：
-- "yyyy/MM/dd"：格式如 2021/01/30
-- "yyyy-MM-dd HH:mm"：2021-01-30 14:00
-- "MM-dd"：01-30
-- "MM/dd/yyyy"：01/30/2021
-- "dd/MM/yyyy"：30/01/2021</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>auto_fill</md-td>
-      <md-td>boolean</md-td>
-      <md-td>否</md-td>
-      <md-td>对于新记录，是否自动填写创建时间。默认为 false。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| date_formatter | string | 否 | 日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示：<br>- "yyyy/MM/dd"：格式如 2021/01/30<br>- "yyyy-MM-dd HH:mm"：2021-01-30 14:00<br>- "MM-dd"：01-30<br>- "MM/dd/yyyy"：01/30/2021<br>- "dd/MM/yyyy"：30/01/2021 |
+| auto_fill | boolean | 否 | 对于新记录，是否自动填写创建时间。默认为 false。 |
+
 #### 请求体示例
 
 新增、更新字段的请求体示例如下所示：
@@ -1427,35 +1211,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ### 地理位置字段
 
 地理位置的类型 `type` 为 `22`。其功能属性如下所示：
-:::html
 
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 30%;">名称</md-th>
-<md-th style="width: 20%;">类型</md-th>
-<md-th style="width: 10%;">必填</md-th>
-<md-th style="width: 40%;">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>location</md-td>
-<md-td>app.field.property.location</md-td>
-<md-td>否</md-td>
-<md-td>地理位置输入方式</md-td>
-</md-tr>
-<md-tr>
-<md-td>input_type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>地理位置输入限制，可选值有： 
-- only_mobile：仅允许移动端实时定位 
-- not_limit：无限制，可输入任意地理位置</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| location | app.field.property.location | 否 | 地理位置输入方式 |
+| input_type | string | 是 | 地理位置输入限制，可选值有：<br>- only_mobile：仅允许移动端实时定位<br>- not_limit：无限制，可输入任意地理位置 |
+
 
 #### 请求体示例
 
@@ -1547,32 +1308,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ### 创建时间、最后更新时间字段
 
 创建时间字段的类型 `type` 为 `1001`。最后更新时间字段的类型 `type` 为 `1002`。其功能属性相同，如下所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>date_formatter</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示：
-- "yyyy/MM/dd"：格式如 2021/01/30
-- "yyyy-MM-dd HH:mm"：2021-01-30 14:00
-- "MM-dd"：01-30
-- "MM/dd/yyyy"：01/30/2021
-- "dd/MM/yyyy"：30/01/2021</md-td>
-    </md-tr>
-    
-  </md-tbody>
-</md-table>
-:::
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| date_formatter | string | 否 | 日期格式，默认为 "yyyy/MM/dd"，枚举值如下所示：<br>- "yyyy/MM/dd"：格式如 2021/01/30<br>- "yyyy-MM-dd HH:mm"：2021-01-30 14:00<br>- "MM-dd"：01-30<br>- "MM/dd/yyyy"：01/30/2021<br>- "dd/MM/yyyy"：30/01/2021 |
+
 
 #### 请求体示例
 

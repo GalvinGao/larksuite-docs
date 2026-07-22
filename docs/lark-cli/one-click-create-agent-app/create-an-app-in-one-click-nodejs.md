@@ -62,91 +62,19 @@ try {
 
 ## registerApp 参数
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">参数</md-th>
-      <md-th style="width: 38%;">描述</md-th>
-      <md-th style="width: 18%;">类型</md-th>
-      <md-th style="width: 18%;">必填</md-th>
-      <md-th style="width: 24%;">默认</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>domain</md-td>
-      <md-td>自定义认证域名（仅 host 部分）</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td><code>accounts.feishu.cn</code></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>larkDomain</md-td>
-      <md-td>自定义 Lark 认证域名（仅 host 部分），检测到 Lark 租户时自动切换</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td><code>accounts.larksuite.com</code></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>source</md-td>
-      <md-td>来源标识，拼入二维码 URL 的 <code>from</code> 参数，格式为 <code>node-sdk/{source}</code></md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>signal</md-td>
-      <md-td>用于取消轮询的 <code>AbortSignal</code></md-td>
-      <md-td>AbortSignal</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>onQRCodeReady</md-td>
-      <md-td>验证链接就绪时的回调，参数为 <code>{ url, expireIn }</code>。可将 URL 渲染为二维码供用户扫码，或直接作为链接展示</md-td>
-      <md-td>function</md-td>
-      <md-td>是</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>onStatusChange</md-td>
-      <md-td>轮询状态变化时的回调，参数为 <code>{ status, interval? }</code>。status 取值：<code>polling</code>、<code>slow_down</code>、<code>domain_switched</code></md-td>
-      <md-td>function</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset</md-td>
-      <md-td>预设应用信息（头像、名称、描述）。所有字段都是可选的，用户扫码后仍可在页面手动修改</md-td>
-      <md-td>AppPreset</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset.avatar</md-td>
-      <md-td>应用头像 URL，支持 1-6 个；传多个时默认选中第一个。支持 png / jpg / jpeg / webp / gif（gif 自动取一帧，不保留动图）</md-td>
-      <md-td>string | string[]</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset.name</md-td>
-      <md-td>应用名称，支持 <code>{user}</code> 占位符（替换为扫码用户名称）</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset.desc</md-td>
-      <md-td>应用描述，支持 <code>{user}</code> 占位符</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 参数 | 描述 | 类型 | 必填 | 默认 |
+| --- | --- | --- | --- | --- |
+| domain | 自定义认证域名（仅 host 部分） | string | 否 | <code>accounts.feishu.cn</code> |
+| larkDomain | 自定义 Lark 认证域名（仅 host 部分），检测到 Lark 租户时自动切换 | string | 否 | <code>accounts.larksuite.com</code> |
+| source | 来源标识，拼入二维码 URL 的 <code>from</code> 参数，格式为 <code>node-sdk/{source}</code> | string | 否 | - |
+| signal | 用于取消轮询的 <code>AbortSignal</code> | AbortSignal | 否 | - |
+| onQRCodeReady | 验证链接就绪时的回调，参数为 <code>{ url, expireIn }</code>。可将 URL 渲染为二维码供用户扫码，或直接作为链接展示 | function | 是 | - |
+| onStatusChange | 轮询状态变化时的回调，参数为 <code>{ status, interval? }</code>。status 取值：<code>polling</code>、<code>slow_down</code>、<code>domain_switched</code> | function | 否 | - |
+| appPreset | 预设应用信息（头像、名称、描述）。所有字段都是可选的，用户扫码后仍可在页面手动修改 | AppPreset | 否 | - |
+| appPreset.avatar | 应用头像 URL，支持 1-6 个；传多个时默认选中第一个。支持 png / jpg / jpeg / webp / gif（gif 自动取一帧，不保留动图） | string &#124; string[] | 否 | - |
+| appPreset.name | 应用名称，支持 <code>{user}</code> 占位符（替换为扫码用户名称） | string | 否 | - |
+| appPreset.desc | 应用描述，支持 <code>{user}</code> 占位符 | string | 否 | - |
+
 
 ## 返回值
 

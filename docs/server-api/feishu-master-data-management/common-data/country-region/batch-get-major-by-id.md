@@ -39,82 +39,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mdm-v3/bat
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/mdm/v3/batch_country_region</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            mdm:country_region:read
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/mdm/v3/batch_country_region |
+| HTTP Method | GET |
+| 接口频率限制 | [10 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | mdm:country_region:read |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -560,293 +500,44 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mdm-v3/bat
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640201</md-td>
-  <md-td>invalid params</md-td>
-  <md-td>参数非法，请检查参数</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1640201 | invalid params | 参数非法，请检查参数 |
+| 400 | 1640202 | param not found | 参数为空，请检查参数填写是否完整 |
+| 400 | 1640203 | object field not found | 此字段不在查询范围内，请检查 |
+| 400 | 1640204 | language is invalid | 非法语言，请重新填写 |
+| 400 | 1640205 | params is required | 必填参数未填写，请检查 |
+| 400 | 1640206 | limit too large | 查询数量过大，请限制在1000以内 |
+| 400 | 1640207 | limit plus offset too large | 查询数量和起始位置加和过大，请限制在10000以内 |
+| 400 | 1640208 | page token invalid | 分页码无效，请检查该参数 |
+| 400 | 1640209 | record id not found | 未发现符合条件行级记录，请检查查询参数 |
+| 400 | 1640210 | sort by null is not allowed | 排序参数填写有误，请检查 |
+| 400 | 1640211 | biz codes is empty | 业务编码为空，请检查 |
+| 400 | 1640212 | mdm codes is empty | 主数据编码为空，请检查 |
+| 400 | 1640213 | biz id is invalid | 业务编码非法，请检查 |
+| 500 | 1640101 | system error | 系统错误，联系Lark技术支持排查 |
+| 500 | 1640102 | invalid generic method | 请求方法错误，联系Lark技术支持排查 |
+| 500 | 1640103 | call meta service error | 请求元数据方法错误，联系Lark技术支持排查 |
+| 500 | 1640104 | meta data not found | 找不到对应元数据，联系Lark技术支持排查 |
+| 500 | 1640105 | data source request invalid | 数据库请求非法，联系Lark技术支持排查 |
+| 500 | 1640106 | db error | 数据库错误，联系Lark技术支持排查 |
+| 500 | 1640107 | func not supported yet | 服务不支持该方法，联系Lark技术支持排查 |
+| 500 | 1640108 | field type not supported yet | 字段类型不支持，联系Lark技术支持排查 |
+| 500 | 1640109 | validator not found | 未发现数据校验规则，联系Lark技术支持排查 |
+| 500 | 1640110 | transformer not found | 未发现数据转换规则，联系Lark技术支持排查 |
+| 500 | 1640111 | executor not found | 未发现执行器，联系Lark技术支持排查 |
+| 500 | 1640112 | invalid data source type | 错误数据库类型，联系Lark技术支持排查 |
+| 500 | 1640113 | data source not found | 未发现数据库，联系Lark技术支持排查 |
+| 500 | 1640114 | data source invalid | 数据库无效，联系Lark技术支持排查 |
+| 500 | 1640115 | meta setting not found | 未发现元数据配置，联系Lark技术支持排查 |
+| 500 | 1640116 | generate page token error | 分页码生成错误，联系Lark技术支持排查 |
+| 500 | 1640117 | record duplicate error | 行级记录重复，联系Lark技术支持排查 |
+| 500 | 1640118 | generate idl error | idl生成错误，联系Lark技术支持排查 |
+| 500 | 1640119 | producer not found error | 消息生产者错误，联系Lark技术支持排查 |
+| 500 | 1640120 | custom func request error | 自定义执行器请求错误，联系Lark技术支持排查 |
+| 500 | 1640121 | custom func response error | 自定义执行器响应错误，联系Lark技术支持排查 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640202</md-td>
-  <md-td>param not found</md-td>
-  <md-td>参数为空，请检查参数填写是否完整</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640203</md-td>
-  <md-td>object field not found</md-td>
-  <md-td>此字段不在查询范围内，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640204</md-td>
-  <md-td>language is invalid</md-td>
-  <md-td>非法语言，请重新填写</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640205</md-td>
-  <md-td>params is required</md-td>
-  <md-td>必填参数未填写，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640206</md-td>
-  <md-td>limit too large</md-td>
-  <md-td>查询数量过大，请限制在1000以内</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640207</md-td>
-  <md-td>limit plus offset too large</md-td>
-  <md-td>查询数量和起始位置加和过大，请限制在10000以内</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640208</md-td>
-  <md-td>page token invalid</md-td>
-  <md-td>分页码无效，请检查该参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640209</md-td>
-  <md-td>record id not found</md-td>
-  <md-td>未发现符合条件行级记录，请检查查询参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640210</md-td>
-  <md-td>sort by null is not allowed</md-td>
-  <md-td>排序参数填写有误，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640211</md-td>
-  <md-td>biz codes is empty</md-td>
-  <md-td>业务编码为空，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640212</md-td>
-  <md-td>mdm codes is empty</md-td>
-  <md-td>主数据编码为空，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1640213</md-td>
-  <md-td>biz id is invalid</md-td>
-  <md-td>业务编码非法，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640101</md-td>
-  <md-td>system error</md-td>
-  <md-td>系统错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640102</md-td>
-  <md-td>invalid generic method</md-td>
-  <md-td>请求方法错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640103</md-td>
-  <md-td>call meta service error</md-td>
-  <md-td>请求元数据方法错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640104</md-td>
-  <md-td>meta data not found</md-td>
-  <md-td>找不到对应元数据，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640105</md-td>
-  <md-td>data source request invalid</md-td>
-  <md-td>数据库请求非法，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640106</md-td>
-  <md-td>db error</md-td>
-  <md-td>数据库错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640107</md-td>
-  <md-td>func not supported yet</md-td>
-  <md-td>服务不支持该方法，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640108</md-td>
-  <md-td>field type not supported yet</md-td>
-  <md-td>字段类型不支持，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640109</md-td>
-  <md-td>validator not found</md-td>
-  <md-td>未发现数据校验规则，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640110</md-td>
-  <md-td>transformer not found</md-td>
-  <md-td>未发现数据转换规则，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640111</md-td>
-  <md-td>executor not found</md-td>
-  <md-td>未发现执行器，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640112</md-td>
-  <md-td>invalid data source type</md-td>
-  <md-td>错误数据库类型，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640113</md-td>
-  <md-td>data source not found</md-td>
-  <md-td>未发现数据库，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640114</md-td>
-  <md-td>data source invalid</md-td>
-  <md-td>数据库无效，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640115</md-td>
-  <md-td>meta setting not found</md-td>
-  <md-td>未发现元数据配置，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640116</md-td>
-  <md-td>generate page token error</md-td>
-  <md-td>分页码生成错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640117</md-td>
-  <md-td>record duplicate error</md-td>
-  <md-td>行级记录重复，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640118</md-td>
-  <md-td>generate idl error</md-td>
-  <md-td>idl生成错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640119</md-td>
-  <md-td>producer not found error</md-td>
-  <md-td>消息生产者错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640120</md-td>
-  <md-td>custom func request error</md-td>
-  <md-td>自定义执行器请求错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1640121</md-td>
-  <md-td>custom func response error</md-td>
-  <md-td>自定义执行器响应错误，联系Lark技术支持排查</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

@@ -38,95 +38,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/security_and_compliance/v1/user_migrations/search</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="security_and_compliance:user_migration" desc="创建、更新用户数据迁移" support_app_types="custom" tags="">创建、更新用户数据迁移</md-perm>
-            <md-perm name="security_and_compliance:user_migration:multi-geo" desc="查询、更新员工的数据驻留地" support_app_types="custom" tags="">查询、更新员工的数据驻留地</md-perm>
-            <md-perm name="security_and_compliance:user_migration:readonly" desc="查看用户数据迁移" support_app_types="custom" tags="">查看用户数据迁移</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/security_and_compliance/v1/user_migrations/search |
+| HTTP Method | POST |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="security_and_compliance:user_migration" desc="创建、更新用户数据迁移" support_app_types="custom" tags="">创建、更新用户数据迁移</md-perm><br><md-perm name="security_and_compliance:user_migration:multi-geo" desc="查询、更新员工的数据驻留地" support_app_types="custom" tags="">查询、更新员工的数据驻留地</md-perm><br><md-perm name="security_and_compliance:user_migration:readonly" desc="查看用户数据迁移" support_app_types="custom" tags="">查看用户数据迁移</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -401,52 +328,14 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1781001</md-td>
-  <md-td>请求参数无效</md-td>
-  <md-td>修正请求参数</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1781001 | 请求参数无效 | 修正请求参数 |
+| 403 | 1781002 | 操作人没有数据驻留服务操作权限 | 在管理员后台为操作人开通数据驻留服务操作权限，参考: https://www.larksuite.com/hc/zh-CN/articles/360043595213 |
+| 400 | 1781003 | 租户未开通数据驻留服务 | 需联系服务台技术支持开通「数据驻留服务」 |
+| 500 | 1782001 | 服务端内部报错 | 寻求客服帮助 |
 
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1781002</md-td>
-  <md-td>操作人没有数据驻留服务操作权限</md-td>
-  <md-td>在管理员后台为操作人开通数据驻留服务操作权限，参考: https://www.larksuite.com/hc/zh-CN/articles/360043595213</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1781003</md-td>
-  <md-td>租户未开通数据驻留服务</md-td>
-  <md-td>需联系服务台技术支持开通「数据驻留服务」</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1782001</md-td>
-  <md-td>服务端内部报错</md-td>
-  <md-td>寻求客服帮助</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

@@ -20,117 +20,25 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uAjNwEjLwYDMx4CM2ATM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V2.2.0+</md-version></md-td>
-      <md-td><md-version>V2.2.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/mailto/mailto" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44+</md-version></md-td>
-      <md-td><md-version>V3.44+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V2.2.0+</md-version> | <md-version>V2.2.0+</md-version> | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/mailto/mailto" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44+</md-version> | <md-version>V3.44+</md-version> | **X** | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">名称
-            </md-th>
-            <md-th style="width: 18%;">数据类型
-            </md-th>
-            <md-th style="width: 10%;">必填
-            </md-th>
-            <md-th style="width: 10%;">默认值</md-th>
-            <md-th>描述</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>to</md-td>
-            <md-td>string[]</md-td>
-            <md-td>否</md-td>
-            <md-td></md-td>
-            <md-td>
-                收件人邮箱列表
 
-**示例值**：["test@gmail.com"]
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>cc</md-td>
-            <md-td>string[]</md-td>
-            <md-td>否</md-td>
-            <md-td></md-td>
-            <md-td>
-                抄送邮箱列表
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| to | string[] | 否 |  | 收件人邮箱列表<br>**示例值**：["test@gmail.com"] |
+| cc | string[] | 否 |  | 抄送邮箱列表<br>**示例值**：["test.cc@gmail.com", "test.cc2@gmail.com"] |
+| bcc | string[] | 否 |  | 密送邮箱列表<br>**示例值**：["test.bcc@gmail.com"] |
+| subject | string | 否 |  | 主题<br>**示例值**：测试 |
+| body | string | 否 |  | 邮件内容<br>**示例值**：测试 |
 
-**示例值**：["test.cc@gmail.com", "test.cc2@gmail.com"]
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>bcc</md-td>
-            <md-td>string[]</md-td>
-            <md-td>否</md-td>
-            <md-td></md-td>
-            <md-td>
-                密送邮箱列表
-
-**示例值**：["test.bcc@gmail.com"]
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>subject</md-td>
-            <md-td>string</md-td>
-            <md-td>否</md-td>
-            <md-td></md-td>
-            <md-td>
-                主题
-
-**示例值**：测试
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>body</md-td>
-            <md-td>string</md-td>
-            <md-td>否</md-td>
-            <md-td></md-td>
-            <md-td>
-                邮件内容
-
-**示例值**：测试
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 输出

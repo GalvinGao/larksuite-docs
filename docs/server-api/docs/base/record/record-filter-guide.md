@@ -21,61 +21,16 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ## 筛选参数结构说明
 
 筛选参数的描述和结构如下所示。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 25%;">参数名称</md-th>
-      <md-th style="width: 25%;">数据类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>filter</md-td>
-      <md-td>filter_info</md-td>
-      <md-td>包含条件筛选信息的对象。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ conjunction</md-td>
-      <md-td>string</md-td>
-      <md-td>表示条件之间的逻辑连接词，可以是 "and" 或 "or"。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ conditions</md-td>
-      <md-td>	condition[]</md-td>
-      <md-td>筛选条件集合。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └  field_name</md-td>
-      <md-td>string</md-td>
-      <md-td>条件字段的名称。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └  operator</md-td>
-      <md-td>string</md-td>
-      <md-td>条件运算符。其可选值有：
-- is：等于
-- isNot：不等于（不支持日期字段）
-- contains：包含（不支持日期字段）
-- doesNotContain：不包含（不支持日期字段）
-- isEmpty：为空
-- isNotEmpty：不为空
-- isGreater：大于
-- isGreaterEqual：大于等于（不支持日期字段）
-- isLess：小于
-- isLessEqual：小于等于（不支持日期字段）
-- like：LIKE 运算符。暂未支持
-- in：IN 运算符。暂未支持</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ value</md-td>
-      <md-td>string[]</md-td>
-      <md-td>条件的值，可以是单个值或多个值的数组。不同字段类型和不同的 operator 可填的值不同。详情参考下文字段目标值（value）填写说明。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 参数名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| filter | filter_info | 包含条件筛选信息的对象。 |
+| └ conjunction | string | 表示条件之间的逻辑连接词，可以是 "and" 或 "or"。 |
+| └ conditions | condition[] | 筛选条件集合。 |
+| └ └  field_name | string | 条件字段的名称。 |
+| └ └  operator | string | 条件运算符。其可选值有：<br>- is：等于<br>- isNot：不等于（不支持日期字段）<br>- contains：包含（不支持日期字段）<br>- doesNotContain：不包含（不支持日期字段）<br>- isEmpty：为空<br>- isNotEmpty：不为空<br>- isGreater：大于<br>- isGreaterEqual：大于等于（不支持日期字段）<br>- isLess：小于<br>- isLessEqual：小于等于（不支持日期字段）<br>- like：LIKE 运算符。暂未支持<br>- in：IN 运算符。暂未支持 |
+| └ └ value | string[] | 条件的值，可以是单个值或多个值的数组。不同字段类型和不同的 operator 可填的值不同。详情参考下文字段目标值（value）填写说明。 |
+
  `filter` 的数据结构如下所示：
 ```json
 {
@@ -220,198 +175,32 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 </md-alert>
 :::
 
-:::html
+| 字段类型 | 目标值示例 | 描述 | 限制 |
+| --- | --- | --- | --- |
+| 多行文本 | <code>["文本内容"]</code> | 填写对应的文本内容 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 条码 | <code>["条码内容"]</code> | 填写对应的条码内容 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 数字 | <code>["23.4"]</code> | 填写对应数字的字符串形式 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 货币 | <code>["23.4"]</code> | 填写对应数字的字符串形式 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 进度 | <code>["0.34"]</code> | 填写对应数字的字符串形式 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 评分 | <code>["1"]</code> | 填写对应数字的字符串形式 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 单选 | <code>["a","b"]</code> | 列表中填写选项内容 | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 多选 | <code>["a","b"]</code> | 包含多个选项名字符串的数组 | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 日期 | <code>["ExactDate","1702449755000"]</code> | Unix 时间戳，单位是毫秒 | 列表中可能存在多个元素，具体参考下文<strong>日期字段填写说明</strong> |
+| 复选框 | <code>["true"]</code> 或 <code>["false"]</code> | 元素填写对应的布尔内容 | 列表只能有一个元素，operator 仅支持 `is` |
+| 人员 | <code>["ou_9a971ded01b4ca66f4798549878abcef"]</code> | 填写对应的用户 ID。用户 ID 类型需与[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)中 `user_id_type`<br>参数指定的类型一致，默认类型为 open_id | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 电话号码 | <code>["131xxxx6666"]</code> | 填写对应的电话号码 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 超链接 | <code>["链接显示名称"]</code> | 填写对应的超链接名称 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
+| 附件 | <code>[]</code> | 仅支持`isEmpty`或`isNotEmpty` | 需填空值 `[]` |
+| 单向关联 | <code>["recnVYsuqV"]</code> | 填写对应的记录 ID | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 双向关联 | <code>["recnVYsuqV"]</code> | 填写对应的记录 ID | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 地理位置 | <code>["天安门广场，北京市东城区东长安街"]</code> | 填写对应的地址 | 列表只能有一个元素或零个元素，operator为`isEmpty`或`isNotEmpty`填空值[] |
+| 群组 | <code>["oc_cd07f55f14d6f4a4f1b51504e7e97f48"]</code> | 填写对应的群组 ID | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 创建时间 | <code>["ExactDate","1702449755000"]</code> | Unix 时间戳，单位是毫秒 | 列表中可能存在多个元素，具体参考下文<strong>日期字段填写说明</strong> |
+| 最后更新时间 | <code>["ExactDate","1702449755000"]</code> | Unix 时间戳，单位是毫秒 | 列表中可能存在多个元素，具体参考下文<strong>日期字段填写说明</strong> |
+| 创建人 | <code>["ou_9a971ded01b4ca66f4798549878abcef"]</code> | 填写对应的用户 ID。用户 ID 类型需与[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)中 `user_id_type`<br>参数指定的类型一致，默认类型为 open_id | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 修改人 | <code>["ou_9a971ded01b4ca66f4798549878abcef"]</code> | 填写对应的用户 ID。用户 ID 类型需与[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)中 `user_id_type`<br>参数指定的类型一致，默认类型为 open_id | 列表中可能存在多个元素：<br>- operator 为 `is` 或`isNot` 需填写一个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`<br>- 其他 operator 可填写多个元素 |
+| 自动编号 | <code>["1"]</code> | 填写对应的自动编号值 | - 列表只能有一个元素或零个元素<br>- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]` |
 
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">字段类型</md-th>
-      <md-th>目标值示例</md-th>
-      <md-th>描述</md-th>
-      <md-th style="width: 40%;">限制</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>多行文本</md-td>
-      <md-td><code>["文本内容"]</code></md-td>
-      <md-td>填写对应的文本内容</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
- - operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>条码</md-td>
-      <md-td><code>["条码内容"]</code></md-td>
-      <md-td>填写对应的条码内容</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
- - operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>数字</md-td>
-      <md-td><code>["23.4"]</code></md-td>
-      <md-td>填写对应数字的字符串形式</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
- - operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>货币</md-td>
-      <md-td><code>["23.4"]</code></md-td>
-      <md-td>填写对应数字的字符串形式</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>进度</md-td>
-      <md-td><code>["0.34"]</code></md-td>
-      <md-td>填写对应数字的字符串形式</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
- - operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>评分</md-td>
-      <md-td><code>["1"]</code></md-td>
-      <md-td>填写对应数字的字符串形式</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-        <md-tr>
-      <md-td>单选</md-td>
-      <md-td><code>["a","b"]</code></md-td>
-      <md-td>列表中填写选项内容</md-td>
-      <md-td>列表中可能存在多个元素：
- - operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>多选</md-td>
-      <md-td><code>["a","b"]</code></md-td>
-      <md-td>包含多个选项名字符串的数组</md-td>
-      <md-td>列表中可能存在多个元素：
-- operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>日期</md-td>
-      <md-td><code>["ExactDate","1702449755000"]</code></md-td>
-      <md-td>Unix 时间戳，单位是毫秒</md-td>
-      <md-td>列表中可能存在多个元素，具体参考下文<strong>日期字段填写说明</strong></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>复选框</md-td>
-      <md-td><code>["true"]</code> 或 <code>["false"]</code></md-td>
-      <md-td>元素填写对应的布尔内容</md-td>
-      <md-td>列表只能有一个元素，operator 仅支持 `is`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>人员</md-td>
-      <md-td><code>["ou_9a971ded01b4ca66f4798549878abcef"]</code></md-td>
-      <md-td>填写对应的用户 ID。用户 ID 类型需与[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)中 `user_id_type`
-参数指定的类型一致，默认类型为 open_id
-</md-td>
-      <md-td>列表中可能存在多个元素：
-- operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>电话号码</md-td>
-      <md-td><code>["131xxxx6666"]</code></md-td>
-      <md-td>填写对应的电话号码</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>超链接</md-td>
-      <md-td><code>["链接显示名称"]</code></md-td>
-      <md-td>填写对应的超链接名称</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>附件</md-td>
-      <md-td><code>[]</code></md-td>
-      <md-td>仅支持`isEmpty`或`isNotEmpty`</md-td>
-      <md-td>需填空值 `[]`</md-td>
-    </md-tr>
-    
-    
-  <md-tr>
-      <md-td>单向关联</md-td>
-      <md-td><code>["recnVYsuqV"]</code></md-td>
-      <md-td>填写对应的记录 ID</md-td>
-      <md-td>列表中可能存在多个元素：
-- operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>双向关联</md-td>
-      <md-td><code>["recnVYsuqV"]</code></md-td>
-      <md-td>填写对应的记录 ID</md-td>
-      <md-td>列表中可能存在多个元素：
-- operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>地理位置</md-td>
-      <md-td><code>["天安门广场，北京市东城区东长安街"]</code></md-td>
-      <md-td>填写对应的地址</md-td>
-      <md-td>列表只能有一个元素或零个元素，operator为`isEmpty`或`isNotEmpty`填空值[]</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>群组</md-td>
-      <md-td><code>["oc_cd07f55f14d6f4a4f1b51504e7e97f48"]</code></md-td>
-      <md-td>填写对应的群组 ID</md-td>
-      <md-td>列表中可能存在多个元素：
-- operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>创建时间</md-td>
-      <md-td><code>["ExactDate","1702449755000"]</code></md-td>
-      <md-td>Unix 时间戳，单位是毫秒</md-td>
-      <md-td>列表中可能存在多个元素，具体参考下文<strong>日期字段填写说明</strong></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>最后更新时间</md-td>
-      <md-td><code>["ExactDate","1702449755000"]</code></md-td>
-      <md-td>Unix 时间戳，单位是毫秒</md-td>
-      <md-td>列表中可能存在多个元素，具体参考下文<strong>日期字段填写说明</strong></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>创建人</md-td>
-      <md-td><code>["ou_9a971ded01b4ca66f4798549878abcef"]</code></md-td>
-      <md-td>填写对应的用户 ID。用户 ID 类型需与[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)中 `user_id_type`
-参数指定的类型一致，默认类型为 open_id</md-td>
-      <md-td>列表中可能存在多个元素：
-- operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>修改人</md-td>
-      <md-td><code>["ou_9a971ded01b4ca66f4798549878abcef"]</code></md-td>
-      <md-td>填写对应的用户 ID。用户 ID 类型需与[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)中 `user_id_type`
-参数指定的类型一致，默认类型为 open_id</md-td>
-      <md-td>列表中可能存在多个元素：
-- operator 为 `is` 或`isNot` 需填写一个元素
-- operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`
-- 其他 operator 可填写多个元素</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>自动编号</md-td>
-      <md-td><code>["1"]</code></md-td>
-      <md-td>填写对应的自动编号值</md-td>
-      <md-td>- 列表只能有一个元素或零个元素
- - operator为`isEmpty`或`isNotEmpty`时，需填空值 `[]`</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -425,104 +214,18 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 当 operator 为 `is`、`isGreater` 或 `isLess` 时，参考下表填写日期字段。
 
 
-:::html
-  <md-table>
-    <md-thead>
-      <md-tr>
-        <md-th style="width: 20%;">value 元素可选值</md-th>
-        <md-th style="width: 15%;">描述</md-th>
-        <md-th style="width: 25%;">value 目标值示例</md-th>
-        <md-th>注意事项</md-th>
-      </md-tr>
-    </md-thead>
-    <md-tbody>
-      <md-tr>
-        <md-td><code>ExactDate</code></md-td>
-        <md-td>具体日期</md-td>
-    <md-td><code>["ExactDate","1702449755000"]</code></md-td>
-  <md-td>
-  - 需要填写 2 个元素。第二个元素需要填写具体日期的时间戳。
-          
-- 第二个元素虽然是时间戳，但是实际筛选时，会被转为文档时区当天的零点。
-    
- - 对于公式日期字段，第二个元素需要填写 yyyy/MM/dd 格式的日期文本，例如 2025/01/07
-        </md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>Today</code></md-td>
-        <md-td>今天</md-td>
-        <md-td><code>["Today"]</code></md-td>
-        <md-td>需要填写 1 个元素</md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>Tomorrow</code></md-td>
-        <md-td>明天</md-td>
-        <md-td><code>["Tomorrow"]</code></md-td>
-        <md-td>需要填写 1 个元素</md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>Yesterday</code></md-td>
-        <md-td>昨天</md-td>
-        <md-td><code>["Yesterday"]</code></md-td>
-        <md-td>需要填写 1 个元素</md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>CurrentWeek</code></md-td>
-        <md-td>本周</md-td>
-        <md-td><code>["CurrentWeek"]</code></md-td>
-        <md-td>- 需要填写 1 个元素
-- operator 仅支持 `is`
-        
-        </md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>LastWeek</code></md-td>
-        <md-td>上周</md-td>
-        <md-td><code>["LastWeek"]</code></md-td>
-        <md-td>- 需要填写 1 个元素
-- operator 仅支持 `is`</md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>CurrentMonth</code></md-td>
-        <md-td>本月</md-td>
-        <md-td><code>["CurrentMonth"]</code></md-td>
-        <md-td>- 需要填写 1 个元素
-- operator 仅支持 `is`</md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>LastMonth</code></md-td>
-        <md-td>上个月</md-td>
-        <md-td><code>["LastMonth"]</code></md-td>
-        <md-td>- 需要填写 1 个元素
-- operator 仅支持 `is`</md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>TheLastWeek</code></md-td>
-        <md-td>过去七天内</md-td>
-        <md-td><code>["TheLastWeek"]</code></md-td>
-        <md-td>- 需要填写 1 个元素
-- operator 仅支持 <code>is</code> </md-td>      </md-tr>
-      <md-tr>
-        <md-td><code>TheNextWeek</code></md-td>
-        <md-td>未来七天内</md-td>
-        <md-td><code>["TheNextWeek"]</code></md-td>
-        <md-td>
-- 需要填写 1 个元素
-- operator 仅支持 <code>is</code> </md-td>
-      </md-tr>
-      <md-tr>
-        <md-td><code>TheLastMonth</code></md-td>
-        <md-td>过去三十天内</md-td>
-        <md-td><code>["TheLastMonth"]</code></md-td>
-        <md-td>
-- 需要填写 1 个元素
-- operator 仅支持 <code>is</code> </md-td>   </md-tr>
-      <md-tr>
-        <md-td><code>TheNextMonth</code></md-td>
-        <md-td>未来三十天内</md-td>
-        <md-td><code>["TheNextMonth"]</code></md-td>
-        <md-td>- 需要填写 1 个元素
-- operator 仅支持 <code>is</code> </md-td>      </md-tr>
-    </md-tbody>
-  </md-table>
-  :::
+| value 元素可选值 | 描述 | value 目标值示例 | 注意事项 |
+| --- | --- | --- | --- |
+| <code>ExactDate</code> | 具体日期 | <code>["ExactDate","1702449755000"]</code> | - 需要填写 2 个元素。第二个元素需要填写具体日期的时间戳。<br>- 第二个元素虽然是时间戳，但是实际筛选时，会被转为文档时区当天的零点。<br>- 对于公式日期字段，第二个元素需要填写 yyyy/MM/dd 格式的日期文本，例如 2025/01/07 |
+| <code>Today</code> | 今天 | <code>["Today"]</code> | 需要填写 1 个元素 |
+| <code>Tomorrow</code> | 明天 | <code>["Tomorrow"]</code> | 需要填写 1 个元素 |
+| <code>Yesterday</code> | 昨天 | <code>["Yesterday"]</code> | 需要填写 1 个元素 |
+| <code>CurrentWeek</code> | 本周 | <code>["CurrentWeek"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 `is` |
+| <code>LastWeek</code> | 上周 | <code>["LastWeek"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 `is` |
+| <code>CurrentMonth</code> | 本月 | <code>["CurrentMonth"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 `is` |
+| <code>LastMonth</code> | 上个月 | <code>["LastMonth"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 `is` |
+| <code>TheLastWeek</code> | 过去七天内 | <code>["TheLastWeek"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 <code>is</code> |
+| <code>TheNextWeek</code> | 未来七天内 | <code>["TheNextWeek"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 <code>is</code> |
+| <code>TheLastMonth</code> | 过去三十天内 | <code>["TheLastMonth"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 <code>is</code> |
+| <code>TheNextMonth</code> | 未来三十天内 | <code>["TheNextMonth"]</code> | - 需要填写 1 个元素<br>- operator 仅支持 <code>is</code> |
+

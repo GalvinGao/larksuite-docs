@@ -34,99 +34,16 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uEzNwUjLxcDM14SM3AT
 
 按钮作为交互组件，其 JSON 描述均定义在[交互模块](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements)（`"tag": "action"`）的 `actions` 参数中。按钮组件包含的参数说明如下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 按钮组件的标识。固定取值：button |
+| text | 是 | Struct | 按钮中的文本。基于文本组件的数据结构配置文本内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。 |
+| url | 否 | String | 点击按钮后的跳转链接。该字段与 `multi_url` 字段不可同时设置。 |
+| multi_url | 否 | Struct | 基于 url 元素配置多端跳转链接，详情参见[url 元素](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#09a320b3)。该字段与 `url` 字段不可同时设置。 |
+| type | 否 | String | 配置按钮样式。取值：<br>- default：默认样式<br>- primary：强调样式<br>- danger：警示样式<br>默认值：default |
+| value | 否 | JSON | 该字段用于交互组件的回传交互方式,当用户点击交互组件后，会将 `value` 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 `value` 值进行业务处理。<br>该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值:<br><code>"value":{<br>    "key-1":Object-1,<br>    "key-2":Object-2,<br>    "key-3":Object-3,<br>    ······<br>}</code> |
+| confirm | 否 | Struct | 设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。 |
 
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-按钮组件的标识。固定取值：button
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>
-按钮中的文本。基于文本组件的数据结构配置文本内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>url</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-点击按钮后的跳转链接。该字段与 `multi_url` 字段不可同时设置。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>multi_url</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-基于 url 元素配置多端跳转链接，详情参见[url 元素](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#09a320b3)。该字段与 `url` 字段不可同时设置。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>type</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-配置按钮样式。取值：
-- default：默认样式
-- primary：强调样式
-- danger：警示样式
-
-默认值：default
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>value</md-td>
-<md-td>否</md-td>
-<md-td>JSON</md-td>
-<md-td>
-该字段用于交互组件的回传交互方式,当用户点击交互组件后，会将 `value` 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 `value` 值进行业务处理。
-
-该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值:
-```
-"value":{
-    "key-1":Object-1,
-    "key-2":Object-2,
-    "key-3":Object-3,
-    ······
-}
-```
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 交互示例
 

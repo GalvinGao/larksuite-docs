@@ -112,365 +112,50 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 分栏字段说明
 
 分栏（column_set）各属性字段说明如下表所示。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">名称</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>组件的标签。分栏组件的固定值为 column_set。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>horizontal_spacing</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>8px</md-td>
-      
-      <md-td>分栏内组件的水平间距，可选值：
-- small：小间距，4px
-- medium：中等间距，8px
-- large：大间距，12px
-- extra_large：超大间距，16px
-- 具体数值，如 20px。取值范围为 [0,99]px</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>horizontal_align</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>left</md-td>
-      <md-td>分栏内组件在水平方向上的对齐方式。可取值：
-- left：左对齐
-- center：居中对齐
-- right：右对齐</md-td>
-    </md-tr>
-    
 
-    
-    <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0px</md-td>
-      <md-td>分栏的外边距。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示分栏的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示分栏的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示分栏的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>flex_mode</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>none</md-td>
-      
-      <md-td>移动端和 PC 端的窄屏幕下，各列的自适应方式。取值：
-- none：不做布局上的自适应，在窄屏幕下按比例压缩列宽度
-- stretch：列布局变为行布局，且每列（行）宽度强制拉伸为 100%，所有列自适应为上下堆叠排布
-- flow：列流式排布（自动换行），当一行展示不下一列时，自动换至下一行展示
-- bisect：两列等分布局
-- trisect：三列等分布局</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>background_style</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>default</md-td>
-      
-      <md-td>分栏的背景色样式。可取值：
-- default：默认的白底样式，客户端深色主题下为黑底样式
-- 卡片支持的颜色枚举值和 RGBA 语法自定义颜色。参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-        
-**注意**：当存在分栏的嵌套时，上层分栏的颜色覆盖下层分栏的颜色。</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>action</md-td>
-      <md-td>否</md-td>
-      <md-td>Action</md-td>
-      <md-td>/</md-td>
-      
-      <md-td>设置点击分栏时的交互配置。当前仅支持跳转交互。如果布局容器内有交互组件，则优先响应交互组件定义的交互。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ multi_url</md-td>
-      <md-td>否</md-td>
-      <md-td>Struct</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>配置各个端的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>兜底的跳转链接。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ android_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>Android 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ ios_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>iOS 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ pc_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>PC 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>columns</md-td>
-      <md-td>是</md-td>
-      <md-td>column[]</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>分栏中列的配置。详情参考下文。</md-td>
-    </md-tr>
-    
-  </md-tbody>
-</md-table>
+| 名称 | 必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 组件的标签。分栏组件的固定值为 column_set。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| horizontal_spacing | 否 | String | 8px | 分栏内组件的水平间距，可选值：<br>- small：小间距，4px<br>- medium：中等间距，8px<br>- large：大间距，12px<br>- extra_large：超大间距，16px<br>- 具体数值，如 20px。取值范围为 [0,99]px |
+| horizontal_align | 否 | String | left | 分栏内组件在水平方向上的对齐方式。可取值：<br>- left：左对齐<br>- center：居中对齐<br>- right：右对齐 |
+| margin | 否 | String | 0px | 分栏的外边距。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示分栏的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示分栏的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示分栏的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| flex_mode | 否 | String | none | 移动端和 PC 端的窄屏幕下，各列的自适应方式。取值：<br>- none：不做布局上的自适应，在窄屏幕下按比例压缩列宽度<br>- stretch：列布局变为行布局，且每列（行）宽度强制拉伸为 100%，所有列自适应为上下堆叠排布<br>- flow：列流式排布（自动换行），当一行展示不下一列时，自动换至下一行展示<br>- bisect：两列等分布局<br>- trisect：三列等分布局 |
+| background_style | 否 | String | default | 分栏的背景色样式。可取值：<br>- default：默认的白底样式，客户端深色主题下为黑底样式<br>- 卡片支持的颜色枚举值和 RGBA 语法自定义颜色。参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。<br>**注意**：当存在分栏的嵌套时，上层分栏的颜色覆盖下层分栏的颜色。 |
+| action | 否 | Action | / | 设置点击分栏时的交互配置。当前仅支持跳转交互。如果布局容器内有交互组件，则优先响应交互组件定义的交互。 |
+| └ multi_url | 否 | Struct | 空 | 配置各个端的链接地址。 |
+| └└ url | 否 | String | 空 | 兜底的跳转链接。 |
+| └└ android_url | 否 | String | 空 | Android 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| └└ ios_url | 否 | String | 空 | iOS 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| └└ pc_url | 否 | String | 空 | PC 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| columns | 是 | column[] | 空 | 分栏中列的配置。详情参考下文。 |
 
-:::
 ### 列字段说明
 
 分栏中列（column）的各属性字段说明如下表所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">名称</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-     <md-tr>
-      <md-td>tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>列的标签，固定取值为 `column`。</md-td>
-    </md-tr>
-  <md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-    <md-tr>
-      <md-td>background_style</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>default</md-td>
-      
-      <md-td>列的背景色样式。可取值：
-- default：默认的白底样式，客户端深色主题下为黑底样式
-- 卡片支持的颜色枚举值和 RGBA 语法自定义颜色。参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>width</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>auto</md-td>
-      
-      <md-td>列宽度。仅 `flex_mode` 为 `none` 时，生效此属性。取值：
-- auto：列宽度与列内元素宽度一致
-- weighted：列宽度按 `weight` 参数定义的权重分布
-- 具体数值，如 100px。取值范围为 [16,600]px。V7.4 及以上版本支持该枚举</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>weight</md-td>
-      <md-td>否</md-td>
-      <md-td>Number</md-td>
-      <md-td>1</md-td>
-      
-      <md-td>当 `width` 字段取值为 `weighted` 时生效，表示当前列的宽度占比。取值范围为 1 ~ 5 之间的整数。</md-td>
-    </md-tr>
-    
-     <md-tr>
-      <md-td>horizontal_spacing</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>8px</md-td>
-      
-      <md-td>列内组件的水平间距，可选值：
-- small：小间距，4px
-- medium：中等间距，8px
-- large：大间距，12px
-- extra_large：超大间距，16px
-- 具体数值，如 20px。取值范围为 [0,99]px</md-td>
-    </md-tr>
-    
-    
-  <md-tr>
-      <md-td>horizontal_align</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>left</md-td>
-      <md-td>列内组件在水平方向上的对齐方式。可取值：
-- left：左对齐
-- center：居中对齐
-- right：右对齐</md-td>
-    </md-tr>
-    
-    
-    <md-tr>
-      <md-td>vertical_align</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>top</md-td>
-      
-      <md-td>列内组件在垂直方向上的对齐方式。可取值：
-- top：上对齐
-- center：居中对齐
-- bottom：下对齐</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>vertical_spacing</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>8px</md-td>
-      
-      <md-td>列内组件的纵向间距。可选值：
-- small：小间距，4px
-- medium：中等间距，8px
-- large：大间距，12px
-- extra_large：超大间距，16px
-- 具体数值，如 20px。取值范围为 [0,99]px</md-td>
-    </md-tr>
-    
-    
-     <md-tr>
-      <md-td>direction</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>vertical</md-td>
-      
-      <md-td>列的排列方向。可选值：
-- vertical：垂直排列
-- horizontal：水平排列</md-td>
-    </md-tr>
-    
-    
-    <md-tr>
-      <md-td>padding</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0px</md-td>
-      
-      <md-td>列的内边距。值的取值范围为 [0,99]px。可选值：
-- 单值，如 "10px"，表示列的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示列的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示列的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-    
-    
-  
-    <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0px</md-td>
-      <md-td>列的外边距。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示容器的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示容器的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示容器的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-    
-    
-    <md-tr>
-      <md-td>elements</md-td>
-      <md-td>否</md-td>
-      <md-td>Element 或 ColumnSet[]</md-td>
-      <md-td>空</md-td>
-      <md-td>列中内嵌的组件。可内嵌组件参考上文嵌套关系。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>action</md-td>
-      <md-td>否</md-td>
-      <md-td>Action</md-td>
-      <md-td>/</md-td>
-      
-      <md-td>设置点击列时的交互配置。当前仅支持跳转交互。如果布局容器内有交互组件，则优先响应交互组件定义的交互。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ multi_url</md-td>
-      <md-td>否</md-td>
-      <md-td>Struct</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>配置各个端的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>兜底的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ android_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>Android 端的链接地址。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ ios_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>iOS 端的链接地址。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ pc_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      
-      <md-td>PC 端的链接地址。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
+| 名称 | 必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 列的标签，固定取值为 `column`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| background_style | 否 | String | default | 列的背景色样式。可取值：<br>- default：默认的白底样式，客户端深色主题下为黑底样式<br>- 卡片支持的颜色枚举值和 RGBA 语法自定义颜色。参考[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color) |
+| width | 否 | String | auto | 列宽度。仅 `flex_mode` 为 `none` 时，生效此属性。取值：<br>- auto：列宽度与列内元素宽度一致<br>- weighted：列宽度按 `weight` 参数定义的权重分布<br>- 具体数值，如 100px。取值范围为 [16,600]px。V7.4 及以上版本支持该枚举 |
+| weight | 否 | Number | 1 | 当 `width` 字段取值为 `weighted` 时生效，表示当前列的宽度占比。取值范围为 1 ~ 5 之间的整数。 |
+| horizontal_spacing | 否 | String | 8px | 列内组件的水平间距，可选值：<br>- small：小间距，4px<br>- medium：中等间距，8px<br>- large：大间距，12px<br>- extra_large：超大间距，16px<br>- 具体数值，如 20px。取值范围为 [0,99]px |
+| horizontal_align | 否 | String | left | 列内组件在水平方向上的对齐方式。可取值：<br>- left：左对齐<br>- center：居中对齐<br>- right：右对齐 |
+| vertical_align | 否 | String | top | 列内组件在垂直方向上的对齐方式。可取值：<br>- top：上对齐<br>- center：居中对齐<br>- bottom：下对齐 |
+| vertical_spacing | 否 | String | 8px | 列内组件的纵向间距。可选值：<br>- small：小间距，4px<br>- medium：中等间距，8px<br>- large：大间距，12px<br>- extra_large：超大间距，16px<br>- 具体数值，如 20px。取值范围为 [0,99]px |
+| direction | 否 | String | vertical | 列的排列方向。可选值：<br>- vertical：垂直排列<br>- horizontal：水平排列 |
+| padding | 否 | String | 0px | 列的内边距。值的取值范围为 [0,99]px。可选值：<br>- 单值，如 "10px"，表示列的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示列的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示列的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| margin | 否 | String | 0px | 列的外边距。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示容器的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示容器的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示容器的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| elements | 否 | Element 或 ColumnSet[] | 空 | 列中内嵌的组件。可内嵌组件参考上文嵌套关系。 |
+| action | 否 | Action | / | 设置点击列时的交互配置。当前仅支持跳转交互。如果布局容器内有交互组件，则优先响应交互组件定义的交互。 |
+| └ multi_url | 否 | Struct | 空 | 配置各个端的链接地址。 |
+| └└ url | 否 | String | 空 | 兜底的链接地址。 |
+| └└ android_url | 否 | String | 空 | Android 端的链接地址。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| └└ ios_url | 否 | String | 空 | iOS 端的链接地址。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| └└ pc_url | 否 | String | 空 | PC 端的链接地址。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
 
-:::
 
 ## 示例代码
 

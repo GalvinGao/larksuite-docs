@@ -39,50 +39,13 @@ Lark审批固定使用 Applink 打开小程序协议，有关 AppLink 的详细�
 
 
 ### path  参数说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 10%;">审批页面</md-th>
-      <md-th style="width: 30%;">移动端页面路径</md-th>
-      <md-th style="width: 30%;">PC 端页面路径</md-th>
-      <md-th style="width: 10%;">是否支持 PC 侧边栏</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>发起申请页</md-td>
-      <md-td>`pages/approval-form/index?id=${审批定义id}`</md-td>
-      <md-td>`pc/pages/create-form/index?id=${审批定义id}`</md-td>
-      <md-td>不支持</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>单据详情页</md-td>
-      <md-td>`pages/detail/index?instanceId=${审批实例id或实例code}`</md-td>
-      <md-td>`pc/pages/in-process/index?instanceId=${审批实例id或实例code}`</md-td>
-      <md-td>支持，同移动端</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>审批中心页</md-td>
-      <md-td>`pages/approval-list/index?selectIndex=${对应列表下标}`
 
-列表下标枚举值：
-- 待审批`0`
-- 已审批`1`
-- 抄送我 `2`
-- 已发起 `3`</md-td>
-      <md-td>`pc/pages/${列表路径}/index`
-        
-列表路径枚举值：
-- 待审批 `in-process`
-- 已审批 `approved` 
-- 抄送我 `cc-2-me` 
-- 已发起 `requested`</md-td>
-      <md-td>不支持</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 审批页面 | 移动端页面路径 | PC 端页面路径 | 是否支持 PC 侧边栏 |
+| --- | --- | --- | --- |
+| 发起申请页 | `pages/approval-form/index?id=${审批定义id}` | `pc/pages/create-form/index?id=${审批定义id}` | 不支持 |
+| 单据详情页 | `pages/detail/index?instanceId=${审批实例id或实例code}` | `pc/pages/in-process/index?instanceId=${审批实例id或实例code}` | 支持，同移动端 |
+| 审批中心页 | `pages/approval-list/index?selectIndex=${对应列表下标}`<br>列表下标枚举值：<br>- 待审批`0`<br>- 已审批`1`<br>- 抄送我 `2`<br>- 已发起 `3` | `pc/pages/${列表路径}/index`<br>列表路径枚举值：<br>- 待审批 `in-process`<br>- 已审批 `approved`<br>- 抄送我 `cc-2-me`<br>- 已发起 `requested` | 不支持 |
+
 
 
 - 审批实例 code 获取方式：调用[批量获取审批实例 ID](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)接口获取

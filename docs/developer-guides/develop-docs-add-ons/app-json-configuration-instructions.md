@@ -20,162 +20,32 @@ app.json 是文档小组件的配置文件。
 
 - 通过字段`contributes`来配置组件类型和附属视图，相关配置说明如下：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>字段名</md-th>
-<md-th>类型</md-th>
-<md-th>说明</md-th>
-<md-th>示例</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>addPanel</md-td>
-<md-td>object</md-td>
-<md-td>**【组件类型】正文小组件**</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ view</md-td>
-<md-td>string</md-td>
-<md-td>小组件渲染页面入口（通常指的是html的入口）</md-td>
-<md-td>index.html</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ initialHeight</md-td>
-<md-td>number</md-td>
-<md-td>小组件容器的初始高度</md-td>
-<md-td>200</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ useHostLoading</md-td>
-<md-td>boolean</md-td>
-<md-td>是否使用文档的 Loading 动画，配合`notifyAppReady` 使用</md-td>
-<md-td>true</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ useInteraction</md-td>
-<md-td>boolean</md-td>
-<md-td>是否使用 Interaction 存储数据</md-td>
-<md-td>true</md-td>
-</md-tr>
-<md-tr>
-<md-td>topbar</md-td>
-<md-td>object</md-td>
-<md-td>**【组件类型】悬浮小组件**</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ view</md-td>
-<md-td>string</md-td>
-<md-td>小组件渲染页面入口（通常指的是html的入口）</md-td>
-<md-td>topbar.html</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ initialHeight</md-td>
-<md-td>number</md-td>
-<md-td>小组件容器的初始高度</md-td>
-<md-td>200</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ initialWidth</md-td>
-<md-td>number</md-td>
-<md-td>小组件容器的初始宽度</md-td>
-<md-td>800</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ useHostLoading</md-td>
-<md-td>boolean</md-td>
-<md-td>是否使用文档的 Loading 动画，配合`notifyAppReady` 使用</md-td>
-<md-td>true</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ resizeType</md-td>
-<md-td>string</md-td>
-<md-td>resize类型，只能传示例中的字段移动端不支持resize，传任何字段这里都是'none'</md-td>
-<md-td>
-- free: 自由resize，能随意缩放应用
-- proportional：比例resize，只能对角按比例缩放
-- horizontal ：水平resize，只能在水平方向缩放
-- vertical：垂直resize，只能在垂直方向缩放
-- none：不能缩放
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ align</md-td>
-<md-td>string</md-td>
-<md-td>默认对齐方式，如果小组件需要宽度超过文档正文宽度，需要设置为默认居中对齐；更改对齐方式暂时不提供api，只提供默认的对齐方式设置。</md-td>
-<md-td>
-- left: 左对齐
-- center: 居中对齐
-- right: 右对齐
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td>fullscreen</md-td>
-<md-td>object</md-td>
-<md-td>**【附属视图】全屏视图**，应用调用 [Service.Fullscreen.enterFullscreen](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/Service.Fullscreen.enterFullscreen) 唤起</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ view</md-td>
-<md-td>string</md-td>
-<md-td>视图渲染页面入口（通常指的是html的入口）</md-td>
-<md-td>fullscreen.html</md-td>
-</md-tr>
-<md-tr>
-<md-td>floatCard</md-td>
-<md-td>object</md-td>
-<md-td>**【附属视图】悬浮卡片视图**，应用调用 [Service.FloatCard.enterFloatCard](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/Service.FloatCard.enterFloatCard) 唤起</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ view</md-td>
-<md-td>string</md-td>
-<md-td>视图渲染页面入口（通常指的是html的入口）</md-td>
-<md-td>floatCard.html</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ initialHeight</md-td>
-<md-td>number</md-td>
-<md-td>小组件容器的初始高度</md-td>
-<md-td>200</md-td>
-</md-tr>
-<md-tr>
-<md-td>popup</md-td>
-<md-td>string</md-td>
-<md-td>**【附属视图】弹窗视图**，应用调用 [View.Action.showPopup](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/View.Action.showPopup)唤起</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ view</md-td>
-<md-td>string</md-td>
-<md-td>视图渲染页面入口（通常指的是html的入口）</md-td>
-<md-td>popup.html</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ initialHeight</md-td>
-<md-td>number</md-td>
-<md-td>小组件容器的初始高度</md-td>
-<md-td>200</md-td>
-</md-tr>
-<md-tr>
-<md-td>modal</md-td>
-<md-td>string</md-td>
-<md-td>**【附属视图】模态框视图** ，应用调用 [View.Action.openModal](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/View.Action.openModal) 唤起</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ view</md-td>
-<md-td>string</md-td>
-<md-td>视图渲染页面入口（通常指的是html的入口）</md-td>
-<md-td>modal.html</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ initialHeight</md-td>
-<md-td>number</md-td>
-<md-td>小组件容器的初始高度</md-td>
-<md-td>200</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 字段名 | 类型 | 说明 | 示例 |
+| --- | --- | --- | --- |
+| addPanel | object | **【组件类型】正文小组件** |  |
+| ∟ view | string | 小组件渲染页面入口（通常指的是html的入口） | index.html |
+| ∟ initialHeight | number | 小组件容器的初始高度 | 200 |
+| ∟ useHostLoading | boolean | 是否使用文档的 Loading 动画，配合`notifyAppReady` 使用 | true |
+| ∟ useInteraction | boolean | 是否使用 Interaction 存储数据 | true |
+| topbar | object | **【组件类型】悬浮小组件** |  |
+| ∟ view | string | 小组件渲染页面入口（通常指的是html的入口） | topbar.html |
+| ∟ initialHeight | number | 小组件容器的初始高度 | 200 |
+| ∟ initialWidth | number | 小组件容器的初始宽度 | 800 |
+| ∟ useHostLoading | boolean | 是否使用文档的 Loading 动画，配合`notifyAppReady` 使用 | true |
+| ∟ resizeType | string | resize类型，只能传示例中的字段移动端不支持resize，传任何字段这里都是'none' | - free: 自由resize，能随意缩放应用<br>- proportional：比例resize，只能对角按比例缩放<br>- horizontal ：水平resize，只能在水平方向缩放<br>- vertical：垂直resize，只能在垂直方向缩放<br>- none：不能缩放 |
+| ∟ align | string | 默认对齐方式，如果小组件需要宽度超过文档正文宽度，需要设置为默认居中对齐；更改对齐方式暂时不提供api，只提供默认的对齐方式设置。 | - left: 左对齐<br>- center: 居中对齐<br>- right: 右对齐 |
+| fullscreen | object | **【附属视图】全屏视图**，应用调用 [Service.Fullscreen.enterFullscreen](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/Service.Fullscreen.enterFullscreen) 唤起 |  |
+| ∟ view | string | 视图渲染页面入口（通常指的是html的入口） | fullscreen.html |
+| floatCard | object | **【附属视图】悬浮卡片视图**，应用调用 [Service.FloatCard.enterFloatCard](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/Service.FloatCard.enterFloatCard) 唤起 |  |
+| ∟ view | string | 视图渲染页面入口（通常指的是html的入口） | floatCard.html |
+| ∟ initialHeight | number | 小组件容器的初始高度 | 200 |
+| popup | string | **【附属视图】弹窗视图**，应用调用 [View.Action.showPopup](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/View.Action.showPopup)唤起 |  |
+| ∟ view | string | 视图渲染页面入口（通常指的是html的入口） | popup.html |
+| ∟ initialHeight | number | 小组件容器的初始高度 | 200 |
+| modal | string | **【附属视图】模态框视图** ，应用调用 [View.Action.openModal](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/View.Action.openModal) 唤起 |  |
+| ∟ view | string | 视图渲染页面入口（通常指的是html的入口） | modal.html |
+| ∟ initialHeight | number | 小组件容器的初始高度 | 200 |
+
 
 ## 多应用配置
 开发过程中，一套项目工程有同时发布到`测试`和`正式`环境的需要，而不同的环境对应着不同应用的 AppID 和 BlockTypeID。使用`environments`可以同时配置各个环境的应用配置信息。目前只支持这两个环境：`feishu`（Lark正式环境） 和 `feishu-boe`（Lark测试环境）。

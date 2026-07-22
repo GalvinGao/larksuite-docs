@@ -20,35 +20,11 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugTO3IjL4kzNy4CO5cjM
 
 ## 支持说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">应用能力</md-th>
-<md-th style="width: 20%;">Android</md-th>
-<md-th style="width: 20%;">iOS</md-th>
-<md-th style="width: 20%;">PC</md-th>
-<md-th style="width: 20%;">预览效果</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>小程序</md-td>
-<md-td><md-version>V3.1.0+</md-version></md-td>
-<md-td><md-version>V3.1.0+</md-version></md-td>
-<md-td><md-version>V3.1.0+</md-version></md-td>
-<md-td><md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/password-verify/password-verify" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-<md-tr>
-<md-td>网页应用</md-td>
-<md-td><md-version>V3.44.0+</md-version></md-td>
-<md-td><md-version>V3.44.0+</md-version></md-td>
-<md-td><md-version>V3.47.0+</md-version></md-td>
-<md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.1.0+</md-version> | <md-version>V3.1.0+</md-version> | <md-version>V3.1.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/password-verify/password-verify" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.47.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 ## 输入
 
@@ -58,36 +34,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugTO3IjL4kzNy4CO5cjM
 
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">
-名称
-</md-th>
-<md-th style="width: 18%;">
-数据类型
-</md-th>
-<md-th>
-描述
-</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-token
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
-认证 token 信息
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| token | string | 认证 token 信息 |
+
 
 ## 示例代码
 
@@ -124,27 +74,9 @@ tt.startPasswordVerify({
 ## 错误码
 `fail`返回对象中会包含[errCode属性](/document/uYjL24iN/ukzNy4SO3IjL5cjM#a825f4c8)，代表错误码，具体错误码列表参见：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">错误码</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>40101</md-td>
-      <md-td>用户取消，验证失败</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>40102</md-td>
-      <md-td>密码错误，验证失败</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>40103</md-td>
-      <md-td>密码输入次数超限制，验证失败</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 错误码 | 描述 |
+| --- | --- |
+| 40101 | 用户取消，验证失败 |
+| 40102 | 密码错误，验证失败 |
+| 40103 | 密码输入次数超限制，验证失败 |
+

@@ -31,36 +31,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 addRecords(recordValueList)
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 150px;">
-    <col style="width: 350PX">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>recordValueList</md-td>
-        <md-td>{<br>
-    &nbsp;&nbsp;fields: {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;[fieldId: string]: [IOpenCellValue]([IOpenCellValue](/document/uAjLw4CM/uYjL24iN/base-extensions/base-view-extensions/data-type/iopencellvalue));<br>
-    &nbsp;&nbsp;};<br>
-}[]</md-td>
-        <md-td>是</md-td>
-        <md-td>需要新增的记录</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| recordValueList | {<br>&nbsp;&nbsp;fields: {<br>&nbsp;&nbsp;&nbsp;&nbsp;[fieldId: string]: [IOpenCellValue]([IOpenCellValue](/document/uAjLw4CM/uYjL24iN/base-extensions/base-view-extensions/data-type/iopencellvalue));<br>&nbsp;&nbsp;};<br>}[] | 是 | 需要新增的记录 |
+
 
 
 ## 输出

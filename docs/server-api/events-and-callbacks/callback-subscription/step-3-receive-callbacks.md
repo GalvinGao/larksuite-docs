@@ -25,38 +25,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/event-subs
 回调是同步操作，不提供补推机制。如果你的业务服务器超时未响应，则系统会判断回调失败，并在Lark客户端内展示报错信息。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">操作</md-th>
-<md-th style="width:20%">是否必须</md-th>
-<md-th style="width:60%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 操作 | 是否必须 | 描述 |
+| --- | --- | --- |
+| 安全校验 | 否 | 安全校验用于确认业务服务器接收到的请求来自Lark开放平台，而不是伪造的风险请求。 |
+| 回调解密 | 否 | 建议为应用配置 Encrypt Key，配置后推送的回调请求为加密数据，能够确保请求数据安全性。相应的，业务服务器收到请求后，需要进行解密，才可以获取到真实的回调数据。 |
+| 响应回调请求 | 是 | 业务服务器在收到回调请求后，必须返回响应结果，否则会被系统判断为回调失败。 |
 
-<md-tr>
-<md-td>安全校验</md-td>
-<md-td>否</md-td>
-<md-td>安全校验用于确认业务服务器接收到的请求来自Lark开放平台，而不是伪造的风险请求。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>回调解密</md-td>
-<md-td>否</md-td>
-<md-td>建议为应用配置 Encrypt Key，配置后推送的回调请求为加密数据，能够确保请求数据安全性。相应的，业务服务器收到请求后，需要进行解密，才可以获取到真实的回调数据。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>响应回调请求</md-td>
-<md-td>是</md-td>
-<md-td>业务服务器在收到回调请求后，必须返回响应结果，否则会被系统判断为回调失败。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 
 ## 安全校验
@@ -435,24 +409,7 @@ print($decrypt);
 
 你的业务服务器接收回调请求后，需要在 3 秒内响应回调，以完成Lark客户端（前端）的交互行为。目前需要订阅回调的功能以及对应的回调结构、使用方式等说明参见下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">功能</md-th>
-<md-th style="width:40%">回调结构</md-th>
-<md-th style="width:40%">相关文档</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 功能 | 回调结构 | 相关文档 |
+| --- | --- | --- |
+| 链接预览 | 实现链接预览功能必须订阅 **拉取链接预览数据** 回调，该回调对应的回调参数、响应参数说明，可参见[拉取链接预览数据](/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)。 | 了解链接预览功能，以及如何配置链接预览，参见[链接预览开发指南](/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/link-preview-development-guide)。 |
 
-<md-tr>
-<md-td>链接预览</md-td>
-<md-td>实现链接预览功能必须订阅 **拉取链接预览数据** 回调，该回调对应的回调参数、响应参数说明，可参见[拉取链接预览数据](/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)。</md-td>
-<md-td>了解链接预览功能，以及如何配置链接预览，参见[链接预览开发指南](/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/link-preview-development-guide)。</md-td>
-</md-tr>
-  
-
-</md-tbody>
-</md-table>
-:::

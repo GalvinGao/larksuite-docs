@@ -25,36 +25,11 @@ param 继承自[标准对象输入](/document/uAjLw4CM/uYjL24iN/block/api/standa
 ## 输出
 
 success 函数返回对象参数扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                code
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                临时登录凭证，有效期 3 分钟，只能使用一次
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| code | string | 临时登录凭证，有效期 3 分钟，只能使用一次 |
+
 
 
 

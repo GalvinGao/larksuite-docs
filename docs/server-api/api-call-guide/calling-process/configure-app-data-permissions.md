@@ -25,33 +25,10 @@ source_url: https://open.larksuite.com/document/home/introduction-to-scope-and-a
 
 自建应用支持配置 **通讯录** 的数据权限。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">数据权限类型</md-th>
-<md-th style="width:40%">权限描述</md-th>
-<md-th style="width:40%">管理方式</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>通讯录权限范围</md-td>
-<md-td>以应用身份调用通讯录 API 时，应用可以获取到的通讯录数据范围。例如，以应用身份调用通讯录 API 查询用户 A 的信息时，需要应用具备用户 A 的数据权限。
+| 数据权限类型 | 权限描述 | 管理方式 |
+| --- | --- | --- |
+| 通讯录权限范围 | 以应用身份调用通讯录 API 时，应用可以获取到的通讯录数据范围。例如，以应用身份调用通讯录 API 查询用户 A 的信息时，需要应用具备用户 A 的数据权限。<br>默认情况下，通讯录权限范围与应用的[可用范围](/document/home/introduction-to-scope-and-authorization/availability)一致。 | - 方式一：由应用所有者、管理员或者开发角色在应用内配置通讯录权限范围。<br>- 方式二：由企业管理员在管理后台配置指定应用的通讯录权限范围。 |
 
-默认情况下，通讯录权限范围与应用的[可用范围](/document/home/introduction-to-scope-and-authorization/availability)一致。</md-td>
-<md-td>- 方式一：由应用所有者、管理员或者开发角色在应用内配置通讯录权限范围。
-
-- 方式二：由企业管理员在管理后台配置指定应用的通讯录权限范围。	
-</md-td>
-</md-tr>
-
-
-
-</md-tbody>
-</md-table>
-:::
 
 :::note
 部门、用户等组织架构的数据对企业而言均为敏感数据。应用一旦授权了相应的数据权限，即可增删改查这些敏感数据，所以当应用开发者配置数据权限后，需要发布应用并等待应用审核人员通过审核，方可生效数据权限。
@@ -61,26 +38,10 @@ source_url: https://open.larksuite.com/document/home/introduction-to-scope-and-a
 
 商店应用仅支持企业管理员配置 **通讯录** 的数据权限。应用开发者可以调用[获取通讯录授权范围](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/scope/list)查看应用的数据权限。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">数据权限类型</md-th>
-<md-th style="width:40%">权限描述</md-th>
-<md-th style="width:40%">管理方式</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>通讯录权限范围</md-td>
-<md-td>以应用身份调用通讯录 API 时，应用可以获取到的通讯录数据范围。例如，以应用身份调用通讯录 API 查询用户 A 的信息时，需要应用具备用户 A 的数据权限。</md-td>
-<md-td>由企业管理员在管理后台配置指定应用的通讯录权限范围。</md-td>
-</md-tr>
+| 数据权限类型 | 权限描述 | 管理方式 |
+| --- | --- | --- |
+| 通讯录权限范围 | 以应用身份调用通讯录 API 时，应用可以获取到的通讯录数据范围。例如，以应用身份调用通讯录 API 查询用户 A 的信息时，需要应用具备用户 A 的数据权限。 | 由企业管理员在管理后台配置指定应用的通讯录权限范围。 |
 
-</md-tbody>
-</md-table>
-:::
 
 ## 企业自建应用
 

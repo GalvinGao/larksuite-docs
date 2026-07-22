@@ -116,42 +116,12 @@ Lark服务器发送的校验请求体如下所示。
 
 参数说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:60%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| challenge | String | 用于验证的字段，需在响应体中原样返回该值。<br>示例值：1b6aef1a-401f-406a-be41-f48911eabcef |
+| token | String | 应用验证标识 **Verification Token**。你可以通过该 Token 验证请求是否属于当前应用。<br>在 **开发者后台** > **应用详情页** > **开发配置** > **事件与回调** > **安全设置** 模块，可查看应用的 **Verification Token**。 |
+| type | String | 回调类型。用于校验的回调类型固定取值为 `url_verification`，表示当前请求是在验证 URL 合法性。 |
 
-<md-tr>
-<md-td>challenge</md-td>
-<md-td>String</md-td>
-<md-td>用于验证的字段，需在响应体中原样返回该值。
-
-示例值：1b6aef1a-401f-406a-be41-f48911eabcef</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>token</md-td>
-<md-td>String</md-td>
-<md-td>应用验证标识 **Verification Token**。你可以通过该 Token 验证请求是否属于当前应用。
-  
-在 **开发者后台** > **应用详情页** > **开发配置** > **事件与回调** > **安全设置** 模块，可查看应用的 **Verification Token**。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>type</md-td>
-<md-td>String</md-td>
-<md-td>回调类型。用于校验的回调类型固定取值为 `url_verification`，表示当前请求是在验证 URL 合法性。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 当请求地址收到该 POST 校验请求时，需要提取出 `challenge` 值，并在 1 秒内返回包含 `challenge` 值的响应数据。响应体示例如下：
 

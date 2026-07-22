@@ -216,803 +216,72 @@ Lark审批通过提供一站式、高效率的审批解决方案，帮助企业�
 查看资源 [字段及示例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/overview-of-approval-resources)
 
 #### 方法列表
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)** |
+| --- | --- | --- |
+| <md-text type="field-name" >[创建审批定义](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)</md-text><br>`POST` /open-apis/approval/v4/approval | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[查看审批定义](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)</md-text><br>`GET` /open-apis/approval/v4/approvals/:approval_code | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[订阅审批事件](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)</md-text><br>`POST` /open-apis/approval/v4/:approval_code/subscribe | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[取消订阅审批事件](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/unsubscribe)</md-text><br>`POST` /open-apis/approval/v4/:approval_code/unsubscribe | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 25%;">权限要求</md-th>
-
-<md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[创建审批定义](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)</md-text>
-
-`POST` /open-apis/approval/v4/approval
-
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
- <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[查看审批定义](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/get)</md-text>
-
-`GET` /open-apis/approval/v4/approvals/:approval_code
-  
-
-</md-td>
-
-<md-td>
-<md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-  <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[订阅审批事件](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/subscribe)</md-text>
-
-`POST` /open-apis/approval/v4/:approval_code/subscribe
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
- <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[取消订阅审批事件](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/unsubscribe)</md-text>
-
-`POST` /open-apis/approval/v4/:approval_code/unsubscribe
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-  
-  </md-tbody>
-
-</md-table>
-
-:::
 
 
 ### 资源：审批实例 Instance
 查看资源 [字段及示例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/overview-approval-instance)
 
 #### 方法列表
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)** |
+| --- | --- | --- |
+| <md-text type="field-name" >[创建审批实例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)</md-text><br>`POST` /open-apis/approval/v4/instances | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[批量获取审批实例ID](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)</md-text><br>`GET` /open-apis/approval/v4/instances | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[获取单个审批实例详情](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)</md-text><br>`GET` /open-apis/approval/v4/instances/:instance_id | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[审批实例抄送](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/cc)</md-text><br>`POST` /open-apis/approval/v4/instances/cc | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[审批实例撤回](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/cancel)</md-text><br>`POST` /open-apis/approval/v4/instances/cancel | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[审批流程预览](/document/ukTMukTMukTM/ukTM5UjL5ETO14SOxkTN/approval-preview)</md-text><br>`POST` /open-apis/approval/v4/instances/preview | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 25%;">权限要求</md-th>
-
-<md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[创建审批实例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/create)</md-text>
-
-`POST` /open-apis/approval/v4/instances
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
- <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[批量获取审批实例ID](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/list)</md-text>
-
-`GET` /open-apis/approval/v4/instances
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-  <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[获取单个审批实例详情](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/get)</md-text>
-
-`GET` /open-apis/approval/v4/instances/:instance_id
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
- <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批实例抄送](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/cc)</md-text>
-
-`POST` /open-apis/approval/v4/instances/cc
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-   <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批实例撤回](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/cancel)</md-text>
-
-`POST` /open-apis/approval/v4/instances/cancel
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-   <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批流程预览](/document/ukTMukTMukTM/ukTM5UjL5ETO14SOxkTN/approval-preview)</md-text>
-
-`POST` /open-apis/approval/v4/instances/preview
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-  
-  </md-tbody>
-
-</md-table>
-
-:::
 
 #### 事件列表
-:::html
-<md-table>
 
-<md-thead>
+| **[事件（event）](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)** | 权限要求 | **触发时机** |
+| --- | --- | --- |
+| <md-text type="field-name" >[审批定义更新](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/custom-approval-event)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >审批定义变更</md-text> |
+| <md-text type="field-name" >[审批实例更新](/document/ukTMukTMukTM/ugDNyUjL4QjM14CO0ITN)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >审批实例状态变更</md-text> |
+| <md-text type="field-name" >[审批任务更新](/document/ukTMukTMukTM/ugDNyUjL4QjM14CO0ITN)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >审批任务状态变更</md-text> |
+| <md-text type="field-name" >[请假审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/leave)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >「审批」应用的表单里如果包含 请假控件组，则在此表单审批通过后触发此事件</md-text> |
+| <md-text type="field-name" >[加班审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/overtime)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >「审批」应用的表单里如果包含 加班控件组，则在此表单审批通过后触发此事件</md-text> |
+| <md-text type="field-name" >[换班审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/shift-change)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >「审批」应用的表单包含换班控件组的，换班申请审批通过后触发此事件</md-text> |
+| <md-text type="field-name" >[补卡审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/attendance-record-correction)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >补卡申请审批通过后触发此事件。 你可以在「打卡」应用里提交补卡申请</md-text> |
+| <md-text type="field-name" >[出差审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/business-trip)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >「审批」应用的表单里如果包含 出差控件组，则在此表单审批通过后触发此事件</md-text> |
+| <md-text type="field-name" >[外出审批事件](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)</md-text> | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-text type="field-name" >「审批」应用的表单里如果包含 外出控件组，则在此表单审批通过后触发此事件</md-text> |
 
-<tr>
-
-<md-th style="width: 20%;"><md-td>**[事件（event）](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)**</md-td></md-th>
-
-<md-th style="width: 20%;">权限要求</md-th>
-
-<md-th style="width: 65%;"><md-td>**触发时机**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
- <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批定义更新](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/custom-approval-event)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >审批定义变更</md-text>
-
-</md-td>
-  
-</md-tr>
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批实例更新](/document/ukTMukTMukTM/ugDNyUjL4QjM14CO0ITN)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >审批实例状态变更</md-text>
-
-</md-td>
-  
-</md-tr>
-  <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批任务更新](/document/ukTMukTMukTM/ugDNyUjL4QjM14CO0ITN)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >审批任务状态变更</md-text>
-
-</md-td>
-  
-</md-tr>
- 
-    <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[请假审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/leave)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >「审批」应用的表单里如果包含 请假控件组，则在此表单审批通过后触发此事件</md-text>
-
-</md-td>
-  
-</md-tr>
-    <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[加班审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/overtime)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >「审批」应用的表单里如果包含 加班控件组，则在此表单审批通过后触发此事件</md-text>
-
-</md-td>
-  
-</md-tr>
-    <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[换班审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/shift-change)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >「审批」应用的表单包含换班控件组的，换班申请审批通过后触发此事件</md-text>
-
-</md-td>
-  
-</md-tr>
-    <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[补卡审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/attendance-record-correction)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >补卡申请审批通过后触发此事件。 你可以在「打卡」应用里提交补卡申请</md-text>
-
-</md-td>
-  
-</md-tr>
-      <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[出差审批](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/business-trip)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >「审批」应用的表单里如果包含 出差控件组，则在此表单审批通过后触发此事件</md-text>
-
-</md-td>
-  
-</md-tr>
-      <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[外出审批事件](/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event/out-of-office)</md-text>
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-text type="field-name" >「审批」应用的表单里如果包含 外出控件组，则在此表单审批通过后触发此事件</md-text>
-
-</md-td>
-  
-</md-tr>
-
-    </md-tbody>
-
-</md-table>
-
-:::
 
 ### 资源：审批任务 Task
 查看资源 [字段及示例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/introduction)
 
 
 #### 方法列表
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)** |
+| --- | --- | --- |
+| <md-text type="field-name" >[审批任务同意](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/approve)</md-text><br>`POST` /open-apis/approval/v4/tasks/approve | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[审批任务拒绝](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/reject)</md-text><br>`POST` /open-apis/approval/v4/tasks/reject | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[审批任务转交](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/transfer)</md-text><br>`POST` /open-apis/approval/v4/tasks/transfer | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[审批任务退回](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/specified_rollback)</md-text><br>`POST` /open-apis/approval/v4/tasks/specified_rollback | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[审批任务加签](/document/ukTMukTMukTM/ukTM5UjL5ETO14SOxkTN/approval-task-addsign)</md-text><br>`POST` /open-apis/approval/v4/tasks/add_sign | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 25%;">权限要求</md-th>
-
-<md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批任务同意](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/approve)</md-text>
-
-`POST` /open-apis/approval/v4/tasks/approve
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
- <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批任务拒绝](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/reject)</md-text>
-
-`POST` /open-apis/approval/v4/tasks/reject
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-  <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批任务转交](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task/transfer)</md-text>
-
-`POST` /open-apis/approval/v4/tasks/transfer
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-    <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批任务退回](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance/specified_rollback)</md-text>
-
-`POST` /open-apis/approval/v4/tasks/specified_rollback
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-    <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[审批任务加签](/document/ukTMukTMukTM/ukTM5UjL5ETO14SOxkTN/approval-task-addsign)</md-text>
-
-`POST` /open-apis/approval/v4/tasks/add_sign
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-
-  
-  </md-tbody>
-
-</md-table>
-
-:::
 
 ### 资源：审批评论 Comment
 查看资源 [字段及示例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/overview)
 #### 方法列表
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)** |
+| --- | --- | --- |
+| <md-text type="field-name" >[创建评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/create)</md-text><br>`POST` /open-apis/approval/v4/instances/:instance_id/comments | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[获取评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/list)</md-text><br>`GET` /open-apis/approval/v4/instances/:instance_id/comments | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm><br><md-perm name="approval:approval:readonly" desc="Access Approval" support_app_types="custom,isv" tags="">Access Approval</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[删除评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/delete)</md-text><br>`DELETE` /open-apis/approval/v4/instances/:instance_id/comments/:comment_id | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[清空评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/remove)</md-text><br>`POST` /open-apis/approval/v4/instances/:instance_id/comments/remove | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 25%;">权限要求</md-th>
-
-<md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[创建评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/create)</md-text>
-
-`POST` /open-apis/approval/v4/instances/:instance_id/comments
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[获取评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/list)</md-text>
-
-`GET` /open-apis/approval/v4/instances/:instance_id/comments
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-  <md-perm name="approval:approval:readonly" desc="Access Approval" support_app_types="custom,isv" tags="">Access Approval</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr><md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[删除评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/delete)</md-text>
-
-`DELETE` /open-apis/approval/v4/instances/:instance_id/comments/:comment_id
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr><md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[清空评论](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment/remove)</md-text>
-
-`POST` /open-apis/approval/v4/instances/:instance_id/comments/remove
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-  
-  </md-tbody>
-
-</md-table>
-
-:::
 
 
 ### 资源：三方审批定义 External Approval
@@ -1020,198 +289,32 @@ Lark审批通过提供一站式、高效率的审批解决方案，帮助企业�
 
 
 #### 方法列表
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)** |
+| --- | --- | --- |
+| <md-text type="field-name" >[三方审批定义创建](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_approval/create)</md-text><br>`POST` /open-apis/approval/v4/external_approvals | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 25%;">权限要求</md-th>
-
-<md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[三方审批定义创建](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_approval/create)</md-text>
-
-`POST` /open-apis/approval/v4/external_approvals
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-
-
-  
-  </md-tbody>
-
-</md-table>
-
-:::
 
 ### 资源：三方审批实例 External Instance
 查看资源 [字段及示例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/overview)
 
 #### 方法列表
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)** |
+| --- | --- | --- |
+| <md-text type="field-name" >[三方审批实例同步](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)</md-text><br>`POST` /open-apis/approval/v4/external_instances | <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" >[三方审批实例校验](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)</md-text><br>`POST` /open-apis/approval/v4/external_instances/check | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 25%;">权限要求</md-th>
-
-<md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-
- <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[三方审批实例同步](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/create)</md-text>
-
-`POST` /open-apis/approval/v4/external_instances
-  
-
-</md-td>
-
-<md-td>
-
- <md-perm name="approval:approval" desc="查看、创建、更新、删除审批应用相关信息" support_app_types="custom,isv" tags="">查看、创建、更新、删除审批应用相关信息</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-  <md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[三方审批实例校验](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance/check)</md-text>
-
-`POST` /open-apis/approval/v4/external_instances/check
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
-
-  
-  </md-tbody>
-
-</md-table>
-
-:::
 
 ### 资源：三方审批任务 Exteranl Task
 查看资源 [字段及示例](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_task/overview)
 
 
 #### 方法列表
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)** |
+| --- | --- | --- |
+| <md-text type="field-name" >[获取三方审批任务状态](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_task/list)</md-text><br>`GET` /open-apis/approval/v4/external_tasks | <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 25%;">权限要求</md-th>
-
-<md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)**</md-td></md-th>
-
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[获取三方审批任务状态](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_task/list)</md-text>
-
-`GET` /open-apis/approval/v4/external_tasks
-  
-
-</md-td>
-
-<md-td>
-
-  <md-perm name="approval:approval:readonly" desc="访问审批应用" support_app_types="custom,isv" tags="">访问审批应用</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-</md-td>
-  
-</md-tr>
- 
-  
-  </md-tbody>
-
-</md-table>
-
-:::
 
 

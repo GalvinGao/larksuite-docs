@@ -31,84 +31,21 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYDM2YjL2AjN24iNwYj
 
 
 ## 请求  
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/doc/v2/:docToken/batch_update</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
 
-   <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-   </md-tr>
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/doc/v2/:docToken/batch_update |
+| HTTP Method | POST |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm> |
 
-
-
-    
-     <md-tr>
-	<md-th>
-权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-</md-th>
-   <md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm>
-</md-td>
- </md-tr>
-  </md-tbody>
-</md-table>
-:::
 ### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag> 或 <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-user">user_access_token</md-tag> 或 <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 
 ::: note
 关于云文档接口的 AccessToken 调用说明详见 [云文档接口快速入门](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN)
@@ -144,97 +81,24 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYDM2YjL2AjN24iNwYj
 ```
 
 ### 字段说明 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width:30%;">字段</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-      <md-th>说明</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>requestType</md-td>  
-      <md-td>string</md-td>  
-      <md-td> **OperationRequest:** 传入下方的 request 字段（首字母需要大写） + 'Type'，例如 'UpdateTitleRequestType'。  
-        **注意事项（未按照格式提供会报错）**  
-        ==首字母需要大写==  
-        ==添加 'Type'==  
-   </md-td> 
-</md-tr>
 
-    <md-tr> 
-      <md-td>updateTitleRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 更新标题 </md-td> 
-</md-tr>
-    <md-tr> 
-      <md-td>deleteContentRangeRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 范围删除 </md-td> 
-</md-tr>
-        <md-tr> 
-      <md-td>insertBlocksRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 插入 blocks </md-td> 
-</md-tr>
-        <md-tr> 
-      <md-td>insertParagraphElementsRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 插入行内元素 </md-td> 
-</md-tr>
-        <md-tr> 
-      <md-td>insertTableRowRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 格式化表格增加单行 </md-td> 
-</md-tr>    
-    <md-tr> 
-      <md-td>insertTableColumnRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 格式化表格增加单列 </md-td> 
-</md-tr>
-        <md-tr> 
-      <md-td>deleteTableRowsRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 格式化表格删除多行 </md-td> 
-</md-tr>    
-    <md-tr> 
-      <md-td>deleteTableColumnsRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 格式化表格删除多列 </md-td> 
-</md-tr>
-    <md-tr> 
-      <md-td>updateTableColumnPropertiesRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 格式化表格修改列宽度 </md-td> 
-</md-tr>
-    <md-tr> 
-      <md-td>mergeTableCellsRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 格式化表格合并单元格
- </md-td> 
-</md-tr>
-    <md-tr> 
-      <md-td>unmergeTableCellsRequest</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 格式化表格拆分单元格 </md-td> 
-</md-tr>
-    <md-tr> 
-      <md-td>ReplaceAllTextRequest	</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 查找替换文本内容 </md-td> 
-</md-tr>
-    <md-tr> 
-      <md-td>UpdateParagraphStyleRequest	</md-td>  
-      <md-td>object</md-td>  
-      <md-td> 更新段落样式
- </md-td> 
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| requestType | string | **OperationRequest:** 传入下方的 request 字段（首字母需要大写） + 'Type'，例如 'UpdateTitleRequestType'。<br>**注意事项（未按照格式提供会报错）**<br>==首字母需要大写==<br>==添加 'Type'== |
+| updateTitleRequest | object | 更新标题 |
+| deleteContentRangeRequest | object | 范围删除 |
+| insertBlocksRequest | object | 插入 blocks |
+| insertParagraphElementsRequest | object | 插入行内元素 |
+| insertTableRowRequest | object | 格式化表格增加单行 |
+| insertTableColumnRequest | object | 格式化表格增加单列 |
+| deleteTableRowsRequest | object | 格式化表格删除多行 |
+| deleteTableColumnsRequest | object | 格式化表格删除多列 |
+| updateTableColumnPropertiesRequest | object | 格式化表格修改列宽度 |
+| mergeTableCellsRequest | object | 格式化表格合并单元格 |
+| unmergeTableCellsRequest | object | 格式化表格拆分单元格 |
+| ReplaceAllTextRequest | object | 查找替换文本内容 |
+| UpdateParagraphStyleRequest | object | 更新段落样式 |
+
      
 
 ### InsertLocation
@@ -718,127 +582,30 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYDM2YjL2AjN24iNwYj
 	- 删除code zone和编辑code zone内容操作不可共存
   
 ### 错误码
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 15%;">错误码</md-th>  
-      <md-th style="width: 25%;">说明</md-th>  
-      <md-th style="width: 60%;">排查建议</md-th>  
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr>
-        <md-td>91401</md-td>
-        <md-td>PARAMERR</md-td>
-        <md-td>参数出现错误，检查参数有效性</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>91402</md-td>
-        <md-td>NOTEXIST</md-td>
-        <md-td>未找到，检查token是否有效</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>91403</md-td>
-        <md-td>FORBIDDEN</md-td>
-        <md-td>没有权限，检查是否有文档读权限</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>91404</md-td>
-        <md-td>LOGIN_REQUIRED</md-td>
-        <md-td>需要登录</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95001</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95003</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95005</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95006</md-td>
-        <md-td>Failed</md-td>
-        <md-td>文档未找到，检查token是否有效</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95007</md-td>
-        <md-td>Failed</md-td>
-        <md-td>文档已删除，已删除文件无法获取文档meta信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95008</md-td>
-        <md-td>FORBIDDEN</md-td>
-        <md-td>检查用户对文档、文件夹的权限</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95009</md-td>
-        <md-td>Failed</md-td>
-        <md-td>没有权限，检查是否有文档读权限。[添加文档权限](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create)</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95010</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95011</md-td>
-        <md-td>internal error</md-td>
-        <md-td>内部错误，请稍后重试</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95017</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>读取文档内容失败，检查revison是否正确</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95018</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>解析文档内容失败，详见具体错误信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95020</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>批量更新文档操作失败，详见具体错误信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95023</md-td>
-        <md-td>revision too old</md-td>
-        <md-td>版本号太老，请使用最新版本号</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95024</md-td>
-        <md-td>Failed</md-td>
-        <md-td>参数无效，检查参数有效性</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95025</md-td>
-        <md-td>Failed</md-td>
-        <md-td>解析请求失败，检查请求是否合法json</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95026</md-td>
-        <md-td>Failed</md-td>
-        <md-td>无效的batch_update 操作类型，检查batch_update接口request_type</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95050</md-td>
-        <md-td>具体错误信息</md-td>
-        <md-td>保存文档内容失败，详见具体错误信息</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>95053</md-td>
-        <md-td>this API does not support the Upgraded Docs(docx)</md-td>
-        <md-td>此 API 不支持新版文档（docx）</md-td>
-    </md-tr>
-  </md-tbody> 
-</md-table>
-:::
+
+| 错误码 | 说明 | 排查建议 |
+| --- | --- | --- |
+| 91401 | PARAMERR | 参数出现错误，检查参数有效性 |
+| 91402 | NOTEXIST | 未找到，检查token是否有效 |
+| 91403 | FORBIDDEN | 没有权限，检查是否有文档读权限 |
+| 91404 | LOGIN_REQUIRED | 需要登录 |
+| 95001 | internal error | 内部错误，请稍后重试 |
+| 95003 | internal error | 内部错误，请稍后重试 |
+| 95005 | internal error | 内部错误，请稍后重试 |
+| 95006 | Failed | 文档未找到，检查token是否有效 |
+| 95007 | Failed | 文档已删除，已删除文件无法获取文档meta信息 |
+| 95008 | FORBIDDEN | 检查用户对文档、文件夹的权限 |
+| 95009 | Failed | 没有权限，检查是否有文档读权限。[添加文档权限](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create) |
+| 95010 | internal error | 内部错误，请稍后重试 |
+| 95011 | internal error | 内部错误，请稍后重试 |
+| 95017 | 具体错误信息 | 读取文档内容失败，检查revison是否正确 |
+| 95018 | 具体错误信息 | 解析文档内容失败，详见具体错误信息 |
+| 95020 | 具体错误信息 | 批量更新文档操作失败，详见具体错误信息 |
+| 95023 | revision too old | 版本号太老，请使用最新版本号 |
+| 95024 | Failed | 参数无效，检查参数有效性 |
+| 95025 | Failed | 解析请求失败，检查请求是否合法json |
+| 95026 | Failed | 无效的batch_update 操作类型，检查batch_update接口request_type |
+| 95050 | 具体错误信息 | 保存文档内容失败，详见具体错误信息 |
+| 95053 | this API does not support the Upgraded Docs(docx) | 此 API 不支持新版文档（docx） |
+
 具体可参考：[服务端错误码说明](/document/ukTMukTMukTM/ugjM14COyUjL4ITN)

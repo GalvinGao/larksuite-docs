@@ -19,40 +19,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEzM04SMzQjLxMDN
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> 
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
@@ -68,47 +40,15 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEzM04SMzQjLxMDN
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>[applyUpdate(Object object)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/applyupdate)</md-td>
-      <md-td>强制小程序重启并使用新版本。在小程序新版本下载完成后（即收到 onUpdateReady 回调）调用。
 
-</md-td>
-    </md-tr>
+| 方法 | 介绍 |
+| --- | --- |
+| [applyUpdate(Object object)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/applyupdate) | 强制小程序重启并使用新版本。在小程序新版本下载完成后（即收到 onUpdateReady 回调）调用。 |
+| [onCheckForUpdate(function callback)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/oncheckforupdate) | 监听向后台请求检查更新结果事件。客户端在小程序冷启动时自动检查更新，不需由开发者主动触发。线上环境在有更新内容时会触发callback回调 |
+| [onUpdateFailed(function callback)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/onupdatefailed) | 监听小程序更新失败事件。小程序有新版本，客户端主动触发下载（无需开发者触发），下载失败（可能是网络原因等）后回调 |
+| [onUpdateReady(function callback)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/onupdateready) | 监听小程序有版本更新事件。客户端主动触发下载（无需开发者触发），下载成功后回调（<lebel style="color:#e45649">频率限制：>=7天且有强制更新时会回调，7天内则不回调，避免打扰用户</lebel>) |
+| [triggerCheckUpdate()](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/triggercheckupdate) | 主动触发更新小程序。开发者调用该方法时，首先触发onCheckForUpdate事件；当前运行版本低于线上版本时，会强制更新小程序，若下载成功或本地已存在线上最新包，则会触发onUpdateReady事件，否则触发onUpdateFailed事件。 |
 
-    <md-tr>
-      <md-td>[onCheckForUpdate(function callback)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/oncheckforupdate)</md-td>
-      <md-td>监听向后台请求检查更新结果事件。客户端在小程序冷启动时自动检查更新，不需由开发者主动触发。线上环境在有更新内容时会触发callback回调
-
-</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>[onUpdateFailed(function callback)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/onupdatefailed)</md-td>
-      <md-td>监听小程序更新失败事件。小程序有新版本，客户端主动触发下载（无需开发者触发），下载失败（可能是网络原因等）后回调</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>[onUpdateReady(function callback)](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/onupdateready)</md-td>
-      <md-td>监听小程序有版本更新事件。客户端主动触发下载（无需开发者触发），下载成功后回调（<lebel style="color:#e45649">频率限制：>=7天且有强制更新时会回调，7天内则不回调，避免打扰用户</lebel>)
-</md-td>
-    </md-tr>
-        <md-tr>
-      <md-td>[triggerCheckUpdate()](/document/uYjL24iN/uAzM04CMzQjLwMDN/getUpdateManager/triggercheckupdate)</md-td>
-      <md-td>主动触发更新小程序。开发者调用该方法时，首先触发onCheckForUpdate事件；当前运行版本低于线上版本时，会强制更新小程序，若下载成功或本地已存在线上最新包，则会触发onUpdateReady事件，否则触发onUpdateFailed事件。
-</md-td>
-    </md-tr>
-</md-tbody>
-</md-table>
-:::
 ## 示例代码
 
 ```js

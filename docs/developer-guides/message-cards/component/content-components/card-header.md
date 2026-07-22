@@ -32,236 +32,25 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/ukTNwUjL5UDM14SO1AT
 
 标题组件的参数说明如下表。
 
-:::html
-<md-table>
-    <md-thead>
-    <md-tr>
-        <md-th style="width: 15%">参数</md-th>
-        <md-th style="width: 15%">是否必须</md-th>
-        <md-th style="width: 15%">类型</md-th>
-        <md-th style="width: 55%">描述</md-th>
-    </md-tr>
-    </md-thead>
-    <md-tbody>
-    <md-tr>
-        <md-td>title</md-td>
-        <md-td>是</md-td>
-        <md-td>Object</md-td>
-        <md-td>配置卡片的主标题信息。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ tag</md-td>
-        <md-td>是</md-td>
-        <md-td>String</md-td>
-        <md-td>文本标识。固定取值：plain_text</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ content</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>卡片主标题内容。
-<md-alert type="tip">
-必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。
-</md-alert>
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ i18n</md-td>
-        <md-td>否
-        </md-td>
-        <md-td>\-</md-td>
-        <md-td>
-国际化文本内容，其中：
-* zh_cn：简体中文
-* en_us：英文
-* ja_jp：日文
-* zh_hk：繁体中文（中国香港）
-* zh_tw：繁体中文（中国台湾）
-          
-示例配置：
+| 参数 | 是否必须 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| title | 是 | Object | 配置卡片的主标题信息。 |
+| └ tag | 是 | String | 文本标识。固定取值：plain_text |
+| └ content | 否 | String | 卡片主标题内容。<br><md-alert type="tip"><br>必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。<br></md-alert> |
+| └ i18n | 否 | \- | 国际化文本内容，其中：<br>* zh_cn：简体中文<br>* en_us：英文<br>* ja_jp：日文<br>* zh_hk：繁体中文（中国香港）<br>* zh_tw：繁体中文（中国台湾）<br>示例配置：<br><code>{<br> "zh_cn": "这是主标题！",<br> "en_us": "It is the title!"<br>}</code><br><md-alert type="tip"><br>必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。<br></md-alert> |
+| subtitle | 否 | String | 配置卡片的副标题信息。<br><md-alert type="tip"><br>- 不允许只配置副标题内容。如果只配置副标题，则实际展示为主标题效果。<br>- 副标题内容最多 1 行，超长文案末尾使用 `...` 进行省略。<br></md-alert> |
+| └ tag | 是 | String | 文本标识。固定取值：plain_text |
+| └ content | 否 | String | 卡片副标题内容。<br><md-alert type="tip"><br>必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。<br></md-alert> |
+| └ i18n | 否 | \- | 国际化文本内容，其中：<br>* zh_cn：简体中文<br>* en_us：英文<br>* ja_jp：日文<br>* zh_hk：繁体中文（中国香港）<br>* zh_tw：繁体中文（中国台湾）<br>示例配置：<br><code>{<br> "zh_cn": "这是副标题！",<br> "en_us": "It is the title!"<br>}</code><br><md-alert type="tip"><br>必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。<br></md-alert> |
+| icon | 否 | Object | 该对象用于设置标题的前缀图标。一个卡片仅可配置一个标题图标。 |
+| └ img_key | 否 | String | 前缀图标 key。<br>图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 `image_key`。 |
+| template | 否 | String | 标题主题颜色。可选值与示例效果参见下文的 **标题样式表**。 |
+| text_tag_list | 否 | TextTagList | 标题的标签属性。最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。<br><md-alert type="tip"><br>- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。<br>- `text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效国际化配置。<br></md-alert> |
+| └ tag | 否 | String | 标题标签的标识。固定取值：text_tag |
+| └ text | 否 | text | 标题标签的内容。基于[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)的 `plain_text` 模式定义内容。<br>示例值：<br><code>"text": {<br>          "tag": "plain_text",<br>          "content": "这里是标签"<br>        }</code> |
+| └ color | 否 | String | 标题标签的颜色，默认为蓝色（blue）。可选值与示例效果参见下文的 **标签样式表**。 |
+| i18n_text_tag_list | 否 | \- | 标题标签的国际化属性。你可以在该字段内配置多语言环境的标签内容。每个语言环境下最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。<br><md-alert type="tip"><br>- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。<br>- `text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效国际化配置。<br></md-alert><br>支持设置的多语言枚举值如下：<br>* zh_cn：简体中文<br>* en_us：英文<br>* ja_jp：日文<br>* zh_hk：繁体中文（中国香港）<br>* zh_tw：繁体中文（中国台湾）<br>该字段的取值格式如下：<br><code>{<br>	"多语言枚举值": [<br>		text_tag_list 结构体<br>	]<br>}</code><br>示例值：<br><code>// 如需使用该 JSON 示例，则注意需要手动清除 // 开头的注释<br>"i18n_text_tag_list": {<br>      "zh_cn": [ // 简体中文标签<br>        {<br>          "tag": "text_tag",<br>          "text": {<br>            "tag": "plain_text",<br>            "content": "标签内容"<br>          },<br>          "color": "carmine"<br>        }<br>      ],<br>      "en_us": [ // 英文标签<br>        {<br>          "tag": "text_tag",<br>          "text": {<br>            "tag": "plain_text",<br>            "content": "Tag content"<br>          },<br>          "color": "carmine"<br>        }<br>      ]<br>    }</code> |
 
-```JSON
-{
- "zh_cn": "这是主标题！",
- "en_us": "It is the title!"
-}
-```
-<md-alert type="tip">
-必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。
-</md-alert>
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>subtitle</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>配置卡片的副标题信息。
-<md-alert type="tip">
-- 不允许只配置副标题内容。如果只配置副标题，则实际展示为主标题效果。
-- 副标题内容最多 1 行，超长文案末尾使用 `...` 进行省略。  
-</md-alert>    
-      </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ tag</md-td>
-        <md-td>是</md-td>
-        <md-td>String</md-td>
-        <md-td>文本标识。固定取值：plain_text</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ content</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>卡片副标题内容。
-<md-alert type="tip">
-必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。
-</md-alert>
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ i18n</md-td>
-        <md-td>否
-        </md-td>
-        <md-td>\-</md-td>
-        <md-td>
-国际化文本内容，其中：
-* zh_cn：简体中文
-* en_us：英文
-* ja_jp：日文
-* zh_hk：繁体中文（中国香港）
-* zh_tw：繁体中文（中国台湾）
-          
-示例配置：
-
-```JSON
-{
- "zh_cn": "这是副标题！",
- "en_us": "It is the title!"
-}
-```
-<md-alert type="tip">
-必须配置 `content` 或 `i18n` 两个属性的其中一个。如果同时配置仅生效 `i18n`。
-</md-alert>
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>icon</md-td>
-        <md-td>否</md-td>
-        <md-td>Object</md-td>
-        <md-td>该对象用于设置标题的前缀图标。一个卡片仅可配置一个标题图标。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ img_key</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>前缀图标 key。
-          
-图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 `image_key`。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>template</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>标题主题颜色。可选值与示例效果参见下文的 **标题样式表**。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>text_tag_list</md-td>
-        <md-td>否</md-td>
-        <md-td>TextTagList</md-td>
-        <md-td>标题的标签属性。最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。
-<md-alert type="tip">
-- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。
-- `text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效国际化配置。
-</md-alert> 
-      </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ tag</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>标题标签的标识。固定取值：text_tag</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>└ text</md-td>
-        <md-td>否</md-td>
-        <md-td>text</md-td>
-        <md-td>标题标签的内容。基于[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)的 `plain_text` 模式定义内容。
-
-示例值：
-```json
-"text": {
-          "tag": "plain_text",
-          "content": "这里是标签"
-        }          
-```
-      </md-td>
-      </md-tr>
-    <md-tr>
-        <md-td>└ color</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>标题标签的颜色，默认为蓝色（blue）。可选值与示例效果参见下文的 **标签样式表**。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>i18n_text_tag_list</md-td>
-        <md-td>否</md-td>
-        <md-td>\-</md-td>
-        <md-td>标题标签的国际化属性。你可以在该字段内配置多语言环境的标签内容。每个语言环境下最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。
-<md-alert type="tip">
-- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。
-- `text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效国际化配置。
-</md-alert>     
-          
-支持设置的多语言枚举值如下：
-* zh_cn：简体中文
-* en_us：英文
-* ja_jp：日文
-* zh_hk：繁体中文（中国香港）
-* zh_tw：繁体中文（中国台湾）
-
-该字段的取值格式如下：
-          
-```json
-{
-	"多语言枚举值": [
-		text_tag_list 结构体   
-	]
-}     
-```
-
-示例值：
-          
-```json
-// 如需使用该 JSON 示例，则注意需要手动清除 // 开头的注释
-"i18n_text_tag_list": {
-      "zh_cn": [ // 简体中文标签
-        {
-          "tag": "text_tag",
-          "text": {
-            "tag": "plain_text",
-            "content": "标签内容"
-          },
-          "color": "carmine"
-        }
-      ],
-      "en_us": [ // 英文标签
-        {
-          "tag": "text_tag",
-          "text": {
-            "tag": "plain_text",
-            "content": "Tag content"
-          },
-          "color": "carmine"
-        }
-      ]
-    }
-```
-      </md-td>
-    </md-tr>
-      
-    </md-tbody>
-</md-table>
-:::
 
 JSON 示例如下：
 
@@ -286,96 +75,22 @@ JSON 示例如下：
 Lark V5.0 及以后版本全局更新了 UI 风格，如果你在客户端查看的卡片样式与下表不一致，请升级至最新版Lark后重试。
 :::
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%">template 取值</md-th>
-            <md-th>样式示例</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-th>blue</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/4d0f83f56efbca5707afc7be88d10a1c.png?height=158&lazyload=true&width=1228)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>wathet</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/3109d23912af6698322428d61148520f.png?height=160&lazyload=true&width=1222)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>turquoise</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/e0d699c79351025d325e29c20e913ad6.png?height=164&lazyload=true&width=1236)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>green</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/d01737e9cb1cc87c41d29be9bd2d2eff.png?height=160&lazyload=true&width=1232)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>yellow</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/76f98987b0eee9cdc03de1a293b12df9.png?height=160&lazyload=true&width=1222)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>orange</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/a1406c23d26c8a72115de8b3914f6386.png?height=164&lazyload=true&width=1224)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>red</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/672d05413780a0d47ba9817bbabf9a8d.png?height=160&lazyload=true&width=1222)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>carmine</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/42da5c6ca8b01d3a2adaa9d8978b1736.png?height=166&lazyload=true&width=1218)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>violet</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/8f518b18790d09e0d70bd377eac0b7e5.png?height=158&lazyload=true&width=1220)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>purple</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/e6d4bae99bc68a0852cb7ede72d6c4de.png?height=152&lazyload=true&width=1224)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>indigo</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/53d9b0ef62dbdffb830193a74f51cfb9.png?height=156&lazyload=true&width=1224)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>grey</md-th>
-            <md-td>
-                ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/19be927a8a7f2ecc0dc05abdf64337ea.png?height=150&lazyload=true&width=1218)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>default</md-th>
-            <md-td>
-                ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/aa59f7c3b6ca9187dfdf61eb853b6968_UGHVXMriHW.png?height=258&lazyload=true&width=2422)
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| template 取值 | 样式示例 |
+| --- | --- |
+| blue | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/4d0f83f56efbca5707afc7be88d10a1c.png?height=158&lazyload=true&width=1228) |
+| wathet | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/3109d23912af6698322428d61148520f.png?height=160&lazyload=true&width=1222) |
+| turquoise | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/e0d699c79351025d325e29c20e913ad6.png?height=164&lazyload=true&width=1236) |
+| green | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/d01737e9cb1cc87c41d29be9bd2d2eff.png?height=160&lazyload=true&width=1232) |
+| yellow | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/76f98987b0eee9cdc03de1a293b12df9.png?height=160&lazyload=true&width=1222) |
+| orange | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/a1406c23d26c8a72115de8b3914f6386.png?height=164&lazyload=true&width=1224) |
+| red | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/672d05413780a0d47ba9817bbabf9a8d.png?height=160&lazyload=true&width=1222) |
+| carmine | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/42da5c6ca8b01d3a2adaa9d8978b1736.png?height=166&lazyload=true&width=1218) |
+| violet | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/8f518b18790d09e0d70bd377eac0b7e5.png?height=158&lazyload=true&width=1220) |
+| purple | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/e6d4bae99bc68a0852cb7ede72d6c4de.png?height=152&lazyload=true&width=1224) |
+| indigo | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/53d9b0ef62dbdffb830193a74f51cfb9.png?height=156&lazyload=true&width=1224) |
+| grey | ![](https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/19be927a8a7f2ecc0dc05abdf64337ea.png?height=150&lazyload=true&width=1218) |
+| default | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/aa59f7c3b6ca9187dfdf61eb853b6968_UGHVXMriHW.png?height=258&lazyload=true&width=2422) |
+
 
 ## 标签样式表
 

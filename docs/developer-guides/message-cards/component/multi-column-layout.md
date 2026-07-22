@@ -80,163 +80,26 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/ucTNwUjL3UDM14yN1AT
 
 多列布局的参数说明如下表所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%">参数</md-th>
-            <md-th style="width: 15%">是否必填</md-th>
-            <md-th style="width: 15%">类型</md-th>
-            <md-th style="width: 50%">描述</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>tag</md-td>
-            <md-td>是</md-td>
-            <md-td>String</md-td>
-            <md-td>
-                多列布局容器的标识，固定取值：column_set。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>flex_mode</md-td>
-            <md-td>是</md-td>
-            <md-td>String</md-td>
-            <md-td>
-移动端和 PC 端的窄屏幕下，各列的自适应方式。取值：
-              
-* **none**：不做布局上的自适应，在窄屏幕下按比例压缩列宽度。
-* **stretch**：列布局变为行布局，且每列（行）宽度强制拉伸为 100%，所有列自适应为上下堆叠排布。
-* **flow**：列流式排布（自动换行），当一行展示不下一列时，自动换至下一行展示。
-* **bisect**：两列等分布局。
-* **trisect**：三列等分布局。
+| 参数 | 是否必填 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 多列布局容器的标识，固定取值：column_set。 |
+| flex_mode | 是 | String | 移动端和 PC 端的窄屏幕下，各列的自适应方式。取值：<br>* **none**：不做布局上的自适应，在窄屏幕下按比例压缩列宽度。<br>* **stretch**：列布局变为行布局，且每列（行）宽度强制拉伸为 100%，所有列自适应为上下堆叠排布。<br>* **flow**：列流式排布（自动换行），当一行展示不下一列时，自动换至下一行展示。<br>* **bisect**：两列等分布局。<br>* **trisect**：三列等分布局。<br>**默认值**：none。 |
+| background_style | 否 | String | 多列布局的背景色样式。取值：<br>* **default**：默认的白底样式，dark mode 下为黑底。<br>* **grey**：灰底样式。<br>当存在多列布局的嵌套时，上层多列布局的颜色覆盖下层多列布局的颜色。 |
+| horizontal_spacing | 否 | String | 多列布局内，各列之间的水平分栏间距。取值：<br>* **default**：默认间距。<br>* **small**：窄间距。 |
+| columns | 否 | column[] | 多列布局容器内，各个列容器的配置信息。详情参见下文 **column 参数说明**。 |
+| action | 否 | action | 设置点击布局容器时的交互配置。当前仅支持跳转交互。如果布局容器内有交互组件，则优先响应交互组件定义的交互。<br>示例配置如下，其中支持内嵌 url 元素，该元素说明参见 [url](/document/ukTMukTMukTM/uczNwUjL3cDM14yN3ATN)。<br><code>{<br>"action": {<br> "multi_url": {<br>  "url": "https://open.larksuite.com",<br>  "pc_url": "https://open.feishu.com",<br>  "ios_url": "https://developer.apple.com/",<br>  "android_url": "https://developer.android.com/"<br>  }<br> }<br>}</code> |
 
-**默认值**：none。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-background_style
-          </md-td>
-            <md-td>否</md-td>
-            <md-td>String</md-td>
-            <md-td>
-多列布局的背景色样式。取值：
-* **default**：默认的白底样式，dark mode 下为黑底。
-* **grey**：灰底样式。
-
-当存在多列布局的嵌套时，上层多列布局的颜色覆盖下层多列布局的颜色。
-            </md-td>
-        </md-tr>
-
-        <md-tr>
-            <md-td>
-horizontal_spacing
-            </md-td>
-            <md-td>否</md-td>
-            <md-td>String</md-td>
-            <md-td>
-多列布局内，各列之间的水平分栏间距。取值：
-* **default**：默认间距。
-* **small**：窄间距。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>columns</md-td>
-            <md-td>否</md-td>
-            <md-td>column[]</md-td>
-            <md-td>
-多列布局容器内，各个列容器的配置信息。详情参见下文 **column 参数说明**。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>action</md-td>
-            <md-td>否</md-td>
-            <md-td>action</md-td>
-            <md-td>
-设置点击布局容器时的交互配置。当前仅支持跳转交互。如果布局容器内有交互组件，则优先响应交互组件定义的交互。
-              
-示例配置如下，其中支持内嵌 url 元素，该元素说明参见 [url](/document/ukTMukTMukTM/uczNwUjL3cDM14yN3ATN)。
-              
-```
-{
-"action": {
- "multi_url": {
-  "url": "https://open.larksuite.com",
-  "pc_url": "https://open.feishu.com",
-  "ios_url": "https://developer.apple.com/",
-  "android_url": "https://developer.android.com/"
-  }
- }
-}
-```
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## column 参数说明
 
-:::html
-<md-table>
-    <md-thead>
-    <md-tr>
-        <md-th style="width: 20%">参数</md-th>
-        <md-th style="width: 15%">是否必填</md-th>
-        <md-th style="width: 15%">类型</md-th>
-        <md-th style="width: 50%">描述</md-th>
-      </md-tr>
-    </md-thead>
-    <md-tbody>
-    <md-tr>
-        <md-td>tag</md-td>
-        <md-td>是</md-td>
-        <md-td>String</md-td>
-        <md-td>列容器标识，固定取值：`column`。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>width</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>
-列宽度属性。取值：
-* **auto**：列宽度与列内元素宽度一致。
-* **weighted**：列宽度按 `weight` 参数定义的权重分布。
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>weight</md-td>
-        <md-td>否</md-td>
-        <md-td>number</md-td>
-        <md-td>当 `width` 取值 `weighted` 时生效，表示当前列的宽度占比。取值范围：1 ~ 5
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>vertical_align</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>
-列内成员垂直对齐方式。取值：
-* **top**：顶对齐。
-* **center**：居中对齐。
-* **bottom**：底部对齐。
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>elements</md-td>
-        <md-td>否</md-td>
-        <md-td>
-Elements[]
+| 参数 | 是否必填 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 列容器标识，固定取值：`column`。 |
+| width | 否 | String | 列宽度属性。取值：<br>* **auto**：列宽度与列内元素宽度一致。<br>* **weighted**：列宽度按 `weight` 参数定义的权重分布。 |
+| weight | 否 | number | 当 `width` 取值 `weighted` 时生效，表示当前列的宽度占比。取值范围：1 ~ 5 |
+| vertical_align | 否 | String | 列内成员垂直对齐方式。取值：<br>* **top**：顶对齐。<br>* **center**：居中对齐。<br>* **bottom**：底部对齐。 |
+| elements | 否 | Elements[]<br>ColumnSet[] | 需要在列内展示的卡片元素。 |
 
-ColumnSet[]
-        </md-td>
-        <md-td>需要在列内展示的卡片元素。</md-td>
-    </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 
@@ -401,26 +264,10 @@ JSON 示例：
 
 效果展示：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th width="69%">桌面端效果</md-th>
-            <md-th width="31%">窄屏及移动端自适应效果</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/72291fe35639c857d0b2b11d5537ed9c_Ut8xrVH0EV.png?height=702&lazyload=true&width=1220)
-            </md-td>
-            <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/aae07c98f3c7fdd519385cfce21ea1d2_EQd1yB9kZm.png?height=884&lazyload=true&width=636)
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 桌面端效果 | 窄屏及移动端自适应效果 |
+| --- | --- |
+| ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/72291fe35639c857d0b2b11d5537ed9c_Ut8xrVH0EV.png?height=702&lazyload=true&width=1220) | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/aae07c98f3c7fdd519385cfce21ea1d2_EQd1yB9kZm.png?height=884&lazyload=true&width=636) |
+
 
 ### 示例二：差旅卡片
 
@@ -540,23 +387,7 @@ JSON 示例：
 }
 ```
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th width="59%">桌面端效果</md-th>
-            <md-th width="41%">窄屏及移动端自适应效果</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/c420d39951abbdbc968afe14c9333840_rysqrM3cPe.png?height=802&lazyload=true&width=1218)
-            </md-td>
-            <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/16bcc3c902cf12ec91d05041980328e3_f8mCa9I7RF.png?height=566&lazyload=true&width=580)
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 桌面端效果 | 窄屏及移动端自适应效果 |
+| --- | --- |
+| ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/c420d39951abbdbc968afe14c9333840_rysqrM3cPe.png?height=802&lazyload=true&width=1218) | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/16bcc3c902cf12ec91d05041980328e3_f8mCa9I7RF.png?height=566&lazyload=true&width=580) |
+

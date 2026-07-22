@@ -53,93 +53,15 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uIzNwUjLycDM14iM3AT
 
 列表选择器作为交互组件，其 JSON 描述均定义在[交互模块](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements)（`"tag": "action"`）的 `actions` 参数中。列表选择器包含的参数说明如下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 列表选择器的标签。在两种模式下的固定取值：<br>- 自定义选项选择器：select_static<br>- 人员选择器：select_person |
+| placeholder | 否 | Struct | 选择器的提示文本。基于文本组件的数据结构填写内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。 |
+| initial_option | 否 | String | 为列表选择器配置默认选项。在人员选择器（`select_person`）模式中不支持设置该字段。 |
+| options | 否 | Struct[] | 列表选择器中的选项。基于 option 元素添加选项内容，详情参见 [option](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#9fa21514)。<br>- 在自定义选项选择器中，你可以通过 option 元素的 `text` 字段配置选项内容。<br>- 在人员选择器中，你可以通过 option 元素的 `value` 字段设置用户 [open_id](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) 来指定人员，如果 `value` 字段不传值，则系统会自动获取当前回话内的人员列表作为选项。<br><md-alert type="tip" icon="none"><br>**注意**：不支持设置 option 元素中的 `url`、`multi_url` 字段。<br></md-alert> |
+| value | 否 | JSON | 该字段用于交互组件的回传交互方式，当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。<br>该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值：<br><code>"value":{<br>    "key-1":Object-1,<br>    "key-2":Object-2,<br>    "key-3":Object-3,<br>    ······<br>}</code> |
+| confirm | 否 | Struct | 设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。 |
 
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-列表选择器的标签。在两种模式下的固定取值：
-- 自定义选项选择器：select_static
-- 人员选择器：select_person
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>placeholder</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-选择器的提示文本。基于文本组件的数据结构填写内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>initial_option</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-为列表选择器配置默认选项。在人员选择器（`select_person`）模式中不支持设置该字段。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>options</md-td>
-<md-td>否</md-td>
-<md-td>Struct[]</md-td>
-<md-td>
-列表选择器中的选项。基于 option 元素添加选项内容，详情参见 [option](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#9fa21514)。
-- 在自定义选项选择器中，你可以通过 option 元素的 `text` 字段配置选项内容。
-- 在人员选择器中，你可以通过 option 元素的 `value` 字段设置用户 [open_id](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid) 来指定人员，如果 `value` 字段不传值，则系统会自动获取当前回话内的人员列表作为选项。
-
-<md-alert type="tip" icon="none">
-**注意**：不支持设置 option 元素中的 `url`、`multi_url` 字段。 
-</md-alert>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>value</md-td>
-<md-td>否</md-td>
-<md-td>JSON</md-td>
-<md-td>
-该字段用于交互组件的回传交互方式，当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。
-
-该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值：
-```
-"value":{
-    "key-1":Object-1,
-    "key-2":Object-2,
-    "key-3":Object-3,
-    ······
-}
-```
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 交互示例
 

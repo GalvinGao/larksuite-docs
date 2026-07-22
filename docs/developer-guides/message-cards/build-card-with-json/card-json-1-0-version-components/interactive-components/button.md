@@ -107,376 +107,56 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
 按钮组件各字段说明如下表所示：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段名称</md-th>
-      <md-th>是否必填</md-th>
-      <md-th>类型</md-th>
-      <md-th>默认值</md-th>
-      <md-th style="width: 50%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>组件的标签。按钮组件的固定值为 `button`。</md-td>
-</md-tr>
-<md-tr>
-<md-td>type</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>按钮的类型。可选值：
-  - default：黑色字体按钮，有边框
-  - primary：蓝色字体按钮，有边框
-  - danger：红色字体按钮，有边框
-  - text：黑色字体按钮，无边框
-  - primary_text：蓝色字体按钮，无边框
-  - danger_text：红色字体按钮，无边框
-  - primary_filled：蓝底白字按钮
-  - danger_filled：红底白字按钮
-  - laser：镭射按钮
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td>size</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>medium</md-td>
-<md-td>按钮的尺寸。可选值：
-- tiny：超小尺寸，PC 端为 24 px；移动端为 28 px
-- small：小尺寸，PC 端为 28 px；移动端为 28 px
-- medium：中尺寸，PC 端为 32 px；移动端为 36 px
-- large：大尺寸，PC 端为 40 px；移动端为 48 px</md-td>
-</md-tr>
-<md-tr>
-<md-td>width</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>按钮的宽度。支持以下枚举值：
-- default：默认宽度
-- fill：卡片最大支持宽度
-- [100,∞)px：自定义宽度，如 `120px`。超出卡片宽度时将按最大支持宽度展示</md-td>
-</md-tr>
-<md-tr>
-<md-td>text</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>空</md-td>
-<md-td>按钮上的文本。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>文本类型的标签。固定值为 `plain_text`。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>文本的内容，最多支持 100 个字符。</md-td>
-</md-tr>
-  <md-tr>
-<md-td>icon</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标类型的标签。可取值：
-- `standard_icon`：使用图标库中的图标。
-- `custom_icon`：使用用自定义图片作为图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ token</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ color</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ img_key</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。
-  
-图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。</md-td>
-</md-tr>
-    <md-tr>
-      <md-td>hover_tips</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        用户在 PC 端将光标悬浮在交互容器上方时的文案提醒。默认为空。
-      </md-td>
-    </md-tr>
-  <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>
-文本的标签。固定取值为 <code>plain_text</code>。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        文本的内容。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>disabled</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        是否禁按钮。可选值：
--  true：禁用按钮
-- false：按钮组件保持可用状态
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>disabled_tips</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        禁用按钮后，用户触发交互时的弹窗文案提醒。默认为空，即不弹窗。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>
-        弹窗标题文本的标签。固定取值为 <code>plain_text</code>。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        弹窗标题的内容。
-      </md-td>
-    </md-tr>
-  <md-tr>
-<md-td colspan="5" style="text-align: center;">confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 组件的标签。按钮组件的固定值为 `button`。 |
+| type | 否 | String | default | 按钮的类型。可选值：<br>- default：黑色字体按钮，有边框<br>- primary：蓝色字体按钮，有边框<br>- danger：红色字体按钮，有边框<br>- text：黑色字体按钮，无边框<br>- primary_text：蓝色字体按钮，无边框<br>- danger_text：红色字体按钮，无边框<br>- primary_filled：蓝底白字按钮<br>- danger_filled：红底白字按钮<br>- laser：镭射按钮 |
+| size | 否 | String | medium | 按钮的尺寸。可选值：<br>- tiny：超小尺寸，PC 端为 24 px；移动端为 28 px<br>- small：小尺寸，PC 端为 28 px；移动端为 28 px<br>- medium：中尺寸，PC 端为 32 px；移动端为 36 px<br>- large：大尺寸，PC 端为 40 px；移动端为 48 px |
+| width | 否 | String | default | 按钮的宽度。支持以下枚举值：<br>- default：默认宽度<br>- fill：卡片最大支持宽度<br>- [100,∞)px：自定义宽度，如 `120px`。超出卡片宽度时将按最大支持宽度展示 |
+| text | 否 | Struct | 空 | 按钮上的文本。 |
+| └ tag | 是 | String | plain_text | 文本类型的标签。固定值为 `plain_text`。 |
+| └ content | 是 | String | / | 文本的内容，最多支持 100 个字符。 |
+| icon | 否 | Object | / | 添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。 |
+| └ tag | 否 | String | / | 图标类型的标签。可取值：<br>- `standard_icon`：使用图标库中的图标。<br>- `custom_icon`：使用用自定义图片作为图标。 |
+| └ token | 否 | String | / | 图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。 |
+| └ color | 否 | String | / | 图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| └ img_key | 否 | String | / | 自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。<br>图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。 |
+| hover_tips | 否 | Object | 空 | 用户在 PC 端将光标悬浮在交互容器上方时的文案提醒。默认为空。 |
+| └ tag | 是 | String | plain_text | 文本的标签。固定取值为 <code>plain_text</code>。 |
+| └ content | 是 | String | 空 | 文本的内容。 |
+| disabled | 否 | Boolean | false | 是否禁按钮。可选值：<br>-  true：禁用按钮<br>- false：按钮组件保持可用状态 |
+| disabled_tips | 否 | Object | 空 | 禁用按钮后，用户触发交互时的弹窗文案提醒。默认为空，即不弹窗。 |
+| └ tag | 是 | String | plain_text | 弹窗标题文本的标签。固定取值为 <code>plain_text</code>。 |
+| └ content | 是 | String | 空 | 弹窗标题的内容。 |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br>**注意**：confirm 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| └ title | 是 | Struct | / | 二次确认弹窗标题。<br>**注意**：要配置二次弹窗，title 字段必填。否则，历史版本的Lark客户端可能会出现点击按钮无反应的问题。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| └ text | 是 | Struct | / | 二次确认弹窗文本。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
+| behaviors | 是 | Struct | / | 配置交互类型和具体交互行为。支持同时生效跳转链接和回传交互。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。 |
 
-  **注意**：confirm 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ title</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题。
-  
-**注意**：要配置二次弹窗，title 字段必填。否则，历史版本的Lark客户端可能会出现点击按钮无反应的问题。
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗文本。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗文本的具体内容。</md-td>
-</md-tr>
-<md-tr>
-      <md-td>behaviors</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>配置交互类型和具体交互行为。支持同时生效跳转链接和回传交互。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)。</md-td>
-    </md-tr>
-</tbody>
-</table>
-:::
 
 以下为支持交互的历史属性。
 
-:::html
-<md-table>
-  <md-thead>
-       <md-tr>
-      <md-th style="width: 16%;">字段名称</md-th>
-      <md-th style="width: 13%;">是否必填</md-th>
-      <md-th>类型</md-th>
-      <md-th>默认值</md-th>
-      <md-th style="width: 50%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-<md-tr>
-<md-td>url</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-  <md-td>/</md-td>
-<md-td>
-点击按钮后的跳转链接。该字段与 `multi_url` 字段不可同时设置。
-</md-td>
-</md-tr>
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| url | 否 | String | / | 点击按钮后的跳转链接。该字段与 `multi_url` 字段不可同时设置。 |
+| multi_url | 否 | Struct | / | 基于 url 元素配置多端跳转链接，详情参见旧版文档[url 元素](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#09a320b3)。该字段与 `url` 字段不可同时设置。 |
+| value | 否 | JSON | / | 该字段用于配置回传交互。当用户点击交互组件后，会将 `value` 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 `value` 值进行业务处理。<br>该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值：<br><code>"value":{<br>    "key-1":Object-1,<br>    "key-2":Object-2,<br>    "key-3":Object-3,<br>    ······<br>}</code> |
+| complex_interaction | 否 | Boolean | false | 是否同时生效上述历史字段配置的跳转链接交互和回传交互。默认仅生效跳转链接交互。 |
 
-<md-tr>
-<md-td>multi_url</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-  <md-td>/</md-td>
-<md-td>
-基于 url 元素配置多端跳转链接，详情参见旧版文档[url 元素](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#09a320b3)。该字段与 `url` 字段不可同时设置。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>value</md-td>
-<md-td>否</md-td>
-<md-td>JSON</md-td>
-  <md-td>/</md-td>
-<md-td>
-该字段用于配置回传交互。当用户点击交互组件后，会将 `value` 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 `value` 值进行业务处理。
-
-该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值：
-```json
-"value":{
-    "key-1":Object-1,
-    "key-2":Object-2,
-    "key-3":Object-3,
-    ······
-}
-```
-</md-td>
-</md-tr>
-    
-<md-tr>
-<md-td>complex_interaction</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-  <md-td>false</md-td>
-<md-td>
-是否同时生效上述历史字段配置的跳转链接交互和回传交互。默认仅生效跳转链接交互。
-</md-td>
-</md-tr>
-</tbody>
-</table>
-:::
 
 
 内嵌在表单容器中的按钮组件，新增 `name`、`required`、和 `action_type` 属性。详细说明如下表所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 10%;">属性名称</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th style="width: 60%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>name</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        表单容器内组件的唯一标识。用于识别用户提交的数据属于哪个组件。<br>
+| 属性名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | 是 | String | 空 | 表单容器内组件的唯一标识。用于识别用户提交的数据属于哪个组件。<br><strong>注意</strong>：该字段必填且需在卡片全局内唯一。 |
+| required | 否 | Boolean | false | 组件的内容是否必填。当组件内嵌在表单容器中时，该属性生效。可取值：<br>- <strong>true</strong>：必填。当用户点击表单容器的“提交”时，未填写该组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- <strong>false</strong>：选填。当用户点击表单容器的“提交”时，未填写该组件，仍提交表单容器中的数据。 |
+| action_type | 是 | String | 空 | 内嵌在表单容器中的按钮的交互类型。枚举值包括：<br>- <code>link</code>：当前按钮仅支持链接跳转</li><br><li><code>request</code>：当前按钮仅支持回传交互</li><br><li><code>multi</code>：当前按钮同时支持链接跳转和回传交互</li><br><li><code>form_submit</code>：将当前按钮与提交事件绑定。用户点击后，将触发表单容器的提交事件，异步提交所有已填写的表单项内容</li><br><li><code>form_reset</code>：将当前按钮与取消提交事件绑定。用户点击后，将触发表单容器的取消提交事件，重置所有表单组件的输入值为初始值</li> |
 
-<strong>注意</strong>：该字段必填且需在卡片全局内唯一。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>required</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        组件的内容是否必填。当组件内嵌在表单容器中时，该属性生效。可取值：
-
-- <strong>true</strong>：必填。当用户点击表单容器的“提交”时，未填写该组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
-
-- <strong>false</strong>：选填。当用户点击表单容器的“提交”时，未填写该组件，仍提交表单容器中的数据。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>action_type</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        内嵌在表单容器中的按钮的交互类型。枚举值包括：
-
-- <code>link</code>：当前按钮仅支持链接跳转</li>
-          <li><code>request</code>：当前按钮仅支持回传交互</li>
-          <li><code>multi</code>：当前按钮同时支持链接跳转和回传交互</li>
-          <li><code>form_submit</code>：将当前按钮与提交事件绑定。用户点击后，将触发表单容器的提交事件，异步提交所有已填写的表单项内容</li>
-          <li><code>form_reset</code>：将当前按钮与取消提交事件绑定。用户点击后，将触发表单容器的取消提交事件，重置所有表单组件的输入值为初始值</li>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 ### 回调结构
 

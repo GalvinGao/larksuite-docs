@@ -24,42 +24,13 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ## 素材 token 获取方式
 
 Lark开放平台支持在在线文档、电子表格、多维表格中上传和下载素材。在不同的云文档中，素材 token 的获取方式不同。具体方式如下所示：
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 20%;">素材所在文档类型</md-th>  
-      <md-th style="width: 50%;">素材 token 获取方式</md-th>  
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>
-        在线文档
-      </md-td>  
-      <md-td>
-通过[获取文档所有块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口获取指定文件块（File Block）或图片块（Image Block）等，其中的 token 参数即为素材 token。
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>
-        电子表格
-      </md-td>  
-      <md-td>
-通过[读取多个范围](/document/ukTMukTMukTM/ukTMzUjL5EzM14SOxMTN)接口获取指定附件的 `fileToken` 参数，即为素材的 token。
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>
-        多维表格
-      </md-td>  
-      <md-td>
-通过[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口获取指定附件的 `file_token`参数，即为素材的 token。
-      </md-td> 
-    </md-tr>  
-  </md-tbody> 
-</md-table>
-:::
+
+| 素材所在文档类型 | 素材 token 获取方式 |
+| --- | --- |
+| 在线文档 | 通过[获取文档所有块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)接口获取指定文件块（File Block）或图片块（Image Block）等，其中的 token 参数即为素材 token。 |
+| 电子表格 | 通过[读取多个范围](/document/ukTMukTMukTM/ukTMzUjL5EzM14SOxMTN)接口获取指定附件的 `fileToken` 参数，即为素材的 token。 |
+| 多维表格 | 通过[查询记录](/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table-record/search)接口获取指定附件的 `file_token`参数，即为素材的 token。 |
+
 
 ## 上传素材说明
 
@@ -78,84 +49,18 @@ Lark开放平台支持在在线文档、电子表格、多维表格中上传和�
 要在知识库文档中上传图片或文件，你需先调用[获取知识空间节点信息](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space/get_node)获取当前知识库文档的实际 token，再根据下列上传场景，确定上传点 token 的值。
 :::
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">上传场景</md-th>
-      <md-th style="width: 20%;">上传点类型（parent_type）</md-th>
-      <md-th>上传点 token （parent_node）</md-th>
-      <md-th>token 示例值</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>在新版文档中上传图片</md-td>
-      <md-td>docx_image</md-td>
-     
-      <md-td>
-        传入新版文档块的唯一标识 `block_id`，表示将图片素材上传到新版文档的指定[图片块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#a6f35866)中。了解在文档中插入图片的完整步骤，参考[文档常见问题-如何插入图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#1908ddf0)。 </md-td> <md-td> doxcnXgNGAtaAraIRVeCfmabcef</md-td>
-      
-    </md-tr>
-    <md-tr>
-      <md-td>在新版文档中上传文件</md-td>
-      <md-td>docx_file</md-td>
-      <md-td>
-        传入新版文档块的唯一标识 `block_id`，表示将文件素材上传到新版文档的指定[文件块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#2b183663)中。了解在文档中插入文件的完整步骤，参考[文档常见问题-如何插入文件/附件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#891c2784)。 
-      </md-td><md-td> doxcnXgNGAtaAraIRVeCfmabcef</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>在电子表格中上传图片</md-td>
-      <md-td>sheet_image</md-td>
-      <md-td>
-        传入电子表格的唯一标识 `spreadsheet_token`，表示将图片素材上传到指定电子表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。图片完成上传后，你可继续使用[写入图片](/document/ukTMukTMukTM/uUDNxYjL1QTM24SN0EjN)等接口将图片写入电子表格具体位置。
-      </md-td><md-td> MRLOWBf6J47ZUjmwYRsN8uabcef</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>在电子表格中上传文件</md-td>
-      <md-td>sheet_file</md-td>
-      <md-td>
-        传入电子表格的唯一标识 `spreadsheet_token`，表示将文件素材上传到指定电子表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 
-      </md-td><md-td> MRLOWBf6J47ZUjmwYRsN8uabcef</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>在多维表格中上传图片</md-td>
-      <md-td>bitable_image</md-td>
-      <md-td>
-        传入多维表格的唯一标识 `app_token`，表示将图片素材上传到指定多维表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 
-      </md-td> <md-td> Pc9OpwAV4nLdU7lTy71t6Kabcef</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>在多维表格中上传文件</md-td>
-      <md-td>bitable_file</md-td>
-      <md-td>
-        传入多维表格的唯一标识 `app_token`，表示将文件素材上传到指定多维表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。
-      </md-td><md-td> Pc9OpwAV4nLdU7lTy71t6Kabcef</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>上传素材至云空间</md-td>
-      <md-td>ccm_import_open</md-td>
-      <md-td>
-        无需填写，该场景用于导入文件，详情参考[导入文件概述](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/import_task/import-user-guide)。
-      </md-td><md-td> /</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>在旧版文档中上传图片（旧版文档已下线，已不推荐使用）</md-td>
-      <md-td>doc_image</md-td>
-      <md-td>
-        传入旧版文档的唯一标识 `doc_token`，表示将图片素材上传到指定旧版文档中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 
-      </md-td>  <md-td>2olt0Ts4Mds7j7iqzdwrqEabcef</md-td> 
-    </md-tr>
-    <md-tr>
-      <md-td>在旧版文档中上传文件（旧版文档已下线，已不推荐使用）</md-td>
-      <md-td>doc_file</md-td>
-      <md-td>
-        传入旧版文档的唯一标识 `doc_token`，表示将文件素材上传到指定旧版文档中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 
-      </md-td> <md-td>2olt0Ts4Mds7j7iqzdwrqEabcef</md-td> 
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 上传场景 | 上传点类型（parent_type） | 上传点 token （parent_node） | token 示例值 |
+| --- | --- | --- | --- |
+| 在新版文档中上传图片 | docx_image | 传入新版文档块的唯一标识 `block_id`，表示将图片素材上传到新版文档的指定[图片块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#a6f35866)中。了解在文档中插入图片的完整步骤，参考[文档常见问题-如何插入图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#1908ddf0)。 | doxcnXgNGAtaAraIRVeCfmabcef |
+| 在新版文档中上传文件 | docx_file | 传入新版文档块的唯一标识 `block_id`，表示将文件素材上传到新版文档的指定[文件块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#2b183663)中。了解在文档中插入文件的完整步骤，参考[文档常见问题-如何插入文件/附件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/faq#891c2784)。 | doxcnXgNGAtaAraIRVeCfmabcef |
+| 在电子表格中上传图片 | sheet_image | 传入电子表格的唯一标识 `spreadsheet_token`，表示将图片素材上传到指定电子表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。图片完成上传后，你可继续使用[写入图片](/document/ukTMukTMukTM/uUDNxYjL1QTM24SN0EjN)等接口将图片写入电子表格具体位置。 | MRLOWBf6J47ZUjmwYRsN8uabcef |
+| 在电子表格中上传文件 | sheet_file | 传入电子表格的唯一标识 `spreadsheet_token`，表示将文件素材上传到指定电子表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 | MRLOWBf6J47ZUjmwYRsN8uabcef |
+| 在多维表格中上传图片 | bitable_image | 传入多维表格的唯一标识 `app_token`，表示将图片素材上传到指定多维表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 | Pc9OpwAV4nLdU7lTy71t6Kabcef |
+| 在多维表格中上传文件 | bitable_file | 传入多维表格的唯一标识 `app_token`，表示将文件素材上传到指定多维表格中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 | Pc9OpwAV4nLdU7lTy71t6Kabcef |
+| 上传素材至云空间 | ccm_import_open | 无需填写，该场景用于导入文件，详情参考[导入文件概述](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/import_task/import-user-guide)。 | / |
+| 在旧版文档中上传图片（旧版文档已下线，已不推荐使用） | doc_image | 传入旧版文档的唯一标识 `doc_token`，表示将图片素材上传到指定旧版文档中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 | 2olt0Ts4Mds7j7iqzdwrqEabcef |
+| 在旧版文档中上传文件（旧版文档已下线，已不推荐使用） | doc_file | 传入旧版文档的唯一标识 `doc_token`，表示将文件素材上传到指定旧版文档中，[点击了解如何获取云文档 token](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#08bb5df6)。 | 2olt0Ts4Mds7j7iqzdwrqEabcef |
+
 
 ### 接口说明
 
@@ -316,99 +221,13 @@ https://open.larksuite.com/open-apis/drive/v1/medias/boxbcsQNT0JsmrztOnX530abcef
 ## 方法列表
 
 以下为素材的方法列表。其中，“商店”代表应用商店应用；“自建”代表企业自建应用，了解更多应用相关信息，参考[应用类型简介](/document/home/app-types-introduction/overview)。了解调用服务端 API 的流程，参考[流程概述](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)。
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 30%;"><b>方法 (API)</b></md-th>
-            <md-th style="width: 30%;"><b>权限要求（满足任一）</b></md-th>
-            <md-th style="width: 20%;"><b>访问凭证（选择其一）</b></md-th>
-            <md-th><b>商店</b></md-th>
-            <md-th><b>自建</b></md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name">[上传素材](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)POST /open-apis/drive/v1/medias/upload_all</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm>
-                <md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm>
-                <md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm>
-                <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name">[下载素材](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)GET /open-apis/drive/v1/medias/:file_token/download</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" support_app_types="custom,isv" tags="">查看、评论和导出文档</md-perm><md-perm name="docs:document.media:download" desc="下载云文档中的图片和附件" support_app_types="custom,isv" tags="">下载云文档中的图片和附件</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name">[获取素材临时下载链接](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/batch_get_tmp_download_url)GET /open-apis/drive/v1/medias/batch_get_tmp_download_url</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" support_app_types="custom,isv" tags="">查看、评论和导出文档</md-perm><md-perm name="docs:document.media:download" desc="下载云文档中的图片和附件" support_app_types="custom,isv" tags="">下载云文档中的图片和附件</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name">[分片上传素材-预上传](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)POST /open-apis/drive/v1/medias/upload_prepare</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name">[分片上传素材-上传分片](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_part)POST /open-apis/drive/v1/medias/upload_part</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name">[分片上传素材-完成上传](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_finish)POST /open-apis/drive/v1/medias/upload_finish</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| <b>方法 (API)</b> | <b>权限要求（满足任一）</b> | <b>访问凭证（选择其一）</b> | <b>商店</b> | <b>自建</b> |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name">[上传素材](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_all)POST /open-apis/drive/v1/medias/upload_all</md-text> | <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><br><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><br><md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">[下载素材](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/download)GET /open-apis/drive/v1/medias/:file_token/download</md-text> | <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" support_app_types="custom,isv" tags="">查看、评论和导出文档</md-perm><md-perm name="docs:document.media:download" desc="下载云文档中的图片和附件" support_app_types="custom,isv" tags="">下载云文档中的图片和附件</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">[获取素材临时下载链接](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/batch_get_tmp_download_url)GET /open-apis/drive/v1/medias/batch_get_tmp_download_url</md-text> | <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" support_app_types="custom,isv" tags="">查看、评论和导出文档</md-perm><md-perm name="docs:document.media:download" desc="下载云文档中的图片和附件" support_app_types="custom,isv" tags="">下载云文档中的图片和附件</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">[分片上传素材-预上传](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_prepare)POST /open-apis/drive/v1/medias/upload_prepare</md-text> | <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">[分片上传素材-上传分片](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_part)POST /open-apis/drive/v1/medias/upload_part</md-text> | <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">[分片上传素材-完成上传](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/media/upload_finish)POST /open-apis/drive/v1/medias/upload_finish</md-text> | <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" support_app_types="custom,isv" tags="">查看、评论、编辑和管理文档</md-perm><md-perm name="docs:document.media:upload" desc="上传图片和附件到云文档中" support_app_types="custom,isv" tags="">上传图片和附件到云文档中</md-perm><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+

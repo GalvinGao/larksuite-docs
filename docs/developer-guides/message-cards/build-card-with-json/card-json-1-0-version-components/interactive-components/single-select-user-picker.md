@@ -76,193 +76,27 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 人员选择-单选组件的字段说明如下表。
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 12%;">字段</md-th>
-<md-th style="width: 15%;">是否必填</md-th>
-<md-th style="width: 15%;">类型</md-th>
-<md-th style="width: 15%;">默认值</md-th>
-<md-th style="width: 50%;">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-tag
-</md-td>
-<md-td>是</md-td>
-<md-td>string</md-td>
-<md-td>/</md-td>
-<md-td>
-组件的标签。人员选择-单选组件取固定值 `select_person`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-type
-</md-td>
-<md-td>否</md-td>
-<md-td>string</md-td>
-<md-td>default</md-td>
-<md-td>
-组件边框样式。可选值：
-- default：带边框样式
-- text：不带边框的纯文本样式
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-required
-</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-单选组件的内容是否必选。当组件内嵌在表单容器中时，该属性生效。可取值：
-- true：单选组件必选。当用户点击表单容器的“提交”时，未填写单选组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
-- false：单选组件选填。当用户点击表单容器的“提交”时，未填写单选组件，仍提交表单容器中的数据。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>disabled</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否禁用该单选组件。可选值：
-- true：禁用单选组件组件
-- false：单选组件组件保持可用状态
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-placeholder
-</md-td>
-<md-td>否</md-td>
-<md-td>object</md-td>
-<md-td>/</md-td>
-<md-td>
-人员选择组件内的占位文本。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ tag
-</md-td>
-<md-td>是</md-td>
-<md-td>string</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-占位提示标签。固定值为 plain_text。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ content
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>
-占位文本的内容，最多支持 100 个字符。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-width
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>
-人员选择组件的宽度。支持以下枚举值：
-- default：默认宽度
-- fill：卡片最大支持宽度
-- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-options
-</md-td>
-<md-td>否</md-td>
-<md-td>Array of objects</md-td>
-<md-td>/</md-td>
-<md-td>
-选项值配置。按选项数组的顺序展示选项内容。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ value
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-选项配置，仅支持添加候选用户的 open_id。了解更多，参考[如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。
-  
-**注意**：当 options 数组为空，或 value 的值全部无效时，候选项展示为卡片所在会话中所有成员选项。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>
-二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
-  
-<strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.title</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.title.tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.title.content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗的文本内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.text.tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.text.content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗文本的具体内容。</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 字段 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | string | / | 组件的标签。人员选择-单选组件取固定值 `select_person`。 |
+| type | 否 | string | default | 组件边框样式。可选值：<br>- default：带边框样式<br>- text：不带边框的纯文本样式 |
+| required | 否 | Boolean | false | 单选组件的内容是否必选。当组件内嵌在表单容器中时，该属性生效。可取值：<br>- true：单选组件必选。当用户点击表单容器的“提交”时，未填写单选组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- false：单选组件选填。当用户点击表单容器的“提交”时，未填写单选组件，仍提交表单容器中的数据。 |
+| disabled | 否 | Boolean | false | 是否禁用该单选组件。可选值：<br>- true：禁用单选组件组件<br>- false：单选组件组件保持可用状态 |
+| placeholder | 否 | object | / | 人员选择组件内的占位文本。 |
+| └ tag | 是 | string | plain_text | 占位提示标签。固定值为 plain_text。 |
+| └ content | 否 | String | / | 占位文本的内容，最多支持 100 个字符。 |
+| width | 否 | String | default | 人员选择组件的宽度。支持以下枚举值：<br>- default：默认宽度<br>- fill：卡片最大支持宽度<br>- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示 |
+| options | 否 | Array of objects | / | 选项值配置。按选项数组的顺序展示选项内容。 |
+| └ value | 否 | String | 空 | 选项配置，仅支持添加候选用户的 open_id。了解更多，参考[如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。<br>**注意**：当 options 数组为空，或 value 的值全部无效时，候选项展示为卡片所在会话中所有成员选项。 |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br><strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| confirm.title | 是 | Struct | / | 二次确认弹窗标题。 |
+| confirm.title.tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| confirm.title.content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| confirm.text | 是 | Struct | / | 二次确认弹窗的文本内容。 |
+| confirm.text.tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| confirm.text.content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
+
 ## 回调结构
 
 为组件成功配置交互后，用户基于组件进行交互时，你在开发者后台配置的请求地址将会收到回调数据。

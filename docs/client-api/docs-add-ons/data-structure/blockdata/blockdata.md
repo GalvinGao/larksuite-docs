@@ -16,45 +16,8 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 
 # BlockData
 Block 的详细数据定义，不同 Block 类型有不同的数据定义。以下是公共属性：
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>algin</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>Block 的对齐方式，可选值包括：
-- 左对齐 - left
-- 居中对齐 - center
-- 右对齐 - right
-  
-注意，尽管该属性在公共属性上，但并非所有 Block 的视图都支持该属性，目前支持的 Block 类型包括：
-- TEXT
-- HEADING1
-- HEADING2
-- HEADING3
-- HEADING4
-- HEADING5
-- HEADING6
-- HEADING7
-- HEADING8
-- HEADING9
-- BULLET
-- ORDERED
-- TODO
-- QUOTE
-- IMAGE
-- CHAT_CARD
-  </md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| algin | string | 否 | Block 的对齐方式，可选值包括：<br>- 左对齐 - left<br>- 居中对齐 - center<br>- 右对齐 - right<br>注意，尽管该属性在公共属性上，但并非所有 Block 的视图都支持该属性，目前支持的 Block 类型包括：<br>- TEXT<br>- HEADING1<br>- HEADING2<br>- HEADING3<br>- HEADING4<br>- HEADING5<br>- HEADING6<br>- HEADING7<br>- HEADING8<br>- HEADING9<br>- BULLET<br>- ORDERED<br>- TODO<br>- QUOTE<br>- IMAGE<br>- CHAT_CARD |
+

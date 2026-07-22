@@ -23,56 +23,12 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM
 
 Lark开放平台提供以下不同类型的访问凭证，用于对调用方身份进行鉴权。在实际开发过程中，你可以根据业务需要选择适用的访问凭证。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">访问凭证类型</md-th>
-<md-th style="width:20%">是否需要用户授权</md-th>
-<md-th style="width:60%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>tenant_access_token</md-td>
-<md-td>否</md-td>
-<md-td>
+| 访问凭证类型 | 是否需要用户授权 | 说明 |
+| --- | --- | --- |
+| tenant_access_token | 否 | 以应用身份调用 API 时需要使用的凭证，可读写的数据范围由应用的[数据权限范围](/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)决定。<br>该类凭证的值以`t-`为前缀，示例值：`t-24b5bf4e00b2af1234`。 |
+| user_access_token | 是 | 以用户身份调用 API 时需要使用的凭证，可读写的数据范围由用户可读写的数据范围决定。<br>该类凭证的值以`u-`为前缀，示例值：`u-Lr1RT7S8fS03mT1234`。 |
+| app_access_token | 否 | 应用身份的短期令牌。开放平台根据 app_access_token 识别调用方的应用身份。<br>该类凭证的值以`a-`或者`t-`为前缀，示例值：`a-24b5cef00b1234`。 |
 
-以应用身份调用 API 时需要使用的凭证，可读写的数据范围由应用的[数据权限范围](/document/home/introduction-to-scope-and-authorization/configure-app-data-permissions)决定。
-  
-该类凭证的值以`t-`为前缀，示例值：`t-24b5bf4e00b2af1234`。
-	
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>user_access_token</md-td>
-<md-td>是</md-td>
-<md-td>
-	
-以用户身份调用 API 时需要使用的凭证，可读写的数据范围由用户可读写的数据范围决定。
-  
-该类凭证的值以`u-`为前缀，示例值：`u-Lr1RT7S8fS03mT1234`。
-	
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>app_access_token</md-td>
-<md-td>否</md-td>
-<md-td>
-	
-应用身份的短期令牌。开放平台根据 app_access_token 识别调用方的应用身份。
-  
-该类凭证的值以`a-`或者`t-`为前缀，示例值：`a-24b5cef00b1234`。
-	
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 
 ## 如何选择不同类型的访问凭证

@@ -18,36 +18,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYzMuYzMuYzM
 获取临时登录凭证。完整的登录流程参考[小程序登录](/document/uYjL24iN/uETO5QjLxkTO04SM5kDN)
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/login/login" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
-        <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/login/login" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
@@ -56,36 +32,11 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYzMuYzMuYzM
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                code
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                临时登录凭证，有效期 3 分钟，只能使用一次
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| code | string | 临时登录凭证，有效期 3 分钟，只能使用一次 |
+
 
 ## 示例代码
 :::html

@@ -41,122 +41,18 @@ source_url: https://open.larksuite.com/document/home/quick-access-to-contact-api
 
 ### 通讯录
 
-:::html
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求 | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| [创建部门](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/create)<br>`POST` /open-apis/contact/v3/departments<br>> 用于向通讯录中创建部门 | <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| [获取子部门列表](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)<br>`GET` /open-apis/contact/v3/departments/:department_id/children<br>> 通过部门ID获取部门的子部门列表 | <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| [获取单个部门信息](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)<br>`GET` /open-apis/contact/v3/departments/:department_id<br>> 该接口用于向通讯录获取单个部门信息 | <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| [修改部门部分信息](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/patch)<br>`PATCH` /open-apis/contact/v3/departments/:department_id<br>> 该接口用于更新通讯录中部门的信息 | <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
 
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 25%;">权限要求</md-th>
-            <md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-[创建部门](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/create)
-
-`POST` /open-apis/contact/v3/departments
-
-> 用于向通讯录中创建部门
-            </md-td>
-            <md-td>
-                <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-[获取子部门列表](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/children)
-
-`GET` /open-apis/contact/v3/departments/:department_id/children
-
-> 通过部门ID获取部门的子部门列表
-            </md-td>
-            <md-td>
-                <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-[获取单个部门信息](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/get)
-
-`GET` /open-apis/contact/v3/departments/:department_id
-
-> 该接口用于向通讯录获取单个部门信息
-            </md-td>
-            <md-td>
-                <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-[修改部门部分信息](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/patch)
-
-`PATCH` /open-apis/contact/v3/departments/:department_id
-
-> 该接口用于更新通讯录中部门的信息
-            </md-td>
-            <md-td>
-                <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ### 事件
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 50%;"><md-td>**[事件](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)**</md-td></md-th>
-            <md-th style="width: 50%;">权限要求</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-[员工入职](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/events/created)
+| **[事件](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)** | 权限要求 |
+| --- | --- |
+| [员工入职](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/events/created)<br>`contact.user.created_v3`<br>> 通过该事件订阅员工入职 | <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm> |
+| [员工离职](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/events/deleted)<br>`contact.user.deleted_v3`<br>> 通过该事件订阅员工离职 | <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm> |
 
-`contact.user.created_v3`
-
-> 通过该事件订阅员工入职
-            </md-td>
-            <md-td>
-                <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm>
-            </md-td>
-        </md-tr>
-
-        <md-tr>
-            <md-td>
-[员工离职](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/events/deleted)
-
-`contact.user.deleted_v3`
-
-> 通过该事件订阅员工离职
-            </md-td>
-            <md-td>
-                <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm>
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::

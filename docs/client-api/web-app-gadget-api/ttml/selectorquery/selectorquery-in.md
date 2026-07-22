@@ -19,114 +19,26 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUjN24SN2YjL1YjN/select
 将选择器的选取范围更改为自定义组件 `component` 内（初始时，选择器仅选取页面范围的节点，不会选取任何自定义组件中的节点）。
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V2.2.0+</md-version></md-td>
-      <md-td><md-version>V2.2.0+</md-version></md-td>
-      <md-td><md-version>V2.2.0+</md-version></md-td>
-       <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/createSelectorQuery/createSelectorQuery" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V2.2.0+</md-version> | <md-version>V2.2.0+</md-version> | <md-version>V2.2.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/createSelectorQuery/createSelectorQuery" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 ## 输入
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                component
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                自定义组件实例
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| component | object | 是 |  | 自定义组件实例 |
+
 
 ## 输出
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                selectorQuery
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                [SelectorQuery](/document/uYjL24iN/uUjN24SN2YjL1YjN/selectorquery/selectorquery) 实例
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| selectorQuery | object | [SelectorQuery](/document/uYjL24iN/uUjN24SN2YjL1YjN/selectorquery/selectorquery) 实例 |
+
 
 ## 示例代码
 :::html

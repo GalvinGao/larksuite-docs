@@ -33,43 +33,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 onFieldAdd((event) => {})
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 100px;">
-    <col style="width: 400px">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>event</md-td>
-        <md-td>
-        ```js
-{
-  "name": string,
-  "type": string,
-  "data": {
-    "tableId": string,
-    "fieldId": string,
-    "fieldType": number
-  },
-}
-        </md-td>
-        <md-td>否</md-td>
-        <md-td>新增字段的相关信息</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| event | <code>{<br>  "name": string,<br>  "type": string,<br>  "data": {<br>    "tableId": string,<br>    "fieldId": string,<br>    "fieldType": number<br>  },<br>}</code> | 否 | 新增字段的相关信息 |
+
 
 
 ## 输出

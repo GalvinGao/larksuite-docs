@@ -20,56 +20,13 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugTN4YjL4UDO24CO1gjN
 
 ## 使用限制
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">维度</md-th>
-<md-th style="width:75%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 维度 | 说明 |
+| --- | --- |
+| 客户端版本 | 支持 NFC 读写（即手机作为读卡器使用）能力的Lark版本范围如下：<br>- Android 端：Lark客户端 V3.38 及以上版本。<br>- iOS 端：Lark客户端 V5.25.0 及以上版本。 |
+| 读写模式 | 支持 Reader/Writer（读取器/写入器）模式，即支持 NFC 设备读取、写入被动 NFC 标签和贴纸。 |
+| 适用机型 | - iPhone：iPhone 7 及以后推出的、搭载 iOS 13.0 及以上系统的手机。<br>- Android：支持 NFC 功能，且系统版本为 Android 5.0 及以上的手机。 |
+| 适用范围 | - Android：<br>- 支持 NFC-A (ISO 14443-3A) 标准的读写。<br>- 支持 NFC-V (ISO 15693) 标准的读写（V5.14.0+）。<br>- （部分 Android 手机）支持 MIFARE Classic/MIFARE Ultralight 标签的读写。<br>- 支持对 NDEF 格式的 NFC 标签上的 NDEF 数据的读写。<br>- iOS：支持 NFC-A (ISO 14443-3A) 标准的读写（V5.25.0+）。 |
 
-<md-tr>
-<md-td>客户端版本</md-td>
-<md-td>
-支持 NFC 读写（即手机作为读卡器使用）能力的Lark版本范围如下：
-
-- Android 端：Lark客户端 V3.38 及以上版本。
-- iOS 端：Lark客户端 V5.25.0 及以上版本。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>读写模式</md-td>
-<md-td>支持 Reader/Writer（读取器/写入器）模式，即支持 NFC 设备读取、写入被动 NFC 标签和贴纸。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>适用机型</md-td>
-<md-td>
-- iPhone：iPhone 7 及以后推出的、搭载 iOS 13.0 及以上系统的手机。
-- Android：支持 NFC 功能，且系统版本为 Android 5.0 及以上的手机。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>适用范围</md-td>
-<md-td>
-- Android：
-	
-	- 支持 NFC-A (ISO 14443-3A) 标准的读写。
-	- 支持 NFC-V (ISO 15693) 标准的读写（V5.14.0+）。
-	- （部分 Android 手机）支持 MIFARE Classic/MIFARE Ultralight 标签的读写。
-	- 支持对 NDEF 格式的 NFC 标签上的 NDEF 数据的读写。
-
-- iOS：支持 NFC-A (ISO 14443-3A) 标准的读写（V5.25.0+）。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 基本步骤
 

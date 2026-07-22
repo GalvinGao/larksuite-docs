@@ -73,64 +73,14 @@ source_url: https://open.larksuite.com/document/home/introduction-to-scope-and-a
     
 ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/98c8a03d7d08ec8c376299e3deb8f772_IIRnPBRcon.png?height=854&lazyload=true&maxWidth=600&width=2282)
     
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:40%">配置项</md-th>
-<md-th style="width:60%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>允许不在可用范围内的成员申请使用应用</md-td>
-<md-td>
-	
-如果应用管理规则中开启了 **允许成员申请使用没有权限的应用** 功能，则你可以在此处选择勾选复选框。开启后没有应用可用权限的成员，可通过分享链接等方式申请使用应用。
-  
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/86f65a5d50882fc620d8c70dba6ebd0d_Ew6FI97cU0.png?height=1418&lazyload=true&maxWidth=500&width=2164)
-  
-</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>展示规则</md-td>
-<md-td>勾选后应用将在客户端应用中心中展示。</md-td>
-</md-tr>
+| 配置项 | 说明 |
+| --- | --- |
+| 允许不在可用范围内的成员申请使用应用 | 如果应用管理规则中开启了 **允许成员申请使用没有权限的应用** 功能，则你可以在此处选择勾选复选框。开启后没有应用可用权限的成员，可通过分享链接等方式申请使用应用。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/86f65a5d50882fc620d8c70dba6ebd0d_Ew6FI97cU0.png?height=1418&lazyload=true&maxWidth=500&width=2164) |
+| 展示规则 | 勾选后应用将在客户端应用中心中展示。 |
+| 可用成员 | 点击 **配置**，手动调整应用的可用范围。<br>- **全部成员**：选择后，该应用在企业内全员可用。<br>- **部分成员**：选择后，你需要手动选择企业下的部门或成员范围，后续仅选中的部门或成员可用该应用。 |
+| 禁用成员 | 点击 **配置**，手动设置禁用范围，在禁用范围内的成员不可使用该应用。<br>:::note<br>- 同时配置了可用成员和禁用成员时，禁用成员的配置优先级高于可用成员。例如：可用成员和禁用成员的范围内存在相同的成员，则该成员禁用当前应用。<br>- 如果某一成员是当前应用的所有者，即便被管理员加入禁用成员范围内，也仍然能使用该应用。 |
 
-<md-tr>
-<md-td>可用成员</md-td>
-<md-td>
-	
-点击 **配置**，手动调整应用的可用范围。
-
-- **全部成员**：选择后，该应用在企业内全员可用。
-
-- **部分成员**：选择后，你需要手动选择企业下的部门或成员范围，后续仅选中的部门或成员可用该应用。
-	
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>禁用成员</md-td>
-<md-td>
-	
-点击 **配置**，手动设置禁用范围，在禁用范围内的成员不可使用该应用。
-
-:::note
-
-- 同时配置了可用成员和禁用成员时，禁用成员的配置优先级高于可用成员。例如：可用成员和禁用成员的范围内存在相同的成员，则该成员禁用当前应用。
-
-- 如果某一成员是当前应用的所有者，即便被管理员加入禁用成员范围内，也仍然能使用该应用。
-
-	
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 为商店应用配置可用范围
 
@@ -138,38 +88,12 @@ source_url: https://open.larksuite.com/document/home/introduction-to-scope-and-a
 
 如果你是应用开发者，在发布应用时，可以通过不同发布方式设置应用的可用范围。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">应用上架类型</md-th>
-<md-th style="width:40%">应用可见范围</md-th>
-<md-th style="width:30%">应用安装方式</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>全量上架</md-td>
-<md-td>所有Lark用户（Lark个人版和团队版租户）</md-td>
-<md-td>在应用中心中安装</md-td>
-</md-tr>
+| 应用上架类型 | 应用可见范围 | 应用安装方式 |
+| --- | --- | --- |
+| 全量上架 | 所有Lark用户（Lark个人版和团队版租户） | 在应用中心中安装 |
+| 非公开上架 | 所有Lark用户（Lark个人版和团队版租户） | 获得安装链接的用户 |
+| 定向上架 | 应用灰度可见范围内的Lark用户（Lark团队版租户，上限为 30 个租户） | 在应用中心中安装 |
 
-<md-tr>
-<md-td>非公开上架</md-td>
-<md-td>所有Lark用户（Lark个人版和团队版租户）</md-td>
-<md-td>获得安装链接的用户</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>定向上架</md-td>
-<md-td>应用灰度可见范围内的Lark用户（Lark团队版租户，上限为 30 个租户）</md-td>
-<md-td>在应用中心中安装</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 :::note
 关于发布商店应用的详细说明，参见[七、发布商店应用](/document/uMzNwEjLzcDMx4yM3ATM/uYjMyUjL2IjM14iNyITN)。
@@ -185,59 +109,12 @@ source_url: https://open.larksuite.com/document/home/introduction-to-scope-and-a
     
 ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/e3742f0fa1ef5c2940f3d0bc0f1d097a_1elCe17siI.png?height=1038&lazyload=true&maxWidth=600&width=2338)
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:40%">配置项</md-th>
-<md-th style="width:60%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>允许不在可用范围内的成员申请使用应用</md-td>
-<md-td>
-	
-如果应用管理规则中开启了 **允许成员申请使用没有权限的应用** 功能，则你可以在此处选择勾选复选框。开启后没有应用可用权限的成员，可通过分享链接等方式申请使用应用。
-  
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/86f65a5d50882fc620d8c70dba6ebd0d_Ew6FI97cU0.png?height=1418&lazyload=true&maxWidth=500&width=2164)
-  
-</md-td>
-</md-tr>
+| 配置项 | 说明 |
+| --- | --- |
+| 允许不在可用范围内的成员申请使用应用 | 如果应用管理规则中开启了 **允许成员申请使用没有权限的应用** 功能，则你可以在此处选择勾选复选框。开启后没有应用可用权限的成员，可通过分享链接等方式申请使用应用。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/86f65a5d50882fc620d8c70dba6ebd0d_Ew6FI97cU0.png?height=1418&lazyload=true&maxWidth=500&width=2164) |
+| 可用成员 | 点击 **配置**，手动调整应用的可用范围。<br>- **全部成员**：选择后，该应用在企业内全员可用。<br>- **部分成员**：选择后，你需要手动选择企业下的部门或成员范围，后续仅选中的部门或成员可用该应用。 |
+| 禁用成员 | 点击 **配置**，手动设置禁用范围，在禁用范围内的成员不可使用该应用。<br>:::note<br>- 同时配置了可用成员和禁用成员时，禁用成员的配置优先级高于可用成员。例如：可用成员和禁用成员的范围内存在相同的成员，则该成员禁用当前应用。<br>- 如果某一成员是当前应用的所有者，即便被管理员加入禁用成员范围内，也仍然能使用该应用。 |
 
-<md-tr>
-<md-td>可用成员</md-td>
-<md-td>
-	
-点击 **配置**，手动调整应用的可用范围。
-
-- **全部成员**：选择后，该应用在企业内全员可用。
-
-- **部分成员**：选择后，你需要手动选择企业下的部门或成员范围，后续仅选中的部门或成员可用该应用。
-	
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>禁用成员</md-td>
-<md-td>
-	
-点击 **配置**，手动设置禁用范围，在禁用范围内的成员不可使用该应用。
-
-:::note
-
-- 同时配置了可用成员和禁用成员时，禁用成员的配置优先级高于可用成员。例如：可用成员和禁用成员的范围内存在相同的成员，则该成员禁用当前应用。
-
-- 如果某一成员是当前应用的所有者，即便被管理员加入禁用成员范围内，也仍然能使用该应用。
-
-	
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 常见问题
 

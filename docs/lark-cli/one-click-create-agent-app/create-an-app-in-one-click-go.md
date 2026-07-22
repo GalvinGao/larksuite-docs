@@ -88,84 +88,18 @@ func RegisterApp(ctx context.Context, opts *Options) (*RegisterAppResult, error)
 
 `Options` 结构体字段如下：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">参数</md-th>
-      <md-th style="width: 38%;">描述</md-th>
-      <md-th style="width: 18%;">类型</md-th>
-      <md-th style="width: 18%;">必填</md-th>
-      <md-th style="width: 24%;">默认</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Domain</md-td>
-      <md-td>自定义Lark认证域名（需包含协议前缀）</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td><code>https://accounts.larksuite.com</code></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>LarkDomain</md-td>
-      <md-td>自定义 Lark 认证域名（需包含协议前缀），检测到 Lark 租户时自动切换</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td><code>https://accounts.larksuite.com</code></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>Source</md-td>
-      <md-td>来源标识，拼入二维码 URL 的 <code>source</code> 参数，格式为 <code>go-sdk/{Source}</code></md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>OnQRCode</md-td>
-      <md-td>验证链接就绪时的回调，参数为 <code>*QRCodeInfo</code>。可将 URL 渲染为二维码供用户扫码，或直接作为链接展示</md-td>
-      <md-td>func(*QRCodeInfo)</md-td>
-      <md-td>是</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>OnStatusChange</md-td>
-      <md-td>轮询状态变化时的回调，参数为 <code>*StatusChangeInfo</code>。status 取值：<code>polling</code>、<code>slow_down</code>、<code>domain_switched</code></md-td>
-      <md-td>func(*StatusChangeInfo)</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>AppPreset</md-td>
-      <md-td>预设应用信息，仅用于初始化创建页；用户仍可在页面修改，最终以页面提交为准。</md-td>
-      <md-td>*registration.AppPreset</md-td>
-      <md-td>否 </md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>AppPreset.Avatar</md-td>
-      <md-td>应用头像 URL，支持 1-6 个；第一个默认选中。传原始 URL，SDK 会编码。头像展示、图片可访问性、GIF 取帧等由创建页处理。 </md-td>
-      <md-td>[]string</md-td>
-      <md-td>否 </md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>AppPreset.Name</md-td>
-      <md-td>应用名称，支持 <code>{user}</code> 占位符；传原始值，SDK 会编码。</md-td>
-      <md-td>string</md-td>
-      <md-td>否 </md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>AppPreset.Desc</md-td>
-      <md-td>应用描述，支持 <code>{user}</code> 占位符；传原始值，SDK 会编码。 </md-td>
-      <md-td>string</md-td>
-      <md-td>否 </md-td>
-      <md-td>-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 参数 | 描述 | 类型 | 必填 | 默认 |
+| --- | --- | --- | --- | --- |
+| Domain | 自定义Lark认证域名（需包含协议前缀） | string | 否 | <code>https://accounts.larksuite.com</code> |
+| LarkDomain | 自定义 Lark 认证域名（需包含协议前缀），检测到 Lark 租户时自动切换 | string | 否 | <code>https://accounts.larksuite.com</code> |
+| Source | 来源标识，拼入二维码 URL 的 <code>source</code> 参数，格式为 <code>go-sdk/{Source}</code> | string | 否 | - |
+| OnQRCode | 验证链接就绪时的回调，参数为 <code>*QRCodeInfo</code>。可将 URL 渲染为二维码供用户扫码，或直接作为链接展示 | func(*QRCodeInfo) | 是 | - |
+| OnStatusChange | 轮询状态变化时的回调，参数为 <code>*StatusChangeInfo</code>。status 取值：<code>polling</code>、<code>slow_down</code>、<code>domain_switched</code> | func(*StatusChangeInfo) | 否 | - |
+| AppPreset | 预设应用信息，仅用于初始化创建页；用户仍可在页面修改，最终以页面提交为准。 | *registration.AppPreset | 否 | - |
+| AppPreset.Avatar | 应用头像 URL，支持 1-6 个；第一个默认选中。传原始 URL，SDK 会编码。头像展示、图片可访问性、GIF 取帧等由创建页处理。 | []string | 否 | - |
+| AppPreset.Name | 应用名称，支持 <code>{user}</code> 占位符；传原始值，SDK 会编码。 | string | 否 | - |
+| AppPreset.Desc | 应用描述，支持 <code>{user}</code> 占位符；传原始值，SDK 会编码。 | string | 否 | - |
+
 
 此外，第一个参数 `ctx context.Context` 可用于控制超时和取消操作。例如通过 `context.WithTimeout` 设置超时时间，或通过 `context.WithCancel` 取消轮询。
 

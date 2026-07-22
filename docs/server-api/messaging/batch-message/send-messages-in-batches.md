@@ -33,89 +33,22 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/ucDO1EjL3gTNx4yN4UT
 :::
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/message/v4/batch_send/</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-   <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-   </md-tr>
 
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/message/v4/batch_send/ |
+| HTTP Method | POST |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一必选权限即可<br>根据发送目标申请相应可选权限</div> | <md-perm name="im:message" desc="获取与发送单聊、群组消息（必选）" support_app_types="custom,isv" tags="">获取与发送单聊、群组消息</md-perm><br><md-perm name="im:message:send_as_bot" desc="以应用的身份发消息（必选）" support_app_types="custom,isv" tags="">获取与发送单聊、群组消息</md-perm><br><md-perm name="im:message:send_multi_users" desc="给多个用户批量发消息（可选）" support_app_types="custom,isv" tags="">给多个用户批量发消息</md-perm><br><md-perm name="im:message:send_multi_depts" desc="给一个或多个部门的成员批量发消息（可选）" support_app_types="custom,isv" tags="">给一个或多个部门的成员批量发消息</md-perm> |
 
-    
-    
-    <md-tr>
-      <md-th>
-权限要求
- <md-tooltip type="info">调用该 API 所需的权限。</md-tooltip>
-<div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一必选权限即可<br>根据发送目标申请相应可选权限</div>
-</md-th>
-      <md-td>
-<md-perm name="im:message" desc="获取与发送单聊、群组消息（必选）" support_app_types="custom,isv" tags="">获取与发送单聊、群组消息</md-perm>
-<md-perm name="im:message:send_as_bot" desc="以应用的身份发消息（必选）" support_app_types="custom,isv" tags="">获取与发送单聊、群组消息</md-perm>  
-<md-perm name="im:message:send_multi_users" desc="给多个用户批量发消息（可选）" support_app_types="custom,isv" tags="">给多个用户批量发消息</md-perm>
-<md-perm name="im:message:send_multi_depts" desc="给一个或多个部门的成员批量发消息（可选）" support_app_types="custom,isv" tags="">给一个或多个部门的成员批量发消息</md-perm>
-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 ### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 
 
 ### 请求体

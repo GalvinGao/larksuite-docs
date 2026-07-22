@@ -76,209 +76,38 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 表单容器各字段说明如下表所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段名称</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 15%;">默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>表单容器的标签。固定值为 `form`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>name</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>无</md-td>
-      <md-td>表单容器的唯一标识。用于识别用户提交的数据属于哪个表单容器。在同一张卡片内，该字段的值全局唯一。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>elements</md-td>
-      <md-td>是</md-td>
-      <md-td>Array&lt;element&gt;</md-td>
-      <md-td>[]</md-td>
-      <md-td>表单容器的子节点。可内嵌其它容器类组件和展示、交互组件，不支持内嵌表格、图表、和表单容器组件。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>无</md-td>
-      <md-td>表单容器内必须包含的、用于提交表单的按钮组件。固定取值 `button`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ action_type</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>无</md-td>
-      <md-td>用于提交表单的按钮组件的交互类型。固定取值 `form_submit`，表示提交表单。</md-td>
-    </md-tr><md-tr>
-      <md-td>└ name</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>无</md-td>
-      <md-td>用于提交表单的按钮组件的唯一标识，用于识别用户在交互后，点击的是哪个按钮。在表单容器中所有的交互组件中，该字段必填，否则数据会发送失败。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ text</md-td>
-      <md-td>否</md-td>
-      <md-td>Struct</md-td>
-      <md-td>空</md-td>
-      <md-td>用于提交表单的按钮上的文本。</md-td>
-    </md-tr><md-tr>
-      <md-td>└ └ tag</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>无</md-td>
-      <md-td>文本的标签。固定值为 `lark_md`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>请输入</md-td>
-      <md-td>文本的内容，最多支持 100 个字符。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ type</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>default</md-td>
-      <md-td>按钮的类型。可选值：
-- **default**：黑色字体按钮，有边框
-- **primary**：蓝色字体按钮，有边框
-- **danger**：红色字体按钮，有边框
-- **text**：黑色字体按钮，无边框
-- **primary_text**：蓝色字体按钮，无边框
-- **danger_text**：红色字体按钮，无边框
-- **primary_filled**：蓝底白字按钮
-- **danger_filled**：红底白字按钮
-- **laser**：镭射按钮</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm</md-td>
-      <md-td>否</md-td>
-      <md-td>Struct</md-td>
-      <md-td>空</md-td>
-      <md-td>二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
 
-**注意**：`confirm` 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.title</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.title.tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.title.content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题的内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.text</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗的文本内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.text.tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>confirm.text.content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗文本的具体内容。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 表单容器的标签。固定值为 `form`。 |
+| name | 是 | String | 无 | 表单容器的唯一标识。用于识别用户提交的数据属于哪个表单容器。在同一张卡片内，该字段的值全局唯一。 |
+| elements | 是 | Array&lt;element&gt; | [] | 表单容器的子节点。可内嵌其它容器类组件和展示、交互组件，不支持内嵌表格、图表、和表单容器组件。 |
+| └ tag | 是 | String | 无 | 表单容器内必须包含的、用于提交表单的按钮组件。固定取值 `button`。 |
+| └ action_type | 是 | String | 无 | 用于提交表单的按钮组件的交互类型。固定取值 `form_submit`，表示提交表单。 |
+| └ name | 是 | String | 无 | 用于提交表单的按钮组件的唯一标识，用于识别用户在交互后，点击的是哪个按钮。在表单容器中所有的交互组件中，该字段必填，否则数据会发送失败。 |
+| └ text | 否 | Struct | 空 | 用于提交表单的按钮上的文本。 |
+| └ └ tag | 否 | String | 无 | 文本的标签。固定值为 `lark_md`。 |
+| └ └ content | 是 | String | 请输入 | 文本的内容，最多支持 100 个字符。 |
+| └ type | 否 | String | default | 按钮的类型。可选值：<br>- **default**：黑色字体按钮，有边框<br>- **primary**：蓝色字体按钮，有边框<br>- **danger**：红色字体按钮，有边框<br>- **text**：黑色字体按钮，无边框<br>- **primary_text**：蓝色字体按钮，无边框<br>- **danger_text**：红色字体按钮，无边框<br>- **primary_filled**：蓝底白字按钮<br>- **danger_filled**：红底白字按钮<br>- **laser**：镭射按钮 |
+| confirm | 否 | Struct | 空 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br>**注意**：`confirm` 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| confirm.title | 是 | Struct | / | 二次确认弹窗标题。 |
+| confirm.title.tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| confirm.title.content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| confirm.text | 是 | Struct | / | 二次确认弹窗的文本内容。 |
+| confirm.text.tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| confirm.text.content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
 
-:::
 
 ### 扩展字段说明
 
 内嵌在表单容器中的交互组件，新增 `name`、`required`、和 `action_type` 属性。详细说明如下表所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 10%;">属性名称</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 10%;">类型</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th style="width: 60%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>name</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        表单容器内组件的唯一标识。用于识别用户提交的数据属于哪个组件。<br>
+| 属性名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | 是 | String | 空 | 表单容器内组件的唯一标识。用于识别用户提交的数据属于哪个组件。<br><strong>注意</strong>：该字段必填且需在卡片全局内唯一。 |
+| required | 否 | Boolean | false | 组件的内容是否必填。当组件内嵌在表单容器中时，该属性生效。可取值：<br>- <strong>true</strong>：必填。当用户点击表单容器的“提交”时，未填写该组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- <strong>false</strong>：选填。当用户点击表单容器的“提交”时，未填写该组件，仍提交表单容器中的数据。 |
+| action_type | 是 | String | 空 | 内嵌在表单容器中的按钮的交互类型。枚举值包括：<br>- <code>link</code>：当前按钮仅支持链接跳转</li><br><li><code>request</code>：当前按钮仅支持回传交互</li><br><li><code>multi</code>：当前按钮同时支持链接跳转和回传交互</li><br><li><code>form_submit</code>：将当前按钮与提交事件绑定。用户点击后，将触发表单容器的提交事件，异步提交所有已填写的表单项内容</li><br><li><code>form_reset</code>：将当前按钮与取消提交事件绑定。用户点击后，将触发表单容器的取消提交事件，重置所有表单组件的输入值为初始值</li> |
 
-<strong>注意</strong>：该字段必填且需在卡片全局内唯一。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>required</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        组件的内容是否必填。当组件内嵌在表单容器中时，该属性生效。可取值：
-
-- <strong>true</strong>：必填。当用户点击表单容器的“提交”时，未填写该组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
-
-- <strong>false</strong>：选填。当用户点击表单容器的“提交”时，未填写该组件，仍提交表单容器中的数据。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>action_type</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        内嵌在表单容器中的按钮的交互类型。枚举值包括：
-
-- <code>link</code>：当前按钮仅支持链接跳转</li>
-          <li><code>request</code>：当前按钮仅支持回传交互</li>
-          <li><code>multi</code>：当前按钮同时支持链接跳转和回传交互</li>
-          <li><code>form_submit</code>：将当前按钮与提交事件绑定。用户点击后，将触发表单容器的提交事件，异步提交所有已填写的表单项内容</li>
-          <li><code>form_reset</code>：将当前按钮与取消提交事件绑定。用户点击后，将触发表单容器的取消提交事件，重置所有表单组件的输入值为初始值</li>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 ## 回调结构
 

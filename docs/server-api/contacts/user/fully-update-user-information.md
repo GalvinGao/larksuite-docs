@@ -39,96 +39,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/contact/v3/users/:user_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>PUT</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm>
-        <md-perm name="contact:user.base:readonly" desc="获取用户基本信息" support_app_types="custom,isv" tags="">获取用户基本信息</md-perm>
-        <md-perm name="contact:user.department:readonly" desc="获取用户组织架构信息" support_app_types="custom,isv" tags="">获取用户组织架构信息</md-perm>
-        <md-perm name="contact:user.employee:readonly" desc="获取用户雇佣信息" support_app_types="custom,isv" tags="">获取用户雇佣信息</md-perm>
-        <md-perm name="contact:user.gender:readonly" desc="获取用户性别" support_app_types="custom,isv" tags="">获取用户性别</md-perm>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-        <md-perm name="contact:user.email:readonly" desc="获取用户邮箱信息" support_app_types="custom" tags="">获取用户邮箱信息</md-perm>
-        <md-perm name="contact:user.phone:readonly" desc="获取用户手机号" support_app_types="custom" tags="">获取用户手机号</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/contact/v3/users/:user_id |
+| HTTP Method | PUT |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm><br><md-perm name="contact:user.base:readonly" desc="获取用户基本信息" support_app_types="custom,isv" tags="">获取用户基本信息</md-perm><br><md-perm name="contact:user.department:readonly" desc="获取用户组织架构信息" support_app_types="custom,isv" tags="">获取用户组织架构信息</md-perm><br><md-perm name="contact:user.employee:readonly" desc="获取用户雇佣信息" support_app_types="custom,isv" tags="">获取用户雇佣信息</md-perm><br><md-perm name="contact:user.gender:readonly" desc="获取用户性别" support_app_types="custom,isv" tags="">获取用户性别</md-perm><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm><br><md-perm name="contact:user.email:readonly" desc="获取用户邮箱信息" support_app_types="custom" tags="">获取用户邮箱信息</md-perm><br><md-perm name="contact:user.phone:readonly" desc="获取用户手机号" support_app_types="custom" tags="">获取用户手机号</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -1892,628 +1818,86 @@ ID值与查询参数中的department_id_type 对应。
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40001</md-td>
-  <md-td>param error</md-td>
-  <md-td>参数错误。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 40001 | param error | 参数错误。 |
+| 400 | 40016 | dept name can not be nul error | 部门名不能为空。 |
+| 400 | 41001 | mobile has already exist error | 手机号已存在 |
+| 400 | 41002 | email has already exist error | 邮箱已存在 |
+| 409 | 41003 | user account conflict error | 用户的联系方式属于两个不同的Lark账号，添加失败。建议用户换其它的手机号或邮箱，或是先注销手机号或邮箱对应的帐号，然后再创建或更新，具体注销的流程见[帮助中心](https://www.larksuite.com/hc/zh-CN/articles/360048488018) |
+| 400 | 41004 | mobile is invalid error | 手机号不合法，请检查是否是正确的手机号格式 |
+| 400 | 41005 | email is invalid error | 不是合法邮箱的邮箱地址，请检查邮箱地址的有效性 |
+| 400 | 41006 | no user name error | 没有设置user的name |
+| 400 | 41009 | no email or mobile error | 电子邮箱和手机号不能都为空。 |
+| 400 | 41011 | userID already exist error | user_id是企业内用户的唯一ID，不能重复 |
+| 400 | 41010 | no mobile error | 手机号不能为空。 |
+| 400 | 41014 | user name sensitive error | name中包含敏感信息，如有疑问，请联系客服 |
+| 400 | 41013 | exceed userID update limit error | 用户ID更新次数超过限制。 |
+| 400 | 41015 | idp type invalid error error | 登录类型无效。 |
+| 400 | 41016 | department has too many users  error | 一个部门中有过多的用户，用户数量超过了500 |
+| 400 | 41017 | department is required error | 部门信息不能为空 |
+| 400 | 41018 | position info is invalid error | 岗位信息无效 |
+| 400 | 41019 | position department is invalid error | 岗位部门无效 |
+| 400 | 41020 | position code has already exist  error | 岗位code无效 |
+| 400 | 41021 | position multiple main count error | 一个用户至多只能有设置一个主岗 |
+| 400 | 41022 | user tenant not match error | 检查是否使用其他企业的凭证访问当前企业的资源 |
+| 400 | 41023 | update department conflict position department error | 用户的岗位部门必须与用户的部门一致，更新用户部门需要同时更新相应的岗位部门，否则阻断更新操作 |
+| 400 | 41024 | update position department conflict department error | 用户的岗位部门必须与用户的部门一致，用户的新岗位部门也必须是用户的部门之一，否则阻断更新操作 |
+| 400 | 41025 | order department invalid error | 请求的用户排序信息中的部门ID必须是用户的部门ID之一 |
+| 405 | 41028 | user multi department need upgrade visibility error | 请在企业管理后台更新“组织架构可见范围”的补充规则 |
+| 400 | 41029 | create or update user multi department error | 当前企业不支持用户同时加入多个部门，如有疑问，请联系客服 |
+| 400 | 41030 | set leader to oneself error | 请检查用户的直属上级参数值 |
+| 504 | 41031 | position feature not enable error | 当前企业不支持设置用户岗位信息，如有疑问，请联系客服 |
+| 504 | 41032 | user multi department feature not enable error | 当前企业不支持用户同时加入多个部门，如有疑问，请联系客服 |
+| 400 | 41033 | user in too many departments  error | 不支持用户同时属于50个以上的部门，请检查 |
+| 400 | 41034 | email prefix already exist error | email的前缀已经存在 |
+| 400 | 41035 | email prefix is invalid error | email的前缀不合法，请检查拼写 |
+| 400 | 41036 | avatar key is invalid error | 头像key无效 |
+| 400 | 41037 | avatar key is sensitive error | 头像key存在敏感信息 |
+| 400 | 41038 | gender is invalid error | 性别不合法，请检查 |
+| 400 | 41040 | user name is null error | 用户名不能为空 |
+| 400 | 41041 | department id is not assigned  error | 用户所属的部门不能为空 |
+| 400 | 41042 | join time is invalid error | 用户加入时间不能为空 |
+| 400 | 41043 | employee id is invalid error | 无效的user id。 大小位于1-64个字节之间 |
+| 400 | 41044 | Custom attribute is not set error | 设置用户自定义字段，必须指明设定的字段ID，字段ID可以通过获取企业自定义字段接口查询 |
+| 400 | 41045 | Custom attribute id is not exist error | 自定义字段ID不存在，请确认自定义字段ID来源，自定义字段ID可以通过获取企业自定义字段接口查询 |
+| 400 | 41046 | Custom attribute value is not set error | 设置自定义字段，需要传入字段value字段 |
+| 400 | 41047 | Custom attribute href text  is null error | 设置HREF类型自定义字段，text字段为必填字段 |
+| 400 | 41048 | Custom attribute href url  is null error | 设置HREF类型自定义字段，url字段为必填字段 |
+| 400 | 41050 | no user authority error | 操作的用户需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority) |
+| 400 | 41051 | user id info not provide error | 用户ID没有填写 |
+| 403 | 40004 | no dept authority error | 操作的部门需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority) |
+| 400 | 41059 | invalid employee type error | 用户的雇员类型错误，请填写1-5之间的数字，1 正式员工 2 实习生 3 外包 4 劳务 5 顾问 |
+| 400 | 41060 | inactive employee type error | 雇员类型企业未使用，请咨询管理员 |
+| 400 | 41063 | job_title length exceed 100 character | 职务的设置长度超过100字符，请检查字段长度 |
+| 400 | 41068 | Number of email aliases exceeds the upper limit | 企业邮箱账户已经达到上线，请咨询企业管理员 |
+| 400 | 41069 | Business email is in the recycle bin | 企业邮正在回收中，不可使用 |
+| 400 | 41070 | name length exceed 64 character | 姓名长度超过64个字符 |
+| 400 | 41071 | en_name length exceed 64 character | 英文名长度超过64个字符 |
+| 400 | 41072 | nickname length exceed 64 character | 别名长度超过64个字符 |
+| 400 | 44001 | business email domain not available error | 企业无对应的企业邮域名，咨询企业管理员 |
+| 400 | 44002 | update order must update department together | - |
+| 400 | 44006 | name length exceed 64 character | 姓名超过64个字符 |
+| 400 | 44007 | en_name length exceed 64 character | 英文名超过64个字符 |
+| 400 | 44008 | nickname length exceed 64 character | 别名超过64个字符 |
+| 400 | 44010 | unJoined user not allow to update | - |
+| 400 | 44011 | existed user not allow to update | - |
+| 400 | 42006 | user has resigned error | 用户已经离职。 |
+| 400 | 44013 | User enterprise Email password is not valid | - |
+| 400 | 44014 | Can not update inactive user email when email equal enterprise | - |
+| 400 | 44015 | can not update password when user already have password | - |
+| 400 | 44016 | can not set enterprise email password | - |
+| 400 | 44017 | Suite_Admin_Common_UnableToEditUpper | 修改失败，已达单个用户联系方式可修改次数上限 |
+| 400 | 44018 | lark not support +86 mobile | 不支持添加+86手机号 |
+| 400 | 44019 | - | - |
+| 400 | 44020 | - | - |
+| 400 | 44024 | User enterprise email has already been registered as a member's account | 用户的邮箱已经被注册 |
+| 400 | 44025 | update user lock error, wait some seconds and retry | 请稍等后重试 |
+| 400 | 44035 | departmentID is invaild | 部门ID不可用，请修改 |
+| 400 | 44036 | freeze tenant founder is forbidden | 此用户因安全问题无法更新 |
+| 400 | 44038 | this user can not been update by security issues | 请求中的geo不在geolist内 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40016</md-td>
-  <md-td>dept name can not be nul error</md-td>
-  <md-td>部门名不能为空。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41001</md-td>
-  <md-td>mobile has already exist error</md-td>
-  <md-td>手机号已存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41002</md-td>
-  <md-td>email has already exist error</md-td>
-  <md-td>邮箱已存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>409</md-td>
-  <md-td>41003</md-td>
-  <md-td>user account conflict error</md-td>
-  <md-td>用户的联系方式属于两个不同的Lark账号，添加失败。建议用户换其它的手机号或邮箱，或是先注销手机号或邮箱对应的帐号，然后再创建或更新，具体注销的流程见[帮助中心](https://www.larksuite.com/hc/zh-CN/articles/360048488018)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41004</md-td>
-  <md-td>mobile is invalid error</md-td>
-  <md-td>手机号不合法，请检查是否是正确的手机号格式</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41005</md-td>
-  <md-td>email is invalid error</md-td>
-  <md-td>不是合法邮箱的邮箱地址，请检查邮箱地址的有效性</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41006</md-td>
-  <md-td>no user name error</md-td>
-  <md-td>没有设置user的name</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41009</md-td>
-  <md-td>no email or mobile error</md-td>
-  <md-td>电子邮箱和手机号不能都为空。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41011</md-td>
-  <md-td>userID already exist error</md-td>
-  <md-td>user_id是企业内用户的唯一ID，不能重复</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41010</md-td>
-  <md-td>no mobile error</md-td>
-  <md-td>手机号不能为空。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41014</md-td>
-  <md-td> user name sensitive error</md-td>
-  <md-td>name中包含敏感信息，如有疑问，请联系客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41013</md-td>
-  <md-td>exceed userID update limit error</md-td>
-  <md-td>用户ID更新次数超过限制。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41015</md-td>
-  <md-td>idp type invalid error error</md-td>
-  <md-td>登录类型无效。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41016</md-td>
-  <md-td>department has too many users  error</md-td>
-  <md-td>一个部门中有过多的用户，用户数量超过了500</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41017</md-td>
-  <md-td>department is required error</md-td>
-  <md-td>部门信息不能为空</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41018</md-td>
-  <md-td>position info is invalid error</md-td>
-  <md-td>岗位信息无效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41019</md-td>
-  <md-td>position department is invalid error</md-td>
-  <md-td>岗位部门无效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41020</md-td>
-  <md-td>position code has already exist  error</md-td>
-  <md-td>岗位code无效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41021</md-td>
-  <md-td>position multiple main count error</md-td>
-  <md-td>一个用户至多只能有设置一个主岗</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41022</md-td>
-  <md-td>user tenant not match error</md-td>
-  <md-td>检查是否使用其他企业的凭证访问当前企业的资源</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41023</md-td>
-  <md-td>update department conflict position department error</md-td>
-  <md-td>用户的岗位部门必须与用户的部门一致，更新用户部门需要同时更新相应的岗位部门，否则阻断更新操作</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41024</md-td>
-  <md-td>update position department conflict department error</md-td>
-  <md-td>用户的岗位部门必须与用户的部门一致，用户的新岗位部门也必须是用户的部门之一，否则阻断更新操作</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41025</md-td>
-  <md-td>order department invalid error</md-td>
-  <md-td>请求的用户排序信息中的部门ID必须是用户的部门ID之一</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>405</md-td>
-  <md-td>41028</md-td>
-  <md-td>user multi department need upgrade visibility error</md-td>
-  <md-td>请在企业管理后台更新“组织架构可见范围”的补充规则</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41029</md-td>
-  <md-td>create or update user multi department error</md-td>
-  <md-td>当前企业不支持用户同时加入多个部门，如有疑问，请联系客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41030</md-td>
-  <md-td>set leader to oneself error</md-td>
-  <md-td>请检查用户的直属上级参数值</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>504</md-td>
-  <md-td>41031</md-td>
-  <md-td>position feature not enable error</md-td>
-  <md-td>当前企业不支持设置用户岗位信息，如有疑问，请联系客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>504</md-td>
-  <md-td>41032</md-td>
-  <md-td>user multi department feature not enable error</md-td>
-  <md-td>当前企业不支持用户同时加入多个部门，如有疑问，请联系客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41033</md-td>
-  <md-td>user in too many departments  error</md-td>
-  <md-td>不支持用户同时属于50个以上的部门，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41034</md-td>
-  <md-td>email prefix already exist error</md-td>
-  <md-td>email的前缀已经存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41035</md-td>
-  <md-td>email prefix is invalid error</md-td>
-  <md-td>email的前缀不合法，请检查拼写</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41036</md-td>
-  <md-td>avatar key is invalid error</md-td>
-  <md-td>头像key无效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41037</md-td>
-  <md-td>avatar key is sensitive error</md-td>
-  <md-td>头像key存在敏感信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41038</md-td>
-  <md-td>gender is invalid error</md-td>
-  <md-td>性别不合法，请检查</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41040</md-td>
-  <md-td>user name is null error</md-td>
-  <md-td>用户名不能为空</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41041</md-td>
-  <md-td>department id is not assigned  error</md-td>
-  <md-td>用户所属的部门不能为空</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41042</md-td>
-  <md-td>join time is invalid error</md-td>
-  <md-td>用户加入时间不能为空</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41043</md-td>
-  <md-td>employee id is invalid error</md-td>
-  <md-td>无效的user id。 大小位于1-64个字节之间</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41044</md-td>
-  <md-td>Custom attribute is not set error</md-td>
-  <md-td>设置用户自定义字段，必须指明设定的字段ID，字段ID可以通过获取企业自定义字段接口查询</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41045</md-td>
-  <md-td>Custom attribute id is not exist error</md-td>
-  <md-td>自定义字段ID不存在，请确认自定义字段ID来源，自定义字段ID可以通过获取企业自定义字段接口查询</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41046</md-td>
-  <md-td>Custom attribute value is not set error</md-td>
-  <md-td>设置自定义字段，需要传入字段value字段</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41047</md-td>
-  <md-td>Custom attribute href text  is null error</md-td>
-  <md-td>设置HREF类型自定义字段，text字段为必填字段</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41048</md-td>
-  <md-td>Custom attribute href url  is null error</md-td>
-  <md-td>设置HREF类型自定义字段，url字段为必填字段</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41050</md-td>
-  <md-td>no user authority error</md-td>
-  <md-td>操作的用户需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41051</md-td>
-  <md-td>user id info not provide error</md-td>
-  <md-td>用户ID没有填写</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>40004</md-td>
-  <md-td>no dept authority error</md-td>
-  <md-td>操作的部门需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41059</md-td>
-  <md-td>invalid employee type error</md-td>
-  <md-td>用户的雇员类型错误，请填写1-5之间的数字，1 正式员工 2 实习生 3 外包 4 劳务 5 顾问</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41060</md-td>
-  <md-td>inactive employee type error</md-td>
-  <md-td>雇员类型企业未使用，请咨询管理员</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41063</md-td>
-  <md-td>job_title length exceed 100 character</md-td>
-  <md-td>职务的设置长度超过100字符，请检查字段长度</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41068</md-td>
-  <md-td>Number of email aliases exceeds the upper limit</md-td>
-  <md-td>企业邮箱账户已经达到上线，请咨询企业管理员</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41069</md-td>
-  <md-td>Business email is in the recycle bin</md-td>
-  <md-td>企业邮正在回收中，不可使用</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41070</md-td>
-  <md-td>name length exceed 64 character</md-td>
-  <md-td>姓名长度超过64个字符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41071</md-td>
-  <md-td>en_name length exceed 64 character</md-td>
-  <md-td>英文名长度超过64个字符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41072</md-td>
-  <md-td>nickname length exceed 64 character</md-td>
-  <md-td>别名长度超过64个字符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44001</md-td>
-  <md-td>business email domain not available error</md-td>
-  <md-td>企业无对应的企业邮域名，咨询企业管理员</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44002</md-td>
-  <md-td>update order must update department together</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44006</md-td>
-  <md-td>name length exceed 64 character</md-td>
-  <md-td>姓名超过64个字符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44007</md-td>
-  <md-td>en_name length exceed 64 character</md-td>
-  <md-td>英文名超过64个字符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44008</md-td>
-  <md-td>nickname length exceed 64 character</md-td>
-  <md-td>别名超过64个字符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44010</md-td>
-  <md-td>unJoined user not allow to update</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44011</md-td>
-  <md-td>existed user not allow to update</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>42006</md-td>
-  <md-td>user has resigned error</md-td>
-  <md-td>用户已经离职。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44013</md-td>
-  <md-td>User enterprise Email password is not valid</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44014</md-td>
-  <md-td>Can not update inactive user email when email equal enterprise</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44015</md-td>
-  <md-td>can not update password when user already have password</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44016</md-td>
-  <md-td>can not set enterprise email password</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44017</md-td>
-  <md-td>Suite_Admin_Common_UnableToEditUpper</md-td>
-  <md-td>修改失败，已达单个用户联系方式可修改次数上限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44018</md-td>
-  <md-td>lark not support +86 mobile</md-td>
-  <md-td>不支持添加+86手机号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44019</md-td>
-  <md-td>-</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44020</md-td>
-  <md-td>-</md-td>
-  <md-td>-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44024</md-td>
-  <md-td>User enterprise email has already been registered as a member's account</md-td>
-  <md-td>用户的邮箱已经被注册</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44025</md-td>
-  <md-td>update user lock error, wait some seconds and retry</md-td>
-  <md-td>请稍等后重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44035</md-td>
-  <md-td>departmentID is invaild</md-td>
-  <md-td>部门ID不可用，请修改</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44036</md-td>
-  <md-td>freeze tenant founder is forbidden</md-td>
-  <md-td>此用户因安全问题无法更新</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44038</md-td>
-  <md-td>this user can not been update by security issues</md-td>
-  <md-td>请求中的geo不在geolist内</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

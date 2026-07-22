@@ -108,317 +108,43 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 输入框组件各字段说明如下表所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">名称</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th>类型</md-th>
-      <md-th>默认值</md-th>
-      <md-th style="width: 50%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        输入框的标签。固定值为 `input`。
-      </md-td>
-    </md-tr>
-    
-<md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-    
-    
-  <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-    
-    
-    <md-tr>
-      <md-td>name</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        输入框的唯一标识。当输入框内嵌在表单容器时，该属性生效，用于识别用户提交的文本属于哪个输入框。
 
-**注意**：当输入框组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>required</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        输入框的内容是否必填。当输入框内嵌在表单容器时，该属性可用。其它情况将报错或不生效。可取值：
-- true：输入框必填。当用户点击表单容器的“提交”时，未填写输入框，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
- - false：输入框选填。当用户点击表单容器的“提交”时，未填写输入框，仍提交表单容器中的数据。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>disabled</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        是否禁用该输入框。该属性仅支持Lark V7.4 及以上版本的客户端。可选值：
-- true：禁用输入框组件
-- false：输入框组件保持可用状态
-      </md-td>
-    </md-tr>
-    
-    
- <md-tr>
-      <md-td>disabled_tips</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-禁用整个组件后，用户将光标悬浮在整个组件上时展示的禁用提示文案。
-      </md-td>
-    </md-tr>
-    
-    
-    
-   <md-tr>
-      <md-td colspan="5" style="text-align: center;">└ tag</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>禁用提示文本的标签。固定值为 plain_text。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td colspan="5" style="text-align: center;">└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>请输入</md-td>
-      <md-td>禁用提示文本的内容。</md-td>
-    </md-tr> 
-    
-    
-    
-    
-    
-    <md-tr>
-      <md-td>placeholder</md-td>
-      <md-td>否</md-td>
-      <md-td>text 结构体</md-td>
-      <md-td>/</md-td>
-      <md-td>输入框中的占位文本。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td colspan="5" style="text-align: center;">└ tag</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>占位文本的标签。固定值为 plain_text。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td colspan="5" style="text-align: center;">└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>请输入</md-td>
-      <md-td>占位文本的内容，最多支持 100 个字符。例如：“请输入内容”。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>default_value</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>默认不生效此属性。</md-td>
-      <md-td>输入框中为用户预填写的内容。展示为用户在输入框中输入文本后待提交的样式。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>width</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>default</md-td>
-      <md-td>输入框的宽度。支持以下枚举值：
- - default：默认宽度
- - fill：卡片最大支持宽度
-- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示</md-td>
-    </md-tr>
-    
+| 名称 | 必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | 空 | 输入框的标签。固定值为 `input`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| margin | 否 | String | 0 | 组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| name | 否 | String | 空 | 输入框的唯一标识。当输入框内嵌在表单容器时，该属性生效，用于识别用户提交的文本属于哪个输入框。<br>**注意**：当输入框组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。 |
+| required | 否 | Boolean | false | 输入框的内容是否必填。当输入框内嵌在表单容器时，该属性可用。其它情况将报错或不生效。可取值：<br>- true：输入框必填。当用户点击表单容器的“提交”时，未填写输入框，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- false：输入框选填。当用户点击表单容器的“提交”时，未填写输入框，仍提交表单容器中的数据。 |
+| disabled | 否 | Boolean | false | 是否禁用该输入框。该属性仅支持Lark V7.4 及以上版本的客户端。可选值：<br>- true：禁用输入框组件<br>- false：输入框组件保持可用状态 |
+| disabled_tips | 否 | Object | 空 | 禁用整个组件后，用户将光标悬浮在整个组件上时展示的禁用提示文案。 |
+| └ tag | 否 | String | plain_text | 禁用提示文本的标签。固定值为 plain_text。 |
+| └ content | 否 | String | 请输入 | 禁用提示文本的内容。 |
+| placeholder | 否 | text 结构体 | / | 输入框中的占位文本。 |
+| └ tag | 否 | String | plain_text | 占位文本的标签。固定值为 plain_text。 |
+| └ content | 否 | String | 请输入 | 占位文本的内容，最多支持 100 个字符。例如：“请输入内容”。 |
+| default_value | 否 | String | 默认不生效此属性。 | 输入框中为用户预填写的内容。展示为用户在输入框中输入文本后待提交的样式。 |
+| width | 否 | String | default | 输入框的宽度。支持以下枚举值：<br>- default：默认宽度<br>- fill：卡片最大支持宽度<br>- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示 |
+| behaviors | 是 | Struct | / | 配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。 |
+| max_length | 否 | Number | 1,000 | 输入框可容纳的最大文本长度，可取 1~1,000 范围内的整数。当用户输入的文本字符数超过最大文本长度，组件将报错提示。 |
+| input_type | 否 | String | text | 指定输入框的输入类型。默认为 text，即文本类型。支持以下枚举值：<br>- text：普通文本<br>- multiline_text：多行文本，即可输入包含换行符的多行文本内容。换行符在回调中以 `\n` 返回<br>- password：密码。用户输入的文本内容将以“•”显示<br>**注意**：卡片搭建工具上暂不支持 `input_type` 属性。 |
+| show_icon | 否 | Boolean | true | 当输入类型为密码类型时，是否展示如下所示的前缀图标。仅当 `input_type` 为 password 时有效。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3cb2d826d9e86ce6e260b0e78c23c830_wWBdvVSdSu.png?height=74&lazyload=true&width=450) |
+| rows | 否 | Number | 5 | 当输入类型为多行文本时，输入框的默认展示行数。仅当 `input_type` 为 multiline_text 时有效。 |
+| auto_resize | 否 | Boolean | false | 当输入类型为多行文本时，输入框高度是否自适应文本高度。仅在 PC 端生效。仅当 `input_type` 为 multiline_text 时有效。可选值：<br>- `true`：输入框高度自适应输入框内的文本高度<br>- `false`：输入框高度固定为 `rows` 属性指定的高度，不随输入框中的内容变化而变化。 |
+| max_rows | 否 | Number | 空 | 输入框的最大展示行数。仅当 `auto_resize` 为 true 时有效。<br>注意：<br>- 取值为大于等于 1 的整数。否则，小于 1 则自动取 1，不为整数则四舍五入取整。<br>- 取值为空时不限制输入框的最大文本展示高度（默认值），但前端渲染时，输入框可展示的最大高度不超过 x 行。 |
+| label | 否 | text 结构体 | 默认不生效此属性。 | 文本标签，即对输入框的描述，用于提示用户要填写的内容。多用于表单容器中内嵌的输入框组件。 |
+| └ tag | 否 | String | plain_text | 输入框描述的标签。固定取值为 plain_text。 |
+| └ content | 否 | String | / | 描述的内容。 |
+| label_position | 否 | String | top | 文本标签的位置。可取值：<br>- top：文本标签位于输入框上方<br>- left：文本标签位于输入框左边<br>**注意**：<br>在移动端等窄屏幕场景下，文本标签将自适应固定展示在输入框上方。 |
+| value | 否 | String 或 Object | 空 | 历史属性。你可在交互事件中自定义回传数据，支持 string 或 object 数据类型。 |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br>**注意**：confirm 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| └ title | 是 | Struct | / | 二次确认弹窗标题。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 plain_text。 |
+| └ └ content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| └ text | 是 | Struct | / | 二次确认弹窗标题的内容。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 plain_text。 |
+| └ └ content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
 
-  
-   <md-tr>
-      <md-td>behaviors</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。</md-td>
-    </md-tr>
-  
-    
-    
-    <md-tr>
-      <md-td>max_length</md-td>
-      <md-td>否</md-td>
-      <md-td>Number</md-td>
-      <md-td>1,000</md-td>
-      <md-td>输入框可容纳的最大文本长度，可取 1~1,000 范围内的整数。当用户输入的文本字符数超过最大文本长度，组件将报错提示。</md-td>
-    </md-tr>
-    
-   <md-tr>
-    <md-td>input_type</md-td>
-    <md-td>否</md-td>
-    <md-td>String</md-td>
-    <md-td>text</md-td>
-    <md-td>指定输入框的输入类型。默认为 text，即文本类型。支持以下枚举值：
-- text：普通文本
-- multiline_text：多行文本，即可输入包含换行符的多行文本内容。换行符在回调中以 `\n` 返回
-- password：密码。用户输入的文本内容将以“•”显示
-      
-**注意**：卡片搭建工具上暂不支持 `input_type` 属性。
-</md-td>
-</md-tr>
-<md-tr>
-    <md-td>show_icon</md-td>
-    <md-td>否</md-td>
-    <md-td>Boolean</md-td>
-    <md-td>true</md-td>
-    <md-td>当输入类型为密码类型时，是否展示如下所示的前缀图标。仅当 `input_type` 为 password 时有效。
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3cb2d826d9e86ce6e260b0e78c23c830_wWBdvVSdSu.png?height=74&lazyload=true&width=450)</md-td>
-</md-tr>
-<md-tr>
-    <md-td>rows</md-td>
-    <md-td>否</md-td>
-    <md-td>Number</md-td>
-    <md-td>5</md-td>
-    <md-td>当输入类型为多行文本时，输入框的默认展示行数。仅当 `input_type` 为 multiline_text 时有效。</md-td>
-</md-tr>
-<md-tr>
-    <md-td>auto_resize</md-td>
-    <md-td>否</md-td>
-    <md-td>Boolean</md-td>
-    <md-td>false</md-td>
-    <md-td>当输入类型为多行文本时，输入框高度是否自适应文本高度。仅在 PC 端生效。仅当 `input_type` 为 multiline_text 时有效。可选值：
-- `true`：输入框高度自适应输入框内的文本高度
-- `false`：输入框高度固定为 `rows` 属性指定的高度，不随输入框中的内容变化而变化。
-  </md-td>
-</md-tr>
-<md-tr>
-    <md-td>max_rows</md-td>
-    <md-td>否</md-td>
-    <md-td>Number</md-td>
-    <md-td>空</md-td>
-    <md-td>输入框的最大展示行数。仅当 `auto_resize` 为 true 时有效。
-注意：
-- 取值为大于等于 1 的整数。否则，小于 1 则自动取 1，不为整数则四舍五入取整。
-- 取值为空时不限制输入框的最大文本展示高度（默认值），但前端渲染时，输入框可展示的最大高度不超过 x 行。
-  </md-td>
-</md-tr>
-    <md-tr>
-      <md-td> label</md-td>
-      <md-td>否</md-td>
-      <md-td>text 结构体</md-td>
-      <md-td>默认不生效此属性。</md-td>
-      <md-td>文本标签，即对输入框的描述，用于提示用户要填写的内容。多用于表单容器中内嵌的输入框组件。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td > └ tag</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-  <md-td>输入框描述的标签。固定取值为 plain_text。</md-td>
-</md-tr>
-<md-tr>
-<md-td > └ content</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>描述的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td> label_position</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>top</md-td>
-<md-td>文本标签的位置。可取值：
-  - top：文本标签位于输入框上方
-  - left：文本标签位于输入框左边
-
-  **注意**：
-在移动端等窄屏幕场景下，文本标签将自适应固定展示在输入框上方。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">value</md-td>
-<md-td>否</md-td>
-<md-td>String 或 Object</md-td>
-<md-td>空</md-td>
-<md-td>历史属性。你可在交互事件中自定义回传数据，支持 string 或 object 数据类型。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
-
-  **注意**：confirm 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ title</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗标题文本的标签。固定取值为 plain_text。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗文本的标签。固定取值为 plain_text。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗文本的具体内容。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 ## 回调示例
 
 输入框组件默认拥有交互能力。用户点击输入框中的提交图标后，你在开发者后台配置的请求地址将会收到回调数据。

@@ -102,267 +102,30 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 标题组件的字段说明如下表。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th>字段名称</md-th>
-      <md-th>是否必填</md-th>
-      <md-th>类型</md-th>
-      <md-th style="width: 60%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>title</md-td>
-      <md-td>是</md-td>
-      <md-td>Object</md-td>
-      <md-td>配置卡片的主标题信息。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>文本标识。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>卡片主标题内容。注意：
-- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。
-- 主标题内容最多四行，超出四行的内容用 `...` 省略。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ i18n</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>多语言标题内容，支持设置的多语言枚举值如下：
-- zh_cn：简体中文
-- en_us：英文
-- ja_jp：日文
-- zh_hk：繁体中文（中国香港）
-- zh_tw：繁体中文（中国台湾）
-- id_id: 印尼语
-- vi_vn: 越南语
-- th_th: 泰语
-- pt_br: 葡萄牙语
-- es_es: 西班牙语
-- ko_kr: 韩语
-- de_de: 德语
-- fr_fr: 法语
-- it_it: 意大利语
-- ru_ru: 俄语
-- ms_my: 马来语
 
-示例配置：
-```json
-{ 
-    "zh_cn": "这是主标题", 
-    "en_us": "It is the title"
-}
-```
-注意：
-- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。
-- 主标题内容最多四行，超出四行的内容用 `...` 省略。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>subtitle</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>配置卡片的副标题信息。
+| 字段名称 | 是否必填 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| title | 是 | Object | 配置卡片的主标题信息。 |
+| └ tag | 是 | String | 文本标识。固定取值为 `plain_text`。 |
+| └ content | 否 | String | 卡片主标题内容。注意：<br>- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。<br>- 主标题内容最多四行，超出四行的内容用 `...` 省略。 |
+| └ i18n | 否 | Object | 多语言标题内容，支持设置的多语言枚举值如下：<br>- zh_cn：简体中文<br>- en_us：英文<br>- ja_jp：日文<br>- zh_hk：繁体中文（中国香港）<br>- zh_tw：繁体中文（中国台湾）<br>- id_id: 印尼语<br>- vi_vn: 越南语<br>- th_th: 泰语<br>- pt_br: 葡萄牙语<br>- es_es: 西班牙语<br>- ko_kr: 韩语<br>- de_de: 德语<br>- fr_fr: 法语<br>- it_it: 意大利语<br>- ru_ru: 俄语<br>- ms_my: 马来语<br>示例配置：<br><code>{<br>    "zh_cn": "这是主标题",<br>    "en_us": "It is the title"<br>}</code><br>注意：<br>- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。<br>- 主标题内容最多四行，超出四行的内容用 `...` 省略。 |
+| subtitle | 否 | Object | 配置卡片的副标题信息。<br>**注意**：不允许只配置副标题内容。如果只配置副标题，则实际展示为主标题效果。 |
+| └ tag | 是 | String | 文本标识。固定取值为 `plain_text`。 |
+| └ content | 否 | String | 卡片副标题内容。注意：<br>- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。<br>- 副标题内容最多一行，超出一行的内容用 `...` 省略。 |
+| └ i18n | 否 | Object | 多语言标题内容，支持设置的多语言枚举值如下：<br>- zh_cn：简体中文<br>- en_us：英文<br>- ja_jp：日文<br>- zh_hk：繁体中文（中国香港）<br>- zh_tw：繁体中文（中国台湾）<br>- id_id: 印尼语<br>- vi_vn: 越南语<br>- th_th: 泰语<br>- pt_br: 葡萄牙语<br>- es_es: 西班牙语<br>- ko_kr: 韩语<br>- de_de: 德语<br>- fr_fr: 法语<br>- it_it: 意大利语<br>- ru_ru: 俄语<br>- ms_my: 马来语<br>示例配置：<br><code>{<br> "zh_cn": "这是副标题",<br> "en_us": "It is the sub-title"<br>}</code><br>注意：<br>- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。<br>- 副标题内容最多一行，超出一行的内容用 `...` 省略。 |
+| text_tag_list | 否 | TextTagList | 添加标题的后缀标签。最多可添加 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。<br>**注意**：<br>- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。<br>- `text_tag_lis`t 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置仅生效 `i18n_text_tag_list`。 |
+| └ tag | 是 | String | 后缀标签的标识。固定取值：text_tag。 |
+| └ text | 否 | Text Object | 后缀标签的内容。基于文本组件的 plain_text 模式定义内容。<br>示例值：<br><code>"text": {<br>          "tag": "plain_text",<br>          "content": "这里是标签"<br>        }</code> |
+| └ color | 否 | String | 后缀标签的颜色，默认为蓝色（blue）。可选值与示例效果参见下文的后缀标签颜色枚举。 |
+| i18n_text_tag_list | 否 | Object | 配置后缀标签的多语言属性，在所需语种字段下添加完整的后缀标签结构体即可。每个语言最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。支持设置的多语言枚举值如下：<br>- zh_cn：简体中文<br>- en_us：英文<br>- ja_jp：日文<br>- zh_hk：繁体中文（中国香港）<br>- zh_tw：繁体中文（中国台湾）<br>- id_id: 印尼语<br>- vi_vn: 越南语<br>- th_th: 泰语<br>- pt_br: 葡萄牙语<br>- es_es: 西班牙语<br>- ko_kr: 韩语<br>- de_de: 德语<br>- fr_fr: 法语<br>- it_it: 意大利语<br>- ru_ru: 俄语<br>- ms_my: 马来语<br>示例配置：<br><code>"i18n_text_tag_list": {<br>      "zh_cn": [<br>        {<br>          "tag": "text_tag",<br>          "text": {<br>            "tag": "plain_text",<br>            "content": "标签内容"<br>          },<br>          "color": "carmine"<br>        }<br>      ],<br>      "en_us": [<br>        {<br>          "tag": "text_tag",<br>          "text": {<br>            "tag": "plain_text",<br>            "content": "Tag content"<br>          },<br>          "color": "carmine"<br>        }<br>      ]<br>    }</code><br>**注意**：<br>- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。<br>- `text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效多语言配置。 |
+| template | 否 | String | 配置标题主题颜色。可选值与示例效果参见下文的标题主题样式枚举。 |
+| icon | 否 | Object | 通过上传图片，自定义标题的前缀图标。<br>**注意**：<br>一个卡片仅可配置一个标题图标。如果同时配置 `icon` 和 `ud_icon`，仅生效 `ud_icon`。 |
+| └ img_key | 否 | String | 自定义前缀图标的图片 key。<br>图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create))接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。 |
+| ud_icon | 否 | Object | 添加图标库中已有的图标。<br>**注意**：一个卡片仅可配置一个标题图标。如果同时配置 `icon` 和 `ud_icon`，仅生效 `ud_icon`。 |
+| └ token | 否 | String | 图标库中图标的 token。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。 |
+| └ style | 否 | Object | 图标的样式。支持自定义图标颜色。 |
+| └└ color | 否 | String | 图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。默认为 `template` 字段设置的颜色。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。<br>**注意**：搭建工具暂不支持自定义图标颜色。 |
 
-**注意**：不允许只配置副标题内容。如果只配置副标题，则实际展示为主标题效果。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>文本标识。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>卡片副标题内容。注意：
-- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。
-- 副标题内容最多一行，超出一行的内容用 `...` 省略。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ i18n</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>多语言标题内容，支持设置的多语言枚举值如下：
-- zh_cn：简体中文
-- en_us：英文
-- ja_jp：日文
-- zh_hk：繁体中文（中国香港）
-- zh_tw：繁体中文（中国台湾）
-- id_id: 印尼语
-- vi_vn: 越南语
-- th_th: 泰语
-- pt_br: 葡萄牙语
-- es_es: 西班牙语
-- ko_kr: 韩语
-- de_de: 德语
-- fr_fr: 法语
-- it_it: 意大利语
-- ru_ru: 俄语
-- ms_my: 马来语
-
-示例配置：
-```json
-{
- "zh_cn": "这是副标题",
- "en_us": "It is the sub-title"
-}
-```
-注意：
-- 必须配置 content 或 i18n 两个属性的其中一个。如果同时配置仅生效 i18n。
-- 副标题内容最多一行，超出一行的内容用 `...` 省略。</md-td>
-    </md-tr>
-        <md-tr>
-      <md-td>text_tag_list</md-td>
-      <md-td>否</md-td>
-      <md-td>TextTagList</md-td>
-      <md-td>添加标题的后缀标签。最多可添加 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。
-
-**注意**：
-- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。
-- `text_tag_lis`t 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置仅生效 `i18n_text_tag_list`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>后缀标签的标识。固定取值：text_tag。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ text</md-td>
-      <md-td>否</md-td>
-      <md-td>Text Object</md-td>
-      <md-td>后缀标签的内容。基于文本组件的 plain_text 模式定义内容。
-示例值：
-```JSON
-"text": {
-          "tag": "plain_text",
-          "content": "这里是标签"
-        }
-```
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>后缀标签的颜色，默认为蓝色（blue）。可选值与示例效果参见下文的后缀标签颜色枚举。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>i18n_text_tag_list</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>配置后缀标签的多语言属性，在所需语种字段下添加完整的后缀标签结构体即可。每个语言最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。支持设置的多语言枚举值如下：
-- zh_cn：简体中文
-- en_us：英文
-- ja_jp：日文
-- zh_hk：繁体中文（中国香港）
-- zh_tw：繁体中文（中国台湾）
-- id_id: 印尼语
-- vi_vn: 越南语
-- th_th: 泰语
-- pt_br: 葡萄牙语
-- es_es: 西班牙语
-- ko_kr: 韩语
-- de_de: 德语
-- fr_fr: 法语
-- it_it: 意大利语
-- ru_ru: 俄语
-- ms_my: 马来语
-
-示例配置：
-```json
-"i18n_text_tag_list": {
-      "zh_cn": [
-        {
-          "tag": "text_tag",
-          "text": {
-            "tag": "plain_text",
-            "content": "标签内容"
-          },
-          "color": "carmine"
-        }
-      ],
-      "en_us": [
-        {
-          "tag": "text_tag",
-          "text": {
-            "tag": "plain_text",
-            "content": "Tag content"
-          },
-          "color": "carmine"
-        }
-      ]
-    }
-```
-**注意**：
-- 标题标签在Lark V6.11 及以上版本开始生效。在旧版本客户端内将不会展示标题标签内容。
-- `text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效多语言配置。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>template</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>配置标题主题颜色。可选值与示例效果参见下文的标题主题样式枚举。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>icon</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>通过上传图片，自定义标题的前缀图标。
-
-**注意**：
-一个卡片仅可配置一个标题图标。如果同时配置 `icon` 和 `ud_icon`，仅生效 `ud_icon`。</md-td>
-    </md-tr><md-tr>
-      <md-td>└ img_key</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>自定义前缀图标的图片 key。
-
-图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create))接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>ud_icon</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>添加图标库中已有的图标。
-
-**注意**：一个卡片仅可配置一个标题图标。如果同时配置 `icon` 和 `ud_icon`，仅生效 `ud_icon`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ token</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>图标库中图标的 token。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ style</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>图标的样式。支持自定义图标颜色。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。默认为 `template` 字段设置的颜色。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-
-**注意**：搭建工具暂不支持自定义图标颜色。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-
-:::
 
 ### 示例代码
 

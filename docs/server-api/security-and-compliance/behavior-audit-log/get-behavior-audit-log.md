@@ -20,89 +20,22 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uQjM5YjL0ITO24CNykj
 -  性能说明：查询时请适当缩短查询时间范围和适当控制查询频次（避免重复的无效查询等情况）
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/admin/v1/audit_infos</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="admin:audit_info:readonly" desc="获取行为审计日志" support_app_types="custom" tags="">获取行为审计日志</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/admin/v1/audit_infos |
+| HTTP Method | GET |
+| 接口频率限制 | [100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="admin:audit_info:readonly" desc="获取行为审计日志" support_app_types="custom" tags="">获取行为审计日志</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 ### 查询参数
 :::html
@@ -999,85 +932,18 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uQjM5YjL0ITO24CNykj
 注：审计环境信息有可能由于客户端版本不同、用户使用终端不同等原因导致缺失，我们会尽量保障环境信息完整获取，如发现缺失，您也可以随时报告给Lark
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1050001</md-td>
-  <md-td>TIME_CHECK_NOT_VALID</md-td>
-  <md-td>检查请求参数latest和oldest</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1050001 | TIME_CHECK_NOT_VALID | 检查请求参数latest和oldest |
+| 500 | 1050002 | ErrCode_DATABASE_ERR | 系统错误，请重试或联系相关人员 |
+| 400 | 1050004 | Error_Param_Error | 检查请求参数 |
+| 400 | 1050005 | Error_Page_Size_Invalid | 检查请求参数page_size |
+| 400 | 1050006 | Error_Page_Token_Invalid | 检查请求参数page_token |
+| 400 | 1050007 | Error_Event_Name_Not_Found | 检查请求参数event_name |
+| 500 | 1050008 | Error_Open_Platform_RPC | 系统错误，请重试或联系相关人员 |
+| 400 | 1050009 | Error_Lark_ID_Not_Found | 检查请求参数operator_value |
 
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1050002</md-td>
-  <md-td>ErrCode_DATABASE_ERR</md-td>
-  <md-td>系统错误，请重试或联系相关人员</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1050004</md-td>
-  <md-td>Error_Param_Error</md-td>
-  <md-td>检查请求参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1050005</md-td>
-  <md-td>Error_Page_Size_Invalid</md-td>
-  <md-td>检查请求参数page_size</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1050006</md-td>
-  <md-td>Error_Page_Token_Invalid</md-td>
-  <md-td>检查请求参数page_token</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1050007</md-td>
-  <md-td>Error_Event_Name_Not_Found</md-td>
-  <md-td>检查请求参数event_name</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1050008</md-td>
-  <md-td>Error_Open_Platform_RPC</md-td>
-  <md-td>系统错误，请重试或联系相关人员</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1050009</md-td>
-  <md-td>Error_Lark_ID_Not_Found</md-td>
-  <md-td>检查请求参数operator_value</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

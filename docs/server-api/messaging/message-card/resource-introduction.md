@@ -27,40 +27,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 ## 字段说明
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 15%;">必填</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| &nbsp;<md-text type="field-name" >content</md-text> | <md-text type="field-type" >string</md-text> | 是 | 消息内容为JSON格式的卡片结构转义成String，卡片结构各字段说明请参考[卡片结构介绍](/document/ukTMukTMukTM/uEjNwUjLxYDM14SM2ATN) |
 
-
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >content</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-  <md-td>
-	消息内容为JSON格式的卡片结构转义成String，卡片结构各字段说明请参考[卡片结构介绍](/document/ukTMukTMukTM/uEjNwUjLxYDM14SM2ATN)
-	</md-td>
-</md-tr>
-
-
-
-
-  </md-tbody>
-</md-table>
-:::
 
 ### 数据示例
 以下示例代码可拷贝至[消息卡片搭建工具](https://open.larksuite.com/tool/cardbuilder?from=howtoguide)中编辑使用。

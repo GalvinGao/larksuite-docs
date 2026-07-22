@@ -50,84 +50,22 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/do
 - 操作内部群的群公告时，请确保当前调用身份（tenant_access_token 或 user_access_token）与对应群组在同一租户下。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children/batch_delete</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>DELETE</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[5 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" support_app_types="custom,isv" tags="">更新群公告内容</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/docx/v1/chats/:chat_id/announcement/blocks/:block_id/children/batch_delete |
+| HTTP Method | DELETE |
+| 接口频率限制 | [5 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="im:chat.announcement:write_only" desc="更新群公告内容" support_app_types="custom,isv" tags="">更新群公告内容</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -434,384 +372,54 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/do
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770001</md-td>
-  <md-td>invalid param</md-td>
-  <md-td>确认传入的参数是否合法</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1770001 | invalid param | 确认传入的参数是否合法 |
+| 404 | 1770002 | not found | 群 ID `chat_id` 不存在。请确认群是否被解散或 `chat_id` 是否填写正确。 |
+| 400 | 1770003 | resource deleted | 确认资源是否已被删除 |
+| 400 | 1770004 | too many blocks in document | 确认群公告中 Block 数量是否超上限 |
+| 400 | 1770005 | too deep level in document | 确认群公告 Block 层级是否超上限 |
+| 400 | 1770006 | schema mismatch | 确认群公告结构是否合法 |
+| 400 | 1770007 | too many children in block | 确认指定 Block 的 Children 数量是否超上限 |
+| 400 | 1770008 | too big file size | 确认上传的文件尺寸是否超上限 |
+| 400 | 1770010 | too many table column | 确认表格列数是否超上限，上限 100 列 |
+| 400 | 1770011 | too many table cell | 确认表格单元格数量是否超上限，上限 2000 个单元格 |
+| 400 | 1770012 | too many grid column | 确认 Grid 列数量是否超上限，上限 10 列 |
+| 400 | 1770013 | relation mismatch | 图片、文件等资源的关联关系不正确。请确保在创建图片、文件块时，同时上传了相关图片或文件素材至对应的群公告块中。 |
+| 400 | 1770014 | parent children relation mismatch | 确认 Block 父子关系是否正确 |
+| 400 | 1770015 | single edit with multi document | 确认 Block 所属群公告与指定的群公告是否相同 |
+| 400 | 1770029 | block not support to create | 确认指定 Block 是否支持创建 |
+| 400 | 1770019 | repeated blockID in document | 确认群公告中的 BlockID 是否有重复 |
+| 400 | 1770020 | operation denied on copying document | 确认 Document 是否正在创建副本中 |
+| 400 | 1770021 | too old document | 确认指定的群公告版本（revision_id）是否过旧。指定的版本号与群公告最新版本号差值不能超过 1000 |
+| 400 | 1770041 | open schema mismatch | 确认块父子关系是否合法 |
+| 400 | 1770024 | invalid operation | 确认操作是否合法 |
+| 400 | 1770025 | operation and block not match | 确认指定 Block 应用对应操作是否合法 |
+| 400 | 1770026 | row operation over range | 确认行操作下标是否越界 |
+| 400 | 1770027 | column operation over range | 确认列操作下标是否越界 |
+| 400 | 1770028 | block not support create children | 确认指定 Block 添加 Children 是否合法 |
+| 400 | 1770030 | invalid parent children relation | 确认指定操作其父子关系是否合法 |
+| 400 | 1770031 | block not support to delete children | 确认指定 Block 是否支持删除 Children |
+| 400 | 1770033 | raw content size exceed limited | 纯文本内容大小超过限制 |
+| 400 | 1770034 | operation count exceed limited | 当前请求中涉及单元格个数过多，请拆分成多次请求 |
+| 400 | 1770035 | resource count exceed limit | 当前请求中资源的数目超限，请拆分成多次请求。各类资源上限为：ChatCard 200 张，File 200 个，MentionDoc 200 个，MentionUser 200 个，Image 20 张，ISV 20 个，Sheet 5 篇，Bitable 5 篇。 |
+| 400 | 1770038 | resource not found | 未查询到插入的资源或资源无权限插入，请检查资源标识是否正确。 |
+| 400 | 1772001 | Chat announcement can NOT be found in chat information. | 群公告信息异常。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。 |
+| 400 | 1772002 | Operator and chat can NOT be in different tenants. | 操作内部群时，操作者和被操作的群组必须在同一租户下。请检查当前调用身份是否和群组属于同一租户。 |
+| 400 | 1772003 | Operator can NOT be out of the chat. | 操作者不在群组中。你需要将当前调用 API 的应用或用户[加入待操作的群组](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/create)后重试。 |
+| 400 | 1772004 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 当前被操作的群为外部群，暂不支持操作外部群。 |
+| 400 | 1772025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.larksuite.com/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 1772006 | announcement type is not supported | 除「获取群公告基本信息」接口，其它新版群公告接口均无法操作 doc 类型的群公告，如需操作 doc 类型群公告请参考「[旧版群公告](/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat/chat-announcement/intro)」接口。 |
+| 400 | 1772005 | No Permission: Only chat owner or admin can edit chat information in the current situation. | 当前只允许群组的群主或群管理员更新群信息。 |
+| 400 | 1772034 | The app is unavailable or inactivated by the tenant. | 应用在本租户下未安装或未启用。需要先安装应用，再使用应用调用接口。 |
+| 403 | 1770032 | forbidden | 当前的操作者没有群公告的编辑权限。解决方案：<br>- 方案一：调用[指定群管理员](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-managers/add_managers)接口，将当前操作者置为群管理员，然后重试。<br>- 方案二：在 **Lark客户端 > 群组 > 设置 > 群管理** 中，将 **谁可以编辑群信息** 设置为 **所有群成员**，然后重试。<br>对于创建和更新相关接口，你还需要确认：<br>- 当前调用身份是否有 MentionDoc 即 @文档 中文档的阅读权限<br>- MentionUser 即 @用户 中的用户是否在职且与当前调用身份互为联系人<br>- 当前调用身份是否具有群卡片的查看和分享权限<br>- 当前调用身份是否具有访问指定 Wiki 即知识库子目录的权限<br>- 当前调用身份是否具有 OKR、ISV、Add-Ons 等文档块的查看权限 |
+| 500 | 1771001 | server internal error | 服务器内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。 |
+| 500 | 1771002 | gateway server internal error | 网关服务内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。 |
+| 500 | 1771003 | gateway marshal error | 网关服务解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。 |
+| 500 | 1771004 | gateway unmarshal error | 网关服务反解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。 |
+| 503 | 1771005 | system under maintenance | 系统服务正在维护中 |
 
-
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>1770002</md-td>
-  <md-td>not found</md-td>
-  <md-td>群 ID `chat_id` 不存在。请确认群是否被解散或 `chat_id` 是否填写正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770003</md-td>
-  <md-td>resource deleted</md-td>
-  <md-td>确认资源是否已被删除</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770004</md-td>
-  <md-td>too many blocks in document</md-td>
-  <md-td>确认群公告中 Block 数量是否超上限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770005</md-td>
-  <md-td>too deep level in document</md-td>
-  <md-td>确认群公告 Block 层级是否超上限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770006</md-td>
-  <md-td>schema mismatch</md-td>
-  <md-td>确认群公告结构是否合法</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770007</md-td>
-  <md-td>too many children in block</md-td>
-  <md-td>确认指定 Block 的 Children 数量是否超上限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770008</md-td>
-  <md-td>too big file size</md-td>
-  <md-td>确认上传的文件尺寸是否超上限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770010</md-td>
-  <md-td>too many table column</md-td>
-  <md-td>确认表格列数是否超上限，上限 100 列</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770011</md-td>
-  <md-td>too many table cell</md-td>
-  <md-td>确认表格单元格数量是否超上限，上限 2000 个单元格</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770012</md-td>
-  <md-td>too many grid column</md-td>
-  <md-td>确认 Grid 列数量是否超上限，上限 10 列</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770013</md-td>
-  <md-td>relation mismatch</md-td>
-  <md-td>图片、文件等资源的关联关系不正确。请确保在创建图片、文件块时，同时上传了相关图片或文件素材至对应的群公告块中。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770014</md-td>
-  <md-td>parent children relation mismatch</md-td>
-  <md-td>确认 Block 父子关系是否正确</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770015</md-td>
-  <md-td>single edit with multi document</md-td>
-  <md-td>确认 Block 所属群公告与指定的群公告是否相同</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770029</md-td>
-  <md-td>block not support to create</md-td>
-  <md-td>确认指定 Block 是否支持创建</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770019</md-td>
-  <md-td>repeated blockID in document</md-td>
-  <md-td>确认群公告中的 BlockID 是否有重复</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770020</md-td>
-  <md-td>operation denied on copying document</md-td>
-  <md-td>确认 Document 是否正在创建副本中</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770021</md-td>
-  <md-td>too old document</md-td>
-  <md-td>确认指定的群公告版本（revision_id）是否过旧。指定的版本号与群公告最新版本号差值不能超过 1000</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770041</md-td>
-  <md-td>open schema mismatch</md-td>
-  <md-td>确认块父子关系是否合法</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770024</md-td>
-  <md-td>invalid operation</md-td>
-  <md-td>确认操作是否合法</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770025</md-td>
-  <md-td>operation and block not match</md-td>
-  <md-td>确认指定 Block 应用对应操作是否合法</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770026</md-td>
-  <md-td>row operation over range</md-td>
-  <md-td>确认行操作下标是否越界</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770027</md-td>
-  <md-td>column operation over range</md-td>
-  <md-td>确认列操作下标是否越界</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770028</md-td>
-  <md-td>block not support create children</md-td>
-  <md-td>确认指定 Block 添加 Children 是否合法</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770030</md-td>
-  <md-td>invalid parent children relation</md-td>
-  <md-td>确认指定操作其父子关系是否合法</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770031</md-td>
-  <md-td>block not support to delete children</md-td>
-  <md-td>确认指定 Block 是否支持删除 Children</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770033</md-td>
-  <md-td>raw content size exceed limited</md-td>
-  <md-td>纯文本内容大小超过限制</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770034</md-td>
-  <md-td>operation count exceed limited</md-td>
-  <md-td>当前请求中涉及单元格个数过多，请拆分成多次请求</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770035</md-td>
-  <md-td>resource count exceed limit</md-td>
-  <md-td>当前请求中资源的数目超限，请拆分成多次请求。各类资源上限为：ChatCard 200 张，File 200 个，MentionDoc 200 个，MentionUser 200 个，Image 20 张，ISV 20 个，Sheet 5 篇，Bitable 5 篇。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770038</md-td>
-  <md-td>resource not found</md-td>
-  <md-td>未查询到插入的资源或资源无权限插入，请检查资源标识是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772001</md-td>
-  <md-td>Chat announcement can NOT be found in chat information.</md-td>
-  <md-td>群公告信息异常。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772002</md-td>
-  <md-td>Operator and chat can NOT be in different tenants.</md-td>
-  <md-td>操作内部群时，操作者和被操作的群组必须在同一租户下。请检查当前调用身份是否和群组属于同一租户。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772003</md-td>
-  <md-td>Operator can NOT be out of the chat.</md-td>
-  <md-td>操作者不在群组中。你需要将当前调用 API 的应用或用户[加入待操作的群组](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/create)后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772004</md-td>
-  <md-td>The operator or invited bots does NOT have the authority to manage external chats without the scope.</md-td>
-  <md-td>当前被操作的群为外部群，暂不支持操作外部群。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772025</md-td>
-  <md-td>Bot ability is not activated.</md-td>
-  <md-td>应用未启用机器人能力。你需要登录[开发者后台](https://open.larksuite.com/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772006</md-td>
-  <md-td>announcement type is not supported</md-td>
-  <md-td>除「获取群公告基本信息」接口，其它新版群公告接口均无法操作 doc 类型的群公告，如需操作 doc 类型群公告请参考「[旧版群公告](/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat/chat-announcement/intro)」接口。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772005</md-td>
-  <md-td>No Permission: Only chat owner or admin can edit chat information in the current situation.</md-td>
-  <md-td>当前只允许群组的群主或群管理员更新群信息。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772034</md-td>
-  <md-td>The app is unavailable or inactivated by the tenant.</md-td>
-  <md-td>应用在本租户下未安装或未启用。需要先安装应用，再使用应用调用接口。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1770032</md-td>
-  <md-td>forbidden</md-td>
-  <md-td>当前的操作者没有群公告的编辑权限。解决方案：
-
-- 方案一：调用[指定群管理员](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-managers/add_managers)接口，将当前操作者置为群管理员，然后重试。
-- 方案二：在 **Lark客户端 > 群组 > 设置 > 群管理** 中，将 **谁可以编辑群信息** 设置为 **所有群成员**，然后重试。
-
-对于创建和更新相关接口，你还需要确认：
-
-- 当前调用身份是否有 MentionDoc 即 @文档 中文档的阅读权限
-- MentionUser 即 @用户 中的用户是否在职且与当前调用身份互为联系人
-- 当前调用身份是否具有群卡片的查看和分享权限
-- 当前调用身份是否具有访问指定 Wiki 即知识库子目录的权限
-- 当前调用身份是否具有 OKR、ISV、Add-Ons 等文档块的查看权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771001</md-td>
-  <md-td>server internal error</md-td>
-  <md-td>服务器内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771002</md-td>
-  <md-td>gateway server internal error</md-td>
-  <md-td>网关服务内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771003</md-td>
-  <md-td>gateway marshal error</md-td>
-  <md-td>网关服务解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771004</md-td>
-  <md-td>gateway unmarshal error</md-td>
-  <md-td>网关服务反解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>503</md-td>
-  <md-td>1771005</md-td>
-  <md-td>system under maintenance</md-td>
-  <md-td>系统服务正在维护中</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

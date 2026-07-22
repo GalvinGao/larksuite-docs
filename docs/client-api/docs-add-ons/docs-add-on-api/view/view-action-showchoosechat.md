@@ -18,136 +18,40 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 展示聊天会话选择器，用户选择之后将结果返回，该方法为异步调用。
   
 ## 可用性说明
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>权限要求</md-th>
-<md-th>视图可用说明</md-th>
-<md-th>平台可用</md-th>
-<md-th>场景</md-th></md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>可读</md-td>
-<md-td>所有视图</md-td>
-<md-td>- PC
-- 移动端</md-td>
-<md-td>演示模式</md-td>
-</md-tr></md-tbody>
-</md-table>
-:::
+
+| 权限要求 | 视图可用说明 | 平台可用 | 场景 |
+| --- | --- | --- | --- |
+| 可读 | 所有视图 | - PC<br>- 移动端 | 演示模式 |
+
 
 
 ## 输入
 
 聊天会话选择器配置选项
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>title</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>聊天会话选择器的标题</md-td>
-</md-tr>
-<md-tr>
-<md-td>description</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>聊天会话选择器的描述</md-td>
-</md-tr>
-<md-tr>
-<md-td>multiSelect</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否支持选择多个聊天会话</md-td>
-</md-tr>
-<md-tr>
-<md-td>maxSelectedNum</md-td>
-<md-td>number</md-td>
-<md-td>否</md-td>
-<md-td>支持最多选择多少个聊天会话</md-td>
-</md-tr>
-<md-tr>
-<md-td>selectType</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>可以选择的聊天会话的类型，可选择：
-  - all_chats：全部聊天会话
-- group_chats：多人聊天
-- p2p_chats：私聊
-- bot：机器人
-- without_cross_tenant_chats：非跨租户聊天
-  </md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| title | string | 否 | 聊天会话选择器的标题 |
+| description | string | 否 | 聊天会话选择器的描述 |
+| multiSelect | boolean | 否 | 是否支持选择多个聊天会话 |
+| maxSelectedNum | number | 否 | 支持最多选择多少个聊天会话 |
+| selectType | string | 否 | 可以选择的聊天会话的类型，可选择：<br>- all_chats：全部聊天会话<br>- group_chats：多人聊天<br>- p2p_chats：私聊<br>- bot：机器人<br>- without_cross_tenant_chats：非跨租户聊天 |
+
 
   
 
 ## 输出
 
 聊天会话选择器的返回结果
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>聊天会话选择器结果类型，可选值：
-- confirm：确认
-- cancel：取消</md-td>
-</md-tr>
-<md-tr>
-<md-td>chats</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>已选择的聊天会话</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>聊天会话的 id</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟name</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>聊天会话的名称</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟chatType</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>聊天会话的类型，可选值：
-- P2P：单聊
-- GROUP：群聊
-- TOPIC_GROUP：话题群
-- UNKNOWN：未知</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| type | string | 是 | 聊天会话选择器结果类型，可选值：<br>- confirm：确认<br>- cancel：取消 |
+| chats | object[] | 是 | 已选择的聊天会话 |
+| ∟id | string | 是 | 聊天会话的 id |
+| ∟name | string | 是 | 聊天会话的名称 |
+| ∟chatType | string | 是 | 聊天会话的类型，可选值：<br>- P2P：单聊<br>- GROUP：群聊<br>- TOPIC_GROUP：话题群<br>- UNKNOWN：未知 |
+
   
 
 ## 示例代码

@@ -27,230 +27,36 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukzNxYjL5cTM24SO3EjN
 :::
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V5.16+</md-version></md-td>
-      <md-td><md-version>V5.16+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.25+</md-version> | <md-version>V3.25+</md-version> | **X** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V5.16+</md-version> | <md-version>V5.16+</md-version> | **X** | / |
+
 
 
 
 ## 输入
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 18%;">数据类型</md-th>
-       <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
 
-    
-   <md-tr>
-      <md-td>callback</md-td>
-      <md-td>function</md-td>
-      <md-td>是</md-td>
-      <md-td></md-td>
-      <md-td>该事件的回调函数</md-td>
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| callback | function | 是 |  | 该事件的回调函数 |
 
-   </md-tr>  
-    
-
-    
-</md-tbody>
-</md-table>
-:::
 
 ## 输出
 回调函数返回对象的属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                devices
-            </md-td>
-            <md-td>
-                object[]
-            </md-td>
-            <md-td>
-                新搜索到的设备列表
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    name
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                蓝牙设备名称，某些设备可能没有
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    deviceId
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用于区分设备的 id
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    RSSI
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                当前蓝牙设备的信号强度
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    advertisData
-                </md-text>
-            </md-td>
-            <md-td>
-                ArrayBuffer
-            </md-td>
-            <md-td>
-                当前蓝牙设备的广播数据段中的 ManufacturerData 数据段。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    advertisServiceUUIDs
-                </md-text>
-            </md-td>
-            <md-td>
-                string[]
-            </md-td>
-            <md-td>
-                当前蓝牙设备的广播数据段中的 ServiceUUIDs 数据段
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    localName
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                当前蓝牙设备的广播数据段中的 LocalName 数据段
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    serviceData
-                </md-text>
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                当前蓝牙设备的广播数据段中的 ServiceData 数据段
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| devices | object[] | 新搜索到的设备列表 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>name<br></md-text> | string | 蓝牙设备名称，某些设备可能没有 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>deviceId<br></md-text> | string | 用于区分设备的 id |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>RSSI<br></md-text> | number | 当前蓝牙设备的信号强度 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>advertisData<br></md-text> | ArrayBuffer | 当前蓝牙设备的广播数据段中的 ManufacturerData 数据段。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>advertisServiceUUIDs<br></md-text> | string[] | 当前蓝牙设备的广播数据段中的 ServiceUUIDs 数据段 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>localName<br></md-text> | string | 当前蓝牙设备的广播数据段中的 LocalName 数据段 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>serviceData<br></md-text> | object | 当前蓝牙设备的广播数据段中的 ServiceData 数据段 |
+
 
 ## 示例代码
 

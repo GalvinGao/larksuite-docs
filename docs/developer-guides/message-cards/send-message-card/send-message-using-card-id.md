@@ -70,55 +70,13 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcD
 
 配置参数说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%">参数</md-th>
-<md-th style="width: 20%">是否必填</md-th>
-<md-th style="width: 60%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必填 | 描述 |
+| --- | --- | --- |
+| type | 是 | 使用卡片 ID 发送消息时必填该参数。固定取值：template |
+| data | 是 | 卡片模板内的数据。 |
+| └ template_id | 是 | 卡片 ID。示例值：ctp_xxxx |
+| └ template_variable | 否 | 卡片中的变量数据，值为`{key:value}`形式。<br>- key：表示变量名称。<br>- value：值表示变量的值。 |
 
-<md-tr>
-<md-td>type</md-td>
-<md-td>是</md-td>
-<md-td>
-使用卡片 ID 发送消息时必填该参数。固定取值：template
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>data</md-td>
-<md-td>是</md-td>
-<md-td>
-卡片模板内的数据。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td> └ template_id</md-td>
-<md-td>是</md-td>
-<md-td>
-卡片 ID。示例值：ctp_xxxx
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td> └ template_variable</md-td>
-<md-td>否</md-td>
-<md-td>
-卡片中的变量数据，值为`{key:value}`形式。
-
-- key：表示变量名称。
-- value：值表示变量的值。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 调用示例
 

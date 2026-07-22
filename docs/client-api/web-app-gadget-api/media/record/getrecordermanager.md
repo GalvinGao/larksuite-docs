@@ -21,40 +21,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uQDOx4CN4EjL0gTM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/voice/voice" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**X**</md-td>
-        <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14" disable="true">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/voice/voice" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **✓** | **✓** | **X** | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14" disable="true">预览</md-preview-app> |
+
 
 
 ## 输入
@@ -62,217 +34,21 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uQDOx4CN4EjL0gTM
 ## 输出
 
 返回值：
-:::html
 
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                recorderManager
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                [RecorderManager](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/recordermanager) 对象
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [start](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/start)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                开始录音
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [pause](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/pause)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                暂停录音
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [resume](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/resume)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                继续录音
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [stop](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/stop)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                停止录音
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [onStart](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onstart)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                录音开始事件回调
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [onPause](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onpause)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                录音暂停事件回调
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [onResume](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onresume)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                录音恢复事件回调
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [onStop](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onstop)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                录音停止事件回调，res对象带有一个类型为string的属性tempFilePath，表示录音文件的地址。
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [onFrameRecorded](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onframerecorded)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                监听已录制完指定帧大小的文件事件。如果设置了 frameSize，则会回调此事件。
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    [onError](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onerror)
-                </md-text>
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-            <md-td>
-                监听录音错误事件
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| recorderManager | object | [RecorderManager](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/recordermanager) 对象 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[start](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/start)<br></md-text> | function | 开始录音 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[pause](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/pause)<br></md-text> | function | 暂停录音 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[resume](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/resume)<br></md-text> | function | 继续录音 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[stop](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/stop)<br></md-text> | function | 停止录音 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[onStart](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onstart)<br></md-text> | function | 录音开始事件回调 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[onPause](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onpause)<br></md-text> | function | 录音暂停事件回调 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[onResume](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onresume)<br></md-text> | function | 录音恢复事件回调 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[onStop](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onstop)<br></md-text> | function | 录音停止事件回调，res对象带有一个类型为string的属性tempFilePath，表示录音文件的地址。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[onFrameRecorded](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onframerecorded)<br></md-text> | function | 监听已录制完指定帧大小的文件事件。如果设置了 frameSize，则会回调此事件。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>[onError](/document/uYjL24iN/uATMx4CMxEjLwETM/recordermanager/onerror)<br></md-text> | function | 监听录音错误事件 |
+
 
 ## 示例代码
 :::html

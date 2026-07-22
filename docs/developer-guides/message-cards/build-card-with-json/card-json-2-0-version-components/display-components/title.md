@@ -82,225 +82,29 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 标题组件的字段说明如下表。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th>名称</md-th>
-      <md-th>必填</md-th>
-      <md-th>类型</md-th>
-      <md-th style="width: 60%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>title</md-td>
-      <md-td>是</md-td>
-      <md-td>Object</md-td>
-      <md-td>配置卡片的主标题信息。
 
-**注意**：如果只配置副标题，则实际展示为主标题效果。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>文本类型的标签。可取值：
-- `plain_text`：普通文本内容或[表情](https://www.feishu.cn/docx/doxcnG6utI72jB4eHJF1s5IgVJf)
-- `lark_md`：支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-components/content-components/plain-text)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>卡片主标题内容。要为标题配置多语言，参考[配置卡片多语言](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configure-multi-language-content)。
+| 名称 | 必填 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| title | 是 | Object | 配置卡片的主标题信息。<br>**注意**：如果只配置副标题，则实际展示为主标题效果。 |
+| └ tag | 是 | String | 文本类型的标签。可取值：<br>- `plain_text`：普通文本内容或[表情](https://www.feishu.cn/docx/doxcnG6utI72jB4eHJF1s5IgVJf)<br>- `lark_md`：支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-components/content-components/plain-text) |
+| └ content | 否 | String | 卡片主标题内容。要为标题配置多语言，参考[配置卡片多语言](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configure-multi-language-content)。<br>**注意**：主标题内容最多四行，超出四行的内容用 `...` 省略。 |
+| subtitle | 否 | Object | 配置卡片的副标题信息。<br>**注意**：如果只配置副标题，则实际展示为主标题效果。 |
+| └ tag | 是 | String | 文本类型的标签。可取值：<br>- `plain_text`：普通文本内容或[表情](https://www.feishu.cn/docx/doxcnG6utI72jB4eHJF1s5IgVJf)<br>- `lark_md`：支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-components/content-components/plain-text) |
+| └ content | 否 | String | 卡片副标题内容。要为标题配置多语言，参考[配置卡片多语言](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configure-multi-language-content)。<br>**注意**：副标题内容最多一行，超出一行的内容用 `...` 省略。 |
+| text_tag_list | 否 | TextTagList | 添加标题的后缀标签。最多可添加 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。<br>**注意**：<br>`text_tag_lis`t 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置仅生效 `i18n_text_tag_list`。 |
+| └ tag | 是 | String | 后缀标签的标识。固定取值：`text_tag`。 |
+| └ element_id | 否 | String | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| └ text | 否 | Text Object | 后缀标签的内容。基于文本组件的 plain_text 模式定义内容。<br>示例值：<br><code>"text": {<br>          "tag": "plain_text",<br>          "content": "这里是标签"<br>        }</code> |
+| └ color | 否 | String | 后缀标签的颜色，默认为蓝色（blue）。可选值与示例效果参见下文的后缀标签颜色枚举。 |
+| i18n_text_tag_list | 否 | Object | 配置后缀标签的多语言属性，在所需语种字段下添加完整的后缀标签结构体即可。每个语言最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。支持设置的多语言枚举值如下：<br>- zh_cn：简体中文<br>- en_us：英文<br>- ja_jp：日文<br>- zh_hk：繁体中文（中国香港）<br>- zh_tw：繁体中文（中国台湾）<br>- id_id: 印尼语<br>- vi_vn: 越南语<br>- th_th: 泰语<br>- pt_br: 葡萄牙语<br>- es_es: 西班牙语<br>- ko_kr: 韩语<br>- de_de: 德语<br>- fr_fr: 法语<br>- it_it: 意大利语<br>- ru_ru: 俄语<br>- ms_my: 马来语<br>示例配置：<br><code>"i18n_text_tag_list": {<br>      "zh_cn": [<br>        {<br>          "tag": "text_tag",<br>          "text": {<br>            "tag": "plain_text",<br>            "content": "标签内容"<br>          },<br>          "color": "carmine"<br>        }<br>      ],<br>      "en_us": [<br>        {<br>          "tag": "text_tag",<br>          "text": {<br>            "tag": "plain_text",<br>            "content": "Tag content"<br>          },<br>          "color": "carmine"<br>        }<br>      ]<br>    }</code><br>**注意**：<br>`text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效多语言配置。 |
+| template | 否 | String | 配置标题主题颜色。可选值与示例效果参见下文的标题主题样式枚举。 |
+| icon | 否 | Object | 添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。 |
+| └ tag | 否 | String | 图标类型的标签。可取值：<br>- `standard_icon`：使用图标库中的图标。<br>- `custom_icon`：使用用自定义图片作为图标。 |
+| └ token | 否 | String | 图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。 |
+| └ color | 否 | String | 图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| └ img_key | 否 | String | 自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。<br>图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。 |
+| padding | 否 | String | 标题组件的内边距。默认为 12px。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示容器的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示容器的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示容器的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
 
-**注意**：主标题内容最多四行，超出四行的内容用 `...` 省略。</md-td>
-    </md-tr>
-   
-    <md-tr>
-      <md-td>subtitle</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>配置卡片的副标题信息。
-
-**注意**：如果只配置副标题，则实际展示为主标题效果。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>文本类型的标签。可取值：
-- `plain_text`：普通文本内容或[表情](https://www.feishu.cn/docx/doxcnG6utI72jB4eHJF1s5IgVJf)
-- `lark_md`：支持部分 Markdown 语法的文本内容。详情参考[lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-components/content-components/plain-text)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>卡片副标题内容。要为标题配置多语言，参考[配置卡片多语言](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configure-multi-language-content)。
-
-**注意**：副标题内容最多一行，超出一行的内容用 `...` 省略。</md-td>
-    </md-tr>
-        <md-tr>
-      <md-td>text_tag_list</md-td>
-      <md-td>否</md-td>
-      <md-td>TextTagList</md-td>
-      <md-td>添加标题的后缀标签。最多可添加 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。
-
-**注意**：
-`text_tag_lis`t 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置仅生效 `i18n_text_tag_list`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>后缀标签的标识。固定取值：`text_tag`。</md-td>
-    </md-tr>
-    
-    
-    <md-tr>
-      <md-td>└ element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-    
-    
-    
-    <md-tr>
-      <md-td>└ text</md-td>
-      <md-td>否</md-td>
-      <md-td>Text Object</md-td>
-      <md-td>后缀标签的内容。基于文本组件的 plain_text 模式定义内容。
-示例值：
-```JSON
-"text": {
-          "tag": "plain_text",
-          "content": "这里是标签"
-        }
-```
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>后缀标签的颜色，默认为蓝色（blue）。可选值与示例效果参见下文的后缀标签颜色枚举。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>i18n_text_tag_list</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>配置后缀标签的多语言属性，在所需语种字段下添加完整的后缀标签结构体即可。每个语言最多可配置 3 个标签内容，如果配置的标签数量超过 3 个，则取前 3 个标签进行展示。标签展示顺序与数组顺序一致。支持设置的多语言枚举值如下：
-- zh_cn：简体中文
-- en_us：英文
-- ja_jp：日文
-- zh_hk：繁体中文（中国香港）
-- zh_tw：繁体中文（中国台湾）
-- id_id: 印尼语
-- vi_vn: 越南语
-- th_th: 泰语
-- pt_br: 葡萄牙语
-- es_es: 西班牙语
-- ko_kr: 韩语
-- de_de: 德语
-- fr_fr: 法语
-- it_it: 意大利语
-- ru_ru: 俄语
-- ms_my: 马来语
-
-示例配置：
-```json
-"i18n_text_tag_list": {
-      "zh_cn": [
-        {
-          "tag": "text_tag",
-          "text": {
-            "tag": "plain_text",
-            "content": "标签内容"
-          },
-          "color": "carmine"
-        }
-      ],
-      "en_us": [
-        {
-          "tag": "text_tag",
-          "text": {
-            "tag": "plain_text",
-            "content": "Tag content"
-          },
-          "color": "carmine"
-        }
-      ]
-    }
-```
-**注意**：
-`text_tag_list` 和 `i18n_text_tag_list` 只能配置其中之一。如果同时配置两个字段，则优先生效多语言配置。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>template</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>配置标题主题颜色。可选值与示例效果参见下文的标题主题样式枚举。</md-td>
-    </md-tr>
-
-    
-    
-    
-<md-tr>
-<md-td>icon</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>图标类型的标签。可取值：
-- `standard_icon`：使用图标库中的图标。
-- `custom_icon`：使用用自定义图片作为图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ token</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ color</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-
-<md-td>图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ img_key</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。
-  
-图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。</md-td>
-</md-tr>
-  
-
-      <md-tr>
-      <md-td>padding</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>标题组件的内边距。默认为 12px。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示容器的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示容器的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示容器的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。
-
-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-
-:::
 
 ## Demo 示例
 

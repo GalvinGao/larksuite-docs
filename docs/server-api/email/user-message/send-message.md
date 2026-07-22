@@ -39,82 +39,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/mail/v1/user_mailboxes/:user_mailbox_id/messages/send</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="mail:user_mailbox.message:send" desc="发送用户邮件" support_app_types="custom" tags="">发送用户邮件</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/mail/v1/user_mailboxes/:user_mailbox_id/messages/send |
+| HTTP Method | POST |
+| 接口频率限制 | [100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="mail:user_mailbox.message:send" desc="发送用户邮件" support_app_types="custom" tags="">发送用户邮件</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -695,173 +635,29 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>1234013</md-td>
-  <md-td>user mailbox not found or user mailbox not active</md-td>
-  <md-td>邮箱地址状态错误，请更换邮箱地址</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 404 | 1234013 | user mailbox not found or user mailbox not active | 邮箱地址状态错误，请更换邮箱地址 |
+| 403 | 1234017 | permission deny | 申请邮箱使用权限 |
+| 400 | 1234008 | request parameter error | 请检查请求参数是否正确 |
+| 400 | 1236001 | raw size over limit | 邮件大小超过限制，请减小邮件大小 |
+| 429 | 1236006 | too many request | 同用户请勿并发请求 |
+| 400 | 1236002 | invalid mime format | 非法MIME格式邮件，请检查邮件格式以及确保基于base64url编码 |
+| 400 | 1236003 | the number of recipients exceeds the limit | 邮件收件人数量超过500限制，请减少邮件收件人 |
+| 400 | 1236004 | the number of attachments exceeds the limit | 邮件附件数量超过500限制，请减少邮件附件数量 |
+| 409 | 1236005 | send mail repeatedly | 重复发送邮件，请勿使用相同Message-ID发送邮件 |
+| 429 | 1236007 | the daily number of emails sent by the user exceeds the limit | 用户每天发送邮件数量超过限制 |
+| 429 | 1236008 | the number of external recipients the user sends messages to each day exceeds the limit | 用户每天发送邮件的外部收件人数量超过限制 |
+| 429 | 1236009 | the number of external recipients the tenant sends messages to each day exceeds the limit | 企业每天发送邮件的外部收件人数量超过限制 |
+| 429 | 1236010 | mail quota limit | 用户的发信请求被系统限流，请重试 |
+| 429 | 1236012 | reach send mail restriction | 用户发送的邮件达到发信阈值限制 |
+| 429 | 1236013 | tenant storage limit | 租户存储空间已满，无法发送更多邮件 |
+| 400 | 1236014 | content risk | 由于邮件内容被识别为风险内容，邮件发送失败 |
+| 400 | 1236017 | sender check fail | 邮件发件人检测失败，请检查发件人信息和状态 |
+| 400 | 1236018 | receiver check fail | 邮件收件人检测失败，请检查收件人信息 |
+| 500 | 1236019 | internal server error | 系统内部报错 |
 
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1234017</md-td>
-  <md-td>permission deny</md-td>
-  <md-td>申请邮箱使用权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1234008</md-td>
-  <md-td>request parameter error</md-td>
-  <md-td>请检查请求参数是否正确</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1236001</md-td>
-  <md-td>raw size over limit</md-td>
-  <md-td>邮件大小超过限制，请减小邮件大小</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>1236006</md-td>
-  <md-td>too many request</md-td>
-  <md-td>同用户请勿并发请求</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1236002</md-td>
-  <md-td>invalid mime format</md-td>
-  <md-td>非法MIME格式邮件，请检查邮件格式以及确保基于base64url编码</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1236003</md-td>
-  <md-td>the number of recipients exceeds the limit</md-td>
-  <md-td>邮件收件人数量超过500限制，请减少邮件收件人</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1236004</md-td>
-  <md-td>the number of attachments exceeds the limit</md-td>
-  <md-td>邮件附件数量超过500限制，请减少邮件附件数量</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>409</md-td>
-  <md-td>1236005</md-td>
-  <md-td>send mail repeatedly</md-td>
-  <md-td>重复发送邮件，请勿使用相同Message-ID发送邮件</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>1236007</md-td>
-  <md-td>the daily number of emails sent by the user exceeds the limit</md-td>
-  <md-td>用户每天发送邮件数量超过限制</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>1236008</md-td>
-  <md-td>the number of external recipients the user sends messages to each day exceeds the limit</md-td>
-  <md-td>用户每天发送邮件的外部收件人数量超过限制</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>1236009</md-td>
-  <md-td>the number of external recipients the tenant sends messages to each day exceeds the limit</md-td>
-  <md-td>企业每天发送邮件的外部收件人数量超过限制</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>1236010</md-td>
-  <md-td>mail quota limit</md-td>
-  <md-td>用户的发信请求被系统限流，请重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>1236012</md-td>
-  <md-td>reach send mail restriction</md-td>
-  <md-td>用户发送的邮件达到发信阈值限制</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>1236013</md-td>
-  <md-td>tenant storage limit</md-td>
-  <md-td>租户存储空间已满，无法发送更多邮件</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1236014</md-td>
-  <md-td>content risk</md-td>
-  <md-td>由于邮件内容被识别为风险内容，邮件发送失败</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1236017</md-td>
-  <md-td>sender check fail</md-td>
-  <md-td>邮件发件人检测失败，请检查发件人信息和状态</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1236018</md-td>
-  <md-td>receiver check fail</md-td>
-  <md-td>邮件收件人检测失败，请检查收件人信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1236019</md-td>
-  <md-td>internal server error</md-td>
-  <md-td>系统内部报错</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

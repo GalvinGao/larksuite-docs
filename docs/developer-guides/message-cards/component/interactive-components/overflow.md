@@ -40,67 +40,13 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uMzNwUjLzcDM14yM3AT
 
 折叠按钮组作为交互组件，其 JSON 描述均定义在[交互模块](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements)（`"tag": "action"`）的 `actions` 参数中。折叠按钮组包含的参数说明如下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 折叠按钮组的标签。固定取值：overflow |
+| options | 是 | Struct[] | 折叠按钮组当中的选项按钮。按钮基于 option 元素进行配置，详情参见 [option 元素](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#9fa21514)。 |
+| value | 否 | JSON | 该字段用于交互组件的回传交互方式,当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。<br>该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值:<br><code>"value":{<br>    "key-1":Object-1,<br>    "key-2":Object-2,<br>    "key-3":Object-3,<br>    ······<br>}</code> |
+| confirm | 否 | Struct | 设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。 |
 
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-折叠按钮组的标签。固定取值：overflow
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>options</md-td>
-<md-td>是</md-td>
-<md-td>Struct[]</md-td>
-<md-td>
-折叠按钮组当中的选项按钮。按钮基于 option 元素进行配置，详情参见 [option 元素](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#9fa21514)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>value</md-td>
-<md-td>否</md-td>
-<md-td>JSON</md-td>
-<md-td>
-该字段用于交互组件的回传交互方式,当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。
-
-该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。示例值:
-```
-"value":{
-    "key-1":Object-1,
-    "key-2":Object-2,
-    "key-3":Object-3,
-    ······
-}
-```
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-设置二次确认弹框。confirm 元素的配置方式可参见 [confirm](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7f700aa9)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 交互示例
 

@@ -20,63 +20,11 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYjN3QjL2YzN04iN2cDN
 
 当你在开发网页应用时，如果涉及以下开发场景，则需要配置应用的重定向 URL。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:40%">场景</md-th>
-<md-th style="width:60%">具体说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 场景 | 具体说明 |
+| --- | --- |
+| 应用服务端需要使用用户访问凭证 [user_access_token](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/oidc-access_token/create) 调用开放平台服务端 OpenAPI | 开发应用时如果需要使用用户访问凭证 user_access_token 调用服务端 OpenAPI，则需要先[获取登录预授权码](/document/common-capabilities/sso/api/obtain-oauth-code)，然后再[获取 user_access_token](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/oidc-access_token/create)，其中，在获取登录预授权码时，必须传入 `redirect_uri` 参数，即应用回调地址。该过程具体说明如下：<br>1. 向 **获取授权登录授权码** API 的请求地址发送请求时，会加载授权登录页面，用户需要在该页面内点击完成授权。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/755abfeef052394eea29f0365aeb5e28_WC2hfJI4CU.png?height=1004&lazyload=true&width=1264)<br>2. 用户授权后，页面会自动重定向跳转到预设好的 `redirect_uri` 地址，并在 URL 的 Query 参数中携带开放平台下发的登录预授权码 `code`。<br><code># 获取登录预授权码的示例URL如下，其中，{redirect_url}为实际的重定向URL，code的值为登录预授权码。<br>https://{redirect_url}?code=1yxlUSU8Rf+7B32HY3HR7g</code><br><md-alert type="tip" icon="none"><br>**说明**：你可以在网页应用中构建一个回调页面，将 `redirect_url` 设置为该回调页面。当用户授权登录后，前端页面会自动重定向至回调页面，同时页面将获取到的 `code` 传入应用后端，然后基于 `code` 获取 `user_access_token` 并调用相关 API 来获取业务所需数据。<br></md-alert><br>在以上操作过程中，为了确保你的应用可以成功进行重定向跳转，并且获取到登录预授权码 `code`，你必须将 `redirect_uri` 参数值同步设置为应用的 **重定向 URL**（设置方式参考下文 **操作步骤** 章节）。只有在该 **重定向 URL** 列表内的 URL 会通过开放平台的安全校验，并允许页面重定向跳转。<br>不在 **重定向 URL** 列表内的 URL，如果进行用户授权登录操作，则会重定向到失败页面：<br><code>{<br>    code: 2000,<br>    message: "redirect_uri unmatch"<br>}</code> |
+| 应用前端页面需要调用开放平台客户端的 [requestAccess](/document/uYjL24iN/uUzMuUzMuUzM/requestaccess) API 获取临时登录凭证 `code` | 在开发应用时，如果应用的前端页面需要调用客户端的 [requestAccess](/document/uYjL24iN/uUzMuUzMuUzM/requestaccess) API 获取临时登录凭证 `code`，则需要将该页面地址设置为应用的 **重定向 URL**（设置方式参考下文 **操作步骤** 章节）。因为，对于任何需要调用 **tt.requestAccess** API 获取临时登录凭证 `code` 的前端页面，开放平台都会校验应用访问该页面的合法性，只有在应用 **重定向 URL** 列表内的地址可以通过安全校验，并成功获取到 `code`。 |
 
-<md-tr>
-<md-td>
-应用服务端需要使用用户访问凭证 [user_access_token](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/oidc-access_token/create) 调用开放平台服务端 OpenAPI
-</md-td>
-<md-td>
-开发应用时如果需要使用用户访问凭证 user_access_token 调用服务端 OpenAPI，则需要先[获取登录预授权码](/document/common-capabilities/sso/api/obtain-oauth-code)，然后再[获取 user_access_token](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/oidc-access_token/create)，其中，在获取登录预授权码时，必须传入 `redirect_uri` 参数，即应用回调地址。该过程具体说明如下：
-
-1. 向 **获取授权登录授权码** API 的请求地址发送请求时，会加载授权登录页面，用户需要在该页面内点击完成授权。
-
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/755abfeef052394eea29f0365aeb5e28_WC2hfJI4CU.png?height=1004&lazyload=true&width=1264)
-
-2. 用户授权后，页面会自动重定向跳转到预设好的 `redirect_uri` 地址，并在 URL 的 Query 参数中携带开放平台下发的登录预授权码 `code`。
-  
-```http
-# 获取登录预授权码的示例URL如下，其中，{redirect_url}为实际的重定向URL，code的值为登录预授权码。
-https://{redirect_url}?code=1yxlUSU8Rf+7B32HY3HR7g
-```
-  
-<md-alert type="tip" icon="none">
-**说明**：你可以在网页应用中构建一个回调页面，将 `redirect_url` 设置为该回调页面。当用户授权登录后，前端页面会自动重定向至回调页面，同时页面将获取到的 `code` 传入应用后端，然后基于 `code` 获取 `user_access_token` 并调用相关 API 来获取业务所需数据。
-</md-alert>
-  
-在以上操作过程中，为了确保你的应用可以成功进行重定向跳转，并且获取到登录预授权码 `code`，你必须将 `redirect_uri` 参数值同步设置为应用的 **重定向 URL**（设置方式参考下文 **操作步骤** 章节）。只有在该 **重定向 URL** 列表内的 URL 会通过开放平台的安全校验，并允许页面重定向跳转。
-  
-不在 **重定向 URL** 列表内的 URL，如果进行用户授权登录操作，则会重定向到失败页面：
-  
-```json
-{
-    code: 2000,
-    message: "redirect_uri unmatch"
-}
-```
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>
-应用前端页面需要调用开放平台客户端的 [requestAccess](/document/uYjL24iN/uUzMuUzMuUzM/requestaccess) API 获取临时登录凭证 `code`
-</md-td>
-<md-td>
-在开发应用时，如果应用的前端页面需要调用客户端的 [requestAccess](/document/uYjL24iN/uUzMuUzMuUzM/requestaccess) API 获取临时登录凭证 `code`，则需要将该页面地址设置为应用的 **重定向 URL**（设置方式参考下文 **操作步骤** 章节）。因为，对于任何需要调用 **tt.requestAccess** API 获取临时登录凭证 `code` 的前端页面，开放平台都会校验应用访问该页面的合法性，只有在应用 **重定向 URL** 列表内的地址可以通过安全校验，并成功获取到 `code`。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 操作步骤
 

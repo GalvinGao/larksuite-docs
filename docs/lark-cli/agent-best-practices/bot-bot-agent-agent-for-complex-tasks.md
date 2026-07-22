@@ -171,27 +171,11 @@ Agent @Agent 适合那些需要跑多个环节的任务：
 
 各 agent 根据自身职责完成任务，并最终交付高质量的产物。示意图如下：
 
-:::html
-<md-table style="width: 1000px;">
-  <md-tbody>
-     <md-tr>
-      <md-td> ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/469c3a087df2bd8975c5eb9f79b47cb1_6zdt5d3x4s.png?height=2160&lazyload=true&width=1700) </md-td>
-      <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f6eda3a7f329ca8c4ce4331a9893320d_HwlJVMkLth.png?height=2160&lazyload=true&width=1700)</md-td>
-      <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/8979869239d7d7573f7fd5fb84170c92_RPs49zv8HY.png?height=2160&lazyload=true&width=1700)</md-td>
-    </md-tr>
-     <md-tr>
-      <md-td> 
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/860e80059e8b1e3f51bb198ac0dd37bb_ufkLjGIPW2.png?height=2160&lazyload=true&width=1700)   </md-td>
-      <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f1f6de5b7057fe37e9b3c6967d1d2689_wy51Uj2gdF.png?height=2160&lazyload=true&width=1700) </md-td>
-      <md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/42cc1baa4cdb597a52e705238922e56c_p7vpa8JVWQ.png?height=2160&lazyload=true&width=1700)</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+|  |  |  |
+| --- | --- | --- |
+| ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/469c3a087df2bd8975c5eb9f79b47cb1_6zdt5d3x4s.png?height=2160&lazyload=true&width=1700) | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f6eda3a7f329ca8c4ce4331a9893320d_HwlJVMkLth.png?height=2160&lazyload=true&width=1700) | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/8979869239d7d7573f7fd5fb84170c92_RPs49zv8HY.png?height=2160&lazyload=true&width=1700) |
+| ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/860e80059e8b1e3f51bb198ac0dd37bb_ufkLjGIPW2.png?height=2160&lazyload=true&width=1700) | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f1f6de5b7057fe37e9b3c6967d1d2689_wy51Uj2gdF.png?height=2160&lazyload=true&width=1700) | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/42cc1baa4cdb597a52e705238922e56c_p7vpa8JVWQ.png?height=2160&lazyload=true&width=1700) |
+
 
 
 ### 步骤五：收到终稿

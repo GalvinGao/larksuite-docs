@@ -26,45 +26,13 @@ Lark日历和日程为包含关系，你可以自行创建一个或多个日历�
 
 Lark日历分为以下几种类型。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">日历类型</md-th>
-<md-th style="width:70%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>全员日历</md-td>
-<md-td>全员日历是由企业管理员所创建，所有成员自动订阅的日历。该类型日历适用于共享放假安排、公开讲座等面向全员的日程信息。管理员在管理后台创建全员日历后，该日历就会自动同步到团队成员的个人日历中。</md-td>
-</md-tr>
+| 日历类型 | 说明 |
+| --- | --- |
+| 全员日历 | 全员日历是由企业管理员所创建，所有成员自动订阅的日历。该类型日历适用于共享放假安排、公开讲座等面向全员的日程信息。管理员在管理后台创建全员日历后，该日历就会自动同步到团队成员的个人日历中。 |
+| 公共日历 | 公共日历是可以让所有成员都搜到并订阅的日历。订阅该类日历后，企业成员可以查看该日历中的所有日程详情。成员可创建多个公共日历，方便团队共享不同主题、事件的相关信息。 |
+| 会议室日历 | 会议室日历中会显示会议室的预定情况，方便会议组织者提前查看和安排。 |
+| 订阅日历 | 你可以通过订阅日历来了解其他成员的日程安排、项目关键时间节点、会议室状态等多方面信息。<br>- 订阅其他成员的个人日历： 方便查看对方忙闲状态，快速邀约沟通时间。<br>- 订阅公共日历：比如公开的项目日历等，方便了解相关进展和关键时间点等。<br>- 订阅会议室日历：方便查看会议室的预定情况。 |
 
-<md-tr>
-<md-td>公共日历</md-td>
-<md-td>公共日历是可以让所有成员都搜到并订阅的日历。订阅该类日历后，企业成员可以查看该日历中的所有日程详情。成员可创建多个公共日历，方便团队共享不同主题、事件的相关信息。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>会议室日历</md-td>
-<md-td>会议室日历中会显示会议室的预定情况，方便会议组织者提前查看和安排。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>订阅日历</md-td>
-<md-td>你可以通过订阅日历来了解其他成员的日程安排、项目关键时间节点、会议室状态等多方面信息。
-
-- 订阅其他成员的个人日历： 方便查看对方忙闲状态，快速邀约沟通时间。
-
-- 订阅公共日历：比如公开的项目日历等，方便了解相关进展和关键时间点等。
-
-- 订阅会议室日历：方便查看会议室的预定情况。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 :::note
 你可以通过视频了解日历功能，参见[日历基础功能教学](https://www.larksuite.com/hc/zh-CN/articles/360048487751)。
@@ -72,34 +40,12 @@ Lark日历分为以下几种类型。
 
 ### 日程公开范围
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">公开范围</md-th>
-<md-th style="width:70%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>默认的公开范围</md-td>
-<md-td>已订阅当前日程对应日历的成员，如果有权查看该日历中其他日程的详情，则可以看到当前日程的详情。</md-td>
-</md-tr>
+| 公开范围 | 说明 |
+| --- | --- |
+| 默认的公开范围 | 已订阅当前日程对应日历的成员，如果有权查看该日历中其他日程的详情，则可以看到当前日程的详情。 |
+| 公开 | 已订阅当前日程对应日历的成员，均可查看相应日程的详情。 |
+| 私密 | 除非是当前日程的所有者或编辑者，否则订阅当前日程对应日历的成员无法查看当前日程详情。 |
 
-<md-tr>
-<md-td>公开</md-td>
-<md-td>已订阅当前日程对应日历的成员，均可查看相应日程的详情。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>私密</md-td>
-<md-td>除非是当前日程的所有者或编辑者，否则订阅当前日程对应日历的成员无法查看当前日程详情。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 操作流程
 
@@ -133,87 +79,10 @@ Outlook 以及 Google 日历同步功能可直接在Lark日历中配置，详见
 
 ## 使用到的 API
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 40%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-<md-th style="width: 30%;">权限要求<md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip></md-th>
-<md-th style="width: 30%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>
-[查询日历列表](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/list)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求<md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| [查询日历列表](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar/list)<br>`GET` /open-apis/calendar/v4/calendars<br>> 用于分页获得当前身份（应用 / 用户）的日历列表。 | <md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm><br><md-perm name="calendar:calendar.calendar:readonly" desc="获取日历信息" support_app_types="custom,isv" tags="">获取日历信息</md-perm><br><md-perm name="calendar:calendar:readonly" desc="获取日历、日程及忙闲信息" support_app_types="custom,isv" tags="">获取日历、日程及忙闲信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| [查询主日历忙闲信息](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/freebusy/list)<br>`POST` /open-apis/calendar/v4/freebusy/list<br>> 查询用户主日历或会议室的忙闲信息。 | <md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm><br><md-perm name="calendar:calendar:readonly" desc="获取日历、日程及忙闲信息" support_app_types="custom,isv" tags="">获取日历、日程及忙闲信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| [创建日程](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/create)<br>`POST` /open-apis/calendar/v4/calendars/:calendar_id/events<br>> 以当前身份（应用 / 用户）在日历上创建一个日程。 | <md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| [添加日程参与人](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/create)<br>`POST` /open-apis/calendar/v4/calendars/:calendar_id/events/:event_id/attendees<br>> 批量给日程添加参与人。 | <md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
 
-`GET` /open-apis/calendar/v4/calendars
-
-> 用于分页获得当前身份（应用 / 用户）的日历列表。
-</md-td>
-<md-td>
-<md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm>
-<md-perm name="calendar:calendar.calendar:readonly" desc="获取日历信息" support_app_types="custom,isv" tags="">获取日历信息</md-perm>
-<md-perm name="calendar:calendar:readonly" desc="获取日历、日程及忙闲信息" support_app_types="custom,isv" tags="">获取日历、日程及忙闲信息</md-perm>
-</md-td>
-<md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>
-[查询主日历忙闲信息](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/freebusy/list)
-
-`POST` /open-apis/calendar/v4/freebusy/list
-
-> 查询用户主日历或会议室的忙闲信息。
-</md-td>
-<md-td>
-<md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm>
-<md-perm name="calendar:calendar:readonly" desc="获取日历、日程及忙闲信息" support_app_types="custom,isv" tags="">获取日历、日程及忙闲信息</md-perm>
-</md-td>
-<md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>
-[创建日程](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event/create)
-
-`POST` /open-apis/calendar/v4/calendars/:calendar_id/events
-
-> 以当前身份（应用 / 用户）在日历上创建一个日程。
-</md-td>
-<md-td>
-<md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm>
-</md-td>
-<md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>
-[添加日程参与人](/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee/create)
-
-`POST` /open-apis/calendar/v4/calendars/:calendar_id/events/:event_id/attendees
-
-> 批量给日程添加参与人。
-</md-td>
-<md-td>
-<md-perm name="calendar:calendar" desc="更新日历及日程信息" support_app_types="custom,isv" tags="">更新日历及日程信息</md-perm>
-</md-td>
-<md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::

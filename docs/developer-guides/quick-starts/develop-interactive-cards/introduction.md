@@ -31,56 +31,9 @@ source_url: https://open.larksuite.com/document/home/quickly-develop-interactive
 
 ## 使用到的 OpenAPI 列表
 :::html
-<md-table>
 
-<md-thead>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| <md-text type="field-name" > [发送消息](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)  `POST`  /open-apis/im/v1/messages<br></md-text> | <md-perm name="im:message" desc="获取与发送单聊、群组消息" tags="">获取与发送单聊、群组消息</md-perm><br><md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" tags="">以应用的身份发消息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
+| <md-text type="field-name" > [延时更新消息卡片](/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)  `POST`  /open-apis/interactive/v1/card/update<br></md-text> | / | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 30%;">权限要求（满足任一）</md-th>
-
-<md-th style="width: 20%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" > [发送消息](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)  `POST`  /open-apis/im/v1/messages
-  </md-text>
-
-</md-td>
-  
-<md-td>
-  <md-perm name="im:message" desc="获取与发送单聊、群组消息" tags="">获取与发送单聊、群组消息</md-perm>
-  <md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" tags="">以应用的身份发消息</md-perm>
-</md-td>
-  
-<md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-</md-td>
-</md-tr>
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" > [延时更新消息卡片](/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)  `POST`  /open-apis/interactive/v1/card/update
-  </md-text>
-
-</md-td>
-  
-<md-td>
-  /
-</md-td>
-  
-<md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-</md-td>
-</md-tr>

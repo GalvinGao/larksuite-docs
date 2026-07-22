@@ -416,44 +416,13 @@ card_link 下的各字段说明如下表所示。
 </md-alert>
 :::
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">字段名称</md-th>
-      <md-th style="width: 15%;">是否必填</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 20%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>默认的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>pc_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>PC 端的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>ios_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>iOS 端的链接地址。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>android_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>Android 端的链接地址。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 字段名称 | 是否必填 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| url | 否 | String | 默认的链接地址。 |
+| pc_url | 否 | String | PC 端的链接地址。 |
+| ios_url | 否 | String | iOS 端的链接地址。 |
+| android_url | 否 | String | Android 端的链接地址。 |
+
 
 ### 卡片标题 `header`
 

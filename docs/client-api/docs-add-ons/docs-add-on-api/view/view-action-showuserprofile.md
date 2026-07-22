@@ -18,100 +18,28 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 展示用户卡片，该方法为异步调用。
   
 ## 可用性说明
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>权限要求</md-th>
-<md-th>视图可用说明</md-th>
-<md-th>平台可用</md-th>
-<md-th>场景</md-th></md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>可读</md-td>
-<md-td>所有视图</md-td>
-<md-td>- PC
-- 移动端</md-td>
-<md-td>演示模式</md-td>
-</md-tr></md-tbody>
-</md-table>
-:::
+
+| 权限要求 | 视图可用说明 | 平台可用 | 场景 |
+| --- | --- | --- | --- |
+| 可读 | 所有视图 | - PC<br>- 移动端 | 演示模式 |
+
 
 
 ## 输入
 
 展示用户卡片的配置项
   
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>userId</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>展示的用户 id</md-td>
-</md-tr>
-<md-tr>
-<md-td>placement</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>展示卡片的位置，默认展示为 bottom，可选值：
-- top
-- bottom
-- left
-- right
-- top-left
-- top-right
-- bottom-left
-- bottom-right
-- left-top
-- left-bottom
-- right-top
-- right-bottom
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td>boundingRect</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>展示卡片的目标位置信息</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟x</md-td>
-<md-td>number</md-td>
-<md-td>是</md-td>
-<md-td>目标相对于容器（iframe）的 x 偏移值</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟y</md-td>
-<md-td>number</md-td>
-<md-td>是</md-td>
-<md-td>目标相对于容器（iframe）的 y 偏移值</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟width</md-td>
-<md-td>number</md-td>
-<md-td>是</md-td>
-<md-td>目标的宽度</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟height</md-td>
-<md-td>number</md-td>
-<md-td>是</md-td>
-<md-td>目标的高度</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| userId | string | 是 | 展示的用户 id |
+| placement | string | 否 | 展示卡片的位置，默认展示为 bottom，可选值：<br>- top<br>- bottom<br>- left<br>- right<br>- top-left<br>- top-right<br>- bottom-left<br>- bottom-right<br>- left-top<br>- left-bottom<br>- right-top<br>- right-bottom |
+| boundingRect | object[] | 是 | 展示卡片的目标位置信息 |
+| ∟x | number | 是 | 目标相对于容器（iframe）的 x 偏移值 |
+| ∟y | number | 是 | 目标相对于容器（iframe）的 y 偏移值 |
+| ∟width | number | 是 | 目标的宽度 |
+| ∟height | number | 是 | 目标的高度 |
+
   
 
 ## 输出

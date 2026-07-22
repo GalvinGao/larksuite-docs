@@ -23,30 +23,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 
 当前能力在不同Lark客户端的版本支持情况。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">是否需要鉴权</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
+| 是否需要鉴权 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 不需要 | <md-version>V5.27</md-version> | <md-version>V5.27</md-version> | <md-version>V5.27</md-version> | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-
-    <md-tr>
-      <md-td>不需要</md-td>
-      <md-td><md-version>V5.27</md-version></md-td>
-      <md-td><md-version>V5.27</md-version></md-td>
-      <md-td><md-version>V5.27</md-version></md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 ## 注意事项
 
@@ -64,132 +44,21 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 - 如果你希望在网页未加载完成之前就配置某些菜单不可用，请使用web-meta 的 page-meta URL 方式进行配置。 
 :::
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                必填
-            </md-th>
-            <md-th style="width: 45%;">
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                name
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                固定值：hideMenuItems
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-期望屏蔽菜单界面功能入口的唯一标识。详情可参见下文 **支持置灰的菜单功能项** 表。
-              
-格式示例："sendToChat,shareViaOtherApp"。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| name | String | 是 | 固定值：hideMenuItems |
+| content | String | 是 | 期望屏蔽菜单界面功能入口的唯一标识。详情可参见下文 **支持置灰的菜单功能项** 表。<br>格式示例："sendToChat,shareViaOtherApp"。 |
+
 
 **支持置灰的菜单功能项**
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                菜单项标识
-            </md-th>
-            <md-th style="width: 30%;">
-                菜单项名称
-            </md-th>
-            <md-th style="width: 40%;">
-                菜单项功能描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                sendToChat
-            </md-td>
-            <md-td>
-                发送至会话
-            </md-td>
-            <md-td>
-                分享当前网页到会话。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                shareViaOtherApp
-            </md-td>
-            <md-td>
-                微信
-            </md-td>
-            <md-td>
-                分享网页链接至微信等三方应用。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                copyLink
-            </md-td>
-            <md-td>
-                复制链接
-            </md-td>
-            <md-td>
-                复制当前页面链接到系统剪贴板。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                openInBrowser
-            </md-td>
-            <md-td>
-                浏览器打开
-            </md-td>
-            <md-td>
-                在外部浏览器中打开当前页面。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 菜单项标识 | 菜单项名称 | 菜单项功能描述 |
+| --- | --- | --- |
+| sendToChat | 发送至会话 | 分享当前网页到会话。 |
+| shareViaOtherApp | 微信 | 分享网页链接至微信等三方应用。 |
+| copyLink | 复制链接 | 复制当前页面链接到系统剪贴板。 |
+| openInBrowser | 浏览器打开 | 在外部浏览器中打开当前页面。 |
+
 
 ## 示例配置
 

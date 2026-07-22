@@ -18,25 +18,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 展示联系人选择器，用户选择之后将结果返回，该方法为异步调用。
   
 ## 可用性说明
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>权限要求</md-th>
-<md-th>视图可用说明</md-th>
-<md-th>平台可用</md-th>
-<md-th>场景</md-th></md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>可读</md-td>
-<md-td>所有视图</md-td>
-<md-td>- PC
-- 移动端</md-td>
-<md-td>演示模式</md-td>
-</md-tr></md-tbody>
-</md-table>
-:::
+
+| 权限要求 | 视图可用说明 | 平台可用 | 场景 |
+| --- | --- | --- | --- |
+| 可读 | 所有视图 | - PC<br>- 移动端 | 演示模式 |
+
 
 
 ## 输入
@@ -53,53 +39,15 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 ## 输出
 
 联系人选择器的返回结果
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>联系人选择器结果类型，可选值：
-  - confirm：确认
-  - cancel：取消
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>chats</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>已选择的联系人</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>联系人的 id</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟name</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>联系人的名称</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟avatar</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>联系人的头像</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| type | string | 是 | 联系人选择器结果类型，可选值：<br>- confirm：确认<br>- cancel：取消 |
+| chats | object[] | 是 | 已选择的联系人 |
+| ∟id | string | 是 | 联系人的 id |
+| ∟name | string | 是 | 联系人的名称 |
+| ∟avatar | string | 是 | 联系人的头像 |
+
   
 
 ## 示例代码

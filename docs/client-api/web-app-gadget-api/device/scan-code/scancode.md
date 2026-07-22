@@ -19,150 +19,32 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYzNx4iN3EjL2cTM
 扫描二维码并返回扫描结果。
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/scan-code/scan-code" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> </md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/scan-code/scan-code" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                scanType
-            </md-td>
-            <md-td>
-                string[]
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                ['qrCode','barCode']
-            </md-td>
-            <md-td>
-                扫码类型。传入多个类型，代表可以支持多种类型的扫码。扫码类型定义如下：
-- `qrCode`：二维码
-- `barCode`：条形码
-- `datamatrix`：Data Matrix 码
-	- 仅iOS支持
-- `pdf417`：PDF417 条码
-    - 仅iOS支持          
-              
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                barCodeInput
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-              false
-          	</md-td>
-            <md-td>
-                是否支持手动输入条形码
-<md-alert type="tip" icon="none">
-Lark[V3.14.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| scanType | string[] | 否 | ['qrCode','barCode'] | 扫码类型。传入多个类型，代表可以支持多种类型的扫码。扫码类型定义如下：<br>- `qrCode`：二维码<br>- `barCode`：条形码<br>- `datamatrix`：Data Matrix 码<br>- 仅iOS支持<br>- `pdf417`：PDF417 条码<br>- 仅iOS支持 |
+| barCodeInput | boolean | 否 | false | 是否支持手动输入条形码<br><md-alert type="tip" icon="none"><br>Lark[V3.14.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
+
 
 ## 输出
 
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                result
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                扫描结果
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| result | string | 扫描结果 |
+
 
 ## 示例代码
 :::html

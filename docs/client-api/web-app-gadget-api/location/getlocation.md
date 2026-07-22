@@ -30,273 +30,41 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUTOz4SN5MjL1kzM
 :::
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/get-location/get-location" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/get-location/get-location" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | **X** | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                type
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                wgs84
-            </md-td>
-            <md-td>
-                坐标系类型
 
-**可选值**：
-- `wgs84`：wgs84 坐标系
-- `gcj02`：gcj02 坐标系
-<md-alert type="tip" icon="none">
-Lark [V5.2.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility) 以下版本时，如果需将返回值使用在 [openLocation](/document/uYjL24iN/uQTOz4CN5MjL0kzM) 中，建议指定坐标系为`gcj02`, 否则地图显示可能不准确
-</md-alert>
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| type | string | 否 | wgs84 | 坐标系类型<br>**可选值**：<br>- `wgs84`：wgs84 坐标系<br>- `gcj02`：gcj02 坐标系<br><md-alert type="tip" icon="none"><br>Lark [V5.2.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility) 以下版本时，如果需将返回值使用在 [openLocation](/document/uYjL24iN/uQTOz4CN5MjL0kzM) 中，建议指定坐标系为`gcj02`, 否则地图显示可能不准确<br></md-alert> |
+| timeout | number | 否 | 5 | 定位超时时间，单位秒。若传入允许范围之外的数值，高精度模式下会使用 10s，最高精度模式使用 3s<br>**最小值**：`3`<br>**最大值**：`180` |
+| cacheTimeout | number | 否 | 0 | 定位缓存超时时间，单位秒；每次定位缓存当前定位数据，并记下时间戳，当下次调用在 cacheTimeout 之内时，返回缓存数据。如果 cacheTimeout 小于 0 或大于 60s，则不使用缓存<br>**最小值**：`0`<br>**最大值**：`60` |
+| accuracy | string | 否 | high | 指定期望精度，支持 high，best。当指定 high 时，期望精度值为100m，当指定 best 时期望精度值为20m。当定位得到的精度不符合条件时，在timeout之前会继续定位，尝试拿到符合要求的定位结果。<br>**可选值**：<br>- `high`：期望精度值为100m<br>- `best`：期望精度值为20m |
 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                timeout
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                5
-            </md-td>
-            <md-td>
-                定位超时时间，单位秒。若传入允许范围之外的数值，高精度模式下会使用 10s，最高精度模式使用 3s
-
-**最小值**：`3`
-
-**最大值**：`180`
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                cacheTimeout
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>0</md-td>
-            <md-td>
-                定位缓存超时时间，单位秒；每次定位缓存当前定位数据，并记下时间戳，当下次调用在 cacheTimeout 之内时，返回缓存数据。如果 cacheTimeout 小于 0 或大于 60s，则不使用缓存
-
-**最小值**：`0`
-
-**最大值**：`60`
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                accuracy
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                high
-            </md-td>
-            <md-td>
-                指定期望精度，支持 high，best。当指定 high 时，期望精度值为100m，当指定 best 时期望精度值为20m。当定位得到的精度不符合条件时，在timeout之前会继续定位，尝试拿到符合要求的定位结果。
-
-**可选值**：
-- `high`：期望精度值为100m
-- `best`：期望精度值为20m
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                latitude
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                纬度，范围为-90~90，正数表示北，负数表示南
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                longitude
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                经度，范围为-180~180，正数表示东，负数表示西
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                accuracy
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                位置的精确度
-<md-alert type="tip" icon="none">
-Android/iOS 均返回水平精度
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                verticalAccuracy
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                垂直精度，单位 m
-<md-alert type="tip" icon="none">
-Android 无法获取，返回 0
-</md-alert>
 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                horizontalAccuracy
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                水平精度，单位 m
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                authorizationAccuracy
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                指示应用程序有权使用的位置准确性级别。
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| latitude | number | 纬度，范围为-90~90，正数表示北，负数表示南 |
+| longitude | number | 经度，范围为-180~180，正数表示东，负数表示西 |
+| accuracy | number | 位置的精确度<br><md-alert type="tip" icon="none"><br>Android/iOS 均返回水平精度<br></md-alert> |
+| verticalAccuracy | number | 垂直精度，单位 m<br><md-alert type="tip" icon="none"><br>Android 无法获取，返回 0<br></md-alert> |
+| horizontalAccuracy | number | 水平精度，单位 m |
+| authorizationAccuracy | string | 指示应用程序有权使用的位置准确性级别。<br>**可选值**：<br>- `reduced`：非精确位置授权<br>- `full`：精确位置授权<br><md-alert type="tip" icon="none"><br>只有 iOS14 且Lark [V3.36.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility) 及以上版本支持<br></md-alert> |
+| timestamp | number | 定位数据的时间戳，单位 ms |
 
-**可选值**：
-- `reduced`：非精确位置授权
-- `full`：精确位置授权
-              
-<md-alert type="tip" icon="none">
-只有 iOS14 且Lark [V3.36.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility) 及以上版本支持
-</md-alert>
-            </md-td>
-        </md-tr>
-           <md-tr>
-            <md-td>
-                timestamp
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                定位数据的时间戳，单位 ms
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 示例代码
@@ -342,23 +110,9 @@ tt.getLocation({
 ## 错误码
 `fail`返回对象中会包含[errCode属性](/document/uYjL24iN/ukzNy4SO3IjL5cjM#a825f4c8)，代表错误码。具体错误码列表参见：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">错误码</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-      <md-th style="width: 40%;">排查建议</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>1000001</md-td>
-      <md-td>租户后台GPS开关是关闭状态</md-td>
-      <md-td>请联系租户管理员解决</md-td>
-    </md-tr>
- </md-tbody>
-</md-table>
-:::
+| 错误码 | 描述 | 排查建议 |
+| --- | --- | --- |
+| 1000001 | 租户后台GPS开关是关闭状态 | 请联系租户管理员解决 |
+
 
 

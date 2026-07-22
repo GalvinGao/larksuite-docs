@@ -66,253 +66,26 @@ docToken 是一篇文档的唯一标识，你可以从通过以下方式获取�
 :::
 
 ##  字段说明
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >document_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	一个文档的唯一标识。  <br><br>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >document_token</md-text> | <md-text type="field-type" >string</md-text> | 一个文档的唯一标识。  <br><br>**示例值**："doccnULnB44EMMPSYa3rIb4eJCf"<br>**字段权限要求（任选其一）**：<br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" tags="">查看、评论和导出文档</md-perm> |
+| <md-text type="field-name" >title</md-text> | <md-text type="field-type" >string</md-text> | 文档的标题。 |
+| <md-text type="field-name" >revision</md-text> | <md-text type="field-type" >int</md-text> | 文档的版本号，用于确认协同更新的版本。 |
+| <md-text type="field-name" >content</md-text> | <md-text type="field-type" >string</md-text> | 文档的正文。<br><br>**结构说明**：参考[文档数据结构概述](/document/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN) 和 [文档数据结构参考](/document/ukTMukTMukTM/ukDM2YjL5AjN24SOwYjN) |
 
-      
-**示例值**："doccnULnB44EMMPSYa3rIb4eJCf"
-
-**字段权限要求（任选其一）**：<br>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="docs:doc:readonly" desc="查看、评论和导出文档" tags="">查看、评论和导出文档</md-perm>
-	</md-td>
-</md-tr>
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >title</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档的标题。
-
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	<md-text type="field-name" >revision</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	文档的版本号，用于确认协同更新的版本。
-
-	</md-td>
-</md-tr>
-    <md-tr>
-	<md-td>
-	<md-text type="field-name" >content</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	文档的正文。<br><br>
-      
-**结构说明**：参考[文档数据结构概述](/document/ukTMukTMukTM/uAzM5YjLwMTO24CMzkjN) 和 [文档数据结构参考](/document/ukTMukTMukTM/ukDM2YjL5AjN24SOwYjN)
-
-	</md-td>
-</md-tr>
-    
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
 
-<md-table>
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[创建文档](/document/ukTMukTMukTM/ugDM2YjL4AjN24COwYjN)<br>`POST` /open-apis/doc/v2/create<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取文档富文本内容](/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)</md-text><br>`GET` /open-apis/doc/v2/:docToken/content | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取文档文本内容](/document/ukTMukTMukTM/ukzNzUjL5czM14SO3MTN)</md-text><br>`GET` /open-apis/doc/v2/:docToken/raw_content<br>> 获取文档的纯文本内容 | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[编辑文档内容](/document/ukTMukTMukTM/uYDM2YjL2AjN24iNwYjN)</md-text><br>`POST` /open-apis/doc/v2/:docToken/batch_update | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-<md-thead>
-
-<tr>
-
-<md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-
-<md-th style="width: 20%;">权限要求（满足任一）</md-th>
-
-<md-th style="width: 20%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-
-<md-th style="width: 5%;">商店</md-th>
-<md-th style="width: 5%;">自建</md-th>
-
-</tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[创建文档](/document/ukTMukTMukTM/ugDM2YjL4AjN24COwYjN)
-
-   `POST` /open-apis/doc/v2/create
-  
-  </md-text>
-
-</md-td>
-
-<md-td><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user" >user_access_token</md-tag>
-
-</md-td>
-
-<md-td>
-**✓**
-</md-td>
-<md-td>
-**✓**
-</md-td>
-
-
-</md-tr>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[获取文档富文本内容](/document/ukTMukTMukTM/uUDM2YjL1AjN24SNwYjN)</md-text>
-  
-`GET` /open-apis/doc/v2/:docToken/content
-  
-
-</md-td>
-
-
-<md-td>
-  <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm>
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user" >user_access_token</md-tag>
-
-</md-td>
-
-<md-td>
-**✓**
-</md-td>
-<md-td>
-**✓**
-</md-td>
-
-
-</md-tr>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[获取文档文本内容](/document/ukTMukTMukTM/ukzNzUjL5czM14SO3MTN)</md-text>
-  
-`GET` /open-apis/doc/v2/:docToken/raw_content
- 
-  > 获取文档的纯文本内容
-</md-td>
-
-<md-td>
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm>
-
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-
-</md-td>
-
-<md-td>
-**✓**
-</md-td>
-<md-td>
-**✓**
-</md-td>
-
-
-</md-tr>
-
-<md-tr>
-
-<md-td>
-
-<md-text type="field-name" >[编辑文档内容](/document/ukTMukTMukTM/uYDM2YjL2AjN24iNwYjN)</md-text>
-  
-`POST` /open-apis/doc/v2/:docToken/batch_update
-
-</md-td>
-
-<md-td>
-
-<md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-<md-perm name="docs:doc" desc="查看、评论、编辑和管理文档" tags="">查看、评论、编辑和管理文档</md-perm>
-
-</md-td>
-
-<md-td>
-
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-<md-tag type="token-user">user_access_token</md-tag>
-
-</md-td>
-
-<md-td>
-**✓**
-</md-td>
-<md-td>
-**✓**
-</md-td>
-
-
-</md-tr>
-
-
-
-</md-tbody>
-
-</md-table>
-
-:::
   
   

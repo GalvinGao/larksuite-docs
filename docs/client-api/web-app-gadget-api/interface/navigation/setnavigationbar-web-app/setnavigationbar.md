@@ -30,41 +30,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYjMy4iNyIjL2IjM/setnav
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
 
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-    </md-tr>
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **X** | **X** | **X** | / |
+| 网页应用 | <md-version>V5.3.0+</md-version> | <md-version>V5.3.0+</md-version> | <md-version>V5.3.0+</md-version> | <md-preview-app type="gadget" disable="true" fontSize="14">预览				 </md-preview-app> |
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V5.3.0+</md-version></md-td>
-      <md-td><md-version>V5.3.0+</md-version></md-td>
-      <md-td><md-version>V5.3.0+</md-version></md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览				 </md-preview-app>
-	  </md-td>
-   </md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -75,271 +46,19 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYjMy4iNyIjL2IjM/setnav
 ## 输入
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 25%;">
-名称
-</md-th>
-<md-th style="width: 18%;">
-数据类型
-</md-th>
-<md-th style="width: 10%;">
-必填
-</md-th>
-<md-th style="width: 10%;">
-默认值
-</md-th>
-<md-th>
-描述
-</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-left
-</md-td>
-<md-td>
-object
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| left | object | 否 |  | 导航栏左侧设置，最多只支持两个按钮设置，即 items.length <= 2<br></md-td> |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>items<br></md-text> | object[] | 是 |  | item 数组来控制导航栏左侧的显示，数组长度为 0 则清空对应方位导航栏设置 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>id<br></md-text> | string | 是 |  | item 的标志，当 item 被点击后，将触发 tt.onLeftNavigationBarClick({id:string} => {}) 监听 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>text<br></md-text> | string | 否 |  | 控制显示文本，空字符串表示不显示文本( PC 端不支持此字段) |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>imageBase64<br></md-text> | string | 否 |  | 控制是否显示 icon，字符串长度不能超过 10240 |
+| right | object | 否 |  | 导航栏右侧设置，最多只支持两个按钮设置，即 items.length <= 2<br></md-td> |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>items<br></md-text> | object[] | 是 |  | item 数组来控制导航栏右侧的显示，数组长度为 0 则清空对应方位导航栏设置 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>id<br></md-text> | string | 是 |  | item 的标志，当 item 被点击后，将触发 tt.onRightNavigationBarClick({id:string} => {}) 监听 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>text<br></md-text> | string | 否 |  | 控制显示文本，空字符串表示不显示文本( PC 端不支持此字段) |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>imageBase64<br></md-text> | string | 否 |  | 控制是否显示 icon，字符串长度不能超过 10240 |
 
-</md-td>
-<md-td>
-导航栏左侧设置，最多只支持两个按钮设置，即 items.length <= 2
-</md-td>
-
-
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-items
-</md-text>
-</md-td>
-<md-td>
-object[]
-</md-td>
-<md-td>
- 是
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-  item 数组来控制导航栏左侧的显示，数组长度为 0 则清空对应方位导航栏设置
-</md-td>
-
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-id
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
- 是
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-  item 的标志，当 item 被点击后，将触发 tt.onLeftNavigationBarClick({id:string} => {}) 监听
-</md-td>
-
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-text
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
- 否
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-控制显示文本，空字符串表示不显示文本( PC 端不支持此字段)
-  </md-td>
-
-</md-tr>	
-<md-tr>
-<md-td>
-&emsp;&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-imageBase64
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
- 否
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-控制是否显示 icon，字符串长度不能超过 10240
-</md-td>
-
-</md-tr>	
-
-<md-tr>
-<md-td>
-right
-</md-td>
-<md-td>
-object
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
-
-</md-td>
-<md-td>
-导航栏右侧设置，最多只支持两个按钮设置，即 items.length <= 2
-</md-td>
-
-
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-items
-</md-text>
-</md-td>
-<md-td>
-object[]
-</md-td>
-<md-td>
- 是
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-  item 数组来控制导航栏右侧的显示，数组长度为 0 则清空对应方位导航栏设置
-</md-td>
-
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-id
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
- 是
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-  item 的标志，当 item 被点击后，将触发 tt.onRightNavigationBarClick({id:string} => {}) 监听
-</md-td>
-
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-text
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
- 否
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-控制显示文本，空字符串表示不显示文本( PC 端不支持此字段)
-  </md-td>
-
-</md-tr>	
-<md-tr>
-<md-td>
-&emsp;&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-imageBase64
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
- 否
-</md-td>
-<md-td>
- 
-</md-td>
-<md-td>
-控制是否显示 icon，字符串长度不能超过 10240
-</md-td>
-
-</md-tr>	
-
-</md-tbody>
-</md-table>
-:::
 
 
 

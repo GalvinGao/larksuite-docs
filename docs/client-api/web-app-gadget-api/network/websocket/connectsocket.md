@@ -20,40 +20,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDMx4COwEjL4ATM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/web-socket/web-socket" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/web-socket/web-socket" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
@@ -61,82 +33,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDMx4COwEjL4ATM
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                url
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                Socket 连接地址
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| url | string | 是 |  | Socket 连接地址<br>**示例值**：wss://echo.websocket.org |
+| header | object | 否 |  | HTTP Header<br>**示例值**：{'content-type': 'application/json'} |
+| protocols | string[] | 否 |  | 子协议数组<br>**示例值**：['protocol1'] |
 
-**示例值**：wss://echo.websocket.org
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                header
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                HTTP Header
-
-**示例值**：{'content-type': 'application/json'}
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                protocols
-            </md-td>
-            <md-td>
-                string[]
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                子协议数组
-
-**示例值**：['protocol1']
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 输出
@@ -147,43 +49,15 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDMx4COwEjL4ATM
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>[send(Object msg)](/document/uYjL24iN/ugDOugDOugDO/sockettask/send)</md-td>
-      <md-td>发送数据</md-td>
-    </md-tr>
-        <md-tr>
-      <md-td>[close(Object option)](/document/uYjL24iN/ugDOugDOugDO/sockettask/close)</md-td>
-      <md-td>关闭 Socket 连接</md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-td>[onOpen(function callback)](/document/uYjL24iN/ugDOugDOugDO/sockettask/onopen)</md-td>
-      <md-td>监听连接成功的事件回调</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>[onClose(function callback)](/document/uYjL24iN/ugDOugDOugDO/sockettask/onclose)</md-td>
-      <md-td>监听连接关闭的事件回调</md-td>
-    </md-tr>
-   
-    
-        <md-tr>
-      <md-td>[onMessage(function callback)](/document/uYjL24iN/ugDOugDOugDO/sockettask/onmessage)</md-td>
-      <md-td>监听接收到服务器的消息事件回调</md-td>
-    </md-tr>
-    
-</md-tbody>
-</md-table>
-:::
+| 方法 | 介绍 |
+| --- | --- |
+| [send(Object msg)](/document/uYjL24iN/ugDOugDOugDO/sockettask/send) | 发送数据 |
+| [close(Object option)](/document/uYjL24iN/ugDOugDOugDO/sockettask/close) | 关闭 Socket 连接 |
+| [onOpen(function callback)](/document/uYjL24iN/ugDOugDOugDO/sockettask/onopen) | 监听连接成功的事件回调 |
+| [onClose(function callback)](/document/uYjL24iN/ugDOugDOugDO/sockettask/onclose) | 监听连接关闭的事件回调 |
+| [onMessage(function callback)](/document/uYjL24iN/ugDOugDOugDO/sockettask/onmessage) | 监听接收到服务器的消息事件回调 |
+
 
 
 

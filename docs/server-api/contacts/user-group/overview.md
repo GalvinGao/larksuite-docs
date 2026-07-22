@@ -31,96 +31,13 @@ Lark组织架构里的一个基础实体，用户组可关联用户/部门，同
 
 ## 用户组字段说明
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 50%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >group_id</md-text> | <md-text type="field-type" >string</md-text> | 租户内用户组的唯一标识，可在创建用户组时自定义，不自定义则由系统自动生成，已创建用户组不允许修改 group_id 。<br>**自定义`group_id`数据校验规则**：<br>- 最大长度：`64` 字符<br>- 校验规则：数字、大小写字母的组合，不能包含空格<br>**示例值**："g122817" |
+| <md-text type="field-name" >name</md-text> | <md-text type="field-type" >string</md-text> | 用户组的名字，企业内唯一<br>- 最大长度：`100` 字<br>- 校验规则：1-100 个字，企业内唯一<br>**示例值**："IT 外包组" |
+| <md-text type="field-name" >description</md-text> | <md-text type="field-type" >string</md-text> | 用户组描述信息<br>- 最大长度：`500` 字<br>- 校验规则：0-500<br>**示例值**："IT 外包用户组，需要进行细粒度权限管控" |
+| <md-text type="field-name" >type</md-text> | <md-text type="field-type" >int</md-text> | 用户组的类型<br>- option字段<br>可选值有：<br>1：普通用户组<br>- 默认值：1<br>- 说明：类型字段的定义，预留未来扩展 |
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >group_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	租户内用户组的唯一标识，可在创建用户组时自定义，不自定义则由系统自动生成，已创建用户组不允许修改 group_id 。
-      
-**自定义`group_id`数据校验规则**：
-
-- 最大长度：`64` 字符
-
-- 校验规则：数字、大小写字母的组合，不能包含空格
-      
-**示例值**："g122817"
-	</md-td>
-</md-tr>
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户组的名字，企业内唯一
-
-- 最大长度：`100` 字
-
-- 校验规则：1-100 个字，企业内唯一
-      
-**示例值**："IT 外包组"  
-
-	</md-td>
-</md-tr>
-    
-    <md-tr>
-	<md-td>
-	<md-text type="field-name" >description</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	用户组描述信息
-- 最大长度：`500` 字
-
-- 校验规则：0-500
-      
-**示例值**："IT 外包用户组，需要进行细粒度权限管控"
-
-	</md-td>
-</md-tr>
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-    
-    用户组的类型
-- option字段
-  
-      可选值有：
-      1：普通用户组
-      
-- 默认值：1
-      
-- 说明：类型字段的定义，预留未来扩展
-	</md-td>
-</md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 
 ## 用户组 ID 说明

@@ -26,47 +26,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/block/api/wind
 
 ## 输出
 回调函数返回对象的属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                width
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                宽度，单位 px
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                height
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                高度，单位 px
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| width | number | 宽度，单位 px |
+| height | number | 高度，单位 px |
+
 
 
 ## 示例代码

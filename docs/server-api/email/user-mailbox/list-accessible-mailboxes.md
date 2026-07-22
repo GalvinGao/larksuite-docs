@@ -38,81 +38,21 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/mail/v1/user_mailboxes/:user_mailbox_id/accessible_mailboxes</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="mail:user_mailbox" desc="查询、创建、修改和删除用户的企业邮箱" support_app_types="custom" tags="">查询、创建、修改和删除用户的企业邮箱</md-perm>
-            <md-perm name="mail:user_mailbox:readonly" desc="查询用户的企业邮箱" support_app_types="custom" tags="">查询用户的企业邮箱</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/mail/v1/user_mailboxes/:user_mailbox_id/accessible_mailboxes |
+| HTTP Method | GET |
+| 接口频率限制 | [10 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="mail:user_mailbox" desc="查询、创建、修改和删除用户的企业邮箱" support_app_types="custom" tags="">查询、创建、修改和删除用户的企业邮箱</md-perm><br><md-perm name="mail:user_mailbox:readonly" desc="查询用户的企业邮箱" support_app_types="custom" tags="">查询用户的企业邮箱</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -282,53 +222,14 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1230001</md-td>
-  <md-td>param is invalid, check user_mailbox_id</md-td>
-  <md-td>参数错误，请检查user_mailbox_id参数是否正确</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1230001 | param is invalid, check user_mailbox_id | 参数错误，请检查user_mailbox_id参数是否正确 |
+| 403 | 1230004 | permission denied: mailbox not found, unsupported mailbox type, or no access to this mailbox | 权限不足：邮箱不存在、邮箱类型不支持，或无权访问该邮箱，请检查user_mailbox_id参数和权限申请状态 |
+| 500 | 1230003 | internal server error, please retry later | 服务器内部错误，请稍后重试 |
+| 400 | 1230005 | tenant access token not support me | 使用 tenant_access_token 调用时，不支持使用 `me` 作为 user_mailbox_id。请传入完整的具体用户邮箱地址，例如 user@example.com。 |
 
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1230004</md-td>
-  <md-td>permission denied: mailbox not found, unsupported mailbox type, or no access to this mailbox</md-td>
-  <md-td>权限不足：邮箱不存在、邮箱类型不支持，或无权访问该邮箱，请检查user_mailbox_id参数和权限申请状态</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1230003</md-td>
-  <md-td>internal server error, please retry later</md-td>
-  <md-td>服务器内部错误，请稍后重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1230005</md-td>
-  <md-td>tenant access token not support me</md-td>
-  <md-td>使用 tenant_access_token 调用时，不支持使用 `me` 作为 user_mailbox_id。请传入完整的具体用户邮箱地址，例如 user@example.com。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

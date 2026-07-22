@@ -29,181 +29,29 @@ source_url: https://open.larksuite.com/document/common-capabilities/sso/api/obta
 - 当应用使用 `user_access_token` 调用某个 OpenAPI 时，必须确保该 `user_access_token` 具备[目标 OpenAPI 所需的权限](/document/ukTMukTMukTM/uQjN3QjL0YzN04CN2cDN)，否则调用将失败。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://accounts.larksuite.com/open-apis/authen/v1/authorize</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    
-         <md-tr>
-      <md-th>接口频率限制        </md-th>
-      <md-td>1000 次/分钟、50 次/秒</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            无
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://accounts.larksuite.com/open-apis/authen/v1/authorize |
+| HTTP Method | GET |
+| 接口频率限制 | 1000 次/分钟、50 次/秒 |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | 无 |
+
 
 ### 查询参数
 
 >  为了确保 URL 构造 & 编码正确，建议使用相关的 URL 标准库来完成 URL 的解析和构建，避免手动拼接。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%">名称</md-th>
-      <md-th style="width: 15%">类型</md-th>
-      <md-th style="width: 15%" filters="是,否">必填</md-th>
-      <md-th style="width: 55%">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">client_id</md-text>
-      </md-td>
-      <md-td>
-        <md-text type="field-type">string</md-text>
-      </md-td>
-      <md-td>是</md-td>
-      <md-td>
-应用的 App ID，可以在开发者后台的**凭证与基础信息**页面查看 App ID。有关 App ID 的详细介绍，请参考[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
-        
-**示例值：** `cli_a5d611352af9d00b`
-      </md-td>
-    </md-tr>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| <md-text type="field-name">client_id</md-text> | <md-text type="field-type">string</md-text> | 是 | 应用的 App ID，可以在开发者后台的**凭证与基础信息**页面查看 App ID。有关 App ID 的详细介绍，请参考[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。<br>**示例值：** `cli_a5d611352af9d00b` |
+| <md-text type="field-name">redirect_uri</md-text> | <md-text type="field-type">string</md-text> | 是 | 应用重定向地址，在用户授权成功后会跳转至该地址，同时会携带 `code` 以及 `state` 参数（如有传递 `state` 参数）。<br>请注意：<br>1. 该地址需经过 URL 编码；<br>2. 调用本接口前，你需要在开发者后台应用的**安全设置**页面，将用于接受 OAuth 回调的 HTTP GET 请求接口地址配置为应用的重定向 URL。重定向 URL 支持配置多个，只有在重定向 URL 列表中的 URL 才会通过开放平台的安全校验。详情请参考[配置重定向域名](/document/uYjL24iN/uYjN3QjL2YzN04iN2cDN)。<br>**示例值：** `https://example.com/api/oauth/callback` |
+| <md-text type="field-name">scope</md-text> | <md-text type="field-type">string</md-text> | 否 | 用户需要增量授予应用的权限。<br>**格式要求：** `scope` 参数为空格分隔，区分大小写的字符串。<br>**注意**：<br>- 开发者需要根据业务场景，在[开发者后台](https://open.larksuite.com/app)的 **权限管理** 模块中完成调用 OpenAPI 所需的 `scope` 申请后，自主拼接 `scope` 参数。如果没有在应用后台为应用申请相应权限，则实际使用应用时用户会遇到 20027 报错。<br>- 应用最多一次可以请求用户授予 50 个 `scope`。详情参考 [API 权限列表](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)。<br>- 如果后续需要获取 `refresh_token`，此处需要添加 `offline_access` 权限。详情参考 [刷新 user_access_token](/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token)）：<br><md-perm name="offline_access" desc="离线访问已授权数据" support_app_types="custom,isv">offline_access</md-perm><br>**示例值：** `contact:contact bitable:app:readonly` |
+| <md-text type="field-name">state</md-text> | <md-text type="field-type">string</md-text> | 否 | 用来维护请求和回调之间状态的附加字符串，在授权完成回调时会原样回传此参数。应用可以根据此字符串来判断上下文关系，同时该参数也可以用以防止 CSRF 攻击，请务必校验 `state` 参数前后是否一致。<br>**示例值：** `RANDOMSTRING` |
+| <md-text type="field-name">code_challenge</md-text> | <md-text type="field-type">string</md-text> | 否 | 用于通过 PKCE（Proof Key for Code Exchange）流程增强授权码的安全性。<br>**示例值：** `E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM`<br>有关 PKCE 的详细信息，请参阅[RFC-7636 - Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636)。 |
+| <md-text type="field-name">code_challenge_method</md-text> | <md-text type="field-type">string</md-text> | 否 | 生成 `code_challenge` 的方法。<br>**可选值**：<br>1. **`S256`**（推荐）：<br>使用 SHA-256 哈希算法计算 `code_verifier` 的哈希值，并将结果进行 Base64URL 编码，生成 `code_challenge`。<br>2. **`plain`**（默认值）：<br>直接将 `code_verifier` 作为 `code_challenge`，无需进行额外处理。<br>以上 `code_verifier` 是指在发起授权前，本地生成的随机字符串。 |
 
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">redirect_uri</md-text>
-      </md-td>
-      <md-td>
-        <md-text type="field-type">string</md-text>
-      </md-td>
-      <md-td>是</md-td>
-      <md-td>
-应用重定向地址，在用户授权成功后会跳转至该地址，同时会携带 `code` 以及 `state` 参数（如有传递 `state` 参数）。
-
-请注意： 
-
-1. 该地址需经过 URL 编码；
-        
-2. 调用本接口前，你需要在开发者后台应用的**安全设置**页面，将用于接受 OAuth 回调的 HTTP GET 请求接口地址配置为应用的重定向 URL。重定向 URL 支持配置多个，只有在重定向 URL 列表中的 URL 才会通过开放平台的安全校验。详情请参考[配置重定向域名](/document/uYjL24iN/uYjN3QjL2YzN04iN2cDN)。
-        
-**示例值：** `https://example.com/api/oauth/callback`
-      </md-td>
-    </md-tr>
-    
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">scope</md-text>
-      </md-td>
-      <md-td>
-        <md-text type="field-type">string</md-text>
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>
-用户需要增量授予应用的权限。
-
-**格式要求：** `scope` 参数为空格分隔，区分大小写的字符串。
-        
-**注意**：
-
-- 开发者需要根据业务场景，在[开发者后台](https://open.larksuite.com/app)的 **权限管理** 模块中完成调用 OpenAPI 所需的 `scope` 申请后，自主拼接 `scope` 参数。如果没有在应用后台为应用申请相应权限，则实际使用应用时用户会遇到 20027 报错。
-        
-- 应用最多一次可以请求用户授予 50 个 `scope`。详情参考 [API 权限列表](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)。
-        
-- 如果后续需要获取 `refresh_token`，此处需要添加 `offline_access` 权限。详情参考 [刷新 user_access_token](/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token/refresh-user-access-token)）：
-	<md-perm name="offline_access" desc="离线访问已授权数据" support_app_types="custom,isv">offline_access</md-perm>  
-        
-**示例值：** `contact:contact bitable:app:readonly`
-      </md-td>
-    </md-tr>
-    
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">state</md-text>
-      </md-td>
-      <md-td>
-        <md-text type="field-type">string</md-text>
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>
-用来维护请求和回调之间状态的附加字符串，在授权完成回调时会原样回传此参数。应用可以根据此字符串来判断上下文关系，同时该参数也可以用以防止 CSRF 攻击，请务必校验 `state` 参数前后是否一致。
-
-**示例值：** `RANDOMSTRING`
-      </md-td>
-    </md-tr>
-    
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">code_challenge</md-text>
-      </md-td>
-      <md-td>
-        <md-text type="field-type">string</md-text>
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>
-用于通过 PKCE（Proof Key for Code Exchange）流程增强授权码的安全性。
-
-**示例值：** `E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM`
-        
-有关 PKCE 的详细信息，请参阅[RFC-7636 - Proof Key for Code Exchange by OAuth Public Clients](https://datatracker.ietf.org/doc/html/rfc7636)。        
-      </md-td>
-    </md-tr>
-    
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">code_challenge_method</md-text>
-      </md-td>
-      <md-td>
-        <md-text type="field-type">string</md-text>
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>
-生成 `code_challenge` 的方法。
-
-**可选值**：  
-1. **`S256`**（推荐）：  
-   使用 SHA-256 哈希算法计算 `code_verifier` 的哈希值，并将结果进行 Base64URL 编码，生成 `code_challenge`。  
-2. **`plain`**（默认值）：  
-   直接将 `code_verifier` 作为 `code_challenge`，无需进行额外处理。
-
-以上 `code_verifier` 是指在发起授权前，本地生成的随机字符串。
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
  
 ### 请求示例
 
@@ -218,41 +66,11 @@ https://accounts.larksuite.com/open-apis/authen/v1/authorize?client_id=cli_a5d61
 ### 成功响应
 当用户同意授权后，浏览器将重定向至发起授权时给定的的 `redirect_uri` 地址，同时携带 `code` 和 `state` 参数。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%">名称</md-th>
-      <md-th style="width: 70%">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">code</md-text>
-      </md-td>
-      <md-td>
-授权码，用于获取 `user_access_token`。
-        
-**字符集：** [A-Z] / [a-z] / [0-9] / "-" / "_"
-        
-**长度：** 请开发者至少预留 64 位字符
-        
-**示例值：** `2Wd5g337vo5BZXUz-3W5KECsWUmIzJ_FJ1eFD59fD1AJIibIZljTu3OLK-HP_UI1`
-      </md-td>
-    </md-tr>
+| 名称 | 描述 |
+| --- | --- |
+| <md-text type="field-name">code</md-text> | 授权码，用于获取 `user_access_token`。<br>**字符集：** [A-Z] / [a-z] / [0-9] / "-" / "_"<br>**长度：** 请开发者至少预留 64 位字符<br>**示例值：** `2Wd5g337vo5BZXUz-3W5KECsWUmIzJ_FJ1eFD59fD1AJIibIZljTu3OLK-HP_UI1` |
+| <md-text type="field-name">state</md-text> | 打开授权页时传入的 `state` 参数的原值，如未传入此处不会返回。 |
 
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">state</md-text>
-      </md-td>
-      <md-td>
-打开授权页时传入的 `state` 参数的原值，如未传入此处不会返回。
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 示例：
 ```http
@@ -262,35 +80,11 @@ https://example.com/api/oauth/callback?code=2Wd5g337vo5BZXUz-3W5KECsWUmIzJ_FJ1eF
 ### 失败响应
 当用户拒绝授权时，浏览器将重定向至发起授权时给定的 `redirect_uri` 地址，同时携带 `error` 和 `state` 查询参数。 当前 `error` 参数的固定值为 `access_denied`，请妥善处理拒绝授权时的情况。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%">名称</md-th>
-      <md-th style="width: 70%">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">error</md-text>
-      </md-td>
-      <md-td>
-错误信息，当前固定为 `access_denied`
-      </md-td>
-    </md-tr>
+| 名称 | 描述 |
+| --- | --- |
+| <md-text type="field-name">error</md-text> | 错误信息，当前固定为 `access_denied` |
+| <md-text type="field-name">state</md-text> | 打开授权页时传入的 `state` 参数的原值，如未传入此处不会返回 |
 
-    <md-tr level="0">
-      <md-td>
-        <md-text type="field-name">state</md-text>
-      </md-td>
-      <md-td>
-打开授权页时传入的 `state` 参数的原值，如未传入此处不会返回
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 示例：
 ```http

@@ -27,39 +27,11 @@ getBeacons(Object object) 用于获取所有已搜索到的 Beacon 设备。
 
 该接口支持小程序和网页应用调用，对应的客户端版本支持情况如下所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V4.6.0+</md-version> | <md-version>V4.6.0+</md-version> | **X** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V4.6.0+</md-version> | <md-version>V4.6.0+</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> </md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
 
 
 ## 输入
@@ -71,95 +43,16 @@ getBeacons(Object object) 用于获取所有已搜索到的 Beacon 设备。
 
 该接口继承[标准对象输出](/document/uYjL24iN/ukzNy4SO3IjL5cjM#8c92acb8)，`success` 返回对象的扩展属性如下所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 25%;">名称</md-th>
-            <md-th style="width: 20%;">数据类型</md-th>
-            <md-th>描述</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>beacons</md-td>
-            <md-td>[BeaconInfo[]](/document/uYjL24iN/uQTOuQTOuQTO/ibeacon/ibeaconinfo)</md-td>
-            <md-td>Beacon 设备列表。</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">uuid</md-text>
-            </md-td>
-            <md-td>string</md-td>
-            <md-td>Beacon 设备广播的 uuid。</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">major</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>Beacon 设备的主 id。
-<md-alert type="tip" icon="none">
-**注意**：历史存在 Android 中 `major` 以及 `minor` 字段为 string 类型的问题，该问题在Lark V5.26.0 版本已修复。</md-alert>
-          </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">minor</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>Beacon 设备的次 id。
-<md-alert type="tip" icon="none">
-**注意**：历史存在 Android 中 `major` 以及 `minor` 字段为 string 类型的问题，该问题在Lark V5.26.0 版本已修复。</md-alert>
-          </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">proximity</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>表示设备距离的枚举值。可能值：
-- `0`：无效
-- `1`：非常近
-- `2`：近
-- `3`：远
-          </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">accuracy</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>Beacon 设备的距离。</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">rssi</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>表示设备的信号强度。</md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| beacons | [BeaconInfo[]](/document/uYjL24iN/uQTOuQTOuQTO/ibeacon/ibeaconinfo) | Beacon 设备列表。 |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">uuid</md-text> | string | Beacon 设备广播的 uuid。 |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">major</md-text> | number | Beacon 设备的主 id。<br><md-alert type="tip" icon="none"><br>**注意**：历史存在 Android 中 `major` 以及 `minor` 字段为 string 类型的问题，该问题在Lark V5.26.0 版本已修复。</md-alert> |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">minor</md-text> | number | Beacon 设备的次 id。<br><md-alert type="tip" icon="none"><br>**注意**：历史存在 Android 中 `major` 以及 `minor` 字段为 string 类型的问题，该问题在Lark V5.26.0 版本已修复。</md-alert> |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">proximity</md-text> | number | 表示设备距离的枚举值。可能值：<br>- `0`：无效<br>- `1`：非常近<br>- `2`：近<br>- `3`：远 |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">accuracy</md-text> | number | Beacon 设备的距离。 |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">rssi</md-text> | number | 表示设备的信号强度。 |
+
 
 ## 示例代码
 

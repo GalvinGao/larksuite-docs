@@ -38,82 +38,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/approval/v4/tasks/pass</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="approval:task:write" desc="处理审批任务" support_app_types="custom,isv" tags="">处理审批任务</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/approval/v4/tasks/pass |
+| HTTP Method | POST |
+| 接口频率限制 | [100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="approval:task:write" desc="处理审批任务" support_app_types="custom,isv" tags="">处理审批任务</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -299,77 +239,17 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390001</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>根据接口文档的参数说明，检查请求时传入的参数是否正确。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1390001 | param is invalid | 根据接口文档的参数说明，检查请求时传入的参数是否正确。 |
+| 400 | 1390002 | approval code not found | 找不到审批定义 Code，检查传入的审批定义 Code 是否正确。 |
+| 400 | 1390003 | instance code not found | 找不到审批实例 Code，检查传入的审批实例 Code 是否正确。 |
+| 400 | 1395001 | There have been some errors. Please try again later | 服务出现错误，可先重试请求，若多次重试仍报错，请联系[Lark技术支持](https://applink.larksuite.com/TLJpeNdW) |
+| 400 | 1390010 | task not found | 找不到审批任务 ID，检查传入的审批任务 ID 是否正确 |
+| 400 | 1390018 | not support handwritten signature | API 方式不支持手写签名功能。你需要登录Lark客户端，在客户端内处理审批。 |
+| 400 | 1390006 | Failed to verify form information in the approval definitions | 审批定义中表单信息验证失败，查看传入的form是否正确 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390002</md-td>
-  <md-td>approval code not found</md-td>
-  <md-td>找不到审批定义 Code，检查传入的审批定义 Code 是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390003</md-td>
-  <md-td>instance code not found</md-td>
-  <md-td>找不到审批实例 Code，检查传入的审批实例 Code 是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1395001</md-td>
-  <md-td>There have been some errors. Please try again later</md-td>
-  <md-td>服务出现错误，可先重试请求，若多次重试仍报错，请联系[Lark技术支持](https://applink.larksuite.com/TLJpeNdW)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390010</md-td>
-  <md-td>task not found</md-td>
-  <md-td>找不到审批任务 ID，检查传入的审批任务 ID 是否正确</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390018</md-td>
-  <md-td>not support handwritten signature</md-td>
-  <md-td>API 方式不支持手写签名功能。你需要登录Lark客户端，在客户端内处理审批。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1390006</md-td>
-  <md-td>Failed to verify form information in the approval definitions</md-td>
-  <md-td>审批定义中表单信息验证失败，查看传入的form是否正确</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

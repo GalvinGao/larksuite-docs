@@ -32,94 +32,13 @@ MCP 工具使用 MCP（Model Context Protocol） 协议连接Lark开放平台，
 AI 会根据实际输入的需求提示词进行规划，并调用不同的 OpenAPI，因此应用需要开通的权限也会存在不同。
 :::
 
-:::html
+| 场景示例 | 前置配置 | Trae 运行示例 |
+| --- | --- | --- |
+| 初始化项目管理多维表格<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/afc6b88dd1fc06f8b475a05f975a1074_dNfEjWXykn.png?height=786&lazyload=true&width=2936) | -   **应用能力**：机器人<br>- **应用权限**：<br><md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm> | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f32497b673136605eee1f624c63d67bc_YrXsa60jjH.png" width="270" height="500"> |
+| 创建群聊、拉人进群并发送Lark卡片<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/284ae501535ae4540ba2fdfcf6a18d70_wxX5k2uqcs.png?height=618&lazyload=true&width=2186) | -   **应用能力**：机器人<br>- **应用权限**：<br><md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm><br><md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" support_app_types="custom,isv" tags="">以应用的身份发消息</md-perm><br>- **其他**：确保群内所有成员在应用的可见范围内。参考[配置应用可用范围](/document/home/introduction-to-scope-and-authorization/availability)。 | ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/8c89088acd529a86c4549a687af780a3_WelQJWjC7v.png?height=1866&lazyload=true&width=920) |
+| 总结群内的消息，并记录到多维表格<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/a0d84feb93cca71a039e176a7d02ebf8_eCspZKbokF.png?height=642&lazyload=true&width=2942) | -   **应用能力**： 机器人<br>- **应用权限**：<br><md-perm name="im:message.group_msg" desc="获取群组中所有消息（敏感权限）" support_app_types="custom,isv" tags="">获取群组中所有消息（敏感权限）</md-perm><br><md-perm name="base:app:create" desc="创建多维表格" support_app_types="custom,isv" tags="">创建多维表格</md-perm><br><md-perm name="base:table:create" desc="新增数据表" support_app_types="custom,isv" tags="">新增数据表</md-perm><br><md-perm name="base:record:create" desc="新增记录" support_app_types="custom,isv" tags="">新增记录</md-perm><br>- **其他**：机器人在群聊中 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/c4c94c8151ae6cb0cc8185a535c9aa9d_zGuWXFV3BY.png" width="270" height="500"> |
+| 为群成员开通多维表格权限<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/2b39bdbfd41e273eb8280acad0517a72_O9N1tfY1qn.png?height=698&lazyload=true&maxWidth=240&width=970) | -   **应用能力**：启用机器人能力<br>- **应用权限**：<br><md-perm name="im:chat.members:read" desc="查看群成员" support_app_types="custom,isv" tags="">查看群成员</md-perm><br><md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm><br>- **其他**：机器人在群聊中；机器人对多维表格有管理权限 | ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4ff4edab9a5db801ad79857b5369dd92_F27tuhGpwU.png?height=1156&lazyload=true&width=924) |
 
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:35%">场景示例</md-th>
-<md-th style="width:35%">前置配置</md-th>
-<md-th style="width:25%">Trae 运行示例</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-
-<md-tr>
-<md-td>初始化项目管理多维表格
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/afc6b88dd1fc06f8b475a05f975a1074_dNfEjWXykn.png?height=786&lazyload=true&width=2936)
-  
-  </md-td>
-<md-td>-   **应用能力**：机器人
-- **应用权限**：
-
-	<md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm></md-td>
-<md-td>
-<img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f32497b673136605eee1f624c63d67bc_YrXsa60jjH.png" width="270" height="500">  
-</md-td>
-
-</md-tr>
-
-<md-tr>
-<md-td>创建群聊、拉人进群并发送Lark卡片
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/284ae501535ae4540ba2fdfcf6a18d70_wxX5k2uqcs.png?height=618&lazyload=true&width=2186)
-  
-  
-  </md-td>
-<md-td>-   **应用能力**：机器人
-- **应用权限**：
-  
-  <md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm>
-  <md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" support_app_types="custom,isv" tags="">以应用的身份发消息</md-perm>
-
-- **其他**：确保群内所有成员在应用的可见范围内。参考[配置应用可用范围](/document/home/introduction-to-scope-and-authorization/availability)。</md-td>
-<md-td>
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/8c89088acd529a86c4549a687af780a3_WelQJWjC7v.png?height=1866&lazyload=true&width=920)
-</md-td>
-
-</md-tr>
-  
-<md-tr>
-<md-td>总结群内的消息，并记录到多维表格
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/a0d84feb93cca71a039e176a7d02ebf8_eCspZKbokF.png?height=642&lazyload=true&width=2942)
-  
-  
-  </md-td>
-<md-td>-   **应用能力**： 机器人
-- **应用权限**：
-  <md-perm name="im:message.group_msg" desc="获取群组中所有消息（敏感权限）" support_app_types="custom,isv" tags="">获取群组中所有消息（敏感权限）</md-perm>
-  <md-perm name="base:app:create" desc="创建多维表格" support_app_types="custom,isv" tags="">创建多维表格</md-perm>
-  <md-perm name="base:table:create" desc="新增数据表" support_app_types="custom,isv" tags="">新增数据表</md-perm>
-  <md-perm name="base:record:create" desc="新增记录" support_app_types="custom,isv" tags="">新增记录</md-perm>
-
-- **其他**：机器人在群聊中</md-td>
-<md-td>
-<img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/c4c94c8151ae6cb0cc8185a535c9aa9d_zGuWXFV3BY.png" width="270" height="500">   
-</md-td>
-
-</md-tr>
-  
-<md-tr>
-<md-td>为群成员开通多维表格权限
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/2b39bdbfd41e273eb8280acad0517a72_O9N1tfY1qn.png?height=698&lazyload=true&maxWidth=240&width=970)
-  
-  </md-td>
-<md-td>-   **应用能力**：启用机器人能力
-- **应用权限**：
-	<md-perm name="im:chat.members:read" desc="查看群成员" support_app_types="custom,isv" tags="">查看群成员</md-perm>
-	<md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm>
-
-- **其他**：机器人在群聊中；机器人对多维表格有管理权限</md-td>
-<md-td>
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4ff4edab9a5db801ad79857b5369dd92_F27tuhGpwU.png?height=1156&lazyload=true&width=924)</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 
 ## 支持的 OpenAPI

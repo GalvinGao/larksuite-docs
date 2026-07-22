@@ -19,187 +19,33 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukTN3UjL5UzN14SO1cTN
 
 ## 支持说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">应用能力</md-th>
-<md-th style="width: 20%;">Android</md-th>
-<md-th style="width: 20%;">iOS</md-th>
-<md-th style="width: 20%;">PC</md-th>
-<md-th style="width: 20%;">预览效果</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>小程序</md-td>
-<md-td><md-version>V3.12.0+</md-version></md-td>
-<md-td><md-version>V3.12.0+</md-version></md-td>
-<md-td><md-version>V3.13.0+</md-version></md-td>
-<md-td><md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/file/file" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-<md-tr>
-<md-td>网页应用</md-td>
-<md-td><md-version>V3.44.0+</md-version></md-td>
-<md-td><md-version>V3.44.0+</md-version></md-td>
-<md-td><md-version>V3.47.0+</md-version></md-td>
-<md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.12.0+</md-version> | <md-version>V3.12.0+</md-version> | <md-version>V3.13.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/file/file" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.47.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104" fontSize="14">预览</md-preview-app> |
+
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">
-名称
-</md-th>
-<md-th style="width: 18%;">
-数据类型
-</md-th>
-<md-th style="width: 10%;">
-必填
-</md-th>
-<md-th style="width: 10%;">
-默认值
-</md-th>
-<md-th>
-描述
-</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-maxNum
-</md-td>
-<md-td>
-number
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
-10
-</md-td>
-<md-td>
-最大文件选择数量
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-pickerTitle
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
-Select Docs
-</md-td>
-<md-td>
-允许开发者自定义组件的标题文案
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-pickerConfirm
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
-Select
-</md-td>
-<md-td>
-允许开发者自定义组件的选择按钮文案
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| maxNum | number | 否 | 10 | 最大文件选择数量 |
+| pickerTitle | string | 否 | Select Docs | 允许开发者自定义组件的标题文案 |
+| pickerConfirm | string | 否 | Select | 允许开发者自定义组件的选择按钮文案 |
+
 
 ## 输出
 
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 30%;">
-名称
-</md-th>
-<md-th style="width: 18%;">
-数据类型
-</md-th>
-<md-th>
-描述
-</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-fileList
-</md-td>
-<md-td>
-object[]
-</md-td>
-<md-td>
-文件列表
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-filePath
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
-docs 文件 url
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-&emsp;
-<span style="color: #8F959E">
-∟
-</span>
-&nbsp;
-<md-text type="field-name">
-fileName
-</md-text>
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
-docs 文件名
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| fileList | object[] | 文件列表 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>filePath<br></md-text> | string | docs 文件 url |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>fileName<br></md-text> | string | docs 文件名 |
+
 
 ## 示例代码
 

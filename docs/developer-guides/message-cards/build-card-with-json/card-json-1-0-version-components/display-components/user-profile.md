@@ -47,94 +47,16 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ## 字段说明
 
 人员组件的字段说明如下表。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 15%;">参数</md-th>
-      <md-th style="width: 12%;">是否必须</md-th>
-      <md-th style="width: 12%;">类型</md-th>
-      <md-th style="width: 12%;">默认值</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>person</md-td>
-      <md-td>
-        组件的标签，人员组件的取值为 `person`。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>size</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>medium</md-td>
-      <md-td>
-        人员的头像尺寸。可取值：
-- extra_small：超小尺寸
- - small：小尺寸
-- medium：中尺寸
- - large：大尺寸
-      </md-td>
-    </md-tr>
 
-  
-    
-      <md-tr>
-      <md-td>show_avatar</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>true</md-td>
-      <md-td>
-是否展示人员的头像。
-      </md-td>
-    </md-tr>   
-   
+| 参数 | 是否必须 | 类型 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | person | 组件的标签，人员组件的取值为 `person`。 |
+| size | 否 | String | medium | 人员的头像尺寸。可取值：<br>- extra_small：超小尺寸<br>- small：小尺寸<br>- medium：中尺寸<br>- large：大尺寸 |
+| show_avatar | 否 | Boolean | true | 是否展示人员的头像。 |
+| show_name | 否 | Boolean | false | 是否展示人员的用户名。 |
+| style | 否 | String | normal | 人员组件的展示样式。可选值有:<br>- normal：默认样式<br>- capsule：胶囊样式 |
+| user_id | 是 | String | 空 | 人员的 ID。可选值有：<br>- 人员的 Open ID：标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。详情参考[如何获取 Open ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)<br>- 人员的 Union ID：标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。详情参考[如何获取 Union ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)<br>- 人员的 User ID ：标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。详情参考[如何获取User ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id) |
 
-   <md-tr>
-      <md-td>show_name</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-是否展示人员的用户名。
-      </md-td>
-    </md-tr>     
-  
-  
-
-   <md-tr>
-      <md-td>style</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>normal</md-td>
-      <md-td>
-人员组件的展示样式。可选值有:
-- normal：默认样式
-- capsule：胶囊样式
-      </md-td>
-    </md-tr>   
-
-    <md-tr>
-      <md-td>user_id</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        人员的 ID。可选值有：
- - 人员的 Open ID：标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。详情参考[如何获取 Open ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-openid)
-- 人员的 Union ID：标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。详情参考[如何获取 Union ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-union-id)
-- 人员的 User ID ：标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。详情参考[如何获取User ID](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-obtain-user-id)
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-
-:::
 
 ## 示例代码
 

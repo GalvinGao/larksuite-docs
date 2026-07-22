@@ -81,107 +81,19 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/do
 从功能角度，块可以分为以下几种类别。了解块的具体类型，参考 [BlockType 的枚举值](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/data-structure/block#e8ce4e8e)。
 
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 10%;"><b>功能类别</b></md-th>  
-      <md-th style="width: 30%;"><b>典型块</md-th>  
-      <md-th style="width: 40%;"><b>示例</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        文本类
-      </md-td>  
-      <md-td style="width: 30%;">页面（Page）、文本（Text）、标题（Heading）、无序列表（Bullet）、有序列表（Ordered）、代码（Code）、待办事项（Todo）块等。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f6a33cebc5a4c521348ee3f58fee80c1_04nl3VcOKG.png?height=282&lazyload=true&width=1155" alt="示例图">
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td style="width: 30%;">
-        数据类
-      </md-td>  
-      <md-td style="width: 30%;">多维表格（Bitable）、电子表格（Sheet）、思维笔记（Mindnote）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ae1f17cb17db5981934bbc24164e2486_TvXBnK3iKJ.png?height=895&lazyload=true&width=1261" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        视觉类
-      </md-td>  
-      <md-td style="width: 30%;">分割线（Divider）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/5bab6560a4986d3952a42aaf10ebda4a_FbbaEpbuDW.png?height=235&lazyload=true&width=831" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        媒体类
-      </md-td>  
-      <md-td style="width: 30%;">图片（Image）、文件（File）、内嵌（Iframe）块等。</md-td>  
-      <md-td style="width: 40%;">
-       <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/6f35d2028d3d7340f4ab35c312639951_DykFXWelAG.png?lazyload=true&width=801&height=133" alt="Media type Example">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        协作类
-      </md-td>  
-      <md-td style="width: 30%;">会话卡片（ChatCard）块。</md-td>  
-      <md-td style="width: 40%;">
-        
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        容器类
-      </md-td>  
-      <md-td style="width: 30%;">表格单元格（TableCell）、分栏列（GridColumn）、高亮（Callout）、视图（View）、引用容器（QuoteContainer）块等。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/0d57c3278c1f162bf1f08d6a95ea7add_IBAgBSnLeY.png?height=121&lazyload=true&width=940" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        垂直类
-      </md-td>  
-      <md-td style="width: 30%;">流程图 & UML 图（Diagram）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4612455f3a2ee8ec863a1fd5ec76a5e4_fX9UlpFdxI.png?height=487&lazyload=true&width=846" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        辅助类
-      </md-td>  
-      <md-td style="width: 30%;">表格（Table）、分栏（Grid）块等。</md-td>  
-      <md-td style="width: 40%;">
-        
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        第三方块
-      </md-td>  
-      <md-td style="width: 30%;">开放平台小组件（ISV）块。</md-td>  
-      <md-td style="width: 40%;">
-        <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/eb5b07b98b5c0b352faaa42a2dcc776a_RxVQWekeUX.png?height=225&lazyload=true&width=786" alt="示例图">
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td style="width: 30%;">
-        未定义块
-      </md-td>  
-      <md-td style="width: 30%;">/</md-td>  
-      <md-td style="width: 40%;"></md-td> 
-    </md-tr> 
-  </md-tbody> 
-</md-table>
-:::
+| <b>功能类别</b> | <b>典型块 | <b>示例 |
+| --- | --- | --- |
+| 文本类 | 页面（Page）、文本（Text）、标题（Heading）、无序列表（Bullet）、有序列表（Ordered）、代码（Code）、待办事项（Todo）块等。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f6a33cebc5a4c521348ee3f58fee80c1_04nl3VcOKG.png?height=282&lazyload=true&width=1155" alt="示例图"> |
+| 数据类 | 多维表格（Bitable）、电子表格（Sheet）、思维笔记（Mindnote）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ae1f17cb17db5981934bbc24164e2486_TvXBnK3iKJ.png?height=895&lazyload=true&width=1261" alt="示例图"> |
+| 视觉类 | 分割线（Divider）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/5bab6560a4986d3952a42aaf10ebda4a_FbbaEpbuDW.png?height=235&lazyload=true&width=831" alt="示例图"> |
+| 媒体类 | 图片（Image）、文件（File）、内嵌（Iframe）块等。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/6f35d2028d3d7340f4ab35c312639951_DykFXWelAG.png?lazyload=true&width=801&height=133" alt="Media type Example"> |
+| 协作类 | 会话卡片（ChatCard）块。 |  |
+| 容器类 | 表格单元格（TableCell）、分栏列（GridColumn）、高亮（Callout）、视图（View）、引用容器（QuoteContainer）块等。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/0d57c3278c1f162bf1f08d6a95ea7add_IBAgBSnLeY.png?height=121&lazyload=true&width=940" alt="示例图"> |
+| 垂直类 | 流程图 & UML 图（Diagram）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4612455f3a2ee8ec863a1fd5ec76a5e4_fX9UlpFdxI.png?height=487&lazyload=true&width=846" alt="示例图"> |
+| 辅助类 | 表格（Table）、分栏（Grid）块等。 |  |
+| 第三方块 | 开放平台小组件（ISV）块。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/eb5b07b98b5c0b352faaa42a2dcc776a_RxVQWekeUX.png?height=225&lazyload=true&width=786" alt="示例图"> |
+| 未定义块 | / |  |
+
 
 
 **块的父子关系规则**
@@ -212,42 +124,12 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/do
 
 其它的父子关系限制如下表所示：
 
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 30%;"><b>块</md-th>  
-      <md-th style="width: 70%;"><b>限制</md-th>  
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>
-        单元格（Table Cell）
-      </md-td>  
-      <md-td>
-        不允许为单元格（TableCell）块添加如下块作为子块：<br>• 表格（Table）<br>• 电子表格（Sheet）<br>• 多维表格（Bitable）<br>• OKR
-      </md-td> 
-    </md-tr>  
-    <md-tr> 
-      <md-td>
-        分栏列（Grid Column）
-      </md-td>  
-      <md-td>
-        不允许为分栏列（GridColumn）添加如下块作为子块：<br>• 分栏（Grid）<br>• 多维表格（Bitable）<br>• OKR
-      </md-td> 
-    </md-tr> 
-    <md-tr> 
-      <md-td>
-        高亮块（Callout）
-      </md-td>  
-      <md-td>
-        只允许为高亮块（Callout）添加如下块作为子块：<br>• 文本（Text）<br>• 标题（HeadingN）<br>• 有序列表（Ordered）<br>• 无序列表（Bullet）<br>• 任务（Task）<br>• 待办事项（Todo）<br>• 引用（Quote）<br>• 引用容器（QuoteContainer）
-      </md-td> 
-    </md-tr> 
-  </md-tbody> 
-</md-table>
-:::
+| <b>块 | <b>限制 |
+| --- | --- |
+| 单元格（Table Cell） | 不允许为单元格（TableCell）块添加如下块作为子块：<br>• 表格（Table）<br>• 电子表格（Sheet）<br>• 多维表格（Bitable）<br>• OKR |
+| 分栏列（Grid Column） | 不允许为分栏列（GridColumn）添加如下块作为子块：<br>• 分栏（Grid）<br>• 多维表格（Bitable）<br>• OKR |
+| 高亮块（Callout） | 只允许为高亮块（Callout）添加如下块作为子块：<br>• 文本（Text）<br>• 标题（HeadingN）<br>• 有序列表（Ordered）<br>• 无序列表（Bullet）<br>• 任务（Task）<br>• 待办事项（Todo）<br>• 引用（Quote）<br>• 引用容器（QuoteContainer） |
+
 
 ## 使用限制
 
@@ -301,196 +183,24 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/do
 以下为文档和块的 OpenAPI 列表。
 
 ### 文档
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 35%;"><b>方法 (API)</md-th>
-            <md-th style="width: 25%;"><b>权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><b>访问凭证</md-th>
-            <md-th style="width: 10%;"><b>商店</md-th>
-            <md-th style="width: 10%;"><b>自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-              <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取文档基本信息<br>[/open-apis/docx/v1/documents/:document_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/get)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-                <md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-            <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取文档纯文本内容<br>[/open-apis/docx/v1/documents/:document_id/raw_content](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/raw_content)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-                <md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-              <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取文档所有块<br>[/open-apis/docx/v1/documents/:document_id/blocks](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)</md-text></md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-                <md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`POST` 创建文档<br>[/open-apis/docx/v1/documents](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
 
+| <b>方法 (API) | <b>权限要求（满足任一） | <b>访问凭证 | <b>商店 | <b>自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >`GET` 获取文档基本信息<br>[/open-apis/docx/v1/documents/:document_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/get)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm><br><md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`GET` 获取文档纯文本内容<br>[/open-apis/docx/v1/documents/:document_id/raw_content](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/raw_content)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm><br><md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`GET` 获取文档所有块<br>[/open-apis/docx/v1/documents/:document_id/blocks](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm><br><md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`POST` 创建文档<br>[/open-apis/docx/v1/documents](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document/create)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
 
-    </md-tbody>
-</md-table>
-:::
 
 ### 块
 
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 35%;"><b>方法 (API)</md-th>
-            <md-th style="width: 25%;"><b>权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><b>访问凭证</md-th>
-            <md-th style="width: 10%;"><b>商店</md-th>
-            <md-th style="width: 10%;"><b>自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-              <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/get)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-                <md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-              <md-tr>
-            <md-td>
-                <md-text type="field-name" >`POST` 创建块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`POST` 创建嵌套块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/descendant](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`PATCH` 更新块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-            </md-td>
-            <md-td>
-            <md-tag type="token-tenant">tenant_access_token</md-tag>
-            <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`PATCH` 批量更新块<br>[/open-apis/docx/v1/documents/:document_id/blocks/batch_update](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-            </md-td>
-            <md-td>
-            <md-tag type="token-tenant">tenant_access_token</md-tag>
-            <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`DELETE` 删除块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children/batch_delete](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/batch_delete)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >`GET` 获取所有子块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/get)</md-text>
-            </md-td>
-            <md-td>
-                <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm>
-                <md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user" >user_access_token</md-tag>
-            </md-td>
-            <md-td>**✓**</md-td>
-            <md-td>**✓**</md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| <b>方法 (API) | <b>权限要求（满足任一） | <b>访问凭证 | <b>商店 | <b>自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >`GET` 获取块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/get)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm><br><md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`POST` 创建块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/create)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`POST` 创建嵌套块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/descendant](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-descendant/create)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`PATCH` 更新块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/patch)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`PATCH` 批量更新块<br>[/open-apis/docx/v1/documents/:document_id/blocks/batch_update](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/batch_update)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`DELETE` 删除块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children/batch_delete](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/batch_delete)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >`GET` 获取所有子块<br>[/open-apis/docx/v1/documents/:document_id/blocks/:block_id/children](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block-children/get)</md-text> | <md-perm name="docx:document" desc="创建及编辑新版文档" tags="">创建及编辑新版文档</md-perm><br><md-perm name="docx:document:readonly" desc="查看新版文档" tags="">查看新版文档</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user" >user_access_token</md-tag> | **✓** | **✓** |
+

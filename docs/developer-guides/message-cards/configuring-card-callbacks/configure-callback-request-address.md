@@ -48,47 +48,13 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYzMxEjL2MTMx4iNzET
 
     参数说明如下：
  
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 25%">参数</md-th>
-<md-th style="width: 25%">类型</md-th>
-<md-th style="width: 50%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>challenge</md-td>
-<md-td>String</md-td>
-<md-td>用于验证的字段，需在响应体中原样返回该值。
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| challenge | String | 用于验证的字段，需在响应体中原样返回该值。<br>示例值：1b6aef1a-401f-*** |
+| type | String | 事件类型。用于校验的事件类型固定取值为 `url_verification`，表示当前请求是在验证 URL 合法性。 |
+| token | String | 应用验证标识 **Verification Token**。你可以通过该 Token 验证请求是否属于当前应用。<br>支持在开发者后台 > 应用详情页 > 开发配置 > 事件订阅模块查看应用的 **Verification Token**。 |
 
-  示例值：1b6aef1a-401f-***
-</md-td>
-</md-tr>
-
-
-<md-tr>
-<md-td>type</md-td>
-<md-td>String</md-td>
-<md-td>事件类型。用于校验的事件类型固定取值为 `url_verification`，表示当前请求是在验证 URL 合法性。</md-td>
-</md-tr>
-
-
-<md-tr>
-<md-td>token</md-td>
-<md-td>String</md-td>
-<md-td>应用验证标识 **Verification Token**。你可以通过该 Token 验证请求是否属于当前应用。
-
-支持在开发者后台 > 应用详情页 > 开发配置 > 事件订阅模块查看应用的 **Verification Token**。
-</md-td>
-</md-tr>
-
-
-</md-tbody>
-</md-table>
-:::
   
 你需要在 1 秒内将 `challenge` 值（JSON 格式）原样返回给Lark开放平台，否则请求地址验证失败。
 

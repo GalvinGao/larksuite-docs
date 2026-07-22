@@ -146,265 +146,32 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 人员选择-多选组件的字段说明如下表。
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">字段</md-th>
-<md-th style="width: 15%;">是否必填</md-th>
-<md-th style="width: 15%;">类型</md-th>
-<md-th style="width: 15%;">默认值</md-th>
-<md-th style="width: 40%;">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-tag
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>
-组件的标签。人员选择-多选组件取固定值 `multi_select_person`。
-</md-td>
-</md-tr>
-  
-  
-  <md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-      
-      
-  <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-  
-<md-tr>
-<md-td>
-type
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>
-组件边框样式。可选值：
-- default：带边框样式
-- text：不带边框的纯文本样式
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-name
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-表单容器中组件的唯一标识。用于识别用户提交的数据属于哪个组件。在同一张卡片内，该字段的值全局唯一。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-required
-</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-多选组件的内容是否必选。当组件内嵌在表单容器中时，该属性生效。可取值：
-- true：多选组件必选。当用户点击表单容器的“提交”时，未填写多选组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
-- false：多选组件选填。当用户点击表单容器的“提交”时，未填写多选组件，仍提交表单容器中的数据。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>disabled</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否禁用该多选组件。可选值：
-- true：禁用多选组件
-- false：多选组件保持可用状态
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-placeholder
-</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>
-人员选择组件内的占位文本。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ tag
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-占位提示标签。固定值为 plain_text。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ content
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>
-占位文本的内容，最多支持 100 个字符。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-width
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>
-人员选择组件的宽度。支持以下枚举值：
-- default：默认宽度
-- fill：卡片最大支持宽度
-- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示
-</md-td>
-</md-tr>
-  
-  
-  
-   <md-tr>
-      <md-td>behaviors</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。</md-td>
-    </md-tr>
-  
-  
-  
-  
-  
-  
-<md-tr>
-<md-td>
-selected_values
-</md-td>
-<md-td>否</md-td>
-<md-td>Array of objects</md-td>
-<md-td>空</md-td>
-<md-td>
-多选组件默认选中的选项。数组项的值需要和 `options.value` 对应。
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>
-options
-</md-td>
-<md-td>否</md-td>
-<md-td>Array of objects</md-td>
-<md-td>/</md-td>
-<md-td>
-选项值配置。按选项数组的顺序展示选项内容。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ value
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-选项配置，仅支持添加候选用户的 open_id。了解更多，参考[如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。
-  
-**注意**：当 options 数组为空，或 value 的值全部无效时，候选项展示为卡片所在会话中所有成员选项。
-</md-td>
-</md-tr>
-  
-  <md-tr>
-<md-td>
-confirm
-</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>
-二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
 
-**注意**：`confirm` 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。
-</md-td>
-</md-tr>
-  
-  
-    <md-tr>
-      <md-td>└ title</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题的内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ text</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗的文本内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗文本的具体内容。</md-td>
-    </md-tr>
-  
-  
-  
-  
-  
-  
-  
-</md-tbody>
-</md-table>
-:::
+| 字段 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 组件的标签。人员选择-多选组件取固定值 `multi_select_person`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| margin | 否 | String | 0 | 组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| type | 否 | String | default | 组件边框样式。可选值：<br>- default：带边框样式<br>- text：不带边框的纯文本样式 |
+| name | 是 | String | 空 | 表单容器中组件的唯一标识。用于识别用户提交的数据属于哪个组件。在同一张卡片内，该字段的值全局唯一。 |
+| required | 否 | Boolean | false | 多选组件的内容是否必选。当组件内嵌在表单容器中时，该属性生效。可取值：<br>- true：多选组件必选。当用户点击表单容器的“提交”时，未填写多选组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- false：多选组件选填。当用户点击表单容器的“提交”时，未填写多选组件，仍提交表单容器中的数据。 |
+| disabled | 否 | Boolean | false | 是否禁用该多选组件。可选值：<br>- true：禁用多选组件<br>- false：多选组件保持可用状态 |
+| placeholder | 否 | Object | / | 人员选择组件内的占位文本。 |
+| └ tag | 是 | String | plain_text | 占位提示标签。固定值为 plain_text。 |
+| └ content | 否 | String | / | 占位文本的内容，最多支持 100 个字符。 |
+| width | 否 | String | default | 人员选择组件的宽度。支持以下枚举值：<br>- default：默认宽度<br>- fill：卡片最大支持宽度<br>- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示 |
+| behaviors | 是 | Struct | / | 配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。 |
+| selected_values | 否 | Array of objects | 空 | 多选组件默认选中的选项。数组项的值需要和 `options.value` 对应。 |
+| options | 否 | Array of objects | / | 选项值配置。按选项数组的顺序展示选项内容。 |
+| └ value | 否 | String | 空 | 选项配置，仅支持添加候选用户的 open_id。了解更多，参考[如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。<br>**注意**：当 options 数组为空，或 value 的值全部无效时，候选项展示为卡片所在会话中所有成员选项。 |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br>**注意**：`confirm` 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| └ title | 是 | Struct | / | 二次确认弹窗标题。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| └ text | 是 | Struct | / | 二次确认弹窗的文本内容。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
+
 
 ## 回调示例
 

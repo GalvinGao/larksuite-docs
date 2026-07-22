@@ -30,29 +30,11 @@ Lark卡片支持多语言设置。设置多语言后，卡片将根据用户的L
 </md-alert>
 :::
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">配置方式</md-th>
-      <md-th style="width: 40%;">描述</md-th>
-      <md-th style="width: 30%;">限制</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>为卡片局部配置多语言</md-td>
-      <md-td>根据业务需要，在卡片中为部分文本、图片等属性配置多语言。推荐你选择局部多语言的配置方式，无需添加完整卡片 JSON 代码，配置多语言更便捷。</md-td>
-      <md-td>[发送仅特定人可见的消息卡片](/document/ukTMukTMukTM/uETOyYjLxkjM24SM5IjN)接口不支持为卡片局部配置多语言。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>为卡片全局配置多语言</md-td>
-      <md-td>为整张卡片内容配置多语言。你需在语种字段下添加完整卡片 JSON 代码。</md-td>
-      <md-td>[卡片 JSON 2.0 结构](uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)不支持为卡片全局配置多语言。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 配置方式 | 描述 | 限制 |
+| --- | --- | --- |
+| 为卡片局部配置多语言 | 根据业务需要，在卡片中为部分文本、图片等属性配置多语言。推荐你选择局部多语言的配置方式，无需添加完整卡片 JSON 代码，配置多语言更便捷。 | [发送仅特定人可见的消息卡片](/document/ukTMukTMukTM/uETOyYjLxkjM24SM5IjN)接口不支持为卡片局部配置多语言。 |
+| 为卡片全局配置多语言 | 为整张卡片内容配置多语言。你需在语种字段下添加完整卡片 JSON 代码。 | [卡片 JSON 2.0 结构](uAjLw4CM/ukzMukzMukzM/feishu-cards/card-json-v2-structure)不支持为卡片全局配置多语言。 |
+
 
 ## 注意事项
 

@@ -25,54 +25,12 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uAjNwUjLwYDM14CM2AT
 
 在消息卡片 `config` 字段中，支持配置的参数说明如下表所示。
 
-:::html
-<md-table>
-    <md-thead>
-    <md-tr>
-        <md-th style="width:15%">参数</md-th>
-        <md-th style="width:15%">是否必须</md-th>
-        <md-th style="width:15%">类型</md-th>
-        <md-th style="width:55%">描述</md-th>
-    </md-tr>
-    </md-thead>
-    <md-tbody>
-    <md-tr>
-        <md-td>enable_forward</md-td>
-        <md-td>否</md-td>
-        <md-td>Boolean</md-td>
-        <md-td>
-是否允许转发卡片。取值：
-- **true**：允许
-- **false**：不允许
-            
-默认值为 true，该字段要求Lark客户端的版本为 V3.31.0 及以上。
-<md-alert type="tip">
-**注意**：转发后卡片上的回传交互组件将自动置为禁用态，用户不能在转发后的卡片内进行数据交互。
-</md-alert>
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>update_multi</md-td>
-        <md-td>否
-        </md-td>
-        <md-td>Boolean</md-td>
-        <md-td>
-是否为共享卡片。取值：
-- **true**：是共享卡片，更新卡片的内容对所有收到这张卡片的人员可见。
-- **false**：非共享卡片，即独享卡片，仅操作用户可见卡片的更新内容。
-            
-默认值为 false。
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>wide_screen_mode</md-td>
-        <md-td>否</md-td>
-        <md-td>Boolean</md-td>
-        <md-td>该字段当前已废弃，无需配置。所有卡片均已升级为自适应屏幕宽度。</md-td>
-    </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 参数 | 是否必须 | 类型 | 描述 |
+| --- | --- | --- | --- |
+| enable_forward | 否 | Boolean | 是否允许转发卡片。取值：<br>- **true**：允许<br>- **false**：不允许<br>默认值为 true，该字段要求Lark客户端的版本为 V3.31.0 及以上。<br><md-alert type="tip"><br>**注意**：转发后卡片上的回传交互组件将自动置为禁用态，用户不能在转发后的卡片内进行数据交互。<br></md-alert> |
+| update_multi | 否 | Boolean | 是否为共享卡片。取值：<br>- **true**：是共享卡片，更新卡片的内容对所有收到这张卡片的人员可见。<br>- **false**：非共享卡片，即独享卡片，仅操作用户可见卡片的更新内容。<br>默认值为 false。 |
+| wide_screen_mode | 否 | Boolean | 该字段当前已废弃，无需配置。所有卡片均已升级为自适应屏幕宽度。 |
+
 ## 卡片示例
 
 ```json

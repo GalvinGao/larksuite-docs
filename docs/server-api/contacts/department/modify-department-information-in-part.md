@@ -41,99 +41,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 - 本接口不是全量更新接口，如果某一请求参数不传值，则默认不会修改对应的部门信息（注意：leaders、department_hrbps 如果传入空数组，则会把原有值清空）。如果你需要使用全量更新接口，可参见[更新部门所有信息](/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/update)。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/contact/v3/departments/:department_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>PATCH</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:department.organize:readonly" desc="获取通讯录部门组织架构信息" support_app_types="custom,isv" tags="">获取通讯录部门组织架构信息</md-perm>
-        <md-perm name="contact:department.base:readonly" desc="获取部门基础信息" support_app_types="custom,isv" tags="">获取部门基础信息</md-perm>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-        <md-perm name="contact:department.hrbp:readonly" desc="查询部门 HRBP 信息" support_app_types="custom" tags="">查询部门 HRBP 信息</md-perm>
-        <md-perm name="contact:contact:access_as_app" desc="以应用身份访问通讯录" support_app_types="custom,isv" tags="history,offline">以应用身份访问通讯录</md-perm>
-        <md-perm name="contact:contact:readonly" desc="读取通讯录" support_app_types="custom,isv" tags="history,offline">读取通讯录</md-perm>
-        <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="history">以应用身份读取通讯录</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/contact/v3/departments/:department_id |
+| HTTP Method | PATCH |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:department.organize:readonly" desc="获取通讯录部门组织架构信息" support_app_types="custom,isv" tags="">获取通讯录部门组织架构信息</md-perm><br><md-perm name="contact:department.base:readonly" desc="获取部门基础信息" support_app_types="custom,isv" tags="">获取部门基础信息</md-perm><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm><br><md-perm name="contact:department.hrbp:readonly" desc="查询部门 HRBP 信息" support_app_types="custom" tags="">查询部门 HRBP 信息</md-perm><br><md-perm name="contact:contact:access_as_app" desc="以应用身份访问通讯录" support_app_types="custom,isv" tags="history,offline">以应用身份访问通讯录</md-perm><br><md-perm name="contact:contact:readonly" desc="读取通讯录" support_app_types="custom,isv" tags="history,offline">读取通讯录</md-perm><br><md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="history">以应用身份读取通讯录</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -1202,189 +1126,31 @@ public class Main {
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43005</md-td>
-  <md-td>duplicate order error</md-td>
-  <md-td>order 取值重复。部门的 order 参数值必须唯一，不能与存量部门的 order 值相同，你可以更新 order 取值后重试。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 43005 | duplicate order error | order 取值重复。部门的 order 参数值必须唯一，不能与存量部门的 order 值相同，你可以更新 order 取值后重试。 |
+| 400 | 40002 | process root dept error | 不支持对根部门进行操作。请检查是否在请求参数部门 ID 中传入了根部门 ID `0`。 |
+| 400 | 40003 | internal error | 内部错误，请获取请求的 X-Request-Id，并向[技术支持](https://applink.larksuite.com/TLJpeNdW)进行反馈。 |
+| 403 | 40004 | no dept authority error | 当前操作涉及的部门，需在应用通讯录权限范围中，了解更多可参见[权限范围资源介绍](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
+| 400 | 40008 | dept Info is null error | 部门的信息不能为空。 |
+| 403 | 40014 | no parent dept authority error | 没有父部门权限。传入的父部门需要在应用的通讯录权限范围内。如何设置通讯录权限范围，参见[权限范围资源介绍](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
+| 401 | 42008 | tenant id is invalid error | 租户身份无效。请求时，请求头 Authorization 对应的租户身份，需要是当前操作中的资源的所属租户。 |
+| 400 | 43016 | leaders is repeat | 部门负责人重复。请检查传入的部门负责人是否有误。 |
+| 400 | 43017 | relate dept over limit | 指定的单位已关联 1000 个部门，无法继续关联部门。 |
+| 400 | 43018 | duplicate i18n name | 部门名称的国际化配置重复。你需要修改 i18n_name 参数配置后重试。 |
+| 400 | 43019 | exceed dept max level | 部门层级深度已达到 25 层，不能继续创建子部门。 |
+| 400 | 43021 | department chat not exist | 部门群不存在。 |
+| 400 | 43022 | department name duplicate | 部门名重复。你需要修改传入的 name 参数值，并重试。 |
+| 400 | 43023 | dept structure no permissione | 没有部门权限。部门需要在应用的通讯录权限范围内。如何设置通讯录权限范围，参见[权限范围资源介绍](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。 |
+| 400 | 43024 | dept structure tenant lock fail | 部门结构变动获取租户锁失败。由并发请求产生的冲突，请稍后重试。 |
+| 400 | 43025 | top department leader unjoined | 用户未加入，不能成为部门负责人。你需要将部门负责人修改为通讯录内包含的在职员工。 |
+| 400 | 43026 | employee type is not valid | 人员类型无效。你需要参考接口文档中 group_chat_employee_types 的参数描述，设置正确的人员类型。 |
+| 400 | 43028 | invalid department hrbps | 部门的 HRBP 不合法。请求时，部门 HRBP 的用户 ID 可设置多个，你需要检查设置的用户 ID 类型是否与查询参数 user_id_type 设置的类型保持一致，并检查用户 ID 取值是否正确。用户 ID 获取方式可参见[如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。 |
+| 400 | 43029 | dept name not contain separator | 部门名称不能包含斜杠（`/`）。 |
+| 400 | 43030 | update department lock error,wait some seconds and retry | 并发受限，请等待几秒后重试。 |
+| 400 | 43013 | dept too many children error | 子部门数量过多。部门的直属子部门数量不能超过 1000。 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40002</md-td>
-  <md-td>process root dept error</md-td>
-  <md-td>不支持对根部门进行操作。请检查是否在请求参数部门 ID 中传入了根部门 ID `0`。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40003</md-td>
-  <md-td>internal error</md-td>
-  <md-td>内部错误，请获取请求的 X-Request-Id，并向[技术支持](https://applink.larksuite.com/TLJpeNdW)进行反馈。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>40004</md-td>
-  <md-td>no dept authority error</md-td>
-  <md-td>当前操作涉及的部门，需在应用通讯录权限范围中，了解更多可参见[权限范围资源介绍](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40008</md-td>
-  <md-td>dept Info is null error</md-td>
-  <md-td>部门的信息不能为空。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>40014</md-td>
-  <md-td>no parent dept authority error</md-td>
-  <md-td>没有父部门权限。传入的父部门需要在应用的通讯录权限范围内。如何设置通讯录权限范围，参见[权限范围资源介绍](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>401</md-td>
-  <md-td>42008</md-td>
-  <md-td>tenant id is invalid error</md-td>
-  <md-td>租户身份无效。请求时，请求头 Authorization 对应的租户身份，需要是当前操作中的资源的所属租户。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43016</md-td>
-  <md-td>leaders is repeat</md-td>
-  <md-td>部门负责人重复。请检查传入的部门负责人是否有误。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43017</md-td>
-  <md-td>relate dept over limit</md-td>
-  <md-td>指定的单位已关联 1000 个部门，无法继续关联部门。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43018</md-td>
-  <md-td>duplicate i18n name</md-td>
-  <md-td>部门名称的国际化配置重复。你需要修改 i18n_name 参数配置后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43019</md-td>
-  <md-td>exceed dept max level</md-td>
-  <md-td>部门层级深度已达到 25 层，不能继续创建子部门。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43021</md-td>
-  <md-td>department chat not exist</md-td>
-  <md-td>部门群不存在。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43022</md-td>
-  <md-td>department name duplicate</md-td>
-  <md-td>部门名重复。你需要修改传入的 name 参数值，并重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43023</md-td>
-  <md-td>dept structure no permissione</md-td>
-  <md-td>没有部门权限。部门需要在应用的通讯录权限范围内。如何设置通讯录权限范围，参见[权限范围资源介绍](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43024</md-td>
-  <md-td>dept structure tenant lock fail</md-td>
-  <md-td>部门结构变动获取租户锁失败。由并发请求产生的冲突，请稍后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43025</md-td>
-  <md-td>top department leader unjoined</md-td>
-  <md-td>用户未加入，不能成为部门负责人。你需要将部门负责人修改为通讯录内包含的在职员工。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43026</md-td>
-  <md-td>employee type is not valid</md-td>
-  <md-td>人员类型无效。你需要参考接口文档中 group_chat_employee_types 的参数描述，设置正确的人员类型。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43028</md-td>
-  <md-td>invalid department hrbps</md-td>
-  <md-td>部门的 HRBP 不合法。请求时，部门 HRBP 的用户 ID 可设置多个，你需要检查设置的用户 ID 类型是否与查询参数 user_id_type 设置的类型保持一致，并检查用户 ID 取值是否正确。用户 ID 获取方式可参见[如何获取不同的用户 ID](/document/home/user-identity-introduction/open-id)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43029</md-td>
-  <md-td>dept name not contain separator</md-td>
-  <md-td>部门名称不能包含斜杠（`/`）。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43030</md-td>
-  <md-td>update department lock error,wait some seconds and retry</md-td>
-  <md-td>并发受限，请等待几秒后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43013</md-td>
-  <md-td>dept too many children error</md-td>
-  <md-td>子部门数量过多。部门的直属子部门数量不能超过 1000。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 更多错误码信息，参见[通用错误码](/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。
 

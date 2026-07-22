@@ -67,1443 +67,153 @@ range 的描述方式为 ==\<sheetId>!<开始位置>:<结束位置>== ，共有 
 包含表格创建、获取和更新相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[创建表格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet/create)
 
-`POST` /open-apis/sheets/v3/spreadsheets
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取表格元数据](/document/ukTMukTMukTM/uETMzUjLxEzM14SMxMTN)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[创建表格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet/create)<br>`POST` /open-apis/sheets/v3/spreadsheets<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取表格元数据](/document/ukTMukTMukTM/uETMzUjLxEzM14SMxMTN)<br>`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/metainfo<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新表格属性](/document/ukTMukTMukTM/ucTMzUjL3EzM14yNxMTN)<br>`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/properties<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/metainfo
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新表格属性](/document/ukTMukTMukTM/ucTMzUjL3EzM14yNxMTN)
-
-`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/properties
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表
 包含工作表操作和更新属性相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新工作表属性](/document/ukTMukTMukTM/ugjMzUjL4IzM14COyMTN)
 
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/sheets_batch_update
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[操作工作表](/document/ukTMukTMukTM/uYTMzUjL2EzM14iNxMTN)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[更新工作表属性](/document/ukTMukTMukTM/ugjMzUjL4IzM14COyMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/sheets_batch_update<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[操作工作表](/document/ukTMukTMukTM/uYTMzUjL2EzM14iNxMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/sheets_batch_update<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/sheets_batch_update
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表 - 条件格式
 包含工作表中条件格式创建、删除、获取和更新相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[创建条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-set)
 
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats/batch_create
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-get)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[创建条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-set)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats/batch_create<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-get)<br>`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-update)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats/batch_update<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[删除条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-delete)<br>`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats/batch_delete<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-update)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats/batch_update
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除条件格式](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/conditionformat/condition-format-delete)
-
-`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/condition_formats/batch_delete
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表 - 筛选
 包含工作表筛选创建、删除、获取和更新相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/get)
 
-`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[创建筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/create)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[获取筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/get)<br>`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[创建筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/create)<br>`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/update)<br>`PUT` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[删除筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/delete)<br>`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/update)
-
-`PUT` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除筛选](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter/delete)
-
-`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表 - 筛选视图
 包含工作表筛选视图创建、删除、获取和更新相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/delete)
 
-`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/patch)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[删除筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/delete)<br>`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/patch)<br>`PATCH` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[查询筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/query)<br>`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/query<br></md-text> | <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/get)<br>`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[创建筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/create)<br>`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`PATCH` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[查询筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/query)
-
-`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/query
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/get)
-
-`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[创建筛选视图](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view/create)
-
-`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 筛选视图 - 筛选条件
 包含筛选视图的筛选条件创建、删除、获取、更新和查询相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/delete)
 
-`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/update)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[删除筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/delete)<br>`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/update)<br>`PUT` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[查询筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/query)<br>`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/query<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/get)<br>`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id<br></md-text> | <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[创建筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/create)<br>`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions<br></md-text> | <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm><br><md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`PUT` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[查询筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/query)
-
-`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/query
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/get)
-
-`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions/:condition_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive:readonly.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet:readonly.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[创建筛选条件](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-filter_view-condition/create)
-
-`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/filter_views/:filter_view_id/conditions
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表 - 行列
 包含工作表行列增加、插入、删除、移动和更新相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除行列](/document/ukTMukTMukTM/ucjMzUjL3IzM14yNyMTN)
 
-`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新行列](/document/ukTMukTMukTM/uYjMzUjL2IzM14iNyMTN)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[删除行列](/document/ukTMukTMukTM/ucjMzUjL3IzM14yNyMTN)<br>`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新行列](/document/ukTMukTMukTM/uYjMzUjL2IzM14iNyMTN)<br>`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[增加行列](/document/ukTMukTMukTM/uUjMzUjL1IzM14SNyMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[插入行列](/document/ukTMukTMukTM/uQjMzUjL0IzM14CNyMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/insert_dimension_range<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[移动行列](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/move_dimension)<br>`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/move_dimension<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[增加行列](/document/ukTMukTMukTM/uUjMzUjL1IzM14SNyMTN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dimension_range
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[插入行列](/document/ukTMukTMukTM/uQjMzUjL0IzM14CNyMTN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/insert_dimension_range
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[移动行列](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/move_dimension)
-
-`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/move_dimension
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.drive:drive.desc.desc$$$</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">$$$sheets.v3.scope.sheets.v3.scope.sheets:spreadsheet.desc.desc$$$</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
  
 ## 行列 - 保护范围
 包含行列的保护范围增加、删除、获取和修改相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[增加保护范围](/document/ukTMukTMukTM/ugDNzUjL4QzM14CO0MTN)
 
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_dimension
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取保护范围](/document/ukTMukTMukTM/uQTM5YjL0ETO24CNxkjN)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[增加保护范围](/document/ukTMukTMukTM/ugDNzUjL4QzM14CO0MTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_dimension<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取保护范围](/document/ukTMukTMukTM/uQTM5YjL0ETO24CNxkjN)<br>`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_range_batch_get<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[修改保护范围](/document/ukTMukTMukTM/uUTM5YjL1ETO24SNxkjN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_range_batch_update<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[删除保护范围](/document/ukTMukTMukTM/uYTM5YjL2ETO24iNxkjN)<br>`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_range_batch_del<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_range_batch_get
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[修改保护范围](/document/ukTMukTMukTM/uUTM5YjL1ETO24SNxkjN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_range_batch_update
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除保护范围](/document/ukTMukTMukTM/uYTM5YjL2ETO24iNxkjN)
-
-`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/protected_range_batch_del
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表 - 数据
 包含工作表中单元格数据写入与读取，插入图片，样式设置，单元格合并与拆分，内容查找和替换相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[插入数据](/document/ukTMukTMukTM/uIjMzUjLyIzM14iMyMTN)
 
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_prepend
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[追加数据](/document/ukTMukTMukTM/uMjMzUjLzIzM14yMyMTN)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[插入数据](/document/ukTMukTMukTM/uIjMzUjLyIzM14iMyMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_prepend<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[追加数据](/document/ukTMukTMukTM/uMjMzUjLzIzM14yMyMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_append<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[读取单个范围](/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)<br>`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values/:range<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[读取多个范围](/document/ukTMukTMukTM/ukTMzUjL5EzM14SOxMTN)<br>`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_batch_get<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[向单个范围写入数据](/document/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)<br>`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[向多个范围写入数据](/document/ukTMukTMukTM/uEjMzUjLxIzM14SMyMTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_batch_update<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[设置单元格样式 ](/document/ukTMukTMukTM/ukjMzUjL5IzM14SOyMTN)<br>`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/style<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[批量设置单元格样式 ](/document/ukTMukTMukTM/uAzMzUjLwMzM14CMzMTN)<br>`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/styles_batch_update<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[合并单元格](/document/ukTMukTMukTM/ukDNzUjL5QzM14SO0MTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/merge_cells<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[拆分单元格](/document/ukTMukTMukTM/uATNzUjLwUzM14CM1MTN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/unmerge_cells<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[写入图片](/document/ukTMukTMukTM/uUDNxYjL1QTM24SN0EjN)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_image<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[查找单元格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/find)<br>`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/find<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[替换单元格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/replace)<br>`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/replace<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_append
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[读取单个范围](/document/ukTMukTMukTM/ugTMzUjL4EzM14COxMTN)
-
-`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values/:range
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[读取多个范围](/document/ukTMukTMukTM/ukTMzUjL5EzM14SOxMTN)
-
-`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_batch_get
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[向单个范围写入数据](/document/ukTMukTMukTM/uAjMzUjLwIzM14CMyMTN)
-
-`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[向多个范围写入数据](/document/ukTMukTMukTM/uEjMzUjLxIzM14SMyMTN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_batch_update
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[设置单元格样式 ](/document/ukTMukTMukTM/ukjMzUjL5IzM14SOyMTN)
-
-`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/style
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[批量设置单元格样式 ](/document/ukTMukTMukTM/uAzMzUjLwMzM14CMzMTN)
-
-`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/styles_batch_update
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[合并单元格](/document/ukTMukTMukTM/ukDNzUjL5QzM14SO0MTN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/merge_cells
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[拆分单元格](/document/ukTMukTMukTM/uATNzUjLwUzM14CM1MTN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/unmerge_cells
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[写入图片](/document/ukTMukTMukTM/uUDNxYjL1QTM24SN0EjN)
-
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/values_image
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[查找单元格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/find)
-
-`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/find
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[替换单元格](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet/replace)
-
-`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/replace
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表 - 浮动图片
 包含工作表浮动图片创建、删除、查询、获取和更新相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[创建浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/create)
 
-`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/get)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[创建浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/create)<br>`POST` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[获取浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/get)<br>`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/:float_image_id<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[查询浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/query)<br>`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/query<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm><br><md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/patch)<br>`PATCH` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/:float_image_id<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[删除浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/delete)<br>`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/:float_image_id<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/:float_image_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[查询浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/query)
-
-`GET` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/query
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-                    <md-perm name="drive:drive:readonly" desc="查看、评论和下载云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论和下载云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet:readonly" desc="查看、评论和导出电子表格" support_app_types="custom,isv" tags="">查看、评论和导出电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/patch)
-
-`PATCH` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/:float_image_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除浮动图片](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3/spreadsheet-sheet-float_image/delete)
-
-`DELETE` /open-apis/sheets/v3/spreadsheets/:spreadsheet_token/sheets/:sheet_id/float_images/:float_image_id
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ## 工作表 - 数据校验
 包含工作表数据验证设置、删除、查询和更新相关接口。
 ### 方法列表
 >  “商店”代表 [应用商店应用](/document/home/app-types-introduction/overview)；“自建”代表 [企业自建应用](/document/home/app-types-introduction/overview)
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 70%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 10%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 10%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-            <md-th style="width: 5%;">商店</md-th>
-            <md-th style="width: 5%;">自建</md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[设置下拉列表](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/set-dropdown)
 
-`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[删除下拉列表设置](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/delete-datavalidation)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** | 商店 | 自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name" >[设置下拉列表](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/set-dropdown)<br>`POST` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[删除下拉列表设置](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/delete-datavalidation)<br>`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[更新下拉列表设置](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/update-datavalidation)<br>`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation/:sheetId/:dataValidationId<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name" >[查询下拉列表设置](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/query-datavalidation)<br>`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> | **✓** | **✓** |
 
-`DELETE` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[更新下拉列表设置](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/update-datavalidation)
-
-`PUT` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation/:sheetId/:dataValidationId
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[查询下拉列表设置](/document/ukTMukTMukTM/uATMzUjLwEzM14CMxMTN/datavalidation/query-datavalidation)
-
-`GET` /open-apis/sheets/v2/spreadsheets/:spreadsheetToken/dataValidation
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-                    <md-perm name="sheets:spreadsheet" desc="查看、评论、编辑和管理电子表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理电子表格</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-            <md-td>
-                **✓**
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 

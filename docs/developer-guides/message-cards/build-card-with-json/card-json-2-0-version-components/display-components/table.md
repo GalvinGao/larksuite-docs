@@ -178,389 +178,53 @@ Lark卡片支持表格组件，并支持在表格中添加普通文本、富文�
 ### 字段说明
 
 表格组件的字段说明如下表。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段</md-th>
-      <md-th style="width: 15%;">是否必填</md-th>
-      <md-th>类型</md-th>
-      <md-th>默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>
-        tag
-      </md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        组件的标签。表格组件的固定取值为 `table`。
-      </md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-    
-    
-    <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>  
-    
-    
-    
-    
-    <md-tr>
-      <md-td>
-        page_size
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>Number</md-td>
-      <md-td>5</md-td>
-      <md-td>
-        每页最大展示的数据行数。支持 [1,10] 整数。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>
-        row_height
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>low</md-td>
-      <md-td>
-表格的行高。单元格高度如无法展示一整行内容，则上下裁剪内容。可取值：
--   low：低
-- middle：中
-- high：高
-- auto：行高与自适应内容。JSON 2.0 新增枚举，V7.33 及以上客户端版本支持。
-- [32,124]px：自定义行高，单位为像素，如 40px。取值范围是 [32,124] 
-      </md-td>
-    </md-tr>
-    
-    
-     <md-tr>
-      <md-td>
-        row_max_height
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>124px</md-td>
-      <md-td>
-当 row_height 为 auto 时，可使用该参数设置最大行高。若内容超过该值，将被裁剪。取值范围为 [32,999]，单位为像素。JSON 2.0 新增属性，V7.33 及以上客户端版本支持。
-      </md-td>
-    </md-tr>
-    
-    
-    
-    <md-tr>
-      <md-td>
-        header_style
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>header_style</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        表头样式风格。详见下方 `header_style` 字段说明。
-      </md-td>
-    </md-tr>
-    
-    
-    
-     <md-tr>
-      <md-td>
-        freeze_first_column
-      </md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        是否冻结首列。可取值：
-- true：冻结首列。即左右滚动表格时不滚动首列，其余列叠加展示在首列底下
-- false：不冻结首列。即左右滚动表格时所有表格均做滚动
-      </md-td>
-    </md-tr>   
-    
-    
-    <md-tr>
-      <md-td>
-        columns
-      </md-td>
-      <md-td>是</md-td>
-      <md-td>column[]</md-td>
-      <md-td>[]</md-td>
-      <md-td>
-        列对象数组。详见下方 `column` 字段说明。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>
-        rows
-      </md-td>
-      <md-td>是</md-td>
-      <md-td>JSON</md-td>
-      <md-td>[]</md-td>
-      <md-td>
-        行对象数组。与列定义对应的数据。用 `"name":VALUE` 的形式，定义每一行的数据内容。`name`即你自定义的列标记。
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
 
-:::
+| 字段 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 组件的标签。表格组件的固定取值为 `table`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| margin | 否 | String | 0 | 组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| page_size | 否 | Number | 5 | 每页最大展示的数据行数。支持 [1,10] 整数。 |
+| row_height | 否 | String | low | 表格的行高。单元格高度如无法展示一整行内容，则上下裁剪内容。可取值：<br>-   low：低<br>- middle：中<br>- high：高<br>- auto：行高与自适应内容。JSON 2.0 新增枚举，V7.33 及以上客户端版本支持。<br>- [32,124]px：自定义行高，单位为像素，如 40px。取值范围是 [32,124] |
+| row_max_height | 否 | String | 124px | 当 row_height 为 auto 时，可使用该参数设置最大行高。若内容超过该值，将被裁剪。取值范围为 [32,999]，单位为像素。JSON 2.0 新增属性，V7.33 及以上客户端版本支持。 |
+| header_style | 否 | header_style | / | 表头样式风格。详见下方 `header_style` 字段说明。 |
+| freeze_first_column | 否 | Boolean | false | 是否冻结首列。可取值：<br>- true：冻结首列。即左右滚动表格时不滚动首列，其余列叠加展示在首列底下<br>- false：不冻结首列。即左右滚动表格时所有表格均做滚动 |
+| columns | 是 | column[] | [] | 列对象数组。详见下方 `column` 字段说明。 |
+| rows | 是 | JSON | [] | 行对象数组。与列定义对应的数据。用 `"name":VALUE` 的形式，定义每一行的数据内容。`name`即你自定义的列标记。 |
+
 
 #### `header_style` 字段说明
 
 `header_style` 用于设置表头的样式、风格等。`header_style` 的子字段如下表所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段</md-th>
-      <md-th style="width: 17%;">是否必填</md-th>
-      <md-th>类型</md-th>
-      <md-th>默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>text_align</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>left</md-td>
-      <md-td>
-表头文本对齐方式。可取值：
-- left：左对齐
- - center：居中对齐
-  - right：右对齐
-        
-**注意**：卡片搭建工具上暂时不支持 `text_align` 属性。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>text_size</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>normal</md-td>
-      <md-td>
-        表头文本大小。可取值：
- - normal：正文（14px）
-  - heading：标题（16px）
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>background_style</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>none</md-td>
-      <md-td>
-        表头背景色。可取值：
-  - grey：灰色
-  - none：无背景色
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>text_color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>default</md-td>
-      <md-td>
-        文本颜色。可取值：
-  - default：客户端浅色主题模式下为黑色；客户端深色主题模式下为白色
-  - grey：灰色
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>bold</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>true</md-td>
-      <md-td>
-        表头文本是否加粗。可取值：
- - true：加粗
-- false：不加粗
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>lines</md-td>
-      <md-td>否</md-td>
-      <md-td>Number</md-td>
-      <md-td>1</md-td>
-      <md-td>
-        表头文本的行数。支持大于等于 1 的整数。
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
+| 字段 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| text_align | 否 | String | left | 表头文本对齐方式。可取值：<br>- left：左对齐<br>- center：居中对齐<br>- right：右对齐<br>**注意**：卡片搭建工具上暂时不支持 `text_align` 属性。 |
+| text_size | 否 | String | normal | 表头文本大小。可取值：<br>- normal：正文（14px）<br>- heading：标题（16px） |
+| background_style | 否 | String | none | 表头背景色。可取值：<br>- grey：灰色<br>- none：无背景色 |
+| text_color | 否 | String | default | 文本颜色。可取值：<br>- default：客户端浅色主题模式下为黑色；客户端深色主题模式下为白色<br>- grey：灰色 |
+| bold | 否 | Boolean | true | 表头文本是否加粗。可取值：<br>- true：加粗<br>- false：不加粗 |
+| lines | 否 | Number | 1 | 表头文本的行数。支持大于等于 1 的整数。 |
 
-:::
 
 #### **`column`** **字段说明**
 
 `column` 用于定义表格的列，包括列的 key （键名）、展示名称、该列数据的类型、宽度、对齐方式等。最多支持添加 50 列，超出 50 列的内容不展示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段</md-th>
-      <md-th style="width: 17%;">是否必填</md-th>
-      <md-th>类型</md-th>
-      <md-th>默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>name</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-列的 key（键名）。必填。用于在行数据对象数组中，指定数据填充的单元格。      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>display_name</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        在表头展示的列名称。不填或为空则不展示列名称。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>width</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>auto</md-td>
-      <md-td>
-  列宽度。可取值：
-  - auto：自适应内容宽度
- - 自定义宽度：自定义表格的列宽度，如 120px。取值范围是 [80px,600px] 的整数
- - 自定义宽度百分比：自定义列宽度占当前表格画布宽度的百分比（表格画布宽度 = 卡片宽度-卡片左右内边距），如 25%。取值范围是 [1%,100%]
-      </md-td>
-    </md-tr>
-      <md-tr>
-      <md-td>vertical_align</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>center</md-td>
-      <md-td>
-        列内数据垂直对齐方式。可选值：
- - top：顶部对齐
- - center：中间对齐
-  - bottom：底部对齐
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>horizontal_align</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>left</md-td>
-      <md-td>
-        列内数据水平对齐方式。可选值：
- - left：左对齐
- - center：居中对齐
-  - right：右对齐
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>data_type</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>text</md-td>
-      <md-td>
-列数据类型。可选值如下所示。了解不同类型用法，参考 `data_type` 字段说明一节。
-- text：不带格式的普通文本。为 `data_type` 默认值。
-- lark_md：支持部分 markdown 格式的文本。Lark v7.10 及之后版本支持。详情参考[普通文本-lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)
- - options：选项标签。标签中的文本内容不可过长，否则可能会导致 PC 端或移动端内容显示不完整。如果文本过长，可使用 text 或者 lark_md 类型
- - number：数字。默认在单元格中右对齐展示。若选择该数据类型，你可继续在 `column` 中添加 `format` 字段，设置数字的格式属性
-- persons：人员列表。为用户名称+头像样式
-- date：日期时间。需输入 Unix 标准毫秒级时间戳，Lark客户端将按用户本地时区展示日期时间。Lark v7.6 及之后版本支持
-- markdown：支持完整 Markdown 语法的文本内容。详情参考[富文本（Markdown）组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。Lark v7.14 及之后版本支持
-      </md-td>
-    </md-tr>
-    
-        <md-tr>
-      <md-td>format</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>/</md-td>
-      <md-td>
-该字段仅当 `data_type` 为 `number` 时生效，你可以在该字段内选择设置小数点位数、货币单位以及千分位样式。
-      </md-td>
-    </md-tr><md-tr>
-          <md-td>└ precision</md-td>
-      <md-td>否</md-td>
-      <md-td>Int</md-td>
-      <md-td>空</md-td>
-      <md-td>
-数字的小数点位数。默认不限制小数点位数，原样透传展示开发者输入的数字。可填 0~10 的整数。小数点位数为 0 表示取整数。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ symbol</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-数字前的货币单位。不填或为空不展示。可填 1 个字符的货币单位文本，如 “¥”。
-      </md-td>
-    </md-tr>
-        <md-tr>
-      <md-td>└ separator</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-是否生效按千分位逗号分割的数字样式。
-      </md-td>
-    </md-tr>
-        <md-tr>
-      <md-td>date_format</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-该字段仅当 `data_type` 为 `date` 时生效。你可按需选择以下日期时间占位符，并使用任意分隔符组合。
-- YYYY：年
-- MM：月
-- DD：日
-- HH：小时
-- mm：分钟
-- ss：秒
-        
-推荐使用以下日期格式。默认按 RFC 3339 标准格式展示日期时间。
-        
-- YYYY/MM/DD
-- YYYY/MM/DD HH:mm
-- YYYY-MM-DD
-- YYYY-MM-DD HH:mm
-- DD/MM/YYYY
-- MM/DD/YYYY
+| 字段 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| name | 是 | String | 空 | 列的 key（键名）。必填。用于在行数据对象数组中，指定数据填充的单元格。 |
+| display_name | 否 | String | 空 | 在表头展示的列名称。不填或为空则不展示列名称。 |
+| width | 否 | String | auto | 列宽度。可取值：<br>- auto：自适应内容宽度<br>- 自定义宽度：自定义表格的列宽度，如 120px。取值范围是 [80px,600px] 的整数<br>- 自定义宽度百分比：自定义列宽度占当前表格画布宽度的百分比（表格画布宽度 = 卡片宽度-卡片左右内边距），如 25%。取值范围是 [1%,100%] |
+| vertical_align | 否 | String | center | 列内数据垂直对齐方式。可选值：<br>- top：顶部对齐<br>- center：中间对齐<br>- bottom：底部对齐 |
+| horizontal_align | 否 | String | left | 列内数据水平对齐方式。可选值：<br>- left：左对齐<br>- center：居中对齐<br>- right：右对齐 |
+| data_type | 是 | String | text | 列数据类型。可选值如下所示。了解不同类型用法，参考 `data_type` 字段说明一节。<br>- text：不带格式的普通文本。为 `data_type` 默认值。<br>- lark_md：支持部分 markdown 格式的文本。Lark v7.10 及之后版本支持。详情参考[普通文本-lark_md 支持的 Markdown 语法](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/plain-text)<br>- options：选项标签。标签中的文本内容不可过长，否则可能会导致 PC 端或移动端内容显示不完整。如果文本过长，可使用 text 或者 lark_md 类型<br>- number：数字。默认在单元格中右对齐展示。若选择该数据类型，你可继续在 `column` 中添加 `format` 字段，设置数字的格式属性<br>- persons：人员列表。为用户名称+头像样式<br>- date：日期时间。需输入 Unix 标准毫秒级时间戳，Lark客户端将按用户本地时区展示日期时间。Lark v7.6 及之后版本支持<br>- markdown：支持完整 Markdown 语法的文本内容。详情参考[富文本（Markdown）组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。Lark v7.14 及之后版本支持 |
+| format | 否 | Object | / | 该字段仅当 `data_type` 为 `number` 时生效，你可以在该字段内选择设置小数点位数、货币单位以及千分位样式。 |
+| └ precision | 否 | Int | 空 | 数字的小数点位数。默认不限制小数点位数，原样透传展示开发者输入的数字。可填 0~10 的整数。小数点位数为 0 表示取整数。 |
+| └ symbol | 否 | String | 空 | 数字前的货币单位。不填或为空不展示。可填 1 个字符的货币单位文本，如 “¥”。 |
+| └ separator | 否 | Boolean | false | 是否生效按千分位逗号分割的数字样式。 |
+| date_format | 否 | String | 空 | 该字段仅当 `data_type` 为 `date` 时生效。你可按需选择以下日期时间占位符，并使用任意分隔符组合。<br>- YYYY：年<br>- MM：月<br>- DD：日<br>- HH：小时<br>- mm：分钟<br>- ss：秒<br>推荐使用以下日期格式。默认按 RFC 3339 标准格式展示日期时间。<br>- YYYY/MM/DD<br>- YYYY/MM/DD HH:mm<br>- YYYY-MM-DD<br>- YYYY-MM-DD HH:mm<br>- DD/MM/YYYY<br>- MM/DD/YYYY |
 
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-
-:::
 
 #### `data_type` 字段说明
 

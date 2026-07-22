@@ -27,172 +27,27 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukzN4IjL5cDOy4SO3gjM
 :::
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.1.0+</md-version></md-td>
-      <md-td><md-version>V3.1.0+</md-version></md-td>
-      <md-td><md-version>V3.1.0+</md-version></md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/openschema/openschema" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44+</md-version></md-td>
-      <md-td><md-version>V3.44+</md-version></md-td>
-      <md-td><md-version>V3.47+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.1.0+</md-version> | <md-version>V3.1.0+</md-version> | <md-version>V3.1.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/openschema/openschema" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44+</md-version> | <md-version>V3.44+</md-version> | <md-version>V3.47+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">名称</md-th>
-            <md-th style="width: 18%;">数据类型</md-th>
-            <md-th style="width: 10%;">必填</md-th>
-            <md-th style="width: 10%;">默认值</md-th>
-            <md-th>描述</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>schema</md-td>
-            <md-td>string</md-td>
-            <md-td>是</md-td>
-            <md-td></md-td>
-            <md-td>
-                指定应用的 schema，schema需要满足 URI 协议。
 
-**示例值**：https://open.larksuite.com
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>external</md-td>
-            <md-td>boolean</md-td>
-            <md-td>否</md-td>
-            <md-td>false</md-td>
-            <md-td>
-                是否跳转到Lark以外的应用(浏览器或其他应用程序)。内部应用（如 Doc / 小程序等）不受此参数限制。
-              
-**示例值**：false
-<md-alert type="tip" icon="none">
-- PC 端：Lark[V3.38.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持，通过指定 external 为 false 使用内置独立窗口打开网页，同时支持通过 options 参数指定窗口尺寸
-- Android/iOS 端：Lark[V3.1.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert> 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>options</md-td>
-            <md-td>object</md-td>
-            <md-td>否</md-td>
-            <md-td></md-td>
-            <md-td>
-                用于指定额外参数的对象
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| schema | string | 是 |  | 指定应用的 schema，schema需要满足 URI 协议。<br>**示例值**：https://open.larksuite.com |
+| external | boolean | 否 | false | 是否跳转到Lark以外的应用(浏览器或其他应用程序)。内部应用（如 Doc / 小程序等）不受此参数限制。<br>**示例值**：false<br><md-alert type="tip" icon="none"><br>- PC 端：Lark[V3.38.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持，通过指定 external 为 false 使用内置独立窗口打开网页，同时支持通过 options 参数指定窗口尺寸<br>- Android/iOS 端：Lark[V3.1.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
+| options | object | 否 |  | 用于指定额外参数的对象<br>**示例值**：{"width":1200,"height":700}<br><md-alert type="tip" icon="none"><br>- PC 端：Lark[V3.38.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br>- Android/iOS 端：暂不支持<br></md-alert> |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">width</md-text> | number | 否 | 640 | 用于指定打开的端内容器的宽度，仅当 external 为 false 时生效。<br>**最小值**：640</br><br>**最大值**：屏幕的宽度</br><br>**默认值**：Lark窗口的宽度<br><md-alert type="tip" icon="none"><br>Lark[V5.12.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本 宽度最小值从1200调整为640<br></md-alert> |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">height</md-text> | number | 否 | 480 | 用于指定打开的端内容器的高度，仅当 external 为 false 时生效。<br>**最小值**：480</br><br>**最大值**：屏幕的高度</br><br>**默认值**：Lark窗口的高度<br><md-alert type="tip" icon="none"><br>Lark[V5.12.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本 高度最小值从700调整为480<br></md-alert> |
+| target | string | 否 | inline | 指定[sidebar模式](/document/uYjL24iN/uIjNzUjLyYzM14iM2MTN)小程序(A)调用openSchema接口打开另外一个[sidebar模式](/document/uYjL24iN/uIjNzUjLyYzM14iM2MTN)的小程序(B)时的模式<br>**可选值**：<br>- `inline`：打开新应用(B)时，当前应用(A)会保留。当前应用(A)被关闭时，新应用(B)会一起被关闭<br>- `replace`：打开新应用(B)时，当前应用(A)会被关闭<br><md-alert type="tip" icon="none"><br>- PC 端：Lark[V5.13.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br>- iOS/Android 端：暂不支持<br></md-alert> |
 
-**示例值**：{"width":1200,"height":700}
-<md-alert type="tip" icon="none">
-- PC 端：Lark[V3.38.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-- Android/iOS 端：暂不支持
-</md-alert> 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">width</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>否</md-td>
-            <md-td>640</md-td>
-            <md-td>
-                用于指定打开的端内容器的宽度，仅当 external 为 false 时生效。
-              
-**最小值**：640</br>
-**最大值**：屏幕的宽度</br>
-**默认值**：Lark窗口的宽度
-<md-alert type="tip" icon="none">
-Lark[V5.12.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本 宽度最小值从1200调整为640
-</md-alert> 
-
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">height</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>否</md-td>
-            <md-td>480</md-td>
-            <md-td>
-                用于指定打开的端内容器的高度，仅当 external 为 false 时生效。
-
-**最小值**：480</br>
-**最大值**：屏幕的高度</br>
-**默认值**：Lark窗口的高度
-<md-alert type="tip" icon="none">
-Lark[V5.12.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本 高度最小值从700调整为480
-</md-alert> 
-
-            </md-td>
-        </md-tr>
-             <md-tr>
-            <md-td>
-                target
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                inline
-            </md-td>
-            <md-td>
-                指定[sidebar模式](/document/uYjL24iN/uIjNzUjLyYzM14iM2MTN)小程序(A)调用openSchema接口打开另外一个[sidebar模式](/document/uYjL24iN/uIjNzUjLyYzM14iM2MTN)的小程序(B)时的模式
-
-
-
-**可选值**：
-- `inline`：打开新应用(B)时，当前应用(A)会保留。当前应用(A)被关闭时，新应用(B)会一起被关闭
-- `replace`：打开新应用(B)时，当前应用(A)会被关闭
-<md-alert type="tip" icon="none">
-- PC 端：Lark[V5.13.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-- iOS/Android 端：暂不支持
-</md-alert> 
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 继承[标准对象输出](/document/uYjL24iN/ukzNy4SO3IjL5cjM#8c92acb8)，无扩展属性

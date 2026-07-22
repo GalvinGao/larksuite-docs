@@ -720,34 +720,11 @@ PC 端步长
 - 快速上屏（fast，默认）：**ABCDE** 中没有上屏的 **DE** 会立刻上屏，组件直接展示 **ABCDE**；然后再按打字机效果上屏后续文本 **FGH**
 - 延迟上屏（delay）：**ABCDE** 中没有上屏的 **DE** 会按打字机效果依次上屏；然后再按打字机效果上屏后续文本 **FGH**
   
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">快速上屏（fast，默认）</md-th>
-      <md-th style="width: 50%;">延迟上屏（delay）</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>
-调用[流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content)接口后，若历史文本尚未流式上屏完毕，未上屏的部分将立即全部上屏，然后立即开始本次内容上屏：
-        
-<!-- md-video 的src表示默认的清晰度 -->
-<md-video src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/7b865cd050886e0e42ddb599bf8bd9e0_3KGkdi0uXD.mp4"   poster="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3727e989320150fb660bdc031c5cdd74_l8Lkslppt7.png" width="1920" height="1080"  width="1920" height="1080">
-</md-video>
-      </md-td>
-      <md-td>
-        调用[流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content)接口后，若历史文本尚未流式输出完毕，历史文本中未上屏部分将会继续按打字机效果输出直到全部输出完毕，再开始本次内容上屏：
 
-<!-- md-video 的src表示默认的清晰度 -->
-<md-video src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/05118b4cd5d13a7025b5f3caee7c081f_hBY9RQwOHd.mp4" poster="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3727e989320150fb660bdc031c5cdd74_l8Lkslppt7.png"  width="1920" height="1080">
-</md-video>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 快速上屏（fast，默认） | 延迟上屏（delay） |
+| --- | --- |
+| 调用[流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content)接口后，若历史文本尚未流式上屏完毕，未上屏的部分将立即全部上屏，然后立即开始本次内容上屏：<br><!-- md-video 的src表示默认的清晰度 --><br><md-video src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/7b865cd050886e0e42ddb599bf8bd9e0_3KGkdi0uXD.mp4"   poster="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3727e989320150fb660bdc031c5cdd74_l8Lkslppt7.png" width="1920" height="1080"  width="1920" height="1080"><br></md-video> | 调用[流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content)接口后，若历史文本尚未流式输出完毕，历史文本中未上屏部分将会继续按打字机效果输出直到全部输出完毕，再开始本次内容上屏：<br><!-- md-video 的src表示默认的清晰度 --><br><md-video src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/05118b4cd5d13a7025b5f3caee7c081f_hBY9RQwOHd.mp4" poster="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3727e989320150fb660bdc031c5cdd74_l8Lkslppt7.png"  width="1920" height="1080"><br></md-video> |
+
 
 ### 步骤三：持续更新卡片
   

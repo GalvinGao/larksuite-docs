@@ -97,300 +97,38 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 下拉选择-单选组件的字段说明如下表。
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 18%;">字段</md-th>
-<md-th style="width: 10%;">是否必填</md-th>
-<md-th style="width: 15%;">类型</md-th>
-<md-th style="width: 15%;">默认值</md-th>
-<md-th>说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-tag
-</md-td>
-<md-td>是</md-td>
-<md-td>string</md-td>
-<md-td>/</md-td>
-<md-td>
-组件的标签。下拉选择-单选组件取固定值 `select_static`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-type
-</md-td>
-<md-td>否</md-td>
-<md-td>string</md-td>
-<md-td>default</md-td>
-<md-td>
-组件边框样式。可选值：
-- default：带边框样式
-- text：不带边框的纯文本样式
-</md-td>
-</md-tr>
-<md-tr>
-      <md-td>name</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        单选组件的唯一标识。当单选组件内嵌在表单容器时，该属性生效，用于识别用户提交的文本属于哪个单选组件。
 
-**注意**：当单选组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。
-      </md-td>
-    </md-tr>
-<md-tr>
-<md-td>
-required
-</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-单选组件的内容是否必选。当组件内嵌在表单容器中时，该属性可用。其它情况将报错或不生效。可取值：
-- true：单选组件必选。当用户点击表单容器的“提交”时，未填写单选组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
-- false：单选组件选填。当用户点击表单容器的“提交”时，未填写单选组件，仍提交表单容器中的数据。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-disabled
-</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否禁用该单选组件。该属性仅支持Lark V7.4 及以上版本的客户端。可选值：
-- true：禁用单选组件组件
-- false：单选组件组件保持可用状态
-</md-td>
-</md-tr>
-</md-tr>
-   <md-tr>
-      <md-td>initial_option</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>下拉选择组件的初始选项的内容。该配置将会覆盖 `placeholder` 配置的占位文本。</md-td>
-    </md-tr>
-<md-tr>
-<md-td>
-placeholder
-</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>
-下拉选择组件内的占位文本。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ tag
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-占位提示标签。固定值为 `plain_text`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ content
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-占位文本的内容。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-width
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>
-单选组件的宽度。支持以下枚举值：
-- default：默认宽度
-- fill：卡片最大支持宽度
-- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示
-</md-td>
-</md-tr>
-  
- <md-tr>
-      <md-td>behaviors</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。</md-td>
-    </md-tr>
-  
-  
-  
-  
-  
-<md-tr>
-<md-td>
-options
-</md-td>
-<md-td>否</md-td>
-<md-td>Array of objects</md-td>
-<md-td>/</md-td>
-<md-td>
-选项的配置。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ text
-</md-td>
-<md-td>是</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>
-选项的名称。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ └ tag
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-选项名称的标签。固定值为 `plain_text`。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ └ content
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-选项名称的文本。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>└ icon</md-td>
-<md-td>否</md-td>
-<md-td>Object</md-td>
-<md-td>/</md-td>
-<md-td>添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└└  tag</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标类型的标签。可取值：
-- `standard_icon`：使用图标库中的图标。
-- `custom_icon`：使用用自定义图片作为图标。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└└  token</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└└  color</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。</md-td>
-</md-tr>
-<md-tr>
-<md-td>└└  img_key</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。
-  
-图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。</md-td>
-</md-tr>
-<md-tr>
-  <md-td>
-    └ value
-  </md-td>
-  <md-td>是</md-td>
-  <md-td>String</md-td>
-  <md-td>/</md-td>
-  <md-td>
-    自定义选项回调值。当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。
-    
-**注意**：同一个选择组件内，各选项的 value 值不可重复，**否则将导致用户侧交互异常**，且服务器无法识别用户点击的是哪个选项。
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>
-二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
-  
-<strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.title</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.title.tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.title.content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗的文本内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.text.tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-</md-tr>
-<md-tr>
-<md-td>confirm.text.content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗文本的具体内容。</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
+| 字段 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | string | / | 组件的标签。下拉选择-单选组件取固定值 `select_static`。 |
+| type | 否 | string | default | 组件边框样式。可选值：<br>- default：带边框样式<br>- text：不带边框的纯文本样式 |
+| name | 否 | String | 空 | 单选组件的唯一标识。当单选组件内嵌在表单容器时，该属性生效，用于识别用户提交的文本属于哪个单选组件。<br>**注意**：当单选组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。 |
+| required | 否 | Boolean | false | 单选组件的内容是否必选。当组件内嵌在表单容器中时，该属性可用。其它情况将报错或不生效。可取值：<br>- true：单选组件必选。当用户点击表单容器的“提交”时，未填写单选组件，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- false：单选组件选填。当用户点击表单容器的“提交”时，未填写单选组件，仍提交表单容器中的数据。 |
+| disabled | 否 | Boolean | false | 是否禁用该单选组件。该属性仅支持Lark V7.4 及以上版本的客户端。可选值：<br>- true：禁用单选组件组件<br>- false：单选组件组件保持可用状态 |
+| initial_option | 否 | String | 空 | 下拉选择组件的初始选项的内容。该配置将会覆盖 `placeholder` 配置的占位文本。 |
+| placeholder | 否 | Object | / | 下拉选择组件内的占位文本。 |
+| └ tag | 是 | String | plain_text | 占位提示标签。固定值为 `plain_text`。 |
+| └ content | 否 | String | 空 | 占位文本的内容。 |
+| width | 否 | String | default | 单选组件的宽度。支持以下枚举值：<br>- default：默认宽度<br>- fill：卡片最大支持宽度<br>- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示 |
+| behaviors | 是 | Struct | / | 配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。 |
+| options | 否 | Array of objects | / | 选项的配置。 |
+| └ text | 是 | Object | / | 选项的名称。 |
+| └ └ tag | 是 | String | plain_text | 选项名称的标签。固定值为 `plain_text`。 |
+| └ └ content | 是 | String | 空 | 选项名称的文本。 |
+| └ icon | 否 | Object | / | 添加图标作为文本前缀图标。支持自定义或使用图标库中的图标。 |
+| └└  tag | 否 | String | / | 图标类型的标签。可取值：<br>- `standard_icon`：使用图标库中的图标。<br>- `custom_icon`：使用用自定义图片作为图标。 |
+| └└  token | 否 | String | / | 图标库中图标的 token。当 `tag` 为 `standard_icon` 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。 |
+| └└  color | 否 | String | / | 图标的颜色。支持设置线性和面性图标（即 token 末尾为 `outlined` 或 `filled` 的图标）的颜色。当 `tag` 为 `standard_icon` 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| └└  img_key | 否 | String | / | 自定义前缀图标的图片 key。当 `tag` 为 `custom_icon` 时生效。<br>图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。 |
+| └ value | 是 | String | / | 自定义选项回调值。当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。<br>**注意**：同一个选择组件内，各选项的 value 值不可重复，**否则将导致用户侧交互异常**，且服务器无法识别用户点击的是哪个选项。 |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br><strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| confirm.title | 是 | Struct | / | 二次确认弹窗标题。 |
+| confirm.title.tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| confirm.title.content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| confirm.text | 是 | Struct | / | 二次确认弹窗的文本内容。 |
+| confirm.text.tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| confirm.text.content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
 
-:::
 
 ### 回调结构
 

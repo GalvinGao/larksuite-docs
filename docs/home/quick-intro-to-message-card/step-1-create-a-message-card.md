@@ -98,46 +98,13 @@ source_url: https://open.larksuite.com/document/home/build-a-beautiful-message-c
       }
     ```
 :::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%">参数</md-th>
-            <md-th style="width: 20%">类型</md-th>
-            <md-th style="width: 60%">描述</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-th>enable_forward</md-th>
-            <md-td>Boolean</md-td>
-            <md-td>
-是否允许卡片被转发。取值：
 
-* **true**：允许
-* **false**：不允许
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| enable_forward | Boolean | 是否允许卡片被转发。取值：<br>* **true**：允许<br>* **false**：不允许<br>默认 **true**，客户端版本要求为3.31.0。<br>转发后卡片上的回传交互组件将自动置为禁用态。用户不能在转发后的卡片操作提交数据。 |
+| update_multi | Boolean | 是否为共享卡片，取值：<br>* **true**：共享卡片，更新卡片的内容对所有收到这张卡片的人员可见。<br>* **false**：独享卡片，即仅操作用户可见卡片的更新内容。<br>默认为 **false**。<br><md-alert type="tip"><br>更多介绍请参考 [交互模块](/document/ukTMukTMukTM/uYjNwUjL2YDM14iN2ATN) 。<br></md-alert> |
 
-默认 **true**，客户端版本要求为3.31.0。
 
-转发后卡片上的回传交互组件将自动置为禁用态。用户不能在转发后的卡片操作提交数据。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-th>update_multi</md-th>
-            <md-td>Boolean</md-td>
-            <md-td>
-是否为共享卡片，取值：
-
-* **true**：共享卡片，更新卡片的内容对所有收到这张卡片的人员可见。
-* **false**：独享卡片，即仅操作用户可见卡片的更新内容。
-
-默认为 **false**。
-<md-alert type="tip">
-更多介绍请参考 [交互模块](/document/ukTMukTMukTM/uYjNwUjL2YDM14iN2ATN) 。
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
 
 <img src="https://sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ark/3cfc35fda0b11850a5c34eb7bd4d540d.png?lazyload=true&width=2836&height=1754" style="width:100%"/>
 :::

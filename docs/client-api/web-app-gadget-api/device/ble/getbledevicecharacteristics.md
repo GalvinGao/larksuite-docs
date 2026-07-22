@@ -27,105 +27,22 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukDOxYjL5gTM24SO4EjN
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td><md-version>V3.25+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/bluetooth/bluetooth" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.25+</md-version> | <md-version>V3.25+</md-version> | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/bluetooth/bluetooth" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V7.3+</md-version> | <md-version>V7.3+</md-version> | **X** | / |
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V7.3+</md-version></md-td>
-      <md-td><md-version>V7.3+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
 
 
 ## 输入
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                deviceId
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-               蓝牙设备 ID，参考 device 对象
-              
-**示例值**：'FF:24:79:5D:6D:0C'
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| deviceId | string | 是 |  | 蓝牙设备 ID，参考 device 对象<br>**示例值**：'FF:24:79:5D:6D:0C' |
+| serviceId | string | 是 |  | 蓝牙特征值对应 service 的 UUID |
 
-            </md-td>
-        </md-tr>
-      <md-tr>
-            <md-td>
-                serviceId
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-               蓝牙特征值对应 service 的 UUID
-
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 
@@ -134,110 +51,15 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ukDOxYjL5gTM24SO4EjN
 
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                characteristics
-            </md-td>
-            <md-td>
-                object[]
-            </md-td>
-            <md-td>
-                设备特征值列
 
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| characteristics | object[] | 设备特征值列 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>characteristicId<br></md-text> | string | 蓝牙设备特征值的 UUID |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>serviceId<br></md-text> | string | 蓝牙设备特征值对应服务的 UUID |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>value<br></md-text> | hex string | 蓝牙设备特征值对应的 16 进制值 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>properties<br></md-text> | object | 该特征值支持的操作类型 |
 
-            </md-td>
-        </md-tr>
-                    <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    characteristicId
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                蓝牙设备特征值的 UUID
-            </md-td>
-        </md-tr>
-                    <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    serviceId
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                蓝牙设备特征值对应服务的 UUID
-            </md-td>
-        </md-tr>
-                    <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    value
-                </md-text>
-            </md-td>
-            <md-td>
-                hex string
-            </md-td>
-            <md-td>
-                蓝牙设备特征值对应的 16 进制值
-            </md-td>
-        </md-tr>
-                         <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    properties
-                </md-text>
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                该特征值支持的操作类型
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 **Properties 对象**

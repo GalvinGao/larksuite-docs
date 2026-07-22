@@ -28,162 +28,24 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugzMy4COzIjL4MjM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/toast/toast" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.47.0+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/toast/toast" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.47.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
 
-        <md-tr>
-            <md-td>
-                title
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                消息内容。
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| title | string | 是 |  | 消息内容。<br>**示例值**：添加购物车成功<br><md-alert type="tip" icon="none"><br>从3.39版本开始，在平台为移动端且配置显示图标的情况下title将只能显示至多7个字符，其他情况下可显示最多2行<br>- 当显示图标时，title 最多能够展示7个字符<br>- 当不显示图标时，title 最多可显示两行<br></md-alert> |
+| duration | number | 否 | 1500 | 提示框停留的时间，单位ms |
+| icon | string | 否 | success | 图标的类型<br>**可选值**：<br>- `success`：成功<br>- `loading`：加载中<br>- `none`：不显示图标（PC暂不支持）<br>- `error`：错误（仅PC端有效）<br>- `info`：提示（仅PC端有效）<br>- `warning`：警告（仅PC端有效） |
+| mask | boolean | 否 | false | 是否显示透明蒙层，防止触摸穿透<br><md-alert type="tip" icon="none"><br>- Android/iOS 端：Lark[V2.5.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br>- PC 端：暂不支持<br></md-alert> |
 
-
-
-**示例值**：添加购物车成功
-<md-alert type="tip" icon="none">
-从3.39版本开始，在平台为移动端且配置显示图标的情况下title将只能显示至多7个字符，其他情况下可显示最多2行
-- 当显示图标时，title 最多能够展示7个字符
-- 当不显示图标时，title 最多可显示两行
-</md-alert>
-            </md-td>
-        </md-tr>
-              <md-tr>
-            <md-td>
-                duration
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                1500
-            </md-td>
-            <md-td>
-                提示框停留的时间，单位ms
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                icon
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                success
-            </md-td>
-            <md-td>
-                图标的类型
-
-
-**可选值**：
-- `success`：成功
-- `loading`：加载中
-- `none`：不显示图标（PC暂不支持）
-- `error`：错误（仅PC端有效）
-- `info`：提示（仅PC端有效）
-- `warning`：警告（仅PC端有效）
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                mask
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                false                
-            </md-td>
-            <md-td>
-
-是否显示透明蒙层，防止触摸穿透
-<md-alert type="tip" icon="none">
-- Android/iOS 端：Lark[V2.5.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-- PC 端：暂不支持
-</md-alert>
-
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-
-
-:::
 ## 输出
 继承[标准对象输出](/document/uYjL24iN/ukzNy4SO3IjL5cjM#8c92acb8)，无扩展属性
 

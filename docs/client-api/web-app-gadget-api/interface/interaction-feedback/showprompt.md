@@ -20,219 +20,38 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYTO4UjL2kDO14iN5gTN
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.17.0+</md-version></md-td>
-      <md-td><md-version>V3.17.0+</md-version></md-td>
-      <md-td><md-version>V3.17.0+</md-version></md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/prompt/prompt" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.47.0+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.17.0+</md-version> | <md-version>V3.17.0+</md-version> | <md-version>V3.17.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/prompt/prompt" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.47.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                title
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                标题，中文按照2个字符统计
 
-**最大长度**：`30`  字符   
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| title | string | 否 |  | 标题，中文按照2个字符统计<br>**最大长度**：`30`  字符 |
+| placeholder | string | 否 | Please enter your content here | 输入框内容为空时的提示文案 |
+| maxLength | number | 否 | 140 | 最大输入长度，设置为-1的时候不限制最大长度 |
+| confirmText | string | 否 | OK | 确定按钮的文案，中文按照2个字符统计<br>**最大长度**：`8`  字符 |
+| cancelText | string | 否 | Cancel | 取消按钮的文案，中文按照2个字符统计<br>**最大长度**：`8`  字符 |
 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                placeholder
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                Please enter your content here
-            </md-td>
-            <md-td>
-                输入框内容为空时的提示文案
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                maxLength
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                140
-            </md-td>
-            <md-td>
-                最大输入长度，设置为-1的时候不限制最大长度
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                confirmText
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                OK
-            </md-td>
-            <md-td>
-                确定按钮的文案，中文按照2个字符统计
-
-
-**最大长度**：`8`  字符
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                cancelText
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                Cancel
-            </md-td>
-            <md-td>
-                取消按钮的文案，中文按照2个字符统计
-
-
-**最大长度**：`8`  字符
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                confirm
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                是否点击了确定按钮
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                cancel
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                是否点击了取消按钮
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                inputValue
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                confirm为true时，用户输入的内容
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| confirm | boolean | 是否点击了确定按钮 |
+| cancel | boolean | 是否点击了取消按钮 |
+| inputValue | string | confirm为true时，用户输入的内容 |
+
 
 ## 示例代码
 :::html

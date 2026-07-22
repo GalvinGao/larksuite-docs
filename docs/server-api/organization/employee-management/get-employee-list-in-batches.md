@@ -42,163 +42,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/directory/v1/employees/filter</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="directory:employee:list" desc="调用 API 获取员工列表" support_app_types="custom,isv" tags="">调用 API 获取员工列表</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm>
-        <md-perm name="directory:department.count:read" desc="查看部门成员与子部门计数" support_app_types="custom,isv" tags="">查看部门成员与子部门计数</md-perm>
-        <md-perm name="directory:department.custom_field:read" desc="查看部门自定义字段信息" support_app_types="custom,isv" tags="">查看部门自定义字段信息</md-perm>
-        <md-perm name="directory:department.data_source:read" desc="查看部门数据来源" support_app_types="custom,isv" tags="">查看部门数据来源</md-perm>
-        <md-perm name="directory:department.department_path:read" desc="查看部门路径信息" support_app_types="custom,isv" tags="">查看部门路径信息</md-perm>
-        <md-perm name="directory:department.external_id:read" desc="查看部门自定义 ID" support_app_types="custom,isv" tags="">查看部门自定义 ID</md-perm>
-        <md-perm name="directory:department.has_child:read" desc="查看部门是否有子部门" support_app_types="custom,isv" tags="">查看部门是否有子部门</md-perm>
-        <md-perm name="directory:department.leader:read" desc="查看部门负责人信息" support_app_types="custom,isv" tags="">查看部门负责人信息</md-perm>
-        <md-perm name="directory:department.name:read" desc="查看部门的名称" support_app_types="custom,isv" tags="">查看部门的名称</md-perm>
-        <md-perm name="directory:department.order_weight:read" desc="查看部门排序权重" support_app_types="custom,isv" tags="">查看部门排序权重</md-perm>
-        <md-perm name="directory:department.organization:read" desc="查看部门组织架构信息" support_app_types="custom,isv" tags="">查看部门组织架构信息</md-perm>
-        <md-perm name="directory:department.parent_id:read" desc="查看部门的父部门 ID" support_app_types="custom,isv" tags="">查看部门的父部门 ID</md-perm>
-        <md-perm name="directory:department.status:read" desc="查看部门的停启用状态" support_app_types="custom,isv" tags="">查看部门的停启用状态</md-perm>
-        <md-perm name="directory:employee.base.active_status:read" desc="查看员工账号活跃状态" support_app_types="custom,isv" tags="">查看员工账号活跃状态</md-perm>
-        <md-perm name="directory:employee.base.avatar:read" desc="查看员工的头像" support_app_types="custom,isv" tags="">查看员工的头像</md-perm>
-        <md-perm name="directory:employee.base.background_image:read" desc="查看员工的名片页自定义背景图" support_app_types="custom,isv" tags="">查看员工的名片页自定义背景图</md-perm>
-        <md-perm name="directory:employee.base.base:read" desc="查看员工个人基本信息" support_app_types="custom,isv" tags="">查看员工个人基本信息</md-perm>
-        <md-perm name="directory:employee.base.custom_field:read" desc="查看员工自定义字段值" support_app_types="custom,isv" tags="">查看员工自定义字段值</md-perm>
-        <md-perm name="directory:employee.base.data_source:read" desc="查看员工数据来源" support_app_types="custom,isv" tags="">查看员工数据来源</md-perm>
-        <md-perm name="directory:employee.base.department:read" desc="查看员工所属部门信息" support_app_types="custom,isv" tags="">查看员工所属部门信息</md-perm>
-        <md-perm name="directory:employee.base.department_path:read" desc="查看员工部门路径" support_app_types="custom,isv" tags="">查看员工部门路径</md-perm>
-        <md-perm name="directory:employee.base.dept_order:read" desc="查看员工在部门内的排序" support_app_types="custom,isv" tags="">查看员工在部门内的排序</md-perm>
-        <md-perm name="directory:employee.base.description:read" desc="查看员工的个性签名" support_app_types="custom,isv" tags="">查看员工的个性签名</md-perm>
-        <md-perm name="directory:employee.base.dotted_line_leaders:read" desc="查看员工虚线上级 ID" support_app_types="custom,isv" tags="">查看员工虚线上级 ID</md-perm>
-        <md-perm name="directory:employee.base.email:read" desc="查看员工工作邮箱" support_app_types="custom,isv" tags="">查看员工工作邮箱</md-perm>
-        <md-perm name="directory:employee.base.enterprise_email:read" desc="查看员工企业邮箱" support_app_types="custom,isv" tags="">查看员工企业邮箱</md-perm>
-        <md-perm name="directory:employee.base.enterprise_email_alias:read" desc="查看员工的企业邮箱别名" support_app_types="custom,isv" tags="">查看员工的企业邮箱别名</md-perm>
-        <md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm>
-        <md-perm name="directory:employee.base.gender:read" desc="查看员工性别" support_app_types="custom,isv" tags="">查看员工性别</md-perm>
-        <md-perm name="directory:employee.base.geo:read" desc="查看员工数据驻留地" support_app_types="custom,isv" tags="">查看员工数据驻留地</md-perm>
-        <md-perm name="directory:employee.base.is_admin:read" desc="查看员工是否是普通管理员" support_app_types="custom,isv" tags="">查看员工是否是普通管理员</md-perm>
-        <md-perm name="directory:employee.base.is_primary_admin:read" desc="查看员工是否是超级管理员" support_app_types="custom,isv" tags="">查看员工是否是超级管理员</md-perm>
-        <md-perm name="directory:employee.base.is_resigned:read" desc="查看员工离职状态" support_app_types="custom,isv" tags="">查看员工离职状态</md-perm>
-        <md-perm name="directory:employee.base.leader:read" desc="查看员工上级信息" support_app_types="custom,isv" tags="">查看员工上级信息</md-perm>
-        <md-perm name="directory:employee.base.leader_id:read" desc="查看员工直属上级 ID" support_app_types="custom,isv" tags="">查看员工直属上级 ID</md-perm>
-        <md-perm name="directory:employee.base.mobile:read" desc="查看员工手机号" support_app_types="custom,isv" tags="">查看员工手机号</md-perm>
-        <md-perm name="directory:employee.base.name.another_name:read" desc="查看员工的别名" support_app_types="custom,isv" tags="">查看员工的别名</md-perm>
-        <md-perm name="directory:employee.base.name.name:read" desc="查看员工的姓名" support_app_types="custom,isv" tags="">查看员工的姓名</md-perm>
-        <md-perm name="directory:employee.base.resign_time:read" desc="查看员工离职时间" support_app_types="custom,isv" tags="">查看员工离职时间</md-perm>
-        <md-perm name="directory:employee.base.role:read" desc="查看员工角色信息" support_app_types="custom,isv" tags="">查看员工角色信息</md-perm>
-        <md-perm name="directory:employee.base.status:read" desc="查看员工状态信息" support_app_types="custom,isv" tags="">查看员工状态信息</md-perm>
-        <md-perm name="directory:employee.base.subscription_ids:read" desc="查看员工席位信息" support_app_types="custom,isv" tags="">查看员工席位信息</md-perm>
-        <md-perm name="directory:employee.work.base_work:read" desc="查看员工基础工作信息" support_app_types="custom,isv" tags="">查看员工基础工作信息</md-perm>
-        <md-perm name="directory:employee.work.employment_type:read" desc="查看员工的员工类型" support_app_types="custom,isv" tags="">查看员工的员工类型</md-perm>
-        <md-perm name="directory:employee.work.extension_number:read" desc="查看员工的分机号" support_app_types="custom,isv" tags="">查看员工的分机号</md-perm>
-        <md-perm name="directory:employee.work.job_number:read" desc="查看员工的工号" support_app_types="custom,isv" tags="">查看员工的工号</md-perm>
-        <md-perm name="directory:employee.work.job_title:read" desc="查看员工职务信息" support_app_types="custom,isv" tags="">查看员工职务信息</md-perm>
-        <md-perm name="directory:employee.work.join_date:read" desc="查看员工的入职日期" support_app_types="custom,isv" tags="">查看员工的入职日期</md-perm>
-        <md-perm name="directory:employee.work.resign_date:read" desc="查看员工离职日期" support_app_types="custom,isv" tags="">查看员工离职日期</md-perm>
-        <md-perm name="directory:employee.work.resign_reason:read" desc="查看员工离职原因" support_app_types="custom,isv" tags="">查看员工离职原因</md-perm>
-        <md-perm name="directory:employee.work.resign_remark:read" desc="查看员工离职备注" support_app_types="custom,isv" tags="">查看员工离职备注</md-perm>
-        <md-perm name="directory:employee.work.resign_type:read" desc="查看员工离职类型" support_app_types="custom,isv" tags="">查看员工离职类型</md-perm>
-        <md-perm name="directory:employee.work.staff_status:read" desc="查看员工的人事状态" support_app_types="custom,isv" tags="">查看员工的人事状态</md-perm>
-        <md-perm name="directory:employee.work.work_country_or_region:read" desc="查看员工的工作国家/地区" support_app_types="custom,isv" tags="">查看员工的工作国家/地区</md-perm>
-        <md-perm name="directory:employee.work.work_place:read" desc="查看员工的工作地点" support_app_types="custom,isv" tags="">查看员工的工作地点</md-perm>
-        <md-perm name="directory:employee.work.work_station:read" desc="查看员工的工位" support_app_types="custom,isv" tags="">查看员工的工位</md-perm>
-        <md-perm name="directory:job_title.base:read" desc="查看职务基础信息" support_app_types="custom,isv" tags="">查看职务基础信息</md-perm>
-        <md-perm name="directory:job_title.status:read" desc="查看职务状态" support_app_types="custom,isv" tags="">查看职务状态</md-perm>
-        <md-perm name="directory:place.base:read" desc="查看地点基础信息" support_app_types="custom,isv" tags="">查看地点基础信息</md-perm>
-        <md-perm name="directory:place.status:read" desc="查看地点状态" support_app_types="custom,isv" tags="">查看地点状态</md-perm>
-        <md-perm name="directory:job_family.path:read" desc="查看工作序列的路径信息" support_app_types="custom" tags="">查看工作序列的路径信息</md-perm>
-        <md-perm name="directory:job_family.status:read" desc="查看企业中工作序列的状态信息" support_app_types="custom" tags="">查看企业中工作序列的状态信息</md-perm>
-        <md-perm name="directory:job_level.base:read" desc="获取职级的基础信息" support_app_types="custom" tags="">获取职级的基础信息</md-perm>
-        <md-perm name="directory:job_level.order:read" desc="获取职级的排序信息" support_app_types="custom" tags="">获取职级的排序信息</md-perm>
-        <md-perm name="directory:job_level.status:read" desc="获取职级的状态信息" support_app_types="custom" tags="">获取职级的状态信息</md-perm>
-        <md-perm name="directory:employee.work.job_level:read" desc="查看员工的职级" support_app_types="custom" tags="">查看员工的职级</md-perm>
-        <md-perm name="directory:employee.work.employment:read" desc="查看员工雇佣信息" support_app_types="custom" tags="">查看员工雇佣信息</md-perm>
-        <md-perm name="directory:employee.work.job_family:read" desc="查看员工的序列" support_app_types="custom" tags="">查看员工的序列</md-perm>
-        <md-perm name="directory:job_family.base:read" desc="查看工作序列的信息" support_app_types="custom" tags="">查看工作序列的信息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/directory/v1/employees/filter |
+| HTTP Method | POST |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="directory:employee:list" desc="调用 API 获取员工列表" support_app_types="custom,isv" tags="">调用 API 获取员工列表</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="directory:department.base:read" desc="查看部门基础信息" support_app_types="custom,isv" tags="">查看部门基础信息</md-perm><br><md-perm name="directory:department.count:read" desc="查看部门成员与子部门计数" support_app_types="custom,isv" tags="">查看部门成员与子部门计数</md-perm><br><md-perm name="directory:department.custom_field:read" desc="查看部门自定义字段信息" support_app_types="custom,isv" tags="">查看部门自定义字段信息</md-perm><br><md-perm name="directory:department.data_source:read" desc="查看部门数据来源" support_app_types="custom,isv" tags="">查看部门数据来源</md-perm><br><md-perm name="directory:department.department_path:read" desc="查看部门路径信息" support_app_types="custom,isv" tags="">查看部门路径信息</md-perm><br><md-perm name="directory:department.external_id:read" desc="查看部门自定义 ID" support_app_types="custom,isv" tags="">查看部门自定义 ID</md-perm><br><md-perm name="directory:department.has_child:read" desc="查看部门是否有子部门" support_app_types="custom,isv" tags="">查看部门是否有子部门</md-perm><br><md-perm name="directory:department.leader:read" desc="查看部门负责人信息" support_app_types="custom,isv" tags="">查看部门负责人信息</md-perm><br><md-perm name="directory:department.name:read" desc="查看部门的名称" support_app_types="custom,isv" tags="">查看部门的名称</md-perm><br><md-perm name="directory:department.order_weight:read" desc="查看部门排序权重" support_app_types="custom,isv" tags="">查看部门排序权重</md-perm><br><md-perm name="directory:department.organization:read" desc="查看部门组织架构信息" support_app_types="custom,isv" tags="">查看部门组织架构信息</md-perm><br><md-perm name="directory:department.parent_id:read" desc="查看部门的父部门 ID" support_app_types="custom,isv" tags="">查看部门的父部门 ID</md-perm><br><md-perm name="directory:department.status:read" desc="查看部门的停启用状态" support_app_types="custom,isv" tags="">查看部门的停启用状态</md-perm><br><md-perm name="directory:employee.base.active_status:read" desc="查看员工账号活跃状态" support_app_types="custom,isv" tags="">查看员工账号活跃状态</md-perm><br><md-perm name="directory:employee.base.avatar:read" desc="查看员工的头像" support_app_types="custom,isv" tags="">查看员工的头像</md-perm><br><md-perm name="directory:employee.base.background_image:read" desc="查看员工的名片页自定义背景图" support_app_types="custom,isv" tags="">查看员工的名片页自定义背景图</md-perm><br><md-perm name="directory:employee.base.base:read" desc="查看员工个人基本信息" support_app_types="custom,isv" tags="">查看员工个人基本信息</md-perm><br><md-perm name="directory:employee.base.custom_field:read" desc="查看员工自定义字段值" support_app_types="custom,isv" tags="">查看员工自定义字段值</md-perm><br><md-perm name="directory:employee.base.data_source:read" desc="查看员工数据来源" support_app_types="custom,isv" tags="">查看员工数据来源</md-perm><br><md-perm name="directory:employee.base.department:read" desc="查看员工所属部门信息" support_app_types="custom,isv" tags="">查看员工所属部门信息</md-perm><br><md-perm name="directory:employee.base.department_path:read" desc="查看员工部门路径" support_app_types="custom,isv" tags="">查看员工部门路径</md-perm><br><md-perm name="directory:employee.base.dept_order:read" desc="查看员工在部门内的排序" support_app_types="custom,isv" tags="">查看员工在部门内的排序</md-perm><br><md-perm name="directory:employee.base.description:read" desc="查看员工的个性签名" support_app_types="custom,isv" tags="">查看员工的个性签名</md-perm><br><md-perm name="directory:employee.base.dotted_line_leaders:read" desc="查看员工虚线上级 ID" support_app_types="custom,isv" tags="">查看员工虚线上级 ID</md-perm><br><md-perm name="directory:employee.base.email:read" desc="查看员工工作邮箱" support_app_types="custom,isv" tags="">查看员工工作邮箱</md-perm><br><md-perm name="directory:employee.base.enterprise_email:read" desc="查看员工企业邮箱" support_app_types="custom,isv" tags="">查看员工企业邮箱</md-perm><br><md-perm name="directory:employee.base.enterprise_email_alias:read" desc="查看员工的企业邮箱别名" support_app_types="custom,isv" tags="">查看员工的企业邮箱别名</md-perm><br><md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm><br><md-perm name="directory:employee.base.gender:read" desc="查看员工性别" support_app_types="custom,isv" tags="">查看员工性别</md-perm><br><md-perm name="directory:employee.base.geo:read" desc="查看员工数据驻留地" support_app_types="custom,isv" tags="">查看员工数据驻留地</md-perm><br><md-perm name="directory:employee.base.is_admin:read" desc="查看员工是否是普通管理员" support_app_types="custom,isv" tags="">查看员工是否是普通管理员</md-perm><br><md-perm name="directory:employee.base.is_primary_admin:read" desc="查看员工是否是超级管理员" support_app_types="custom,isv" tags="">查看员工是否是超级管理员</md-perm><br><md-perm name="directory:employee.base.is_resigned:read" desc="查看员工离职状态" support_app_types="custom,isv" tags="">查看员工离职状态</md-perm><br><md-perm name="directory:employee.base.leader:read" desc="查看员工上级信息" support_app_types="custom,isv" tags="">查看员工上级信息</md-perm><br><md-perm name="directory:employee.base.leader_id:read" desc="查看员工直属上级 ID" support_app_types="custom,isv" tags="">查看员工直属上级 ID</md-perm><br><md-perm name="directory:employee.base.mobile:read" desc="查看员工手机号" support_app_types="custom,isv" tags="">查看员工手机号</md-perm><br><md-perm name="directory:employee.base.name.another_name:read" desc="查看员工的别名" support_app_types="custom,isv" tags="">查看员工的别名</md-perm><br><md-perm name="directory:employee.base.name.name:read" desc="查看员工的姓名" support_app_types="custom,isv" tags="">查看员工的姓名</md-perm><br><md-perm name="directory:employee.base.resign_time:read" desc="查看员工离职时间" support_app_types="custom,isv" tags="">查看员工离职时间</md-perm><br><md-perm name="directory:employee.base.role:read" desc="查看员工角色信息" support_app_types="custom,isv" tags="">查看员工角色信息</md-perm><br><md-perm name="directory:employee.base.status:read" desc="查看员工状态信息" support_app_types="custom,isv" tags="">查看员工状态信息</md-perm><br><md-perm name="directory:employee.base.subscription_ids:read" desc="查看员工席位信息" support_app_types="custom,isv" tags="">查看员工席位信息</md-perm><br><md-perm name="directory:employee.work.base_work:read" desc="查看员工基础工作信息" support_app_types="custom,isv" tags="">查看员工基础工作信息</md-perm><br><md-perm name="directory:employee.work.employment_type:read" desc="查看员工的员工类型" support_app_types="custom,isv" tags="">查看员工的员工类型</md-perm><br><md-perm name="directory:employee.work.extension_number:read" desc="查看员工的分机号" support_app_types="custom,isv" tags="">查看员工的分机号</md-perm><br><md-perm name="directory:employee.work.job_number:read" desc="查看员工的工号" support_app_types="custom,isv" tags="">查看员工的工号</md-perm><br><md-perm name="directory:employee.work.job_title:read" desc="查看员工职务信息" support_app_types="custom,isv" tags="">查看员工职务信息</md-perm><br><md-perm name="directory:employee.work.join_date:read" desc="查看员工的入职日期" support_app_types="custom,isv" tags="">查看员工的入职日期</md-perm><br><md-perm name="directory:employee.work.resign_date:read" desc="查看员工离职日期" support_app_types="custom,isv" tags="">查看员工离职日期</md-perm><br><md-perm name="directory:employee.work.resign_reason:read" desc="查看员工离职原因" support_app_types="custom,isv" tags="">查看员工离职原因</md-perm><br><md-perm name="directory:employee.work.resign_remark:read" desc="查看员工离职备注" support_app_types="custom,isv" tags="">查看员工离职备注</md-perm><br><md-perm name="directory:employee.work.resign_type:read" desc="查看员工离职类型" support_app_types="custom,isv" tags="">查看员工离职类型</md-perm><br><md-perm name="directory:employee.work.staff_status:read" desc="查看员工的人事状态" support_app_types="custom,isv" tags="">查看员工的人事状态</md-perm><br><md-perm name="directory:employee.work.work_country_or_region:read" desc="查看员工的工作国家/地区" support_app_types="custom,isv" tags="">查看员工的工作国家/地区</md-perm><br><md-perm name="directory:employee.work.work_place:read" desc="查看员工的工作地点" support_app_types="custom,isv" tags="">查看员工的工作地点</md-perm><br><md-perm name="directory:employee.work.work_station:read" desc="查看员工的工位" support_app_types="custom,isv" tags="">查看员工的工位</md-perm><br><md-perm name="directory:job_title.base:read" desc="查看职务基础信息" support_app_types="custom,isv" tags="">查看职务基础信息</md-perm><br><md-perm name="directory:job_title.status:read" desc="查看职务状态" support_app_types="custom,isv" tags="">查看职务状态</md-perm><br><md-perm name="directory:place.base:read" desc="查看地点基础信息" support_app_types="custom,isv" tags="">查看地点基础信息</md-perm><br><md-perm name="directory:place.status:read" desc="查看地点状态" support_app_types="custom,isv" tags="">查看地点状态</md-perm><br><md-perm name="directory:job_family.path:read" desc="查看工作序列的路径信息" support_app_types="custom" tags="">查看工作序列的路径信息</md-perm><br><md-perm name="directory:job_family.status:read" desc="查看企业中工作序列的状态信息" support_app_types="custom" tags="">查看企业中工作序列的状态信息</md-perm><br><md-perm name="directory:job_level.base:read" desc="获取职级的基础信息" support_app_types="custom" tags="">获取职级的基础信息</md-perm><br><md-perm name="directory:job_level.order:read" desc="获取职级的排序信息" support_app_types="custom" tags="">获取职级的排序信息</md-perm><br><md-perm name="directory:job_level.status:read" desc="获取职级的状态信息" support_app_types="custom" tags="">获取职级的状态信息</md-perm><br><md-perm name="directory:employee.work.job_level:read" desc="查看员工的职级" support_app_types="custom" tags="">查看员工的职级</md-perm><br><md-perm name="directory:employee.work.employment:read" desc="查看员工雇佣信息" support_app_types="custom" tags="">查看员工雇佣信息</md-perm><br><md-perm name="directory:employee.work.job_family:read" desc="查看员工的序列" support_app_types="custom" tags="">查看员工的序列</md-perm><br><md-perm name="directory:job_family.base:read" desc="查看工作序列的信息" support_app_types="custom" tags="">查看工作序列的信息</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -3356,85 +3216,18 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2220001</md-td>
-  <md-td>param is invalid</md-td>
-  <md-td>无效的请求参数，请修改参数</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2220001 | param is invalid | 无效的请求参数，请修改参数 |
+| 400 | 2221004 | invalid page token | 无效的token，请检查page_token是否正确或重新获取有效token。 |
+| 400 | 2221005 | no page request | 无页面请求参数，请传入有效的page_request参数（如page_token或page_size）。 |
+| 400 | 2220009 | Filter field is invalid | filter中的field无效，请修改filter |
+| 400 | 2220010 | Exceeded the limit size | 分页大小超过限制，请修改分页大小 |
+| 400 | 2220012 | The field is not support filter | filter中的field不支持过滤，请修改filter |
+| 400 | 2220013 | The field does not support the operator | filter中的field不支持该操作符，请修改filter |
+| 400 | 2220014 | Invalid field value | filter中的value无效，请修改filter |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221004</md-td>
-  <md-td>invalid page token</md-td>
-  <md-td>无效的token，请检查page_token是否正确或重新获取有效token。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221005</md-td>
-  <md-td>no page request</md-td>
-  <md-td>无页面请求参数，请传入有效的page_request参数（如page_token或page_size）。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2220009</md-td>
-  <md-td>Filter field is invalid</md-td>
-  <md-td>filter中的field无效，请修改filter</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2220010</md-td>
-  <md-td>Exceeded the limit size</md-td>
-  <md-td>分页大小超过限制，请修改分页大小</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2220012</md-td>
-  <md-td>The field is not support filter</md-td>
-  <md-td>filter中的field不支持过滤，请修改filter</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2220013</md-td>
-  <md-td>The field does not support the operator</md-td>
-  <md-td>filter中的field不支持该操作符，请修改filter</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2220014</md-td>
-  <md-td>Invalid field value</md-td>
-  <md-td>filter中的value无效，请修改filter</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

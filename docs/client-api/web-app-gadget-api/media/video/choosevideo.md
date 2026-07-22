@@ -20,206 +20,37 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEjMx4SMyEjLxITM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/video/video" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44+</md-version></md-td>
-      <md-td><md-version>V3.44+</md-version></md-td>
-      <md-td><md-version>V3.47+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> </md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/video/video" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44+</md-version> | <md-version>V3.44+</md-version> | <md-version>V3.47+</md-version> | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">名称</md-th>
-            <md-th style="width: 18%;">数据类型</md-th>
-            <md-th style="width: 10%;">必填</md-th>
-            <md-th style="width: 10%;">默认值</md-th>
-            <md-th>描述</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>sourceType</md-td>
-            <md-td>string[]</md-td>
-            <md-td>否</md-td>
-            <md-td>['album', 'camera']</md-td>
-            <md-td>指定视频来源为相册或/和相机
 
-**示例值**：['album']
-              
-**可选值有**：
-- `['album']`
-- `['camera']`
-- `['album','camera']`            
-<md-alert type="tip" icon="none">
-PC暂不支持camera
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>maxDuration</md-td>
-            <md-td>number</md-td>
-            <md-td>否</md-td>
-            <md-td>60</md-td>
-            <md-td>选取视频最长时间，单位秒。
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| sourceType | string[] | 否 | ['album', 'camera'] | 指定视频来源为相册或/和相机<br>**示例值**：['album']<br>**可选值有**：<br>- `['album']`<br>- `['camera']`<br>- `['album','camera']`<br><md-alert type="tip" icon="none"><br>PC暂不支持camera<br></md-alert> |
+| maxDuration | number | 否 | 60 | 选取视频最长时间，单位秒。<br>**示例值**：80<br>**最大值**：`180`<br><md-alert type="tip" icon="none"><br>- PC 端：不限制最大时长<br>- iOS<br>- 当 `compressd` 为 `true` 时，`maxDuration` 默认值为 60s，最大支持选取 180s 视频<br>- 当 `compressd` 为 `false` 时，`maxDuration` 默认值为 60s，不限制最大时长<br>- Android<br>- `maxDuration` 默认值为 60s，最大支持选取 180s 视频<br></md-alert> |
+| compressed | boolean | 否 | true | 是否对选取视频进行压缩<br>**示例值**：true<br><md-alert type="tip" icon="none"><br>- iOS 端：Lark[V3.37](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持,默认为不压缩，iOS 端设置为 `false` 时，不进行压缩转码，但是相册导出可能仍然需要花费一定时间<br>- Android/PC 端：暂不支持（不进行压缩）<br></md-alert> |
 
-**示例值**：80
-
-**最大值**：`180`
-              
-<md-alert type="tip" icon="none">
-- PC 端：不限制最大时长
-- iOS
-	- 当 `compressd` 为 `true` 时，`maxDuration` 默认值为 60s，最大支持选取 180s 视频
-	- 当 `compressd` 为 `false` 时，`maxDuration` 默认值为 60s，不限制最大时长
-- Android
-	- `maxDuration` 默认值为 60s，最大支持选取 180s 视频
-</md-alert>  
-        
-</md-td>
-
-</md-tr>  
-        
-        <md-tr>
-            <md-td>compressed</md-td>
-            <md-td>boolean</md-td>
-            <md-td>否</md-td>
-            <md-td>true</md-td>
-            <md-td>
-                是否对选取视频进行压缩
-
-**示例值**：true
-<md-alert type="tip" icon="none">
-- iOS 端：Lark[V3.37](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持,默认为不压缩，iOS 端设置为 `false` 时，不进行压缩转码，但是相册导出可能仍然需要花费一定时间
-- Android/PC 端：暂不支持（不进行压缩）
-</md-alert>                
-</md-td>
-   </md-tr>
-</md-tbody>
-</md-table>
-:::
 
 ## 输出
 
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                duration
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                视频时长，单位：秒/s。
-<md-alert type="tip" icon="none">
-PC 端：暂不支持
-</md-alert>  
-            </md-td>
-          
-        </md-tr>
-        <md-tr>
-            <md-td>
-                tempFilePath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                视频地址
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                size
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                视频大小，单位：字节/Bytes
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                width
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                视频宽度
-<md-alert type="tip" icon="none">
-PC 端：暂不支持
-</md-alert>  
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                height
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                视频高度
-<md-alert type="tip" icon="none">
-PC 端：暂不支持
-</md-alert>  
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| duration | number | 视频时长，单位：秒/s。<br><md-alert type="tip" icon="none"><br>PC 端：暂不支持<br></md-alert> |
+| tempFilePath | string | 视频地址 |
+| size | number | 视频大小，单位：字节/Bytes |
+| width | number | 视频宽度<br><md-alert type="tip" icon="none"><br>PC 端：暂不支持<br></md-alert> |
+| height | number | 视频高度<br><md-alert type="tip" icon="none"><br>PC 端：暂不支持<br></md-alert> |
+
 
 ## 示例代码
 :::html

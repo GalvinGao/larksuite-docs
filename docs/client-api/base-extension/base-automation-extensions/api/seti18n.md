@@ -30,44 +30,11 @@ setI18n({
 })
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>defaultLocale</md-td>
-        <md-td>string</md-td>
-        <md-td>否</md-td>
-        <md-td>默认语言环境，格式为lng-REGION如zh-CN、en-US等。值必须为message中的某个key。</md-td>
-      </md-tr>
-       <md-tr>
-      	<md-td>messages</md-td>
-        <md-td>
-{<br>
-&nbsp;&nbsp;[lang:string]: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[key:string]: string,<br>
-&nbsp;&nbsp;},<br>
-}
-        </md-td>
-        <md-td>否</md-td>
-        <md-td>本地化的语言环境信息，lang的格式为lng-REGION，例如zh-CN、en-US。</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| defaultLocale | string | 否 | 默认语言环境，格式为lng-REGION如zh-CN、en-US等。值必须为message中的某个key。 |
+| messages | {<br>&nbsp;&nbsp;[lang:string]: {<br>&nbsp;&nbsp;&nbsp;&nbsp;[key:string]: string,<br>&nbsp;&nbsp;},<br>} | 否 | 本地化的语言环境信息，lang的格式为lng-REGION，例如zh-CN、en-US。 |
+
 
 
 

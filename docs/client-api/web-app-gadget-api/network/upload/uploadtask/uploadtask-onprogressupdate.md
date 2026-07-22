@@ -20,37 +20,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDNugDNugDN/uploadtask
 `upoadFile`的调用结果在通过回调传递的同时会返回一个`uploadTask`对象，通过`onProgressUpdate`方法监听上传进度。
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 
@@ -60,34 +35,13 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDNugDNugDN/uploadtask
 
 ## 输出
 回调函数返回对象的属性：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 18%;">数据类型</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-   <md-tr>
-      <md-td>progress</md-td>
-      <md-td>number</md-td>
-      <md-td>上传进度</md-td>
-   </md-tr>
-   <md-tr>
-      <md-td>totalBytesSent</md-td>
-      <md-td>number</md-td>
-      <md-td>已经上传的数据长度，单位 byte</md-td>
-   </md-tr>
-   <md-tr>
-      <md-td>totalBytesExpectedToSend</md-td>
-      <md-td>number</md-td>
-      <md-td>预期需要上传的数据总长度，单位 byte</md-td>
-   </md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| progress | number | 上传进度 |
+| totalBytesSent | number | 已经上传的数据长度，单位 byte |
+| totalBytesExpectedToSend | number | 预期需要上传的数据总长度，单位 byte |
+
 
 
 ## 示例代码

@@ -33,44 +33,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 getAttachmentUrl(token, fieldId, recordId)
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 100px;">
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: 400px">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>token</md-td>
-        <md-td>string</md-td>
-        <md-td>是</md-td>
-        <md-td>文件的token，table.batchUploadFile的返回值，或者从某个附件字段获取</md-td>
-      </md-tr>
-       <md-tr>
-      	<md-td>fieldId</md-td>
-        <md-td>string</md-td>
-        <md-td>高级权限文档下必传；普通文档可以不传</md-td>
-        <md-td>字段Id</md-td>
-      </md-tr>
-       <md-tr>
-      	<md-td>recordId</md-td>
-        <md-td>string</md-td>
-        <md-td>高级权限文档下必传；普通文档可以不传</md-td>
-        <md-td>记录id</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| token | string | 是 | 文件的token，table.batchUploadFile的返回值，或者从某个附件字段获取 |
+| fieldId | string | 高级权限文档下必传；普通文档可以不传 | 字段Id |
+| recordId | string | 高级权限文档下必传；普通文档可以不传 | 记录id |
+
 
 
 ## 输出

@@ -33,288 +33,38 @@ getUserInfo(Object object) 用于获取已登录用户的基本信息或特殊�
 
 该接口支持小程序和网页应用调用，对应的客户端版本支持情况如下所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-  <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/get-user-info/get-user-info" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/get-user-info/get-user-info" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 ## 输入
 该接口继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性如下所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                是否必填
-            </md-th>
-            <md-th style="width: 15%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                withCredentials
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>false</md-td>
-            <md-td>
-                是否需要返回敏感数据。取值：
-- true：需要
-- false：不需要
-              
-<md-alert type="tip" icon="none">
-网页应用不支持该字段。网页应用获取用户敏感信息的方式，可参见 [网页应用免登](/document/uYjL24iN/ukTO4UjL5kDO14SO5gTN#6efde855)。
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| withCredentials | boolean | 否 | false | 是否需要返回敏感数据。取值：<br>- true：需要<br>- false：不需要<br><md-alert type="tip" icon="none"><br>网页应用不支持该字段。网页应用获取用户敏感信息的方式，可参见 [网页应用免登](/document/uYjL24iN/ukTO4UjL5kDO14SO5gTN#6efde855)。<br></md-alert> |
+
 
 ## 输出
 
 该接口继承[标准对象输出](/document/uYjL24iN/ukzNy4SO3IjL5cjM#8c92acb8)，`success` 返回对象的扩展属性如下所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 20%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                userInfo
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                用户信息。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    nickName
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用户昵称。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    avatarUrl
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用户头像。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    gender
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用户性别。可能值：
-- `''`：未知
-- `male`：男性
-- `female`：女性
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    country
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用户所在国家或地区。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    city
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用户所在城市。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    language
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                所在地区所用的语言。可选值：
-- `en_US`：英文
-- `zh_CN`：中文
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                rawData
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                userInfo 的 JSON 字符串形式。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                signature
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用于校验用户信息是否被篡改。
-<md-alert type="tip" icon="none">
-该字段值为敏感数据，输入的 withCredentials 为 true 时可获取。
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                encryptedData
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                包括敏感信息（例如，openId、unionId、email、employee_id、watermark 等）在内的已加密用户数据。
-<md-alert type="tip" icon="none">
-该字段值为敏感数据，输入的 withCredentials 为 true 时可获取。
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                iv
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                加密算法参数。
-<md-alert type="tip" icon="none">
-该字段值为敏感数据，输入的 withCredentials 为 true 时可获取。
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| userInfo | object | 用户信息。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>nickName<br></md-text> | string | 用户昵称。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>avatarUrl<br></md-text> | string | 用户头像。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>gender<br></md-text> | string | 用户性别。可能值：<br>- `''`：未知<br>- `male`：男性<br>- `female`：女性 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>country<br></md-text> | string | 用户所在国家或地区。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>city<br></md-text> | string | 用户所在城市。 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>language<br></md-text> | string | 所在地区所用的语言。可选值：<br>- `en_US`：英文<br>- `zh_CN`：中文 |
+| rawData | string | userInfo 的 JSON 字符串形式。 |
+| signature | string | 用于校验用户信息是否被篡改。<br><md-alert type="tip" icon="none"><br>该字段值为敏感数据，输入的 withCredentials 为 true 时可获取。<br></md-alert> |
+| encryptedData | string | 包括敏感信息（例如，openId、unionId、email、employee_id、watermark 等）在内的已加密用户数据。<br><md-alert type="tip" icon="none"><br>该字段值为敏感数据，输入的 withCredentials 为 true 时可获取。<br></md-alert> |
+| iv | string | 加密算法参数。<br><md-alert type="tip" icon="none"><br>该字段值为敏感数据，输入的 withCredentials 为 true 时可获取。<br></md-alert> |
+
 
 
 ## 示例代码

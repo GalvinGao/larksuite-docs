@@ -27,54 +27,14 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcD
 
 ## 回调
 
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本信息</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>回调类型</md-th>
-      <md-td>card.action.trigger_v1</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-    <md-th>
-            权限要求
-            <md-tooltip type="info">订阅该事件所需的权限，开启其中任意一项权限即可订阅</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-    </md-th>
-      <md-td>
-暂无
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-          字段权限要求
-      </md-th>
-      <md-td>
-暂无
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>推送方式</md-th>
-      <md-td>
-            <md-tag mode="inline" type="push-webhook" href="/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM" >Webhook</md-tag>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 基本信息 |  |
+| --- | --- |
+| 回调类型 | card.action.trigger_v1 |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">订阅该事件所需的权限，开启其中任意一项权限即可订阅</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | 暂无 |
+| 字段权限要求 | 暂无 |
+| 推送方式 | <md-tag mode="inline" type="push-webhook" href="/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM" >Webhook</md-tag> |
+
 
 ## 回调结构体
 

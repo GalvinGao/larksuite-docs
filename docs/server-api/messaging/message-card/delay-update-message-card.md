@@ -34,64 +34,19 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4Uj
 :::
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/interactive/v1/card/update</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    
-    
-  </md-tbody>
-</md-table>
-:::
-### 请求头
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">名称</md-th>  
-      <md-th style="width: 15%;">类型</md-th>  
-       <md-th style="width: 15%;">必填</md-th>  
-      <md-th>描述</md-th> 
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>Authorization</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
- 
-**值格式**："Bearer `access_token`"
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-          
- [了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-	</md-td>
-</md-tr>
-     <md-tr> 
-      <md-td>Content-Type</md-td>  
-      <md-td>string</md-td>  
-      <md-td> 是 </md-td> 
-     <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-   
-  </md-tbody> 
-</md-table>
-:::
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/interactive/v1/card/update |
+| HTTP Method | POST |
+
+### 请求头
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 
 ### 请求体
 | 参数| 类型   | 必须 | 说明  | 实例 |                                                   
@@ -149,73 +104,20 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4Uj
 ```
 
 ### 错误码
-:::html
-<md-table> 
-  <md-thead> 
-    <md-tr> 
-      <md-th style="width: 18%;">错误码</md-th>  
-      <md-th style="width: 15%;">说明</md-th>  
-       <md-th style="width: 15%;">排查建议</md-th>   
-    </md-tr> 
-  </md-thead>  
-  <md-tbody> 
-    <md-tr> 
-      <md-td>11311</md-td>  
-      <md-td>卡片格式不符合要求。</md-td>  
-      <md-td>参照错误message具体内容，卡片构造格式可以参考[卡片结构](/document/ukTMukTMukTM/uEjNwUjLxYDM14SM2ATN)。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>10002</md-td>  
-      <md-td>card参数校验错误，请根据msg信息进行确认。</md-td>  
-      <md-td>补齐card字段，具体格式可以参考[卡片结构](/document/ukTMukTMukTM/uEjNwUjLxYDM14SM2ATN)。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>100000</md-td>  
-      <md-td>卡片内容转换后超过100KB。</md-td>  
-      <md-td>减小卡片体积。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>100030</md-td>  
-      <md-td>传入body参数不符合json规范。</md-td>  
-      <md-td>检查传入参数。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>200000</md-td>  
-      <md-td>该卡片消息已被撤回。</md-td>  
-      <md-td>该卡片消息已撤回，不支持更新。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>200310</md-td>  
-      <md-td>更新其他应用发送的卡片。</md-td>  
-      <md-td>不允许更新其他应用发送的卡片。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>200320</md-td>  
-      <md-td>非共享卡片的open_ids内容是否正确。</md-td>  
-      <md-td>检查open_ids是否正确。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>300020</md-td>  
-      <md-td>更新卡片token格式错误。</md-td>  
-      <md-td>检查token格式，格式为c-xxxx，可通过[卡片交互返回内容](/document/ukTMukTMukTM/uEzNwUjLxcDM14SM3ATN)获取。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>300030</md-td>  
-      <md-td>更新卡片token失效。</md-td>  
-      <md-td>token有效期为30分钟，请检查token是否在有效期。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>300040</md-td>  
-      <md-td>更新卡片token使用超过限制次数。</md-td>  
-      <md-td>token仅能使用3次，请检查token是否超过使用次数。</md-td> 
-	</md-tr>
-    <md-tr> 
-      <md-td>300090</md-td>  
-      <md-td>非共享卡片需填写open_ids字段。</md-td>  
-      <md-td>检查open_ids是否填写且是否正确。</md-td> 
-	</md-tr>
-  </md-tbody> 
-</md-table>
-:::
+
+| 错误码 | 说明 | 排查建议 |
+| --- | --- | --- |
+| 11311 | 卡片格式不符合要求。 | 参照错误message具体内容，卡片构造格式可以参考[卡片结构](/document/ukTMukTMukTM/uEjNwUjLxYDM14SM2ATN)。 |
+| 10002 | card参数校验错误，请根据msg信息进行确认。 | 补齐card字段，具体格式可以参考[卡片结构](/document/ukTMukTMukTM/uEjNwUjLxYDM14SM2ATN)。 |
+| 100000 | 卡片内容转换后超过100KB。 | 减小卡片体积。 |
+| 100030 | 传入body参数不符合json规范。 | 检查传入参数。 |
+| 200000 | 该卡片消息已被撤回。 | 该卡片消息已撤回，不支持更新。 |
+| 200310 | 更新其他应用发送的卡片。 | 不允许更新其他应用发送的卡片。 |
+| 200320 | 非共享卡片的open_ids内容是否正确。 | 检查open_ids是否正确。 |
+| 300020 | 更新卡片token格式错误。 | 检查token格式，格式为c-xxxx，可通过[卡片交互返回内容](/document/ukTMukTMukTM/uEzNwUjLxcDM14SM3ATN)获取。 |
+| 300030 | 更新卡片token失效。 | token有效期为30分钟，请检查token是否在有效期。 |
+| 300040 | 更新卡片token使用超过限制次数。 | token仅能使用3次，请检查token是否超过使用次数。 |
+| 300090 | 非共享卡片需填写open_ids字段。 | 检查open_ids是否填写且是否正确。 |
+
 
 其他通用错误码可参考：[服务端错误码说明](/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。

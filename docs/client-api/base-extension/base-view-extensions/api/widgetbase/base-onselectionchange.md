@@ -34,32 +34,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 ```js
 const off = base.onSelectionChange((event) => {})
 ```
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 150px;">
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>event</md-td>
-        <md-td>Selection </md-td>
-        <md-td>否</md-td>
-        <md-td>当前所选的相关信息。</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| event | Selection | 否 | 当前所选的相关信息。 |
+
 Selection:
 ```js
 {

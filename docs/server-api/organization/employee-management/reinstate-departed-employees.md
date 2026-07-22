@@ -44,98 +44,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/directory/v1/employees/:employee_id/resurrect</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="directory:employee.resurrect:write" desc="恢复离职员工" support_app_types="custom" tags="">恢复离职员工</md-perm>
-            <md-perm name="directory:employee:write" desc="创建、更新、离职、恢复员工" support_app_types="custom" tags="">创建、更新、离职、恢复员工</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/directory/v1/employees/:employee_id/resurrect |
+| HTTP Method | POST |
+| 接口频率限制 | [10 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="directory:employee.resurrect:write" desc="恢复离职员工" support_app_types="custom" tags="">恢复离职员工</md-perm><br><md-perm name="directory:employee:write" desc="创建、更新、离职、恢复员工" support_app_types="custom" tags="">创建、更新、离职、恢复员工</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -509,165 +434,28 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221268</md-td>
-  <md-td>Tenant not in the access list</md-td>
-  <md-td>租户无法恢复员工，请检查租户是否在访问列表中。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2221268 | Tenant not in the access list | 租户无法恢复员工，请检查租户是否在访问列表中。 |
+| 400 | 2221269 | Resurrect user info duplicated | 员工信息与在职员工有冲突，请检查员工信息是否与在职员工重复。 |
+| 400 | 2221270 | Can't resurrect user in delete process | 员工已在离职流程中，暂时无法恢复，请稍后重试 |
+| 400 | 2221271 | User exceed billing seats limit | 超过席位限制，暂时无法恢复员工，请联系管理员增加计费席位。 |
+| 400 | 2221272 | User exceed tenant limit | 员工人数超过租户限制，暂时无法恢复员工，请检查租户员工人数限制并调整。 |
+| 400 | 2221273 | User exceed certification seats limit | 超过认证席位限制，暂时无法恢复员工，请联系管理员增加认证席位。 |
+| 400 | 2221274 | User exceed feature contact seats limit | 员工超过通讯录席位上限，请调整通讯录席位上限。 |
+| 400 | 2221275 | Tenant version not allow resurrection | 租户版本不允许恢复员工，请升级租户版本至支持恢复员工的版本。 |
+| 400 | 2221123 | The user refused to join the tenant and cannot be resurrect | 员工拒绝加入租户，无法恢复，请联系员工确认是否同意加入租户。 |
+| 400 | 2221140 | Department number exceeds limit | 部门人数超过限制，无法恢复，请检查部门人数限制并调整。 |
+| 400 | 2221252 | Hybrid license tenant prohibits passing empty licenses to create users | 混合许可证租户禁止传递空许可证，请添加席位信息，（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID） |
+| 400 | 2221253 | Designated licenseID is insufficient | 席位不足，请修改席位信息。（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID） |
+| 400 | 2221254 | Designated licenseID is invalid | 无效的席位信息，请修改席位信息。（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID） |
+| 400 | 2224001 | No permission to operate | 无操作权限，请检查当前应用的权限或企业版本是否是商业专业版本及以上。 |
+| 400 | 2224002 | No permission to operate record | 无操作该记录权限，请检查当前应用的数据管理范围的权限或当前应用所操作的成员是否可恢复。 |
+| 400 | 2224003 | No permission to operate dependent object | 无操作依赖对象权限，请检查要恢复到的部门是否有权限。 |
+| 400 | 2221248 | Resurrect exceeds seat limit | 席位超限，请修改席位信息。（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID） |
+| 400 | 2221255 | Main department must be the first | 主部门必须在第一个，请修改所属部门排序信息 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221269</md-td>
-  <md-td>Resurrect user info duplicated</md-td>
-  <md-td>员工信息与在职员工有冲突，请检查员工信息是否与在职员工重复。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221270</md-td>
-  <md-td>Can't resurrect user in delete process</md-td>
-  <md-td>员工已在离职流程中，暂时无法恢复，请稍后重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221271</md-td>
-  <md-td>User exceed billing seats limit</md-td>
-  <md-td>超过席位限制，暂时无法恢复员工，请联系管理员增加计费席位。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221272</md-td>
-  <md-td>User exceed tenant limit</md-td>
-  <md-td>员工人数超过租户限制，暂时无法恢复员工，请检查租户员工人数限制并调整。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221273</md-td>
-  <md-td>User exceed certification seats limit</md-td>
-  <md-td>超过认证席位限制，暂时无法恢复员工，请联系管理员增加认证席位。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221274</md-td>
-  <md-td>User exceed feature contact seats limit</md-td>
-  <md-td>员工超过通讯录席位上限，请调整通讯录席位上限。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221275</md-td>
-  <md-td>Tenant version not allow resurrection</md-td>
-  <md-td>租户版本不允许恢复员工，请升级租户版本至支持恢复员工的版本。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221123</md-td>
-  <md-td>The user refused to join the tenant and cannot be resurrect</md-td>
-  <md-td>员工拒绝加入租户，无法恢复，请联系员工确认是否同意加入租户。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221140</md-td>
-  <md-td>Department number exceeds limit</md-td>
-  <md-td>部门人数超过限制，无法恢复，请检查部门人数限制并调整。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221252</md-td>
-  <md-td>Hybrid license tenant prohibits passing empty licenses to create users</md-td>
-  <md-td>混合许可证租户禁止传递空许可证，请添加席位信息，（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID）</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221253</md-td>
-  <md-td>Designated licenseID is insufficient</md-td>
-  <md-td>席位不足，请修改席位信息。（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID）</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221254</md-td>
-  <md-td>Designated licenseID is invalid</md-td>
-  <md-td>无效的席位信息，请修改席位信息。（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID）</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224001</md-td>
-  <md-td>No permission to operate</md-td>
-  <md-td>无操作权限，请检查当前应用的权限或企业版本是否是商业专业版本及以上。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224002</md-td>
-  <md-td>No permission to operate record</md-td>
-  <md-td>无操作该记录权限，请检查当前应用的数据管理范围的权限或当前应用所操作的成员是否可恢复。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224003</md-td>
-  <md-td>No permission to operate dependent object</md-td>
-  <md-td>无操作依赖对象权限，请检查要恢复到的部门是否有权限。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221248</md-td>
-  <md-td>Resurrect exceeds seat limit</md-td>
-  <md-td>席位超限，请修改席位信息。（可通过[获取企业席位信息接口](/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info/query)获取可用席位ID）</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221255</md-td>
-  <md-td>Main department must be the first</md-td>
-  <md-td>主部门必须在第一个，请修改所属部门排序信息</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

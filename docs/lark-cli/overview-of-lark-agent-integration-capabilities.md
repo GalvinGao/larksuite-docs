@@ -15,17 +15,11 @@ source_url: https://open.larksuite.com/document/mcp_open_tools/overview-of-lark-
 
 Lark面向 Agent 开发者提供三类可组合能力，它们分别解决三个不同问题：
   
-  :::html
-<md-table style="width: 1000px;">
-  <md-tbody>
-     <md-tr>
-      <md-td>**[一键创建Lark应用](/document/mcp_open_tools/integrating-agents-with-feishu/overview)**：为你的用户快速创建一个Lark智能体应用，并预置常见权限与事件订阅。![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ee1a955c197872a4d739a1a0a2c2f137_5i4OTqIk5z.png?height=840&lazyload=true&maxWidth=310&width=988)</md-td>
-      <md-td>**[Channel SDK](/document/mcp_open_tools/integrating-agents-with-feishu/integrate-feishu-channel)**：让 Agent 进入Lark会话，在群聊、单聊和文档评论里稳定收发消息，与用户实时对话。![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/01fe9eefe325fb8ebcfd155a4651df4f_PY1XMqe7XS.png?height=1250&lazyload=true&maxWidth=350&width=2338)</md-td>
-      <md-td>**[Lark CLI](/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu)**：让 Agent 直接操作Lark里的业务对象，例如文档、日历、表格、邮件和任务。![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/7e3b61ae1387b2212597ea3bcb28f0a8_c2ZLPcGhf5.png?height=966&lazyload=true&maxWidth=350&width=1304)</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+|  |  |  |
+| --- | --- | --- |
+| **[一键创建Lark应用](/document/mcp_open_tools/integrating-agents-with-feishu/overview)**：为你的用户快速创建一个Lark智能体应用，并预置常见权限与事件订阅。![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ee1a955c197872a4d739a1a0a2c2f137_5i4OTqIk5z.png?height=840&lazyload=true&maxWidth=310&width=988) | **[Channel SDK](/document/mcp_open_tools/integrating-agents-with-feishu/integrate-feishu-channel)**：让 Agent 进入Lark会话，在群聊、单聊和文档评论里稳定收发消息，与用户实时对话。![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/01fe9eefe325fb8ebcfd155a4651df4f_PY1XMqe7XS.png?height=1250&lazyload=true&maxWidth=350&width=2338) | **[Lark CLI](/document/mcp_open_tools/feishu-cli-let-ai-actually-do-your-work-in-feishu)**：让 Agent 直接操作Lark里的业务对象，例如文档、日历、表格、邮件和任务。![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/7e3b61ae1387b2212597ea3bcb28f0a8_c2ZLPcGhf5.png?height=966&lazyload=true&maxWidth=350&width=1304) |
+
 
 
 ## 能力一览

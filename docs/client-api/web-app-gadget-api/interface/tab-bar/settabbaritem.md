@@ -20,138 +20,25 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uETN04SM1QjLxUDN
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/index?showTabBarPage=true" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/index?showTabBarPage=true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                index
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tabBar 的哪一项，从左边算起
 
-**最小值**：`0`
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                text
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tab 上的按钮文字
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| index | number | 是 |  | tabBar 的哪一项，从左边算起<br>**最小值**：`0` |
+| text | string | 否 |  | tab 上的按钮文字<br>**示例值**：'text' |
+| iconPath | string | 否 |  | 图片路径，icon 大小限制为 40kb，建议尺寸为 96px * 96px，当 postion 为 top 时，此参数无效，不支持网络图片<br>**示例值**：'/path/to/iconPath' |
+| selectedIconPath | string | 否 |  | 选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 96px * 96px ，当 postion 为 top 时，此参数无效<br>**示例值**：'/path/to/selectedIconPath' |
 
-**示例值**：'text'
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                iconPath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                图片路径，icon 大小限制为 40kb，建议尺寸为 96px * 96px，当 postion 为 top 时，此参数无效，不支持网络图片
-
-**示例值**：'/path/to/iconPath'
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                selectedIconPath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 96px * 96px ，当 postion 为 top 时，此参数无效
-
-**示例值**：'/path/to/selectedIconPath'
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 

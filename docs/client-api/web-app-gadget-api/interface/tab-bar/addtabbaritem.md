@@ -21,238 +21,30 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uQjM04CNyQjL0IDN/addtab
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V5.1.0+</md-version></md-td>
-      <md-td><md-version>V5.1.0+</md-version></md-td>
-      <md-td><md-version>V5.1.0+</md-version></md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" disable="true" fontSize="14">预览</md-preview-app>
-      </md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V5.1.0+</md-version> | <md-version>V5.1.0+</md-version> | <md-version>V5.1.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-      <md-tr>
-            <md-td>
-                index
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tab索引
 
-**示例值**：0，1，2
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                pagePath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tab路径
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| index | number | 是 |  | tab索引<br>**示例值**：0，1，2 |
+| pagePath | string | 是 |  | tab路径<br>**示例值**：'pages/index/index' |
+| text | string | 是 |  | tab展示文案，可以为“”但是不能为`null` |
+| light | object[] | 是 |  | 日间模式数据 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>iconPath<br></md-text> | string | 是 |  | 日间模式tab非选中图片，图片cdn地址以及本地打包图片资源 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>selectedIconPath<br></md-text> | string | 是 |  | 日间模式tab选中图片，图片cdn地址以及本地打包图片资源 |
+| dark | object[] | 是 |  | 夜间模式数据 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>iconPath<br></md-text> | string | 是 |  | 夜间模式tab非选中图片，图片cdn地址以及本地打包图片资源 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>selectedIconPath<br></md-text> | string | 是 |  | 夜间模式tab选中图片，图片cdn地址以及本地打包图片资源 |
 
-**示例值**：'pages/index/index'
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                text
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tab展示文案，可以为“”但是不能为`null`
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                light
-            </md-td>
-            <md-td>
-                object[]
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                日间模式数据
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    iconPath
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                日间模式tab非选中图片，图片cdn地址以及本地打包图片资源
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    selectedIconPath
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                日间模式tab选中图片，图片cdn地址以及本地打包图片资源
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                dark
-            </md-td>
-            <md-td>
-                object[]
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                夜间模式数据
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    iconPath
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                夜间模式tab非选中图片，图片cdn地址以及本地打包图片资源
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    selectedIconPath
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                夜间模式tab选中图片，图片cdn地址以及本地打包图片资源
-            </md-td>
-        </md-tr>
-        
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 

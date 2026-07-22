@@ -37,77 +37,15 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 通用参数是指各控件 JSON 数据中均包含的参数，通过本章节集中说明。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:10%">是否必填</md-th>
-<md-th style="width:60%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| id | string | 是 | 控件 ID，同一个审批定义内的控件 ID 不可重复。 |
+| name | string | 是 | 控件名称的国际化文案 Key，必须以 `@i18n@` 开头，与相应接口的 i18n_resources.texts 参数的 key 对应。<br>例如，在创建审批定义时，控件的 name 取值 `@i18n@demo`，则需要在 i18n_resources.texts 参数的 key 传入同样的值 `@i18n@demo`，并通过 key 对应的 value 为 name 赋值。 |
+| type | string | 是 | 控件类型。各控件类型取值参考下文控件参数详细说明。 |
+| required | boolean | 是 | 当前控件在创建审批实例时，是否为必填、必选控件。<br>**可选值有**：<br>- true：是<br>- false：否 |
+| custom_id | string | 否 | 自定义控件 ID。 |
+| printable | boolean | 否 | 是否可以打印。<br>**可选值有**：<br>- true：是<br>- false：否<br>**默认值**：false |
 
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件 ID，同一个审批定义内的控件 ID 不可重复。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>name</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件名称的国际化文案 Key，必须以 `@i18n@` 开头，与相应接口的 i18n_resources.texts 参数的 key 对应。
-  
-例如，在创建审批定义时，控件的 name 取值 `@i18n@demo`，则需要在 i18n_resources.texts 参数的 key 传入同样的值 `@i18n@demo`，并通过 key 对应的 value 为 name 赋值。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件类型。各控件类型取值参考下文控件参数详细说明。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>required</md-td>
-<md-td>boolean</md-td>
-<md-td>是</md-td>
-<md-td>当前控件在创建审批实例时，是否为必填、必选控件。
-  
-**可选值有**：
-  
-- true：是
-- false：否</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>custom_id</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>自定义控件 ID。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>printable</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否可以打印。
-  
-**可选值有**：
-  
-- true：是
-- false：否
-  
-**默认值**：false</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 不同控件的参数
 
@@ -206,113 +144,17 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">参数</md-th>
-<md-th style="width:15%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:45%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | string | 是 | 金额控件值，包括：<br>- CNY：人民币<br>- USD：美元<br>- EUR：欧元<br>- JPY：日元<br>- CAD：加拿大元<br>- CHF：瑞士法郎<br>- SGD：新加坡元<br>- AUD：澳大利亚元<br>- KBW：韩元<br>- INR：印度卢比<br>- TWD：新台币<br>- HKD：港元<br>- MOP：澳门元<br>- THB：泰铢<br>- IDR：印尼盾<br>- PHP：菲律宾比索<br>- MYR：马来西亚令吉 |
+| option | object | 是 | 可选项配置。 |
+| └ currencyRange | string[] | 是 | 货币范围。可选值：<br>- CNY：人民币<br>- USD：美元<br>- EUR：欧元<br>- JPY：日元<br>- CAD：加拿大元<br>- CHF：瑞士法郎<br>- SGD：新加坡元<br>- AUD：澳大利亚元<br>- KBW：韩元<br>- INR：印度卢比<br>- TWD：新台币<br>- HKD：港元<br>- MOP：澳门元<br>- THB：泰铢<br>- IDR：印尼盾<br>- PHP：菲律宾比索<br>- MYR：马来西亚令吉 |
+| └ isCapital | boolean | 否 | 是否显示大写数字，建议币种为人民币时将该参数取值为 true。 |
+| └ isThousandSeparator | boolean | 否 | 是否显示千位分隔符。 |
+| └ keepDecimalPlaces | int | 否 | 设置显示的小数位数。例如设置 2 表示显示 2 位小数位数。 |
+| └ maxValue | int | 否 | 金额范围的最大值。 |
+| └ minValue | int | 否 | 金额范围的最小值。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>金额控件值，包括：
-
-- CNY：人民币
-- USD：美元
-- EUR：欧元
-- JPY：日元
-- CAD：加拿大元
-- CHF：瑞士法郎
-- SGD：新加坡元
-- AUD：澳大利亚元
-- KBW：韩元
-- INR：印度卢比
-- TWD：新台币
-- HKD：港元
-- MOP：澳门元
-- THB：泰铢
-- IDR：印尼盾
-- PHP：菲律宾比索
-- MYR：马来西亚令吉</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>option</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>可选项配置。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ currencyRange</md-td>
-<md-td>string[]</md-td>
-<md-td>是</md-td>
-<md-td>货币范围。可选值：
-
-- CNY：人民币
-- USD：美元
-- EUR：欧元
-- JPY：日元
-- CAD：加拿大元
-- CHF：瑞士法郎
-- SGD：新加坡元
-- AUD：澳大利亚元
-- KBW：韩元
-- INR：印度卢比
-- TWD：新台币
-- HKD：港元
-- MOP：澳门元
-- THB：泰铢
-- IDR：印尼盾
-- PHP：菲律宾比索
-- MYR：马来西亚令吉</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ isCapital</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否显示大写数字，建议币种为人民币时将该参数取值为 true。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ isThousandSeparator</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否显示千位分隔符。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ keepDecimalPlaces</md-td>
-<md-td>int</md-td>
-<md-td>否</md-td>
-<md-td>设置显示的小数位数。例如设置 2 表示显示 2 位小数位数。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ maxValue</md-td>
-<md-td>int</md-td>
-<md-td>否</md-td>
-<md-td>金额范围的最大值。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ minValue</md-td>
-<md-td>int</md-td>
-<md-td>否</md-td>
-<md-td>金额范围的最小值。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 说明
 
@@ -330,29 +172,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | string | 是 | 说明内容的国际化文案 Key，必须以 `@i18n@` 开头，需要在相应接口的 i18n_resources.texts 参数中以 Key:Value 格式进行赋值。长度不得少于 9 个字符。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>说明内容的国际化文案 Key，必须以 `@i18n@` 开头，需要在相应接口的 i18n_resources.texts 参数中以 Key:Value 格式进行赋值。长度不得少于 9 个字符。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 单选、多选
 
@@ -382,42 +205,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | object[] | 是 | 单选、多选控件的配置项。 |
+| └ key | string | 是 | 选项 Key，不可重复。 |
+| └ text | string | 是 | 选项内容的国际化文案 Key，必须以 `@i18n@` 开头，需要在相应接口的 i18n_resources.texts 参数中以 Key:Value 格式进行赋值。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>单选、多选控件的配置项。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ key</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>选项 Key，不可重复。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ text</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>选项内容的国际化文案 Key，必须以 `@i18n@` 开头，需要在相应接口的 i18n_resources.texts 参数中以 Key:Value 格式进行赋值。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 如果公司同时使用多个系统（Lark审批、人事系统、销售管理系统），需要将其他系统数据同步到审批表单中作为选项，此时通过配置外部数据源为单选、多选控件的选项，就不需要在多个系统维护同一份数据。详情参见[关联外部选项说明](/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN)。关联后，单选、多选控件参数也有所变化，JSON 示例如下：
 
@@ -446,77 +239,17 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | object[] | 否 | 固定选项时使用。关联外部选项后需要配置 externalData 参数。 |
+| externalData | object | 是 | 关联外部选项的信息。 |
+| └ externalUrl | string | 是 | 外部数据源接口 URL。 |
+| └ token | string | 是 | 外部数据源接口 Token。 |
+| └ key | string | 否 | 外部数据源接口 Key。 |
+| └ linkageConfigs | object | 否 | 联动参数配置。 |
+| └ └ linkageWidgetID | string | 否 | 联动参数对应的控件 ID。如果包含明细控件，推荐使用对应关联控件的自定义 ID（custom id）。 |
+| └ └ key | string | 否 | 参数代码。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>否</md-td>
-<md-td>固定选项时使用。关联外部选项后需要配置 externalData 参数。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>externalData</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>关联外部选项的信息。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ externalUrl</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>外部数据源接口 URL。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ token</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>外部数据源接口 Token。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ key</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>外部数据源接口 Key。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ linkageConfigs</md-td>
-<md-td>object</md-td>
-<md-td>否</md-td>
-<md-td>联动参数配置。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ └ linkageWidgetID</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>联动参数对应的控件 ID。如果包含明细控件，推荐使用对应关联控件的自定义 ID（custom id）。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ └ key</md-td>
-<md-td>string</md-td>
-<md-td>否</md-td>
-<md-td>参数代码。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 日期
 
@@ -534,33 +267,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | string | 是 | 日期格式。可选值有：<br>- YYYY-MM-DD：年-月-日<br>- YYYY-MM-DD a：年-月-日 上午/下午<br>- YYYY-MM-DD hh:mm：年-月-日 时:分 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>日期格式。可选值有：
-  
-- YYYY-MM-DD：年-月-日
-- YYYY-MM-DD a：年-月-日 上午/下午
-- YYYY-MM-DD hh:mm：年-月-日 时:分
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 关联审批
 
@@ -578,31 +288,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | string[] | 是 | 需要关联的审批定义 Code 列表。审批定义 Code 获取方式：<br>- 调用[创建审批定义](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)接口后，从响应参数 approval_code 获取。<br>- 登录审批管理后台，在指定审批定义的 URL 中获取，具体操作参见[什么是 Approval Code](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/overview-of-approval-resources#8151e0ae)。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>string[]</md-td>
-<md-td>是</md-td>
-<md-td>需要关联的审批定义 Code 列表。审批定义 Code 获取方式：
-
-- 调用[创建审批定义](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/create)接口后，从响应参数 approval_code 获取。
-- 登录审批管理后台，在指定审批定义的 URL 中获取，具体操作参见[什么是 Approval Code](/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/overview-of-approval-resources#8151e0ae)。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 联系人
 
@@ -623,42 +312,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | object | 否 | 联系人控件配置项。 |
+| └ ignore | boolean | 否 | 是否可选自己作为联系人。默认 false 表示可选自己。 |
+| └ multi | boolean | 否 | 是否可选多个联系人。默认 false 表示不可选。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>object</md-td>
-<md-td>否</md-td>
-<md-td>联系人控件配置项。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ ignore</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否可选自己作为联系人。默认 false 表示可选自己。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ multi</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否可选多个联系人。默认 false 表示不可选。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 地址
 
@@ -679,49 +338,13 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ```
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:15%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | object | 否 | 地址控件的配置项。 |
+| └ enableDetailAddress | boolean | 否 | 是否开启详细地址配置项。默认 false 表示不开启。 |
+| └ requiredDetailAddress | boolean | 否 | 是否必填详细地址。默认 false 表示非必填。 |
+| └ preLocating | boolean | 否 | 是否开启自动定位。默认 false 表示不自动定位。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>object</md-td>
-<md-td>否</md-td>
-<md-td>地址控件的配置项。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ enableDetailAddress</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否开启详细地址配置项。默认 false 表示不开启。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ requiredDetailAddress</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否必填详细地址。默认 false 表示非必填。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└ preLocating</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>是否开启自动定位。默认 false 表示不自动定位。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 日期区间
 
@@ -742,46 +365,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | object | 是 | 日期区间控件的配置项。 |
+| └ format | string | 是 | 日期格式。可选值有：<br>- YYYY-MM-DD：年-月-日<br>- YYYY-MM-DD a：年-月-日 上午/下午<br>- YYYY-MM-DD hh:mm：年-月-日 时:分 |
+| └ intervalAllowModify | boolean | 否 | 用户发起审批时，是否可修改系统自动计算的时长。默认为 false，表示不可以修改。 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>日期区间控件的配置项。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ format</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>日期格式。可选值有：
-  
-- YYYY-MM-DD：年-月-日
-- YYYY-MM-DD a：年-月-日 上午/下午
-- YYYY-MM-DD hh:mm：年-月-日 时:分</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ intervalAllowModify</md-td>
-<md-td>boolean</md-td>
-<md-td>否</md-td>
-<md-td>用户发起审批时，是否可修改系统自动计算的时长。默认为 false，表示不可以修改。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 电话
 
@@ -801,40 +390,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| option | object | 是 | 电话控件的配置项。 |
+| └ availableType | string | 是 | 电话可选类型。可选值有：<br>- MOBILE：移动电话<br>- FIXED_LINE：固定电话<br>- FIXED_LINE_OR_MOBILE：移动电话或固定电话 |
 
-<md-tr>
-<md-td>option</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>电话控件的配置项。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ availableType</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>电话可选类型。可选值有：
-
-- MOBILE：移动电话
-- FIXED_LINE：固定电话
-- FIXED_LINE_OR_MOBILE：移动电话或固定电话
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 明细/表格
 
@@ -864,92 +424,17 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 ```
 非通用参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:20%">是否必填</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| value | object[] | 是 | 明细/表格控件内添加的其他控件信息。<br>**注意**：明细中不能套用明细/表格控件、收款账户控件、流水号控件以及所有控件组。 |
+| └ id | string | 是 | 控件 ID，同一个审批定义内的控件 ID 不可重复。 |
+| └ name | string | 是 | 控件名称的国际化文案 Key，必须以 @i18n@ 开头，与相应接口的 i18n_resources.texts 参数的 key 对应。<br>例如，在创建审批定义时，控件的 name 取值 @i18n@demo，则需要在 i18n_resources.texts 参数的 key 传入同样的值 @i18n@demo，并通过 key 对应的 value 为 name 赋值。 |
+| └ type | string | 是 | 控件类型。 |
+| └ required | boolean | 是 | 当前控件在创建审批实例时，是否为必填、必选控件。<br>**可选值有**：<br>- true：是<br>- false：否 |
+| option | object | 是 | 明细控件的配置项。 |
+| └ inputType | string | 是 | 明细控件的填写格式。可选值有：<br>- LIST：纵向填写<br>- FORM：横向填写 |
+| └ printType | string | 是 | 明细控件的打印格式。可选值有：<br>- LIST：纵向打印<br>- FORM：横向打印 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>是</md-td>
-<md-td>明细/表格控件内添加的其他控件信息。
-  
-**注意**：明细中不能套用明细/表格控件、收款账户控件、流水号控件以及所有控件组。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ id</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件 ID，同一个审批定义内的控件 ID 不可重复。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ name</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件名称的国际化文案 Key，必须以 @i18n@ 开头，与相应接口的 i18n_resources.texts 参数的 key 对应。
-
-例如，在创建审批定义时，控件的 name 取值 @i18n@demo，则需要在 i18n_resources.texts 参数的 key 传入同样的值 @i18n@demo，并通过 key 对应的 value 为 name 赋值。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>控件类型。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ required</md-td>
-<md-td>boolean</md-td>
-<md-td>是</md-td>
-<md-td>当前控件在创建审批实例时，是否为必填、必选控件。
-
-**可选值有**：
-
-- true：是
-- false：否</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>option</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>明细控件的配置项。</md-td>
-</md-tr>  
-
-<md-tr>
-<md-td>└ inputType</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>明细控件的填写格式。可选值有：
-  
-- LIST：纵向填写
-- FORM：横向填写</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>└ printType</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>明细控件的打印格式。可选值有：
-  
-- LIST：纵向打印
-- FORM：横向打印</md-td>
-</md-tr>  
-  
-</md-tbody>
-</md-table>
-:::
 
 ## 控件组
 控件组是集合了若干子控件(基础控件，例如单选、文本等)以及大量内置逻辑(比如某个子控件的自动赋值)的特殊控件，定义格式以及使用上会与基础控件有区别，具体可参考控件组参数说明
@@ -981,189 +466,25 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 控件组参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 请假控件组ID，id为固定的widgetLeaveGroupV2 |
+| type | string | 请假控件组Type，为固定的leaveGroupV2 |
+| value | object[] | 子控件列表，由基础控件组成，参考子控件参数说明 |
 
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>请假控件组ID，id为固定的widgetLeaveGroupV2</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>请假控件组Type，为固定的leaveGroupV2</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>子控件列表，由基础控件组成，参考子控件参数说明</md-td>
-</md-tr>
-
-  
-</md-tbody>
-</md-table>
-:::
 
 子控件参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">id</md-th>
-<md-th style="width:20%">控件类型</md-th>
-<md-th style="width:60%">JSON示例</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| id | 控件类型 | JSON示例 | 描述 |
+| --- | --- | --- | --- |
+| widgetLeaveGroupType | radioV2 | <code>{<br>   "id": "widgetLeaveGroupType",<br>   "name": "假期类型",<br>   "option": [],<br>   "printable": true,<br>   "required": true,<br>   "type": "radioV2",<br>   "visible": true<br>}</code> | 假期类型，单选类型控件，区别于普通单选控件，该控件无预置option，选项来源于假勤管理后台配置 |
+| widgetLeaveGroupType | radioV2 | <code>{<br>  "id": "widgetLeaveGroupStartTime",<br>  "name": "开始时间",<br>  "printable": true,<br>  "required": true,<br>  "type": "date",<br>  "value": "YYYY-MM-DD hh:mm",<br>  "visible": true<br>}</code> | 开始时间，日期类型控件 |
+| widgetLeaveGroupType | radioV2 | <code>{<br>  "id": "widgetLeaveGroupEndTime",<br>  "name": "结束时间",<br>  "printable": true,<br>  "required": true,<br>  "type": "date",<br>  "value": "YYYY-MM-DD hh:mm",<br>  "visible": true<br>}</code> | 结束时间，日期类型控件 |
+| widgetLeaveGroupType | radioV2 | <code>{<br>  "id": "widgetLeaveGroupInterval",<br>  "name": "时长",<br>  "option": [],<br>  "printable": true,<br>  "required": true,<br>  "type": "radioV2",<br>  "visible": true<br>}</code> | 请假时长，单选类型控件，该控件提单时无需填写，会根据假期类型、开始、结束时间自动计算时长以及单位 |
+| widgetLeaveGroupType | radioV2 | <code>{<br>  "id": "widgetLeaveGroupReason",<br>  "name": "请假事由",<br>  "printable": true,<br>  "required": true,<br>  "type": "textarea",<br>  "visible": true<br>}</code> | 请假事由，文本类型控件 |
+| widgetLeaveGroupType | radioV2 | <code>{<br>      "id": "widgetLeaveGroupFeedingArrivingLate",<br>      "name": "上班晚到（分钟）",<br>      "option": [{"value":"0","text":"0"},{"value":"15","text":"15"},{"value":"30","text":"30"},{"value":"45","text":"45"},{"value":"60","text":"60"},{"value":"75","text":"75"},{"value":"90","text":"90"},{"value":"105","text":"105"},{"value":"120","text":"120"}],<br>      "printable": true,<br>      "required": false,<br>      "type": "radioV2",<br>      "visible": true<br>    }</code> | 上班晚到时长，单选类型控件，可选项为内置的时间范围，无法编辑，仅提交哺乳假申请时使用 |
+| widgetLeaveGroupType | radioV2 | <code>{<br>      "id": "widgetLeaveGroupFeedingOffLeaveEarly",<br>      "name": "下班早走（分钟）",<br>      "option": [{"value":"0","text":"0"},{"value":"15","text":"15"},{"value":"30","text":"30"},{"value":"45","text":"45"},{"value":"60","text":"60"},{"value":"75","text":"75"},{"value":"90","text":"90"},{"value":"105","text":"105"},{"value":"120","text":"120"}],<br>      "printable": true,<br>      "required": false,<br>      "type": "radioV2",<br>      "visible": true<br>    }</code> | 下班早走时长，单选类型控件，可选项为内置的时间范围，无法编辑，仅提交哺乳假申请时使用 |
 
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-   "id": "widgetLeaveGroupType",
-   "name": "假期类型",
-   "option": [],
-   "printable": true,
-   "required": true,
-   "type": "radioV2",
-   "visible": true
-}
-```
-</md-td>
-<md-td>假期类型，单选类型控件，区别于普通单选控件，该控件无预置option，选项来源于假勤管理后台配置</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupStartTime",
-  "name": "开始时间",
-  "printable": true,
-  "required": true,
-  "type": "date",
-  "value": "YYYY-MM-DD hh:mm",
-  "visible": true
-}
-```
-</md-td>
-<md-td>开始时间，日期类型控件</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupEndTime",
-  "name": "结束时间",
-  "printable": true,
-  "required": true,
-  "type": "date",
-  "value": "YYYY-MM-DD hh:mm",
-  "visible": true
-}
-```
-</md-td>
-<md-td>结束时间，日期类型控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupInterval",
-  "name": "时长",
-  "option": [],
-  "printable": true,
-  "required": true,
-  "type": "radioV2",
-  "visible": true
-}
-```
-</md-td>
-<md-td>请假时长，单选类型控件，该控件提单时无需填写，会根据假期类型、开始、结束时间自动计算时长以及单位</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetLeaveGroupReason",
-  "name": "请假事由",
-  "printable": true,
-  "required": true,
-  "type": "textarea",
-  "visible": true
-}
-```
-</md-td>
-<md-td>请假事由，文本类型控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-      "id": "widgetLeaveGroupFeedingArrivingLate",
-      "name": "上班晚到（分钟）",
-      "option": [{"value":"0","text":"0"},{"value":"15","text":"15"},{"value":"30","text":"30"},{"value":"45","text":"45"},{"value":"60","text":"60"},{"value":"75","text":"75"},{"value":"90","text":"90"},{"value":"105","text":"105"},{"value":"120","text":"120"}],
-      "printable": true,
-      "required": false,
-      "type": "radioV2",
-      "visible": true
-    }
-```
-</md-td>
-<md-td>上班晚到时长，单选类型控件，可选项为内置的时间范围，无法编辑，仅提交哺乳假申请时使用</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetLeaveGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-      "id": "widgetLeaveGroupFeedingOffLeaveEarly",
-      "name": "下班早走（分钟）",
-      "option": [{"value":"0","text":"0"},{"value":"15","text":"15"},{"value":"30","text":"30"},{"value":"45","text":"45"},{"value":"60","text":"60"},{"value":"75","text":"75"},{"value":"90","text":"90"},{"value":"105","text":"105"},{"value":"120","text":"120"}],
-      "printable": true,
-      "required": false,
-      "type": "radioV2",
-      "visible": true
-    }
-```
-</md-td>
-<md-td>下班早走时长，单选类型控件，可选项为内置的时间范围，无法编辑，仅提交哺乳假申请时使用</md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
-:::
 
 ### 加班控件组
 
@@ -1198,206 +519,27 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 控件组参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 加班控件组ID，id为固定的widgetWorkGroup |
+| type | string | 加班控件组Type，为固定的workGroup |
+| value | object[] | 子控件列表，由基础控件组成，参考子控件参数说明 |
+| option | object | 控件组属性<br>- allowInsteadMultiUser: 允许代多人提交，仅关联加班规则时可用<br>- allowMultiTimeRange: 允许提交多个加班时段，仅关联加班规则时可用<br>- isSetRule: 是否关联了加班规则，1代表关联，否则代表未关联 |
 
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>加班控件组ID，id为固定的widgetWorkGroup</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>加班控件组Type，为固定的workGroup</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>子控件列表，由基础控件组成，参考子控件参数说明</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>option</md-td>
-<md-td>object</md-td>
-<md-td>控件组属性
-  
-- allowInsteadMultiUser: 允许代多人提交，仅关联加班规则时可用
-- allowMultiTimeRange: 允许提交多个加班时段，仅关联加班规则时可用
-- isSetRule: 是否关联了加班规则，1代表关联，否则代表未关联</md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
-:::
 
 
 子控件参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">id</md-th>
-<md-th style="width:20%">控件类型</md-th>
-<md-th style="width:60%">JSON示例</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| id | 控件类型 | JSON示例 | 描述 |
+| --- | --- | --- | --- |
+| widgetWorkGroupType | radioV2 | <code>{<br>  "id": "widgetWorkGroupType",<br>  "name": "加班类型",<br>  "option": [<br>    {<br>       "value": "-1",<br>   	   "text": "调休"<br>    },<br>  ],<br>  "printable": true,<br>  "required": true,<br>  "type": "radioV2",<br>  "visible": true,<br>  "widget_default_value": ""<br>}</code> | 加班类型，单选控件，如果关联了加班规则，这种情况下定义中则无选项，提单时也无需填写；否则会将选项通过该控件的option返回，这种情况下该控件必填 |
+| widgetWorkGroupType | contact | <code>{<br>  "id": "widgetWorkGroupOvertimeWorkers",<br>  "name": "加班人",<br>  "printable": true,<br>  "required": true,<br>  "type": "contact",<br>  "visible": true,<br>}</code> | 加班人，联系人控件，如果控件组中允许代多人提交，则提单时需要携带该控件，不可代提时无需携带该控件 |
+| widgetWorkGroupType | fieldList | <code>{<br>  "id": "widgetWorkGroupTimeRangeFieldList",<br>  "name": "加班时段",<br>  "option": {},<br>  "printable": true,<br>  "required": false,<br>  "type": "fieldList",<br>  "visible": true,<br>  "children": [{"default_value_type":"","display_condition":null,"enable_default_value":false,"id":"widgetWorkGroupStartTime","name":"开始时间","options":{"dateCheckEnd":0,"dateCheckStart":0,"dateCheckType":0},"printable":true,"required":true,"type":"date","value":"YYYY-MM-DD hh:mm","visible":true,"widget_default_value":""},{"default_value_type":"","display_condition":null,"enable_default_value":false,"id":"widgetWorkGroupEndTime","name":"结束时间","options":{"dateCheckEnd":0,"dateCheckStart":0,"dateCheckType":0},"printable":true,"required":true,"type":"date","value":"YYYY-MM-DD hh:mm","visible":true,"widget_default_value":""}]<br>}</code> | 加班时段，明细控件，子控件为日期类型的开始、结束时间控件 |
+| └widgetWorkGroupStartTime | number | <code>{<br>  "id": "widgetWorkGroupStartTime",<br>  "name": "开始时间",<br>  "options": {},<br>  "printable": true,<br>  "required": true,<br>  "type": "date",<br>  "value": "YYYY-MM-DD hh:mm",<br>  "visible": true,<br>}</code> | 开始时间，日期类型，加班的开始时间 |
+| └widgetWorkGroupEndTime | number | <code>{<br>  "id": "widgetWorkGroupEndTime",<br>  "name": "结束时间",<br>  "options": {},<br>  "printable": true,<br>  "required": true,<br>  "type": "date",<br>  "value": "YYYY-MM-DD hh:mm",<br>  "visible": true,<br>}</code> | 开始时间，日期类型，加班的开始时间 |
+| widgetWorkGroupInterval | number | <code>{<br>  "id": "widgetWorkGroupInterval",<br>  "name": "加班时长",<br>  "printable": true,<br>  "required": true,<br>  "type": "number",<br>  "visible": true,<br>}</code> | 加班时长，数字控件，根据加班类型(或自动关联的加班规则)、加班开始、结束时间自动计算，提单时无需包含该控件 |
+| widgetWorkGroupReason | textarea | <code>{<br>  "id": "widgetWorkGroupReason",<br>  "name": "加班事由",<br>  "printable": true,<br>  "required": true,<br>  "type": "textarea",<br>  "visible": true,<br>}</code> | 加班事由，文本控件，设置中加班事由可见及必填属性分别对应visible和required，不可见时提单则无需携带该控件，否则该控件必填 |
 
-<md-tr>
-<md-td>widgetWorkGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupType",
-  "name": "加班类型",
-  "option": [
-    {
-       "value": "-1",
-   	   "text": "调休"
-    },
-  ],
-  "printable": true,
-  "required": true,
-  "type": "radioV2",
-  "visible": true,
-  "widget_default_value": ""
-}
-```
-</md-td>
-<md-td>加班类型，单选控件，如果关联了加班规则，这种情况下定义中则无选项，提单时也无需填写；否则会将选项通过该控件的option返回，这种情况下该控件必填</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetWorkGroupType</md-td>
-<md-td>contact</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupOvertimeWorkers",
-  "name": "加班人",
-  "printable": true,
-  "required": true,
-  "type": "contact",
-  "visible": true,
-}
-```
-</md-td>
-<md-td>加班人，联系人控件，如果控件组中允许代多人提交，则提单时需要携带该控件，不可代提时无需携带该控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetWorkGroupType</md-td>
-<md-td>fieldList</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupTimeRangeFieldList",
-  "name": "加班时段",
-  "option": {},
-  "printable": true,
-  "required": false,
-  "type": "fieldList",
-  "visible": true,
-  "children": [{"default_value_type":"","display_condition":null,"enable_default_value":false,"id":"widgetWorkGroupStartTime","name":"开始时间","options":{"dateCheckEnd":0,"dateCheckStart":0,"dateCheckType":0},"printable":true,"required":true,"type":"date","value":"YYYY-MM-DD hh:mm","visible":true,"widget_default_value":""},{"default_value_type":"","display_condition":null,"enable_default_value":false,"id":"widgetWorkGroupEndTime","name":"结束时间","options":{"dateCheckEnd":0,"dateCheckStart":0,"dateCheckType":0},"printable":true,"required":true,"type":"date","value":"YYYY-MM-DD hh:mm","visible":true,"widget_default_value":""}]
-}
-```
-</md-td>
-<md-td>加班时段，明细控件，子控件为日期类型的开始、结束时间控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>└widgetWorkGroupStartTime</md-td>
-<md-td>number</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupStartTime",
-  "name": "开始时间",
-  "options": {},
-  "printable": true,
-  "required": true,
-  "type": "date",
-  "value": "YYYY-MM-DD hh:mm",
-  "visible": true,
-}
-```
-</md-td>
-<md-td>开始时间，日期类型，加班的开始时间</md-td>
-</md-tr>    
-  
-<md-tr>
-<md-td>└widgetWorkGroupEndTime</md-td>
-<md-td>number</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupEndTime",
-  "name": "结束时间",
-  "options": {},
-  "printable": true,
-  "required": true,
-  "type": "date",
-  "value": "YYYY-MM-DD hh:mm",
-  "visible": true,
-}
-```
-</md-td>
-<md-td>开始时间，日期类型，加班的开始时间</md-td>
-</md-tr>      
-  
-<md-tr>
-<md-td>widgetWorkGroupInterval</md-td>
-<md-td>number</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupInterval",
-  "name": "加班时长",
-  "printable": true,
-  "required": true,
-  "type": "number",
-  "visible": true,
-}
-```
-</md-td>
-<md-td>加班时长，数字控件，根据加班类型(或自动关联的加班规则)、加班开始、结束时间自动计算，提单时无需包含该控件</md-td>
-</md-tr>    
-  
-<md-tr>
-<md-td>widgetWorkGroupReason</md-td>
-<md-td>textarea</md-td>
-<md-td>
-```
-{
-  "id": "widgetWorkGroupReason",
-  "name": "加班事由",
-  "printable": true,
-  "required": true,
-  "type": "textarea",
-  "visible": true,
-}
-```
-</md-td>
-<md-td>加班事由，文本控件，设置中加班事由可见及必填属性分别对应visible和required，不可见时提单则无需携带该控件，否则该控件必填</md-td>
-</md-tr>  
-  
-</md-tbody>
-</md-table>
-:::
 
 ### 外出控件组
 设置外出类型
@@ -1432,185 +574,24 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 控件组参数说明：
 
 :::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">参数</md-th>
-<md-th style="width:20%">类型</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>id</md-td>
-<md-td>string</md-td>
-<md-td>外出控件组ID，id为固定的widgetOutGroup</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>type</md-td>
-<md-td>string</md-td>
-<md-td>外出控件组Type，为固定的outGroup</md-td>
-</md-tr>
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| id | string | 外出控件组ID，id为固定的widgetOutGroup |
+| type | string | 外出控件组Type，为固定的outGroup |
+| value | object[] | 子控件列表，由基础控件组成，参考子控件参数说明 |
+| option | object | 控件组属性<br>- isSetType: 是否设置了外出类型<br>- defaultUnit: 外出时长单位，未设置外出类型时可用<br>- unitMap: 外出类型与时长单位映射 |
 
-<md-tr>
-<md-td>value</md-td>
-<md-td>object[]</md-td>
-<md-td>子控件列表，由基础控件组成，参考子控件参数说明</md-td>
-</md-tr>
 
-<md-tr>
-<md-td>option</md-td>
-<md-td>object</md-td>
-<md-td>控件组属性
-- isSetType: 是否设置了外出类型  
-- defaultUnit: 外出时长单位，未设置外出类型时可用
-- unitMap: 外出类型与时长单位映射</md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
 
 子控件参数说明：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">id</md-th>
-<md-th style="width:20%">控件类型</md-th>
-<md-th style="width:60%">JSON示例</md-th>
-<md-th style="width:40%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>widgetOutGroupType</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupType",
-  "name": "外出类型",
-  "option": [
-    {
-         "value": "meijuivb-aqhae0ptrt-0",
-         "text": "小时"
-    },
-    {
-         "value": "meijuivb-mhca5ofoj8-0",
-         "text": "半天"
-    },
-    {
-         "value": "meijufjq-iv2c5qrlm1i-0",
-         "text": "天"
-    }
-  ],
-  "printable": true,
-  "required": true,
-  "type": "radioV2",
-  "visible": true
-}
-```
-</md-td>
-<md-td>外出类型，单选控件，如果设置了外出类型，则可选外出类型会通过该控件的option返回，否则无可选值，提交时也无需携带该控件</md-td>
-</md-tr>  
-  
-<md-tr>
-<md-td>widgetOutGroupStartTime</md-td>
-<md-td>date</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupStartTime",
-  "name": "开始时间",
-  "options": {},
-  "printable": true,
-  "required": true,
-  "type": "date",
-  "value": "YYYY-MM-DD hh:mm"
-}
-```
-</md-td>
-<md-td>外出开始时间，日期控件</md-td>
-</md-tr>  
-  
-<md-tr>
-<md-td>widgetOutGroupEndTime</md-td>
-<md-td>date</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupEndTime",
-  "name": "结束时间",
-  "options": {},
-  "printable": true,
-  "required": true,
-  "type": "date",
-  "value": "YYYY-MM-DD hh:mm"
-}
-```
-</md-td>
-<md-td>外出结束时间，日期控件</md-td>
-</md-tr>  
+| id | 控件类型 | JSON示例 | 描述 |
+| --- | --- | --- | --- |
+| widgetOutGroupType | radioV2 | <code>{<br>  "id": "widgetOutGroupType",<br>  "name": "外出类型",<br>  "option": [<br>    {<br>         "value": "meijuivb-aqhae0ptrt-0",<br>         "text": "小时"<br>    },<br>    {<br>         "value": "meijuivb-mhca5ofoj8-0",<br>         "text": "半天"<br>    },<br>    {<br>         "value": "meijufjq-iv2c5qrlm1i-0",<br>         "text": "天"<br>    }<br>  ],<br>  "printable": true,<br>  "required": true,<br>  "type": "radioV2",<br>  "visible": true<br>}</code> | 外出类型，单选控件，如果设置了外出类型，则可选外出类型会通过该控件的option返回，否则无可选值，提交时也无需携带该控件 |
+| widgetOutGroupStartTime | date | <code>{<br>  "id": "widgetOutGroupStartTime",<br>  "name": "开始时间",<br>  "options": {},<br>  "printable": true,<br>  "required": true,<br>  "type": "date",<br>  "value": "YYYY-MM-DD hh:mm"<br>}</code> | 外出开始时间，日期控件 |
+| widgetOutGroupEndTime | date | <code>{<br>  "id": "widgetOutGroupEndTime",<br>  "name": "结束时间",<br>  "options": {},<br>  "printable": true,<br>  "required": true,<br>  "type": "date",<br>  "value": "YYYY-MM-DD hh:mm"<br>}</code> | 外出结束时间，日期控件 |
+| widgetOutGroupInterval | radioV2 | <code>{<br>  "id": "widgetOutGroupInterval",<br>  "name": "时长",<br>  "options": {},<br>  "printable": true,<br>  "required": true,<br>  "type": "radioV2",<br>  "value": "YYYY-MM-DD hh:mm"<br>}</code> | 外出时长，单选类型，根据外出开始、结束时间自动计算 |
+| widgetOutGroupReason | textarea | <code>{<br>  "id": "widgetOutGroupReason",<br>  "name": "外出事由",<br>  "printable": true,<br>  "required": true,<br>  "type": "textarea",<br>  "visible": true<br>}</code> | 外出事由，文本控件，可见性以及必填性由visible和required字段控制，不可见时则提交无需携带该控件 |
+| widgetOutGroupImage | image | <code>{<br>  "id": "widgetOutGroupImage",<br>  "name": "外出拍照",<br>  "printable": true,<br>  "required": false,<br>  "type": "image",<br>  "visible": true<br>}</code> | 外出拍照，图片控件，可见性以及必填性由visible和required字段控制，不可见时则提交无需携带该控件 |
 
-<md-tr>
-<md-td>widgetOutGroupInterval</md-td>
-<md-td>radioV2</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupInterval",
-  "name": "时长",
-  "options": {},
-  "printable": true,
-  "required": true,
-  "type": "radioV2",
-  "value": "YYYY-MM-DD hh:mm"
-}
-```
-</md-td>
-<md-td>外出时长，单选类型，根据外出开始、结束时间自动计算</md-td>
-</md-tr>  
-  
-<md-tr>
-<md-td>widgetOutGroupReason</md-td>
-<md-td>textarea</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupReason",
-  "name": "外出事由",
-  "printable": true,
-  "required": true,
-  "type": "textarea",
-  "visible": true
-}
-```
-</md-td>
-<md-td>外出事由，文本控件，可见性以及必填性由visible和required字段控制，不可见时则提交无需携带该控件</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>widgetOutGroupImage</md-td>
-<md-td>image</md-td>
-<md-td>
-```
-{
-  "id": "widgetOutGroupImage",
-  "name": "外出拍照",
-  "printable": true,
-  "required": false,
-  "type": "image",
-  "visible": true
-}
-```
-</md-td>
-<md-td>外出拍照，图片控件，可见性以及必填性由visible和required字段控制，不可见时则提交无需携带该控件</md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
-:::

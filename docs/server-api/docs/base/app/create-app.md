@@ -39,87 +39,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/bitable/v1/apps</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[20 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="base:app:create" desc="创建多维表格" support_app_types="custom,isv" tags="">创建多维表格</md-perm>
-            <md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/bitable/v1/apps |
+| HTTP Method | POST |
+| 接口频率限制 | [20 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="base:app:create" desc="创建多维表格" support_app_types="custom,isv" tags="">创建多维表格</md-perm><br><md-perm name="bitable:app" desc="查看、评论、编辑和管理多维表格" support_app_types="custom,isv" tags="">查看、评论、编辑和管理多维表格</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -386,405 +321,58 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254000</md-td>
-  <md-td>WrongRequestJson</md-td>
-  <md-td>请求体错误</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 200 | 1254000 | WrongRequestJson | 请求体错误 |
+| 200 | 1254001 | WrongRequestBody | 请求体错误 |
+| 200 | 1254002 | Fail | 内部错误，有疑问可咨询客服 |
+| 200 | 1254003 | WrongBaseToken | app_token 错误 |
+| 200 | 1254004 | WrongTableId | table_id 错误 |
+| 200 | 1254005 | WrongViewId | view_id 错误 |
+| 200 | 1254006 | WrongRecordId | 检查 record_id |
+| 200 | 1254007 | EmptyValue | 空值 |
+| 200 | 1254008 | EmptyView | 空视图 |
+| 200 | 1254009 | WrongFieldId | 字段 id 错误 |
+| 200 | 1254010 | ReqConvError | 请求错误 |
+| 200 | 1254025 | InvalidCopyTypes | Copy Type参数无效 |
+| 200 | 1254030 | TooLargeResponse | 响应体过大 |
+| 400 | 1254031 | InvalidAppName | 名称不能超过255个字符 |
+| 400 | 1254036 | Base is copying, please try again later. | 多维表格副本复制中，稍后重试 |
+| 200 | 1254040 | BaseTokenNotFound | app_token 不存在 |
+| 200 | 1254041 | TableIdNotFound | table_id 不存在 |
+| 200 | 1254042 | ViewIdNotFound | view_id 不存在 |
+| 200 | 1254043 | RecordIdNotFound | record_id 不存在 |
+| 200 | 1254044 | FieldIdNotFound | field_id  不存在 |
+| 200 | 1254060 | TextFieldConvFail | 多行文本字段错误 |
+| 200 | 1254061 | NumberFieldConvFail | 数字字段错误 |
+| 200 | 1254062 | SingleSelectFieldConvFail | 单选字段错误 |
+| 200 | 1254063 | MultiSelectFieldConvFail | 多选字段错误 |
+| 200 | 1254064 | DatetimeFieldConvFail | 日期字段错误 |
+| 200 | 1254065 | CheckboxFieldConvFail | 复选框字段错误 |
+| 200 | 1254066 | UserFieldConvFail | 人员字段错误 |
+| 200 | 1254067 | LinkFieldConvFail | 关联字段错误 |
+| 200 | 1254100 | TableExceedLimit | 数据表数量超限, 限制300个 |
+| 200 | 1254101 | ViewExceedLimit | 视图数量超限, 限制200个 |
+| 200 | 1254102 | FileExceedLimit | 超限 |
+| 200 | 1254103 | RecordExceedLimit | 记录数量超限, 限制20,000条 |
+| 200 | 1254104 | RecordAddOnceExceedLimit | 单次添加记录数量超限, 限制500条 |
+| 200 | 1254130 | TooLargeCell | 格子内容过大 |
+| 200 | 1254290 | TooManyRequest | 请求过快，稍后重试 |
+| 200 | 1254291 | Write conflict | 同一个数据表(table) 不支持并发调用写接口，请检查是否存在并发调用写接口。写接口包括：新增、修改、删除记录；新增、修改、删除字段；修改表单；修改视图等。 |
+| 200 | 1254301 | OperationTypeError | 多维表格未开启高级权限或不支持开启高级权限 |
+| 200 | 1254304 | PermNotAllow | 仅企业版和旗舰版Lark支持行列权限 |
+| 403 | 1254701 | DriveNodePermNotAllow | 对目标云空间节点没有权限 |
+| 404 | 1254702 | DriveNodeNotExist | 云空间节点不存在，检查参数正确性 |
+| 400 | 1254800 | ParamInvalid | 参数无效，请检查入参的正确性 |
+| 200 | 1255001 | InternalError | 内部错误，有疑问可咨询客服 |
+| 200 | 1255002 | RpcError | 内部错误，有疑问可咨询客服 |
+| 200 | 1255003 | MarshalError | 序列化错误，有疑问可咨询客服 |
+| 200 | 1255004 | UmMarshalError | 反序列化错误 |
+| 200 | 1255005 | ConvError | 内部错误，有疑问可咨询客服处 |
+| 504 | 1255040 | 请求超时 | 进行重试 |
+| 400 | 1254292 | MountNodeOutOfSiblingNum | 父目录下挂载的节点数量超出限制 |
 
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254001</md-td>
-  <md-td>WrongRequestBody</md-td>
-  <md-td>请求体错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254002</md-td>
-  <md-td>Fail</md-td>
-  <md-td>内部错误，有疑问可咨询客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254003</md-td>
-  <md-td>WrongBaseToken</md-td>
-  <md-td>app_token 错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254004</md-td>
-  <md-td>WrongTableId</md-td>
-  <md-td>table_id 错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254005</md-td>
-  <md-td>WrongViewId</md-td>
-  <md-td>view_id 错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254006</md-td>
-  <md-td>WrongRecordId</md-td>
-  <md-td>检查 record_id</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254007</md-td>
-  <md-td>EmptyValue</md-td>
-  <md-td>空值</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254008</md-td>
-  <md-td>EmptyView</md-td>
-  <md-td>空视图</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254009</md-td>
-  <md-td>WrongFieldId</md-td>
-  <md-td>字段 id 错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254010</md-td>
-  <md-td>ReqConvError</md-td>
-  <md-td>请求错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254025</md-td>
-  <md-td>InvalidCopyTypes</md-td>
-  <md-td>Copy Type参数无效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254030</md-td>
-  <md-td>TooLargeResponse</md-td>
-  <md-td>响应体过大</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1254031</md-td>
-  <md-td>InvalidAppName</md-td>
-  <md-td>名称不能超过255个字符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1254036</md-td>
-  <md-td>Base is copying, please try again later.</md-td>
-  <md-td>多维表格副本复制中，稍后重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254040</md-td>
-  <md-td>BaseTokenNotFound</md-td>
-  <md-td>app_token 不存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254041</md-td>
-  <md-td>TableIdNotFound</md-td>
-  <md-td>table_id 不存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254042</md-td>
-  <md-td>ViewIdNotFound</md-td>
-  <md-td>view_id 不存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254043</md-td>
-  <md-td>RecordIdNotFound</md-td>
-  <md-td>record_id 不存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254044</md-td>
-  <md-td>FieldIdNotFound</md-td>
-  <md-td>field_id  不存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254060</md-td>
-  <md-td>TextFieldConvFail</md-td>
-  <md-td>多行文本字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254061</md-td>
-  <md-td>NumberFieldConvFail</md-td>
-  <md-td>数字字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254062</md-td>
-  <md-td>SingleSelectFieldConvFail</md-td>
-  <md-td>单选字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254063</md-td>
-  <md-td>MultiSelectFieldConvFail</md-td>
-  <md-td>多选字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254064</md-td>
-  <md-td>DatetimeFieldConvFail</md-td>
-  <md-td>日期字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254065</md-td>
-  <md-td>CheckboxFieldConvFail</md-td>
-  <md-td>复选框字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254066</md-td>
-  <md-td>UserFieldConvFail</md-td>
-  <md-td>人员字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254067</md-td>
-  <md-td>LinkFieldConvFail</md-td>
-  <md-td>关联字段错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254100</md-td>
-  <md-td>TableExceedLimit</md-td>
-  <md-td>数据表数量超限, 限制300个</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254101</md-td>
-  <md-td>ViewExceedLimit</md-td>
-  <md-td>视图数量超限, 限制200个</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254102</md-td>
-  <md-td>FileExceedLimit</md-td>
-  <md-td>超限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254103</md-td>
-  <md-td>RecordExceedLimit</md-td>
-  <md-td>记录数量超限, 限制20,000条</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254104</md-td>
-  <md-td>RecordAddOnceExceedLimit</md-td>
-  <md-td>单次添加记录数量超限, 限制500条</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254130</md-td>
-  <md-td>TooLargeCell</md-td>
-  <md-td>格子内容过大</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254290</md-td>
-  <md-td>TooManyRequest</md-td>
-  <md-td>请求过快，稍后重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254291</md-td>
-  <md-td>Write conflict</md-td>
-  <md-td>同一个数据表(table) 不支持并发调用写接口，请检查是否存在并发调用写接口。写接口包括：新增、修改、删除记录；新增、修改、删除字段；修改表单；修改视图等。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254301</md-td>
-  <md-td>OperationTypeError</md-td>
-  <md-td>多维表格未开启高级权限或不支持开启高级权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1254304</md-td>
-  <md-td>PermNotAllow</md-td>
-  <md-td>仅企业版和旗舰版Lark支持行列权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1254701</md-td>
-  <md-td>DriveNodePermNotAllow</md-td>
-  <md-td>对目标云空间节点没有权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>1254702</md-td>
-  <md-td>DriveNodeNotExist</md-td>
-  <md-td>云空间节点不存在，检查参数正确性</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1254800</md-td>
-  <md-td>ParamInvalid</md-td>
-  <md-td>参数无效，请检查入参的正确性</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1255001</md-td>
-  <md-td>InternalError</md-td>
-  <md-td>内部错误，有疑问可咨询客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1255002</md-td>
-  <md-td>RpcError</md-td>
-  <md-td>内部错误，有疑问可咨询客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1255003</md-td>
-  <md-td>MarshalError</md-td>
-  <md-td>序列化错误，有疑问可咨询客服</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1255004</md-td>
-  <md-td>UmMarshalError</md-td>
-  <md-td>反序列化错误</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>1255005</md-td>
-  <md-td>ConvError</md-td>
-  <md-td>内部错误，有疑问可咨询客服处</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>504</md-td>
-  <md-td>1255040</md-td>
-  <md-td>请求超时</md-td>
-  <md-td>进行重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1254292</md-td>
-  <md-td>MountNodeOutOfSiblingNum</md-td>
-  <md-td>父目录下挂载的节点数量超出限制</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

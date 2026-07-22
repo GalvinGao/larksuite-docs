@@ -38,154 +38,41 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/applicatio
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/application/v6/applications/:app_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>PATCH</md-td>
-    </md-tr>
 
-   <md-tr>
-     <md-th>支持的应用类型</md-th>
-      <md-td>
-	  <md-app-support types="custom"></md-app-support>
-      </md-td>
-   </md-tr>
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/application/v6/applications/:app_id |
+| HTTP Method | PATCH |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="application:application" desc="更新应用信息" support_app_types="custom" tags="">⁣更新应用信息</md-perm> |
 
-
-    <md-tr>
-      <md-th>
- 权限要求
- <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-</md-th>
-      <md-td>
-<md-perm name="application:application" desc="更新应用信息" support_app_types="custom" tags="">⁣更新应用信息</md-perm>
-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：获取与使用access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：获取与使用access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)
-</md-td>
-</md-tr>
-     <md-tr>
-      <md-td>Content-Type</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      <md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
 ### 路径参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >app_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	应用的 id
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >app_id</md-text> | <md-text type="field-type" >string</md-text> | 应用的 id<br>**示例值**："cli_9b445f5258795107" |
 
-**示例值**："cli_9b445f5258795107"
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
 ### 查询参数
-:::html
-<md-table>
-  <md-thead>
-      <tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 15%;">必填</md-th>
-      <md-th >描述</md-th>
-      </tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >lang</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-	<md-td>
-	指定返回的语言
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| <md-text type="field-name" >lang</md-text> | <md-text type="field-type" >string</md-text> | 是 | 指定返回的语言<br>**示例值**："zh_cn"<br>**可选值有**：<br>- `zh_cn`：中文<br>- `en_us`：英文<br>- `ja_jp`：日文 |
 
-**示例值**："zh_cn"
-
-**可选值有**：
-- `zh_cn`：中文
-- `en_us`：英文
-- `ja_jp`：日文
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -193,40 +80,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/applicatio
 :::html
 引用类型：<md-text type="field-type" >application</md-text>
 :::
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >common_categories</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string\[\]</md-text>
-	</md-td>
-	<md-td>
-	否
-	</md-td>
-	<md-td>
-	应用分类的国际化描述
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| <md-text type="field-name" >common_categories</md-text> | <md-text type="field-type" >string\[\]</md-text> | 否 | 应用分类的国际化描述<br>**数据校验规则**：<br>- 长度范围：`1` ～ `3` |
 
-**数据校验规则**：
-
-- 长度范围：`1` ～ `3`
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -247,45 +105,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/applicatio
 
 
 ### 响应体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >code</md-text> | <md-text type="field-type" >int</md-text> | 错误码，非 0 表示失败 |
+| <md-text type="field-name" >msg</md-text> | <md-text type="field-type" >string</md-text> | 错误描述 |
 
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -301,68 +126,16 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/applicatio
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>210503</md-td>
-  <md-td>invalid app_id</md-td>
-  <md-td>请检查请求路径中的 app_id 是否合法</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 210503 | invalid app_id | 请检查请求路径中的 app_id 是否合法 |
+| 400 | 210504 | no such app in tenant | 请检查被查询应用与当前调用接口应用是否在同一企业内 |
+| 400 | 210505 | target app not a custom app | 请检查被查询应用是否是自建应用 |
+| 400 | 210506 | no such app | 请检查请求路径中的 app_id 是否存在 |
+| 400 | 211000 | size of common categories out of range, should be between 1 and 3 | 请检查传入的 categories  列表长度是否在 [1, 3] 范围内 |
+| 400 | 211001 | common_categories[%d](%s) not exist (index starts from 0) | 请按照提示中的下标，核对传入的应用分类值是否正确，应用分类语言取值需与传入的 lang 参数对应 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>210504</md-td>
-  <md-td>no such app in tenant</md-td>
-  <md-td>请检查被查询应用与当前调用接口应用是否在同一企业内</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>210505</md-td>
-  <md-td>target app not a custom app</md-td>
-  <md-td>请检查被查询应用是否是自建应用</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>210506</md-td>
-  <md-td>no such app</md-td>
-  <md-td>请检查请求路径中的 app_id 是否存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>211000</md-td>
-  <md-td>size of common categories out of range, should be between 1 and 3</md-td>
-  <md-td>请检查传入的 categories  列表长度是否在 [1, 3] 范围内</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>211001</md-td>
-  <md-td>common_categories[%d](%s) not exist (index starts from 0)</md-td>
-  <md-td>请按照提示中的下标，核对传入的应用分类值是否正确，应用分类语言取值需与传入的 lang 参数对应</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

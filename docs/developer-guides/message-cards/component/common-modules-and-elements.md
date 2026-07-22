@@ -27,54 +27,12 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcD
 
 交互模块的参数说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 交互模块的标识。固定取值：action |
+| actions | 是 | 数组 | 添加可交互的组件。支持添加的组件如下，你可以跳转至对应的组件文档查看参数配置详情。<br>- [按钮（button）](/document/ukTMukTMukTM/uEzNwUjLxcDM14SM3ATN)<br>- [列表选择器（selectMenu）](/document/ukTMukTMukTM/uIzNwUjLycDM14iM3ATN)<br>- [折叠按钮组（overflow）](/document/ukTMukTMukTM/uMzNwUjLzcDM14yM3ATN)<br>- [日期选择器（datePicker）](/document/ukTMukTMukTM/uQzNwUjL0cDM14CN3ATN) |
+| layout | 否 | String | 设置窄屏自适应布局方式。取值:<br>- bisected：二等分布局，每行两列交互元素。<br>- trisection：三等分布局，每行三列交互元素。<br>- flow：流式布局，元素会按自身大小横向排列并在空间不够的时候折行。 |
 
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-交互模块的标识。固定取值：action
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>actions</md-td>
-<md-td>是</md-td>
-<md-td>数组</md-td>
-<md-td>
-添加可交互的组件。支持添加的组件如下，你可以跳转至对应的组件文档查看参数配置详情。
-- [按钮（button）](/document/ukTMukTMukTM/uEzNwUjLxcDM14SM3ATN)
-- [列表选择器（selectMenu）](/document/ukTMukTMukTM/uIzNwUjLycDM14iM3ATN)
-- [折叠按钮组（overflow）](/document/ukTMukTMukTM/uMzNwUjLzcDM14yM3ATN)
-- [日期选择器（datePicker）](/document/ukTMukTMukTM/uQzNwUjL0cDM14CN3ATN)
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>layout</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-设置窄屏自适应布局方式。取值:
-- bisected：二等分布局，每行两列交互元素。
-- trisection：三等分布局，每行三列交互元素。
-- flow：流式布局，元素会按自身大小横向排列并在空间不够的时候折行。
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 交互组件配置示例：
 
@@ -139,114 +97,13 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcD
 
 内容模块的参数说明如下表所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%">参数</md-th>
-            <md-th style="width: 15%">是否必须</md-th>
-            <md-th style="width: 15%">类型</md-th>
-            <md-th style="width: 55%">说明</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>tag</md-td>
-            <md-td>是</md-td>
-            <md-td>String</md-td>
-            <md-td>内容模块的标识。固定取值：div</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>text</md-td>
-            <md-td>是</md-td>
-            <md-td>Object</md-td>
-            <md-td>
-单个文本内容，参数配置详情可参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 内容模块的标识。固定取值：div |
+| text | 是 | Object | 单个文本内容，参数配置详情可参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。<br>JSON 示例配置：<br><code>{<br> "tag": "div",<br> "text": {<br>  "tag": "plain_text",<br>  "content": "Content module"<br> }<br>}</code><br><md-alert type="tip" icon="none"><br>**说明**：在内容模块中，`text` 和 `fields` 字段需至少设置一个。<br></md-alert> |
+| fields | 否 | Object | 多列文本，参数配置详情可参见[双列文本](/document/ukTMukTMukTM/uYzNwUjL2cDM14iN3ATN)。<br>JSON 示例配置：<br><code>{<br> "tag": "div",<br> "fields": [<br>  {<br>   "text": {<br>    "tag": "lark_md",<br>    "content": "**module:**\nContent module（div）"<br>   },<br>   "is_short": true<br>  },<br>  {<br>   "text": {<br>    "tag": "lark_md",<br>    "content": "**function:**\nNew function"<br>   },<br>   "is_short": true<br>  }<br> ]<br>}</code><br><md-alert type="tip" icon="none"><br>**说明**：在内容模块中，`text` 和 `fields` 字段需至少设置一个。<br></md-alert> |
+| extra | 否 | Object | 附加元素，添加后展示在文本右侧。支持附加的元素：<br>- 图片（image）<br>- [按钮（button）](/document/ukTMukTMukTM/uEzNwUjLxcDM14SM3ATN)<br>- [列表选择器（selectMenu）](/document/ukTMukTMukTM/uIzNwUjLycDM14iM3ATN)<br>- [折叠按钮组（overflow）](/document/ukTMukTMukTM/uMzNwUjLzcDM14yM3ATN)<br>- [日期选择器（datePicker）](/document/ukTMukTMukTM/uQzNwUjL0cDM14CN3ATN)<br>JSON 示例配置：<br><code>// 如需使用该 JSON 示例，则注意需要手动清除 // 开头的注释<br>{<br> "tag": "div",<br> "extra": {<br>  "tag": "img", // 附加一张图片<br>  "img_key": "f32****5cf7",<br>   "alt": {<br>   "tag":<br>   "plain_text",<br>   "content": "alt_content"<br>  }<br> }<br>}</code> |
 
-JSON 示例配置：
-             
-```JSON
-{
- "tag": "div",
- "text": {
-  "tag": "plain_text",
-  "content": "Content module"
- }
-}
-```
-<md-alert type="tip" icon="none">
-**说明**：在内容模块中，`text` 和 `fields` 字段需至少设置一个。              
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>fields</md-td>
-            <md-td>否</md-td>
-            <md-td>Object</md-td>
-            <md-td>多列文本，参数配置详情可参见[双列文本](/document/ukTMukTMukTM/uYzNwUjL2cDM14iN3ATN)。
-              
-JSON 示例配置：
-              
-```JSON
-{
- "tag": "div",
- "fields": [
-  {
-   "text": {
-    "tag": "lark_md",
-    "content": "**module:**\nContent module（div）"
-   },
-   "is_short": true
-  },
-  {
-   "text": {
-    "tag": "lark_md",
-    "content": "**function:**\nNew function"
-   },
-   "is_short": true
-  }
- ]
-}
-```
-<md-alert type="tip" icon="none">
-**说明**：在内容模块中，`text` 和 `fields` 字段需至少设置一个。              
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>extra</md-td>
-            <md-td>否</md-td>
-            <md-td>Object</md-td>
-            <md-td>
-附加元素，添加后展示在文本右侧。支持附加的元素：
-- 图片（image）
-- [按钮（button）](/document/ukTMukTMukTM/uEzNwUjLxcDM14SM3ATN)
-- [列表选择器（selectMenu）](/document/ukTMukTMukTM/uIzNwUjLycDM14iM3ATN)
-- [折叠按钮组（overflow）](/document/ukTMukTMukTM/uMzNwUjLzcDM14yM3ATN)
-- [日期选择器（datePicker）](/document/ukTMukTMukTM/uQzNwUjL0cDM14CN3ATN)
-              
-JSON 示例配置：
-              
-```JSON
-// 如需使用该 JSON 示例，则注意需要手动清除 // 开头的注释
-{
- "tag": "div",
- "extra": {
-  "tag": "img", // 附加一张图片
-  "img_key": "f32****5cf7",
-   "alt": {
-   "tag":
-   "plain_text",
-   "content": "alt_content"
-  }
- }
-}
-```
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 在内容模块（div）中通过 `text` 或 `fields` 参数展示文本内容，通过 `extra` 参数附加 `image` 元素或者 `button`、`overflow`、`selectMenu`、`datePicker` 可交互元素。JSON 示例配置如下：
 
@@ -304,59 +161,13 @@ image 是图片元素，可用于内容模块的 `extra` 字段或备注组件�
 
 image 元素的参数说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | image 元素的标识。固定取值：img |
+| img_key | 是 | String | 图片资源 image_key。你可以调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传一张用于发送消息的图片，获取返回值中的 image_key。 |
+| alt | 是 | Struct | 鼠标悬浮提示文字。文字内容由文本组件构成（仅支持文本组件的 `plain_text` 模式），详细说明可参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。 |
+| preview | 否 | Boolean | 点击后是否放大图片。<br>- true（默认）：放大<br>- false：不放大。如果你的卡片配置了消息卡片跳转链接（card_link），则建议配置为 `preview = false`，使用户点击卡片图片时也能响应 card_link 的跳转链接。 |
 
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-image 元素的标识。固定取值：img
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>img_key</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-图片资源 image_key。你可以调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传一张用于发送消息的图片，获取返回值中的 image_key。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>alt</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>
-鼠标悬浮提示文字。文字内容由文本组件构成（仅支持文本组件的 `plain_text` 模式），详细说明可参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>preview</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>
-点击后是否放大图片。
-- true（默认）：放大
-- false：不放大。如果你的卡片配置了消息卡片跳转链接（card_link），则建议配置为 `preview = false`，使用户点击卡片图片时也能响应 card_link 的跳转链接。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 使用示例：
 
@@ -468,39 +279,11 @@ confirm 元素用于交互组件（按钮、列表选择器、折叠按钮组、
 
 confirm 元素的参数说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| title | 是 | Struct | 弹窗标题。由文本组件构成（仅支持文本组件的 plain_text 模式），详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。 |
+| text | 是 | Struct | 弹窗内容。由文本组件构成（仅支持文本组件的 plain_text 模式），详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。 |
 
-<md-tr>
-<md-td>title</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>
-弹窗标题。由文本组件构成（仅支持文本组件的 plain_text 模式），详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>
-弹窗内容。由文本组件构成（仅支持文本组件的 plain_text 模式），详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 使用示例：
 
@@ -527,66 +310,13 @@ option 是列表选择器（selectMenu）或折叠按钮组（overflow）组件�
 
 option 元素参数说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| text | 否 | Struct | 选项显示的内容。<br>- 基于文本组件的 plain_text 模式设置文本内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。<br>- 当列表选择器（selectMenu）的模式为人员选择器（select_person）时，无需配置 `text` 字段，除此之外，其他场景中 `text` 字段必填。 |
+| value | 否 | String | 回传参数值。当选项选中后，应用会将该值返回至消息卡片请求地址。 |
+| url | 否 | String | 选项的跳转链接，仅支持在折叠按钮组（overflow）中设置。<br><md-alert type="tip" icon="none"><br>**说明**：`url` 和 `multi_url` 字段必须且仅能填写其中一个。<br></md-alert> |
+| multi_url | 否 | Struct | 选项的跳转链接,仅支持在折叠按钮组（overflow）中设置。支持按操作系统设置不同的链接，参数配置详情参见 **链接元素（url）**。<br><md-alert type="tip" icon="none"><br>**说明**：`url` 和 `multi_url` 字段必须且仅能填写其中一个。<br></md-alert> |
 
-<md-tr>
-<md-td>text</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-选项显示的内容。
-
-- 基于文本组件的 plain_text 模式设置文本内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-- 当列表选择器（selectMenu）的模式为人员选择器（select_person）时，无需配置 `text` 字段，除此之外，其他场景中 `text` 字段必填。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>value</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-回传参数值。当选项选中后，应用会将该值返回至消息卡片请求地址。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>url</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-选项的跳转链接，仅支持在折叠按钮组（overflow）中设置。
-<md-alert type="tip" icon="none">
-**说明**：`url` 和 `multi_url` 字段必须且仅能填写其中一个。
-</md-alert>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>multi_url</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>
-选项的跳转链接,仅支持在折叠按钮组（overflow）中设置。支持按操作系统设置不同的链接，参数配置详情参见 **链接元素（url）**。
-<md-alert type="tip" icon="none">
-**说明**：`url` 和 `multi_url` 字段必须且仅能填写其中一个。
-</md-alert>
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 使用示例：
 
@@ -646,57 +376,13 @@ url 元素的参数说明如下表所示。
 - 如果需要禁止某端进行跳转，可以将对应的参数值配置为 `lark://msgcard/unsupported_action`。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| url | 否 | String | 默认的跳转链接。 |
+| android_url | 否 | String | Android 端的跳转链接。 |
+| ios_url | 否 | String | iOS 端的跳转链接。 |
+| pc_url | 否 | String | PC 端的跳转链接。 |
 
-<md-tr>
-<md-td>url</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-默认的跳转链接。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>android_url</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-Android 端的跳转链接。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>ios_url</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-iOS 端的跳转链接。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>pc_url</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>
-PC 端的跳转链接。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 在 button 组件中配置 url
 

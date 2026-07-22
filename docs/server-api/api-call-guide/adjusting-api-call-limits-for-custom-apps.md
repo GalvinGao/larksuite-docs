@@ -33,36 +33,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/api-call-g
 
 基础 API 是指除不计费 API 和高级 API 之外的 API，企业自建应用调用这类 API 时会计算调用量，不同 [Lark 版本](https://www.larksuite.com/zh_cn/plans?from=footer) 的 API 调用总量不同，具体说明如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">Lark 版本</md-th>
-<md-th style="width:80%">API 调用额度说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| Lark 版本 | API 调用额度说明 |
+| --- | --- |
+| 标准版 | 单租户下所有企业自建应用的基础 API 调用总量上限为 **10,000 次/月**，该上限在每个自然月的 1 日刷新。<br><md-alert type="tip" icon="none"><br>标准版内，未认证企业和认证企业的自建应用基础 API 调用总量上限均为 10,000 次/月。<br></md-alert> |
+| -   基础版<br>- 专业版<br>- 旗舰版 | 不限制 API 调用额度。 |
 
-<md-tr>
-<md-td>标准版</md-td>
-<md-td>
-单租户下所有企业自建应用的基础 API 调用总量上限为 **10,000 次/月**，该上限在每个自然月的 1 日刷新。
-<md-alert type="tip" icon="none">  
-标准版内，未认证企业和认证企业的自建应用基础 API 调用总量上限均为 10,000 次/月。
-</md-alert>
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>-   基础版
-- 专业版
-- 旗舰版</md-td>
-<md-td>不限制 API 调用额度。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 例如，某一企业所用的 Lark 版本为标准版（基础 API 调用量上限为 10,000 次/月），其中自建应用 A 本月调用基础 API 300 次、自建应用 B 本月调用基础 API 1,000 次，则该企业的自建应用调用基础 API 总量为 1,300 次，当月剩余的基础 API 调用量为 8,700 次。
 
@@ -76,38 +51,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/api-call-g
 - 随着业务升级迭代，高级 API 将会持续增加。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:50%">API 名称</md-th>
-<md-th style="width:25%">计量单位</md-th>
-<md-th style="width:25%">权益点位消耗</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| API 名称 | 计量单位 | 权益点位消耗 |
+| --- | --- | --- |
+| 识别文件中的简历信息 | 页 | 6 |
+| [流式语音识别](/document/uAjLw4CM/ukTMukTMukTM/reference/ai/speech_to_text-v1/speech/stream_recognize) | 秒 | 1 |
+| [基础图片识别](/document/uAjLw4CM/ukTMukTMukTM/reference/ai/optical_char_recognition-v1/image/basic_recognize) | 1,000 次 | 1,000 |
 
-<md-tr>
-<md-td>识别文件中的简历信息</md-td>
-<md-td>页</md-td>
-<md-td>6</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>[流式语音识别](/document/uAjLw4CM/ukTMukTMukTM/reference/ai/speech_to_text-v1/speech/stream_recognize)</md-td>
-<md-td>秒</md-td>
-<md-td>1</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>[基础图片识别](/document/uAjLw4CM/ukTMukTMukTM/reference/ai/optical_char_recognition-v1/image/basic_recognize)</md-td>
-<md-td>1,000 次</md-td>
-<md-td>1,000</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 例如，调用[基础图片识别](/document/uAjLw4CM/ukTMukTMukTM/reference/ai/optical_char_recognition-v1/image/basic_recognize)接口 1,000 次，将扣除 1,000 权益点位。
 
@@ -150,39 +99,11 @@ API 计量计费仅生效于企业自建应用。商店应用调用 API 暂无�
 
 - **基础 API**：当企业内所有自建应用的 **基础 API** 调用总量达到上限的 90%、100% 时，开放平台会向企业管理员以及自建应用的开发者推送预警通知。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">通知方式</md-th>
-<md-th style="width:70%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 通知方式 | 说明 |
+| --- | --- |
+| 管理后台 | 企业管理员登录[管理后台](https://www.larksuite.com/admin)时，在首页的 **权益预警** 区域可查看 API 调用量信息。 |
+| Lark 客户端 Bot 推送 | 开放平台会通过 Lark 客户端发送卡片消息通知：<br>- **基础 API** 达到调用量上限的 90% 时，卡片消息通知示例如下。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/b498fabc88ab25f2a01fce04b798f95e_pUYoEkINwE.png?height=1018&lazyload=true&maxWidth=350&width=2354)<br>- **基础 API** 达到调用量上限的 100% 时，卡片消息通知示例如下。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ce92bb2c20bd8855ec1e64c28406d785_iqdTA2fHNc.png?height=952&lazyload=true&maxWidth=350&width=2360) |
 
-<md-tr>
-<md-td>管理后台</md-td>
-<md-td>企业管理员登录[管理后台](https://www.larksuite.com/admin)时，在首页的 **权益预警** 区域可查看 API 调用量信息。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>Lark 客户端 Bot 推送</md-td>
-<md-td>开放平台会通过 Lark 客户端发送卡片消息通知：
-
-- **基础 API** 达到调用量上限的 90% 时，卡片消息通知示例如下。
-
-	![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/b498fabc88ab25f2a01fce04b798f95e_pUYoEkINwE.png?height=1018&lazyload=true&maxWidth=350&width=2354)
-
-- **基础 API** 达到调用量上限的 100% 时，卡片消息通知示例如下。
-
-  	![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ce92bb2c20bd8855ec1e64c28406d785_iqdTA2fHNc.png?height=952&lazyload=true&maxWidth=350&width=2360)
-  
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 - **高级 API**：当高级 API 计量包消耗至 90%、100% 时，开放平台会向自建应用的开发者推送预警通知，提醒开发者及时购买高级 API 计量包。此外，在每个自然月的 1 日，开发者小助手会向自建应用的开发者推送高级 API 计量包的消耗情况。
 

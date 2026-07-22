@@ -33,39 +33,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 onRecordAdd((event) => {})
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 150px;">
-    <col style="width: auto">
-    <col style="width: 100px">
-    <col style="width: 200px">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>event</md-td>
-        <md-td>
-        ```js
-{
-  "name": string,
-  "type": "publish",
-  "data": string[],
-}
-        </md-td>
-        <md-td>否</md-td>
-        <md-td>data为新增的recordId数组</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| event | <code>{<br>  "name": string,<br>  "type": "publish",<br>  "data": string[],<br>}</code> | 否 | data为新增的recordId数组 |
+
 
 
 ## 输出

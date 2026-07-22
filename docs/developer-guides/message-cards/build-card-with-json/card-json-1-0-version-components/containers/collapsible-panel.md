@@ -86,269 +86,34 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 折叠面板各字段说明如下表所示：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段名称</md-th>
-      <md-th style="width: 10%;">是否必填</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-      <md-th style="width: 15%;">默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>tag</md-td>
-      <md-td>否</md-td>
-      <md-td>string</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        组件的标签。折叠面板取固定值为 <code>collapsible_panel</code>。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>expanded</md-td>
-      <md-td>否</md-td>
-      <md-td>Boolean</md-td>
-      <md-td>false</md-td>
-      <md-td>
-        面板是否展开。可选值：
 
-- <code>true</code>：面板为展开状态<br>
- - <code>false</code>：面板为折叠状态。默认为折叠状态
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>background_color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        折叠面板的背景色，默认为透明。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>header</md-td>
-      <md-td>是</md-td>
-      <md-td>Object</md-td>
-      <md-td>-</md-td>
-      <md-td>
-        折叠面板的标题设置。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ title</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>-</md-td>
-      <md-td>
-        标题文本设置。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        文本类型的标签。可取值：
-- <code>plain_text</code>：普通文本内容<br>
-- <code>markdown</code>：富文本内容。了解支持的 Markdown 语法，参考[富文本组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        折叠面板标题的内容。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ background_color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        折叠面板标题区域的背景颜色设置，默认为透明色。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 否 | string | / | 组件的标签。折叠面板取固定值为 <code>collapsible_panel</code>。 |
+| expanded | 否 | Boolean | false | 面板是否展开。可选值：<br>- <code>true</code>：面板为展开状态<br>- <code>false</code>：面板为折叠状态。默认为折叠状态 |
+| background_color | 否 | String | 空 | 折叠面板的背景色，默认为透明。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| header | 是 | Object | - | 折叠面板的标题设置。 |
+| └ title | 否 | Object | - | 标题文本设置。 |
+| └└ tag | 是 | String | 空 | 文本类型的标签。可取值：<br>- <code>plain_text</code>：普通文本内容<br>- <code>markdown</code>：富文本内容。了解支持的 Markdown 语法，参考[富文本组件](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/content-components/rich-text)。 |
+| └└ content | 否 | String | 空 | 折叠面板标题的内容。 |
+| └ background_color | 否 | String | 空 | 折叠面板标题区域的背景颜色设置，默认为透明色。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。<br><strong>注意</strong>：如果你未设置此字段，则折叠面板的标题区域的背景色由 <code>background_color</code> 字段决定。 |
+| └ vertical_align | 否 | String | center | 标题区域的垂直居中方式。可取值：<br>- <code>top</code>：标题区域垂直居中于面板区域的顶部<br>- <code>center</code>：标题区域垂直居中于面板区域的中间<br>- <code>bottom</code>：标题区域垂直居中于面板区域的底部 |
+| └ padding | 否 | String | 0px 0px 0px 0px | 标题区域的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：<br>- 单值：如 "4px"，表示组件内四个内边距都为 4px<br>- 多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔 |
+| └ icon | 否 | Object | / | 添加图标作为标题前缀或后缀图标。支持自定义或使用图标库中的图标。示例代码如下：<br><code>"icon": {<br>  "tag": "standard_icon",<br>  "token": "down-small-ccm_outlined",<br>  "color": "",<br>  "size": "16px 16px"<br>}</code> |
+| └└ tag | 否 | String | / | 图标类型的标签。可取值：<br>- <code>standard_icon</code>：使用图标库中的图标<br>- <code>custom_icon</code>：使用用自定义图片作为图标 |
+| └ └ token | 否 | String | / | 图标库中图标的 token。当 <code>tag</code> 为 <code>standard_icon</code> 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。 |
+| └└ color | 否 | String | / | 图标的颜色。支持设置线性和面性图标（即 token 末尾为 <code>outlined</code> 或 <code>filled</code> 的图标）的颜色。当 <code>tag</code> 为 <code>standard_icon</code> 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| └└ img_key | 否 | String | / | 自定义前缀图标的图片 key。当 <code>tag</code> 为 <code>custom_icon</code> 时生效。图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。 |
+| └ └ size | 否 | String | 10px 10px | 图标的尺寸。支持 "[1,999] [1,999]px"。 |
+| └ icon_position | 否 | String | right | 图标的位置。可选值：<br>- <code>left</code>：图标在标题区域最左侧<br>- <code>right</code>：图标在标题区域最右侧<br>- <code>follow_text</code>：图标在文本右侧 |
+| └ icon_expanded_angle | 否 | Number | 180 | 折叠面板展开时图标旋转的角度，正值为顺时针，负值为逆时针。可选值：<br>- <code>-180</code>：逆时针旋转 180 度<br>- <code>-90</code>：逆时针旋转 90 度<br>- <code>90</code>：顺时针旋转 90 度<br>- <code>180</code>：顺时针旋转 180 度 |
+| border | 否 | Object | 空 | 边框设置。默认不显示边框。 |
+| └ color | 否 | String | grey | 边框颜色设置。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。 |
+| └ corner_radius | 否 | String | 5px | 圆角设置。 |
+| vertical_spacing | 否 | String | 8px | 面板内元素垂直边距设置。 |
+| padding | 否 | String | 8px | 内容区的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：<br>- 单值：如 "4px"，表示组件内四个内边距都为 4px<br>- 多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔 |
+| elements | 否 | Array | 空 | 各个组件的 JSON 结构。暂不支持表单（form）组件。 |
 
-<strong>注意</strong>：如果你未设置此字段，则折叠面板的标题区域的背景色由 <code>background_color</code> 字段决定。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ vertical_align</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>center</md-td>
-      <md-td>
-        标题区域的垂直居中方式。可取值：
-- <code>top</code>：标题区域垂直居中于面板区域的顶部<br>
- - <code>center</code>：标题区域垂直居中于面板区域的中间<br>
- - <code>bottom</code>：标题区域垂直居中于面板区域的底部
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ padding</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0px 0px 0px 0px</md-td>
-      <md-td>
-        标题区域的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：
-- 单值：如 "4px"，表示组件内四个内边距都为 4px<br>
-- 多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ icon</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        添加图标作为标题前缀或后缀图标。支持自定义或使用图标库中的图标。示例代码如下：<br>
-```json
-"icon": {
-  "tag": "standard_icon",
-  "token": "down-small-ccm_outlined",
-  "color": "",
-  "size": "16px 16px"
-}
-```
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ tag</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        图标类型的标签。可取值：<br>
-- <code>standard_icon</code>：使用图标库中的图标<br>
- - <code>custom_icon</code>：使用用自定义图片作为图标
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ token</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        图标库中图标的 token。当 <code>tag</code> 为 <code>standard_icon</code> 时生效。枚举值参见[图标库](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-icons)。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        图标的颜色。支持设置线性和面性图标（即 token 末尾为 <code>outlined</code> 或 <code>filled</code> 的图标）的颜色。当 <code>tag</code> 为 <code>standard_icon</code> 时生效。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└└ img_key</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        自定义前缀图标的图片 key。当 <code>tag</code> 为 <code>custom_icon</code> 时生效。图标 key 的获取方式：调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ size</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>10px 10px</md-td>
-      <md-td>
-        图标的尺寸。支持 "[1,999] [1,999]px"。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ icon_position</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>right</md-td>
-      <md-td>
-        图标的位置。可选值：<br>
-- <code>left</code>：图标在标题区域最左侧<br>
-- <code>right</code>：图标在标题区域最右侧<br>
-- <code>follow_text</code>：图标在文本右侧
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ icon_expanded_angle</md-td>
-      <md-td>否</md-td>
-      <md-td>Number</md-td>
-      <md-td>180</md-td>
-      <md-td>
-        折叠面板展开时图标旋转的角度，正值为顺时针，负值为逆时针。可选值：
-- <code>-180</code>：逆时针旋转 180 度<br>
- - <code>-90</code>：逆时针旋转 90 度<br>
-- <code>90</code>：顺时针旋转 90 度<br>
- - <code>180</code>：顺时针旋转 180 度
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>border</md-td>
-      <md-td>否</md-td>
-      <md-td>Object</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        边框设置。默认不显示边框。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ color</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>grey</md-td>
-      <md-td>
-        边框颜色设置。枚举值参见[颜色枚举值](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/enumerations-for-fields-related-to-color)。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ corner_radius</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>5px</md-td>
-      <md-td>
-        圆角设置。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>vertical_spacing</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>8px</md-td>
-      <md-td>
-        面板内元素垂直边距设置。
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>padding</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>8px</md-td>
-      <md-td>
-        内容区的内边距。值的取值范围为 [0,28]px。支持填写单值或多值：<br>
-- 单值：如 "4px"，表示组件内四个内边距都为 4px<br>
-- 多值：如 "4px 12px 4px 12px"，表示容器内上、右、下、左的内边距分别为 4px，12px，4px，12px。四个值必填，使用空格间隔
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>elements</md-td>
-      <md-td>否</md-td>
-      <md-td>Array</md-td>
-      <md-td>空</md-td>
-      <md-td>
-        各个组件的 JSON 结构。暂不支持表单（form）组件。
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-
-:::
 
 ## 示例代码
 

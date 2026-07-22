@@ -22,219 +22,36 @@ showModal(Object object) 用于显示模态弹窗。
 
 该接口支持小程序和网页应用调用，对应的客户端版本支持情况如下所示。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/modal/modal" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/modal/modal" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.47.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.47.0+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
 
 
 ## 输入
 
 该接口继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性如下所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                是否必填
-            </md-th>
-            <md-th style="width: 15%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                title
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>\-</md-td>
-            <md-td>
-                弹窗的标题。最多可显示两行。
-<md-alert type="tip">
-**注意**：
-- `title`和`content`不可同时为空。
-- 显示效果在各端有差异，请你根据实际内容自行调试各端的显示效果。
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>\-</md-td>
-            <md-td>
-                弹窗的内容。
-<md-alert type="tip">
-**注意**：
-- `title`和`content`不可同时为空。
-- 显示效果在各端有差异，请你根据实际内容自行调试各端的显示效果。
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                confirmText
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                OK
-            </md-td>
-            <md-td>
-                **确定** 按钮的文案，中文按照 2 个字符计算。
-<md-alert type="tip">
-Lark [V7.8.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)版本以前，最大长度为`8`个字符
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                cancelText
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                Cancel
-            </md-td>
-            <md-td>
-                **取消** 按钮的文案，中文按照 2 个字符计算。
-<md-alert type="tip">
-Lark [V7.8.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)版本以前，最大长度为`8`个字符
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                showCancel
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                true
-            </md-td>
-            <md-td>
-                是否显示 **取消** 按钮。取值：
-- true：显示
-- false：不显示
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
+| 名称 | 数据类型 | 是否必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| title | string | 否 | \- | 弹窗的标题。最多可显示两行。<br><md-alert type="tip"><br>**注意**：<br>- `title`和`content`不可同时为空。<br>- 显示效果在各端有差异，请你根据实际内容自行调试各端的显示效果。<br></md-alert> |
+| content | string | 否 | \- | 弹窗的内容。<br><md-alert type="tip"><br>**注意**：<br>- `title`和`content`不可同时为空。<br>- 显示效果在各端有差异，请你根据实际内容自行调试各端的显示效果。<br></md-alert> |
+| confirmText | string | 否 | OK | **确定** 按钮的文案，中文按照 2 个字符计算。<br><md-alert type="tip"><br>Lark [V7.8.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)版本以前，最大长度为`8`个字符<br></md-alert> |
+| cancelText | string | 否 | Cancel | **取消** 按钮的文案，中文按照 2 个字符计算。<br><md-alert type="tip"><br>Lark [V7.8.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)版本以前，最大长度为`8`个字符<br></md-alert> |
+| showCancel | boolean | 否 | true | 是否显示 **取消** 按钮。取值：<br>- true：显示<br>- false：不显示 |
 
-
-:::
 
 
 ## 输出
 
 该接口继承[标准对象输出](/document/uYjL24iN/ukzNy4SO3IjL5cjM#8c92acb8)，`success` 返回对象的扩展属性如下所示。
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 20%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                confirm
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                是否点击了 **确定** 按钮。
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                cancel
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                是否点击了 **取消** 按钮。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| confirm | boolean | 是否点击了 **确定** 按钮。 |
+| cancel | boolean | 是否点击了 **取消** 按钮。 |
+
 
 ## 示例代码
 

@@ -19,35 +19,8 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/ugTNzUjL4UzM14CO1MT
 「文件夹」的移动与删除，同「文件」的移动与删除，仅入参有所区别。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<tr>
-<md-th style="width: 20%;">操作</md-th>
-<md-th style="width: 80%;">文档地址</md-th>
-</tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>
-移动文件夹
-</md-td>
-<md-td>
-[/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/move](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/move)
-</md-td>
-</md-tr>
+| 操作 | 文档地址 |
+| --- | --- |
+| 移动文件夹 | [/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/move](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/move) |
+| 删除文件夹 | [/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/delete](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/delete) |
 
-<md-tr>
-<md-td>
-删除文件夹
-</md-td>
-<md-td>
-[/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/delete](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/delete)
-</md-td>
-</md-tr>
-
-</md-tbody>
-
-</md-table>
-:::

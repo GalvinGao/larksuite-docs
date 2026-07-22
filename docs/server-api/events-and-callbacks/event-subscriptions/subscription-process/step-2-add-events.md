@@ -37,32 +37,11 @@ Lark开放平台提供的事件包括 v2.0 和 v1.0 两个版本，v2.0 版本�
 
 订阅身份介绍：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">订阅身份类型</md-th>
-<md-th style="width:40%">描述</md-th>
-<md-th style="width:40%">场景示例</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 订阅身份类型 | 描述 | 场景示例 |
+| --- | --- | --- |
+| 应用身份订阅 | 以 [tenant_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，不需要用户登录，直接以应用身份获取事件数据，可获取的数据范围由应用自身的数据权限范围决定。 | 假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 tenant_access_token 订阅，则仅能订阅 “My bot” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。 |
+| 用户身份订阅 | 以 [user_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，需要用户登录并授权应用，可获取的事件数据由用户本人可见的数据权限范围决定。 | 假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 user_access_token 订阅，该 token 代表的用户是 “李健”，则仅能订阅 “李健” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。 |
 
-<md-tr>
-<md-td>应用身份订阅</md-td>
-<md-td>以 [tenant_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，不需要用户登录，直接以应用身份获取事件数据，可获取的数据范围由应用自身的数据权限范围决定。</md-td>
-<md-td>假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 tenant_access_token 订阅，则仅能订阅 “My bot” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>用户身份订阅</md-td>
-<md-td>以 [user_access_token](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM#5aa2e490) 订阅事件，需要用户登录并授权应用，可获取的事件数据由用户本人可见的数据权限范围决定。</md-td>
-<md-td>假设有一个应用名为 “My bot”，该应用 [订阅云文档事件](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/file/subscribe) 时，如果以 user_access_token 订阅，该 token 代表的用户是 “李健”，则仅能订阅 “李健” 作为拥有者或者管理员的文档变更，无法感知其他文档变更。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 大多数事件均需要使用应用身份订阅，需要使用用户身份订阅的场景说明如下：
 

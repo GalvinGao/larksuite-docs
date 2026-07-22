@@ -38,30 +38,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 
 当前能力在不同Lark客户端的版本支持情况。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">是否需要鉴权</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
+| 是否需要鉴权 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 不需要 | <md-version>V6.3</md-version> | <md-version>V6.3</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-
-    <md-tr>
-      <md-td>不需要</md-td>
-      <md-td><md-version>V6.3</md-version></md-td>
-      <md-td><md-version>V6.3</md-version></md-td>
-      <md-td>**X**</md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 
 ### 使用方式
@@ -74,64 +54,11 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 - 如果不配置该参数，则默认显示左侧导航按钮。
 :::
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                必填
-            </md-th>
-            <md-th style="width: 45%;">
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                name
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                固定值：showNavLBarBtn
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                期望设定的左侧导航按钮效果。
+| 名称 | 数据类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| name | String | 是 | 固定值：showNavLBarBtn |
+| content | String | 是 | 期望设定的左侧导航按钮效果。<br>可选值：<br>- `true`: 显示左侧导航按钮。<br>- `false`: 隐藏主页的左侧导航按钮。 |
 
-可选值：
-              
-- `true`: 显示左侧导航按钮。
-
-- `false`: 隐藏主页的左侧导航按钮。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ### 示例配置
@@ -178,30 +105,10 @@ https://larksuite.com/?lk_meta=%7B%22view-meta%22%3A%7B%22showNavLBarBtn%22%3A%2
 
 当前能力在不同Lark客户端的版本支持情况。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">是否需要鉴权</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
+| 是否需要鉴权 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 不需要 | <md-version>V6.3</md-version> | <md-version>V6.3</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-
-    <md-tr>
-      <md-td>不需要</md-td>
-      <md-td><md-version>V6.3</md-version></md-td>
-      <md-td><md-version>V6.3</md-version></md-td>
-      <md-td>**X**</md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 
 ### 使用方式
@@ -214,64 +121,11 @@ https://larksuite.com/?lk_meta=%7B%22view-meta%22%3A%7B%22showNavLBarBtn%22%3A%2
 - 如果不配置该参数，则默认显示右侧导航按钮。
 :::
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                必填
-            </md-th>
-            <md-th style="width: 45%;">
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                name
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                固定值：showNavRBarBtn
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                期望设定的右侧导航按钮效果。
+| 名称 | 数据类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| name | String | 是 | 固定值：showNavRBarBtn |
+| content | String | 是 | 期望设定的右侧导航按钮效果。<br>可选值：<br>- `true`: 显示右侧导航按钮。<br>- `false`: 隐藏右侧导航按钮。 |
 
-可选值：
-
-- `true`: 显示右侧导航按钮。
-
-- `false`: 隐藏右侧导航按钮。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ### 示例配置

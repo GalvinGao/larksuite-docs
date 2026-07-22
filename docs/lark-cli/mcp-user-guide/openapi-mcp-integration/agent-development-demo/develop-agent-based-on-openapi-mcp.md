@@ -48,46 +48,11 @@ Please read the Lark document of https://feishu.feishu.cn/docx/WtwHdAngzoEU9Ixyf
 1. 参考下表，配置应用。
 
 
-:::html
-    <md-table>
-      <md-thead>
-        <md-tr>
-          <md-th style="width: 20%;">配置项</md-th>
-          <md-th style="width: 50%;">操作步骤</md-th>
-          <md-th style="width: 30%;">图示</md-th>
-        </md-tr>
-      </md-thead>
-      <md-tbody>
-        <md-tr>
-          <md-td>
-            添加应用能力：机器人
-          </md-td>
-          <md-td>
-            在 <strong>应用能力 > 添加应用能力</strong> 页面，添加 <strong>机器人</strong> 能力。
-          </md-td>
-          <md-td>
-            <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ca00465debd90a1bd5217e0e26a207b4_DxkjJNpGfT.png" alt="">
-          </md-td>
-        </md-tr>
-<md-tr>
-<md-td>
-申请应用身份和用户身份权限：OpenAPI MCP 工具默认开通的 API 工具需要开启的权限
-</md-td>
-          <md-td>在 **权限管理** > **开通权限** 界面的输入框内，粘贴以下内容，批量开通权限（注意根据需要分别为应用身份、用户身份开通权限）。
-            
-```
-im:chat:create, im:chat, im:message, wiki:wiki, wiki:wiki:readonly, docx:document, bitable:app, drive:drive, docs:document:import, contact:user.id:readonly      
-```
-            
-          </md-td>
-          <md-td>
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/6121f3fb7767bb9e2c789b8dd5c554f3_cCrTVCfqsD.png?height=1548&lazyload=true&width=2936)
-          </md-td>
-        </md-tr>
-       
-      </md-tbody>
-    </md-table>
- :::
+| 配置项 | 操作步骤 | 图示 |
+| --- | --- | --- |
+| 添加应用能力：机器人 | 在 <strong>应用能力 > 添加应用能力</strong> 页面，添加 <strong>机器人</strong> 能力。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ca00465debd90a1bd5217e0e26a207b4_DxkjJNpGfT.png" alt=""> |
+| 申请应用身份和用户身份权限：OpenAPI MCP 工具默认开通的 API 工具需要开启的权限 | 在 **权限管理** > **开通权限** 界面的输入框内，粘贴以下内容，批量开通权限（注意根据需要分别为应用身份、用户身份开通权限）。<br><code>im:chat:create, im:chat, im:message, wiki:wiki, wiki:wiki:readonly, docx:document, bitable:app, drive:drive, docs:document:import, contact:user.id:readonly</code> | ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/6121f3fb7767bb9e2c789b8dd5c554f3_cCrTVCfqsD.png?height=1548&lazyload=true&width=2936) |
+
     
 
 4. 发布应用，使配置项生效。你也可自行[创建一个新的企业](https://www.feishu.cn/hc/zh-CN/articles/360043741453-%E5%88%9B%E5%BB%BA%E4%BC%81%E4%B8%9A)，在新企业中创建应用、添加权限，实现权限免审。

@@ -21,162 +21,26 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uITN04iM1QjLyUDN
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/index?showTabBarPage=true" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/index?showTabBarPage=true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                color
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tab 上的文字默认颜色，6 位 HexColor 例如"#ff3377"
 
-**示例值**：'#FF0000'
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                selectedColor
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tab 上的文字选中时的颜色，6 位 HexColor 例如"#ff3377"
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| color | string | 是 |  | tab 上的文字默认颜色，6 位 HexColor 例如"#ff3377"<br>**示例值**：'#FF0000' |
+| selectedColor | string | 是 |  | tab 上的文字选中时的颜色，6 位 HexColor 例如"#ff3377"<br>**示例值**：'#00FF00' |
+| backgroundColor | string | 是 |  | tab 的背景色，6 位 HexColor 例如"#ff3377"<br>**示例值**：'#0000FF' |
+| borderStyle | string | 是 | white | tabBar上边框的颜色， 仅支持 black/white<br>**示例值**：'white'<br>**可选值**：<br>- `white`：白<br>- `black`：黑 |
+| borderColor | string | 是 |  | tabBar上边框的颜色,优先级高于borderStyle。适用4.3及以后版本。<br>**示例值**：'#00FF00'<br><md-alert type="tip" icon="none"><br>Lark[V4.3.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
 
-**示例值**：'#00FF00'
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                backgroundColor
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tab 的背景色，6 位 HexColor 例如"#ff3377"
-
-**示例值**：'#0000FF'
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                borderStyle
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>white</md-td>
-            <md-td>
-                tabBar上边框的颜色， 仅支持 black/white
-
-**示例值**：'white'
-
-**可选值**：
-- `white`：白
-- `black`：黑
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                borderColor
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                tabBar上边框的颜色,优先级高于borderStyle。适用4.3及以后版本。
-
-**示例值**：'#00FF00'
-<md-alert type="tip" icon="none">
-Lark[V4.3.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 

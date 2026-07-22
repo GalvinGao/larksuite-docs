@@ -84,84 +84,18 @@ public static RegisterAppResult register(RegisterAppOptions opts) throws Registe
 
 `RegisterAppOptions` 通过 Builder 模式构建，支持以下字段：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">参数</md-th>
-      <md-th style="width: 38%;">描述</md-th>
-      <md-th style="width: 18%;">类型</md-th>
-      <md-th style="width: 18%;">必填</md-th>
-      <md-th style="width: 24%;">默认</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>source</md-td>
-      <md-td>来源标识，拼入二维码 URL 的 <code>source</code> 参数，格式为 <code>java-sdk/{source}</code></md-td>
-      <md-td>String</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>domain</md-td>
-      <md-td>自定义Lark认证基地址</md-td>
-      <md-td>String</md-td>
-      <md-td>否</md-td>
-      <md-td><code>https://accounts.larksuite.com</code></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>larkDomain</md-td>
-      <md-td>自定义 Lark 认证基地址，检测到 Lark 租户时自动切换</md-td>
-      <md-td>String</md-td>
-      <md-td>否</md-td>
-      <md-td><code>https://accounts.larksuite.com</code></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset</md-td>
-      <md-td>预设应用信息，用于初始化应用创建页。所有字段都是可选的，用户扫码后仍可在页面手动修改。SDK 会自动对原始值做 URL Encode。</md-td>
-      <md-td>AppPreset</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset.avatar</md-td>
-      <md-td>应用头像候选 URL，支持 1-6 个；传多个时默认选中第一个。图片格式、GIF 截帧、裁切和展示由页面/服务端处理。</md-td>
-      <md-td>String / String[] / List&lt;String&gt;</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset.name</md-td>
-      <md-td>应用名称，支持 <code>{user}</code> 占位符，由应用创建页替换为扫码用户名称。</md-td>
-      <md-td>String</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appPreset.desc</md-td>
-      <md-td>应用描述，支持 <code>{user}</code> 占位符。</md-td>
-      <md-td>String</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>onQRCode</md-td>
-      <md-td>验证链接就绪时的回调，参数为 <code>QRCodeInfo</code>，包含 <code>url</code> 和 <code>expireIn</code></md-td>
-      <md-td>Consumer&lt;QRCodeInfo&gt;</md-td>
-      <md-td>是</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>onStatusChange</md-td>
-      <md-td>轮询状态变化时的回调，参数为 <code>StatusChangeInfo</code></md-td>
-      <md-td>Consumer&lt;StatusChangeInfo&gt;</md-td>
-      <md-td>否</md-td>
-      <md-td>-</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 参数 | 描述 | 类型 | 必填 | 默认 |
+| --- | --- | --- | --- | --- |
+| source | 来源标识，拼入二维码 URL 的 <code>source</code> 参数，格式为 <code>java-sdk/{source}</code> | String | 否 | - |
+| domain | 自定义Lark认证基地址 | String | 否 | <code>https://accounts.larksuite.com</code> |
+| larkDomain | 自定义 Lark 认证基地址，检测到 Lark 租户时自动切换 | String | 否 | <code>https://accounts.larksuite.com</code> |
+| appPreset | 预设应用信息，用于初始化应用创建页。所有字段都是可选的，用户扫码后仍可在页面手动修改。SDK 会自动对原始值做 URL Encode。 | AppPreset | 否 | - |
+| appPreset.avatar | 应用头像候选 URL，支持 1-6 个；传多个时默认选中第一个。图片格式、GIF 截帧、裁切和展示由页面/服务端处理。 | String / String[] / List&lt;String&gt; | 否 | - |
+| appPreset.name | 应用名称，支持 <code>{user}</code> 占位符，由应用创建页替换为扫码用户名称。 | String | 否 | - |
+| appPreset.desc | 应用描述，支持 <code>{user}</code> 占位符。 | String | 否 | - |
+| onQRCode | 验证链接就绪时的回调，参数为 <code>QRCodeInfo</code>，包含 <code>url</code> 和 <code>expireIn</code> | Consumer&lt;QRCodeInfo&gt; | 是 | - |
+| onStatusChange | 轮询状态变化时的回调，参数为 <code>StatusChangeInfo</code> | Consumer&lt;StatusChangeInfo&gt; | 否 | - |
+
 
 ## 回调参数类型
 

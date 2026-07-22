@@ -29,269 +29,47 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYDMx4iNwEjL2ATM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/upload-file/upload-file" fontSize="14">预览</md-preview-app></md-td>
-	</md-tr>
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-	</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/upload-file/upload-file" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                url
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                目标地址
-<md-alert type="tip" icon="none">
-仅支持http | https协议
-</md-alert>
-            </md-td>
-        </md-tr>
-      
-      <md-tr>
-            <md-td>
-                filePath
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                需要上传的本地文件路径
-            </md-td>
-        </md-tr>
-      
-       <md-tr>
-            <md-td>
-                name
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                HTTP 请求的文件名
-            </md-td>
-        </md-tr>
-      
-        <md-tr>
-            <md-td>
-                header
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
 
-            </md-td>
-            <md-td>
-                请求 header。header内 content-type 为 multipart/form-data，不可变更
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                formData
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                请求额外参数
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| url | string | 是 |  | 目标地址<br><md-alert type="tip" icon="none"><br>仅支持http &#124; https协议<br></md-alert> |
+| filePath | string | 是 |  | 需要上传的本地文件路径 |
+| name | string | 是 |  | HTTP 请求的文件名 |
+| header | object | 否 |  | 请求 header。header内 content-type 为 multipart/form-data，不可变更 |
+| formData | object | 否 |  | 请求额外参数 |
+
 
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                data
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                返回数据
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                statusCode
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                返回 HTTP 状态码
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                errMsg
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                错误信息
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                trace
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                请求ID，用于请求问题的诊断和全链路追踪
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| data | string | 返回数据 |
+| statusCode | number | 返回 HTTP 状态码 |
+| errMsg | string | 错误信息 |
+| trace | string | 请求ID，用于请求问题的诊断和全链路追踪 |
+
 
 `fail`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                data
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                返回数据
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                statusCode
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                返回 HTTP 状态码
-            </md-td>
-        </md-tr>
-      	<md-tr>
-            <md-td>
-                errMsg
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-				错误消息
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| data | string | 返回数据 |
+| statusCode | number | 返回 HTTP 状态码 |
+| errMsg | string | 错误消息 |
+
 
 返回值：`uploadTask`，该对象的方法列表参见下表：
 :::html
@@ -299,28 +77,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uYDMx4iNwEjL2ATM
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>[onProgressUpdate(function callback)](/document/uYjL24iN/ugDNugDNugDN/uploadtask/onprogressupdate)</md-td>
-      <md-td>监听上传进度</md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-td>[abort()]([uploadTask.abort](/document/uYjL24iN/ugDNugDNugDN/uploadtask/abort))</md-td>
-      <md-td>中断请求任务</md-td>
-    </md-tr>
+| 方法 | 介绍 |
+| --- | --- |
+| [onProgressUpdate(function callback)](/document/uYjL24iN/ugDNugDNugDN/uploadtask/onprogressupdate) | 监听上传进度 |
+| [abort()]([uploadTask.abort](/document/uYjL24iN/ugDNugDNugDN/uploadtask/abort)) | 中断请求任务 |
 
-</md-tbody>
-</md-table>
-:::
 
 ## 示例代码
 :::html

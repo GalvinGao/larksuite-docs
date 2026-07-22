@@ -38,93 +38,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/mail/v1/multi_entity/search</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="mail:user_mailbox:readonly" desc="查询用户的企业邮箱" support_app_types="custom" tags="">查询用户的企业邮箱</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/mail/v1/multi_entity/search |
+| HTTP Method | POST |
+| 接口频率限制 | [100 次/分钟](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="mail:user_mailbox:readonly" desc="查询用户的企业邮箱" support_app_types="custom" tags="">查询用户的企业邮箱</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -504,149 +434,26 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231001</md-td>
-  <md-td>invalid param</md-td>
-  <md-td>检查请求参数是否缺失、类型或格式错误。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 500 | 1231001 | invalid param | 检查请求参数是否缺失、类型或格式错误。 |
+| 500 | 1231002 | network error | 检查网络连接或下游服务是否短暂不可用，建议重试。 |
+| 500 | 1231011 | query is too long | 缩短搜索关键词或查询条件。 |
+| 500 | 1231012 | invalid filter | 检查 filter 字段格式和值是否合法。 |
+| 500 | 1231020 | page_token is invalid or expired | page_token 已失效或不合法，请重新发起搜索。 |
+| 500 | 1231021 | page_size exceeds maximum allowed value | 调小 page_size，不要超过接口限制。 |
+| 500 | 1231022 | pagination limit reached | 分页已超过限制，请收窄查询条件后重新搜索。 |
+| 500 | 1231030 | user identity not found | 检查 access token 是否有效，以及是否能识别到用户身份。 |
+| 500 | 1231031 | failed to initialize request context | 请求上下文初始化失败，请检查 token、租户和请求基础信息。 |
+| 500 | 1231040 | search service error | 搜索服务异常，请稍后重试；若仍无法解决，请携带 request_id/log_id 联系Lark技术支持：https://applink.larksuite.com/TLJpeNdW |
+| 500 | 1231041 | failed to process search result | 搜索结果处理失败，请稍后重试；若仍无法解决，请携带 request_id/log_id 联系Lark技术支持：https://applink.larksuite.com/TLJpeNdW |
+| 500 | 1232601 | meeting time format is invalid | 检查会议时间格式是否符合接口要求。 |
+| 500 | 1232602 | failed to build meeting filter | 检查会议筛选条件是否完整且格式正确。 |
+| 500 | 1232603 | failed to convert meeting search result | 会议搜索结果转换失败，请稍后重试；若仍无法解决，请携带 request_id/log_id 联系Lark技术支持：https://applink.larksuite.com/TLJpeNdW |
+| 500 | 1232604 | invalid meeting room ID format | 检查会议室 ID 格式是否正确。 |
+| 401 | 1234011 | user_access_token is invalid or expired | user_access_token 无效或已过期，请重新获取用户态 token。 |
 
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231002</md-td>
-  <md-td>network error</md-td>
-  <md-td>检查网络连接或下游服务是否短暂不可用，建议重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231011</md-td>
-  <md-td>query is too long</md-td>
-  <md-td>缩短搜索关键词或查询条件。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231012</md-td>
-  <md-td>invalid filter</md-td>
-  <md-td>检查 filter 字段格式和值是否合法。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231020</md-td>
-  <md-td>page_token is invalid or expired</md-td>
-  <md-td>page_token 已失效或不合法，请重新发起搜索。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231021</md-td>
-  <md-td>page_size exceeds maximum allowed value</md-td>
-  <md-td>调小 page_size，不要超过接口限制。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231022</md-td>
-  <md-td>pagination limit reached</md-td>
-  <md-td>分页已超过限制，请收窄查询条件后重新搜索。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231030</md-td>
-  <md-td>user identity not found</md-td>
-  <md-td>检查 access token 是否有效，以及是否能识别到用户身份。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231031</md-td>
-  <md-td>failed to initialize request context</md-td>
-  <md-td>请求上下文初始化失败，请检查 token、租户和请求基础信息。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231040</md-td>
-  <md-td>search service error</md-td>
-  <md-td>搜索服务异常，请稍后重试；若仍无法解决，请携带 request_id/log_id 联系Lark技术支持：https://applink.larksuite.com/TLJpeNdW</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1231041</md-td>
-  <md-td>failed to process search result</md-td>
-  <md-td>搜索结果处理失败，请稍后重试；若仍无法解决，请携带 request_id/log_id 联系Lark技术支持：https://applink.larksuite.com/TLJpeNdW</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1232601</md-td>
-  <md-td>meeting time format is invalid</md-td>
-  <md-td>检查会议时间格式是否符合接口要求。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1232602</md-td>
-  <md-td>failed to build meeting filter</md-td>
-  <md-td>检查会议筛选条件是否完整且格式正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1232603</md-td>
-  <md-td>failed to convert meeting search result</md-td>
-  <md-td>会议搜索结果转换失败，请稍后重试；若仍无法解决，请携带 request_id/log_id 联系Lark技术支持：https://applink.larksuite.com/TLJpeNdW</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1232604</md-td>
-  <md-td>invalid meeting room ID format</md-td>
-  <md-td>检查会议室 ID 格式是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>401</md-td>
-  <md-td>1234011</md-td>
-  <md-td>user_access_token is invalid or expired</md-td>
-  <md-td>user_access_token 无效或已过期，请重新获取用户态 token。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

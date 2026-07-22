@@ -25,45 +25,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 t(key, param)
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: 100px">
-    <col style="width: auto">
-    <col style="width: 80px">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>key</md-td>
-        <md-td>string</md-td>
-        <md-td>是</md-td>
-        <md-td>国际化资源中的某种语言的key，详情参考[多维表格自动化插件开发指南](/document/uAjLw4CM/uYjL24iN/base-extensions/base-automation-extensions/base-automation-extension-development-guide)。</md-td>
-      </md-tr>
-       <md-tr>
-      	<md-td>param</md-td>
-        <md-td>
-          ```js
-{
-    [key: string]: TLink | TIcon | THighlight;
-}
-         </md-td>
-        <md-td>否</md-td>
-        <md-td>控制文字的链接，图标，高亮。
-         只能用于basekit.addAction入参的description字段、basekit.addAction字段的formItems字段的help，tooltip属性。
-         </md-td>
-      </md-tr>
-    </md-tbody> 
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| key | string | 是 | 国际化资源中的某种语言的key，详情参考[多维表格自动化插件开发指南](/document/uAjLw4CM/uYjL24iN/base-extensions/base-automation-extensions/base-automation-extension-development-guide)。 |
+| param | <code>{<br>    [key: string]: TLink &#124; TIcon &#124; THighlight;<br>}</code> | 否 | 控制文字的链接，图标，高亮。<br>只能用于basekit.addAction入参的description字段、basekit.addAction字段的formItems字段的help，tooltip属性。 |
+
 ```js
 type TLink = {
     type: 'link';

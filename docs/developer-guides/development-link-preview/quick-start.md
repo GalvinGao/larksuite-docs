@@ -203,39 +203,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/developmen
 **注意**：链接需要以 https/http 开头（即使用 HTTPS/HTTP 协议的链接），才可以成功实现预览效果。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:60%">场景</md-th>
-<md-th style="width:40%">图示</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 场景 | 图示 |
+| --- | --- |
+| 单独发送 `https://example.com/path` | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/10a85b69dd41eea0e48766ab951801b4_xO9s5mVFGj.png?height=776&lazyload=true&width=958) |
+| 富文本消息包含 `https://example.com/path` | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/cfc41a0432fb907fc0661ed172cb9ea9_LwgJQnGUxz.png?height=782&lazyload=true&width=956) |
+| 群置顶消息 `https://example.com/path` | ![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/7b3c8d54aa57bc750c0dc20152141474_9xf0Y2vQ62.png?height=185&lazyload=true&width=1280) |
 
-<md-tr>
-<md-td>单独发送 `https://example.com/path`</md-td>
-<md-td>
-
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/10a85b69dd41eea0e48766ab951801b4_xO9s5mVFGj.png?height=776&lazyload=true&width=958)  
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>富文本消息包含 `https://example.com/path`</md-td>
-<md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/cfc41a0432fb907fc0661ed172cb9ea9_LwgJQnGUxz.png?height=782&lazyload=true&width=956)  
-</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>群置顶消息 `https://example.com/path`</md-td>
-<md-td>
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/7b3c8d54aa57bc750c0dc20152141474_9xf0Y2vQ62.png?height=185&lazyload=true&width=1280)  
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 

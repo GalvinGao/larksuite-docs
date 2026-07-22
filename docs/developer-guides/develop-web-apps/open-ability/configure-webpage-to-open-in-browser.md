@@ -24,30 +24,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 
 当前能力在不同Lark客户端的版本支持情况如下。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">是否需要鉴权</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
+| 是否需要鉴权 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 不需要 | **X** | **X** | <md-version>V7.7</md-version> | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-
-    <md-tr>
-      <md-td>不需要</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-version>V7.7</md-version></md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 ## 使用场景
 - 如果希望用户在Lark工作台、主导航、搜索等场景点击网页应用后，直接跳转到浏览器打开，那么可以在网页应用的**桌面端首页**URL中拼接参数`lk_jump_to_browser=true`来实现

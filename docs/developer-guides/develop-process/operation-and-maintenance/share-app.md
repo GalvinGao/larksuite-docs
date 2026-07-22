@@ -53,38 +53,12 @@ Lark从 v3.43 版本开始，无需开发者做任何说明，用户便可以通
 
 本章节使用到的小程序 API 如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">名称</md-th>
-<md-th style="width:20%">适用能力</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>[onShareAppMessage](/document/uYjL24iN/uQDNuQDNuQDN#c2e51fde)</md-td>
-<md-td>小程序</md-td>
-<md-td>实现当前页面的分享功能。</md-td>
-</md-tr>
+| 名称 | 适用能力 | 描述 |
+| --- | --- | --- |
+| [onShareAppMessage](/document/uYjL24iN/uQDNuQDNuQDN#c2e51fde) | 小程序 | 实现当前页面的分享功能。 |
+| [hideShareMenu](/document/uYjL24iN/ukjN24SO2YjL5YjN) | 小程序 | 隐藏当前页面在小程序容器上的分享按钮。 |
+| [showShareMenu](/document/uYjL24iN/ugjN24CO2YjL4YjN) | 小程序 | 显示当前页面在小程序容器上的分享按钮，配合`hideShareMenu`使用。 |
 
-<md-tr>
-<md-td>[hideShareMenu](/document/uYjL24iN/ukjN24SO2YjL5YjN)</md-td>
-<md-td>小程序</md-td>
-<md-td>隐藏当前页面在小程序容器上的分享按钮。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>[showShareMenu](/document/uYjL24iN/ugjN24CO2YjL4YjN)</md-td>
-<md-td>小程序</md-td>
-<md-td>显示当前页面在小程序容器上的分享按钮，配合`hideShareMenu`使用。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 :::note
 - 开启分享功能后，应用可通过消息卡片、短链接、二维码的形式分享。分享内容可以被转发传播，具有应用可用性的用户在桌面端、移动端均可访问被分享的应用。
@@ -116,26 +90,10 @@ Lark从 v3.43 版本开始，无需开发者做任何说明，用户便可以通
 
 本章节使用到的网页应用 API 如下表所示。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:25%">名称</md-th>
-<md-th style="width:20%">适用能力</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-	
-<md-tr>
-<md-td>[share](/document/uYjL24iN/ugDM04COwQjL4ADN/thirdShare)</md-td>
-<md-td>网页应用</md-td>
-<md-td>触发网页的自定义分享。</md-td>
-</md-tr>
+| 名称 | 适用能力 | 描述 |
+| --- | --- | --- |
+| [share](/document/uYjL24iN/ugDM04COwQjL4ADN/thirdShare) | 网页应用 | 触发网页的自定义分享。 |
 
-</md-tbody>
-</md-table>
-:::
 
 :::note
 - 网页的分享卡片可被用户转发，如你需要限制分享内容的访问范围，请在应用内根据访问用户的登录信息，补充必要的拦截提示。

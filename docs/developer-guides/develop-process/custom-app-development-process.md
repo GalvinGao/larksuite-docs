@@ -96,105 +96,13 @@ Lark应用支持四种基础的应用能力：**小程序、机器人、网页�
 应用的基础信息国际化配置，是应用能力国际化配置的前提条件。例如，基础信息国际化配置了 **简体中文** 与 **英文**，则相应的应用能力国际化配置只能配置 **简体中文** 与 **英文**。
 :::
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">应用能力</md-th>
-<md-th style="width:40%">配置方式</md-th>
-<md-th style="width:40%">效果示例</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 应用能力 | 配置方式 | 效果示例 |
+| --- | --- | --- |
+| 小程序 | 在应用详情页的 **应用能力** > **小程序** 页面中，添加任一 **小程序的扩展场景**。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/24a44b4f08a5612bb18cf44b2cde3987_9bk9AbFyIH.png?height=658&lazyload=true&width=1292)<br>以小程序的 **聊天框“+”菜单** 扩展场景为例，国际化配置图示如下。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/710ca786dfc6f6ccc0f4fb0c0040f9a8_Ouv6Ev4XMX.png?height=1146&lazyload=true&width=1738) | 例如设置的应用介绍为`Test Gadget`，则在Lark客户端对应的菜单中，应用信息如下图所示。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/9f894b17eaa8a7cd929f6423d4f2ee38_fLK3C2yqnn.png?height=1488&lazyload=true&width=1824)<br>如果应用未配置某种语言，则在切换Lark客户端语言后：<br>- 应用默认显示英文。<br>- 由于无法配置小程序的多语言，所以也不会显示对应语言的应用介绍。 |
+| 网页应用 | 在应用详情页的 **应用能力** > **网页应用** 页面中，添加任一 **网页应用的扩展场景**。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/852a910a76bb22c8f0698916c4f61b2c_cLqVqz0d9e.png?height=644&lazyload=true&width=1196)<br>以网页应用的 **聊天框“+”菜单** 扩展场景为例，国际化配置图示如下。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/188deb8e843341ee39fc6a64c5065114_FOHxaECHqv.png?height=1146&lazyload=true&width=1712) | 例如设置的应用介绍为`Test Web app`，则在Lark客户端搜索结果如下图所示。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/913df22e7a053d0b5e724c4294d23776_cFRMEdVqGi.png?height=1488&lazyload=true&width=1820)<br>如果应用未配置某种语言，则在切换Lark客户端语言后：<br>- 应用默认显示英文。<br>- 由于无法配置网页应用的多语言，所以也不会显示对应语言的应用介绍。 |
+| 机器人 | - 配置一：在应用详情页的 **应用能力** > **机器人** 页面中编辑 **机器人配置**，在 **如何开始使用** 区域配置国际化。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/177a2b23ce53bceabe8a9914ca68e359_iWRPaXCVk2.png?lazyload=true&width=1718&height=924)<br>- 配置二：在应用详情页的 **应用能力** > **机器人** 页面中开启 **机器人自定义菜单**，在 **主菜单配置** 区域中，**名称** 支持国际化配置。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/15e1dfcb84dddf64e5ebf3af656d7b2d_jQ4eX5QKyl.png?height=1178&lazyload=true&width=1562) | 例如：<br>- 在 **机器人配置** 中，为机器人添加描述`This is a test bot.`。<br>- 在 **机器人自定义菜单** 中，配置主菜单名称为`Test Bot`。则示例配置如下图所示。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/68dd3b1455ced6bd03269275dcc883b9_BcHPVz6ypq.png?height=1536&lazyload=true&width=1848)<br>如果应用未配置某种语言，则在切换Lark客户端语言后，将默认展示英文。 |
+| 小组件 | 小组件分为 **工作台小组件**、**云文档小组件**、**多维表格记录视图**，各组件的国际化配置入口相同。<br>以 **工作台小组件** 为例，在应用详情页的 **应用能力** > **工作台小组件** 页面中，编辑 **基础信息**。在 **基础信息** 中，**小组件名称**、**小组件介绍** 支持国际化配置。<br>![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/cfe4a102869347a7995a5996af57560a_nnp6sH3wru.png?height=918&lazyload=true&width=1716)<br><md-alert type="tip"><br>本文介绍的小组件国际化配置仅适用于非标准小组件。如果你的小组件适配类型为标准小组件，则需要通过代码进行国际化配置，详情参见[配置参考](/document/uAjLw4CM/uYjL24iN/block/block-frame/config)。<br></md-alert> | 例如，小组件基础信息中配置的小组件名称为`App Demo`，则在Lark客户端的工作台内小组件信息如下图所示。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/632b39fc2379f8ee0d27c141bbf08a39_gqqyJPA39Z.png?height=356&lazyload=true&width=902)<br>如果应用未配置某种语言，则在切换Lark客户端语言后，将默认展示英文。 |
 
-<md-tr>
-<md-td>小程序</md-td>
-<md-td>在应用详情页的 **应用能力** > **小程序** 页面中，添加任一 **小程序的扩展场景**。
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/24a44b4f08a5612bb18cf44b2cde3987_9bk9AbFyIH.png?height=658&lazyload=true&width=1292)
-
-以小程序的 **聊天框“+”菜单** 扩展场景为例，国际化配置图示如下。
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/710ca786dfc6f6ccc0f4fb0c0040f9a8_Ouv6Ev4XMX.png?height=1146&lazyload=true&width=1738)
-</md-td>
-<md-td>例如设置的应用介绍为`Test Gadget`，则在Lark客户端对应的菜单中，应用信息如下图所示。
-  
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/9f894b17eaa8a7cd929f6423d4f2ee38_fLK3C2yqnn.png?height=1488&lazyload=true&width=1824)
-
-如果应用未配置某种语言，则在切换Lark客户端语言后：
-
-- 应用默认显示英文。
-- 由于无法配置小程序的多语言，所以也不会显示对应语言的应用介绍。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>网页应用</md-td>
-<md-td>在应用详情页的 **应用能力** > **网页应用** 页面中，添加任一 **网页应用的扩展场景**。
-
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/852a910a76bb22c8f0698916c4f61b2c_cLqVqz0d9e.png?height=644&lazyload=true&width=1196)
-
-以网页应用的 **聊天框“+”菜单** 扩展场景为例，国际化配置图示如下。
-
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/188deb8e843341ee39fc6a64c5065114_FOHxaECHqv.png?height=1146&lazyload=true&width=1712)
-</md-td>
-<md-td>例如设置的应用介绍为`Test Web app`，则在Lark客户端搜索结果如下图所示。
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/913df22e7a053d0b5e724c4294d23776_cFRMEdVqGi.png?height=1488&lazyload=true&width=1820)
-  
-如果应用未配置某种语言，则在切换Lark客户端语言后：
-  
-- 应用默认显示英文。
-
-- 由于无法配置网页应用的多语言，所以也不会显示对应语言的应用介绍。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>机器人</md-td>
-<md-td>
-- 配置一：在应用详情页的 **应用能力** > **机器人** 页面中编辑 **机器人配置**，在 **如何开始使用** 区域配置国际化。
-  
-	![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/177a2b23ce53bceabe8a9914ca68e359_iWRPaXCVk2.png?lazyload=true&width=1718&height=924)
-
-- 配置二：在应用详情页的 **应用能力** > **机器人** 页面中开启 **机器人自定义菜单**，在 **主菜单配置** 区域中，**名称** 支持国际化配置。
-  
-	![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/15e1dfcb84dddf64e5ebf3af656d7b2d_jQ4eX5QKyl.png?height=1178&lazyload=true&width=1562)</md-td>
-<md-td>例如：
-
-- 在 **机器人配置** 中，为机器人添加描述`This is a test bot.`。
-
-- 在 **机器人自定义菜单** 中，配置主菜单名称为`Test Bot`。则示例配置如下图所示。
-  
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/68dd3b1455ced6bd03269275dcc883b9_BcHPVz6ypq.png?height=1536&lazyload=true&width=1848)
-
-如果应用未配置某种语言，则在切换Lark客户端语言后，将默认展示英文。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>小组件</md-td>
-<md-td>小组件分为 **工作台小组件**、**云文档小组件**、**多维表格记录视图**，各组件的国际化配置入口相同。
-  
-以 **工作台小组件** 为例，在应用详情页的 **应用能力** > **工作台小组件** 页面中，编辑 **基础信息**。在 **基础信息** 中，**小组件名称**、**小组件介绍** 支持国际化配置。
-  
-![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/cfe4a102869347a7995a5996af57560a_nnp6sH3wru.png?height=918&lazyload=true&width=1716)
-  
-<md-alert type="tip">
-本文介绍的小组件国际化配置仅适用于非标准小组件。如果你的小组件适配类型为标准小组件，则需要通过代码进行国际化配置，详情参见[配置参考](/document/uAjLw4CM/uYjL24iN/block/block-frame/config)。
-</md-alert>  
-</md-td>
-<md-td>
-例如，小组件基础信息中配置的小组件名称为`App Demo`，则在Lark客户端的工作台内小组件信息如下图所示。
-
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/632b39fc2379f8ee0d27c141bbf08a39_gqqyJPA39Z.png?height=356&lazyload=true&width=902)
-  
-如果应用未配置某种语言，则在切换Lark客户端语言后，将默认展示英文。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
   
   
 ### 成员管理（可选）

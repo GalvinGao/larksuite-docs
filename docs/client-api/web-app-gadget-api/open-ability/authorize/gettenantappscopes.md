@@ -19,39 +19,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uczMx4yNzEjL3MTM/getten
 应用拥有所需权限后，才能调用Lark接口获取相关信息。为了让数据能更好地被保护，开放平台对权限的等级进行拆分，该方法用于查询租户下该应用授权状态。
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.43.0+</md-version></md-td>
-      <md-td><md-version>V3.43.0+</md-version></md-td>
-      <md-td><md-version>V3.43.0+</md-version></md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-     <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.43.0+</md-version> | <md-version>V3.43.0+</md-version> | <md-version>V3.43.0+</md-version> | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
@@ -60,76 +33,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uczMx4yNzEjL3MTM/getten
 ## 输出
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                scopes
-            </md-td>
-            <md-td>
-                scope[]
-            </md-td>
-            <md-td>
-                权限列表
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    name
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                权限名称
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    status
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                授权状态
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| scopes | scope[] | 权限列表 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>name<br></md-text> | string | 权限名称 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>status<br></md-text> | number | 授权状态<br>**可选值**：<br>- `1`：已授权<br>- `2`：未授权 |
 
-**可选值**：
-- `1`：已授权
-- `2`：未授权
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 示例代码
 

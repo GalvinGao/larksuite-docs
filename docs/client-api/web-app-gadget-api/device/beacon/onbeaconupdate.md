@@ -25,153 +25,36 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uQTOuQTOuQTO/ibeacon/on
 :::
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td><md-version>V4.6.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> </md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V4.6.0+</md-version> | <md-version>V4.6.0+</md-version> | **X** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V4.6.0+</md-version> | <md-version>V4.6.0+</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 18%;">数据类型</md-th>
-       <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
 
-    
-   <md-tr>
-      <md-td>callback</md-td>
-      <md-td>function</md-td>
-      <md-td>是</md-td>
-      <md-td></md-td>
-      <md-td>该事件的回调函数</md-td>
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| callback | function | 是 |  | 该事件的回调函数 |
 
-   </md-tr>  
-    
-
-    
-</md-tbody>
-</md-table>
-:::
 
 
 ## 输出
 
 回调函数返回对象的属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">名称</md-th>
-            <md-th style="width: 18%;">数据类型</md-th>
-            <md-th>描述</md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>beacons</md-td>
-            <md-td>[BeaconInfo[]](/document/uYjL24iN/uQTOuQTOuQTO/ibeacon/ibeaconinfo)</md-td>
-            <md-td>Beacon 设备列表</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">uuid</md-text>
-            </md-td>
-            <md-td>string</md-td>
-            <md-td>Beacon 设备广播的 uuid</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">major</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>Beacon 设备的主 id</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">minor</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>Beacon 设备的次 id</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">proximity</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>表示设备距离的枚举值</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">accuracy</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>Beacon 设备的距离</md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">∟</span>
-                &nbsp;
-                <md-text type="field-name">rssi</md-text>
-            </md-td>
-            <md-td>number</md-td>
-            <md-td>表示设备的信号强度</md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| beacons | [BeaconInfo[]](/document/uYjL24iN/uQTOuQTOuQTO/ibeacon/ibeaconinfo) | Beacon 设备列表 |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">uuid</md-text> | string | Beacon 设备广播的 uuid |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">major</md-text> | number | Beacon 设备的主 id |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">minor</md-text> | number | Beacon 设备的次 id |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">proximity</md-text> | number | 表示设备距离的枚举值 |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">accuracy</md-text> | number | Beacon 设备的距离 |
+| &emsp;<br><span style="color: #8F959E">∟</span><br>&nbsp;<br><md-text type="field-name">rssi</md-text> | number | 表示设备的信号强度 |
+
 
 
 ## 示例代码

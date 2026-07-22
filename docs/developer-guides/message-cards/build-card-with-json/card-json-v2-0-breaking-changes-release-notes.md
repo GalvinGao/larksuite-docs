@@ -60,317 +60,70 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
    JSON 2.0 版本中的 `update_multi` 默认值变更为 `true`，且暂时仅支持设为 `true`。`update_multi` 属性用于设置卡片是否为共享卡片；`true` 表示设置卡片为共享卡片，更新卡片的内容对所有收到这张卡片的人员可见；`false` 表示设置卡片为独享卡片，更新卡片的内容对他人不可见。
 
-  :::html
-  <md-table>
-  <md-tr>
-  <md-th>1.0 结构</md-th>
-  <md-th>2.0 结构</md-th>
-  </md-tr>
-  <md-tr>
-  <md-td>
-  ```json
-  {
-      "schema": "1.0", // 不填默认为 1.0
-      "config": {
-          "update_multi": false // 默认值为 false。
-      },
-      "card_link": {},
-      "header": {},
-      "i18n_header": {},
-      "elements": [],
-      "i18n_elements": {},
-      "fallback": {}
-  }
-  ```
-  </md-td>
-  <md-td>
-  ```json
-  {
-      "schema": "2.0", // 2.0 需主动声明
-      "config": {
-          "update_multi": true // 默认值为 true，且暂时仅支持设为 `true`
-      },
-      "card_link": {},
-      "header": {},
-      "body": { // 新增 body 字段，elements 属性放置在 body 层级下。
-          "elements": [] // 不再支持 i18n_elements 字段
-      },
-      "fallback": {}
-  }
-  ```
+|  |  |
+| --- | --- |
+| 1.0 结构 | 2.0 结构 |
+| <code>  {<br>      "schema": "1.0", // 不填默认为 1.0<br>      "config": {<br>          "update_multi": false // 默认值为 false。<br>      },<br>      "card_link": {},<br>      "header": {},<br>      "i18n_header": {},<br>      "elements": [],<br>      "i18n_elements": {},<br>      "fallback": {}<br>  }</code> | <code>  {<br>      "schema": "2.0", // 2.0 需主动声明<br>      "config": {<br>          "update_multi": true // 默认值为 true，且暂时仅支持设为 `true`<br>      },<br>      "card_link": {},<br>      "header": {},<br>      "body": { // 新增 body 字段，elements 属性放置在 body 层级下。<br>          "elements": [] // 不再支持 i18n_elements 字段<br>      },<br>      "fallback": {}<br>  }</code> |
 
-  </md-td>
-  </md-tr>
-  </md-table>
-  :::
 
 ### 容器类组件布局属性默认值变更
 
 - [表单容器](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/containers/form-container)的 `vertical_spacing` 和 `horizontal_spacing` 字段的默认值由 `16px` 改为 `12px`，且支持开发者自定义配置。
 
-  :::html
-  <md-table>
-  <md-tr>
-  <md-th>1.0 结构</md-th>
-  <md-th>2.0 结构</md-th>
-  </md-tr>
-  <md-tr>
-  <md-td>
-  ```json
-  {
-      "margin": "0", // 容器的外边距设置。
-      "padding": "0", // 容器的内边距设置。
-      "vertical_spacing": "16px", // 容器内组件的垂直边距设置。
-      "horizontal_spacing": "16px" // 容器内组件的水平边距设置。
-  }
-  ```
+|  |  |
+| --- | --- |
+| 1.0 结构 | 2.0 结构 |
+| <code>  {<br>      "margin": "0", // 容器的外边距设置。<br>      "padding": "0", // 容器的内边距设置。<br>      "vertical_spacing": "16px", // 容器内组件的垂直边距设置。<br>      "horizontal_spacing": "16px" // 容器内组件的水平边距设置。<br>  }</code> | <code>  {<br>      "margin": "0",<br>      "padding": "0",<br>      "vertical_spacing": "12px", // 默认值变更，且支持自定义。<br>      "horizontal_spacing": "12px" // 默认值变更，且支持自定义。<br>  }</code> |
 
-  </md-td>
-  <md-td>
-  ```json
-  {
-      "margin": "0",
-      "padding": "0",
-      "vertical_spacing": "12px", // 默认值变更，且支持自定义。
-      "horizontal_spacing": "12px" // 默认值变更，且支持自定义。
-  }
-  ```
-  </md-td>
-  </md-tr>
-  </md-table>
-  :::
 <br>
 
 - [交互容器](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/containers/interactive-container)的 `vertical_spacing` 和 `horizontal_spacing` 字段的默认值由 `12px` 改为 `4px` 和 `8px`，且支持开发者自定义配置。
 
 
-  :::html
-  <md-table>
-  <md-tr>
-  <md-th>1.0 结构</md-th>
-  <md-th>2.0 结构</md-th>
-  </md-tr>
-  <md-tr>
-  <md-td>
-  ```json
-  {
-      "margin": "0", // 容器的外边距设置。
-      "padding": "4px 12px", // 容器的内边距设置。
-      "vertical_spacing": "12px", // 容器内组件的垂直边距设置。
-      "horizontal_spacing": "12px" // 容器内组件的水平边距设置。
-  }
-  ```
+|  |  |
+| --- | --- |
+| 1.0 结构 | 2.0 结构 |
+| <code>  {<br>      "margin": "0", // 容器的外边距设置。<br>      "padding": "4px 12px", // 容器的内边距设置。<br>      "vertical_spacing": "12px", // 容器内组件的垂直边距设置。<br>      "horizontal_spacing": "12px" // 容器内组件的水平边距设置。<br>  }</code> | <code>  {<br>      "margin": "0",<br>      "padding": "4px 12px",<br>      "vertical_spacing": "4px", // 默认值变更，且支持自定义。<br>      "horizontal_spacing": "8px" // 默认值变更，且支持自定义。<br>  }</code> |
 
-  </md-td>
-  <md-td>
-  ```json
-  {
-      "margin": "0",
-      "padding": "4px 12px",
-      "vertical_spacing": "4px", // 默认值变更，且支持自定义。
-      "horizontal_spacing": "8px" // 默认值变更，且支持自定义。
-  }
-  ```
-  </md-td>
-  </md-tr>
-  </md-table>
-  :::
 <br>
 - [折叠面板](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/containers/collapsible-panel)的 `padding` 字段默认值变更：
     - 当折叠面板配置了边框（border）或背景色（background_color）时，标题区 `padding` 字段的默认值变更为上下边距 4px，左右边距 8px。
 
-  :::html
-  <md-table>
-  <md-tr>
-  <md-th>1.0 结构</md-th>
-  <md-th>2.0 结构</md-th>
-  </md-tr>
-  <md-tr>
-  <md-td>
-  ```json
-  // 有边框（border）或背景色（background_color）时
-  {
-      "header": {
-          "margin": "0",
-          "padding": "8px" // 标题区的内边距。
-      },
-      "margin": "0",
-      "padding": "8px",
-      "vertical_spacing": "8px",
-      "horizontal_spacing": "8px"
-  }
-  ```
-  </md-td>
-  <md-td>
-  ```json
-  // 有边框（border）或背景色（background_color）时
-  {
-      "header": {
-          "margin": "0",
-          "padding": "4px 8px"  // 标题区的内边距默认值变更。上下边距为 4px，左右边距为 8px。
-      },
-      "margin": "0",
-      "padding": "8px",
-      "vertical_spacing": "8px",
-      "horizontal_spacing": "8px"
-  }
-  ```
+|  |  |
+| --- | --- |
+| 1.0 结构 | 2.0 结构 |
+| <code>  // 有边框（border）或背景色（background_color）时<br>  {<br>      "header": {<br>          "margin": "0",<br>          "padding": "8px" // 标题区的内边距。<br>      },<br>      "margin": "0",<br>      "padding": "8px",<br>      "vertical_spacing": "8px",<br>      "horizontal_spacing": "8px"<br>  }</code> | <code>  // 有边框（border）或背景色（background_color）时<br>  {<br>      "header": {<br>          "margin": "0",<br>          "padding": "4px 8px"  // 标题区的内边距默认值变更。上下边距为 4px，左右边距为 8px。<br>      },<br>      "margin": "0",<br>      "padding": "8px",<br>      "vertical_spacing": "8px",<br>      "horizontal_spacing": "8px"<br>  }</code> |
 
-  </md-td>
-  </md-tr>
-  </md-table>
-  :::
 
   - 当折叠面板未配置边框（border）或背景色（background_color）时，标题区 `padding` 字段的默认值变更为 0，内容区的内边距默认值变更为上边距 8px，右、下、左边距 0。
      
-    :::html
-    <md-table>
-    <md-tr>
-    <md-th>1.0 结构</md-th>
-    <md-th>2.0 结构</md-th>
-    </md-tr>
-    <md-tr>
-    <md-td>
-    ```json
-    // 无边框（border）或背景色（background_color）时
-    {
-        "header": {
-            "margin": "0",
-            "padding": "8px 0 8px 0" // 标题区的内边距。
-        },
-        "margin": "0",
-        "padding": "0",
-        "vertical_spacing": "8px",
-        "horizontal_spacing": "8px"
-    }
 
-    </md-td>
-    <md-td>
-    ```json
-    // 无边框（border）或背景色（background_color）时
-    {
-        "header": {
-            "margin": "0",
-            "padding": "0" // 标题区的内边距默认值变更
-        },
-        "margin": "0",
-        "padding": "8px 0 0 0", // 内容区的内边距默认值变更。上边距为 8px，右、下、左边距为 0px。
-        "vertical_spacing": "8px",
-        "horizontal_spacing": "8px"
-    }
-    
-    </md-td>
-    </md-tr>
-    </md-table>
-    :::
+|  |  |
+| --- | --- |
+| 1.0 结构 | 2.0 结构 |
+| <code>    // 无边框（border）或背景色（background_color）时<br>    {<br>        "header": {<br>            "margin": "0",<br>            "padding": "8px 0 8px 0" // 标题区的内边距。<br>        },<br>        "margin": "0",<br>        "padding": "0",<br>        "vertical_spacing": "8px",<br>        "horizontal_spacing": "8px"<br>    }</code> | <code>    // 无边框（border）或背景色（background_color）时<br>    {<br>        "header": {<br>            "margin": "0",<br>            "padding": "0" // 标题区的内边距默认值变更<br>        },<br>        "margin": "0",<br>        "padding": "8px 0 0 0", // 内容区的内边距默认值变更。上边距为 8px，右、下、左边距为 0px。<br>        "vertical_spacing": "8px",<br>        "horizontal_spacing": "8px"<br>    }</code> |
+
 ### `vertical_spacing` 和 `horizontal_spacing` 枚举值 & 映射数值变更
-:::html
-<md-table>
-    <md-thead> 
-<md-tr>
-<md-th>1.0 结构</md-th>
-<md-th>2.0 结构</md-th>
-</md-tr>  </md-thead>   <md-tbody> 
-<md-tr>
-<md-td>
-<code>vertical_spacing</code> 和 <code>horizontal_spacing</code>字段的枚举和对应的值为：
-- small：4px
-- medium：8px
-- large：16px
-</md-td>
-<md-td>
-<code>vertical_spacing</code> 和 <code>horizontal_spacing</code>字段的枚举和对应的值为：
--   small：4px
-- medium：8px
-- large：12px
-- extra_large：16px
-</md-td>
-</md-tr>  </md-tbody> 
-</md-table>
-:::
+
+| 1.0 结构 | 2.0 结构 |
+| --- | --- |
+| <code>vertical_spacing</code> 和 <code>horizontal_spacing</code>字段的枚举和对应的值为：<br>- small：4px<br>- medium：8px<br>- large：16px | <code>vertical_spacing</code> 和 <code>horizontal_spacing</code>字段的枚举和对应的值为：<br>-   small：4px<br>- medium：8px<br>- large：12px<br>- extra_large：16px |
+
 ### 标题组件配置变更
 
 - 标题组件的 icon 配置结构变更，对齐其它组件：
 
-:::html
-<md-table>
-    <md-thead> 
-<md-tr>
-<md-th>1.0 结构</md-th>
-<md-th>2.0 结构</md-th>
-</md-tr>  </md-thead>   <md-tbody> 
-<md-tr>
-<md-td>
-```json
-{
-  "header": {
-    "title": {},
-    "icon": {
-      "img_key": "img_v2_38811724" 
-    },
-    "ud_icon": {
-      "token": "chat-forbidden_outlined", 
-      "style": {
-        "color": "red"
-      }
-    }
-  }
-}
-```
-</md-td>
-<md-td>
-```json
-{
-  "header": {
-    "title": {},
-    "icon": {
-      "tag": "standard_icon",
-      "token": "chat-forbidden_outlined",
-      "color": "orange", 
-      "img_key": "img_v2_38811724"
-    }
-  }
-}
-```
-</md-td>
-</md-tr>  </md-tbody> 
-</md-table>
-:::
+| 1.0 结构 | 2.0 结构 |
+| --- | --- |
+| <code>{<br>  "header": {<br>    "title": {},<br>    "icon": {<br>      "img_key": "img_v2_38811724"<br>    },<br>    "ud_icon": {<br>      "token": "chat-forbidden_outlined",<br>      "style": {<br>        "color": "red"<br>      }<br>    }<br>  }<br>}</code> | <code>{<br>  "header": {<br>    "title": {},<br>    "icon": {<br>      "tag": "standard_icon",<br>      "token": "chat-forbidden_outlined",<br>      "color": "orange",<br>      "img_key": "img_v2_38811724"<br>    }<br>  }<br>}</code> |
+
 
 ### 图片组件不再支持通栏配置
 
-:::html
-<md-table>
-    <md-thead> 
-<md-tr>
-<md-th>1.0 结构</md-th>
-<md-th>2.0 结构</md-th>
-</md-tr>  </md-thead>   <md-tbody> 
-<md-tr>
-<md-td>
-支持 stretch_without_padding 通栏配置，图片的宽度将撑满卡片宽度。
-```json
-{
-  "tag": "img",
-  "img_key": "img_v3_0238_073f1823-df2b-4377-86c6-e293f183622j",
-  "size": "stretch_without_padding" // 支持通栏配置，图片宽度将撑满卡片宽度。
-}
-```
-</md-td>
-<md-td>
-不再支持通栏配置，但可设置 margin 字段为负数实现通栏效果。
-```json
-{
-  "tag": "img",
-  "img_key": "img_v3_0238_073f1823-df2b-4377-86c6-e293f183622j",
-  "size": "crop_center",
-  "margin": "4px -12px"
-}
-```
-</md-td>
-</md-tr>  </md-tbody> 
-</md-table>
-:::
+| 1.0 结构 | 2.0 结构 |
+| --- | --- |
+| 支持 stretch_without_padding 通栏配置，图片的宽度将撑满卡片宽度。<br><code>{<br>  "tag": "img",<br>  "img_key": "img_v3_0238_073f1823-df2b-4377-86c6-e293f183622j",<br>  "size": "stretch_without_padding" // 支持通栏配置，图片宽度将撑满卡片宽度。<br>}</code> | 不再支持通栏配置，但可设置 margin 字段为负数实现通栏效果。<br><code>{<br>  "tag": "img",<br>  "img_key": "img_v3_0238_073f1823-df2b-4377-86c6-e293f183622j",<br>  "size": "crop_center",<br>  "margin": "4px -12px"<br>}</code> |
+
 
 ### 富文本（Markdown）组件废弃差异化跳转语法
 
@@ -392,26 +145,10 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
 ### 兜底高度 & 宽度变更
 
-:::html
-<md-table>
-    <md-thead> 
-<md-tr>
-<md-th>1.0 结构</md-th>
-<md-th>2.0 结构</md-th>
-</md-tr>  </md-thead>   <md-tbody> 
-<md-tr>
-<md-td>
--   卡片兜底高度：24px
-- 组件宽度设置的像素值如果大于父容器宽度，会收缩限制到父容器宽度，仅在交互容器中会截断展示
-</md-td>
-<md-td>
--   卡片的兜底高度：40px
-- 组件宽度设置的像素值如果大于父容器宽度，将会截断展示 
+| 1.0 结构 | 2.0 结构 |
+| --- | --- |
+| -   卡片兜底高度：24px<br>- 组件宽度设置的像素值如果大于父容器宽度，会收缩限制到父容器宽度，仅在交互容器中会截断展示 | -   卡片的兜底高度：40px<br>- 组件宽度设置的像素值如果大于父容器宽度，将会截断展示 |
 
-</md-td>
-</md-tr>  </md-tbody> 
-</md-table>
-:::
 
 
 ### 废弃备注组件 & 交互模块
@@ -529,25 +266,8 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
 JSON 2.0 结构中，表单容器、交互容器、折叠面板、分栏组件可内嵌除表单容器和表格组件外的其它所有组件。
 
-:::html
-<md-table>
-    <md-thead> 
-<md-tr>
-<md-th>1.0 结构</md-th>
-<md-th>2.0 结构</md-th>
-</md-tr>  </md-thead>   <md-tbody> 
-<md-tr>
-<md-td>
-- 表单容器：不支持内嵌表格、图表、和表单容器组件；不可直接内嵌普通文本组件
-- 交互容器：仅支持内嵌普通文本、富文本、图片、备注、分栏、勾选器、交互容器组件
-- 折叠面板：不支持内嵌表单容器（form）和表格组件（table）组件
-- 分栏：不支持内嵌表格（table）、表单（form）和多图混排（img_combination）组件
-</md-td>
-<md-td>
+| 1.0 结构 | 2.0 结构 |
+| --- | --- |
+| - 表单容器：不支持内嵌表格、图表、和表单容器组件；不可直接内嵌普通文本组件<br>- 交互容器：仅支持内嵌普通文本、富文本、图片、备注、分栏、勾选器、交互容器组件<br>- 折叠面板：不支持内嵌表单容器（form）和表格组件（table）组件<br>- 分栏：不支持内嵌表格（table）、表单（form）和多图混排（img_combination）组件 | 表单容器、交互容器、折叠面板、分栏组件可内嵌除表单容器（form）和表格组件（table）外的其它所有组件。 |
 
-表单容器、交互容器、折叠面板、分栏组件可内嵌除表单容器（form）和表格组件（table）外的其它所有组件。
-</md-td>
-</md-tr>  </md-tbody> 
-</md-table>
-:::
   

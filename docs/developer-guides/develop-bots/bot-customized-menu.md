@@ -39,54 +39,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot
 -  **配置机器人菜单点击事件，作为逻辑触发器**：你可以订阅“机器人自定义菜单事件”，并在机器人菜单中配置用户点击菜单项后的回传参数信息。<br>在接收到用户的点击事件后，你可以通过服务端openAPI调用的方式响应用户操作，例如：在聊天里为用户发送使用帮助卡片。
 
 
-:::html
+| 操作 | 示意图 |
+| --- | --- |
+| **Step1**: 订阅机器人菜单的点击事件<br>事件订阅的基本配置过程可参考[事件订阅流程](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。 | <img src=//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4dec6c8a870b063daf7ce0f0b2aa55e4_zk9HtN4vrw.png style="width: 95%"> |
+| **Step2**：配置点击事件ID参数，用于识别用户具体点击了哪个菜单项 | <img src=//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/fbbe13bf884555fd4e068de1abe94304_cDzwBQNYje.png style="width: 95%"> |
 
-<md-table>
-
-<md-thead>
-
-<md-tr>
-
-
-<md-th style="width: 40%;">操作</md-th>
-
-<md-th style="width: 60%;">示意图</md-th>
-
-</md-tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-**Step1**: 订阅机器人菜单的点击事件
-  
-事件订阅的基本配置过程可参考[事件订阅流程](/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM)。
-  </md-td>
-
-<md-td>
-<img src=//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4dec6c8a870b063daf7ce0f0b2aa55e4_zk9HtN4vrw.png style="width: 95%"></md-td>
-</md-tr>
-  
-<md-tr>
-
-<md-td>**Step2**：配置点击事件ID参数，用于识别用户具体点击了哪个菜单项</md-td>
-
-<md-td>
-  
-<img src=//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/fbbe13bf884555fd4e068de1abe94304_cDzwBQNYje.png style="width: 95%">
-</md-td>
-</md-tr>
-  
-  
-  
-</md-tbody>
-
-</md-table>
-
-:::
 
 
 用户点击菜单项后，你的服务端将接收到如下规格的事件回调。你可以基于这个事件触发下一步操作，例如：给用户发送一条消息卡片以响应用户的点击操作。

@@ -39,89 +39,22 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bo
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/board/v1/whiteboards/:whiteboard_id/nodes</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[10 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="board:whiteboard:node:read" desc="查看画板节点" support_app_types="custom,isv" tags="">查看画板节点</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/board/v1/whiteboards/:whiteboard_id/nodes |
+| HTTP Method | GET |
+| 接口频率限制 | [10 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="board:whiteboard:node:read" desc="查看画板节点" support_app_types="custom,isv" tags="">查看画板节点</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom,isv" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -6959,77 +6892,17 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/bo
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2890001</md-td>
-  <md-td>invalid format</md-td>
-  <md-td>参数格式不正确。请检查传入的参数格式，如 json 字符串是否正确</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2890001 | invalid format | 参数格式不正确。请检查传入的参数格式，如 json 字符串是否正确 |
+| 400 | 2890002 | invalid arg | 参数无效。请检查传入的参数是否有效，如 whiteboard_id 是否正确，可通过云文档下的文档接口[获取文档所有块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)获取正确的`whiteboard_id` |
+| 400 | 2890003 | record missing | 找不到记录。whiteboard_id 不存在，可能是 whiteboard_id 不存在或拼写错误。请检查传入的 whiteboard_id 是否正确，可通过云文档下的文档接口[获取文档所有块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)获取正确的 whiteboard_id（block_type 为 43 的 block 对应的 block.token 即为 whiteboard_id） |
+| 401 | 2890004 | auth failed | 认证失败。请检查 Authorization 参数 |
+| 403 | 2890005 | forbidden | 请求身份没有当前画板的阅读权限。请参考[云文档常见问题 3](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#78a03ee2)开通权限 |
+| 429 | 2890006 | too many request | 请求超过接口频率限流值。请降低操作频率，稍后再试 |
+| 500 | 2891001 | server internal error | 服务运行错误。请重试或联系[技术支持](https://applink.larksuite.com/TLJpeNdW) |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2890002</md-td>
-  <md-td>invalid arg</md-td>
-  <md-td>参数无效。请检查传入的参数是否有效，如 whiteboard_id 是否正确，可通过云文档下的文档接口[获取文档所有块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)获取正确的`whiteboard_id`</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2890003</md-td>
-  <md-td>record missing</md-td>
-  <md-td>找不到记录。whiteboard_id 不存在，可能是 whiteboard_id 不存在或拼写错误。请检查传入的 whiteboard_id 是否正确，可通过云文档下的文档接口[获取文档所有块](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/document-docx/docx-v1/document-block/list)获取正确的 whiteboard_id（block_type 为 43 的 block 对应的 block.token 即为 whiteboard_id）</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>401</md-td>
-  <md-td>2890004</md-td>
-  <md-td>auth failed</md-td>
-  <md-td>认证失败。请检查 Authorization 参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>2890005</md-td>
-  <md-td>forbidden</md-td>
-  <md-td>请求身份没有当前画板的阅读权限。请参考[云文档常见问题 3](/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN#78a03ee2)开通权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>429</md-td>
-  <md-td>2890006</md-td>
-  <md-td>too many request</md-td>
-  <md-td>请求超过接口频率限流值。请降低操作频率，稍后再试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>2891001</md-td>
-  <md-td>server internal error</md-td>
-  <md-td>服务运行错误。请重试或联系[技术支持](https://applink.larksuite.com/TLJpeNdW)</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

@@ -20,39 +20,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUTOuUTOuUTO/pad/getpad
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V4.10.0+</md-version></md-td>
-      <md-td><md-version>V4.10.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V4.10.0+</md-version></md-td>
-      <md-td><md-version>V4.10.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V4.10.0+</md-version> | <md-version>V4.10.0+</md-version> | **X** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V4.10.0+</md-version> | <md-version>V4.10.0+</md-version> | **X** | / |
+
 
 
 ## 输入
@@ -63,36 +36,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUTOuUTOuUTO/pad/getpad
 
 `success`返回对象参数的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                displayScaleMode
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                当前Pad上的显示状态，可能的取值包括disableScale （不可全屏缩放），fullScreen（全屏，可以缩小至多栏） ，allVisible （多栏，可以放大至全屏）。 Android端仅支持 disableScale 。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| displayScaleMode | string | 当前Pad上的显示状态，可能的取值包括disableScale （不可全屏缩放），fullScreen（全屏，可以缩小至多栏） ，allVisible （多栏，可以放大至全屏）。 Android端仅支持 disableScale 。 |
+
 
 
 ## 示例代码

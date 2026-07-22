@@ -20,39 +20,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDNugDNugDN/downloadfi
 `downLoadFile`的调用结果在通过回调传递的同时会返回一个`downloadTask`对象，通过`onProgressUpdate`方法监听下载进度。
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 
@@ -62,34 +35,13 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDNugDNugDN/downloadfi
 
 ## 输出
 回调函数返回对象的属性：
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">数据类型</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-   <md-tr>
-      <md-td>progress</md-td>
-      <md-td>number</md-td>
-      <md-td>下载进度</md-td>
-   </md-tr>
-   <md-tr>
-      <md-td>totalBytesWritten</md-td>
-      <md-td>number</md-td>
-      <md-td>已经下载的数据长度，单位 byte</md-td>
-   </md-tr>
-   <md-tr>
-      <md-td>totalBytesExpectedToWrite</md-td>
-      <md-td>number</md-td>
-      <md-td>预期需要下载的数据总长度，单位 byte</md-td>
-   </md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| progress | number | 下载进度 |
+| totalBytesWritten | number | 已经下载的数据长度，单位 byte |
+| totalBytesExpectedToWrite | number | 预期需要下载的数据总长度，单位 byte |
+
 
 
 ## 示例代码

@@ -20,145 +20,23 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ucjMy4yNyIjL3IjM/animat
   
     
   ## 支持说明
-  :::html
-  <md-table>
-    <md-thead>
-      <md-tr>
-        <md-th style="width: 20%;">应用能力</md-th>
-        <md-th style="width: 20%;">Android</md-th>
-        <md-th style="width: 20%;">iOS</md-th>
-        <md-th style="width: 20%;">PC</md-th>
-        <md-th style="width: 20%;">预览效果</md-th>
-      </md-tr>
-    </md-thead>
-    <md-tbody>
-      <md-tr>
-        <md-td>小程序</md-td>
-        <md-td>**✓**</md-td>
-        <md-td>**✓**</md-td>
-        <md-td>**✓**</md-td>
-        <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/animation/animation" fontSize="14">预览</md-preview-app>
-  </md-td>
-  </md-tr>
 
-      <md-tr>
-        <md-td>网页应用</md-td>
-        <md-td>**X**</md-td>
-        <md-td>**X**</md-td>
-        <md-td>**X**</md-td>
-        <md-td>/</md-td>
-  </md-tr>
-      
-      
-      
-  </md-tbody>
-  </md-table>
-  :::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/animation/animation" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
   
     
 ## 输入
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                duration
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                400
-            </md-td>
-            <md-td>
-                动画持续时间，单位 ms
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| duration | number | 否 | 400 | 动画持续时间，单位 ms |
+| timingFunction | string | 否 | linear | 动画的效果<br>**可选值**：<br>- `linear`：动画从头到尾的速度是相同的<br>- `ease`：动画以低速开始，然后加快，在结束前变慢<br>- `ease-in`：动画以低速开始<br>- `ease-in-out`：动画以低速开始和结束<br>- `ease-out`：动画以低速结束<br>- `step-start`：动画第一帧就跳至结束状态直到结束<br>- `step-end`：动画一直保持开始状态，最后一帧跳到结束状态 |
+| delay | number | 否 | 0 | 动画延迟时间，单位 ms |
+| transformOrigin | string | 否 | 50% 50% 0 | 元素变形的原点 |
 
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                timingFunction
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                linear
-            </md-td>
-            <md-td>
-                动画的效果
-
-**可选值**：
-- `linear`：动画从头到尾的速度是相同的
-- `ease`：动画以低速开始，然后加快，在结束前变慢
-- `ease-in`：动画以低速开始
-- `ease-in-out`：动画以低速开始和结束
-- `ease-out`：动画以低速结束
-- `step-start`：动画第一帧就跳至结束状态直到结束
-- `step-end`：动画一直保持开始状态，最后一帧跳到结束状态
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                delay
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>0</md-td>
-            <md-td>
-                动画延迟时间，单位 ms
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                transformOrigin
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                50% 50% 0
-            </md-td>
-            <md-td>
-                元素变形的原点
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
   
     
 ## 输出

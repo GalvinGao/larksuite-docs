@@ -15,35 +15,9 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 
 # TextRef
 文本的引用对象。
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>blockRef</md-td>
-<md-td>[BlockRef](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/BlockRef)</md-td>
-<md-td>是</md-td>
-<md-td>对应的 Block 引用</md-td>
-</md-tr>
-<md-tr>
-<md-td>range</md-td>
-<md-td>[number, number]</md-td>
-<md-td>是</md-td>
-<md-td>文本范围，假设数组为 [start, end]，则：
-  - start > end 时，是非法值，会降级为 [start, start]
-  - start = end 时，表示文本位置
-  - start < end 时，表示文本范围
 
-start 和 end 超出 Block 的文本内容时，则设置为文本内容的最后位置。
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| blockRef | [BlockRef](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/basic-data-reference---base/BlockRef) | 是 | 对应的 Block 引用 |
+| range | [number, number] | 是 | 文本范围，假设数组为 [start, end]，则：<br>- start > end 时，是非法值，会降级为 [start, start]<br>- start = end 时，表示文本位置<br>- start < end 时，表示文本范围<br>start 和 end 超出 Block 的文本内容时，则设置为文本内容的最后位置。<br></md-td> |
+

@@ -20,118 +20,31 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUzMuUzMuUzM/requestacc
 
 ## 支持说明
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-      <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V6.9.0+</md-version></md-td>
-      <md-td><md-version>V6.9.0+</md-version></md-td>
-      <md-td><md-version>V6.9.0+</md-version></md-td>
-      <md-td><md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" fontSize="14" disable=true>预览</md-preview-app></md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V6.9.0+</md-version></md-td>
-      <md-td><md-version>V6.9.0+</md-version></md-td>
-      <md-td><md-version>V6.9.0+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104" fontSize="14" disable=true>预览</md-preview-app></md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V6.9.0+</md-version> | <md-version>V6.9.0+</md-version> | <md-version>V6.9.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" fontSize="14" disable=true>预览</md-preview-app> |
+| 网页应用 | <md-version>V6.9.0+</md-version> | <md-version>V6.9.0+</md-version> | <md-version>V6.9.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104" fontSize="14" disable=true>预览</md-preview-app> |
+
 
 ## 输入
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 18%;">数据类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>scopeList</md-td>
-      <md-td>Array<string\></md-td>
-      <md-td>是</md-td>
-      <md-td>\-</md-td>
-      <md-td>
-        授予应用[权限列表](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)
-<md-alert>
-空数组表示 仅授予应用获取用户凭证信息权限 [获取登录用户信息](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/user_info/get)
-</md-alert>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>state</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>\-</md-td>
-      <md-td>
-        用来维护请求和回调状态的附加字符串， 在授权完成回调时会附加此参数，应用可以根据此字符串来判断上下文关系。详见[获取授权登录授权码](/document/common-capabilities/sso/api/obtain-oauth-code)
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>appID</md-td>
-      <md-td>string</md-td>
-      <md-td>否</md-td>
-      <md-td>\-</md-td>
-      <md-td>
-        应用ID ( 网页应用必须传 )
-      </md-td>
-    </md-tr>
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| scopeList | Array<string\> | 是 | \- | 授予应用[权限列表](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list)<br><md-alert><br>空数组表示 仅授予应用获取用户凭证信息权限 [获取登录用户信息](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/user_info/get)<br></md-alert> |
+| state | string | 否 | \- | 用来维护请求和回调状态的附加字符串， 在授权完成回调时会附加此参数，应用可以根据此字符串来判断上下文关系。详见[获取授权登录授权码](/document/common-capabilities/sso/api/obtain-oauth-code) |
+| appID | string | 否 | \- | 应用ID ( 网页应用必须传 ) |
 
-  </md-tbody>
-</md-table>
-:::
 
 
 ## 输出
 继承[标准对象输出](/document/uYjL24iN/ukzNy4SO3IjL5cjM#8c92acb8)，`success`返回对象的扩展属性：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 30%;">名称</md-th>
-      <md-th style="width: 18%;">数据类型</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>code</md-td>
-      <md-td>string</md-td>
-      <md-td>
-        临时登录凭证，有效期 3 分钟，只能使用一次
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>state</md-td>
-      <md-td>string</md-td>
-      <md-td>
-        用来维护请求和回调状态的附加字符串， 在授权完成回调时会附加此参数，应用可以根据此字符串来判断上下文关系。详见[获取授权登录授权码](/document/common-capabilities/sso/api/obtain-oauth-code)
-      </md-td>
-    </md-tr>
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| code | string | 临时登录凭证，有效期 3 分钟，只能使用一次 |
+| state | string | 用来维护请求和回调状态的附加字符串， 在授权完成回调时会附加此参数，应用可以根据此字符串来判断上下文关系。详见[获取授权登录授权码](/document/common-capabilities/sso/api/obtain-oauth-code) |
 
-  </md-tbody>
-</md-table>
-:::
 
 ## 示例代码
 ```js

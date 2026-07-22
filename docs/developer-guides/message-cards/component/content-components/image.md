@@ -41,98 +41,17 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUjNwUjL1YDM14SN2AT
 
 图片组件包含的参数说明如下表所示。
 
-:::html
-<md-table>
-    <md-thead>
-    <md-tr>
-        <md-th style="width: 20%">参数</md-th>
-        <md-th style="width: 15%">是否必须</md-th>
-        <md-th style="width: 15%">类型</md-th>
-        <md-th style="width: 50%">说明</md-th>
-    </md-tr>
-    </md-thead>
-    <md-tbody>
-    <md-tr>
-        <md-td>tag</md-td>
-        <md-td>是</md-td>
-        <md-td>String</md-td>
-        <md-td>图片组件的标签，固定取值：img。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>img_key</md-td>
-        <md-td>是</md-td>
-        <md-td>String</md-td>
-        <md-td>图片资源的 image_key。你可以调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传一张用于发送消息的图片，获取返回值中的 image_key。
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>alt</md-td>
-        <md-td>是</md-td>
-        <md-td>Struct</md-td>
-        <md-td>
-悬浮（hover）图片时弹出的说明文案。使用文本组件的数据结构展示文案，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。当文本组件的 `content` 参数取值为空时，不展示图片文案内容。
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>title</md-td>
-        <md-td>否</md-td>
-        <md-td>Struct</md-td>
-        <md-td>图片标题。使用文本组件的数据结构展示内容，数据结构参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。</md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>custom_width</md-td>
-        <md-td>否</md-td>
-        <md-td>int</md-td>
-        <md-td>
-自定义图片的最大展示宽度，支持在 278px ~ 580px 范围内指定最大展示宽度。
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 图片组件的标签，固定取值：img。 |
+| img_key | 是 | String | 图片资源的 image_key。你可以调用[上传图片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image/create)接口，上传一张用于发送消息的图片，获取返回值中的 image_key。 |
+| alt | 是 | Struct | 悬浮（hover）图片时弹出的说明文案。使用文本组件的数据结构展示文案，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。当文本组件的 `content` 参数取值为空时，不展示图片文案内容。 |
+| title | 否 | Struct | 图片标题。使用文本组件的数据结构展示内容，数据结构参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。 |
+| custom_width | 否 | int | 自定义图片的最大展示宽度，支持在 278px ~ 580px 范围内指定最大展示宽度。<br>默认情况下图片宽度与图片组件所占区域的宽度一致。<br><md-alert type="tip"><br>注意：该参数在Lark V4.0 以上版本生效。<br></md-alert> |
+| compact_width | 否 | Boolean | 是否展示为紧凑型的图片。<br>默认值为 `false`。如果配置为 `true`，则展示最大宽度为 278px 的紧凑型图片。 |
+| mode | 否 | String | 图片显示模式。取值：<br>* **crop_center**：居中裁剪模式，对长图会限高，并居中裁剪后展示。<br>* **fit_horizontal**：平铺模式，宽度撑满卡片完整展示上传的图片。<br>* **large**：大图，尺寸为 160 × 160，适用于多图混排。<br>* **medium**：中图，尺寸为 80 × 80，适用于图文混排的封面图。<br>* **small**：小图，尺寸为 40 × 40，适用于人员头像。<br>* **tiny**：超小图，尺寸为 16 × 16，适用于图标、备注。<br><md-alert type="tip"><br>注意：设置该参数后，会覆盖 `custom_width` 参数。更多信息参见[消息卡片设计规范](/document/ukTMukTMukTM/ugDOwYjL4gDM24CO4AjN)。<br></md-alert> |
+| preview | 否 | Boolean | 点击后是否放大图片。<br>默认值为 `true`，即点击后放大图片。如果你为卡片配置了 [消息卡片跳转链接](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7bfe6950)，可将该参数设置为 `false`，后续用户点击卡片上的图片也能响应 card_link 链接跳转。 |
 
-默认情况下图片宽度与图片组件所占区域的宽度一致。
-
-<md-alert type="tip">
-注意：该参数在Lark V4.0 以上版本生效。
-</md-alert>
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>compact_width</md-td>
-        <md-td>否</md-td>
-        <md-td>Boolean</md-td>
-        <md-td>
-是否展示为紧凑型的图片。
-
-默认值为 `false`。如果配置为 `true`，则展示最大宽度为 278px 的紧凑型图片。
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>mode</md-td>
-        <md-td>否</md-td>
-        <md-td>String</md-td>
-        <md-td>
-图片显示模式。取值：
-* **crop_center**：居中裁剪模式，对长图会限高，并居中裁剪后展示。
-* **fit_horizontal**：平铺模式，宽度撑满卡片完整展示上传的图片。
-* **large**：大图，尺寸为 160 × 160，适用于多图混排。
-* **medium**：中图，尺寸为 80 × 80，适用于图文混排的封面图。
-* **small**：小图，尺寸为 40 × 40，适用于人员头像。         
-* **tiny**：超小图，尺寸为 16 × 16，适用于图标、备注。             
-<md-alert type="tip">
-注意：设置该参数后，会覆盖 `custom_width` 参数。更多信息参见[消息卡片设计规范](/document/ukTMukTMukTM/ugDOwYjL4gDM24CO4AjN)。
-</md-alert>
-        </md-td>
-    </md-tr>
-    <md-tr>
-        <md-td>preview</md-td>
-        <md-td>否</md-td>
-        <md-td>Boolean</md-td>
-        <md-td>
-点击后是否放大图片。
-
-默认值为 `true`，即点击后放大图片。如果你为卡片配置了 [消息卡片跳转链接](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/component-list/common-components-and-elements#7bfe6950)，可将该参数设置为 `false`，后续用户点击卡片上的图片也能响应 card_link 链接跳转。
-        </md-td>
-    </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 卡片示例
 

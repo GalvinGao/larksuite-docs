@@ -24,42 +24,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/block/api/dark
 :::
 
 ## 输入
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-          <md-th style="width: 18%;">
-                是否必填
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                callback
-            </md-td>
-            <md-td>
-                function
-            </md-td>
-          <md-td>
-                是
-            </md-td>
-            <md-td>
-                主题变化取消监听时的回调函数
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| callback | function | 是 | 主题变化取消监听时的回调函数 |
+
 
 
 ## 示例代码

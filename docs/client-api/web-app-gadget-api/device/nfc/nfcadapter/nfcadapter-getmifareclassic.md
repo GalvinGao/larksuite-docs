@@ -21,40 +21,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEDN4YjLxQDO24SM0gjN
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V3.38.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" disable=true>预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="gadget" disable=true>预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V3.38.0+</md-version> | **X** | **X** | <md-preview-app type="gadget" disable=true>预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | **X** | **X** | <md-preview-app type="gadget" disable=true>预览</md-preview-app> |
+
 
 
 
@@ -71,43 +43,15 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEDN4YjLxQDO24SM0gjN
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>[connect](/document/uYjL24iN/uQTN4YjL0UDO24CN1gjN)</md-td>
-      <md-td>连接 MifareClassic 类型的标签</md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-td>[transceive](/document/uYjL24iN/ucTN4YjL3UDO24yN1gjN)</md-td>
-      <md-td>发送数据给 MifareClassic 类型的标签</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>[close](/document/uYjL24iN/uMTN4YjLzUDO24yM1gjN)</md-td>
-      <md-td>断开与 MifareClassic 标签之间的连接</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>[getMaxTransceiveLength](/document/uYjL24iN/uUTN4YjL1UDO24SN1gjN)</md-td>
-      <md-td>获取最大传输长度</md-td>
-    </md-tr>
-    
-        <md-tr>
-      <md-td>[setTimeout](/document/uYjL24iN/uYTN4YjL2UDO24iN1gjN)</md-td>
-      <md-td>设置超时时间</md-td>
-    </md-tr>
-    
-</md-tbody>
-</md-table>
-:::
+| 方法 | 介绍 |
+| --- | --- |
+| [connect](/document/uYjL24iN/uQTN4YjL0UDO24CN1gjN) | 连接 MifareClassic 类型的标签 |
+| [transceive](/document/uYjL24iN/ucTN4YjL3UDO24yN1gjN) | 发送数据给 MifareClassic 类型的标签 |
+| [close](/document/uYjL24iN/uMTN4YjLzUDO24yM1gjN) | 断开与 MifareClassic 标签之间的连接 |
+| [getMaxTransceiveLength](/document/uYjL24iN/uUTN4YjL1UDO24SN1gjN) | 获取最大传输长度 |
+| [setTimeout](/document/uYjL24iN/uYTN4YjL2UDO24iN1gjN) | 设置超时时间 |
+
 ## 示例代码
 :::html
 <!--div style="display: flex; justify-content: space-between">

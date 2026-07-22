@@ -21,24 +21,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 注意该接口只能在 popup 页面中使用，其他页面使用均无效
 
 ## 可用性说明
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>权限要求</md-th>
-<md-th>视图可用说明</md-th>
-<md-th>平台可用</md-th>
-<md-th>场景</md-th></md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>可读</md-td>
-<md-td>弹窗视图</md-td>
-<md-td>PC</md-td>
-<md-td>演示模式</md-td>
-</md-tr></md-tbody>
-</md-table>
-:::
+
+| 权限要求 | 视图可用说明 | 平台可用 | 场景 |
+| --- | --- | --- | --- |
+| 可读 | 弹窗视图 | PC | 演示模式 |
+
 
 
 ## 输入

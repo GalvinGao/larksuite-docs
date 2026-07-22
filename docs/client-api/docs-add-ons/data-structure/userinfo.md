@@ -15,66 +15,14 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 
 # UserInfo
 用户信息
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>userInfo</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>/</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ nickName</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>用户昵称</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ avatarUrl</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>用户头像</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ gender</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>用户性别，可选值：
-- 未知 - '' 
-- 男性 - male 
-- 女性 - female
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ country</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>用户所在国家或地区</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ city</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>用户所在城市</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟ language</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>所在地区所用的语言，可选值：
-- 英文 - en_US
-- 中文 - zh_CN
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| userInfo | object | 是 | / |
+| ∟ nickName | string | 是 | 用户昵称 |
+| ∟ avatarUrl | string | 是 | 用户头像 |
+| ∟ gender | string | 是 | 用户性别，可选值：<br>- 未知 - ''<br>- 男性 - male<br>- 女性 - female |
+| ∟ country | string | 是 | 用户所在国家或地区 |
+| ∟ city | string | 是 | 用户所在城市 |
+| ∟ language | string | 是 | 所在地区所用的语言，可选值：<br>- 英文 - en_US<br>- 中文 - zh_CN |
+

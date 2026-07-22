@@ -23,40 +23,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUTNx4SN1EjL1UTM/getnet
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V4.9.0+</md-version></md-td>
-      <md-td><md-version>V4.9.0+</md-version></md-td>
-      <md-td><md-version>V5.1.0+</md-version></md-td>
 
-<md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V4.9.0+</md-version> | <md-version>V4.9.0+</md-version> | <md-version>V5.1.0+</md-version> | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V4.9.0+</md-version> | <md-version>V4.9.0+</md-version> | <md-version>V5.1.0+</md-version> | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V4.9.0+</md-version></md-td>
-      <md-td><md-version>V4.9.0+</md-version></md-td>
-      <md-td><md-version>V5.1.0+</md-version></md-td>
-<md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> </md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
 
 
 ## 输入
@@ -67,44 +39,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUTNx4SN1EjL1UTM/getnet
 
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                networkQualityType
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                网络分级类型
-              
-**可选值**：
-- `unavailable`：无网络
-- `weak`：弱网络
-- `moderate`：中等网络
-- `excellent`：良好网络
-- `unknown`：如果设备无法确定网络分级，则会返回该值
-                
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| networkQualityType | string | 网络分级类型<br>**可选值**：<br>- `unavailable`：无网络<br>- `weak`：弱网络<br>- `moderate`：中等网络<br>- `excellent`：良好网络<br>- `unknown`：如果设备无法确定网络分级，则会返回该值 |
+
 
 
 

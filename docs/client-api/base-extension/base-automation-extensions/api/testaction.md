@@ -24,40 +24,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/base-extension
 testAction(args, context)
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>args</md-td>
-        <md-td>{
-    [key: string]: any;
-}</md-td>
-        <md-td>是</md-td>
-        <md-td>模拟运行用户的入参</md-td>
-      </md-tr>
-      <md-tr style="">
-      	<md-td>context</md-td>
-        <md-td>Context</md-td>
-        <md-td>否</md-td>
-        <md-td>模拟运行时上下文入参</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| args | {<br>[key: string]: any;<br>} | 是 | 模拟运行用户的入参 |
+| context | Context | 否 | 模拟运行时上下文入参 |
+
 
 
 ## 输出

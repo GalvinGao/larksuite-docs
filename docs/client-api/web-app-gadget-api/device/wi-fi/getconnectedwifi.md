@@ -26,40 +26,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugjNx4CO2EjL4YTM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/get-connected-wifi/get-connected-wifi" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.44.0+</md-version></md-td>
-      <md-td><md-version>V3.47.0+</md-version></md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/get-connected-wifi/get-connected-wifi" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V3.44.0+</md-version> | <md-version>V3.44.0+</md-version> | <md-version>V3.47.0+</md-version> | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
@@ -70,77 +42,14 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugjNx4CO2EjL4YTM
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                SSID
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                Wi-Fi 的 SSID
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                BSSID
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                Wi-Fi 的 BSSID
-<md-alert type="tip" icon="none">PC 端：暂不支持
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                secure
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                Wi-Fi 是否安全
-<md-alert type="tip" icon="none">
-  - iOS 端：暂不支持
- - Android 10及以上版本不支持
-</md-alert>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                signalStrength
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                Wi-Fi 信号强度
-<md-alert type="tip" icon="none">
-iOS 端：暂不支持
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| SSID | string | Wi-Fi 的 SSID |
+| BSSID | string | Wi-Fi 的 BSSID<br><md-alert type="tip" icon="none">PC 端：暂不支持 |
+| secure | boolean | Wi-Fi 是否安全<br><md-alert type="tip" icon="none"><br>- iOS 端：暂不支持<br>- Android 10及以上版本不支持<br></md-alert> |
+| signalStrength | number | Wi-Fi 信号强度<br><md-alert type="tip" icon="none"><br>iOS 端：暂不支持<br></md-alert> |
+
 
 ## 示例代码
 :::html

@@ -28,139 +28,23 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ugDM04COwQjL4ADN/toggle
 
 ## 支持说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">应用能力</md-th>
-<md-th style="width: 20%;">Android</md-th>
-<md-th style="width: 20%;">iOS</md-th>
-<md-th style="width: 20%;">PC</md-th>
-<md-th style="width: 20%;">预览效果</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>小程序</md-td>
-<md-td>**X**</md-td>
-<md-td>**X**</md-td>
-<md-td>**✓**</md-td>
-<md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-<md-tr>
-<md-td>网页应用</md-td>
-<md-td>**X**</md-td>
-<md-td>**X**</md-td>
-<md-td><md-version>V4.1.0+</md-version></md-td>
-<md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **X** | **X** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | <md-version>V4.1.0+</md-version> | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">
-名称
-</md-th>
-<md-th style="width: 18%;">
-数据类型
-</md-th>
-<md-th style="width: 10%;">
-必填
-</md-th>
-<md-th style="width: 10%;">
-默认值
-</md-th>
-<md-th>
-描述
-</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-openChatId
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
-是
-</md-td>
-<md-td></md-td>
-<md-td>
-会话 [open_chat_id](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| openChatId | string | 是 |  | 会话 [open_chat_id](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)<br>**示例值**：oc_7dab8a3d3cdcc9da365777c7ad535d64 |
+| width | number | 否 | 400 | 侧边栏宽度 |
+| needSidebar | boolean | 否 | true | 是否需要侧边菜单栏 |
+| isKeep | boolean | 否 | false | 保持侧边栏不关闭，切换聊天对象<br>- 当侧边栏关闭时：isKeep 无论是 true、false 还是没有传参，都是打开侧边栏<br>- 当侧边栏打开时：isKeep 只有为 true 才是保持侧边栏不关闭，其他情况都是关闭侧边栏<br><md-alert type="tip" icon="none"><br>- Android/iOS 端：暂不支持<br>- PC 端：Lark[V4.1.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
 
-**示例值**：oc_7dab8a3d3cdcc9da365777c7ad535d64
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-width
-</md-td>
-<md-td>
-number
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
-400
-</md-td>
-<md-td>
-侧边栏宽度
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-needSidebar
-</md-td>
-<md-td>
-boolean
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
-true
-</md-td>
-<md-td>
-是否需要侧边菜单栏
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-isKeep
-</md-td>
-<md-td>
-boolean
-</md-td>
-<md-td>
-否
-</md-td>
-<md-td>
-false
-</md-td>
-<md-td>
-保持侧边栏不关闭，切换聊天对象
-- 当侧边栏关闭时：isKeep 无论是 true、false 还是没有传参，都是打开侧边栏
-- 当侧边栏打开时：isKeep 只有为 true 才是保持侧边栏不关闭，其他情况都是关闭侧边栏
-<md-alert type="tip" icon="none">
-- Android/iOS 端：暂不支持
-- PC 端：Lark[V4.1.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 ## 输出
 
 继承[标准对象输出](/document/uYjL24iN/ukzNy4SO3IjL5cjM#8c92acb8)，无扩展属性

@@ -32,298 +32,46 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uIDMx4iMwEjLyATM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/request/request" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
-    
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
 
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/request/request" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                url
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                请求地址
 
-**示例值**：http://open.feishu.cn
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                header
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                {'content-type': 'application/json'}
-            </md-td>
-            <md-td>
-                请求 Header
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| url | string | 是 |  | 请求地址<br>**示例值**：http://open.feishu.cn |
+| header | object | 否 | {'content-type': 'application/json'} | 请求 Header<br>**示例值**：{'content-type': 'application/json'} |
+| method | string | 否 | GET | 请求方法<br>**示例值**：GET<br>**可选值**：<br>- `GET`<br>- `POST`<br>- `PUT`<br>- `HEAD`<br>- `DELETE` |
+| data | string｜object｜arraybuffer | 否 |  | 请求数据<br>**示例值**：{"noncestr":123} |
+| dataType | string | 否 | json | 请求数据类型<br>**示例值**：json |
+| responseType | string | 否 | text | 响应数据类型，参数值可以是 text 或 arraybuffer<br>**示例值**：text<br>**可选值**：<br>- `text`<br>- `arraybuffer` |
 
-**示例值**：{'content-type': 'application/json'}
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                method
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                GET
-            </md-td>
-            <md-td>
-                请求方法
-
-**示例值**：GET
-
-**可选值**：
-- `GET`
-- `POST`
-- `PUT`
-- `HEAD`
-- `DELETE`
-               
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                data
-            </md-td>
-            <md-td>
-                string｜object｜arraybuffer
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                请求数据
-
-**示例值**：{"noncestr":123}
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                dataType
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                json
-            </md-td>
-            <md-td>
-                请求数据类型
-
-**示例值**：json
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                responseType
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td>
-                text
-            </md-td>
-            <md-td>
-                响应数据类型，参数值可以是 text 或 arraybuffer
-
-**示例值**：text
-
-**可选值**：
-- `text`
-- `arraybuffer`
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 
 `success`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                statusCode
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                返回 HTTP 状态码
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                header
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                返回 HTTP Header
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                data
-            </md-td>
-            <md-td>
-                string｜object｜arraybuffer
-            </md-td>
-            <md-td>
-                返回数据
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                trace
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                请求ID，用于请求问题的诊断和全链路追踪
-<md-alert type="tip" icon="none">
-Lark[V4.7.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| statusCode | number | 返回 HTTP 状态码 |
+| header | object | 返回 HTTP Header |
+| data | string｜object｜arraybuffer | 返回数据 |
+| trace | string | 请求ID，用于请求问题的诊断和全链路追踪<br><md-alert type="tip" icon="none"><br>Lark[V4.7.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
+
 
 `fail`返回对象的扩展属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                trace
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                请求ID，用于请求问题的诊断和全链路追踪
-<md-alert type="tip" icon="none">
-Lark[V4.7.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| trace | string | 请求ID，用于请求问题的诊断和全链路追踪<br><md-alert type="tip" icon="none"><br>Lark[V4.7.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
+
 
 返回值：`RequestTask`，该对象的方法列表如下：
 
@@ -332,23 +80,11 @@ Lark[V4.7.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版�
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>[abort()](/document/uYjL24iN/ugDNugDNugDN/requesttask/abort)</md-td>
-      <md-td>中断请求任务</md-td>
-    </md-tr>
-    
-</md-tbody>
-</md-table>
-:::
+
+| 方法 | 介绍 |
+| --- | --- |
+| [abort()](/document/uYjL24iN/ugDNugDNugDN/requesttask/abort) | 中断请求任务 |
+
 
 ## 示例代码
 :::html

@@ -40,38 +40,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/event-subs
 
 ## 订阅流程
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:30%">步骤</md-th>
-<md-th style="width:70%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 步骤 | 说明 |
+| --- | --- |
+| 1. 设置回调订阅请求地址 | 你需要提供用于接收回调消息的服务器公网地址。后续当应用订阅的回调发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含回调数据。详细配置说明参见[将回调发送至开发者服务器](/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/step-1-choose-a-subscription-mode/send-callbacks-to-developers-server)。 |
+| 2. 添加所需回调 | 完成回调订阅方式配置后，即可为应用添加所需订阅的回调，并发布应用使配置生效。具体操作参见[添加回调](/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/add-callback)。 |
+| 3. 接收回调 | 你需要根据应用的加密策略进行安全校验，如果是加密回调，需要先解密回调，再解析回调详情。具体操作参见[接收回调](/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/receive-and-handle-callbacks)。 |
 
-<md-tr>
-<md-td>1. 设置回调订阅请求地址</md-td>
-<md-td>
-你需要提供用于接收回调消息的服务器公网地址。后续当应用订阅的回调发生时，开放平台会向服务器的公网地址发送 HTTP POST 请求，请求内包含回调数据。详细配置说明参见[将回调发送至开发者服务器](/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/step-1-choose-a-subscription-mode/send-callbacks-to-developers-server)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>2. 添加所需回调</md-td>
-<md-td>完成回调订阅方式配置后，即可为应用添加所需订阅的回调，并发布应用使配置生效。具体操作参见[添加回调](/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/add-callback)。</md-td>
-</md-tr>
-  
-<md-tr>
-<md-td>3. 接收回调</md-td>
-<md-td>
-你需要根据应用的加密策略进行安全校验，如果是加密回调，需要先解密回调，再解析回调详情。具体操作参见[接收回调](/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription/receive-and-handle-callbacks)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 
 ## 回调结构
@@ -109,43 +83,9 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/event-subs
 
 目前支持的回调列表如下：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">功能模块</md-th>
-<md-th style="width:25%">回调名称</md-th>
-<md-th style="width:55%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-  
-<md-tr>
-<md-td>卡片</md-td>
-<md-td>[卡片回传交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication)</md-td>
-<md-td>用户点击卡片上配置回传交互的组件时，触发此回调。
+| 功能模块 | 回调名称 | 描述 |
+| --- | --- | --- |
+| 卡片 | [卡片回传交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication) | 用户点击卡片上配置回传交互的组件时，触发此回调。<br>可通过返回 toast、更新后的卡片内容等反馈用户的交互。 |
+| 链接预览 | [拉取链接预览数据](/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure) | 用户在聊天中查看匹配应用注册的URL规则的链接时，触发此回调。<br>可通过返回文字链、卡片等链接预览内容，为裸链扩展链接预览效果。 |
+| 卡片 | [消息卡片回传交互（旧）](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure) | 当用户点击卡片上添加了回传交互的组件时，开发者注册的服务端回调地址将收到此回调。<br>开发者可声明通过弹出 toast、更新卡片、保持原内容不变等方式来响应用户交互。<br><md-alert type="tip" icon="none">该回调使用旧版的协议，兼容历史的机器人[回调配置](/document/ukTMukTMukTM/uYzMxEjL2MTMx4iNzETM)。</md-alert> |
 
-可通过返回 toast、更新后的卡片内容等反馈用户的交互。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>链接预览</md-td>
-<md-td>[拉取链接预览数据](/document/uAjLw4CM/ukzMukzMukzM/development-link-preview/pull-link-preview-data-callback-structure)</md-td>
-<md-td>用户在聊天中查看匹配应用注册的URL规则的链接时，触发此回调。
-
-可通过返回文字链、卡片等链接预览内容，为裸链扩展链接预览效果。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>卡片</md-td>
-<md-td>[消息卡片回传交互（旧）](/document/ukTMukTMukTM/uYzM3QjL2MzN04iNzcDN/configuring-card-callbacks/card-callback-structure)</md-td>
-<md-td>当用户点击卡片上添加了回传交互的组件时，开发者注册的服务端回调地址将收到此回调。
-
-开发者可声明通过弹出 toast、更新卡片、保持原内容不变等方式来响应用户交互。
-
-<md-alert type="tip" icon="none">该回调使用旧版的协议，兼容历史的机器人[回调配置](/document/ukTMukTMukTM/uYzMxEjL2MTMx4iNzETM)。</md-alert></md-td>
-</md-tr>
-  
-</md-tbody>
-</md-table>
-:::

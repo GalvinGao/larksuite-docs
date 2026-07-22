@@ -26,371 +26,45 @@ source_url: https://open.larksuite.com/document/getBlockActionSourceDetail
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                triggerCode
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                进入应用时，getHostLaunchQuery获取的参数
 
-**示例值**：c-66a6cd5a2340665fc49e74e4e5c49290
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| triggerCode | string | 是 |  | 进入应用时，getHostLaunchQuery获取的参数<br>**示例值**：c-66a6cd5a2340665fc49e74e4e5c49290<br>**最小长度**：`1`  字符 |
 
-**最小长度**：`1`  字符
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 ## 输出
 
 
 `success`返回对象的扩展属性：
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                bizType
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                业务类型
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| bizType | string | 业务类型<br>**可选值**：<br>- `message` |
+| content | object | 查询的message对象 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>actionTime<br></md-text> | number | Action发生的时间戳、单位秒 |
+| &emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>messages<br></md-text> | object[] | message列表 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>messageType<br></md-text> | string | 消息类型<br>**可选值**：<br>- `text`：文本消息<br>- `image`：图片消息<br>- `post`：富文本消息<br>- `media`：视频消息，支持版本[3.47+](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)<br>- `file`：文件消息，支持版本[3.47+](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)<br>- `interactive`：[消息卡片](/document/ukTMukTMukTM/uczM3QjL3MzN04yNzcDN)消息，支持版本[3.47+](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)<br>- `unsupport`：暂不支持的消息类型 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>sender<br></md-text> | object | message发送者对象 |
+| &emsp;&emsp;&emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>name<br></md-text> | string | message发送者名字，按调用时客户端语言提供 |
+| &emsp;&emsp;&emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>open_id<br></md-text> | string | 用户 [open_id](/document/home/user-identity-introduction/open-id) |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>createTime<br></md-text> | number | message创建的时间戳、单位秒 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>support<br></md-text> | boolean | 是否是支持的消息类型 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>content<br></md-text> | string | 消息内容：json字符串、文本内容 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>status<br></md-text> | boolean | 消息状态是否有效 |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>openChatId<br></md-text> | string | 触发操作会话的  [open_chat_id](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)<br><md-alert type="tip" icon="none"><br>Lark[V3.40.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
+| &emsp;&emsp;<br><span style="color: #8F959E"><br>∟<br></span><br>&nbsp;<br><md-text type="field-name"><br>openMessageId<br></md-text> | string | 触发操作的消息 [open_message_id](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/intro#ac79c1c2)<br><md-alert type="tip" icon="none"><br>Lark[V3.40.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持<br></md-alert> |
 
-**可选值**：
-- `message`
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                查询的message对象
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    actionTime
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                Action发生的时间戳、单位秒
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    messages
-                </md-text>
-            </md-td>
-            <md-td>
-                object[]
-            </md-td>
-            <md-td>
-                message列表
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    messageType
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                消息类型
-
-**可选值**：
-- `text`：文本消息
-- `image`：图片消息
-- `post`：富文本消息
-- `media`：视频消息，支持版本[3.47+](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)
-- `file`：文件消息，支持版本[3.47+](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)
-- `interactive`：[消息卡片](/document/ukTMukTMukTM/uczM3QjL3MzN04yNzcDN)消息，支持版本[3.47+](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)
-- `unsupport`：暂不支持的消息类型
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    sender
-                </md-text>
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                message发送者对象
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;&emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    name
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                message发送者名字，按调用时客户端语言提供
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;&emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    open_id
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                用户 [open_id](/document/home/user-identity-introduction/open-id)
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    createTime
-                </md-text>
-            </md-td>
-            <md-td>
-                number
-            </md-td>
-            <md-td>
-                message创建的时间戳、单位秒
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    support
-                </md-text>
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                是否是支持的消息类型
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    content
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                消息内容：json字符串、文本内容
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    status
-                </md-text>
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                消息状态是否有效
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    openChatId
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                触发操作会话的  [open_chat_id](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-id-description)
-              
-<md-alert type="tip" icon="none">
-Lark[V3.40.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>  
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                &emsp;&emsp;
-                <span style="color: #8F959E">
-                    ∟
-                </span>
-                &nbsp;
-                <md-text type="field-name">
-                    openMessageId
-                </md-text>
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                触发操作的消息 [open_message_id](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/intro#ac79c1c2)
-             
-<md-alert type="tip" icon="none">
-Lark[V3.40.0](/document/uYjL24iN/uAjMuAjMuAjM/version-compatibility)及以上版本支持
-</md-alert>      
-        
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 示例代码

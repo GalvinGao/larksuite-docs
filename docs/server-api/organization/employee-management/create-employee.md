@@ -45,98 +45,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/directory/v1/employees</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[5 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="directory:employee.create:write" desc="创建员工" support_app_types="custom" tags="">创建员工</md-perm>
-            <md-perm name="directory:employee:write" desc="创建、更新、离职、恢复员工" support_app_types="custom" tags="">创建、更新、离职、恢复员工</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/directory/v1/employees |
+| HTTP Method | POST |
+| 接口频率限制 | [5 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="directory:employee.create:write" desc="创建员工" support_app_types="custom" tags="">创建员工</md-perm><br><md-perm name="directory:employee:write" desc="创建、更新、离职、恢复员工" support_app_types="custom" tags="">创建、更新、离职、恢复员工</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -1462,451 +1387,63 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221164</md-td>
-  <md-td>User name exceeds limit</md-td>
-  <md-td>姓名长度超过限制，最多可输入 64 字</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2221164 | User name exceeds limit | 姓名长度超过限制，最多可输入 64 字 |
+| 400 | 2221165 | User en_name exceeds limit | 英文名长度超过限制，最多可输入 64 字 |
+| 400 | 2221166 | User another_name exceeds limit | 别名长度超过限制，最多可输入 64 字 |
+| 400 | 2221103 | Mobile already exists | 手机号已存在，请修改手机号 |
+| 400 | 2221106 | Invalid mobile | 无效手机号，请修改手机号 |
+| 400 | 2221113 | Mobile or email not set | 手机号或邮箱必填 |
+| 400 | 2221114 | User must have a mobile in China | 中国地区手机号不能为空 |
+| 400 | 2221104 | Email already exists | 邮箱已存在，请求修改邮箱 |
+| 400 | 2221107 | Invalid email | 无效的邮箱，请求修改企业邮箱 |
+| 400 | 2221118 | Enterprise email already exists | 企业邮箱已存在，请求修改企业邮箱 |
+| 400 | 2221278 | Invalid enterprise email | 无效的企业邮箱，请求修改企业邮箱 |
+| 400 | 2221126 | Enterprise email domain unavailable | 企业邮箱域名不可用，请求修改企业邮箱 |
+| 400 | 2221146 | Enterprise email alias exceeds limit | 企业邮箱别名超过长度限制，最多可输入 255 字 |
+| 400 | 2221147 | Enterprise email address in recycle bin | 企业邮箱地址在回收站中，请修改企业邮箱 |
+| 400 | 2221176 | Add Lark allow list tenant. Email must be included with non+86mobile | Lark租户添加非+86的手机号时必须包含邮件信息 |
+| 400 | 2221255 | Main department must be the first | 员工在所属部门内的排序信息中主部门必须在第一个，请修改员工所属部门内的排序信息 |
+| 400 | 2221125 | The number of members within the department exceeds the limit. Please contact an administrator for help | 部门内成员人数不能超过一万， 请联系管理员寻求帮助，在桌面端访问Lark管理后台（larksuite.com/admin），引导页会显示管理员信息。 |
+| 400 | 2221129 | User department is empty | 员工所属部门为空，请修改员工所属部门内的排序信息 |
+| 400 | 2221141 | Unable to join multiple departments. Please upgrade relevant 'Organizational Structure Visible'. | 无法加入多个部门，请修改员工所属部门内的排序信息 |
+| 400 | 2221181 | Department does not exist | 部门不存在，请修改员工所属部门内的排序信息 |
+| 400 | 2221239 | Leader loop error | 直属上级成环，请修改直属上级 |
+| 400 | 2221238 | DottedLineLeaderID loop error | 虚线上级成环，请修改虚线上级 |
+| 400 | 2221221 | DottedLineLeaderID exceeds length limit | 虚线上级长度超过限制，请修改虚线上级 |
+| 400 | 2221222 | Invalid dottedLineLeaderID | 无效的虚线上级ID，请修改虚线上级 |
+| 400 | 2221242 | Invalid custom field | 无效的自定义字段，请修改自定义字段 |
+| 400 | 2221216 | Invalid work country or region | 无效的工作国家或区域，请修改工作国家或区域 |
+| 400 | 2221217 | WorkplaceID not found | 工作城市不存在，请修改工作城市 |
+| 400 | 2221240 | JobNumber not unique | 工号已存在，请修改工号 |
+| 400 | 2221191 | Invalid extension number | 分机号无效，请修改分机号 |
+| 400 | 2221192 | Repeated extension number within the tenant | 分机号已存在，请修改分机号 |
+| 400 | 2221193 | Extension number exceeds limit | 分机号长度超过限制，最多可输入 99 字 |
+| 400 | 2221210 | Invalid join date | 无效的入职时间，请修改入职时间 |
+| 400 | 2221144 | EmployeeType not found | 人员类型不存在，请修改人员类型 |
+| 400 | 2221145 | EmployeeType inactive | 人员类型未激活，请修改人员类型 |
+| 400 | 2221223 | Invalid job title ID | 职务不存在，请修改职务 |
+| 400 | 2221263 | Tenant has not activated multi geo | 租户未开启Multi-Geo，请先开通再试。<br>**Multi-Geo**指的是多地理位置数据驻留。 |
+| 400 | 2221264 | User geo does not exist | 指定的Geo不存在，请检查Geo参数是否正确。 |
+| 400 | 2221265 | The application does not have permission to write to the geo | 无权限指定员工Geo，需申请，点击api调试台-权限配置，会显示需要的权限，点击“操作”-“...”-“开通”，即可。<br><md-perm name="directory:employee.base.geo:write" desc="写入员工数据所在地" support_app_types="custom" tags="">写入员工数据所在地</md-perm> |
+| 400 | 2221266 | The application does not have permission to write to the SubscriptionID | 无权限指定席位，需申请，点击api调试台-权限配置，会显示需要的权限，点击“操作”-“...”-“开通”，即可。        <md-perm name="directory:employee.base.subscription_ids:write" desc="写入员工席位信息" support_app_types="custom" tags="">写入员工席位信息</md-perm> |
+| 400 | 2224001 | No permission to operate | 无操作权限，请检查当前应用的权限或企业版本是否是商业专业版本及以上。 |
+| 400 | 2224002 | No permission to operate record | 无操作该记录权限，请检查当前应用的数据管理范围的权限或当前应用所操作的成员是否可创建。 |
+| 400 | 2224003 | No permission to operate dependent object | 无操作依赖对象权限，请检查要创建到的部门是否有权限。 |
+| 400 | 2221252 | Hybrid license tenant prohibits passing empty licenses to create users | 混合许可证租户禁止传递空许可证来创建用户 |
+| 400 | 2221253 | Designated licenseID is insufficient | 剩余席位不足，请修改席位信息 |
+| 400 | 2221254 | Designated licenseID is invalid | 指定的subscription_ids非法，请检查席位ID |
+| 400 | 2221111 | Exceeds certified seat limit | 超出认证席位限制，请修改席位信息 |
+| 400 | 2221112 | Exceeds billing plan seat limit | 超出套餐席位限制，请修改席位信息 |
+| 400 | 2221115 | ExternalID is not unique | 自定义ID已存在，请修改自定义ID |
+| 400 | 2221116 | Invalid ExternalID | 无效的用户ID，请检查是否包含空白符 |
+| 400 | 2221175 | Lark only supports +86mobile | Lark租户仅支持+86手机号，请修改手机号 |
+| 400 | 2221163 | Users are created too frequently | 员工创建过于频繁，请稍后再试 |
+| 400 | 2221109 | Name contains sensitive info | 姓名包含敏感信息，请修改姓名 |
+| 400 | 2221292 | User department is disabled | 用户部门已经禁用，请联系管理员启用该部门，或修改员工所属部门。 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221165</md-td>
-  <md-td>User en_name exceeds limit</md-td>
-  <md-td>英文名长度超过限制，最多可输入 64 字</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221166</md-td>
-  <md-td>User another_name exceeds limit</md-td>
-  <md-td>别名长度超过限制，最多可输入 64 字</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221103</md-td>
-  <md-td>Mobile already exists</md-td>
-  <md-td>手机号已存在，请修改手机号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221106</md-td>
-  <md-td>Invalid mobile</md-td>
-  <md-td>无效手机号，请修改手机号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221113</md-td>
-  <md-td>Mobile or email not set</md-td>
-  <md-td>手机号或邮箱必填</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221114</md-td>
-  <md-td>User must have a mobile in China</md-td>
-  <md-td>中国地区手机号不能为空</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221104</md-td>
-  <md-td>Email already exists</md-td>
-  <md-td>邮箱已存在，请求修改邮箱</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221107</md-td>
-  <md-td>Invalid email</md-td>
-  <md-td>无效的邮箱，请求修改企业邮箱</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221118</md-td>
-  <md-td>Enterprise email already exists</md-td>
-  <md-td>企业邮箱已存在，请求修改企业邮箱</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221278</md-td>
-  <md-td>Invalid enterprise email</md-td>
-  <md-td>无效的企业邮箱，请求修改企业邮箱</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221126</md-td>
-  <md-td>Enterprise email domain unavailable</md-td>
-  <md-td>企业邮箱域名不可用，请求修改企业邮箱</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221146</md-td>
-  <md-td>Enterprise email alias exceeds limit</md-td>
-  <md-td>企业邮箱别名超过长度限制，最多可输入 255 字</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221147</md-td>
-  <md-td>Enterprise email address in recycle bin</md-td>
-  <md-td>企业邮箱地址在回收站中，请修改企业邮箱</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221176</md-td>
-  <md-td>Add Lark allow list tenant. Email must be included with non+86mobile</md-td>
-  <md-td>Lark租户添加非+86的手机号时必须包含邮件信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221255</md-td>
-  <md-td>Main department must be the first</md-td>
-  <md-td>员工在所属部门内的排序信息中主部门必须在第一个，请修改员工所属部门内的排序信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221125</md-td>
-  <md-td>The number of members within the department exceeds the limit. Please contact an administrator for help</md-td>
-  <md-td>部门内成员人数不能超过一万， 请联系管理员寻求帮助，在桌面端访问Lark管理后台（larksuite.com/admin），引导页会显示管理员信息。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221129</md-td>
-  <md-td>User department is empty</md-td>
-  <md-td>员工所属部门为空，请修改员工所属部门内的排序信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221141</md-td>
-  <md-td>Unable to join multiple departments. Please upgrade relevant 'Organizational Structure Visible'.</md-td>
-  <md-td>无法加入多个部门，请修改员工所属部门内的排序信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221181</md-td>
-  <md-td>Department does not exist</md-td>
-  <md-td>部门不存在，请修改员工所属部门内的排序信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221239</md-td>
-  <md-td>Leader loop error</md-td>
-  <md-td>直属上级成环，请修改直属上级</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221238</md-td>
-  <md-td>DottedLineLeaderID loop error</md-td>
-  <md-td>虚线上级成环，请修改虚线上级</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221221</md-td>
-  <md-td>DottedLineLeaderID exceeds length limit</md-td>
-  <md-td>虚线上级长度超过限制，请修改虚线上级</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221222</md-td>
-  <md-td>Invalid dottedLineLeaderID</md-td>
-  <md-td>无效的虚线上级ID，请修改虚线上级</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221242</md-td>
-  <md-td>Invalid custom field</md-td>
-  <md-td>无效的自定义字段，请修改自定义字段</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221216</md-td>
-  <md-td>Invalid work country or region</md-td>
-  <md-td>无效的工作国家或区域，请修改工作国家或区域</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221217</md-td>
-  <md-td>WorkplaceID not found</md-td>
-  <md-td>工作城市不存在，请修改工作城市</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221240</md-td>
-  <md-td>JobNumber not unique</md-td>
-  <md-td>工号已存在，请修改工号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221191</md-td>
-  <md-td>Invalid extension number</md-td>
-  <md-td>分机号无效，请修改分机号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221192</md-td>
-  <md-td>Repeated extension number within the tenant</md-td>
-  <md-td>分机号已存在，请修改分机号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221193</md-td>
-  <md-td>Extension number exceeds limit</md-td>
-  <md-td>分机号长度超过限制，最多可输入 99 字</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221210</md-td>
-  <md-td>Invalid join date</md-td>
-  <md-td>无效的入职时间，请修改入职时间</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221144</md-td>
-  <md-td>EmployeeType not found</md-td>
-  <md-td>人员类型不存在，请修改人员类型</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221145</md-td>
-  <md-td>EmployeeType inactive</md-td>
-  <md-td>人员类型未激活，请修改人员类型</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221223</md-td>
-  <md-td>Invalid job title ID</md-td>
-  <md-td>职务不存在，请修改职务</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221263</md-td>
-  <md-td>Tenant has not activated multi geo</md-td>
-  <md-td>租户未开启Multi-Geo，请先开通再试。
-**Multi-Geo**指的是多地理位置数据驻留。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221264</md-td>
-  <md-td>User geo does not exist</md-td>
-  <md-td>指定的Geo不存在，请检查Geo参数是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221265</md-td>
-  <md-td>The application does not have permission to write to the geo</md-td>
-  <md-td>无权限指定员工Geo，需申请，点击api调试台-权限配置，会显示需要的权限，点击“操作”-“...”-“开通”，即可。
-<md-perm name="directory:employee.base.geo:write" desc="写入员工数据所在地" support_app_types="custom" tags="">写入员工数据所在地</md-perm></md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221266</md-td>
-  <md-td>The application does not have permission to write to the SubscriptionID</md-td>
-  <md-td>无权限指定席位，需申请，点击api调试台-权限配置，会显示需要的权限，点击“操作”-“...”-“开通”，即可。        <md-perm name="directory:employee.base.subscription_ids:write" desc="写入员工席位信息" support_app_types="custom" tags="">写入员工席位信息</md-perm></md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224001</md-td>
-  <md-td>No permission to operate</md-td>
-  <md-td>无操作权限，请检查当前应用的权限或企业版本是否是商业专业版本及以上。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224002</md-td>
-  <md-td>No permission to operate record</md-td>
-  <md-td>无操作该记录权限，请检查当前应用的数据管理范围的权限或当前应用所操作的成员是否可创建。
-
-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224003</md-td>
-  <md-td>No permission to operate dependent object</md-td>
-  <md-td>无操作依赖对象权限，请检查要创建到的部门是否有权限。
-
-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221252</md-td>
-  <md-td>Hybrid license tenant prohibits passing empty licenses to create users</md-td>
-  <md-td>混合许可证租户禁止传递空许可证来创建用户</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221253</md-td>
-  <md-td>Designated licenseID is insufficient</md-td>
-  <md-td>剩余席位不足，请修改席位信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221254</md-td>
-  <md-td>Designated licenseID is invalid</md-td>
-  <md-td>指定的subscription_ids非法，请检查席位ID</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221111</md-td>
-  <md-td>Exceeds certified seat limit</md-td>
-  <md-td>超出认证席位限制，请修改席位信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221112</md-td>
-  <md-td>Exceeds billing plan seat limit</md-td>
-  <md-td> 超出套餐席位限制，请修改席位信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221115</md-td>
-  <md-td>ExternalID is not unique</md-td>
-  <md-td>自定义ID已存在，请修改自定义ID</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221116</md-td>
-  <md-td>Invalid ExternalID</md-td>
-  <md-td>无效的用户ID，请检查是否包含空白符</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221175</md-td>
-  <md-td>Lark only supports +86mobile</md-td>
-  <md-td>Lark租户仅支持+86手机号，请修改手机号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221163</md-td>
-  <md-td>Users are created too frequently</md-td>
-  <md-td>员工创建过于频繁，请稍后再试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221109</md-td>
-  <md-td>Name contains sensitive info</md-td>
-  <md-td>姓名包含敏感信息，请修改姓名</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221292</md-td>
-  <md-td>User department is disabled</md-td>
-  <md-td>用户部门已经禁用，请联系管理员启用该部门，或修改员工所属部门。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

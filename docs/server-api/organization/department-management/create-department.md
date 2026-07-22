@@ -42,98 +42,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/directory/v1/departments</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[5 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="directory:department.create:write" desc="创建部门" support_app_types="custom" tags="">创建部门</md-perm>
-            <md-perm name="directory:department:write" desc="创建、更新、删除部门" support_app_types="custom" tags="">创建、更新、删除部门</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/directory/v1/departments |
+| HTTP Method | POST |
+| 接口频率限制 | [5 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="directory:department.create:write" desc="创建部门" support_app_types="custom" tags="">创建部门</md-perm><br><md-perm name="directory:department:write" desc="创建、更新、删除部门" support_app_types="custom" tags="">创建、更新、删除部门</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="directory:employee.base.external_id:read" desc="查看员工自定义 ID" support_app_types="custom,isv" tags="">查看员工自定义 ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -978,192 +903,31 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/directory-
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221305</md-td>
-  <md-td>Request parameter error</md-td>
-  <md-td>请求参数错误，具体参照错误信息。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 2221305 | Request parameter error | 请求参数错误，具体参照错误信息。 |
+| 400 | 2221306 | ExternalID repeat | 租户内自定义ID重复，请更换自定义ID后重试。 |
+| 400 | 2221307 | Exceed department limit | 部门数量超限，请减少部门数量至限制内。 |
+| 400 | 2221309 | Department does not exist | 父部门不存在，请确认父部门ID是否正确。 |
+| 400 | 2221311 | Internationalized name duplication | 部门的英文名称已存在，请使用其他名称 或 部门的日文名称已存在，请使用其他名称 |
+| 400 | 2221312 | Exceed department level depth | 部门层级过深，部门层级上限为25 |
+| 400 | 2221313 | ExternalID invalid | 自定义id长度不可超过 64 个字符 |
+| 400 | 2221317 | Department direct sub departments exceed limits | 部门直属子部门数上限为1000 |
+| 400 | 2221319 | Department name duplicate when creating and updating | 创建和更新时，部门名重复，XX（部门名字）已存在，请使用其他名称 |
+| 400 | 2221300 | Department common error | 服务异常，请重试 |
+| 400 | 2221328 | Description invalid | 默认值或多语言值超过100字，请检查并修改。 |
+| 400 | 2221331 | Custom field value invalid | 自定义字段值不合法，具体参照错误信息 |
+| 400 | 2221333 | Department name can not contain '/' | 部门名称不能包含"/" |
+| 400 | 2221334 | Department ID duplicate | 部门ID已被使用，更换部门ID后重试。 |
+| 400 | 2224001 | No permission to operate | 无接口权限，请为应用申请接口权限，具体操作参见相关文档。 |
+| 400 | 2224002 | No permission to operate record | 没有行记录权限，请联系管理员获取行记录权限。 |
+| 400 | 2224003 | No permission to operate dependent object | 无权限操作相关实体，如父部门、部门Leader，请确认是否有权限操作相关实体。 |
+| 400 | 2221349 | Department has member, can not disable department | 部门下还有成员，不可停用 |
+| 400 | 2221350 | Department has child, can not disable department | 部门下还有子部门，不可停用 |
+| 400 | 2221351 | Department parent is disabled, can not enable | 父部门为停用，不可启用当前部门 |
+| 400 | 2221352 | Department parent is disabled | 父部门为停用状态，请先启用父部门。 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221306</md-td>
-  <md-td>ExternalID repeat</md-td>
-  <md-td>租户内自定义ID重复，请更换自定义ID后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221307</md-td>
-  <md-td>Exceed department limit</md-td>
-  <md-td>部门数量超限，请减少部门数量至限制内。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221309</md-td>
-  <md-td>Department does not exist</md-td>
-  <md-td>父部门不存在，请确认父部门ID是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221311</md-td>
-  <md-td>Internationalized name duplication</md-td>
-  <md-td>部门的英文名称已存在，请使用其他名称 或 部门的日文名称已存在，请使用其他名称
-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221312</md-td>
-  <md-td>Exceed department level depth</md-td>
-  <md-td>部门层级过深，部门层级上限为25</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221313</md-td>
-  <md-td>ExternalID invalid</md-td>
-  <md-td>自定义id长度不可超过 64 个字符
-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221317</md-td>
-  <md-td>Department direct sub departments exceed limits</md-td>
-  <md-td>部门直属子部门数上限为1000</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221319</md-td>
-  <md-td>Department name duplicate when creating and updating</md-td>
-  <md-td>创建和更新时，部门名重复，XX（部门名字）已存在，请使用其他名称
-</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221300</md-td>
-  <md-td>Department common error</md-td>
-  <md-td>服务异常，请重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221328</md-td>
-  <md-td>Description invalid</md-td>
-  <md-td>默认值或多语言值超过100字，请检查并修改。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221331</md-td>
-  <md-td>Custom field value invalid</md-td>
-  <md-td>自定义字段值不合法，具体参照错误信息</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221333</md-td>
-  <md-td>Department name can not contain '/'</md-td>
-  <md-td>部门名称不能包含"/"</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221334</md-td>
-  <md-td>Department ID duplicate</md-td>
-  <md-td>部门ID已被使用，更换部门ID后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224001</md-td>
-  <md-td>No permission to operate</md-td>
-  <md-td>无接口权限，请为应用申请接口权限，具体操作参见相关文档。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224002</md-td>
-  <md-td>No permission to operate record</md-td>
-  <md-td>没有行记录权限，请联系管理员获取行记录权限。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2224003</md-td>
-  <md-td>No permission to operate dependent object</md-td>
-  <md-td>无权限操作相关实体，如父部门、部门Leader，请确认是否有权限操作相关实体。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221349</md-td>
-  <md-td>Department has member, can not disable department</md-td>
-  <md-td>部门下还有成员，不可停用</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221350</md-td>
-  <md-td>Department has child, can not disable department</md-td>
-  <md-td>部门下还有子部门，不可停用</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221351</md-td>
-  <md-td>Department parent is disabled, can not enable</md-td>
-  <md-td>父部门为停用，不可启用当前部门</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>2221352</md-td>
-  <md-td>Department parent is disabled</md-td>
-  <md-td>父部门为停用状态，请先启用父部门。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

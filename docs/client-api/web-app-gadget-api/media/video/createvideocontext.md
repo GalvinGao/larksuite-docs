@@ -20,146 +20,37 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uITMx4iMxEjLyETM/create
 创建 `VideoContext` 实例，通过 id 跟一个 `video` 组件绑定，操作对应的 `video` 组件。
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V4.3.0+</md-version></md-td>
-      <md-td><md-version>V4.3.0+</md-version></md-td>
-      <md-td><md-td><md-version>V6.1.0+</md-version></md-td></md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/component/pages/video/video" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V4.3.0+</md-version> | <md-version>V4.3.0+</md-version> | <md-version>V6.1.0+</md-version> | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/component/pages/video/video" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 ## 输入
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 20%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 10%;">
-                必填
-            </md-th>
-            <md-th style="width: 10%;">
-                默认值
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                id
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                video 组件 id
 
-**示例值**：myVideo
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                component
-            </md-td>
-            <md-td>
-                object
-            </md-td>
-            <md-td>
-                否
-            </md-td>
-            <md-td></md-td>
-            <md-td>
-                在自定义组件下，当前组件实例的this，以操作组件内 video 组件
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| id | string | 是 |  | video 组件 id<br>**示例值**：myVideo |
+| component | object | 否 |  | 在自定义组件下，当前组件实例的this，以操作组件内 video 组件 |
+
 
 
 ## 输出
 
 返回值：`VideoContext`，该对象的方法列表参见下表：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-    <md-td>[VideoContext.play](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/play)</md-td>
-    <md-td>播放视频</md-td>
-  </md-tr>
-<md-tr>
-    <md-td>[VideoContext.pause](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/pause)</md-td>
-    <md-td>暂停视频</md-td>
-  </md-tr>
-<md-tr>
-    <md-td>[VideoContext.stop](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/stop)</md-td>
-    <md-td>停止视频</md-td>
-  </md-tr>
-<md-tr>
-    <md-td>[VideoContext.seek](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/seek)</md-td>
-    <md-td>跳转到指定位置</md-td>
-  </md-tr>
-<md-tr>
-    <md-td>[VideoContext.requestFullScreen](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/requestfullscreen)</md-td>
-    <md-td>进入全屏</md-td>
-  </md-tr>
-<md-tr>
-    <md-td>[VideoContext.exitFullScreen](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/exitfullscreen)</md-td>
-    <md-td>退出全屏</md-td>
-  </md-tr>
-  <md-tr>
-    <md-td>[VideoContext.playbackRate](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/playbackrate)</md-td>
-    <md-td>设置视频倍速播放</md-td>
-  </md-tr>
-</md-tbody>
-</md-table>
-:::
+| 方法 | 介绍 |
+| --- | --- |
+| [VideoContext.play](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/play) | 播放视频 |
+| [VideoContext.pause](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/pause) | 暂停视频 |
+| [VideoContext.stop](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/stop) | 停止视频 |
+| [VideoContext.seek](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/seek) | 跳转到指定位置 |
+| [VideoContext.requestFullScreen](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/requestfullscreen) | 进入全屏 |
+| [VideoContext.exitFullScreen](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/exitfullscreen) | 退出全屏 |
+| [VideoContext.playbackRate](/document/uYjL24iN/uITMx4iMxEjLyETM/videocontext/playbackrate) | 设置视频倍速播放 |
+
 
 ## 示例代码
 :::html

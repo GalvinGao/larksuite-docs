@@ -44,89 +44,22 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/do
 - 获取内部群信息时，调用当前接口的用户或者机器人必须与对应群组在同一租户下。
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/docx/v1/chats/:chat_id/announcement</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>GET</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[20 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="im:chat.announcement:read" desc="查看群公告信息" support_app_types="custom,isv" tags="">查看群公告信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/docx/v1/chats/:chat_id/announcement |
+| HTTP Method | GET |
+| 接口频率限制 | [20 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="im:chat.announcement:read" desc="查看群公告信息" support_app_types="custom,isv" tags="">查看群公告信息</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -429,141 +362,25 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/do
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1770001</md-td>
-  <md-td>invalid param</md-td>
-  <md-td>参数错误，参考接口文档提供的参数描述，检查输入参数是否有误。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 1770001 | invalid param | 参数错误，参考接口文档提供的参数描述，检查输入参数是否有误。 |
+| 404 | 1770002 | not found | 群公告不存在，请检查传入的 chat_id 是否正确。 |
+| 400 | 1772001 | Chat announcement can NOT be found in chat information. | 群公告信息异常。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D) |
+| 400 | 1772002 | Operator and chat can NOT be in different tenants. | 操作内部群时，操作者和被操作的群组必须在同一租户下。请检查当前调用身份是否和群组属于同一租户。 |
+| 400 | 1772003 | Operator can NOT be out of the chat. | 操作者不在群组中。你需要将当前调用 API 的应用或用户[加入待操作的群组](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/create)后重试。 |
+| 400 | 1772004 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 当前被操作的群为外部群，暂不支持操作外部群。 |
+| 400 | 1772025 | Bot ability is not activated. | 应用未启用机器人能力。你需要登录[开发者后台](https://open.larksuite.com/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 1772006 | announcement type is not supported | 除「获取群公告基本信息」接口，其它新版群公告接口均无法操作 doc 类型的群公告，如需操作 doc 类型群公告请参考「[旧版群公告](/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat/chat-announcement/intro)」接口。 |
+| 400 | 1772034 | The app is unavailable or inactivated by the tenant. | 应用在本租户下未安装或未启用。需要先安装应用，再使用应用调用接口。 |
+| 403 | 1770032 | forbidden | 操作者没有群公告的阅读或编辑权限。你需要为当前调用 API 的应用或用户添加文档阅读或编辑权限后重试。 |
+| 500 | 1771001 | server internal error | 服务器内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D) |
+| 500 | 1771002 | gateway server internal error | 服务器内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D) |
+| 500 | 1771003 | gateway marshal error | 服务序列化解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D) |
+| 500 | 1771004 | gateway unmarshal error | 服务反序列化解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D) |
+| 503 | 1771005 | system under maintenance | 系统服务正在维护中 |
 
-
-<md-tr>
-  <md-td>404</md-td>
-  <md-td>1770002</md-td>
-  <md-td>not found</md-td>
-  <md-td>群公告不存在，请检查传入的 chat_id 是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772001</md-td>
-  <md-td>Chat announcement can NOT be found in chat information.</md-td>
-  <md-td>群公告信息异常。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772002</md-td>
-  <md-td>Operator and chat can NOT be in different tenants.</md-td>
-  <md-td>操作内部群时，操作者和被操作的群组必须在同一租户下。请检查当前调用身份是否和群组属于同一租户。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772003</md-td>
-  <md-td>Operator can NOT be out of the chat.</md-td>
-  <md-td>操作者不在群组中。你需要将当前调用 API 的应用或用户[加入待操作的群组](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-members/create)后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772004</md-td>
-  <md-td>The operator or invited bots does NOT have the authority to manage external chats without the scope.</md-td>
-  <md-td>当前被操作的群为外部群，暂不支持操作外部群。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772025</md-td>
-  <md-td>Bot ability is not activated.</md-td>
-  <md-td>应用未启用机器人能力。你需要登录[开发者后台](https://open.larksuite.com/app)，在应用详情页的 **应用能力** > **添加应用能力** 页面内，添加 **机器人** 能力，并发布应用使配置生效。具体操作参见[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772006</md-td>
-  <md-td>announcement type is not supported</md-td>
-  <md-td>除「获取群公告基本信息」接口，其它新版群公告接口均无法操作 doc 类型的群公告，如需操作 doc 类型群公告请参考「[旧版群公告](/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat/chat-announcement/intro)」接口。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>1772034</md-td>
-  <md-td>The app is unavailable or inactivated by the tenant.</md-td>
-  <md-td>应用在本租户下未安装或未启用。需要先安装应用，再使用应用调用接口。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>1770032</md-td>
-  <md-td>forbidden</md-td>
-  <md-td>操作者没有群公告的阅读或编辑权限。你需要为当前调用 API 的应用或用户添加文档阅读或编辑权限后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771001</md-td>
-  <md-td>server internal error</md-td>
-  <md-td>服务器内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771002</md-td>
-  <md-td>gateway server internal error</md-td>
-  <md-td>服务器内部错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771003</md-td>
-  <md-td>gateway marshal error</md-td>
-  <md-td>服务序列化解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>500</md-td>
-  <md-td>1771004</md-td>
-  <md-td>gateway unmarshal error</md-td>
-  <md-td>服务反序列化解析错误。请重试，若仍无法解决请咨询[技术支持](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>503</md-td>
-  <md-td>1771005</md-td>
-  <md-td>system under maintenance</md-td>
-  <md-td>系统服务正在维护中</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 更多错误码信息，参见[通用错误码](/document/ukTMukTMukTM/ugjM14COyUjL4ITN)。
 

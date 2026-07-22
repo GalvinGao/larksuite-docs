@@ -162,101 +162,19 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uYjNwUjL2YDM14iN2AT
     
 请求体参数说明如下表所示。
     
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 25%">参数</md-th>
-<md-th style="width: 25%">类型</md-th>
-<md-th style="width: 50%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>open_id</md-td>
-<md-td>String</md-td>
-<md-td>
-用户的 open_id。关于用户 open_id、user_id 的介绍，可参见[用户身份概述](/document/home/user-identity-introduction/introduction)。
-</md-td>
-</md-tr>
+| 参数 | 类型 | 描述 |
+| --- | --- | --- |
+| open_id | String | 用户的 open_id。关于用户 open_id、user_id 的介绍，可参见[用户身份概述](/document/home/user-identity-introduction/introduction)。 |
+| user_id | String | 用户的 user_id。 |
+| tenant_key | String | 租户标识。参数介绍可参见[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。 |
+| open_message_id | String | 消息 ID。 |
+| token | String | 刷新凭证。服务端可凭此 token 在 30 分钟内更新消息卡片（最多可更新两次）。 |
+| action | JSON Object | 交互信息。 |
+| ∟ value | JSON Object | 交互组件的 `value` 字段值（`key-value` 格式）。 |
+| ∟ tag | String | 交互组件的标识，即组件的 `tag` 字段值。可能值：<br>- date_picker：日期选择器<br>- picker_time：时间选择器<br>- picker_datetime：日期时间选择器<br>- overflow：折叠按钮组<br>- select_static：列表选择器的自定义选项模式<br>- select_person：列表选择器的选人模式<br>- button：按钮 |
+| ∟ option | String | 交互组件选项参数（`option`）的回调参数值。<br>折叠按钮组、列表选择器、日期选择器会返回该参数。按钮组件不包含 `option` 参数，不会返回该字段值。 |
 
-<md-tr>
-<md-td>user_id</md-td>
-<md-td>String</md-td>
-<md-td>
-用户的 user_id。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>tenant_key</md-td>
-<md-td>String</md-td>
-<md-td>
-租户标识。参数介绍可参见[通用参数](/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>open_message_id	</md-td>
-<md-td>String</md-td>
-<md-td>
-消息 ID。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>token</md-td>
-<md-td>String</md-td>
-<md-td>
-刷新凭证。服务端可凭此 token 在 30 分钟内更新消息卡片（最多可更新两次）。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>action</md-td>
-<md-td>JSON Object</md-td>
-<md-td>
-交互信息。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td> ∟ value</md-td>
-<md-td>JSON Object</md-td>
-<md-td>
-交互组件的 `value` 字段值（`key-value` 格式）。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td> ∟ tag</md-td>
-<md-td>String</md-td>
-<md-td>
-交互组件的标识，即组件的 `tag` 字段值。可能值：
-- date_picker：日期选择器
-- picker_time：时间选择器
-- picker_datetime：日期时间选择器
-- overflow：折叠按钮组
-- select_static：列表选择器的自定义选项模式
-- select_person：列表选择器的选人模式
-- button：按钮
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td> ∟ option</md-td>
-<md-td>String</md-td>
-<md-td>
-交互组件选项参数（`option`）的回调参数值。
-
-折叠按钮组、列表选择器、日期选择器会返回该参数。按钮组件不包含 `option` 参数，不会返回该字段值。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::    
    
 `open_id` ，`user_id` 和 `tenant_key` 的区别：<br> 
 - `tenant_key`：租户的唯一标识。

@@ -24,69 +24,21 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 :::
 
 ## 可用性说明
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>权限要求</md-th>
-<md-th>视图可用说明</md-th>
-<md-th>平台可用</md-th>
-<md-th>场景</md-th></md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>可写</md-td>
-<md-td>正文小组件</md-td>
-<md-td>PC</md-td>
-<md-td>演示模式</md-td>
-</md-tr></md-tbody>
-</md-table>
-:::
+
+| 权限要求 | 视图可用说明 | 平台可用 | 场景 |
+| --- | --- | --- | --- |
+| 可写 | 正文小组件 | PC | 演示模式 |
+
 
 
 ## 输入(传入的是个对象)
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th></md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>width</md-td>
-<md-td>number</md-td>
-<md-td>否</md-td>
-<md-td>设置的宿主宽度</md-td>
-</md-tr>
-<md-tr>
-<md-td>height</md-td>
-<md-td>number</md-td>
-<md-td>否</md-td>
-<md-td>设置的宿主高度</md-td>
-</md-tr>
-<md-tr>
-<md-td>resizeType</md-td>
-<md-td>
-- 'free' 
-- 'proportional' 
-- 'horizontal' 
-- 'vertical'
-- 'none'
-</md-td>
-<md-td>否</md-td>
-<md-td>设置的宿主resize类型
-- 'free' : 自由resize，能随意缩放应用
-- 'proportional'：比例resize，只能对角按比例缩放
-- 'horizontal' ：水平resize，只能在水平方向缩放
-- 'vertical'：垂直resize，只能在垂直方向缩放
-- 'none'：不能缩放当resizeType是'none'时宽度则自动撑满文档
-</md-td>
-</md-tr></md-tbody>
-</md-table>
-:::
+
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| width | number | 否 | 设置的宿主宽度 |
+| height | number | 否 | 设置的宿主高度 |
+| resizeType | - 'free'<br>- 'proportional'<br>- 'horizontal'<br>- 'vertical'<br>- 'none' | 否 | 设置的宿主resize类型<br>- 'free' : 自由resize，能随意缩放应用<br>- 'proportional'：比例resize，只能对角按比例缩放<br>- 'horizontal' ：水平resize，只能在水平方向缩放<br>- 'vertical'：垂直resize，只能在垂直方向缩放<br>- 'none'：不能缩放当resizeType是'none'时宽度则自动撑满文档 |
+
 
 ## 输出
 

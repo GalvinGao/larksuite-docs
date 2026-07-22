@@ -45,37 +45,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEzM4YjLxMDO24SMzgjN
 
 为了兼顾安全性和便捷性，网页应用的鉴权策略经过了多个版本的迭代。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:45%">版本</md-th>
-<md-th style="width:55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 版本 | 说明 |
+| --- | --- |
+| 容器级别的鉴权策略（Lark版本 <  V4.0）</md-td> | 网页容器简单来说是网页所在的环境，从客户端视角来看：<br>- Android 端：一个 Activity 对应一个容器。<br>- iOS 端：一个 ViewController 对应一个容器。鉴权信息作用域为网页应用容器，即容器内只需要鉴权一次，便可在应用容器的生命周期内有效。 |
+| URL 级别的鉴权策略（V4.0 <= Lark版本 < V5.1）</md-td> | 鉴权信息作用域为 URL，URL 改变后需要重新鉴权。 |
+| 染色级别的鉴权策略（Lark版本 >= V5.1 ） | 在 URL 的基础上，增加了染色机制，即只要在当前页面的回退页面栈中出现过当前页面的父路径，且该父路径鉴权通过包含应用鉴权信息，则该页面就可以被染上同样的应用鉴权信息。 |
 
-<md-tr>
-<md-td>容器级别的鉴权策略（Lark版本 <  V4.0）</md-td>
-<md-td>网页容器简单来说是网页所在的环境，从客户端视角来看：
-
-- Android 端：一个 Activity 对应一个容器。
-- iOS 端：一个 ViewController 对应一个容器。鉴权信息作用域为网页应用容器，即容器内只需要鉴权一次，便可在应用容器的生命周期内有效。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>URL 级别的鉴权策略（V4.0 <= Lark版本 < V5.1）</md-td>
-<md-td>鉴权信息作用域为 URL，URL 改变后需要重新鉴权。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>染色级别的鉴权策略（Lark版本 >= V5.1 ）</md-td>
-<md-td>在 URL 的基础上，增加了染色机制，即只要在当前页面的回退页面栈中出现过当前页面的父路径，且该父路径鉴权通过包含应用鉴权信息，则该页面就可以被染上同样的应用鉴权信息。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### 示例一
 
@@ -83,44 +58,13 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEzM4YjLxMDO24SMzgjN
 - pathA 指 http://www.example.com/home
 - pathB 指 http://www.example.com/detail
   
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">鉴权策略</md-th>
-<md-th style="width:25%">打开 pathA</md-th>
-<md-th style="width:55%">打开 pathB</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
 
-<md-tr>
-<md-td>容器级别</md-td>
-<md-td>获得鉴权信息 a1</md-td>
-<md-td>仍可获得鉴权信息 a1。
+| 鉴权策略 | 打开 pathA | 打开 pathB |
+| --- | --- | --- |
+| 容器级别 | 获得鉴权信息 a1 | 仍可获得鉴权信息 a1。<br>原因：在同一容器生命周期内，因此仍然可以获得鉴权信息。 |
+| URL 级别 | 获得鉴权信息 a1 | 不能获得鉴权，需要重新对页面鉴权。<br>原因：页面 URL 发生了变化，因此需要重新鉴权。 |
+| 染色级别 | 获得鉴权信息 a1 | 不能获得鉴权，需要重新对页面鉴权。<br>原因：pathB 的回退页面栈中不包含 pathB 的父路径，不满足染色条件，因此需要重新鉴权。 |
 
-原因：在同一容器生命周期内，因此仍然可以获得鉴权信息。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>URL 级别</md-td>
-<md-td>获得鉴权信息 a1</md-td>
-<md-td>不能获得鉴权，需要重新对页面鉴权。
-
-原因：页面 URL 发生了变化，因此需要重新鉴权。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>染色级别</md-td>
-<md-td>获得鉴权信息 a1</md-td>
-<md-td>不能获得鉴权，需要重新对页面鉴权。
-
-原因：pathB 的回退页面栈中不包含 pathB 的父路径，不满足染色条件，因此需要重新鉴权。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 
 ### 示例二
@@ -129,44 +73,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEzM4YjLxMDO24SMzgjN
 - pathA 指 http://www.example.com/home
 - pathC 指 http://www.example.com/home/route
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:20%">鉴权策略</md-th>
-<md-th style="width:25%">打开 pathA</md-th>
-<md-th style="width:55%">打开 pathC</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 鉴权策略 | 打开 pathA | 打开 pathC |
+| --- | --- | --- |
+| 容器级别 | 获得鉴权信息 a1 | 仍可获得鉴权信息 a1。<br>原因：在同一个容器生命周期内，因此仍然可以获得鉴权信息。 |
+| URL 级别 | 获得鉴权信息 a1 | 不能获得鉴权，需要重新对页面鉴权。<br>原因：页面 URL 发生了变化，因此需要重新鉴权。 |
+| 染色级别 | 获得鉴权信息 a1 | 仍可获得鉴权信息 a1。<br>原因：pathC 的回退页面栈中包含 pathC 的父路径 pathA，因此仍然可以获得 pathA 的鉴权信息。 |
 
-<md-tr>
-<md-td>容器级别</md-td>
-<md-td>获得鉴权信息 a1</md-td>
-<md-td>仍可获得鉴权信息 a1。
-
-原因：在同一个容器生命周期内，因此仍然可以获得鉴权信息。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>URL 级别</md-td>
-<md-td>获得鉴权信息 a1</md-td>
-<md-td>不能获得鉴权，需要重新对页面鉴权。
-
-原因：页面 URL 发生了变化，因此需要重新鉴权。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>染色级别</md-td>
-<md-td>获得鉴权信息 a1</md-td>
-<md-td>仍可获得鉴权信息 a1。
-
-原因：pathC 的回退页面栈中包含 pathC 的父路径 pathA，因此仍然可以获得 pathA 的鉴权信息。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 :::note
 所有鉴权策略均需确认容器是否唯一，即在网页应用内是否又开启了新容器。若开启了新容器，则需重新调用 config 接口进行鉴权。
@@ -187,188 +99,34 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uEzM4YjLxMDO24SMzgjN
 
 ### [Errno错误码](/document/uYjL24iN/uAjMuAjMuAjM/errno)
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">errno</md-th>
-<md-th style="width:40%">errString</md-th>
-<md-th style="width:45%">描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| errno | errString | 描述 |
+| --- | --- | --- |
+| 102 | Internal error | 内部错误，通常是应用容器发生了某些异常。 |
+| 104 | Invalid parameter | 参数错误，参考下文 errorCode 错误码表中的 1012 错误码。 |
+| 305 | Network failure | 网络失败。 |
+| 2601001 | Server-side data exception | 服务端数据异常，常见于服务端宕机等场景。 |
+| 2601002 | Authentication failed. %s (error code: %s) | 鉴权失败，按照下文 errorCode 错误码表，进一步排查。 |
 
-<md-tr>
-<md-td>102</md-td>
-<md-td>Internal error</md-td>
-<md-td>内部错误，通常是应用容器发生了某些异常。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>104</md-td>
-<md-td>Invalid parameter</md-td>
-<md-td>参数错误，参考下文 errorCode 错误码表中的 1012 错误码。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>305</md-td>
-<md-td>Network failure</md-td>
-<md-td>网络失败。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>2601001</md-td>
-<md-td>Server-side data exception</md-td>
-<md-td>服务端数据异常，常见于服务端宕机等场景。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>2601002</md-td>
-<md-td>Authentication failed. %s (error code: %s)</md-td>
-<md-td>鉴权失败，按照下文 errorCode 错误码表，进一步排查。</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ### errorCode 错误码
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width:15%">错误码</md-th>
-<md-th style="width:25%">描述</md-th>
-<md-th style="width:60%">排查建议</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 错误码 | 描述 | 排查建议 |
+| --- | --- | --- |
+| 1012 | 参数类型错误 | 根据下面的参数校验规则，包括类型校验与值校验，进行自检。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/6fee21a7237ef2c0a7ee5531736d4a14_P81ZwOh2sW.png?height=488&lazyload=true&width=1172) |
+| 10001 | 网络请求失败 | 稍后重试。 |
+| 333441 | 签名错误 | 签名错误是指客户端将用户构造的 signature 字段传递至服务端验证时，与服务端构造的 signature 不一致，所以服务端会认为该签名不合法。<br>![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/fe6c7b09105c16b704c444ce9ff634bf_eA2pblbx9M.png?height=393&lazyload=true&width=1113)<br>可能原因：<br>- 构建的参数不一致。<br>- 生成 verifyStr 规则错误。<br>- sha1 算法出错。<br>排查建议：<br>- 确认签名算法为 sha1。<br>- 确认 config 接口内的 nonceStr 参数名为驼峰写法。<br>- 确认 config 接口内的 nonceStr、timestamp 参数与服务端生成签名时的 noncestr、timestamp 参数一致。<br>- 确认 config 接口内的 appid 参数与获取 access_token 时的 appid 参数一致。<br>- 确认 URL 是页面完整的 URL（请在当前页面`alert(location.href.split('#')[0])`确认），包括`http(s)://`部分，以及`?`后面的 GET 参数部分，但不包括`'#'(hash)`后面的部分。<br>- 确保缓存了 access_token 和 jsapi_ticket。<br>- 如果是单页面应用，且使用 react-router 或 vue-router 等（类似 pushState、replaceState）进行页面跳转时（即 vue-router 的 history 模式或者 react-router 的 browserHistory），可以尝试将最后一次不用 vue-router 或者 react-router 跳转的页面 URL 传到当前页面进行鉴权，该方式需要根据实际情况进行处理。 |
+| 333448 | 页面不在安全域名内 | 应用开发者需要在 **开发者后台 > 应用详情页 > 安全设置 > H5可信域名** 中检查需要调用 JSAPI 接口的页面所在域名。 |
+| 333449 | 应用不可见 | 应用对该用户没有可见性，应用开发者需要在 **开发者后台 > 应用详情页 > 版本管理与发布 > 创建版本 > 可用范围** 中配置可见性。 |
+| 1014 | 网络异常错误 | 检查设备网络。 |
+| \- | Android 无法调用相关API，提示 find no handler 等 | Lark V4.0 版本之前（不包含 V4.0）仅支持在工作台打开网页应用，如果在非工作台打开网页应用需在 URL 后增加`app_id=xxx`参数信息。 |
+| 10002 | 网络请求返回数据格式错误 | \- |
+| 333430 | userId 或者 appId 不合法 | \- |
+| 333440 | app 不存在 | 前往 **开发者后台 > 应用详情页 > 凭证与基础信息** 检查 appId 是否正确。 |
+| 333442 | app 没找到有效的 jsapi_ticket | 检查 config 中的 appid 与用来获取 jsapi_ticket 的 appid 一致。 |
+| 333443 | 签名重复 | 10 分钟内再次验签，请 10 分钟后重试。 |
+| 333444 | 签名过期 | 签名有效期为 10 分钟，每次调用 config 前重新计算签名，不建议缓存签名。 |
+| 333445 | JSAPI 未授权 | 调用 Config 接口时，在参数 jsApiList 里添加相应 API。 |
+| 333446 | JSAPI 不存在 | 前往 [H5 JSAPI 总览](/document/uYjL24iN/uMTMuMTMuMTM/) 查阅 JSAPI，确认是否写错。 |
+| 333447 | 安全域名未设置 | 应用开发者需要在 **开发者后台 > 应用详情页 > 安全设置 > H5可信域名** 中设置需要调用 JSAPI 接口的页面所在域名。 |
+| 9999169x | invalid session 用户登录态校验失败，x=[1-4] | \- |
 
-<md-tr>
-<md-td>1012</md-td>
-<md-td>参数类型错误</md-td>
-<md-td>根据下面的参数校验规则，包括类型校验与值校验，进行自检。
-
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/6fee21a7237ef2c0a7ee5531736d4a14_P81ZwOh2sW.png?height=488&lazyload=true&width=1172)
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>10001</md-td>
-<md-td>网络请求失败</md-td>
-<md-td>稍后重试。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333441</md-td>
-<md-td>签名错误</md-td>
-<md-td>签名错误是指客户端将用户构造的 signature 字段传递至服务端验证时，与服务端构造的 signature 不一致，所以服务端会认为该签名不合法。
-
-![image.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/fe6c7b09105c16b704c444ce9ff634bf_eA2pblbx9M.png?height=393&lazyload=true&width=1113)
-
-可能原因：
-
-- 构建的参数不一致。
-- 生成 verifyStr 规则错误。
-- sha1 算法出错。
-
-排查建议：
-  
-- 确认签名算法为 sha1。
-- 确认 config 接口内的 nonceStr 参数名为驼峰写法。
-- 确认 config 接口内的 nonceStr、timestamp 参数与服务端生成签名时的 noncestr、timestamp 参数一致。
-- 确认 config 接口内的 appid 参数与获取 access_token 时的 appid 参数一致。
-- 确认 URL 是页面完整的 URL（请在当前页面`alert(location.href.split('#')[0])`确认），包括`http(s)://`部分，以及`?`后面的 GET 参数部分，但不包括`'#'(hash)`后面的部分。
-- 确保缓存了 access_token 和 jsapi_ticket。
-- 如果是单页面应用，且使用 react-router 或 vue-router 等（类似 pushState、replaceState）进行页面跳转时（即 vue-router 的 history 模式或者 react-router 的 browserHistory），可以尝试将最后一次不用 vue-router 或者 react-router 跳转的页面 URL 传到当前页面进行鉴权，该方式需要根据实际情况进行处理。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333448</md-td>
-<md-td>页面不在安全域名内</md-td>
-<md-td>应用开发者需要在 **开发者后台 > 应用详情页 > 安全设置 > H5可信域名** 中检查需要调用 JSAPI 接口的页面所在域名。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333449</md-td>
-<md-td>应用不可见</md-td>
-<md-td>应用对该用户没有可见性，应用开发者需要在 **开发者后台 > 应用详情页 > 版本管理与发布 > 创建版本 > 可用范围** 中配置可见性。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>1014</md-td>
-<md-td>网络异常错误</md-td>
-<md-td>检查设备网络。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>\-</md-td>
-<md-td>Android 无法调用相关API，提示 find no handler 等</md-td>
-<md-td>Lark V4.0 版本之前（不包含 V4.0）仅支持在工作台打开网页应用，如果在非工作台打开网页应用需在 URL 后增加`app_id=xxx`参数信息。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>10002</md-td>
-<md-td>网络请求返回数据格式错误</md-td>
-<md-td>\-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333430</md-td>
-<md-td>userId 或者 appId 不合法</md-td>
-<md-td>\-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333440</md-td>
-<md-td>app 不存在</md-td>
-<md-td>前往 **开发者后台 > 应用详情页 > 凭证与基础信息** 检查 appId 是否正确。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333442</md-td>
-<md-td>app 没找到有效的 jsapi_ticket</md-td>
-<md-td>检查 config 中的 appid 与用来获取 jsapi_ticket 的 appid 一致。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333443</md-td>
-<md-td>签名重复</md-td>
-<md-td>10 分钟内再次验签，请 10 分钟后重试。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333444</md-td>
-<md-td>签名过期</md-td>
-<md-td>签名有效期为 10 分钟，每次调用 config 前重新计算签名，不建议缓存签名。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333445</md-td>
-<md-td>JSAPI 未授权</md-td>
-<md-td>调用 Config 接口时，在参数 jsApiList 里添加相应 API。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333446</md-td>
-<md-td>JSAPI 不存在</md-td>
-<md-td>前往 [H5 JSAPI 总览](/document/uYjL24iN/uMTMuMTMuMTM/) 查阅 JSAPI，确认是否写错。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>333447</md-td>
-<md-td>安全域名未设置</md-td>
-<md-td>应用开发者需要在 **开发者后台 > 应用详情页 > 安全设置 > H5可信域名** 中设置需要调用 JSAPI 接口的页面所在域名。</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>9999169x</md-td>
-<md-td>invalid session 用户登录态校验失败，x=[1-4]</md-td>
-<md-td>\-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::

@@ -38,118 +38,30 @@ token 有效期为 2 小时，在此期间调用该接口 token 不会改变。�
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/auth/v3/tenant_access_token</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            无
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/auth/v3/tenant_access_token |
+| HTTP Method | POST |
+| 支持的应用类型 | <md-app-support types="isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | 无 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 18%;">名称</md-th>
-      <md-th style="width: 15%;">类型</md-th>
-       <md-th style="width: 15%;">必填</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
+
 
 
 
 ### 请求体
 
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| <md-text type="field-name" >app_access_token</md-text> | <md-text type="field-type" >string</md-text> | 是 | 应用授权凭证<br>**示例值**："a-32bd8551db2f081cbfd26293f27516390b9feb04" |
+| <md-text type="field-name" >tenant_key</md-text> | <md-text type="field-type" >string</md-text> | 是 | 企业标识，两种获取方式：<br>1. 企业开通应用时由平台方推送给应用，具体可参考[首次启用应用](/document/uAjLw4CM/ukTMukTMukTM/application-v6/event/app-first-enabled)<br>2. 用户登录时返回，具体可参考[获取用户身份访问凭证](/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/get-)<br>**示例值**："73658811060f175d" |
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >app_access_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-	<md-td>
-	应用授权凭证
-
-**示例值**："a-32bd8551db2f081cbfd26293f27516390b9feb04"
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >tenant_key</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	是
-	</md-td>
-	<md-td>
-	企业标识，两种获取方式：<br>1. 企业开通应用时由平台方推送给应用，具体可参考[首次启用应用](/document/uAjLw4CM/ukTMukTMukTM/application-v6/event/app-first-enabled)<br>2. 用户登录时返回，具体可参考[获取用户身份访问凭证](/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/get-)
-
-**示例值**："73658811060f175d"
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 
@@ -169,71 +81,14 @@ token 有效期为 2 小时，在此期间调用该接口 token 不会改变。�
 
 
 ### 响应体
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >code</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	错误码，非 0 表示失败
-	</md-td>
-</md-tr>
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| <md-text type="field-name" >code</md-text> | <md-text type="field-type" >int</md-text> | 错误码，非 0 表示失败 |
+| <md-text type="field-name" >msg</md-text> | <md-text type="field-type" >string</md-text> | 错误描述 |
+| <md-text type="field-name" >tenant_access_token</md-text> | <md-text type="field-type" >string</md-text> | 访问 token |
+| <md-text type="field-name" >expire</md-text> | <md-text type="field-type" >int</md-text> | tenant_access_token 过期时间，单位: 秒 |
 
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >msg</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	错误描述
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >tenant_access_token</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	访问 token
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	<md-text type="field-name" >expire</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >int</md-text>
-	</md-td>
-	<md-td>
-	tenant_access_token 过期时间，单位: 秒
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

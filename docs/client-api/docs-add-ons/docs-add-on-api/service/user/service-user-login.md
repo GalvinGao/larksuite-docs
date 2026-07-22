@@ -29,25 +29,10 @@ await axios.post(`https://your_backend/login?code=${code}`)
 ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4b44a5d5a04f0fd9ed476a45f3e244c1_ZQok76130m.png?lazyload=true&width=1157&height=1280)
   
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>权限要求</md-th>
-<md-th>视图可用说明</md-th>
-<md-th>平台可用</md-th>
-<md-th>场景</md-th></md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>可读</md-td>
-<md-td>所有视图</md-td>
-<md-td>- PC
-- 移动端</md-td>
-<md-td>演示模式</md-td>
-</md-tr></md-tbody>
-</md-table>
-:::
+| 权限要求 | 视图可用说明 | 平台可用 | 场景 |
+| --- | --- | --- | --- |
+| 可读 | 所有视图 | - PC<br>- 移动端 | 演示模式 |
+
 
 
 ## 输入

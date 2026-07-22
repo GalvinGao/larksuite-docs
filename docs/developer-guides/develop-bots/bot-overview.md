@@ -25,86 +25,13 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot
 ![](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/78822c483c64bb5b3606cbd6b9712a57_Ou9gs61KSb.png?height=972&lazyload=true&maxWidth=600&width=1600)
 
 **以下提供一些常见机器人场景的开发教程，供你参考：**
-:::html
 
-<md-table>
+| 快速入门场景教学 |  |
+| --- | --- |
+| [机器人自动拉群报警](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-development-tutorial/introduction)<br>![14机器人自动拉群报警.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/69e9999ad015bca8e79c50f1229fbc61_pBAn6j9TCi.png?height=400&lazyload=true&width=752) | [向指定部门进行消息群发](/document/home/mass-messaging-to-designated-departments/introduction)<br>![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/e14bc2fd84ca3974597db8e371b92cca_WqZ1usQENO.png?height=400&lazyload=true&width=752) |
+| [新人入群欢迎机器人](/document/home/event-based-messaging/introduction)<br>![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/8c385d02b353ac4d5569a37b81156f77_7cEJornbRS.png?height=400&lazyload=true&width=752) | [基于会话的互动机器人](/document/home/interactive-session-based-robot/introduction)<br>![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/e2d3245e6c8b63b1b231d7fcc0b955d3_zoPIf8ryhR.png?height=400&lazyload=true&width=752) |
+| [互动型消息卡片发送（审批卡片）](/document/home/interactive-message-card-sending/introduction)<br>![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/45fe39340b4da08a5be99f35690a4972_JKOfgkOxJS.png?height=400&lazyload=true&width=752) |  |
 
-<md-thead>
-
-<md-tr>
-
-<md-th style="width: 50%;">快速入门场景教学</md-th>
-
-<md-th style="width: 50%;"></md-th>
-
-</md-tr>
-
-</md-thead>
-
-<md-tbody>
-
-<md-tr>
-
-<md-td>
-  [机器人自动拉群报警](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-development-tutorial/introduction)
-
-![14机器人自动拉群报警.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/69e9999ad015bca8e79c50f1229fbc61_pBAn6j9TCi.png?height=400&lazyload=true&width=752)
-
-  
-  </md-td>
-  
-
-<md-td>
-
-  [向指定部门进行消息群发](/document/home/mass-messaging-to-designated-departments/introduction)
-  
-![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/e14bc2fd84ca3974597db8e371b92cca_WqZ1usQENO.png?height=400&lazyload=true&width=752)
-
-</md-td>
-
-</md-tr>
-
-  
-  <md-tr>
-
-<md-td>
-[新人入群欢迎机器人](/document/home/event-based-messaging/introduction)
-![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/8c385d02b353ac4d5569a37b81156f77_7cEJornbRS.png?height=400&lazyload=true&width=752)
-
-  
-  </md-td>
-  
-
-<md-td>
-[基于会话的互动机器人](/document/home/interactive-session-based-robot/introduction)
-![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/e2d3245e6c8b63b1b231d7fcc0b955d3_zoPIf8ryhR.png?height=400&lazyload=true&width=752)
-
-</md-td>
-
-</md-tr>
-  
-  
-
-<md-tr>
-<md-td>
-[互动型消息卡片发送（审批卡片）](/document/home/interactive-message-card-sending/introduction)
-![13将企业组织架构同步到Larkcn.png](//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/45fe39340b4da08a5be99f35690a4972_JKOfgkOxJS.png?height=400&lazyload=true&width=752)
-
-  
-  </md-td>
-  
-
-<md-td>
-
-
-</md-td>
-
-</md-tr>
-</md-tbody>
-
-</md-table>
-
-:::
 
 
 # 二、机器人的开发类型

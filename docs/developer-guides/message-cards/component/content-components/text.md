@@ -34,49 +34,12 @@ source_url: https://open.larksuite.com/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3AT
 
 text 元素支持 plain_text（普通文本内容） 和 lark_md（支持部分 Markdown 语法的文本内容） 两种模式。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| tag | 是 | String | 文本元素的标签。两种模式的固定取值：<br>- plain_text：普通文本内容。<br>- lark_md：支持部分 Markdown 语法的文本内容。关于 Markdown 语法的详细介绍，可参见 [Markdown](/document/ukTMukTMukTM/uADOwUjLwgDM14CM4ATN#abc9b025)。 |
+| content | 是 | String | 文本内容。 |
+| lines | 否 | int | 内容显示行数。该字段仅支持 text 的 `plain_text` 模式，不支持 `lark_md` 模式。 |
 
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-文本元素的标签。两种模式的固定取值：
-- plain_text：普通文本内容。
-- lark_md：支持部分 Markdown 语法的文本内容。关于 Markdown 语法的详细介绍，可参见 [Markdown](/document/ukTMukTMukTM/uADOwUjLwgDM14CM4ATN#abc9b025)。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>
-文本内容。
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>lines</md-td>
-<md-td>否</md-td>
-<md-td>int</md-td>
-<md-td>
-内容显示行数。该字段仅支持 text 的 `plain_text` 模式，不支持 `lark_md` 模式。
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 ## lark_md 模式支持情况
 

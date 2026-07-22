@@ -21,28 +21,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 
 当前能力在不同Lark客户端的版本支持情况。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">是否需要鉴权</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>不需要</md-td>
-      <md-td><md-version>V5.15</md-version></md-td>
-      <md-td><md-version>V5.15</md-version></md-td>
-      <md-td>**X**</md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
+| 是否需要鉴权 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 不需要 | <md-version>V5.15</md-version> | <md-version>V5.15</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
+
 
 ## 注意事项
 
@@ -64,66 +46,11 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 	- 如果手机设备设置为锁定屏幕，则页面为竖屏。
 :::
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                参数名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                是否必填
-            </md-th>
-            <md-th style="width: 45%;">
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                name
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                固定取值：orientation
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                期望设定的屏幕方向。
+| 参数名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| name | String | 是 | 固定取值：orientation |
+| content | String | 是 | 期望设定的屏幕方向。<br>可选值：<br>- `default`：和系统展示方式保持一致。<br>- `portrait`：强制为竖屏。<br>- `landscape`：强制为横屏。 |
 
-可选值：
-              
-- `default`：和系统展示方式保持一致。
-              
-- `portrait`：强制为竖屏。
-              
-- `landscape`：强制为横屏。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 示例配置

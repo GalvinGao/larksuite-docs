@@ -18,74 +18,14 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat
 群成员是群组内成员（包括用户和机器人）的集合，用于描述群组和成员的关系。
 
 ## 字段说明
-:::html
-<md-table>
-  <md-thead>
-      <md-tr>
-      <md-th style="width: 40%;">名称</md-th>
-      <md-th style="width: 20%;">类型</md-th>
-      <md-th style="width: 30%;">描述</md-th>
-      </md-tr>
-  </md-thead>
-  <md-tbody>
 
+| 名称 | 类型 | 描述 |
+| --- | --- | --- |
+| &nbsp;<md-text type="field-name" >items</md-text> | <md-text type="field-type" >list_member\[\]</md-text> | member 列表 |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >member_id_type</md-text> | <md-text type="field-type" >string</md-text> | 成员的用户 ID 类型，取值为：`open_id`、`user_id`、`union_id`其中之一。 |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >member_id</md-text> | <md-text type="field-type" >string</md-text> | 成员的用户ID，ID值与 member_id_type 对应。<br>不同 ID 的说明参见 [用户相关的 ID 概念](/document/home/user-identity-introduction/introduction) |
+| &emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text> | <md-text type="field-type" >string</md-text> | 名字 |
 
-<md-tr>
-	<md-td>
-	&nbsp;<md-text type="field-name" >items</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >list_member\[\]</md-text>
-	</md-td>
-	<md-td>
-	member 列表
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >member_id_type</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	成员的用户 ID 类型，取值为：`open_id`、`user_id`、`union_id`其中之一。
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >member_id</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	成员的用户ID，ID值与 member_id_type 对应。
-
-不同 ID 的说明参见 [用户相关的 ID 概念](/document/home/user-identity-introduction/introduction)
-	</md-td>
-</md-tr>
-
-
-<md-tr>
-	<md-td>
-	&emsp;<span style="color: #8F959E">∟</span>&nbsp;<md-text type="field-name" >name</md-text>
-	</md-td>
-	<md-td>
-	<md-text type="field-type" >string</md-text>
-	</md-td>
-	<md-td>
-	名字
-	</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 ### 数据示例
 ```json

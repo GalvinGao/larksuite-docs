@@ -89,231 +89,29 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
 日期选择器组件的字段说明如下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 18%;">名称</md-th>
-<md-th style="width: 10%;">必填</md-th>
-<md-th>类型</md-th>
-<md-th>默认值</md-th>
-<md-th style="width: 50%;">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>组件的标签。日期选择器组件取固定值 `date_picker`。</md-td>
-</md-tr>
-  
-  
-<md-tr>
-      <md-td>element_id</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。</md-td></md-tr>
-      
-      
-  <md-tr>
-      <md-td>margin</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>0</md-td>
-      <md-td>组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：
-- 单值，如 "10px"，表示组件的四个外边距都为 10 px。
-- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。
-- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。</md-td>
-    </md-tr>
-  
-  
-  
-  
-  
-  
-  
-<md-tr>
-<md-td>name</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>空</md-td>
-<md-td>
-该日期选择器组件的唯一标识。当日期选择器内嵌在表单容器时，该属性生效，用于识别用户提交的数据属于哪个组件。
-  
-<strong>注意</strong>: 当日期选择器组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-required
-</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-日期的内容是否必选。当组件内嵌在表单容器中时，该属性可用。其它情况将报错或不生效。可取值：
-- true：日期必选。当用户点击表单容器的“提交”时，未填写日期，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。
-- false：日期选填。当用户点击表单容器的“提交”时，未填写日期，仍提交表单容器中的数据。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>disabled</md-td>
-<md-td>否</md-td>
-<md-td>Boolean</md-td>
-<md-td>false</md-td>
-<md-td>
-是否禁用该日期选择器。该属性仅支持Lark V7.4 及以上版本的客户端。可选值：
-- true：禁用日期选择器组件
-- false：日期选择器组件保持可用状态
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-placeholder
-</md-td>
-<md-td>否</md-td>
-<md-td>object</md-td>
-<md-td>/</md-td>
-<md-td>
-日期选择器组件内的占位文本。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ tag
-</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>
-占位提示标签。固定值为 plain_text。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-└ content
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>
-占位文本的内容，最多支持 100 个字符。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>
-width
-</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>
-日期选择器组件的宽度。支持以下枚举值：
-- default：默认宽度
-- fill：卡片最大支持宽度
-- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示
-</md-td>
-  
-  
-</md-tr>
-  
-  
-  
-   <md-tr>
-      <md-td>behaviors</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。</md-td>
-    </md-tr>
-  
-  
-  
-  
-   <md-tr>
-      <md-td>initial_date</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>日期选择器组件的初始选项值。格式为 `yyyy-MM-dd`。该配置将会覆盖 `placeholder` 配置的占位文本。</md-td>
-    </md-tr>
-      <md-tr>
-      <md-td>value</md-td>
-      <md-td>是</md-td>
-      <md-td>JSON</md-td>
-      <md-td>/</md-td>
-      <md-td>
-        设置交互的回传数据，当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。
-        示例值：
-```json
-"value":{
-    "key-1":Object-1,
-    "key-2":Object-2,
-    "key-3":Object-3,
-    ······
-}
-```
-      </md-td>
-    </md-tr>
-  <md-tr>
-<md-td>confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>
-二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
-  
-<strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。
-</md-td>
-</md-tr>
-  <md-tr>
-      <md-td>└ title</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗标题文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗标题的内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ text</md-td>
-      <md-td>是</md-td>
-      <md-td>Struct</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗的文本内容。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ tag</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>二次确认弹窗文本的标签。固定取值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ └ content</md-td>
-      <md-td>是</md-td>
-      <md-td>String</md-td>
-      <md-td>/</md-td>
-      <md-td>二次确认弹窗文本的具体内容。</md-td>
-    </md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 组件的标签。日期选择器组件取固定值 `date_picker`。 |
+| element_id | 否 | String | 空 | 操作组件的唯一标识。JSON 2.0 新增属性。用于在调用[组件相关接口](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)中指定组件。在同一张卡片内，该字段的值全局唯一。仅允许使用字母、数字和下划线，必须以字母开头，不得超过 20 字符。 |
+| margin | 否 | String | 0 | 组件的外边距。JSON 2.0 新增属性。值的取值范围为 [-99,99]px。可选值：<br>- 单值，如 "10px"，表示组件的四个外边距都为 10 px。<br>- 双值，如 "4px 0"，表示组件的上下外边距为 4 px，左右外边距为 0 px。使用空格间隔（边距为 0 时可不加单位）。<br>- 多值，如 "4px 0 4px 0"，表示组件的上、右、下、左的外边距分别为 4px，12px，4px，12px。使用空格间隔。 |
+| name | 否 | String | 空 | 该日期选择器组件的唯一标识。当日期选择器内嵌在表单容器时，该属性生效，用于识别用户提交的数据属于哪个组件。<br><strong>注意</strong>: 当日期选择器组件嵌套在表单容器中时，该字段必填且需在卡片全局内唯一。 |
+| required | 否 | Boolean | false | 日期的内容是否必选。当组件内嵌在表单容器中时，该属性可用。其它情况将报错或不生效。可取值：<br>- true：日期必选。当用户点击表单容器的“提交”时，未填写日期，则前端提示“有必填项未填写”，不会向开发者的服务端发起回传请求。<br>- false：日期选填。当用户点击表单容器的“提交”时，未填写日期，仍提交表单容器中的数据。 |
+| disabled | 否 | Boolean | false | 是否禁用该日期选择器。该属性仅支持Lark V7.4 及以上版本的客户端。可选值：<br>- true：禁用日期选择器组件<br>- false：日期选择器组件保持可用状态 |
+| placeholder | 否 | object | / | 日期选择器组件内的占位文本。 |
+| └ tag | 是 | String | plain_text | 占位提示标签。固定值为 plain_text。 |
+| └ content | 否 | String | / | 占位文本的内容，最多支持 100 个字符。 |
+| width | 否 | String | default | 日期选择器组件的宽度。支持以下枚举值：<br>- default：默认宽度<br>- fill：卡片最大支持宽度<br>- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示 |
+| behaviors | 是 | Struct | / | 配置交互类型和具体交互行为。详情参考[配置卡片交互](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/configuring-card-interactions)中 behaviors 的字段说明。 |
+| initial_date | 否 | String | 空 | 日期选择器组件的初始选项值。格式为 `yyyy-MM-dd`。该配置将会覆盖 `placeholder` 配置的占位文本。 |
+| value | 是 | JSON | / | 设置交互的回传数据，当用户点击交互组件的选项后，会将 value 的值返回给接收回调数据的服务器。后续你可以通过服务器接收的 value 值进行业务处理。该字段值仅支持 key-value 形式的 JSON 结构，且 key 为 String 类型。<br>示例值：<br><code>"value":{<br>    "key-1":Object-1,<br>    "key-2":Object-2,<br>    "key-3":Object-3,<br>    ······<br>}</code> |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗提示；只有用户点击确认后，才提交输入的内容。该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。<br><strong>注意</strong>：<code>confirm</code> 字段仅在用户点击包含提交属性的按钮时才会触发二次确认弹窗。 |
+| └ title | 是 | Struct | / | 二次确认弹窗标题。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| └ text | 是 | Struct | / | 二次确认弹窗的文本内容。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 `plain_text`。 |
+| └ └ content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
+
 
 ## 回调示例
 

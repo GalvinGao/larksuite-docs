@@ -18,51 +18,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 
 发送卡片后，支持在 14 天内更新卡片。你可参考本文档，根据实际业务场景，选择适合的更新卡片的方式。Lark卡片支持的更新方式如下表所示。
 
-:::html
+| 更新方式 | 适用场景 | 相关接口 |
+| --- | --- | --- |
+| 全量更新 | 适用于卡片内容差异较大的更新场景，如表单提交后更新为已提交卡片、AI 机器人的思考中卡片更新为答案卡片等。 | - [更新应用发送的消息卡片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)<br>- [延时更新消息卡片](/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)<br>- [全量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/update) |
+| 局部更新 | 适用于卡片中部分内容需要修改的场景。如 AI 机器人问答场景中，机器人回答过程中卡片新增更多组件、回答结束后删除“停止生成”按钮组件、用户点击赞踩反馈按钮后更新按钮图标。 | 卡片级：<br>- [更新卡片配置](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/settings)<br>- [批量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/batch_update)<br>组件级：<br>- [新增组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)<br>- [更新组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/update)<br>- [更新组件属性](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/patch)<br>- [删除组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/delete) |
+| 文本流式更新 | 适用于机器人生成答案的场景，“打字机”式返回文本内容，避免终端用户等待较长时间。 | [流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content) |
 
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 12%;">更新方式</md-th>
-      <md-th style="width: 40%;">适用场景</md-th>
-      <md-th style="width: 40%;">相关接口</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>全量更新</md-td>
-      <md-td>适用于卡片内容差异较大的更新场景，如表单提交后更新为已提交卡片、AI 机器人的思考中卡片更新为答案卡片等。</md-td>
-      <md-td>
-- [更新应用发送的消息卡片](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/patch)
-- [延时更新消息卡片](/document/ukTMukTMukTM/uMDO1YjLzgTN24yM4UjN)
-- [全量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/update)
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>局部更新</md-td>
-      <md-td>适用于卡片中部分内容需要修改的场景。如 AI 机器人问答场景中，机器人回答过程中卡片新增更多组件、回答结束后删除“停止生成”按钮组件、用户点击赞踩反馈按钮后更新按钮图标。</md-td>
-      <md-td>
-卡片级：
-- [更新卡片配置](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/settings)
-- [批量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/batch_update)
-
- 组件级：
-- [新增组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create)
-- [更新组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/update)
-- [更新组件属性](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/patch)
-- [删除组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/delete)
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>文本流式更新</md-td>
-      <md-td>适用于机器人生成答案的场景，“打字机”式返回文本内容，避免终端用户等待较长时间。</md-td>
-      <md-td>
-[流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content)
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
 
 
 ## 全量更新卡片

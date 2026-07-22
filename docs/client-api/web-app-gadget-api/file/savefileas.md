@@ -19,82 +19,20 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uQjN3UjL0YzN14CN2cTN
 
 ## 支持说明
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">应用能力</md-th>
-<md-th style="width: 20%;">Android</md-th>
-<md-th style="width: 20%;">iOS</md-th>
-<md-th style="width: 20%;">PC</md-th>
-<md-th style="width: 20%;">预览效果</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>小程序</md-td>
-<md-td>**X**</md-td>
-<md-td>**X**</md-td>
-<md-td><md-version>V3.9.0+</md-version></md-td>
-<md-td><md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-<md-tr>
-<md-td>网页应用</md-td>
-<md-td>**X**</md-td>
-<md-td>**X**</md-td>
-<md-td><md-version>V5.16.0+</md-version></md-td>
-<md-td>/</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **X** | **X** | <md-version>V3.9.0+</md-version> | <md-preview-app type="gadget" disable="true" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | <md-version>V5.16.0+</md-version> | / |
+
 
 ## 输入
 
 继承[标准对象输入](/document/uYjL24iN/ukzNy4SO3IjL5cjM)，扩展属性描述：
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">
-名称
-</md-th>
-<md-th style="width: 18%;">
-数据类型
-</md-th>
-<md-th style="width: 10%;">
-必填
-</md-th>
-<md-th style="width: 10%;">
-默认值
-</md-th>
-<md-th>
-描述
-</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>
-filePath
-</md-td>
-<md-td>
-string
-</md-td>
-<md-td>
-是
-</md-td>
-<md-td></md-td>
-<md-td>
-文件路径。**不支持网络地址**
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| filePath | string | 是 |  | 文件路径。**不支持网络地址**<br>**示例值**：ttfile://user/feishu.png |
 
-**示例值**：ttfile://user/feishu.png
-</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 ## 输出
 

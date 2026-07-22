@@ -31,29 +31,11 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integr
 
 以下示例以 claude-3.7-sonnet 为例，展示使用机器人 Demo 的效果：
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 10%;">示例</md-th>
-      <md-th style="width: 45%;">创建多维表格并添加指定列</md-th>
-      <md-th style="width: 45%;">获取文档内容</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>需求</md-td>
-      <md-td>帮我创建一个名为“项目任务”的多维表格，包含“任务名称”、“负责人”和“截止日期”这几列</md-td>
-      <md-td>请总结这篇文档的内容：[ 业务经营周报](https://www.feishu.cn/docx/EHumdbHVgoUMEixnAgOcQ2conXc)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>效果</md-td>
-      <md-td><img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4114e95781afcd29c5bd40179867d7fd_cSfCvUuqG1.gif"></md-td>
-      <md-td><img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/48cc00edd98f4e440de932d36fd3858e_MWxCYEpwUL.gif"></md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+| 示例 | 创建多维表格并添加指定列 | 获取文档内容 |
+| --- | --- | --- |
+| 需求 | 帮我创建一个名为“项目任务”的多维表格，包含“任务名称”、“负责人”和“截止日期”这几列 | 请总结这篇文档的内容：[ 业务经营周报](https://www.feishu.cn/docx/EHumdbHVgoUMEixnAgOcQ2conXc) |
+| 效果 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/4114e95781afcd29c5bd40179867d7fd_cSfCvUuqG1.gif"> | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/48cc00edd98f4e440de932d36fd3858e_MWxCYEpwUL.gif"> |
+
 
 ## 准备工作
 
@@ -75,101 +57,12 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/mcp_integr
 1. 点击创建 **企业自建应用**，填写应用的 **名称** 和 **应用描述**，点击 **创建**。
 1. 参考下表，配置应用。
 
-:::html
-    <md-table>
-      <md-thead>
-        <md-tr>
-          <md-th style="width: 20%;">配置项</md-th>
-          <md-th style="width: 50%;">操作步骤</md-th>
-          <md-th style="width: 30%;">图示</md-th>
-        </md-tr>
-      </md-thead>
-      <md-tbody>
-        <md-tr>
-          <md-td>
-            添加应用能力：机器人
-          </md-td>
-          <md-td>
-            在 <strong>应用能力 > 添加应用能力</strong> 页面，添加 <strong>机器人</strong> 能力。
-          </md-td>
-          <md-td>
-            <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ca00465debd90a1bd5217e0e26a207b4_DxkjJNpGfT.png" alt="">
-          </md-td>
-        </md-tr>
-<md-tr>
-<md-td>
-申请权限：
-- **应用身份权限**：应用发送消息的基本权限
-- **用户身份权限**：OpenAPI MCP 工具默认开通的 API 工具需要的用户身份权限
+| 配置项 | 操作步骤 | 图示 |
+| --- | --- | --- |
+| 添加应用能力：机器人 | 在 <strong>应用能力 > 添加应用能力</strong> 页面，添加 <strong>机器人</strong> 能力。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/ca00465debd90a1bd5217e0e26a207b4_DxkjJNpGfT.png" alt=""> |
+| 申请权限：<br>- **应用身份权限**：应用发送消息的基本权限<br>- **用户身份权限**：OpenAPI MCP 工具默认开通的 API 工具需要的用户身份权限 | 1. 在 <strong>开发配置</strong> > <strong>权限管理</strong> 页面，点击 <strong>批量导入/导出权限</strong> 按钮。<br>1. 在弹窗中粘贴以下权限，然后点击 <strong>下一步，确认新增权限</strong> > <strong>申请开通</strong>。<br><code>    {<br>        "scopes": {<br>            "tenant": [<br>                "im:message:send_as_bot",<br>                "im:message:readonly",<br>                "contact:user.id:readonly",<br>                "im:message.group_at_msg:readonly",<br>                "im:message.p2p_msg:readonly"<br>            ],<br>            "user": [<br>                "im:chat:read",<br>                "im:chat.members:read",<br>                "im:message:readonly",<br>                "wiki:wiki:readonly",<br>                "docx:document:readonly",<br>                "docx:document:create",<br>                "search:docs:read",<br>                "docs:document:import",<br>                "docs:document.media:upload",<br>                "docs:permission.member:create",<br>                "base:app:create",<br>                "base:table:create",<br>                "base:table:read",<br>                "base:field:read",<br>                "base:record:retrieve",<br>                "base:record:create",<br>                "base:record:update",<br>                "contact:user.id:readonly"<br>            ]<br>        }<br>    }</code><br>:::warning<br>如果你要开通的 **用户权限** 与以上权限不完全相同，你需同步修改示例代码 <code>nodejs/src/config/index.ts</code> 文件中的 **OAuth 授权范围**配置（见右图），确保开通的 <strong>用户权限</strong> 与代码中的 **OAuth 授权范围**保持一致。否则此处开通的用户权限将因鉴权失败无效。 | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f1a3ace614d785baa014df74e1d82b47_ogiaMA1MiM.png" alt=""><br><img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3146a985d3d0af40de9cc9bb29e84b26_b8YKQzz58t.png" alt=""> |
+| <strong>安全设置-重定向 URL</strong> | 1. 在左侧导航栏点击 <strong>安全设置</strong>。<br>1. 在 <strong>重定向 URL</strong> 区域，输入以下 URL 并点击 <strong>添加</strong>。<br><code>http://localhost:3000/callback</code> | <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/eb3439769ff3a3d1c5cd3b33e5b40c6a_Cv8wDjKmhP.png" alt=""> |
 
-</md-td>
-          <md-td>
- 1. 在 <strong>开发配置</strong> > <strong>权限管理</strong> 页面，点击 <strong>批量导入/导出权限</strong> 按钮。
- 1. 在弹窗中粘贴以下权限，然后点击 <strong>下一步，确认新增权限</strong> > <strong>申请开通</strong>。
-    
-
-    ```json
-    {
-        "scopes": {
-            "tenant": [
-                "im:message:send_as_bot",
-                "im:message:readonly",
-                "contact:user.id:readonly",
-                "im:message.group_at_msg:readonly",
-                "im:message.p2p_msg:readonly"
-            ],
-            "user": [
-                "im:chat:read",
-                "im:chat.members:read",
-                "im:message:readonly",
-                "wiki:wiki:readonly",
-                "docx:document:readonly",
-                "docx:document:create",
-                "search:docs:read",
-                "docs:document:import",
-                "docs:document.media:upload",
-                "docs:permission.member:create",
-                "base:app:create",
-                "base:table:create",
-                "base:table:read",
-                "base:field:read",
-                "base:record:retrieve",
-                "base:record:create",
-                "base:record:update",
-                "contact:user.id:readonly"
-            ]
-        }
-    }
-    ```     
-
-    :::warning
-    如果你要开通的 **用户权限** 与以上权限不完全相同，你需同步修改示例代码 <code>nodejs/src/config/index.ts</code> 文件中的 **OAuth 授权范围**配置（见右图），确保开通的 <strong>用户权限</strong> 与代码中的 **OAuth 授权范围**保持一致。否则此处开通的用户权限将因鉴权失败无效。
-
-           
-          </md-td>
-          <md-td>
-            <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/f1a3ace614d785baa014df74e1d82b47_ogiaMA1MiM.png" alt="">
-            <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/3146a985d3d0af40de9cc9bb29e84b26_b8YKQzz58t.png" alt="">
-          </md-td>
-        </md-tr>
-        <md-tr>
-          <md-td>
-            <strong>安全设置-重定向 URL</strong>
-          </md-td>
-          <md-td>
- 1. 在左侧导航栏点击 <strong>安全设置</strong>。
-1. 在 <strong>重定向 URL</strong> 区域，输入以下 URL 并点击 <strong>添加</strong>。
-```
-http://localhost:3000/callback
-```
-          </md-td>
-          <md-td>
-            <img src="//sf16-sg.larksuitecdn.com/obj/open-platform-opendoc-sg/eb3439769ff3a3d1c5cd3b33e5b40c6a_Cv8wDjKmhP.png" alt="">
-          </md-td>
-        </md-tr>
-      </md-tbody>
-    </md-table>
- :::
     
     
 ### 步骤二：下载示例代码并配置 .env 文件

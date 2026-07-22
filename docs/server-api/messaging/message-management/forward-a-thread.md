@@ -44,85 +44,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/im/v1/threads/:thread_id/forward</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="im:message" desc="获取与发送单聊、群组消息" support_app_types="custom,isv" tags="">获取与发送单聊、群组消息</md-perm>
-            <md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" support_app_types="custom,isv" tags="">以应用的身份发消息</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/im/v1/threads/:thread_id/forward |
+| HTTP Method | POST |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="im:message" desc="获取与发送单聊、群组消息" support_app_types="custom,isv" tags="">获取与发送单聊、群组消息</md-perm><br><md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" support_app_types="custom,isv" tags="">以应用的身份发消息</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -702,205 +639,33 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230001</md-td>
-  <md-td>Your request contains an invalid request parameter.</md-td>
-  <md-td>参数错误，请根据接口返回的错误信息并参考文档检查输入参数。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 230001 | Your request contains an invalid request parameter. | 参数错误，请根据接口返回的错误信息并参考文档检查输入参数。 |
+| 400 | 230002 | The bot can not be outside the group. | 机器人不在对应群组中。 |
+| 400 | 230006 | Bot ability is not activated. | [机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)未启用 。可在[开发者后台](https://open.larksuite.com/app) -> 应用能力 -> 添加应用能力页面添加机器人功能，发布新版本后生效。 |
+| 400 | 230013 | Bot has NO availability to this user. | 机器人对用户没有[可用性](/document/home/introduction-to-scope-and-authorization/availability)。可在[开发者后台](https://open.larksuite.com/app) -> 应用发布 -> 版本管理与发布 -> 创建版本页面编辑应用的可用范围，发布新版本后生效。 |
+| 400 | 230019 | The thread does NOT exist. | 要转发到的话题不存在，请检查 thread_id 是否正确。 |
+| 400 | 230020 | This operation triggers the frequency limit. | 当前操作触发限频，请降低请求频率。 |
+| 400 | 230027 | Lack of necessary permissions. | 暂不支持在外部群中进行本操作。 |
+| 400 | 230034 | The receive_id is invalid. | 请求参数中的receive_id不合法，请检查。 |
+| 400 | 230035 | Send message permission deny. | 没有发送消息的权限，请排查群是否已开启禁言，或受到租户维度沟通权限的管控。 |
+| 400 | 230036 | Tenant crypt key has been deleted. | 租户加密密钥已被删除，请联系企业管理员。 |
+| 400 | 230038 | Cross tenant p2p chat operate forbid. | 跨租户的单聊不允许通过本接口发送消息。 |
+| 400 | 230049 | The message is being sent. | 消息正在发送中，请稍后。 |
+| 400 | 230050 | The message is invisible to the operator. | 消息对于操作者不可见，无法进行本操作。 |
+| 400 | 230053 | The user has stopped the bot from sending messages. | 用户已设置不再接收机器人消息，无法主动给用户发送单聊消息。 |
+| 400 | 230062 | No permission to forward to third-party encryption group. | 没有权限转发到第三方加密群。 |
+| 400 | 230063 | The chat_id of group to forward is invalid. | 要转发到的群是无效的，请检查chat_id对应的群组是否存在。 |
+| 400 | 230064 | The thread to be forwarded is invalid. | 要转发的话题 ID 是无效的，请检查该thread_id 是否存在。 |
+| 400 | 230066 | The thread to be forwarded is in a secret group, forwarding is not supported. | 要转发的话题归属于密聊群，不支持转发。 |
+| 400 | 230070 | Forwarding of messages in restricted mode is not allowed. | 要转发的话题所属的群聊已开启防泄密模式，不支持转发。 |
+| 400 | 230073 | The thread is invisible to the operator. | 要转发的话题对于操作者不可见。 若群聊关闭了“新成员可查看历史消息”且此话题为操作者进入群聊前创建的，则该话题需要操作者被动订阅才可见，如其他用户在话题中@操作者。 |
+| 400 | 230074 | The target thread is invisible to the operator. | 要转发到的话题对于操作者不可见。 若群聊关闭了“新成员可查看历史消息”且此话题为操作者进入群聊前创建的，则该话题需要操作者被动订阅才可见，如其他用户在话题中@操作者。 |
+| 400 | 230110 | Action unavailable as the message has been deleted. | 消息已被删除。 |
+| 400 | 232009 | Your request specifies a chat which has already been dissolved. | 群组已被解散。 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230002</md-td>
-  <md-td>The bot can not be outside the group.</md-td>
-  <md-td>机器人不在对应群组中。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230006</md-td>
-  <md-td>Bot ability is not activated.</md-td>
-  <md-td>[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)未启用 。可在[开发者后台](https://open.larksuite.com/app) -> 应用能力 -> 添加应用能力页面添加机器人功能，发布新版本后生效。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230013</md-td>
-  <md-td>Bot has NO availability to this user.</md-td>
-  <md-td>机器人对用户没有[可用性](/document/home/introduction-to-scope-and-authorization/availability)。可在[开发者后台](https://open.larksuite.com/app) -> 应用发布 -> 版本管理与发布 -> 创建版本页面编辑应用的可用范围，发布新版本后生效。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230019</md-td>
-  <md-td>The thread does NOT exist.</md-td>
-  <md-td>要转发到的话题不存在，请检查 thread_id 是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230020</md-td>
-  <md-td>This operation triggers the frequency limit.</md-td>
-  <md-td>当前操作触发限频，请降低请求频率。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230027</md-td>
-  <md-td>Lack of necessary permissions.</md-td>
-  <md-td>暂不支持在外部群中进行本操作。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230034</md-td>
-  <md-td>The receive_id is invalid.</md-td>
-  <md-td>请求参数中的receive_id不合法，请检查。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230035</md-td>
-  <md-td>Send message permission deny.</md-td>
-  <md-td>没有发送消息的权限，请排查群是否已开启禁言，或受到租户维度沟通权限的管控。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230036</md-td>
-  <md-td>Tenant crypt key has been deleted.</md-td>
-  <md-td>租户加密密钥已被删除，请联系企业管理员。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230038</md-td>
-  <md-td>Cross tenant p2p chat operate forbid.</md-td>
-  <md-td>跨租户的单聊不允许通过本接口发送消息。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230049</md-td>
-  <md-td>The message is being sent.</md-td>
-  <md-td>消息正在发送中，请稍后。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230050</md-td>
-  <md-td>The message is invisible to the operator.</md-td>
-  <md-td>消息对于操作者不可见，无法进行本操作。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230053</md-td>
-  <md-td>The user has stopped the bot from sending messages.</md-td>
-  <md-td>用户已设置不再接收机器人消息，无法主动给用户发送单聊消息。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230062</md-td>
-  <md-td>No permission to forward to third-party encryption group.</md-td>
-  <md-td>没有权限转发到第三方加密群。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230063</md-td>
-  <md-td>The chat_id of group to forward is invalid.</md-td>
-  <md-td>要转发到的群是无效的，请检查chat_id对应的群组是否存在。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230064</md-td>
-  <md-td>The thread to be forwarded is invalid.</md-td>
-  <md-td>要转发的话题 ID 是无效的，请检查该thread_id 是否存在。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230066</md-td>
-  <md-td>The thread to be forwarded is in a secret group, forwarding is not supported.</md-td>
-  <md-td>要转发的话题归属于密聊群，不支持转发。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230070</md-td>
-  <md-td>Forwarding of messages in restricted mode is not allowed.</md-td>
-  <md-td>要转发的话题所属的群聊已开启防泄密模式，不支持转发。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230073</md-td>
-  <md-td>The thread is invisible to the operator.</md-td>
-  <md-td>要转发的话题对于操作者不可见。 若群聊关闭了“新成员可查看历史消息”且此话题为操作者进入群聊前创建的，则该话题需要操作者被动订阅才可见，如其他用户在话题中@操作者。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230074</md-td>
-  <md-td>The target thread is invisible to the operator.</md-td>
-  <md-td>要转发到的话题对于操作者不可见。 若群聊关闭了“新成员可查看历史消息”且此话题为操作者进入群聊前创建的，则该话题需要操作者被动订阅才可见，如其他用户在话题中@操作者。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>230110</md-td>
-  <md-td>Action unavailable as the message has been deleted.</md-td>
-  <md-td>消息已被删除。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232009</md-td>
-  <md-td>Your request specifies a chat which has already been dissolved.</md-td>
-  <md-td>群组已被解散。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

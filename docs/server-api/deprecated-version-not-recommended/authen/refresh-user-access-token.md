@@ -44,82 +44,22 @@ user_access_token 的最大有效期是 2小时左右。当 user_access_token �
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/authen/v1/oidc/refresh_access_token</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            无
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/authen/v1/oidc/refresh_access_token |
+| HTTP Method | POST |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | 无 |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-app">app_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-app">app_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer a-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer a-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -354,176 +294,28 @@ user_access_token 的最大有效期是 2小时左右。当 user_access_token �
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20001</md-td>
-  <md-td>Invalid request. Please check request param</md-td>
-  <md-td>请检查请求参数</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 200 | 20001 | Invalid request. Please check request param | 请检查请求参数 |
+| 200 | 20002 | The app_id or app_secret passed is incorrect. Please check the value | 检查app_id和密钥是否正确 |
+| 200 | 20007 | Failed to generate a user access token. Please try again | 请检查参数是否有效，重试 |
+| 200 | 20008 | User not exist | 用户不存在，换有效帐号 |
+| 200 | 20013 | The tenant access token passed is invalid. Please check the value | 检查tenant_access_token是否有效 |
+| 200 | 20014 | The app access token passed is invalid. Please check the value | 检查app_access_token是否有效 |
+| 200 | 20021 | User resigned | 用户离职，请使用有效帐号 |
+| 200 | 20022 | User frozen | 用户冻结，请使用有效帐号 |
+| 200 | 20023 | User not registered | 用户未注册，请使用有效帐号 |
+| 200 | 20024 | App id in user_access_token or refresh_token diff with app id in app_access_token or tenant_access_token. Please keep the app id consistent | 请检查生成两个token的app是否为同一个 |
+| 200 | 20026 | The refresh token passed is invalid. Please check the value | 无效refresh_token，请检查是否过期或已经消费 |
+| 200 | 20028 | Invalid app id | 无效app_id，请检查参数 |
+| 200 | 20029 | Invalid redirect uri | redirect_uri 无效。排查方案：<br>1. 确保 Authorization 取值正确。例如，实际开发的应用 A，但调用 API 时却使用了应用 B 的 app_access_token。<br>2. 确保[获取登录授权码 code](/document/common-capabilities/sso/api/obtain-oauth-code) 时，设置的回调地址 redirect_uri 参数，已配置到开发者后台 > 应用详情页 > 安全设置 > 重定向 URL。<br>关于该报错的详细解决方案，参见[如何解决授权免登页面 20029 错误](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-resolve-the-authorization-page-20029-error)。 |
+| 200 | 20036 | The grant_type passed is not supported | 无效grant_type，请与接口要求保持一致 |
+| 200 | 20037 | The refresh token passed has expired. Please generate a new one | 过期refresh_token，请传有效参数 |
+| 200 | 20038 | The refresh token passed is not found. Please check the value | 查询不到 refresh_token。<br>当你使用 refresh_token 刷新 user_access_token 后，需要保存返回结果中新的 refresh_token 供下次刷新使用。<br>如果下次刷新时重复使用旧的 refresh_token 或者 refresh_token 已过期，则会报该错误。refresh_token 有效期为 30 天左右，具体时间可通过接口返回的 refresh_expires_in 参数获取。<br>你可以调用[获取 user_access_token](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/oidc-access_token/create)重新获取 user_access_token 和 refresh_token。 |
+| 200 | 20042 | App disabled | app不可用，请检查app状态 |
+| 200 | 20046 | Brand inconsistency | 应用品牌和域名品牌不一致，请保证lark应用在lark域名下使用 |
 
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20002</md-td>
-  <md-td>The app_id or app_secret passed is incorrect. Please check the value</md-td>
-  <md-td>检查app_id和密钥是否正确</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20007</md-td>
-  <md-td>Failed to generate a user access token. Please try again</md-td>
-  <md-td>请检查参数是否有效，重试</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20008</md-td>
-  <md-td>User not exist</md-td>
-  <md-td>用户不存在，换有效帐号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20013</md-td>
-  <md-td>The tenant access token passed is invalid. Please check the value</md-td>
-  <md-td>检查tenant_access_token是否有效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20014</md-td>
-  <md-td>The app access token passed is invalid. Please check the value</md-td>
-  <md-td>检查app_access_token是否有效</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20021</md-td>
-  <md-td>User resigned</md-td>
-  <md-td>用户离职，请使用有效帐号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20022</md-td>
-  <md-td>User frozen</md-td>
-  <md-td>用户冻结，请使用有效帐号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20023</md-td>
-  <md-td>User not registered</md-td>
-  <md-td>用户未注册，请使用有效帐号</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20024</md-td>
-  <md-td>App id in user_access_token or refresh_token diff with app id in app_access_token or tenant_access_token. Please keep the app id consistent</md-td>
-  <md-td>请检查生成两个token的app是否为同一个</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20026</md-td>
-  <md-td>The refresh token passed is invalid. Please check the value</md-td>
-  <md-td>无效refresh_token，请检查是否过期或已经消费</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20028</md-td>
-  <md-td>Invalid app id</md-td>
-  <md-td>无效app_id，请检查参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20029</md-td>
-  <md-td>Invalid redirect uri</md-td>
-  <md-td>redirect_uri 无效。排查方案：
-
-1. 确保 Authorization 取值正确。例如，实际开发的应用 A，但调用 API 时却使用了应用 B 的 app_access_token。
-2. 确保[获取登录授权码 code](/document/common-capabilities/sso/api/obtain-oauth-code) 时，设置的回调地址 redirect_uri 参数，已配置到开发者后台 > 应用详情页 > 安全设置 > 重定向 URL。
-
-关于该报错的详细解决方案，参见[如何解决授权免登页面 20029 错误](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-resolve-the-authorization-page-20029-error)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20036</md-td>
-  <md-td>The grant_type passed is not supported</md-td>
-  <md-td>无效grant_type，请与接口要求保持一致</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20037</md-td>
-  <md-td>The refresh token passed has expired. Please generate a new one</md-td>
-  <md-td>过期refresh_token，请传有效参数</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20038</md-td>
-  <md-td>The refresh token passed is not found. Please check the value</md-td>
-  <md-td>查询不到 refresh_token。
-
-当你使用 refresh_token 刷新 user_access_token 后，需要保存返回结果中新的 refresh_token 供下次刷新使用。
-
-如果下次刷新时重复使用旧的 refresh_token 或者 refresh_token 已过期，则会报该错误。refresh_token 有效期为 30 天左右，具体时间可通过接口返回的 refresh_expires_in 参数获取。
-
-你可以调用[获取 user_access_token](/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/oidc-access_token/create)重新获取 user_access_token 和 refresh_token。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20042</md-td>
-  <md-td>App disabled</md-td>
-  <md-td>app不可用，请检查app状态</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>200</md-td>
-  <md-td>20046</md-td>
-  <md-td>Brand inconsistency</md-td>
-  <md-td>应用品牌和域名品牌不一致，请保证lark应用在lark域名下使用</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

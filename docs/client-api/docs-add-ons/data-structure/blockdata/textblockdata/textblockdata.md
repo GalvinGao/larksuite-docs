@@ -18,43 +18,9 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/uYjL24iN/docs-add-on/05
 # TextBlockData
 文本类 Block 数据结构，继承于 [BlockData](/document/uAjLw4CM/uYjL24iN/docs-add-on/05-api-doc/BlockData/blockdata)
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th>名称</md-th>
-<md-th>数据类型</md-th>
-<md-th>是否必填</md-th>
-<md-th>描述</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>text</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>文本数据</md-td>
-</md-tr>
-<md-tr>
-<md-td>∟elements</md-td>
-<md-td>object</md-td>
-<md-td>是</md-td>
-<md-td>文本元素数组， 其中 TextElement 类型是下面类型中的一种：
-- TextRun
-- MentionUser
-- MentionDoc
-- Reminder
-- File
-- InlineBlock
-- Equation
-  </md-td>
-</md-tr>
-<md-tr>
-<md-td>plain_text</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>返回文档上显示的文本数据，包括（reminder，InlineBlock， MentionUser，Equation， MentionDoc等）</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| text | object | 是 | 文本数据 |
+| ∟elements | object | 是 | 文本元素数组， 其中 TextElement 类型是下面类型中的一种：<br>- TextRun<br>- MentionUser<br>- MentionDoc<br>- Reminder<br>- File<br>- InlineBlock<br>- Equation |
+| plain_text | string | 是 | 返回文档上显示的文本数据，包括（reminder，InlineBlock， MentionUser，Equation， MentionDoc等） |
+

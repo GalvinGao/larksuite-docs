@@ -21,40 +21,12 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUzM4YjL1MDO24SNzgjN/ge
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td><md-version>V5.14.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/nfc/nfc" fontSize="14">预览</md-preview-app>
-</md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td><md-version>V5.14.0+</md-version></md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td><md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app></md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | <md-version>V5.14.0+</md-version> | **X** | **X** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="/page/API/pages/nfc/nfc" fontSize="14">预览</md-preview-app> |
+| 网页应用 | <md-version>V5.14.0+</md-version> | **X** | **X** | <md-preview-app type="webApp" appId="cli_9dff7f6ae02ad104"  fontSize="14">预览</md-preview-app> |
+
 
 
 
@@ -71,43 +43,15 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uUzM4YjL1MDO24SNzgjN/ge
 点击下表中的方法名，查看对应API的支持说明、调用方法
 </md-alert>
 :::
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 50%;">方法</md-th>
-      <md-th style="width: 50%;">介绍</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>[connect](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/connect)</md-td>
-      <md-td>连接 NfcV 类型的标签</md-td>
-    </md-tr>
 
-    <md-tr>
-      <md-td>[transceive](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/transceive)</md-td>
-      <md-td>发送数据给 NFCV 类型的标签</md-td>
-    </md-tr>
-    
-    <md-tr>
-      <md-td>[close](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/close)</md-td>
-      <md-td>断开与 NFCV 标签之间的连接</md-td>
-    </md-tr>
-    
-        <md-tr>
-      <md-td>[getMaxTransceiveLength](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/getmaxtransceivelength)</md-td>
-      <md-td>获取最大传输长度</md-td>
-    </md-tr>
+| 方法 | 介绍 |
+| --- | --- |
+| [connect](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/connect) | 连接 NfcV 类型的标签 |
+| [transceive](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/transceive) | 发送数据给 NFCV 类型的标签 |
+| [close](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/close) | 断开与 NFCV 标签之间的连接 |
+| [getMaxTransceiveLength](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/getmaxtransceivelength) | 获取最大传输长度 |
+| [setTimeout](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/settimeout) | 设置超时时间 |
 
-        <md-tr>
-      <md-td>[setTimeout](/document/uYjL24iN/uQzM4YjL0MDO24CNzgjN/NfcV/settimeout)</md-td>
-      <md-td>设置超时时间</md-td>
-    </md-tr>
-    
-</md-tbody>
-</md-table>
-:::
 ## 示例代码
 :::html
 <div style="display: flex; justify-content: space-between">

@@ -45,193 +45,22 @@ source_url: https://open.larksuite.com/document/home/management-weekly-report-ba
 
 ### 云文档
 
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 25%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取空间根目录](/document/ukTMukTMukTM/ugTNzUjL4UzM14CO1MTN/get-root-folder-meta)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| <md-text type="field-name" >[获取空间根目录](/document/ukTMukTMukTM/ugTNzUjL4UzM14CO1MTN/get-root-folder-meta)<br>`GET` /open-apis/drive/explorer/v2/root_folder/meta<br>> 获取云空间的根目录<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[获取文件夹下的文档清单](/document/ukTMukTMukTM/uEjNzUjLxYzM14SM2MTN)<br>`GET` /open-apis/drive/explorer/v2/folder/:folderToken/children<br>> 获取文件夹内的文档清单，也包括文件夹<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[获取文档元数据](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/meta/batch_query)<br>`POST` /open-apis/drive/v1/metas/batch_query<br>> 根据 Token 获取各类文档的元数据<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm><br><md-perm name="drive:drive.metadata:readonly" desc="查看云空间中文件元数据" support_app_types="custom,isv" tags="">查看云空间中文件元数据</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[复制文件](/document/ukTMukTMukTM/uYTNzUjL2UzM14iN1MTN)<br>`POST` /open-apis/drive/explorer/v2/file/copy/files/:fileToken<br>> 将文件复制到用户云空间的其他文件夹中<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[增加权限](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create)<br>`POST` /open-apis/drive/v1/permissions/:token/members<br>> 该接口用于根据 filetoken 给用户增加文档的权限<br></md-text> | <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[添加知识空间成员](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-member/create)<br>`POST` /open-apis/wiki/v2/spaces/:space_id/members<br>> 添加知识空间成员或管理员<br></md-text> | <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[添加已有云文档至知识库](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-node/move_docs_to_wiki)<br>`POST` /open-apis/wiki/v2/spaces/:space_id/nodes/move_docs_to_wiki<br>> 该接口允许添加已有云文档至知识库<br></md-text> | <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
 
-`GET` /open-apis/drive/explorer/v2/root_folder/meta
-
-> 获取云空间的根目录
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取文件夹下的文档清单](/document/ukTMukTMukTM/uEjNzUjLxYzM14SM2MTN)
-
-`GET` /open-apis/drive/explorer/v2/folder/:folderToken/children
-
-> 获取文件夹内的文档清单，也包括文件夹
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取文档元数据](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/meta/batch_query)
-
-`POST` /open-apis/drive/v1/metas/batch_query
-
-> 根据 Token 获取各类文档的元数据
-                </md-text>
-            </md-td>
-            <md-td>
-            <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            <md-perm name="drive:drive.metadata:readonly" desc="查看云空间中文件元数据" support_app_types="custom,isv" tags="">查看云空间中文件元数据</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[复制文件](/document/ukTMukTMukTM/uYTNzUjL2UzM14iN1MTN)
-
-`POST` /open-apis/drive/explorer/v2/file/copy/files/:fileToken
-
-> 将文件复制到用户云空间的其他文件夹中
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[增加权限](/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1/permission-member/create)
-
-`POST` /open-apis/drive/v1/permissions/:token/members
-
-> 该接口用于根据 filetoken 给用户增加文档的权限
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="drive:drive" desc="查看、评论、编辑和管理云空间中所有文件" support_app_types="custom,isv" tags="">查看、评论、编辑和管理云空间中所有文件</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[添加知识空间成员](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-member/create)
-
-`POST` /open-apis/wiki/v2/spaces/:space_id/members
-
-> 添加知识空间成员或管理员
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[添加已有云文档至知识库](/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-node/move_docs_to_wiki)
-
-`POST` /open-apis/wiki/v2/spaces/:space_id/nodes/move_docs_to_wiki
-
-> 该接口允许添加已有云文档至知识库
-                </md-text>
-            </md-td>
-            <md-td>
-                    <md-perm name="wiki:wiki" desc="查看、编辑和管理知识库" support_app_types="custom,isv" tags="">查看、编辑和管理知识库</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 
 ### 消息与群组
 
-:::html
-<md-table>
-    <md-thead>
-        <tr>
-            <md-th style="width: 50%;"><md-td>**[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)**</md-td></md-th>
-            <md-th style="width: 25%;">权限要求（满足任一）</md-th>
-            <md-th style="width: 25%;"><md-td>**[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）**</md-td></md-th>
-        </tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[获取用户或机器人所在的群列表](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/list)
+| **[方法 (API)](/document/ukTMukTMukTM/uITNz4iM1MjLyUzM)** | 权限要求（满足任一） | **[访问凭证](/document/ukTMukTMukTM/uMTNz4yM1MjLzUzM)（选择其一）** |
+| --- | --- | --- |
+| <md-text type="field-name" >[获取用户或机器人所在的群列表](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat/list)<br>`GET` /open-apis/im/v1/chats<br>> 获取用户或者机器人所在群列表<br></md-text> | <md-perm name="im:chat:read" desc="查看群信息" support_app_types="custom,isv" tags="">查看群信息</md-perm><br><md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm><br><md-perm name="im:chat.group_info:readonly" desc="读取群信息" support_app_types="custom,isv" tags="">读取群信息</md-perm><br><md-perm name="im:chat:readonly" desc="获取群组信息" support_app_types="custom,isv" tags="">获取群组信息</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag><br><md-tag type="token-user">user_access_token</md-tag> |
+| <md-text type="field-name" >[发送消息](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)<br>`POST` /open-apis/im/v1/messages<br>> 给指定用户或者会话发送消息，支持文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件、表情包<br></md-text> | <md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" tags="">以应用的身份发消息</md-perm><br><md-perm name="im:message" desc="获取与发送单聊、群组消息" tags="">获取与发送单聊、群组消息</md-perm><br><md-perm name="im:message:send" desc="发送消息V2" support_app_types="custom,isv" tags="history,offline">发送消息V2</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> |
 
-`GET` /open-apis/im/v1/chats
-
-> 获取用户或者机器人所在群列表
-                </md-text>
-            </md-td>
-            <md-td>
-<md-perm name="im:chat:read" desc="查看群信息" support_app_types="custom,isv" tags="">查看群信息</md-perm>
-<md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm>
-<md-perm name="im:chat.group_info:readonly" desc="读取群信息" support_app_types="custom,isv" tags="">读取群信息</md-perm>
-<md-perm name="im:chat:readonly" desc="获取群组信息" support_app_types="custom,isv" tags="">获取群组信息</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-                <md-tag type="token-user">user_access_token</md-tag>
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                <md-text type="field-name" >[发送消息](/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message/create)
-
-`POST` /open-apis/im/v1/messages
-
-> 给指定用户或者会话发送消息，支持文本、富文本、卡片、群名片、个人名片、图片、视频、音频、文件、表情包
-                </md-text>
-            </md-td>
-            <md-td>
-<md-perm name="im:message:send_as_bot" desc="以应用的身份发消息" tags="">以应用的身份发消息</md-perm>
-<md-perm name="im:message" desc="获取与发送单聊、群组消息" tags="">获取与发送单聊、群组消息</md-perm>
-<md-perm name="im:message:send" desc="发送消息V2" support_app_types="custom,isv" tags="history,offline">发送消息V2</md-perm>
-            </md-td>
-            <md-td>
-                <md-tag type="token-tenant">tenant_access_token</md-tag>
-            </md-td>
-        </md-tr>
-
-    </md-tbody>
-</md-table>
-:::
 

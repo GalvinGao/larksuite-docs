@@ -29,56 +29,14 @@ getBasekitUrl({
 })
 ```
 
-:::html
-<md-table>
-  <colgroup>
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-    <col style="width: auto">
-  </colgroup>
-	<md-thead> 
-      <md-tr>
-      	<md-th>名称</md-th>
-        <md-th>数据类型</md-th>
-        <md-th>是否必填</md-th>
-        <md-th>描述</md-th>
-      </md-tr>
-  </md-thead> 
-  	<md-tbody>
-      <md-tr>
-      	<md-td>url</md-td>
-        <md-td>string</md-td>
-        <md-td>是</md-td>
-        <md-td>文档的url</md-td>
-      </md-tr>
-      <md-tr>
-      	<md-td>tableId</md-td>
-        <md-td>string</md-td>
-        <md-td>是</md-td>
-        <md-td>控制打开文档的时候打开的表格。将覆盖url中原有的tableId</md-td>
-      </md-tr>
-      <md-tr>
-      	<md-td>viewId</md-td>
-        <md-td>string</md-td>
-        <md-td>是</md-td>
-        <md-td>控制打开文档时候打开的视图。将覆盖url中原有的viewId</md-td>
-      </md-tr>
-      <md-tr>
-      	<md-td>recordId</md-td>
-        <md-td>string</md-td>
-        <md-td>否</md-td>
-        <md-td>将覆盖url中原有的viewId</md-td>
-      </md-tr>
-      <md-tr>
-      	<md-td>fieldId</md-td>
-        <md-td>string</md-td>
-        <md-td>否</md-td>
-        <md-td>将覆盖url中原有的fieldId</md-td>
-      </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 是否必填 | 描述 |
+| --- | --- | --- | --- |
+| url | string | 是 | 文档的url |
+| tableId | string | 是 | 控制打开文档的时候打开的表格。将覆盖url中原有的tableId |
+| viewId | string | 是 | 控制打开文档时候打开的视图。将覆盖url中原有的viewId |
+| recordId | string | 否 | 将覆盖url中原有的viewId |
+| fieldId | string | 否 | 将覆盖url中原有的fieldId |
+
 
 
 ## 输出

@@ -20,117 +20,30 @@ source_url: https://open.larksuite.com/document/uYjL24iN/ucjNx4yN2EjL3YTM
 
 
 ## 支持说明
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">应用能力</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>小程序</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td>**✓**</md-td>
-      <md-td> <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/get-network-type/get-network-type" fontSize="14">预览</md-preview-app>
-      </md-td>
-</md-tr>
 
-    <md-tr>
-      <md-td>网页应用</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-      <md-td>**X**</md-td>
-<md-td>/</md-td>
-</md-tr>
-    
-    
-    
-</md-tbody>
-</md-table>
-:::
+| 应用能力 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 小程序 | **✓** | **✓** | **✓** | <md-preview-app type="gadget" appId="cli_9dff7f6ae02ad104" path="page/API/pages/get-network-type/get-network-type" fontSize="14">预览</md-preview-app> |
+| 网页应用 | **X** | **X** | **X** | / |
+
 
 
 
 ## 输入
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">名称</md-th>
-      <md-th style="width: 18%;">数据类型</md-th>
-       <md-th style="width: 10%;">必填</md-th>
-      <md-th style="width: 10%;">默认值</md-th>
-      <md-th>描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
 
-    
-   <md-tr>
-      <md-td>callback</md-td>
-      <md-td>function</md-td>
-      <md-td>是</md-td>
-      <md-td></md-td>
-      <md-td>该事件的回调函数</md-td>
+| 名称 | 数据类型 | 必填 | 默认值 | 描述 |
+| --- | --- | --- | --- | --- |
+| callback | function | 是 |  | 该事件的回调函数 |
 
-   </md-tr>  
-    
-
-    
-</md-tbody>
-</md-table>
-:::
 
 ## 输出
 回调函数返回对象的属性：
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 30%;">
-                名称
-            </md-th>
-            <md-th style="width: 18%;">
-                数据类型
-            </md-th>
-            <md-th>
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                isConnected
-            </md-td>
-            <md-td>
-                boolean
-            </md-td>
-            <md-td>
-                是否链接网络
-            </md-td>
-        </md-tr>
-        <md-tr>
-            <md-td>
-                networkType
-            </md-td>
-            <md-td>
-                string
-            </md-td>
-            <md-td>
-                网络类型，同 [getNetworkType](/document/uYjL24iN/uYjNx4iN2EjL2YTM) 中描述
 
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
+| 名称 | 数据类型 | 描述 |
+| --- | --- | --- |
+| isConnected | boolean | 是否链接网络 |
+| networkType | string | 网络类型，同 [getNetworkType](/document/uYjL24iN/uYjNx4iN2EjL2YTM) 中描述 |
+
 
 ## 示例代码
 :::html

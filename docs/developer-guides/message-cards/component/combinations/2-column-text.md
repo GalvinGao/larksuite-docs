@@ -32,41 +32,11 @@ JSON 配置示例如下，双列文本定义在内容模块（div）中，通过
 
 field 元素包含的参数说明如下表。
 
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 15%">参数</md-th>
-<md-th style="width: 15%">是否必须</md-th>
-<md-th style="width: 15%">类型</md-th>
-<md-th style="width: 55%">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
+| 参数 | 是否必须 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| is_short | 是 | Boolean | 是否并排布局。取值：<br>- true：并排<br>- false：不并排 |
+| text | 是 | Struct | 国际化文本内容。使用文本组件的数据结构展示内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。 |
 
-<md-tr>
-<md-td>is_short</md-td>
-<md-td>是</md-td>
-<md-td>Boolean</md-td>
-<md-td>
-是否并排布局。取值：
-- true：并排
-- false：不并排
-</md-td>
-</md-tr>
-
-<md-tr>
-<md-td>text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>
-国际化文本内容。使用文本组件的数据结构展示内容，详情参见[文本组件](/document/ukTMukTMukTM/uUzNwUjL1cDM14SN3ATN)。
-</md-td>
-</md-tr>
-
-</md-tbody>
-</md-table>
-:::
 
 ## 卡片示例
 

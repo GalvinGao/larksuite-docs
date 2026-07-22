@@ -46,98 +46,23 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/im/v1/chats/:chat_id</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>PUT</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>接口频率限制</md-th>
-      <md-td>[1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom,isv"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-            <div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm>
-            <md-perm name="im:chat:update" desc="更新群信息" support_app_types="custom,isv" tags="">更新群信息</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/im/v1/chats/:chat_id |
+| HTTP Method | PUT |
+| 接口频率限制 | [1000 次/分钟、50 次/秒](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN) |
+| 支持的应用类型 | <md-app-support types="custom,isv"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip><br><div style="color: rgb(100, 106, 115);font-size: 12px;line-height: 20px;white-space: pre-line;font-weight: 500;padding-top: 4px;">开启任一权限即可</div> | <md-perm name="im:chat" desc="获取与更新群组信息" support_app_types="custom,isv" tags="">获取与更新群组信息</md-perm><br><md-perm name="im:chat:update" desc="更新群信息" support_app_types="custom,isv" tags="">更新群信息</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
-或
-<md-tag mode="inline" type="token-user">user_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>或<br><md-tag mode="inline" type="token-user">user_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer u-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -891,237 +816,37 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232001</md-td>
-  <md-td>Your request contains an invalid request parameter.</md-td>
-  <md-td>参数错误，参考本文档检查输入参数。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 232001 | Your request contains an invalid request parameter. | 参数错误，参考本文档检查输入参数。 |
+| 400 | 232002 | No Permission: Only chat owner or admin can edit chat information in the current situation. | 只允许群主或群管理可以编辑群信息。 |
+| 400 | 232004 | Such an app does NOT exist. | 作为操作者的 app_id 不存在，请联系[技术支持](https://applink.larksuite.com/TLJsX982)。 |
+| 400 | 232006 | Your request specifies a chat_id which is invalid. | 无效的 chat_id，请检查chat_id是否正确。 |
+| 400 | 232008 | Your request specifies a chat whose type is NOT supported currently. | 该群不支持设置为指定的群模式（chat_mode）、群类型（chat_type）或群消息形式（ group_message_type）。 |
+| 400 | 232009 | Your request specifies a chat which has already been dissolved. | 群组已被解散。 |
+| 400 | 232010 | Operator and chat can NOT be in different tenants. | 操作者和被操作的群组应该在同一租户下。 |
+| 400 | 232011 | Operator can NOT be out of the chat. | 操作者需要在群组中。 |
+| 400 | 232012 | New chat owner can NOT be out of the chat. | 新任群主不在群组中。 |
+| 400 | 232016 | Non-chat-owner or Non-chat-admin can only edit certain parts. | 非群主和管理员的普通群成员只能修改部分群信息 (avatar, name, description, i18n_names)。 |
+| 400 | 232019 | The request has been rate limited. | 触发群限流，请控制请求的速度，详情参见[频控策略](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。 |
+| 400 | 232023 | Chat information review failed while updating the chat. | 群组相关信息审核没有通过，请检查群名称或群描述中是否存在敏感内容。 |
+| 400 | 232025 | Bot ability is not activated. | 应用需要开启[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。 |
+| 400 | 232026 | This name is already used in an existing public chat. Names of public chats are supposed to be different. | 公开群群名已存在。 |
+| 400 | 232030 | Your request specifies a user_id which is invalid. | 请检查user_id是否正确。 |
+| 400 | 232031 | The chat and the new designated chat owner must be in the same tenant. | 不允许跨租户转让群主。 |
+| 400 | 232033 | The operator or invited bots does NOT have the authority to manage external chats without the scope. | 没有权限操作外部群。 |
+| 400 | 232034 | The app is unavailable or inactivated by the tenant. | 应用在本租户下未安装或未启用。 |
+| 400 | 232035 | Your request specifies an owner_id which is invalid. | 检查owner_id是否正确。 |
+| 400 | 232037 | The operator or invited bots does NOT have the authority to manage chat labels without the scope. | 操作者或受邀的机器人没有权限管理群Label，请检查权限配置。 |
+| 400 | 232041 | The avatar key is illegal. | 群头像 key 非法，请检查后重新输入。 |
+| 400 | 232047 | The length of the tab name reaches the limit. | 会话标签页名称过长。 |
+| 400 | 232057 | The operator tenant doesn't have the permission to use restricted mode. | 操作者所属的租户没有权限使用保密模式，请联系租户管理员。 |
+| 400 | 232069 | current chat type unsupported to set public. | 不支持群类型为public的外部群。 |
+| 400 | 232091 | Due to the security control requirements of this tenant, this tenant does not allow public group. | 因租户安全管控，不支持创建公开群，请联系租户管理员。 |
+| 400 | 232093 | This meeting has restricted access. Unable to turn off group membership approval. | 正在会议中，不支持关闭进群验证。 |
+| 400 | 232078 | The operator tenant doesn't have the permission to use hide_member_count_setting. | 操作者所属租户无权使用隐藏群成员人数设置。 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232002</md-td>
-  <md-td>No Permission: Only chat owner or admin can edit chat information in the current situation.</md-td>
-  <md-td>只允许群主或群管理可以编辑群信息。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232004</md-td>
-  <md-td>Such an app does NOT exist.</md-td>
-  <md-td>作为操作者的 app_id 不存在，请联系[技术支持](https://applink.larksuite.com/TLJsX982)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232006</md-td>
-  <md-td>Your request specifies a chat_id which is invalid.</md-td>
-  <md-td>无效的 chat_id，请检查chat_id是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232008</md-td>
-  <md-td>Your request specifies a chat whose type is NOT supported currently.</md-td>
-  <md-td>该群不支持设置为指定的群模式（chat_mode）、群类型（chat_type）或群消息形式（ group_message_type）。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232009</md-td>
-  <md-td>Your request specifies a chat which has already been dissolved.</md-td>
-  <md-td>群组已被解散。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232010</md-td>
-  <md-td>Operator and chat can NOT be in different tenants.</md-td>
-  <md-td>操作者和被操作的群组应该在同一租户下。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232011</md-td>
-  <md-td>Operator can NOT be out of the chat.</md-td>
-  <md-td>操作者需要在群组中。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232012</md-td>
-  <md-td>New chat owner can NOT be out of the chat.	</md-td>
-  <md-td>新任群主不在群组中。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232016</md-td>
-  <md-td>Non-chat-owner or Non-chat-admin can only edit certain parts.</md-td>
-  <md-td>非群主和管理员的普通群成员只能修改部分群信息 (avatar, name, description, i18n_names)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232019</md-td>
-  <md-td>The request has been rate limited.</md-td>
-  <md-td>触发群限流，请控制请求的速度，详情参见[频控策略](/document/ukTMukTMukTM/uUzN04SN3QjL1cDN)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232023</md-td>
-  <md-td>Chat information review failed while updating the chat.</md-td>
-  <md-td>群组相关信息审核没有通过，请检查群名称或群描述中是否存在敏感内容。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232025</md-td>
-  <md-td>Bot ability is not activated.</md-td>
-  <md-td>应用需要开启[机器人能力](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232026</md-td>
-  <md-td>This name is already used in an existing public chat. Names of public chats are supposed to be different.	</md-td>
-  <md-td>公开群群名已存在。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232030</md-td>
-  <md-td>Your request specifies a user_id which is invalid.</md-td>
-  <md-td>请检查user_id是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232031</md-td>
-  <md-td>The chat and the new designated chat owner must be in the same tenant.</md-td>
-  <md-td>不允许跨租户转让群主。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232033</md-td>
-  <md-td>The operator or invited bots does NOT have the authority to manage external chats without the scope.</md-td>
-  <md-td>没有权限操作外部群。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232034</md-td>
-  <md-td>The app is unavailable or inactivated by the tenant.</md-td>
-  <md-td>应用在本租户下未安装或未启用。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232035</md-td>
-  <md-td>Your request specifies an owner_id which is invalid.</md-td>
-  <md-td>检查owner_id是否正确。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232037</md-td>
-  <md-td>The operator or invited bots does NOT have the authority to manage chat labels without the scope.</md-td>
-  <md-td>操作者或受邀的机器人没有权限管理群Label，请检查权限配置。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232041</md-td>
-  <md-td>The avatar key is illegal.</md-td>
-  <md-td>群头像 key 非法，请检查后重新输入。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232047</md-td>
-  <md-td>The length of the tab name reaches the limit.</md-td>
-  <md-td>会话标签页名称过长。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232057</md-td>
-  <md-td>The operator tenant doesn't have the permission to use restricted mode.</md-td>
-  <md-td>操作者所属的租户没有权限使用保密模式，请联系租户管理员。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232069</md-td>
-  <md-td>current chat type unsupported to set public.</md-td>
-  <md-td>不支持群类型为public的外部群。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232091</md-td>
-  <md-td>Due to the security control requirements of this tenant, this tenant does not allow public group.</md-td>
-  <md-td>因租户安全管控，不支持创建公开群，请联系租户管理员。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232093</md-td>
-  <md-td>This meeting has restricted access. Unable to turn off group membership approval.</md-td>
-  <md-td>正在会议中，不支持关闭进群验证。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>232078</md-td>
-  <md-td>The operator tenant doesn't have the permission to use hide_member_count_setting.</md-td>
-  <md-td>操作者所属租户无权使用隐藏群成员人数设置。</md-td>
-</md-tr>
-
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

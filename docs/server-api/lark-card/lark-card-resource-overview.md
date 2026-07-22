@@ -39,26 +39,12 @@ Lark卡片是应用的一种能力，包括构建卡片内容所需的组件和�
 ## 资源介绍
 
 Lark卡片 OpenAPI 中，以卡片和组件资源为中心开放接口，支持创建、更新卡片。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 10%;">资源</md-th>
-      <md-th style="width: 70%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>卡片</md-td>
-      <md-td>Lark卡片能将结构化的内容以卡片形式嵌入至聊天消息、群置顶消息、链接预览等Lark协作场景中，提升信息传递效率。了解更多参见[消息卡片概述](/document/ukTMukTMukTM/uczM3QjL3MzN04yNzcDN)。通过卡片实体 API，你可从卡片维度创建卡片、更新卡片。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>组件</md-td>
-      <md-td>Lark卡片中的组件可分为容器类、展示类和交互类组件。了解更多参见[组件概述](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/component-overview)。通过组件 API，你可以在一张卡片中新增、修改组件。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 资源 | 描述 |
+| --- | --- |
+| 卡片 | Lark卡片能将结构化的内容以卡片形式嵌入至聊天消息、群置顶消息、链接预览等Lark协作场景中，提升信息传递效率。了解更多参见[消息卡片概述](/document/ukTMukTMukTM/uczM3QjL3MzN04yNzcDN)。通过卡片实体 API，你可从卡片维度创建卡片、更新卡片。 |
+| 组件 | Lark卡片中的组件可分为容器类、展示类和交互类组件。了解更多参见[组件概述](/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-components/component-overview)。通过组件 API，你可以在一张卡片中新增、修改组件。 |
+
 
 ## 方法列表
 
@@ -76,187 +62,22 @@ Lark卡片 OpenAPI 中，以卡片和组件资源为中心开放接口，支持�
 
 ### 卡片级
 
-:::html
-<md-table>
-    <md-thead>
-<tr>
-    <md-th style="width: 35%;"><b>方法 (API)</md-th>
-    <md-th style="width: 30%;"><b>权限要求（满足任一）</md-th>
-    <md-th style="width: 20%;"><b>访问凭证</md-th>
-    <md-th style="width: 10%;"><b>商店</md-th>
-    <md-th style="width: 10%;"><b>自建</md-th>
-</tr>
-    </md-thead>
-    <md-tbody>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`POST`[创建卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/create) open-apis/cardkit/v1/cards</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
+| <b>方法 (API) | <b>权限要求（满足任一） | <b>访问凭证 | <b>商店 | <b>自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name">`POST`[创建卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/create) open-apis/cardkit/v1/cards</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">`PUT` [全量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/update) /open-apis/cardkit/v1/cards/:card_id</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">`PATCH` [更新卡片配置](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/settings) /open-apis/cardkit/v1/cards/:card_id/settings</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">`POST` [批量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/batch_update) /open-apis/cardkit/v1/cards/:card_id/batch_update</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
 
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PUT` [全量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/update) /open-apis/cardkit/v1/cards/:card_id</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PATCH` [更新卡片配置](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/settings) /open-apis/cardkit/v1/cards/:card_id/settings</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-      
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`POST` [批量更新卡片实体](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/batch_update) /open-apis/cardkit/v1/cards/:card_id/batch_update</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-
-
-    </md-tbody>
-</md-table>
-:::
 
 ### 组件级
-:::html
-<md-table>
-    <md-thead>
-<tr>
-    <md-th style="width: 35%;"><b>方法 (API)</md-th>
-    <md-th style="width: 30%;"><b>权限要求（满足任一）</md-th>
-    <md-th style="width: 20%;"><b>访问凭证</md-th>
-    <md-th style="width: 10%;"><b>商店</md-th>
-    <md-th style="width: 10%;"><b>自建</md-th>
-</tr>
-    </md-thead>
-    <md-tbody>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`POST`[新增组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create) /open-apis/cardkit/v1/cards/:card_id/elements</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
 
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PUT` [更新组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/update) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
+| <b>方法 (API) | <b>权限要求（满足任一） | <b>访问凭证 | <b>商店 | <b>自建 |
+| --- | --- | --- | --- | --- |
+| <md-text type="field-name">`POST`[新增组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/create) /open-apis/cardkit/v1/cards/:card_id/elements</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">`PUT` [更新组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/update) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">`PATCH` [更新组件属性](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/patch) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">`PUT` [流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id/content</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
+| <md-text type="field-name">`DELETE` [删除组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/delete) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id</md-text> | <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm> | <md-tag type="token-tenant">tenant_access_token</md-tag> | **✓** | **✓** |
 
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PATCH` [更新组件属性](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/patch) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-      
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`PUT` [流式更新文本](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/content) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id/content</md-text>
-    </md-td>
-    <md-td>
- <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-
-
-
-<md-tr>
-    <md-td>
-<md-text type="field-name">`DELETE` [删除组件](/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element/delete) /open-apis/cardkit/v1/cards/:card_id/elements/:element_id</md-text>
-    </md-td>
-    <md-td>
-           <md-perm name="cardkit:card:write" desc="创建与更新卡片" support_app_types="custom,isv" tags="">创建与更新卡片</md-perm>
-
-    </md-td>
-    <md-td>
-<md-tag type="token-tenant">tenant_access_token</md-tag>
-
-    </md-td>
-    <md-td>**✓**</md-td>
-    <md-td>**✓**</md-td>
-</md-tr>
-
-    </md-tbody>
-</md-table>
-:::
       

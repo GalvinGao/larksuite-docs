@@ -38,94 +38,22 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ## 请求
-:::html
-<md-table>
-  <md-thead>
-  <tr>
-      <md-th>基本</md-th>
-      <md-th></md-th>
-  </tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-th>HTTP URL</md-th>
-      <md-td>https://open.larksuite.com/open-apis/contact/v3/departments</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>HTTP Method</md-th>
-      <md-td>POST</md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>支持的应用类型</md-th>
-      <md-td>
-      <md-app-support types="custom"></md-app-support>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            权限要求
-            <md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip>
-            
-      </md-th>
-      <md-td>
-            <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm>
-      </md-td>
-    </md-tr>
-    <md-tr>
-      <md-th>
-            字段权限要求
-      </md-th>
-      <md-td>
-        <md-alert type="tip" icon="none">
-        该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请
-        </md-alert>
-        <md-perm name="contact:department.organize:readonly" desc="获取部门组织架构信息" support_app_types="custom,isv" tags="">获取部门组织架构信息</md-perm>
-        <md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm>
-        <md-perm name="contact:department.base:readonly" desc="获取部门基础信息" support_app_types="custom,isv" tags="">获取部门基础信息</md-perm>
-        <md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm>
-        <md-perm name="contact:contact:access_as_app" desc="以应用身份访问通讯录" support_app_types="custom,isv" tags="history,offline">以应用身份访问通讯录</md-perm>
-        <md-perm name="contact:contact:readonly" desc="读取通讯录" support_app_types="custom,isv" tags="history,offline">读取通讯录</md-perm>
-      </md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
-:::
+
+| 基本 |  |
+| --- | --- |
+| HTTP URL | https://open.larksuite.com/open-apis/contact/v3/departments |
+| HTTP Method | POST |
+| 支持的应用类型 | <md-app-support types="custom"></md-app-support> |
+| 权限要求<br><md-tooltip type="info">调用该 API 所需的权限。开启其中任意一项权限即可调用</md-tooltip> | <md-perm name="contact:contact" desc="更新通讯录" support_app_types="custom" tags="">更新通讯录</md-perm> |
+| 字段权限要求 | <md-alert type="tip" icon="none"><br>该接口返回体中存在下列敏感字段，仅当开启对应的权限后才会返回；如果无需获取这些字段，则不建议申请<br></md-alert><br><md-perm name="contact:department.organize:readonly" desc="获取部门组织架构信息" support_app_types="custom,isv" tags="">获取部门组织架构信息</md-perm><br><md-perm name="contact:contact:readonly_as_app" desc="以应用身份读取通讯录" support_app_types="custom,isv" tags="">以应用身份读取通讯录</md-perm><br><md-perm name="contact:department.base:readonly" desc="获取部门基础信息" support_app_types="custom,isv" tags="">获取部门基础信息</md-perm><br><md-perm name="contact:user.employee_id:readonly" desc="获取用户 user ID" support_app_types="custom" tags="">获取用户 user ID</md-perm><br><md-perm name="contact:contact:access_as_app" desc="以应用身份访问通讯录" support_app_types="custom,isv" tags="history,offline">以应用身份访问通讯录</md-perm><br><md-perm name="contact:contact:readonly" desc="读取通讯录" support_app_types="custom,isv" tags="history,offline">读取通讯录</md-perm> |
+
 ### 请求头
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 35%;">名称</md-th>
-      <md-th style="width: 13%;">类型</md-th>
-       <md-th style="width: 15%;" filters="是,否" >必填</md-th>
-      <md-th  style="width: 37%;">描述</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>Authorization</md-td>
-      <md-td>string</md-td>
-      <md-td>是</md-td>
-      	<md-td>
-<md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag>
 
-**值格式**："Bearer `access_token`"
+| 名称 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| Authorization | string | 是 | <md-tag mode="inline" type="token-tenant">tenant_access_token</md-tag><br>**值格式**："Bearer `access_token`"<br>**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"<br>[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use) |
+| Content-Type | string | 是 | **固定值**："application/json; charset=utf-8" |
 
-**示例值**："Bearer t-7f1bcd13fc57d46bac21793a18e560"
-
-[了解更多：如何选择与获取 access token](/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-choose-which-type-of-token-to-use)
-
-</md-td>
-</md-tr>
-<md-tr>
-<md-td>Content-Type</md-td>
-<md-td>string</md-td>
-<md-td>是</md-td>
-<md-td>**固定值**："application/json; charset=utf-8"</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
 
 
 
@@ -1006,236 +934,37 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 
 
 ### 错误码
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">HTTP状态码</md-th>
-            <md-th style="width: 15%;">错误码</md-th>
-            <md-th style="width: 30%;">描述</md-th>
-            <md-th style="width: 30%;">排查建议</md-th>
-        </md-tr>
-    </md-thead>
-  <md-tbody>
 
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43005</md-td>
-  <md-td>duplicate order error</md-td>
-  <md-td>部门的order必须唯一，请检查后重试。</md-td>
-</md-tr>
+| HTTP状态码 | 错误码 | 描述 | 排查建议 |
+| --- | --- | --- | --- |
+| 400 | 43005 | duplicate order error | 部门的order必须唯一，请检查后重试。 |
+| 400 | 40018 | duplicate name error | （同一父部门下）部门名必须唯一，请检查后重试。 |
+| 400 | 43008 | custom dept id invalid error | 部门自定义ID不合法，不得以od-开头，不能为“0”，长度不可超过64。 |
+| 400 | 43013 | dept too many children error | 子部门数量过多。 |
+| 400 | 40003 | internal error | 内部错误，请提供 X-Request-Id向客服反馈。[联系客服](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。 |
+| 403 | 40004 | no dept authority error | 操作的部门需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority) |
+| 400 | 40008 | dept Info is null error | 部门的信息不能为空 |
+| 400 | 40010 | chat id is invalid error | 部门群ID格式错误。 |
+| 403 | 40014 | no parent dept authority error | 没有父部门权限（组织架构可见范围权限）。 |
+| 401 | 43000 | dept has already exist error | 创建的部门已经存在。 |
+| 401 | 40016 | dept name can not be nul error | 部门名不能为空。 |
+| 400 | 42006 | user has resigned error | 用户已经离职。 |
+| 400 | 41012 | user id invalid error | 用户ID无效。 |
+| 400 | 40021 | no a same request error | 两次操作不是同一个请求，请检查request值是否有改动。 |
+| 400 | 43004 | illegal unit error | 部门unit id无效。 |
+| 400 | 43007 | duplicated department custom id error | 部门自定义ID 企业内重复 |
+| 403 | 40004 | no dept authority error | 操作的部门需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority) |
+| 400 | 44101 | miss parent department id error | 请求缺少 parent department id |
+| 400 | 43017 | relate dept over limit | 关联部门超过限制 |
+| 400 | 43018 | duplicate i18n name | 重复的i18n名字 |
+| 400 | 43019 | exceed dept max level | 超过部门层级深度 |
+| 400 | 43021 | department chat not exist | 部门群不存在 |
+| 400 | 43022 | department name duplicate | 部门名重复 |
+| 400 | 43023 | dept structure no permissione | 组织架构没有权限 |
+| 400 | 43024 | dept structure tenant lock fail | 部门结构变动获取租户锁失败 |
+| 400 | 43025 | top department leader unjoined | 用户未加入不能成为企业负责人 |
+| 400 | 43026 | employee type is not valid | 请使用准确的雇员类型 |
 
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40018</md-td>
-  <md-td>duplicate name error</md-td>
-  <md-td>（同一父部门下）部门名必须唯一，请检查后重试。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43008</md-td>
-  <md-td>custom dept id invalid error</md-td>
-  <md-td>部门自定义ID不合法，不得以od-开头，不能为“0”，长度不可超过64。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43013</md-td>
-  <md-td>dept too many children error</md-td>
-  <md-td>子部门数量过多。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40003</md-td>
-  <md-td>internal error</md-td>
-  <md-td>内部错误，请提供 X-Request-Id向客服反馈。[联系客服](https://applink.larksuite.com/client/helpdesk/open?id=6626260912531570952&extra=%7B%22channel%22%3A14%2C%22created_at%22%3A1614493146%2C%22scenario_id%22%3A6885151765134622721%2C%22signature%22%3A%22ca94c408b966dc1de2083e5bbcd418294c146e98%22%7D)。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>40004</md-td>
-  <md-td>no dept authority error</md-td>
-  <md-td>操作的部门需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40008</md-td>
-  <md-td>dept Info is null error</md-td>
-  <md-td>部门的信息不能为空</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40010</md-td>
-  <md-td>chat id is invalid error</md-td>
-  <md-td>部门群ID格式错误。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>40014</md-td>
-  <md-td>no parent dept authority error</md-td>
-  <md-td>没有父部门权限（组织架构可见范围权限）。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>401</md-td>
-  <md-td>43000</md-td>
-  <md-td>dept has already exist error</md-td>
-  <md-td>创建的部门已经存在。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>401</md-td>
-  <md-td>40016</md-td>
-  <md-td>dept name can not be nul error</md-td>
-  <md-td>部门名不能为空。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>42006</md-td>
-  <md-td>user has resigned error</md-td>
-  <md-td>用户已经离职。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>41012</md-td>
-  <md-td>user id invalid error</md-td>
-  <md-td>用户ID无效。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>40021</md-td>
-  <md-td>no a same request error</md-td>
-  <md-td>两次操作不是同一个请求，请检查request值是否有改动。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43004</md-td>
-  <md-td>illegal unit error</md-td>
-  <md-td>部门unit id无效。</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43007</md-td>
-  <md-td>duplicated department custom id error</md-td>
-  <md-td>部门自定义ID 企业内重复</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>403</md-td>
-  <md-td>40004</md-td>
-  <md-td>no dept authority error</md-td>
-  <md-td>操作的部门需在通讯录权限范围中，[了解更多](/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/v3/guides/scope_authority)</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>44101</md-td>
-  <md-td>miss parent department id error</md-td>
-  <md-td>请求缺少 parent department id</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43017</md-td>
-  <md-td>relate dept over limit</md-td>
-  <md-td>关联部门超过限制</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43018</md-td>
-  <md-td>duplicate i18n name</md-td>
-  <md-td>重复的i18n名字</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43019</md-td>
-  <md-td>exceed dept max level</md-td>
-  <md-td>超过部门层级深度</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43021</md-td>
-  <md-td>department chat not exist</md-td>
-  <md-td>部门群不存在</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43022</md-td>
-  <md-td>department name duplicate</md-td>
-  <md-td>部门名重复</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43023</md-td>
-  <md-td>dept structure no permissione</md-td>
-  <md-td>组织架构没有权限</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43024</md-td>
-  <md-td>dept structure tenant lock fail</md-td>
-  <md-td>部门结构变动获取租户锁失败</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43025</md-td>
-  <md-td>top department leader unjoined</md-td>
-  <md-td>用户未加入不能成为企业负责人</md-td>
-</md-tr>
-
-
-<md-tr>
-  <md-td>400</md-td>
-  <md-td>43026</md-td>
-  <md-td>employee type is not valid</md-td>
-  <md-td>请使用准确的雇员类型</md-td>
-</md-tr>
-
-  </md-tbody>
-</md-table>
-:::
 
 
 

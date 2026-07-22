@@ -89,202 +89,38 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukzMukzMukzM/feishu-car
 ### 字段说明
 
 折叠按钮组组件各字段说明如下表所示：
-:::html
-<md-table>
-<md-thead>
-<md-tr>
-<md-th style="width: 20%;">字段名称</md-th>
-<md-th>是否必填</md-th>
-<md-th>类型</md-th>
-<md-th>默认值</md-th>
-<md-th style="width: 50%;">说明</md-th>
-</md-tr>
-</md-thead>
-<md-tbody>
-<md-tr>
-<md-td>tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>折叠按钮组的标签。固定值为 `overflow`。</md-td>
-</md-tr>
-<md-tr>
-<md-td>width</md-td>
-<md-td>否</md-td>
-<md-td>String</md-td>
-<md-td>default</md-td>
-<md-td>折叠按钮组的宽度。支持以下枚举值：
-- default：默认宽度
-- fill：卡片最大支持宽度
-- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示</md-td>
-</md-tr>
-<md-tr>
-<md-td>options</md-td>
-<md-td>是</md-td>
-<md-td>Struct[]</md-td>
-<md-td>空</md-td>
-<md-td>折叠按钮组当中的选项按钮。详见下文 `options` 字段说明。</md-td>
-</md-tr>
-<md-tr>
-<md-td>behaviors</md-td>
-<md-td>否</md-td>
-<md-td>Array</md-td>
-<md-td>空</md-td>
-<md-td>当用户点击折叠按钮组内的任意按钮后，除按钮本身的回传数据以外，还可通过 behaviors 参数回传更多数据。配置示例如下：
-  
-```json
-{
-    "behaviors": [
-        {
-            "type": "callback", // 声明交互类型是回传数据到服务端的请求回调交互。
-            "value": {
-                // 回传交互数据。支持 object 数据类型。开放平台 SDK 仅支持 object 类型的回传交互数据。
-                "key_1": "value_1" // 示例数据。
-            }
-        }
-    ]
-}
-```
-</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">confirm</md-td>
-<md-td>否</md-td>
-<md-td>Struct</md-td>
-<md-td>默认不生效此属性。</md-td>
-<md-td>二次确认弹窗配置。指在用户提交时弹出二次确认弹窗。
 
-**提示**：该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。
-</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ title</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗标题文本的标签。固定取值为 plain_text。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗标题的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ text</md-td>
-<md-td>是</md-td>
-<md-td>Struct</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗文本的内容。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ tag</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>plain_text</md-td>
-<md-td>二次确认弹窗文本的标签。固定取值为 plain_text。</md-td>
-</md-tr>
-<md-tr>
-<md-td colspan="5" style="text-align: center;">└ └ content</md-td>
-<md-td>是</md-td>
-<md-td>String</md-td>
-<md-td>/</md-td>
-<md-td>二次确认弹窗文本的具体内容。</md-td>
-</md-tr>
-</md-tbody>
-</md-table>
-:::
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| tag | 是 | String | / | 折叠按钮组的标签。固定值为 `overflow`。 |
+| width | 否 | String | default | 折叠按钮组的宽度。支持以下枚举值：<br>- default：默认宽度<br>- fill：卡片最大支持宽度<br>- [100,∞)px：自定义宽度。超出卡片宽度时将按最大支持宽度展示 |
+| options | 是 | Struct[] | 空 | 折叠按钮组当中的选项按钮。详见下文 `options` 字段说明。 |
+| behaviors | 否 | Array | 空 | 当用户点击折叠按钮组内的任意按钮后，除按钮本身的回传数据以外，还可通过 behaviors 参数回传更多数据。配置示例如下：<br><code>{<br>    "behaviors": [<br>        {<br>            "type": "callback", // 声明交互类型是回传数据到服务端的请求回调交互。<br>            "value": {<br>                // 回传交互数据。支持 object 数据类型。开放平台 SDK 仅支持 object 类型的回传交互数据。<br>                "key_1": "value_1" // 示例数据。<br>            }<br>        }<br>    ]<br>}</code> |
+| confirm | 否 | Struct | 默认不生效此属性。 | 二次确认弹窗配置。指在用户提交时弹出二次确认弹窗。<br>**提示**：该字段默认提供了确认和取消按钮，你只需要配置弹窗的标题与内容即可。 |
+| └ title | 是 | Struct | / | 二次确认弹窗标题。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗标题文本的标签。固定取值为 plain_text。 |
+| └ └ content | 是 | String | / | 二次确认弹窗标题的内容。 |
+| └ text | 是 | Struct | / | 二次确认弹窗文本的内容。 |
+| └ └ tag | 是 | String | plain_text | 二次确认弹窗文本的标签。固定取值为 plain_text。 |
+| └ └ content | 是 | String | / | 二次确认弹窗文本的具体内容。 |
+
 
 #### `options` 字段说明
 
 你可在 `option` 字段中添加并配置多个按钮。相关字段描述如下表所示。
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">字段名称</md-th>
-      <md-th>是否必填</md-th>
-      <md-th>类型</md-th>
-      <md-th>默认值</md-th>
-      <md-th style="width: 40%;">说明</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
-    <md-tr>
-      <md-td>text</md-td>
-      <md-td>否</md-td>
-      <md-td>Struct</md-td>
-      <md-td>空</md-td>
-      <md-td>按钮上的文本。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ tag</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>plain_text</md-td>
-      <md-td>文本的标签。固定值为 `plain_text`。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ content</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>请输入</md-td>
-      <md-td>文本的内容。最多支持 100 个字符。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>multi_url</md-td>
-      <md-td>否</md-td>
-      <md-td>Struct</md-td>
-      <md-td>空</md-td>
-      <md-td>为按钮添加多端的跳转链接。</md-td>
-    </md-tr>
-     <md-tr>
-      <md-td>└ url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>兜底的跳转链接。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ android_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>Android 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ ios_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>iOS 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>└ pc_url</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>PC 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。</md-td>
-    </md-tr>
-    <md-tr>
-      <md-td>value</md-td>
-      <md-td>否</md-td>
-      <md-td>String</md-td>
-      <md-td>空</md-td>
-      <md-td>该按钮的回传参数值。当用户点击选项后，应用会将该值返回至卡片请求地址。</md-td>
-    </md-tr>
-  </md-tbody>
-</md-table>
 
-:::
+| 字段名称 | 是否必填 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| text | 否 | Struct | 空 | 按钮上的文本。 |
+| └ tag | 否 | String | plain_text | 文本的标签。固定值为 `plain_text`。 |
+| └ content | 否 | String | 请输入 | 文本的内容。最多支持 100 个字符。 |
+| multi_url | 否 | Struct | 空 | 为按钮添加多端的跳转链接。 |
+| └ url | 否 | String | 空 | 兜底的跳转链接。 |
+| └ android_url | 否 | String | 空 | Android 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| └ ios_url | 否 | String | 空 | iOS 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| └ pc_url | 否 | String | 空 | PC 端的跳转链接。可配置为 `lark://msgcard/unsupported_action` 声明当前端不允许跳转。 |
+| value | 否 | String | 空 | 该按钮的回传参数值。当用户点击选项后，应用会将该值返回至卡片请求地址。 |
+
 
 ## 回调结构
 

@@ -21,30 +21,10 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 
 当前能力在不同Lark客户端的版本支持情况。
 
-:::html
-<md-table>
-  <md-thead>
-    <md-tr>
-      <md-th style="width: 20%;">是否需要鉴权</md-th>
-      <md-th style="width: 20%;">Android</md-th>
-       <md-th style="width: 20%;">iOS</md-th>
-      <md-th style="width: 20%;">PC</md-th>
-      <md-th style="width: 20%;">预览效果</md-th>
-    </md-tr>
-  </md-thead>
-  <md-tbody>
+| 是否需要鉴权 | Android | iOS | PC | 预览效果 |
+| --- | --- | --- | --- | --- |
+| 不需要 | <md-version>V5.31</md-version> | <md-version>V5.31</md-version> | **X** | <md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app> |
 
-
-    <md-tr>
-      <md-td>不需要</md-td>
-      <md-td><md-version>V5.31</md-version></md-td>
-      <md-td><md-version>V5.31</md-version></md-td>
-      <md-td>**X**</md-td>
-     <md-td><md-preview-app type="webApp" disable="true" fontSize="14">预览</md-preview-app></md-td> 
-</md-tr>  
-</md-tbody>
-</md-table>
-:::
 
 
 ## 使用方式
@@ -57,64 +37,11 @@ source_url: https://open.larksuite.com/document/uYjL24iN/uMTMuMTMuMTM/web-app-op
 - 如果不通过 web-meta 属性设置侧滑关闭应用，则默认情况下，侧滑会返回会话历史记录中的上一级页面，若没有上一页，则关闭网页应用。
 :::
 
-:::html
-<md-table>
-    <md-thead>
-        <md-tr>
-            <md-th style="width: 15%;">
-                名称
-            </md-th>
-            <md-th style="width: 15%;">
-                数据类型
-            </md-th>
-            <md-th style="width: 15%;">
-                必填
-            </md-th>
-            <md-th style="width: 45%;">
-                描述
-            </md-th>
-        </md-tr>
-    </md-thead>
-    <md-tbody>
-        <md-tr>
-            <md-td>
-                name
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                固定值：slideToClose
-            </md-td>
-        </md-tr>
-    </md-tbody>
-  	<md-tbody>
-        <md-tr>
-            <md-td>
-                content
-            </md-td>
-            <md-td>
-                String
-            </md-td>
-            <md-td>
-                是
-            </md-td>
-            <md-td>
-                期望设定的返回效果。
+| 名称 | 数据类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| name | String | 是 | 固定值：slideToClose |
+| content | String | 是 | 期望设定的返回效果。<br>**可选值**：<br>- `true`: 关闭应用。<br>- `false`: 返回上一级。 |
 
-**可选值**：
-              
-- `true`: 关闭应用。
-             
-- `false`: 返回上一级。
-            </md-td>
-        </md-tr>
-    </md-tbody>
-</md-table>
-:::
 
 
 ## 示例配置
