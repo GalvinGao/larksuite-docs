@@ -10,7 +10,7 @@ breadcrumb:
 - Device Apply
 - Review Device Apply
 document_type: ReferenceDocumentType
-updated_at: 2026-04-29T03:29:04Z
+updated_at: 2026-10-14T03:41:53Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_apply_record/update
 ---
 

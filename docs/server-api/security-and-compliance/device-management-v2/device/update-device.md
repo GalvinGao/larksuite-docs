@@ -10,7 +10,7 @@ breadcrumb:
 - Device
 - Update Device
 document_type: ReferenceDocumentType
-updated_at: 2026-04-29T03:28:54Z
+updated_at: 2026-10-14T03:41:44Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/update
 ---
 
@@ -149,7 +149,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 	<md-text type="field-type" >int</md-text>
 	</md-dt-td>
 	<md-dt-td>
-	是
+	否
 	</md-dt-td>
 	<md-dt-td>
 	设备归属
@@ -174,7 +174,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 	<md-text type="field-type" >int</md-text>
 	</md-dt-td>
 	<md-dt-td>
-	是
+	否
 	</md-dt-td>
 	<md-dt-td>
 	可信状态
@@ -187,6 +187,24 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 <md-enum-item key="1" >信任设备</md-enum-item>
 <md-enum-item key="2" >非信任设备</md-enum-item>
 </md-enum>
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >is_public</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >boolean</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	否
+	</md-dt-td>
+	<md-dt-td>
+	是否为公共设备
+
+**示例值**：false
 	</md-dt-td>
 </md-dt-tr>
 
@@ -203,7 +221,8 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 <md-code-json>
 {
     "device_ownership": 0,
-    "device_status": 0
+    "device_status": 0,
+    "is_public": false
 }
 </md-code-json>
 :::

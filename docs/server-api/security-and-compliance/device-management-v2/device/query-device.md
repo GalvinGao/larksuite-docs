@@ -10,7 +10,7 @@ breadcrumb:
 - Device
 - Query Device
 document_type: ReferenceDocumentType
-updated_at: 2026-04-29T03:28:44Z
+updated_at: 2026-10-14T03:41:35Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/list
 ---
 
@@ -580,7 +580,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 	<md-dt-td>
 	是否为公共设备
 
-**示例值**：1
+**示例值**：false
 	</md-dt-td>
 </md-dt-tr>
 
@@ -598,7 +598,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 	<md-dt-td>
 	注册方式
 
-**示例值**：0
+**示例值**：2
 
 **可选值有**：
 <md-enum>

@@ -10,13 +10,13 @@ breadcrumb:
 - Device
 - Create Device
 document_type: ReferenceDocumentType
-updated_at: 2026-04-29T03:28:39Z
+updated_at: 2026-10-14T03:41:30Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/create
 ---
 
 # 新增设备
 
-使用该接口在设备管理中新增一台设备。新增设备的类型为管理员导入{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=security_and_compliance&version=v2&resource=device_record&method=create)
+使用该接口在设备管理中新增一台设备。新增设备的注册方式为预注册{尝试一下}(url=/api/tools/api_explore/api_explore_config?project=security_and_compliance&version=v2&resource=device_record&method=create)
 
 :::html
 <md-alert type="tip">
@@ -80,7 +80,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 	<md-text type="field-type" >int</md-text>
 	</md-dt-td>
 	<md-dt-td>
-	是
+	否
 	</md-dt-td>
 	<md-dt-td>
 	操作系统
@@ -96,6 +96,74 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 <md-enum-item key="5" >iOS</md-enum-item>
 <md-enum-item key="6" >OpenHarmony</md-enum-item>
 </md-enum>
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >device_ownership</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	否
+	</md-dt-td>
+	<md-dt-td>
+	设备归属
+
+**示例值**：0
+
+**可选值有**：
+<md-enum>
+<md-enum-item key="0" >未知设备</md-enum-item>
+<md-enum-item key="1" >个人设备</md-enum-item>
+<md-enum-item key="2" >企业设备</md-enum-item>
+</md-enum>
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >device_status</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	否
+	</md-dt-td>
+	<md-dt-td>
+	可信状态
+
+**示例值**：0
+
+**可选值有**：
+<md-enum>
+<md-enum-item key="0" >未知状态</md-enum-item>
+<md-enum-item key="1" >信任设备</md-enum-item>
+<md-enum-item key="2" >非信任设备</md-enum-item>
+</md-enum>
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="0">
+	<md-dt-td>
+	<md-text type="field-name" >is_public</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >boolean</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	否
+	</md-dt-td>
+	<md-dt-td>
+	是否为公共设备
+
+**示例值**：false
 	</md-dt-td>
 </md-dt-tr>
 
@@ -222,56 +290,6 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 	Harmony供应商标识符
 
 **示例值**："ff3c2237-cd76-4331-9d72-0a4470854567"
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >device_ownership</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	设备归属
-
-**示例值**：0
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >未知设备</md-enum-item>
-<md-enum-item key="1" >个人设备</md-enum-item>
-<md-enum-item key="2" >企业设备</md-enum-item>
-</md-enum>
-	</md-dt-td>
-</md-dt-tr>
-
-
-<md-dt-tr level="0">
-	<md-dt-td>
-	<md-text type="field-name" >device_status</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	<md-text type="field-type" >int</md-text>
-	</md-dt-td>
-	<md-dt-td>
-	是
-	</md-dt-td>
-	<md-dt-td>
-	可信状态
-
-**示例值**：0
-
-**可选值有**：
-<md-enum>
-<md-enum-item key="0" >未知状态</md-enum-item>
-<md-enum-item key="1" >信任设备</md-enum-item>
-<md-enum-item key="2" >非信任设备</md-enum-item>
-</md-enum>
 	</md-dt-td>
 </md-dt-tr>
 

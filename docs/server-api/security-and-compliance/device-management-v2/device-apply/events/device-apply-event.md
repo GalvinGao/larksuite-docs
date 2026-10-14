@@ -11,7 +11,7 @@ breadcrumb:
 - Events
 - Device Apply Event
 document_type: ReferenceDocumentType
-updated_at: 2026-04-29T03:29:06Z
+updated_at: 2026-10-14T03:41:55Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_apply_record/events/device_apply_event
 ---
 

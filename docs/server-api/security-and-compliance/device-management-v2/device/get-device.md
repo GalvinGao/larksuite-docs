@@ -10,7 +10,7 @@ breadcrumb:
 - Device
 - Get Device
 document_type: ReferenceDocumentType
-updated_at: 2026-04-29T03:28:49Z
+updated_at: 2026-10-14T03:41:40Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/get
 ---
 
@@ -535,6 +535,130 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 </md-dt-tr>
 
 
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >lsa_info</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	终端管控客户端（包含 lsaclientid、在线状态、绑定时间、最近在线时间、版本号）
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >device_env_info</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	设备环境检测（状态，应用名称、应用状态、上报时间）
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >created_at</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	注册时间
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >updated_at</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	更新时间
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >is_public</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >boolean</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	是否为公共设备
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >source</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	注册方式
+
+**可选值有**：
+<md-enum>
+<md-enum-item key="0" >未知</md-enum-item>
+<md-enum-item key="1" >预注册</md-enum-item>
+<md-enum-item key="2" >系统注册</md-enum-item>
+</md-enum>
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >cert_verified_at_unix</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	证书认证时间
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >cert_serial_number</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	证书序列号
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >cert_issuer</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >string</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	证书颁发者
+	</md-dt-td>
+</md-dt-tr>
+
+
   </md-dt-tbody>
 </md-dt-table>
 :::
@@ -572,7 +696,16 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
             ],
             "is_managed": true,
             "mdm_device_id": "123abc",
-            "mdm_provider_name": "Workspace_ONE"
+            "mdm_provider_name": "Workspace_ONE",
+            "lsa_info": "7522053803906960914,离线,2025/07/09 13:42:42 UTC,2025/07/18 05:09:21 UTC,v1.2.1",
+            "device_env_info": "安全;飞连,已安装,正在运行,2025/12/11 12:00:00;lsa,已安装,未运行,2025/12/11 12:00:00",
+            "created_at": 1767172154,
+            "updated_at": 1767172154,
+            "is_public": false,
+            "source": 0,
+            "cert_verified_at_unix": "1772344920000",
+            "cert_serial_number": "140112030923876027756448774661898183576236633676",
+            "cert_issuer": "Root-CA"
         }
     }
 }

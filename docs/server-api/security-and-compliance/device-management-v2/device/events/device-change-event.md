@@ -11,7 +11,7 @@ breadcrumb:
 - Events
 - Device Change Event
 document_type: ReferenceDocumentType
-updated_at: 2026-04-29T03:28:34Z
+updated_at: 2026-10-14T03:41:21Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/events/device_change_event
 ---
 
@@ -580,6 +580,41 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 </md-dt-tr>
 
 
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >device_env_detect_status</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	设备环境检测状态
+
+**可选值有**：
+<md-enum>
+<md-enum-item key="0" >未知</md-enum-item>
+<md-enum-item key="1" >安全</md-enum-item>
+<md-enum-item key="2" >不安全</md-enum-item>
+</md-enum>
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >is_public</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >boolean</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	是否为公共设备
+
+**默认值**：`false`
+	</md-dt-td>
+</md-dt-tr>
+
+
 <md-dt-tr level="1">
 	<md-dt-td>
 	<md-text type="field-name" >after</md-text>
@@ -932,6 +967,41 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
 	</md-dt-td>
 </md-dt-tr>
 
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >device_env_detect_status</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >int</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	设备环境检测状态
+
+**可选值有**：
+<md-enum>
+<md-enum-item key="0" >未知</md-enum-item>
+<md-enum-item key="1" >安全</md-enum-item>
+<md-enum-item key="2" >不安全</md-enum-item>
+</md-enum>
+	</md-dt-td>
+</md-dt-tr>
+
+
+<md-dt-tr level="2">
+	<md-dt-td>
+	<md-text type="field-name" >is_public</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	<md-text type="field-type" >boolean</md-text>
+	</md-dt-td>
+	<md-dt-td>
+	是否为公共设备
+
+**默认值**：`false`
+	</md-dt-td>
+</md-dt-tr>
+
   </md-dt-tbody>
 </md-dt-table>
 :::
@@ -979,7 +1049,9 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
             "device_terminal_type": 0,
             "is_managed": true,
             "mdm_device_id": "123abc",
-            "mdm_provider_name": "Workspace_ONE"
+            "mdm_provider_name": "Workspace_ONE",
+            "device_env_detect_status": 0,
+            "is_public": false
         },
         "after": {
             "device_record_id": "7089353870308032531",
@@ -1005,7 +1077,9 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/security_a
             "device_terminal_type": 0,
             "is_managed": true,
             "mdm_device_id": "123abc",
-            "mdm_provider_name": "Workspace_ONE"
+            "mdm_provider_name": "Workspace_ONE",
+            "device_env_detect_status": 0,
+            "is_public": false
         }
     }
 }
