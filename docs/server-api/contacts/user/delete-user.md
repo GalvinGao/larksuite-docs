@@ -9,7 +9,7 @@ breadcrumb:
 - User
 - Delete User
 document_type: ReferenceDocumentType
-updated_at: 2024-11-19T02:49:50Z
+updated_at: 2026-11-04T08:38:13Z
 source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user/delete
 ---
 
@@ -200,7 +200,7 @@ source_url: https://open.larksuite.com/document/uAjLw4CM/ukTMukTMukTM/reference/
 	否
 	</md-dt-td>
 	<md-dt-td>
-	文档接收者。用户被删除时，其拥有的文档转让给接收者，不指定接收者则默认转让给直接领导，如果无直接领导则直接删除文档资源
+	文档接收者。用户被删除时，其拥有的文档转让给接收者，不指定接收者则默认转让给被删除用户的直属上级。如果被删除用户无直属上级,则将文档资源保留在该用户名下
 
 **示例值**："ou_7dab8a3d3cdcc9da365777c7ad535d62"
 	</md-dt-td>
